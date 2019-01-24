@@ -89,17 +89,17 @@ func void Inv_Draw_Hook()
         var int txtPtr;  txtPtr = _@s(itm.text);
         if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_HP))
         {
-            itm.text[1] = "Premia % punktów trafieñ:";
+            itm.text[1] = "Premia % punktÃ³w trafieÅ„:";
         }
         else if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_Mana))
         {
-            itm.text[1] = "Premia % punktów many:";
+            itm.text[1] = "Premia % punktÃ³w many:";
         };
         if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,2),  NAME_Bonus_Mana))
         {
             if(InstID == Hlp_GetInstanceID(ItFo_Beer) || InstID == Hlp_GetInstanceID(ItFo_Booze) || InstID == Hlp_GetInstanceID(ItFo_Wine) || InstID == Hlp_GetInstanceID(ItFo_Milk) || InstID == Hlp_GetInstanceID(ItNa_FriedMushroom_01) || InstID == Hlp_GetInstanceID(ItPl_BluePlant))
             {
-                itm.text[2] = "Premia % punktów many:";
+                itm.text[2] = "Premia % punktÃ³w many:";
             };
         };
     };
@@ -119,7 +119,7 @@ func void RemoveChestKeyOnExit()
 		return;
 	};
 	
-	var oCMobContainer m; m = _^(ECX);
+	var oCMobLockable m; m = _^(ECX);
 	
 	if(m._oCMobInter_bitfield = m._oCMobInter_bitfield  |  oCMobLockable_bitfield_locked) {
 		return;
@@ -135,7 +135,7 @@ func void RemoveChestKeyOnExit()
 				return;
 			};*/
 			Npc_RemoveInvItems(hero,key,Npc_HasItems(hero,key));
-			PrintS_Ext(ConcatStrings("Usuniêto: ", m._oCMobLockable_keyInstance), RGBA(255,255,255,0));
+			PrintS_Ext(ConcatStrings("UsuniÄ™to: ", m._oCMobLockable_keyInstance), RGBA(255,255,255,0));
 			//m._oCMobLockable_keyInstance = "";
 			Release(key);
 		};
@@ -144,23 +144,19 @@ func void RemoveChestKeyOnExit()
 
 func void SaveDis()
 {
-	if((STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice")))) {
-		if(!SavingDisabled)
-		{
-				PrintS_Ext("Wy³¹czono mo¿liwoœæ zapisywania!", RGBA(255, 0, 0, 1));
-				DisableSave();
-		};
+	if(!SavingDisabled)
+	{
+		PrintS_Ext("WyÅ‚Ä…czono moÅ¼liwoÅ›Ä‡ zapisywania!", RGBA(255, 0, 0, 1));
+		DisableSave();
 	};
+	
 };
 func void SaveEnb()
 {
-	if((STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))))
+	if(SavingDisabled)
 	{
-		if(SavingDisabled)
-		{
-			PrintS_Ext("W³¹czono mo¿liwoœæ zapisywania!", rgba(46, 204, 113, 1));
-			AllowSaving();
-		};
+		PrintS_Ext("WÅ‚Ä…czono moÅ¼liwoÅ›Ä‡ zapisywania!", rgba(46, 204, 113, 1));
+		AllowSaving();
 	};
 };
 
@@ -171,19 +167,23 @@ func void DynamicSaveSystem()
 	//Print(IntToString(slf));
 	//Print(IntToString(MEM_ReadInt(oCZoneMusic__s_herostatus)));
 	//Print(self.name);
-	if (MEM_ReadInt(oCZoneMusic__s_herostatus) >= 2) //&& (Npc_GetDistToNpc(slf,hero) < 500))/* || Npc_IsInState	(hero, ZS_Unconscious)*/
+	if((STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))))
 	{
-		//SaveDis();
-	}
-	//TODO bogu
-	else if(MEM_ReadInt(oCZoneMusic__s_herostatus) == 1 )
-	{
-	
-	}
-	else
-	{
-		SaveEnb();
+		if (MEM_ReadInt(oCZoneMusic__s_herostatus) >= 2) //&& (Npc_GetDistToNpc(slf,hero) < 500))/* || Npc_IsInState	(hero, ZS_Unconscious)*/
+		{
+			SaveDis();
+		}
+		//TODO bogu
+		else if(MEM_ReadInt(oCZoneMusic__s_herostatus) == 1 )
+		{
+		
+		}
+		else
+		{
+			SaveEnb();
+		};
 	};
+	SaveEnb();
 
 
 };
@@ -219,12 +219,12 @@ func void Hooks_Global()
 	Sneak_hook();
 	const int hooks = 0;
 	if(!hooks){
-		
-		//HookEngineF(oCGame__GetHeroStatus,5,DynamicSaveSystem);
+		HookEngineF(oCNpc__CloseDeadNpc,5,LukorBook);
+		HookEngineF(oCGame__GetHeroStatus,5,DynamicSaveSystem);
 		HookEngineF(6908240,6,DynamicSaveSystem);
 		//HookEngineF(6283664,!1,afdh);
 		//HookEngineF(6927088,6,sneak);
-		//nie, mo¿e do aoe
+		//nie, mo?e do aoe
 		//HookEngineF(7013824,7,sneak);
 		
 		//HookEngineF(7011824,5,sneak);

@@ -1,0 +1,283 @@
+var int GoldMob_01_NASZ;
+var int GoldMob_02_NASZ;
+var int GoldMob_03_NASZ;
+var int GoldMob_04_NASZ;
+var int GoldMob_05_NASZ;
+var int GoldMob_06_NASZ;
+var int GoldMob_07_NASZ;
+var int GoldMob_08_NASZ;
+var int GoldMob_09_NASZ;
+var int GoldMob_10_NASZ;
+var int GoldMob_11_NASZ;
+var int GoldMob_12_NASZ;
+var int GoldMob_13_NASZ;
+var int GoldMob_14_NASZ;
+var int GoldMob_15_NASZ;
+var int GoldMob_16_NASZ;
+var int GoldMob_17_NASZ;
+var int GoldMob_18_NASZ;
+var int GoldMob_19_NASZ;
+var int GoldMob_20_NASZ;
+
+
+FUNC INT B_GoldMob_Bestimmung()
+{
+	//bin ich mobsi X und habe ich noch Gold übrig?
+	if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_01") && (5 > GoldMob_01_NASZ)
+	{
+		GoldMob_01_NASZ = (GoldMob_01_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_02") && (5 > GoldMob_02_NASZ)
+	{
+		GoldMob_02_NASZ = (GoldMob_02_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_03") && (5 > GoldMob_03_NASZ)
+	{
+		GoldMob_03_NASZ = (GoldMob_03_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "OW_PATH_06_06") && (5 > GoldMob_04_NASZ)
+	{
+		GoldMob_04_NASZ = (GoldMob_04_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_05") && (5 > GoldMob_05_NASZ)
+	{
+		GoldMob_05_NASZ = (GoldMob_05_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_06") && (5 > GoldMob_06_NASZ)
+	{
+		GoldMob_06_NASZ = (GoldMob_06_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_07") && (5 > GoldMob_07_NASZ)
+	{
+		GoldMob_07_NASZ = (GoldMob_07_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_08") && (5 > GoldMob_08_NASZ)
+	{
+		GoldMob_08_NASZ = (GoldMob_08_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_09") && (5 > GoldMob_09_NASZ)
+	{
+		GoldMob_09_NASZ = (GoldMob_09_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_10") && (5 > GoldMob_10_NASZ)
+	{
+		GoldMob_10_NASZ = (GoldMob_10_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_11") && (5 > GoldMob_11_NASZ)
+	{
+		GoldMob_11_NASZ = (GoldMob_11_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_12") && (5 > GoldMob_12_NASZ)
+	{
+		GoldMob_12_NASZ = (GoldMob_12_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_13") && (5 > GoldMob_13_NASZ)
+	{
+		GoldMob_13_NASZ = (GoldMob_13_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_14") && (5 > GoldMob_14_NASZ)
+	{
+		GoldMob_14_NASZ = (GoldMob_14_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_15") && (5 > GoldMob_15_NASZ)
+	{
+		GoldMob_15_NASZ = (GoldMob_15_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_16") && (5 > GoldMob_16_NASZ)
+	{
+		GoldMob_16_NASZ = (GoldMob_16_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_17") && (5 > GoldMob_17_NASZ)
+	{
+		GoldMob_17_NASZ = (GoldMob_17_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_18") && (5 > GoldMob_18_NASZ)
+	{
+		GoldMob_18_NASZ = (GoldMob_18_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_19") && (5 > GoldMob_19_NASZ)
+	{
+		GoldMob_19_NASZ = (GoldMob_19_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_20") && (5 > GoldMob_20_NASZ)
+	{
+		GoldMob_20_NASZ = (GoldMob_20_NASZ +1);
+		return TRUE;
+	};
+
+
+	return FALSE;
+
+};
+
+FUNC VOID Goldhacken_S1 ()
+{
+	var C_NPC her; 	her = Hlp_GetNpc(PC_Hero); 
+	
+	if  (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))
+	{	
+		self.aivar[AIV_INVINCIBLE]=TRUE;
+		PLAYER_MOBSI_PRODUCTION	=	MOBSI_GOLDHACKEN;
+		Ai_ProcessInfos (her);
+	};
+};
+
+//*******************************************************
+//	Goldhacken Dialog abbrechen
+//*******************************************************
+INSTANCE PC_Goldhacken_End (C_Info)
+{
+	npc				= PC_Hero;
+	nr				= 999;
+	condition		= PC_Goldhacken_End_Condition;
+	information		= PC_Goldhacken_End_Info;
+	permanent		= TRUE;
+	description		= DIALOG_ENDE; 
+};
+
+FUNC INT PC_Goldhacken_End_Condition ()
+{
+	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_GOLDHACKEN)
+	{	
+		return TRUE;
+	};
+};
+
+FUNC VOID PC_Goldhacken_End_Info()
+{
+	Truemmer_Count = 0;
+	
+	B_ENDPRODUCTIONDIALOG ();
+};
+//*******************************************************
+//	Goldhacken 
+//*******************************************************
+INSTANCE PC_Goldhacken_Addon_Hour (C_Info)
+{
+	npc				= PC_Hero;
+	nr				= 1;
+	condition		= PC_Goldhacken_Addon_Hour_Condition;
+	information		= PC_Goldhacken_Addon_Hour_Info;
+	permanent		= TRUE;
+	description		= "Od³up trochê."; 
+};
+
+FUNC INT PC_Goldhacken_Addon_Hour_Condition ()
+{
+	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_GOLDHACKEN)
+	{	
+		return TRUE;
+	};
+};
+var int GoldCounter;
+FUNC VOID PC_Goldhacken_Addon_Hour_Info()
+{
+
+	if (LevelMiner > 0) {
+	
+		if (B_GoldMob_Bestimmung() == TRUE) {
+			if (LevelMiner == 1) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 3);	
+				PrintScreen ("Odpad³y 3 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (10);
+			}
+			else if (LevelMiner == 2) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 5);	
+				PrintScreen ("Odpad³o 5 samorodków z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (25);
+			}
+			else if (LevelMiner == 3) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 7);	
+				PrintScreen ("Odpad³y 7 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (50);
+			};
+		}
+		else {
+			PrintScreen ("Nic nie zosta³o.", -1, -1, FONT_ScreenSmall, 2);	
+			B_ENDPRODUCTIONDIALOG ();
+			};
+	}
+	else {
+	PrintScreen ("Nie znasz siê na górnictwie!", -1, -1, FONT_ScreenSmall, 2);	
+	B_ENDPRODUCTIONDIALOG ();
+	};
+
+};
+
+//*******************************************************
+//	GoldhackenBrudne
+//*******************************************************
+INSTANCE PC_GoldhackenBrudne_Addon_Hour (C_Info)
+{
+	npc				= PC_Hero;
+	nr				= 2;
+	condition		= PC_GoldhackenBrudne_Addon_Hour_Condition;
+	information		= PC_GoldhackenBrudne_Addon_Hour_Info;
+	permanent		= TRUE;
+	description		= "Od³up samorodki razem z glin¹."; 
+};
+
+FUNC INT PC_GoldhackenBrudne_Addon_Hour_Condition ()
+{
+	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_GOLDHACKEN)
+	&& (MozeszKopacBrudneSamorodki >= 1) && (MozeszKopacBrudneSamorodki < 5)
+	{	
+		return TRUE;
+	};
+};
+
+FUNC VOID PC_GoldhackenBrudne_Addon_Hour_Info()
+{
+
+	if (LevelMiner > 0) {
+		
+		if (B_GoldMob_Bestimmung() == TRUE) {
+
+			MozeszKopacBrudneSamorodki = MozeszKopacBrudneSamorodki + 1;
+			
+			if (LevelMiner == 1) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 3);	
+				PrintScreen ("Odpad³y 3 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (10);
+			}
+			else if (LevelMiner == 2) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 5);	
+				PrintScreen ("Odpad³o 5 samorodków z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (25);
+			}
+			else if (LevelMiner == 3) {
+				CreateInvItems (hero, ItMi_GoldNugget_Addon, 7);	
+				PrintScreen ("Odpad³y 7 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
+				B_GivePlayerXP (50);
+			};
+		}
+		else {
+			PrintScreen ("Nic nie zosta³o.", -1, -1, FONT_ScreenSmall, 2);	
+			B_ENDPRODUCTIONDIALOG ();
+			};
+	}
+	else {
+	PrintScreen ("Nie znasz siê na górnictwie!", -1, -1, FONT_ScreenSmall, 2);	
+	B_ENDPRODUCTIONDIALOG ();
+	};
+
+};

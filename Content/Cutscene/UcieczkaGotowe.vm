@@ -1,0 +1,14 @@
+[BEGINVDF]
+Comment=
+BaseDir=C:\Program Files (x86)\JoWood\Gothic II Zlota Edycja
+VDFName=C:\Program Files (x86)\JoWood\Gothic II Zlota Edycja\Data\modvdf\Ucieczka.mod
+[FILES]
+[EXCLUDE]
+[INCLUDE]
+_Work\data\Scripts\_compiled\* -r
+_Work\data\Scripts\Content\Cutscene\OU.BIN -r
+_Work\data\Worlds\OldWorld\OldWorld.ZEN -r
+_Work\data\Textures\_compiled\* -r
+_Work\data\Anims\_compiled\* -r
+_Work\data\Meshes\_compiled\* -r
+[ENDVDF]

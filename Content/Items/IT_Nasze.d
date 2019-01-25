@@ -466,6 +466,9 @@ INSTANCE ItNa_Wiernosc (C_Item)
 	visual 				=	"ItMi_SilverRing.3DS";
 	material 			=	MAT_METAL;
 
+	on_equip			=	Equip_ItNa_Wiernosc;
+	on_unequip			=	UnEquip_ItNa_Wiernosc;
+
 	description			= 	name;
 	
 	TEXT[5]				= 	NAME_Value;	
@@ -476,7 +479,22 @@ INSTANCE ItNa_Wiernosc (C_Item)
 	INV_ROTX				= INVCAM_X_RING_STANDARD;
 };
 
+func void Equip_ItNa_Wiernosc() {
 
+	if (self.guild == GIL_OUT) {
+		// TODO bogu:
+		// jakis wld play effect (magic star?)
+		// ³uki +5
+	};
+};
+
+func void UnEquip_ItNa_Wiernosc() {
+
+	if (self.guild == GIL_OUT) {
+		// TODO bogu:
+		// ³uki -5
+	};
+};
 
 
 

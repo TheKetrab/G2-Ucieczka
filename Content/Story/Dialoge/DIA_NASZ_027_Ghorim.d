@@ -145,7 +145,6 @@ func void DIA_NASZ_027_Ghorim_Ksiazka_Info ()
 	B_LogEntry (TOPIC_Ghorim_ksiega, "Ghorim wydawa³ siê byæ zaskoczony, ¿e znalaz³em tê ksi±¿kê. Có¿... Ja sam by³em zaskoczony, ¿e j± znalaz³em.");
 	B_GivePlayerXP(500);
 
-	ff_applyonceext(PierscienLog,2000,-1);
 
 	GhorimRediToTelepport = TRUE;
 };

@@ -115,32 +115,32 @@ func void Inv_Draw_Hook()
 
 func void RemoveChestKeyOnExit()
 {
-	if(MEM_ReadInt(ESP+4) != MEM_ReadInt(_hero) || !Hlp_Is_oCMobContainer(ECX) || !Hlp_Is_oCMobDoor(ECX)){
-		return;
-	};
-	
-	var oCMobLockable m; m = _^(ECX);
-	
-	if(m._oCMobInter_bitfield = m._oCMobInter_bitfield  |  oCMobLockable_bitfield_locked) {
-		return;
-	};
-	
-	if(STR_LEN(m._oCMobLockable_keyInstance))
-	{
-		var int key; key = MEM_FindParserSymbol(STR_Upper(m._oCMobLockable_keyInstance));
-		
-		if(Npc_HasItems(hero,key))
-		{
-			/*if(MEM_ReadInt(key+348)/*oCItem->flags*//* & ITEM_MISSION){
-				return;
-			};*/
-			Npc_RemoveInvItems(hero,key,Npc_HasItems(hero,key));
-			PrintS_Ext(ConcatStrings("Usunięto: ", m._oCMobLockable_keyInstance), RGBA(255,255,255,0));
-			//m._oCMobLockable_keyInstance = "";
-			Release(key);
-		};
-	};
-};
+    if(MEM_ReadInt(ESP+4) != MEM_ReadInt(_hero) || !Hlp_Is_oCMobContainer(ECX) || !Hlp_Is_oCMobDoor(ECX)){
+        return;
+    };
+    
+    var oCMobLockable m; m = _^(ECX);
+    
+    if(m._oCMobInter_bitfield = m._oCMobInter_bitfield  |  oCMobLockable_bitfield_locked) {
+        return;
+    };
+    
+    if(STR_LEN(m.keyInstance))
+    {
+        var int key; key = MEM_FindParserSymbol(STR_Upper(m.keyInstance));
+        
+        if(Npc_HasItems(hero,key))
+        {
+            /*if(MEM_ReadInt(key+348)/*oCItem->flags*//* & ITEM_MISSION){
+                return;
+            };*/
+            Npc_RemoveInvItems(hero,key,Npc_HasItems(hero,key));
+            PrintS_Ext(ConcatStrings("Usunięto: ", m.keyInstance), RGBA(255,255,255,0));
+            //m._oCMobLockable_keyInstance = "";
+            Release(key);
+        };
+    };
+}; 
 
 func void SaveDis()
 {

@@ -1,3 +1,22 @@
+
+func void Kirgo_Make_Potion() {
+	AI_StandUp (NASZ_220_Kirgo);
+	AI_UseMob (NASZ_220_Kirgo, "LAB", 1);
+	AI_WAIT(NASZ_220_Kirgo,4); //4 = sekundy
+	AI_UseMob (NASZ_220_Kirgo, "LAB", -1);
+	AI_TurnToNPC(NASZ_220_Kirgo,hero);
+	AI_GoToNPC(NASZ_220_Kirgo,hero);
+};
+
+func void Kirgo_Read_BookStand() {
+	AI_StandUp (NASZ_220_Kirgo);
+	AI_UseMob (NASZ_220_Kirgo, "BOOK", 1);
+	AI_WAIT(NASZ_220_Kirgo,4); //4 = sekundy
+	AI_UseMob (NASZ_220_Kirgo, "BOOK", -1);
+	AI_TurnToNPC(NASZ_220_Kirgo,hero);
+	AI_GoToNPC(NASZ_220_Kirgo,hero);
+};
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -80,9 +99,10 @@ FUNC VOID DIA_NASZ_220_Kirgo_kupic_Info()
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_kupic_15_00"); //Mogê coœ u ciebie kupiæ?
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_kupic_55_01"); //Oczywiœcie. Oferujê mikstury uzdrawiaj¹ce i wspomagaj¹ce zdolnoœci magiczne.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_kupic_55_02"); //Jeœli chcesz, mogê uwarzyæ dla ciebie jakieœ mikstury. Ale musisz za³atwiæ mi sk³adniki. Policzê ci wtedy trochê taniej, ni¿ jakbyœ kupowa³.
-
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_kupic_55_03"); //Ale od razu mówiê: Nie spodziewaj siê, ¿e poradzê sobie ze wszystkim. Gdy raz próbowa³em sporz¹dziæ eliksir si³y, niemal ca³y siê poparzy³em! Cholerny smoczy korzeñ...
+	
 	Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);
-	B_LogEntry (TOPIC_MysliwiTrader,"Kirgo sprzedaje mikstury i magiczne zwoje. Mo¿e te¿ dla mnie uwarzyæ mikstury, ale pod warunkiem przyniesienia mu w³aœciwych sk³adników.");	
+	B_LogEntry (TOPIC_MysliwiTrader,"Kirgo sprzedaje mikstury i magiczne zwoje. Mo¿e te¿ dla mnie uwarzyæ niektóre mikstury, ale pod warunkiem przyniesienia mu w³aœciwych sk³adników.");	
 };
 
 //*********************************************************************
@@ -458,6 +478,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_aranok_Info()
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_aranok_15_00"); //Mam korzenie.
 	B_giveinvitems (other, self, ItNa_ZabiKorzen, 8);
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_aranok_55_01"); //Daj mi sekundkê.
+	Kirgo_Make_Potion();
 	Createinvitems (self, ItNa_Aran_Lekarstwo, 1);
 	B_giveinvitems (self, other, ItNa_Aran_Lekarstwo, 1);
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_aranok_55_02"); //Proszê.
@@ -531,7 +552,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_HelpWrzod_Info()
 	AI_Output (other, self,"DIA_NASZ_220_Kirgo_HelpWrzod_55_05"); //Co ci przynieœæ?
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_HelpWrzod_55_06"); //Poczekaj, muszê znaleŸæ przepis.
 	//idzie szukaæ przepisu
-	AI_UseMob (self, "BOOK", 1);
+	Kirgo_Read_BookStand();
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_HelpWrzod_55_07"); //Dobra, s³uchaj: 5 piekielników, rum, dwa rdesty polne i bry³ka rudy.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_HelpWrzod_55_08"); //Mam nadziejê, ¿e to pomo¿e. Wszystkich wykañczaj¹ te wrzaski.
 
@@ -574,8 +595,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_Info()
 	B_GiveInvItems (self, other, ItPl_Temp_Herb, 2);
 	B_GiveInvItems (self, other, ItMi_Nugget, 1);
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_55_01"); //Dobra, mikstura zaraz bêdzie gotowa.
-	//u¿ywa sto³u alchemicznego
-	AI_UseMob (self, "LAB", 1);	
+	Kirgo_Make_Potion();
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_55_02"); //Proszê. Zobaczymy, mo¿e siê uda.
 	CreateInvItems (self, ItNa_Wrzod_Lekarstwo, 1);
 	B_GiveInvItems (self, other, ItNa_Wrzod_Lekarstwo, 1);
@@ -672,6 +692,10 @@ FUNC VOID DIA_NASZ_220_Kirgo_TEACH_MANA_5()
 //*********************************************************************
 //	Info MakePotion
 //*********************************************************************
+func void KirgoSay_ProszeBardzo() {
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_KirgoSay_ProszeBardzo_15_00"); //Proszê bardzo.
+};
+
 INSTANCE DIA_NASZ_220_Kirgo_MakePotion   (C_INFO)
 {
 	npc         = NASZ_220_Kirgo;
@@ -713,12 +737,16 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Info()
 		if (npc_hasitems (other, ItMi_Gold) >=400) && (npc_hasitems (other, ItPl_Health_Herb_01) >=6) && (npc_hasitems (other, ItPl_Dex_Herb_01) >=1) && (npc_hasitems (other, ItPl_Temp_Herb) >=1) && (npc_hasitems (other, ItAt_ShadowHorn) >=1) && (WillKnowUroboros2 == TRUE) {
 			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Cieñ cieniostwora: 6 roœlin leczniczych, goblinie jagody, rdest polny, róg cieniostwora, 400 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_CienCieniostwora);
 		};
+
+		/* -- bez eliksirow permanentnych
 		if (npc_hasitems (other, ItMi_Gold) >=750) && (npc_hasitems (other, ItPl_Strength_Herb_01) >=1) && (npc_hasitems (other, ItPl_Perm_Herb) >=1) {
 			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Eliksir si³y: 1 smoczy korzeñ, 1 szczaw królewski, 750 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Sila);
 		};
 		if (npc_hasitems (other, ItMi_Gold) >=750) && (npc_hasitems (other, ItPl_Dex_Herb_01) >=1) && (npc_hasitems (other, ItPl_Perm_Herb) >=1) {
 			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Eliksir zrêcznoœci: 1 porcja goblinich jagód, 1 szczaw królewski, 750 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Zrecznosc);
 		};
+		*/
+		
 		if (npc_hasitems (other, ItMi_Gold) >=40) && (npc_hasitems (other, ItPl_Mana_Herb_03) >=2) && (npc_hasitems (other, ItPl_Temp_Herb) >=1) {
 			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Eliksir many: 2 ogniste korzenie, 1 rdest polny, 40 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Mana3);
 		};
@@ -735,7 +763,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Info()
 			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Ekstrakt leczniczy: 2 ziela lecznicze, 1 rdest polny, 25 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Health2);
 		};
 		if (npc_hasitems (other, ItMi_Gold) >=15) && (npc_hasitems (other, ItPl_Health_Herb_01) >=2) && (npc_hasitems (other, ItPl_Temp_Herb) >=1) {
-			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Esencjê lecznic¹: 2 roœliny lecznicze, 1 rdest polny, 15 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Health1);
+			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Esencjê lecznicz¹: 2 roœliny lecznicze, 1 rdest polny, 15 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Health1);
 		};
 
 };
@@ -763,7 +791,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_KropleDuszy()
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 	B_GiveInvItems (other, self, ItMi_Nugget, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_KropleDuszy_15_03"); //Proszê bardzo.
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItNa_KropleDuszy, 1);
 	B_GiveInvItems (self, other, ItNa_KropleDuszy, 1);
 
@@ -794,7 +823,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_ZmoraGwardzisty()
 	B_GiveInvItems (other, self, ItMi_GoldNugget_Addon, 1);
 	B_GiveInvItems (other, self, ItMi_Pitch, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_ZmoraGwardzisty_15_04"); //Proszê bardzo.
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItNa_ZmoraGwardzisty, 1);
 	B_GiveInvItems (self, other, ItNa_ZmoraGwardzisty, 1);
 
@@ -825,7 +855,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_RykSmoka()
 	B_GiveInvItems (other, self, ItAt_WaranFiretongue, 1);
 	B_GiveInvItems (other, self, ItMi_Coal, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_04"); //Proszê bardzo.
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItNa_RykSmoka, 1);
 	B_GiveInvItems (self, other, ItNa_RykSmoka, 1);
 
@@ -855,7 +886,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Uspokajajaca()
 	B_GiveInvItems (other, self, ItPl_Speed_Herb_01, 1);
 	B_GiveInvItems (other, self, ItMi_Sulfur, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Uspokajajaca_15_03"); //Proszê bardzo.
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItNa_MiksturaUspokajajaca, 1);
 	B_GiveInvItems (self, other, ItNa_MiksturaUspokajajaca, 1);
 
@@ -887,7 +919,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_CienCieniostwora()
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 	B_GiveInvItems (other, self, ItAt_ShadowHorn, 1);
 	
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_CienCieniostwora_15_04"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItNa_CienCieniostwora, 1);
 	B_GiveInvItems (self, other, ItNa_CienCieniostwora, 1);
 
@@ -905,7 +938,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Sila()
 	B_GiveInvItems (other, self, ItPl_Strength_Herb_01, 1);
 	B_GiveInvItems (other, self, ItPl_Perm_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Sila_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Perm_STR, 1);
 	B_GiveInvItems (self, other, ItPo_Perm_STR, 1);
 
@@ -923,7 +957,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Zrecznosc()
 	B_GiveInvItems (other, self, ItPl_Dex_Herb_01, 1);
 	B_GiveInvItems (other, self, ItPl_Perm_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Zrecznosc_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Perm_Dex, 1);
 	B_GiveInvItems (self, other, ItPo_Perm_Dex, 1);
 
@@ -940,7 +975,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Mana3()
 	B_GiveInvItems (other, self, ItPl_Mana_Herb_03, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Mana3_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Mana_03, 1);
 	B_GiveInvItems (self, other, ItPo_Mana_03, 1);
 
@@ -958,7 +994,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Mana2()
 	B_GiveInvItems (other, self, ItPl_Mana_Herb_02, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Mana2_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Mana_02, 1);
 	B_GiveInvItems (self, other, ItPo_Mana_02, 1);
 
@@ -976,7 +1013,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Mana1()
 	B_GiveInvItems (other, self, ItPl_Mana_Herb_01, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Mana1_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Mana_01, 1);
 	B_GiveInvItems (self, other, ItPo_Mana_01, 1);
 
@@ -994,7 +1032,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Health3()
 	B_GiveInvItems (other, self, ItPl_Health_Herb_03, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Health3_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Health_03, 1);
 	B_GiveInvItems (self, other, ItPo_Health_03, 1);
 
@@ -1012,7 +1051,8 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Health2()
 	B_GiveInvItems (other, self, ItPl_Health_Herb_02, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Health2_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Health_02, 1);
 	B_GiveInvItems (self, other, ItPo_Health_02, 1);
 
@@ -1030,12 +1070,13 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_Health1()
 	B_GiveInvItems (other, self, ItPl_Health_Herb_01, 2);
 	B_GiveInvItems (other, self, ItPl_Temp_Herb, 1);
 
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_Health1_15_01"); //Proszê bardzo. 
+	Kirgo_Make_Potion();
+	KirgoSay_ProszeBardzo();
 	CreateInvItems (self, ItPo_Health_01, 1);
 	B_GiveInvItems (self, other, ItPo_Health_01, 1);
 
 		if (npc_hasitems (other, ItMi_Gold) >=15) && (npc_hasitems (other, ItPl_Health_Herb_01) >=2) && (npc_hasitems (other, ItPl_Temp_Herb) >=1) {
-			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Esencjê lecznic¹: 2 roœliny lecznicze, 1 rdest polny, 15 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Health1);
+			Info_AddChoice	  (DIA_NASZ_220_Kirgo_MakePotion, "Esencjê lecznicz¹: 2 roœliny lecznicze, 1 rdest polny, 15 szt. z³ota", DIA_NASZ_220_Kirgo_MakePotion_Health1);
 		};
 
 };

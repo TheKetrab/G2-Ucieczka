@@ -793,6 +793,7 @@ func void InsertUndeadsInCastle() {
 	
 };
 
+var int MonastirTeleportOneTime;
 func void MonastirTeleportTickTock() {
 
 	if (Npc_GetDistToWP(hero,"OC_CENTER_04") < 3000) 

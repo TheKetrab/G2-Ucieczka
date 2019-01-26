@@ -5441,6 +5441,38 @@ INSTANCE ItNa_Snaf_Przepis (C_Item)
 
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_FreeMine (C_Item) // TODO wstawiæ do gdzieœ u ³owców
+{
+	name 				=	"Nuty";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_FreeMine;
+	scemeName			=	"MAP";
+	description			= 	name;
+};
+func void Use_FreeMine  ()
+{   
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "FreeMine.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_AyanList (C_Item)
 {
 	name 				=	"List od Ayana";

@@ -38,7 +38,6 @@ var int SkeletonJenkinsOneTime;
 var int WillUderzylBestieSwiatynnaTeleportOneTime;
 var int BestiaSwiatynnaSec;
 var int NieznajomySiePojawiaMattOneTime;
-var int MonastirTeleportOneTime;
 
 //var int StylWalki;
 //var int UbranaTrojka;

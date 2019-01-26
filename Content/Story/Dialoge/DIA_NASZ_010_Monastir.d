@@ -793,6 +793,28 @@ func void InsertUndeadsInCastle() {
 	
 };
 
+func void MonastirTeleportTickTock() {
+
+	if (Npc_GetDistToWP(hero,"OC_CENTER_04") < 3000) 
+	&& (Npc_KnowsInfo(hero,DIA_NASZ_010_Monastir_IHaveKilled))
+	&& (MonastirTeleportOneTime == FALSE) {
+		
+		MonastirTeleportOneTime = TRUE;
+		ff_remove(MonastirTeleportTickTock);
+		
+		AI_Teleport(NASZ_010_Monastir,"OC_CENTER_04");
+		Wld_PlayEffect("spellFX_Teleport_RING",NASZ_010_Monastir,NASZ_010_Monastir,0,0,0,FALSE);
+		Snd_Play ("MFX_TELEPORT_CAST");
+		
+		B_StartOtherRoutine(NASZ_010_Monastir,"FollowInZamek");
+		Npc_ClearAIQueue(NASZ_010_Monastir);
+	
+		Npc_ExchangeRoutine(NASZ_010_Monastir,"FollowInZamek");
+		Npc_ExchangeRoutine(NASZ_110_Keroloth,"FollowInZamek");
+		
+	};
+};
+
 //*********************************************************************
 //	Info IHaveKilled
 //*********************************************************************
@@ -825,6 +847,7 @@ FUNC VOID DIA_NASZ_010_Monastir_IHaveKilled_Info()
 	
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Mag da³ mi mapê, na której zaznaczy³ miejsca przepe³nione magiczn¹ energi¹. Powinienem na nie uwa¿aæ, gdy¿ w³aœnie tam mog¹ pojawiæ siê demony i zombie. Powinienem poinformowaæ Kerolotha o ca³ej akcji z kapliczk¹.");
 	
+	FF_ApplyOnceExt (MonastirTeleportTickTock, 3000, -1); //raz na 3s
 	InsertUndeadsInCastle();
 };
 

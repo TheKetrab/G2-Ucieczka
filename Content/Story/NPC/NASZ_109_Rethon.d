@@ -78,8 +78,8 @@ FUNC VOID Rtn_Arena_109 ()
 FUNC VOID Rtn_BeforeRethonKurganFight_109 ()
 {
 	// TODO smalltalk with kurgan
-	TA_Stand_Guarding		(08,00,22,00,"NASZ_LOWCY_ARENA_06");
-	TA_Stand_Guarding		(22,00,08,00,"NASZ_LOWCY_ARENA_06");
+	TA_Smalltalk		(08,00,22,00,"NASZ_LOWCY_ARENA_06");
+	TA_Smalltalk		(22,00,08,00,"NASZ_LOWCY_ARENA_06");
 
 };
 

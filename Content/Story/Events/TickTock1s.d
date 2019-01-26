@@ -1347,24 +1347,6 @@ func void _TickTock_1s()
 	
 	};
 	
-	// TODO bogu: dodaj to cale ff_applyonce zamiast tego ifa
-	if (Npc_GetDistToWP(hero,"OC_CENTER_04") < 3000) 
-	&& (Npc_KnowsInfo(hero,DIA_NASZ_010_Monastir_IHaveKilled))
-	&& (MonastirTeleportOneTime == FALSE) {
-		
-		MonastirTeleportOneTime = TRUE;
-		
-		AI_Teleport(NASZ_010_Monastir,"OC_CENTER_04");
-		Wld_PlayEffect("spellFX_Teleport_RING",NASZ_010_Monastir,NASZ_010_Monastir,0,0,0,FALSE);
-		Snd_Play ("MFX_TELEPORT_CAST");
-		
-		B_StartOtherRoutine(NASZ_010_Monastir,"FollowInZamek");
-		Npc_ClearAIQueue(NASZ_010_Monastir);
-	
-		Npc_ExchangeRoutine(NASZ_010_Monastir,"FollowInZamek");
-		Npc_ExchangeRoutine(NASZ_110_Keroloth,"FollowInZamek");
-		
-	};
 	
 	if (Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) && (WillKnowAboutTwierdza == FALSE) {
 	WillKnowAboutTwierdza = TRUE;

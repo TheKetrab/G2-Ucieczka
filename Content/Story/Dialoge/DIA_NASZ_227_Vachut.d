@@ -687,7 +687,9 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_03"); //Utrzymuj wyprostowan¹ pozycjê podczas biegu. Lepiej napêdzisz kwriobieg.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_04"); //Wypij te¿ ten wywar. Wzmocni ciê.
 
-			// TODO: jaki wywar?
+			Createinvitems(self,ItNa_WywarVachuta,1);
+			B_GiveInvItems(self,other,ItNa_WywarVachuta,1);
+			AI_UseItem(other,ItNa_WywarVachuta);
 			
 			B_GiveInvItems (other, self, ItMi_Gold, 2000);	
 			level_regeneracji = 3;

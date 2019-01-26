@@ -7,7 +7,7 @@ instance NASZ_029_Lukor (Npc_Default)
 	guild 		= GIL_MEATBUG;
 	id 			= 29;
 	voice 		= 5;
-	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
+	flags       = 2;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	
 	// ------ Attribute ------

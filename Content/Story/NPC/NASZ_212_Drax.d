@@ -26,6 +26,7 @@ instance NASZ_212_Drax (Npc_Default)
 	// ------ Inwentarz ------
 	B_CreateAmbientInv (self);
 	CreateInvItems (self, ItRw_Arrow,25);
+	CreateInvItems (self, ItNa_Przepis_PotrawkaZeScierwojada,1);
 	
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FatBald.", Face_N_Normal_Blade, BodyTex_N, ITNA_OUT_L);		

@@ -10,6 +10,7 @@ FUNC VOID B_GiveTradeInv_Danny (var C_NPC slf)
 		CreateInvItems (slf,ItFo_Fish,18);
 		CreateInvItems (slf,ItNa_Losos,12);
 		CreateInvItems (slf,ItFo_FishSoup,14);
+		CreateInvItems (slf,ItNa_Przepis_ZupaRybna,1);
 
 		Danny_ItemsGiven_Chapter_1 = TRUE;
 	};

@@ -2136,22 +2136,22 @@ INSTANCE Recepture (C_Item)
 
 FUNC VOID Use_AllReceptures ()
 {
-	CreateInvItems (hero,ItNa_Przepis_SerowyGulasz, 1);				// | TODO (spacer) - na stole u Gomeza/Garonda
-	CreateInvItems (hero,ItNa_Przepis_ZupaZGrzybowKopalnianych, 1);	// | TODO (spacer) - w skrzyni w kopalni z Draalem
-	CreateInvItems (hero,ItNa_Przepis_Orkowy1, 1);					// | TODO (spacer) -> za palisada w orkowym obozie na plazy w namiocie jakiegos szamana kucharza
+	CreateInvItems (hero,ItNa_Przepis_SerowyGulasz, 1);				// | na pó³ce w kuchni Gomeza/Garonda
+	CreateInvItems (hero,ItNa_Przepis_ZupaZGrzybowKopalnianych, 1);	// | w skrzyni w kopalni z Draalem
+	CreateInvItems (hero,ItNa_Przepis_Orkowy1, 1);					// | za palisada w orkowym obozie na plazy w namiocie
 	CreateInvItems (hero,ItNa_Przepis_Orkowy2, 1);					// | przet³umaczy go Rudolf
 	CreateInvItems (hero,ItNa_Przepis_UdziecZDzikaPoLowiecku, 1);	// | daje Gerold w nagrodê za misjê 'g³ód'
-	CreateInvItems (hero,ItNa_Przepis_ZupaMleczna, 1);				// | TODO (spacer) w kufrze u ³owców
-	CreateInvItems (hero,ItNa_Przepis_ZupaGrzybowa, 1);				// | TODO (spacer) w kufrze u myœliwych
-	CreateInvItems (hero,ItNa_Przepis_ZupaZDuzychGrzybow, 1);		// | TODO (spacer) w kufrze w obozie przed kopalni¹
-	CreateInvItems (hero,ItNa_Przepis_ZupaJarzynowaZJagodami, 1);	// | TODO (spacer) w kufrze tam gdzie siedzi Cipher i Rod w G2
-	CreateInvItems (hero,ItNa_Przepis_ZupaSerowa, 1);				// | TODO (spacer) w kufrze w jaskini Phill-gobliny
-	CreateInvItems (hero,ItNa_Przepis_PrzysmakMysliwych, 1);		// | KAP1 - daje go Aran za misjê 'Towarzystwo'
-	CreateInvItems (hero,ItNa_Przepis_KompotOwocowy, 1);			// | TODO (spacer) w skrzyni u bandytów
-	CreateInvItems (hero,ItNa_Przepis_ZupaRybna, 1);				// | TODO sprzedaje Danny
-	CreateInvItems (hero,ItNa_Przepis_GulaszMiesny, 1);				// | TODO (spacer) w skrzyni w obozie wypadowym
-	CreateInvItems (hero,ItNa_Przepis_PotrawkaZeScierwojada, 1);	// | TODO - ma w ekwipunku Drax
-	CreateInvItems (hero,ItNa_Przepis_ZupaPiwna, 1);				// | TODO (spacer) - w skrzyni Jeremiasza
+	CreateInvItems (hero,ItNa_Przepis_ZupaMleczna, 1);				// | w kufrze Udara
+	CreateInvItems (hero,ItNa_Przepis_ZupaGrzybowa, 1);				// | w kufrze Louisa
+	CreateInvItems (hero,ItNa_Przepis_ZupaZDuzychGrzybow, 1);		// | w kufrze w obozie przed kopalni¹
+	CreateInvItems (hero,ItNa_Przepis_ZupaJarzynowaZJagodami, 1);	// | w kufrze tam gdzie siedzi Cipher i Rod w G2
+	CreateInvItems (hero,ItNa_Przepis_ZupaSerowa, 1);				// | w kufrze w jaskini Phill-gobliny
+	CreateInvItems (hero,ItNa_Przepis_PrzysmakMysliwych, 1);		// | daje go Aran za misjê 'Towarzystwo'
+	CreateInvItems (hero,ItNa_Przepis_KompotOwocowy, 1);			// | w skrzyni u bandytów
+	CreateInvItems (hero,ItNa_Przepis_ZupaRybna, 1);				// | sprzedaje Danny
+	CreateInvItems (hero,ItNa_Przepis_GulaszMiesny, 1);				// | w skrzyni w obozie wypadowym
+	CreateInvItems (hero,ItNa_Przepis_PotrawkaZeScierwojada, 1);	// | ma w ekwipunku Drax
+	CreateInvItems (hero,ItNa_Przepis_ZupaPiwna, 1);				// | w skrzyni Jeremiasza
 
 };
 
@@ -4011,6 +4011,37 @@ FUNC VOID Use_ItNa_KsiegaBosow()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+// TODO uroboros:
+// kazdy ma miec imie, po otwarciu wszystkich 6 ksiazek sie pojawiaja (jako szkielety z imieniami) i trzeba ich pozabijac
+
+// wlasciciel 'n' napisa³ przepis 'n+1'
+//            | w³aœciciel	| gdzie?								| przepis na:	
+// Uroboros 1 | Dairick		| nad kopalni¹							| ---
+// Uroboros 2 | Hyglas		| pod mostem pod rockcamp				| Cieñ cieniostwora
+// Uroboros 3 | Karrok		| na szczycie wodospadow (najpierw		| Lekarstwo uspokajaj¹ce
+//							  tp za jeziorkiem xardasa)				| 
+// Uroboros 4 | Imonez		| w orkowej swiatyni (bagienny smok)	| Ryk smoka
+// Uroboros 5 | Kalom		| na pietrze wiezy mgiel				| Zmora gwardzisty
+// Uroboros 6 | ---			| w jaskini Cor Kaloma					| Krople duszy
+
+
+//
+//
+//
+// kto napisal strone L
+// |kto napisal strone R
+// ||
+// vv
+// 12 13 24 35 45 55
+// LR|LR|LR|LR|LR|LR
+// -- -- -- -- -- --
+// 1  2  3  4  5  5
+// ^
+// kto ukryl ksiege
+
+
+
+
 INSTANCE ItNa_Uroboros1 (C_ITEM) 
 {	
 	name 					=	"Stara ksiêga";
@@ -4048,7 +4079,7 @@ func void Use_Uroboros1 ()
 		nDocID = 	Doc_Create		()			  ;								// DocManager 
 					Doc_SetPages	( nDocID,  2 );                         //wieviel Pages
 					Doc_SetPage 	( nDocID,  0, "Book_Brown_L.tga"  , 0 	); // VARIATIONEN: BOOK_BROWN_L.tga , BOOK_MAGE_L.tga , BOOK_RED_L.tga
-					Doc_SetPage 	( nDocID,  1, "Book_Brown_R.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
+					Doc_SetPage 	( nDocID,  1, "Book_Brown_RUroboros1.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
 					
 					//1.Seite
 					Doc_SetFont 	( nDocID,  -1, FONT_Book	   			); 	// -1 -> all pages 
@@ -4056,17 +4087,26 @@ func void Use_Uroboros1 ()
 					Doc_PrintLine	( nDocID,  0, ""					);										
 					Doc_PrintLines	( nDocID,  0, "Uroboros");
 					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "Jestem wiêŸniem w Kolonii Karnej. Zosta³em tu wrzucony za otrucie króla. Ju¿ jako m³okos zg³êbia³em tajniki alchemii. Alchemia to sztuka umo¿liwiaj¹ca przetrwanie. By³o nas piêciu takich - mistrzów alchemii. Ka¿dy z nas powierzy³ swój przepis kolejnemu, aby kiedyœ pojawi³ siê ktoœ, kto zbierze wszystkie i stanie siê naszym nastêpc¹.");
+					Doc_PrintLines	( nDocID,  0, "Jestem wiêŸniem w Kolonii Karnej. Zosta³em tu wrzucony za otrucie króla. Ju¿ jako m³okos zg³êbia³em tajniki alchemii, a jest to sztuka umo¿liwiaj¹ca przetrwanie. By³o nas piêciu takich 'mistrzów alchemii'. Ka¿dy z nas powierzy³ swój przepis kolejnemu, aby kiedyœ pojawi³ siê ktoœ, kto zbierze wszystkie i stanie siê naszym nastêpc¹.");
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLines	( nDocID,  0, "~Dairick");
 
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   );
 					Doc_PrintLine	( nDocID,  1, ""	);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Nie ma wody na pustyni."	);
-					Doc_PrintLines	( nDocID,  1, "Na pustyni nie ma nic."	);
-					Doc_PrintLines	( nDocID,  1, "Woda chowa skarby.");
-					Doc_PrintLines	( nDocID,  1, "WejdŸ w wodê.");
-					Doc_PrintLines	( nDocID,  1, "Most...");
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "Kirim tada Oija'K!");
+					Doc_PrintLines	( nDocID,  1, "~Mistrz Hyglas");
 					Doc_Show		( nDocID );
 					
 
@@ -4170,6 +4210,8 @@ func void Use_Uroboros2 ()
 {   
  	if (Use_Uroboros2_OneTime == FALSE)
  	{
+		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
 		B_LogEntry (TOPIC_Gildia_Alchemikow,"Mam przepis na miksturê znacznie wzmacniaj¹c¹ zrêcznoœæ! Oraz nastêpn¹ wskazówkê..."); 
 		Use_Uroboros2_OneTime = TRUE;
 		WillKnowUroboros2 = TRUE;
@@ -4182,7 +4224,7 @@ func void Use_Uroboros2 ()
 		nDocID = 	Doc_Create		()			  ;								// DocManager 
 					Doc_SetPages	( nDocID,  2 );                         //wieviel Pages
 					Doc_SetPage 	( nDocID,  0, "Book_Brown_L.tga"  , 0 	); // VARIATIONEN: BOOK_BROWN_L.tga , BOOK_MAGE_L.tga , BOOK_RED_L.tga
-					Doc_SetPage 	( nDocID,  1, "Book_Brown_R.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
+					Doc_SetPage 	( nDocID,  1, "Book_Brown_RUroboros2.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
 					
 					//1.Seite
 					Doc_SetFont 	( nDocID,  -1, FONT_Book	   			); 	// -1 -> all pages 
@@ -4199,15 +4241,27 @@ func void Use_Uroboros2 ()
 					Doc_PrintLines	( nDocID,  0, "-rdest polny");
 					Doc_PrintLines	( nDocID,  0, "-róg cieniostwora");
 					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "-Dairick");
 
 					
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Znajdziesz mnie na krañcu œwiata. Tam, gdzie S³oñce jest o 12."					);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "~Mistrz Hyglas");
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "A czym¿e jest mapa, która prowadzi donik¹d?"					);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLines	( nDocID,  1, "~Pan Karrok");
 					Doc_Show		( nDocID );
 					
 
@@ -4241,6 +4295,8 @@ func void Use_Uroboros3 ()
 {   
  	if (Use_Uroboros3_OneTime == FALSE)
  	{
+		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
 		B_LogEntry (TOPIC_Gildia_Alchemikow,"Kolejna ksiêga podaje przepis na lekarstwo uspokajaj¹ce mocniejsze ni¿ bagienne ziele."); 
 		Use_Uroboros3_OneTime = TRUE;
 		WillKnowUroboros3 = TRUE;
@@ -4269,14 +4325,16 @@ func void Use_Uroboros3 ()
 					Doc_PrintLines	( nDocID,  0, "-10 piekielników");
 					Doc_PrintLines	( nDocID,  0, "-zêbate ziele");
 					Doc_PrintLines	( nDocID,  0, "-siarka");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "~Mistrz Hyglas");
 	
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
-					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Nie dostaniesz mnie. Jestem za wysoko. Na orkowej budowli. Starej œwi¹tyni. Jestem w centrum. Szukaj w centrum."	);
+					Doc_PrintLines	( nDocID,  1, ""	); // TODO !!! dorobic orkowa swiatynie z G1, jakies przelaczniki + ten tekst poni¿ej
+					Doc_PrintLines	( nDocID,  1, "A czy pójdziesz za mn¹ do orkowej œwi¹tyni? 'Tej w centrum Górniczej Doliny? Tak, pójdê' - powiedzia³em, ale z przekonaniem, ¿e ju¿ nigdy stamt¹d nie wrócê."	);
 					Doc_PrintLine	( nDocID,  1, "");
-					Doc_PrintLines	( nDocID,  1, "~Pan Karrok");
+					Doc_PrintLines	( nDocID,  1, "~Imonez");
 					Doc_Show		( nDocID );
 					
 
@@ -4310,7 +4368,9 @@ func void Use_Uroboros4 ()
 {   
  	if (Use_Uroboros4_OneTime == FALSE)
  	{
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga czwarta podaje przepis na Ryk Smoka."); 
+		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
+		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga czwarta podaje przepis na 'ryk smoka'."); 
 		Use_Uroboros4_OneTime = TRUE;
 		WillKnowUroboros4 = TRUE;
 		PoznaneSekrety_Liczba = PoznaneSekrety_Liczba + 1;
@@ -4337,6 +4397,8 @@ func void Use_Uroboros4 ()
 					Doc_PrintLines	( nDocID,  0, "-3 du¿e grzyby");
 					Doc_PrintLines	( nDocID,  0, "-jêzyk ognistego jaszczura");
 					Doc_PrintLines	( nDocID,  0, "-wêgiel");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "~Pan Karrok");
 
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
@@ -4344,7 +4406,7 @@ func void Use_Uroboros4 ()
 					Doc_PrintLines	( nDocID,  1, ""	);
 					Doc_PrintLines	( nDocID,  1, "Wszed³em miêdzy mg³y. Rzuci³em ksi¹¿kê w górê."					);
 					Doc_PrintLine	( nDocID,  1, "");
-					Doc_PrintLines	( nDocID,  1, "~Imonez");
+					Doc_PrintLines	( nDocID,  1, "~Kalom");
 					Doc_Show		( nDocID );
 					
 
@@ -4379,7 +4441,9 @@ func void Use_Uroboros5 ()
 
  	{
 
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga pi¹ta podaje przepis na Zmorê Gwardzisty."); 
+		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
+		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga pi¹ta podaje przepis na 'zmorê gwardzisty'."); 
 		Use_Uroboros5_OneTime = TRUE;
 		WillKnowUroboros5 = TRUE;
 		PoznaneSekrety_Liczba = PoznaneSekrety_Liczba + 1;
@@ -4407,12 +4471,14 @@ func void Use_Uroboros5 ()
 					Doc_PrintLines	( nDocID,  0, "-2 rdesty polne");
 					Doc_PrintLines	( nDocID,  0, "-bry³ka z³ota");
 					Doc_PrintLines	( nDocID,  0, "-smo³a");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "~Imonez");
 
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Jedno, wielkie bagno."					);
+					Doc_PrintLines	( nDocID,  1, "Jedno wielkie bagno."					);
 					Doc_PrintLines	( nDocID,  1, "~Kalom");
 					Doc_Show		( nDocID );
 					
@@ -4449,7 +4515,9 @@ func void Use_Uroboros6 ()
 
  	{
 
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga szósta podaje przepis na Krople Duszy."); 
+		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
+		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
+		B_LogEntry (TOPIC_Gildia_Alchemikow,"Ksiêga szósta podaje przepis na 'krople duszy'."); 
 		Use_Uroboros6_OneTime = TRUE;
 		WillKnowUroboros6 = TRUE;
 		PoznaneSekrety_Liczba = PoznaneSekrety_Liczba + 1;
@@ -4470,18 +4538,20 @@ func void Use_Uroboros6 ()
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLines	( nDocID,  0, "A czy ty wiesz, jak nie umrzeæ?");
 					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "Krople Duszy:");
+					Doc_PrintLines	( nDocID,  0, "Krople duszy:");
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLines	( nDocID,  0, "-per³a");
 					Doc_PrintLines	( nDocID,  0, "-rum");
 					Doc_PrintLines	( nDocID,  0, "-rdest polny");
 					Doc_PrintLines	( nDocID,  0, "-bry³ka rudy");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "~Kalom");
 
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Nic nigdy siê nie koñczy. Jako ostatni z wielkich alchemików czujê siê najwiêkszy z nich."					);
+					Doc_PrintLines	( nDocID,  1, "Nic nigdy siê nie koñczy. Jako ostatni z wielkich alchemików czujê siê najwiêkszy z nich. Teraz, jako najpotê¿niejszy guru w Bractwie s³awi¹ mnie tytu³em:"					);
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "~Cor Kalom");
 					Doc_Show		( nDocID );
@@ -8148,6 +8218,26 @@ INSTANCE ItNa_PaczkaMalychGwozdzi (C_Item)
 	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
 };
 
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_WywarVachuta(C_Item)
+{
+	name 			=	"Wywar Vachuta";
+
+	mainflag 		=	ITEM_KAT_FOOD;
+	flags 			=	ITEM_MULTI;
+
+	value 			=	0;	
+
+	visual 			=	"ItMi_Rum_02.3ds"; 
+	material 		=	MAT_GLAS;
+	on_state[0]		=	UseJabol;
+	scemeName		=	"POTIONFAST";
+
+	description		= 	name;
+	
+};
+
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Jabol(C_Item)
 {
@@ -8172,6 +8262,7 @@ INSTANCE ItNa_Jabol(C_Item)
 	COUNT[5]		= 	Value_Grog;
 
 };
+
 func void UseJabol()
 {
 	if(Npc_IsPlayer(self))

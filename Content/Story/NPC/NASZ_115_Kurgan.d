@@ -59,9 +59,8 @@ FUNC VOID Rtn_Start_115()
 
 FUNC VOID Rtn_BeforeRethonKurganFight_115()
 {
-	// TODO smalltalk with Rethon
-	TA_Stand_Guarding	 	(08,00,23,00,"NASZ_LOWCY_ARENA_06");
-	TA_Stand_Guarding		(23,00,08,00,"NASZ_LOWCY_ARENA_06");
+	TA_Smalltalk	 	(08,00,23,00,"NASZ_LOWCY_ARENA_06");
+	TA_Smalltalk		(23,00,08,00,"NASZ_LOWCY_ARENA_06");
 };
 
 FUNC VOID Rtn_Arena_115()

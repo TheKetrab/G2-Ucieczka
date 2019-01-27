@@ -599,6 +599,20 @@ FUNC VOID DIA_NASZ_109_Rethon_FajkaStart_Info()
 
 };
 
+
+
+func int Npc_HasTabak(var c_npc slf) {
+// zwraca itemID tytoniu, który ma slf
+
+	if (Npc_HasItems(slf,ItMi_ApfelTabak)) { return ItMi_ApfelTabak; };
+	if (Npc_HasItems(slf,ItMi_PilzTabak)) { return ItMi_PilzTabak; };
+	if (Npc_HasItems(slf,ItMi_DoppelTabak)) { return ItMi_DoppelTabak; };
+	if (Npc_HasItems(slf,ItMi_Honigtabak)) { return ItMi_Honigtabak; };
+	if (Npc_HasItems(slf,ItMi_SumpfTabak)) { return ItMi_SumpfTabak; };
+
+	return -1;
+};
+
 //*********************************************************************
 //	Info FajkaEnd
 //*********************************************************************
@@ -616,7 +630,7 @@ FUNC INT DIA_NASZ_109_Rethon_FajkaEnd_Condition()
 {
 	if (npc_knowsinfo(other,DIA_NASZ_109_Rethon_FajkaStart))
 	&& (npc_hasitems(other,ItNa_Fajka) >=1)
-	// TODO && ma jakis tyton
+	&& (Npc_HasTabak(other) != -1) // ma jakis tyton
 	{
 		return TRUE;
 	};
@@ -624,10 +638,13 @@ FUNC INT DIA_NASZ_109_Rethon_FajkaEnd_Condition()
 
 FUNC VOID DIA_NASZ_109_Rethon_FajkaEnd_Info()
 {
+	var int tabakId; tabakId = Npc_HasTabak(other);
+
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaEnd_15_00"); //Znalaz³em fajkê i za³atwi³em odpowiedni tytoñ.
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_01"); //Niebywa³e! Masz fajkê? Nawet nie wiesz, jak bardzo siê cieszê!
 	
 	B_GiveInvItems(other,self,ItNa_Fajka,1);
+	B_GiveInvItems(other,self,tabakId,1);
 	B_UseItem(self,ItNa_Fajka);
 	
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_03"); //TODO nagroda

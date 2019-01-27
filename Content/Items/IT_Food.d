@@ -377,6 +377,7 @@ INSTANCE ItFo_FishSoup (C_Item)
 
 	FUNC VOID Use_FishSoup()
 	{
+		Eat_Special_Dish(ItFo_FishSoup,self);
 		PercentHealSelf(12,ATR_HITPOINTS);
 	};
 

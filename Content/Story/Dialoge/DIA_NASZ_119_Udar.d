@@ -753,6 +753,8 @@ FUNC INT DIA_NASZ_119_Udar_PatrolDJGStart_Condition()
 
 FUNC VOID DIA_NASZ_119_Udar_PatrolDJGStart_Info()
 {
+	// TODO: trialog
+
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_00"); //Jak to jeszcze nie powrócili?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_01"); //Niech to szlag, je¿eli dopadli ich ci przeklêci orkowie, nasz ca³y plan mo¿e legn¹æ w gruzach. Odmaszeruj ¿o³nierzu, muszê pomyœleæ.
 	// TODO: AI_GOTOWP

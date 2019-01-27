@@ -161,7 +161,7 @@ INSTANCE DIA_NASZ_226_Snaf_PieczysteDone   (C_INFO)
 FUNC INT DIA_NASZ_226_Snaf_PieczysteDone_Condition()
 {
 	if (PieczysteSkladnikiPrzyniesione == TRUE)
-	&& TimeIsUp(-1,2,SnafPieczysteDay,SnafPieczysteHour) // todo sprawdzic czy dziala w dwie godziny
+	&& TimeIsUp(-1,2,SnafPieczysteDay,SnafPieczysteHour)
 	{
 		return TRUE;
 	};
@@ -374,7 +374,6 @@ FUNC INT DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Condition()
 	};
 };
 
-// TODO
 FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_15_00"); //Ugotujesz coœ dla mnie?
@@ -472,16 +471,19 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych ()
 var int SnafZupaZOrkowegoPrzepisuOneTime;
 FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu ()
 {
-	if (true) // todo sk³adniki
-	//if(npc_hasitems(other, ItNa_KopalnianyGrzyb) >= 6)
-	//&&(npc_hasitems(other, ItFo_Bread) >= 1)
-	//&&(npc_hasitems(other, ItPl_Health_Herb_03) >= 4)
-	//&&(npc_hasitems(other, ItAt_Sting) >= 1)
+	if (npc_hasitems(other, ItFoMutton) >= 3)
+	&& (npc_hasitems(other, ItAt_Meatbugflesh) >= 5)
+	&& (npc_hasitems(other, ItFo_Apple) >= 2)
+	&& (npc_hasitems(other, ItFo_Booze) >= 1)
+	&& (npc_hasitems(other, ItNa_Losos) >= 1)
+	&& (npc_hasitems(other, ItNa_FriedMushroom_02) >= 1)
 	{
-		//B_GiveInvItems (other, self, ItNa_KopalnianyGrzyb, 6);
-		//B_GiveInvItems (other, self, ItFo_Bread, 1);
-		//B_GiveInvItems (other, self, ItPl_Health_Herb_03, 4);
-		//B_GiveInvItems (other, self, ItAt_Sting, 1);
+		B_GiveInvItems (other, self, ItFoMutton, 3);
+		B_GiveInvItems (other, self, ItAt_Meatbugflesh, 5);
+		B_GiveInvItems (other, self, ItFo_Apple, 2);
+		B_GiveInvItems (other, self, ItFo_Booze, 1);
+		B_GiveInvItems (other, self, ItNa_Losos, 1);
+		B_GiveInvItems (other, self, ItNa_FriedMushroom_02, 1);
 		
 		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_00"); //Zupa z orkowego przepisu.
 
@@ -889,7 +891,7 @@ FUNC VOID DIA_NASZ_226_Snaf_help_Info()
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_help_15_05"); //To znaczy gdzie?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_06"); //Ah, wszystkie nasze drewniane domy s¹ spalone... Mo¿e arena jeszcze siê zachowa³a? Moja chata by³a w jej pobli¿u.
 	
-	// TODO: przeoribæ, ¿e Snaf pamiêta przepis na potrawkê z chrz¹szczy... wiêc to musi byc przepis na cos innego super
+	// TODO: przeoribæ, ¿e Snaf pamiêta przepis na potrawkê z chrz¹szczy... wiêc to musi byc przepis na cos innego super <- niech to jest któryœ z przepisów specjalnych z It_Nasze_Receptures
 	
 	Log_CreateTopic (TOPIC_Snaf_przepis, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Snaf_przepis, LOG_RUNNING);

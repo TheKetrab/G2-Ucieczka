@@ -1,9 +1,3 @@
-func void PercentHealSelf(var int proc, var int attrb)
-{
-	const int atrb = attrb;
-	var int procent; procent = (self.attribute[atrb]*proc)/100;
-	Npc_ChangeAttribute(self,atrb,procent);
-};
 
 
 /******************************************************************************************/

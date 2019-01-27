@@ -60,7 +60,9 @@ func void B_InsertSkeletonsJenkins() {
 	Wld_InsertNpc(Skeleton_Jenkins_4,"FP_JENKINS_SKE_4");
 	Wld_InsertNpc(Skeleton_Jenkins_5,"FP_JENKINS_SKE_5");
 
-	// TODO: moze jakis efekcik?
+	Wld_PlayEffect("FX_EarthQuake", Skeleton_Jenkins_1, Skeleton_Jenkins_1, 0, 0, 0, FALSE );
+	Wld_PlayEffect("SPELLFX_massdeath",  Skeleton_Jenkins_1, Skeleton_Jenkins_1, 0, 0, 0, FALSE );
+
 	
 };
 

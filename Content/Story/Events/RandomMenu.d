@@ -9,7 +9,7 @@ Func void LoadTexRandom ()
 
     if (random == 0)
     {
-		//SetLoadTexName ("LOAD1.tga");
+		//SetLoadTexName ("LOAD1.tga"); TODO: Load1
     };
     if (random == 1)
     {

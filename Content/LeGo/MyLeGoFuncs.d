@@ -6,6 +6,14 @@ const int zCModel__GetAniFromAniID     =    4665168; //0x00472F50
 
 var int secSkaluj;
 
+func string exitDialoge(var string i)
+{
+	var c_npc npc; npc = _^(MEM_InformationMan.npc);
+	AI_StopProcessInfos	(npc);
+	AI_StopProcessInfos	(hero);
+	return "";
+};
+
 func int oCNpc_GetModel(var c_npc npc)
 {
     CALL__thiscall(_@(npc), oCNpc__GetModel);
@@ -138,19 +146,19 @@ func void PrintMunitionType()
 						
 						if (BowMunition == FireArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz ogniste strza?", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz ogniste strza造.", PF_FONT);
 						}
 						else if (BowMunition == IceArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz lodowe strza?", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz lodowe strza造.", PF_FONT);
 						}
 						else if (BowMunition == SharpArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz ostre strza?", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz ostre strza造.", PF_FONT);
 						}
 						else
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz zwyk? strza?", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz zwyk貫 strza造.", PF_FONT);
 						};
 					}
 					else
@@ -163,11 +171,11 @@ func void PrintMunitionType()
 						
 						if (CBowMunition == SharpBolt)
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz ostre be?y", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz ostre be造", PF_FONT);
 						}
 						else
 						{
-							View_AddText(MunitionName, 700, 7000, "U?wasz zwyk? be?y", PF_FONT);
+							View_AddText(MunitionName, 700, 7000, "U篡wasz zwyk貫 be造", PF_FONT);
 						};
 					};
 				};
@@ -640,6 +648,19 @@ func int AniIsActive(var c_npc slf, var string aniname)
 	CALL__thiscall(ptr,zCModel_AniIsActive);
 	return CALL_RetValAsInt();	
 };
+
+func void StaryFlyDamage (var c_npc slf, var int speed, var int x, var int y, var int z)
+{
+    const int oCAIHuman__StartFlyDamage = 6936896; //0x69D940
+	var oCNpc _slf; _slf = Hlp_GetNpc(slf);
+    var int vec[3];
+    vec[0] = _slf._zCVob_trafoObjToWorld[zCVob_trafoObjToWorld_X] + mkf (x);
+    vec[1] = _slf._zCVob_trafoObjToWorld[zCVob_trafoObjToWorld_Y] + mkf (y);
+    vec[2] = _slf._zCVob_trafoObjToWorld[zCVob_trafoObjToWorld_Z] + mkf (z);
+    CALL_PtrParam (_@(vec));
+    CALL_IntParam (mkf (speed));
+    CALL__thiscall (_slf.human_ai, oCAIHuman__StartFlyDamage);
+};
  
 //var int random;
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
@@ -648,7 +669,6 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	
 	Var c_npc slf; slf = _^(attackerPtr);
 	var c_npc oth; oth = _^(victimPtr);
-	
 	
 	var C_ITEM ReadiedWeapon; ReadiedWeapon = Npc_GetReadiedWeapon(slf);
 
@@ -1052,6 +1072,12 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			}
 			else if (slf.guild == GIL_ZOMBIE && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
 			{
+				if (_@(slf) == _@(Ozywieniec))
+				{
+					StaryFlyDamage (oth, 5, 10, 5, 10);
+					return dmg;
+				};
+				
 				slf.aivar[AIV_RandomDmg] = hlp_random(150);
 				
 				if(slf.aivar[AIV_RandomDmg] <=34 || slf.aivar[AIV_RandomDmg] >=130)
@@ -1064,6 +1090,18 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					};
 			
 			}
+			//else if (_@(slf) == _@(Ozywieniec))
+			//{
+				//if(Npc_IsInFightMode (oth, FMODE_NONE) && Npc_GetBodyState (oth) < 13)
+				//{
+					//AI_PlayAni(oth,"T_FALLB_2_FALLENB");
+				
+				//}
+				//else
+				//{
+					//StaryFlyDamage (oth, 5, 10, 5, 10);
+				//};
+			//}
 			else if (slf.guild == GIL_GIANT_BUG && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
 			{
 					slf.aivar[AIV_RandomDmg] = hlp_random(200);
@@ -1118,6 +1156,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 						};
 					};
 			};
+			
 		
 		if(_@(slf) == _@(OrcBiterWsciekly01) ||  _@(slf) ==_@(SwampratWsciekly01) ||  _@(slf ) ==_@(BloodflyWsciekly01) || _@(slf ) == _@(MinecrawlerWarriorWsciekly1)  || _@(slf ) == _@(WaranWsciekly01))
 		{
@@ -1168,6 +1207,9 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 
 		
 	};
+
+     
+   
 	//Print(IntToString(dmg));
 	return dmg;
 };

@@ -1,16 +1,19 @@
-// TODO: ekran wczytywania -> jeśli bogu zrobi z tą kradzieżą, to screen: jeśli kogoś uśpisz to możesz go okraść
+// TODO: Screen wczytywania: 'Powalenie przeciwnika, to nie jedyny sposób na zwycięstwo na arenie' i do tego screen jak podczas walki wychodzicie poza arene
+// TODO: Screen wczytywania: coś o tym, że kraść można jeśli się skradasz, jest noc i nikogo nie ma w poblizu
+// TODO: Screen wczytywania: Vachut przy patelni: aby usmazyc cos na patelni potrzebujesz wegla
+// TODO: Screen wczytywania: Johny siedzący na ławce. 'Odwiedzaj od czasu do czasu znajomych kupców, by sprawdzić, czy nie mają jakichś nowych towarów.'
 
 Func void LoadTexRandom ()
 {
-    var int random; random = Hlp_Random (16);
+    var int random; random = Hlp_Random (12);
 
     if (random == 0)
     {
-		SetLoadTexName ("LOAD1.tga"); // TODO load 1
+		//SetLoadTexName ("LOAD1.tga");
     };
     if (random == 1)
     {
-		SetLoadTexName ("LOAD2.TGA");
+	SetLoadTexName ("LOAD2.TGA");
     };
 	if (random == 2)
     {
@@ -52,31 +55,18 @@ Func void LoadTexRandom ()
     {
 		SetLoadTexName ("LOAD12.TGA");
     };	
-	if (random == 12)
-    {
-		SetLoadTexName ("LOAD13.TGA");
-    };	
-	if (random == 13)
-    {
-		SetLoadTexName ("LOAD14.TGA");
-    };	
-	if (random == 14)
-    {
-		SetLoadTexName ("LOAD15.TGA");
-    };	
-	if (random == 15)
-    {
-		SetLoadTexName ("LOAD16.TGA");
-    };	
 };
+
+const int oCGame__LoadGame = 7103904;
+const int oCGame__LoadSavegame = 7104464;
 
 func void RandomScreen_Init()
 {
 	const int init = 0;
 	if(!init)
 	{
-		HookEngineF(7103904,5,LoadTexRandom);
-		HookEngineF(7104464,7,LoadTexRandom);
+		HookEngineF(oCGame__LoadGame,5,LoadTexRandom);
+		HookEngineF(oCGame__LoadSavegame,7,LoadTexRandom);
 		init = 1;
 	};
 	

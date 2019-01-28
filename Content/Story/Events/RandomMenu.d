@@ -1,6 +1,3 @@
-// TODO: Screen wczytywania: 'Powalenie przeciwnika, to nie jedyny sposób na zwycięstwo na arenie' i do tego screen jak podczas walki wychodzicie poza arene
-// TODO: Screen wczytywania: coś o tym, że kraść można jeśli się skradasz, jest noc i nikogo nie ma w poblizu
-// TODO: Screen wczytywania: Vachut przy patelni: aby usmazyc cos na patelni potrzebujesz wegla
 // TODO: Screen wczytywania: Johny siedzący na ławce. 'Odwiedzaj od czasu do czasu znajomych kupców, by sprawdzić, czy nie mają jakichś nowych towarów.'
 
 Func void LoadTexRandom ()

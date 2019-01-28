@@ -71,16 +71,7 @@ func void CheckMarvin()
 	};
 
 };
-func void Marvin_Hook()
-{
-	const int marvin = 0;
-	if(!marvin)
-	{
-		HookEngineF(7126880,6,CheckMarvin);
-		HookEngineF(5093648,9,CheckMarvin);
-		marvin=1;
-	};
-};
+
 
 func void JusticeModeTickTock() {
 

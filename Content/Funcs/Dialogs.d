@@ -28,13 +28,8 @@ func void ResizeDialogBox()
 	if(!InfoManager_HasFinished())
 	{	
 		var int ptr; ptr = MEM_ReadInt(MEMINT_oCInformationManager_Address+28);
-		var int res; res = Print_Screen[PS_X];// STR_ToInt (MEM_GetGothOpt ("VIDEO", "zVidResFullscreenX"));
-		
-		//if(D3D11_enabled)
-		//{
-		//	res = res  *2;
-		//};
-		
+		var int res; res = Print_Screen[PS_X];
+	
 		MEM_WriteInt (ptr+64, res);
 		MEM_WriteInt (ptr+56, 0);
 	};

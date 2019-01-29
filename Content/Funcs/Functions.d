@@ -20,6 +20,44 @@ func int Npc_GetSpellItem(var c_npc slf)
 };*/
 
 
+func int oCNpc_GetModel(var c_npc npc)
+{
+    CALL__thiscall(_@(npc), oCNpc__GetModel);
+    return CALL_RetValAsPtr();
+};
+
+func int Get_AniIDFromAniName(var c_npc slf,  var string aniName)
+{
+    var int model; model = oCNpc_GetModel(slf);
+    
+    CALL_zStringPtrParam(Str_Upper(aniName));
+    CALL__thiscall(model,zCModel__AniIDFromAniName);
+    return CALL_RetValAsInt();    
+};
+
+func int GetAniFromAniID(var c_npc slf, var string aniName)
+{ 
+    var int model; model = oCNpc_GetModel(slf);
+    var int ani; ani = Get_AniIDFromAniName(slf,aniName);
+
+    CALL_PtrParam(ani);
+    CALL__thiscall(model,zCModel__GetAniFromAniID);
+    return CALL_RetValAsPtr();
+};
+
+func void Set_AniSpeed(var c_npc slf, var string aniName, var int FPS)
+{
+    var int ptr;  ptr = GetAniFromAniID(slf,aniName);
+    MEM_WriteInt(ptr+176, mkf(FPS));
+};
+
+
+func int Get_AniSpeed(var c_npc slf, var string aniName)
+{
+    var int ptr;  ptr = GetAniFromAniID(slf,aniName);
+    return roundf(MEM_ReadInt(ptr+176));
+}; 
+
 
 // TheKetrab
 func int Hlp_GetMinFromSec(var int sec) {

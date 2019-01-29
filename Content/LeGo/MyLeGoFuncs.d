@@ -127,8 +127,6 @@ func void PrintMunitionType()
 
 			if(RangedWeapon)
 			{
-				
-				
 				if(!Hlp_IsValidHandle(MunitionName))
 				{
 					MunitionName = View_Create(0, 0, 8000, 8000);
@@ -137,6 +135,7 @@ func void PrintMunitionType()
 	
 				if(Hlp_IsValidHandle(MunitionName))
 				{
+					var string str; str = "U¿ywasz ";
 					if(RangedWeapon.flags & ITEM_BOW)
 					{
 						if(BowMunition != RangedWeapon.Munition)
@@ -146,19 +145,23 @@ func void PrintMunitionType()
 						
 						if (BowMunition == FireArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz ogniste strza³y.", PF_FONT);
+							str = CS(str, "ogniste strza³y.");
+							View_AddText(MunitionName, 700, 7000,str, PF_FONT);
 						}
 						else if (BowMunition == IceArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz lodowe strza³y.", PF_FONT);
+							str = CS(str, "lodowe strza³y.");
+							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else if (BowMunition == SharpArrow)
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz ostre strza³y.", PF_FONT);
+							str = CS(str, "ostre strza³y.");
+							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz zwyk³e strza³y.", PF_FONT);
+							str = CS(str, "zwyk³e strza³y.");
+							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						};
 					}
 					else
@@ -171,11 +174,13 @@ func void PrintMunitionType()
 						
 						if (CBowMunition == SharpBolt)
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz ostre be³y", PF_FONT);
+							str = CS(str, "ostre be³ty.");
+							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else
 						{
-							View_AddText(MunitionName, 700, 7000, "U¿ywasz zwyk³e be³y", PF_FONT);
+							str = CS(str, "zwyk³e be³ty.");
+							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						};
 					};
 				};
@@ -237,7 +242,7 @@ func void TakeFocusVob_hook()
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};	
 	
-	PrintS_Ext(ConcatStrings("Podnios³eœ: ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings("Podnios?? ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	
 };
 
@@ -496,13 +501,13 @@ func void rainThroughVobs(var int bool) {
 //------------------------------------------------
 
 /* Statt "loading.tga" wird beim Laden texName angezeigt.
- * texName darf höchstens 11 Zeichen lang sein
- * (also nicht länger als "loading.tga") */
+ * texName darf h?hstens 11 Zeichen lang sein
+ * (also nicht l?ger als "loading.tga") */
  
 const int LOADINGTEXNAME_OFFSET = 9118980; //0x8B2504;
 
 func void SetLoadTexName (var string texName) {
-	/*Länge ermitteln und prüfen ob passend */
+	/*L?ge ermitteln und pr?en ob passend */
 	var int len; len = STR_Len (texName);
 	
 	if (len < 5) {
@@ -517,7 +522,7 @@ func void SetLoadTexName (var string texName) {
 	var int sPtr; sPtr = STRINT_ToChar (texName);
 	MEM_CopyBytes (sPtr, LOADINGTEXNAME_OFFSET, len);
 	
-	/*  Nullbyte anhängen */
+	/*  Nullbyte anh?gen */
 	//MEM_WriteByte (LOADINGTEXNAME_OFFSET + len, 0);
 	MEM_WriteInt (LOADINGTEXNAME_OFFSET + len, MEM_ReadInt (LOADINGTEXNAME_OFFSET + len) & ~ 255);
 };
@@ -1165,7 +1170,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta³eœ zatruty! (-1HP/10S)");
+				Print("Zosta??zatruty! (-1HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1176,7 +1181,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta³eœ zatruty! (-5HP/10S)");
+				Print("Zosta??zatruty! (-5HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1188,7 +1193,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zosta³eœ zatruty! (-10HP/10S)");
+				Print("Zosta??zatruty! (-10HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		

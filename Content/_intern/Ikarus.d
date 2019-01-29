@@ -3839,6 +3839,11 @@ func int Hlp_Is_oCNpc (var int ptr) {
     if (!ptr) { return 0; };
     return (MEM_ReadInt (ptr) == oCNpc_vtbl);
 };
+const int oCItemContainer_vtbl = 8635564;
+func int Hlp_Is_oCItemContainer (var int ptr) {
+    if (!ptr) { return 0; };
+    return (MEM_ReadInt (ptr) == oCItemContainer_vtbl);
+};
 
 func int Hlp_Is_oCItem (var int ptr) {
     if (!ptr) { return 0; };
@@ -5437,4 +5442,26 @@ func void BroadcastEx(var C_NPC caster, var func _, var int excludeCaster, var i
     reactionFuncID = MEM_ReadInt(MEM_ReadIntArray(contentSymbolTableAddress, symb - 4) + zCParSymbol_content_offset);
     
     _BC_Broadcast(caster, reactionFuncID, excludeCaster, includeDead, includeShrinked);
+};
+
+func string CS(var string str, var string str2)
+{
+	return ConcatStrings(str,str2);
+};
+
+func void PrintI(var int i)
+{
+	Print(IntToString(i));
+};
+func void PrintCS(var string str, var string str2)
+{
+	Print(ConcatStrings(str,str2));
+};
+func void PrintCS2(var string str, var string str2, var string str3)
+{
+	Print(ConcatStrings(str,ConcatStrings(str2,str3)));
+};
+func void PrintCS2_(var string str, var string str2, var string str3)
+{
+	Print(ConcatStrings(ConcatStrings(str,str2),str3));
 };

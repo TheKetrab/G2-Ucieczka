@@ -45,6 +45,8 @@ func void INIT_GLOBAL()
 	};
 	
 	Hooks_Global();
+	
+	CheckDx11();
 
 	B_AddFightSkill(hero,0,0);
 };

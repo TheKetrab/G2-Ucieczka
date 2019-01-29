@@ -2016,7 +2016,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 
 	
 	//WillGoToCastle = FALSE;
-	RemoveHookF(7595136,6,UratujFunc);
+	RemoveHookF(oCNpc__ProcessNpc,6,UratujFunc);
 
 	AI_StopProcessInfos (self);
 	if(infomanager_hasfinished())
@@ -2027,7 +2027,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 };
 
 /* ----- ----- -----
-	TODO: bogu: zamiast tego zagadywania 'FilmKap4' niech w 'DIA_NASZ_110_Keroloth_PreKap4'
+	Done, lecz zostawiê ten komentarz na razie:
+	zamiast tego zagadywania 'FilmKap4' niech w 'DIA_NASZ_110_Keroloth_PreKap4'
 	jest clearchoice: "KONIEC" ktory uruchamia sciemnianie sie takie jak np Kopalnia_Trucizna
 	-> jak jest ca³kiem ciemno, to wykonuje sie:
 

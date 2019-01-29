@@ -481,18 +481,18 @@ INSTANCE ItNa_Wiernosc (C_Item)
 
 func void Equip_ItNa_Wiernosc() {
 
-	if (self.guild == GIL_OUT) {
-		// TODO bogu:
-		// jakis wld play effect (magic star?)
+	if (self.guild == GIL_OUT) { 	
+		Wld_PlayEffect("Spellfx_Lightstar_Orange",  self, self, 0, 0, 0, FALSE ); 
 		// ³uki +5
+		self.HitChance[NPC_TALENT_BOW] +=5;
 	};
 };
 
 func void UnEquip_ItNa_Wiernosc() {
 
 	if (self.guild == GIL_OUT) {
-		// TODO bogu:
 		// ³uki -5
+		self.HitChance[NPC_TALENT_BOW] -=5;
 	};
 };
 

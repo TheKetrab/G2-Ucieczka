@@ -1275,7 +1275,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_SzturmNaZamek_55_03"); //Jesteúmy gotowi, prowadü.
 
 	WillIdziePierwszyRazNaZamek = TRUE;
-	HookEngineF(7595136,6,UratujFunc);
+	HookEngineF(oCNpc__ProcessNpc,6,UratujFunc);
 	
 	B_StartOtherRoutine (NASZ_113_Godar,"Zamek");
 	//NASZ_113_Godar.aivar[AIV_PARTYMEMBER] = TRUE;

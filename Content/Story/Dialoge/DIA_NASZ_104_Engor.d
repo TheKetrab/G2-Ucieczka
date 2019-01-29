@@ -79,8 +79,8 @@ FUNC VOID DIA_NASZ_104_Engor_HelloPiosenka_Info()
 	AI_Output (self, other,"DIA_NASZ_104_Engor_HelloPiosenka_55_03"); //Ciekawe, co tym razem? Jakieœ sk³adniki na now¹, eksperymentaln¹ nalewkê?
 	AI_Output (other, self,"DIA_NASZ_104_Engor_HelloPiosenka_55_04"); //Chodzi o bardziej przyziemne sprawy, konkretniej o muzykê. Potrzebujemy kogoœ, kto zagra wieczorami na lutni, aby poprawiæ nieco nastroje ch³opaków.
 	AI_Output (other, self,"DIA_NASZ_104_Engor_HelloPiosenka_55_05"); //Pocz¹tkowo typowaliœmy Johny'ego, jednak ten przys³a³ mnie do ciebie.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_HelloPiosenka_55_06"); //I pomyœla³ o mnie, to stary drañ. Owszem potrafiê graæ na lutni, jednak odk¹d mój instrument uleg³ zniszczeniu ca³e dnie spêdzam na liczeniu zapasów i siedzeniu na ³awce.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_HelloPiosenka_55_07"); //Nawet jakbym chcia³ to nie mogê wam pomóc, bez instrumentu wiele nie zdzia³am. Przykro mi.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_HelloPiosenka_55_06"); //I pomyœla³ o mnie, to stary drañ! Owszem, potrafiê graæ na lutni, jednak odk¹d mój instrument uleg³ zniszczeniu, ca³e dni spêdzam na liczeniu zapasów i siedzeniu na ³awce.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_HelloPiosenka_55_07"); //Nawet jakbym chcia³, to nie mogê wam pomóc. Bez instrumentu wiele nie zdzia³am. Przykro mi.
 	
 	B_LogEntry (TOPIC_Silas_piosenka, "No tak, mog³em siê tego spodziewaæ. Engor straci³ swój instrument, a co za tym idzie, nie mo¿e zagraæ w karczmie. Trzeba coœ wymyœliæ.");
 };

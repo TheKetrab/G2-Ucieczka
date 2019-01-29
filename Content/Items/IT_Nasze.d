@@ -9120,7 +9120,7 @@ instance ItNa_WodaSwiecona_Adanos(C_Item)
 	visual = "ItMi_HolyWater.3ds";
 	material = MAT_GLAS;
 	description = name;
-	text[0] = "Pochodzi ze Ÿróde³ w pobli¿u Geldern";
+	text[0] = "Pochodzi ze Ÿróde³ w pobli¿u Geldern.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -9389,6 +9389,7 @@ INSTANCE ItNa_KoloZebate(C_Item)
 	count[5] = value;
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 instance ItNa_DuchSkull(C_Item)
 {
 	name = "Szcz¹tki przyjaciela Shrata";
@@ -9401,56 +9402,6 @@ instance ItNa_DuchSkull(C_Item)
 };
 
 
-// TODO: Usunac te eliksirki
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItPoYellow(C_Item)
-{
-	name = "Yellow";
-	mainflag = ITEM_KAT_NONE;
-	flags = ITEM_MULTI;
-	value = 100;
-	visual = "ItPo_Yellow.3ds";
-	material = MAT_STONE;
-	description = name;
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-INSTANCE ItPoPurple(C_Item)
-{
-	name = "Purple";
-	mainflag = ITEM_KAT_NONE;
-	flags = ITEM_MULTI;
-	value = 100;
-	visual = "ItPo_Purple.3ds";
-	material = MAT_STONE;
-	description = name;
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-INSTANCE ItPoOrange(C_Item)
-{
-	name = "Orange";
-	mainflag = ITEM_KAT_NONE;
-	flags = ITEM_MULTI;
-	value = 100;
-	visual = "ItPo_Orange.3ds";
-	material = MAT_STONE;
-	description = name;
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-INSTANCE ItPoMagenta(C_Item)
-{
-	name = "Magenta";
-	mainflag = ITEM_KAT_NONE;
-	flags = ITEM_MULTI;
-	value = 100;
-	visual = "ItPo_Magenta.3ds";
-	material = MAT_STONE;
-	description = name;
-	text[5] = NAME_Value;
-	count[5] = value;
-};
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_CzarnyKamien (C_Item)
 {

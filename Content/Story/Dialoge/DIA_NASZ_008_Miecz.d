@@ -207,7 +207,7 @@ FUNC VOID DIA_NASZ_008_Miecz_WhatIsThisTower_Info()
 	AI_Output (other,self ,"DIA_NASZ_008_Miecz_WhatIsThisTower_15_00"); //Co to za wie¿a?
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_WhatIsThisTower_55_01"); //Po jej wyposa¿eniu domyœlam siê, ¿e pe³ni³a niegdyœ rolê pracowni jakiegoœ maga.
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_WhatIsThisTower_55_02"); //Jest bardzo stara i zniszczona. Nie by³em w stanie dostaæ siê na wy¿sze piêtra, wiêc nie wiem, co tam jest.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_WhatIsThisTower_55_03"); //I lepiej nie próbuj samemu. A juz na pewno nie licz na to, ¿e jeœli siê po³amiesz, to nastawiê ci stawy. Nie znam siê na tym!
+	AI_Output (self, other,"DIA_NASZ_008_Miecz_WhatIsThisTower_55_03"); //I lepiej nie próbuj samemu. A ju¿ na pewno nie licz na to, ¿e jeœli siê po³amiesz, to nastawiê ci stawy. Nie znam siê na tym!
 
 };
 

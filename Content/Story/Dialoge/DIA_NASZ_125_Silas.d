@@ -181,7 +181,7 @@ FUNC VOID DIA_NASZ_125_Silas_End_Threat ()
 {
 	AI_Output (other, self,"DIA_NASZ_125_Silas_End_Threat_55_00"); //Pogrozi³em mu piêœciami.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_End_Threat_55_01"); //Doprawdy? No có¿, nie wydaje mi siê, ¿eby uzbrojony ³owca orków wystraszy³ siê takiego ch³ystka jak ty.
-	AI_Output (self, other,"DIA_NASZ_125_Silas_End_Threat_55_02"); //Tak, czy inaczej swoje zrobi³eœ. WeŸ te kilka butelek rumu.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_End_Threat_55_02"); //Tak czy inaczej swoje zrobi³eœ. WeŸ te kilka butelek rumu.
 	Info_ClearChoices (DIA_NASZ_125_Silas_End);
 	
 	DodajReputacje (2, REP_LOWCY);
@@ -309,10 +309,10 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenka_Info()
 	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_02"); //Brzmi powa¿nie. Co siê sta³o?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_03"); //Od d³u¿szego czasu widzê, ¿e ch³opaki nie s¹ tacy jak wczeœniej. Wielu z nich wygl¹da na przygnêbionych, smutnych i za³amanych. Nie ma w nich ju¿ tej energii jak¹ mo¿na by³o dostrzec na pocz¹tku.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_04"); //To wszystko wina tego przeklêtego miejsca. Unosz¹ca siê w atmosferze ci¹g³a groŸba zagro¿enia ze strony zielonoskórych doprowadzi ich na skraj za³amania. Musimy coœ zdzia³aæ!
-	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_05"); //S¹dzi³em, ¿e oni byli tacy od zawsze. Masz jakiœ pomys³ jak poprawiæ ich nastrój?
+	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_05"); //S¹dzi³em, ¿e oni byli tacy od zawsze. Masz jakiœ pomys³, jak poprawiæ ich nastrój?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_06"); //Owszem, jednak nie wiem na ile siê zda, bo to jedyne rozwi¹zanie jakie przychodzi mi do g³owy. Uwa¿am, ¿e muzyka mog³aby tutaj pomóc, odpowiednio zagrana melodia jest w stanie rozweseliæ cz³owieka.
-	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_07"); //Dobry pomys³, ale powiedz mi co ja mam zrobiæ? Chyba nie liczysz na to, ¿e z³apiê za lutniê i zacznê graæ?
-	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_08"); //Nie, sk¹d. Chcia³bym abyœ w moim imieniu porozmawia³ z ludŸmi w obozie, mo¿e ktoœ potrafi graæ na tym instrumencie. Zrobi³byœ to dla mnie?
+	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_07"); //Dobry pomys³, ale powiedz mi, co ja mam zrobiæ? Chyba nie liczysz na to, ¿e z³apiê za lutniê i zacznê graæ?
+	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_08"); //Nie, sk¹d. Chcia³bym, abyœ w moim imieniu porozmawia³ z ludŸmi w obozie. Mo¿e ktoœ potrafi graæ na tym instrumencie... Zrobi³byœ to dla mnie?
 	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_15_09"); //Zgoda, ale bêdziesz musia³ mi to wynagrodziæ. Z kim powinienem porozmawiaæ?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_10"); //O to siê nie martw, zimne piwo na mój koszt i z³oto z pewnoœci¹ zrekompensuj¹ twój cenny czas.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_11"); //Kiedyœ s³ysza³em, jak Johny chwali³ siê umiejêtnoœciami gry na lutni. Powinieneœ z nim porozmawiaæ.

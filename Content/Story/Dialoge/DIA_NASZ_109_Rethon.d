@@ -201,11 +201,10 @@ INSTANCE DIA_NASZ_109_Rethon_zadanie   (C_INFO)
 
 FUNC INT DIA_NASZ_109_Rethon_zadanie_Condition()
 {
-// TODO
-	//if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
-	//{
+	if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_zadanie_Info()

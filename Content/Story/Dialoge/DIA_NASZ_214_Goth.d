@@ -128,7 +128,7 @@ FUNC VOID DIA_NASZ_214_Goth_HavePieczyste_Info()
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_03"); //Dotrzyma³eœ swojej czêœci umowy, teraz ja dotrzymam swojego s³owa. O co chcia³eœ zapytaæ?
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_04"); //Szukam kogoœ, kto zna siê na wyrobie lutni i by³by w stanie wykonaæ dla mnie taki instrument. Trop przywiód³ mnie do waszego obozu.
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_05"); //Mo¿esz mi powiedzieæ, gdzie on jest?
-	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_06"); //Pewnie masz na myœli Jehena. Owszem mieszka u nas, ale obecnie nie ma go w obozie. Dwa dni temu uda³ siê na polowanie.
+	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_06"); //Pewnie masz na myœli Jehena. Owszem, mieszka u nas, ale obecnie nie ma go w obozie. Dwa dni temu uda³ siê na polowanie.
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_07"); //Œwietnie, a wiesz, kiedy wróci?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_08"); //Ciê¿ko to okreœliæ. On jako nieliczny potrafi przepadaæ bez s³owa na wiele dni, aby potem wróciæ z mas¹ trofeów i miêsa.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_09"); //Na twoim miejscu bym go poszuka³, zacznij od jego obozu przy prze³êczy. Wiesz, w któr¹ to stronê?

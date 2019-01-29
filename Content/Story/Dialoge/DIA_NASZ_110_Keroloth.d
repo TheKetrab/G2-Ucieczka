@@ -776,7 +776,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyesend_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questyesend_15_00"); //Pozby³em siê goblinów.
 	
 	if (WillZabilGoblinaKerolotha >=2) {
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_01"); //W koñcu hasa³s ustanie raz na zawsze. Bêdê móg³ skupiæ siê na planowaniu ataku i nic nie bêdzie mnie rozpraszaæ.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_01"); //W koñcu ha³as ustanie raz na zawsze. Bêdê móg³ skupiæ siê na planowaniu ataku i nic nie bêdzie mnie rozpraszaæ.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_02"); //WeŸ to z³oto i pamiêtaj, ¿e za pracê jest siê hojnie wynagradzanym.
 		Createinvitems (self, itmi_gold, 70);
 		B_giveinvitems (self, other, itmi_gold, 70);

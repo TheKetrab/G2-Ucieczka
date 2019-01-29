@@ -47,7 +47,7 @@ func int DIA_NASZ_229_Ayan_Hello_Condition ()
 func void DIA_NASZ_229_Ayan_Hello_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_Hello_15_00"); //Co robisz na tym krañcu œwiata?
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Hello_03_01"); //Zastanawiam siê co mo¿e byæ po drugiej stronie tej rzeki.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Hello_03_01"); //Zastanawiam siê, co mo¿e byæ po drugiej stronie tej rzeki.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Hello_03_02"); //Bez zw¹tpienia by³ tu kiedyœ most. Jeœli siê tam dostanê, mo¿e znajdê coœ ciekawego...
 
 };

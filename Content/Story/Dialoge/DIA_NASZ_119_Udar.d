@@ -952,11 +952,11 @@ FUNC VOID DIA_NASZ_119_Udar_Kap4Start_Info()
 
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_15_00"); //Jesteœ wreszcie! Jakie wieœci przynosisz?		
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_01"); //Uda³o siê nam odbiæ zamek, a orkowe si³y zosta³y starte z powierzchni ziemi. Teraz pozosta³o nam jedynie zaj¹æ siê umacnianiem naszej pozycji w tym rejonie.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_02"); //Niestety kilku ludzi przyp³aci³o to ¿yciem. W tym Gestath...
+	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_02"); //Niestety, kilku ludzi przyp³aci³o to ¿yciem. W tym Gestath...
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03"); //To smutna wiadomoœæ. Niech Beliar nie dobierze siê do jego duszy, a Innos wype³ni j¹ œwiat³em.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_04"); //Z polecenia Kerolotha powinieneœ odes³aæ do zamku jeszcze kilku wojowników, gdy¿ ten obawia siê o ewentualny atak ze strony orków.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_05"); //To bardzo prawdopodobne, znam siê trochê na tych stworzeniach i mogê ci powiedzieæ, i¿ nigdy siê nie poddaj¹.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_06"); //Mo¿esz mu przekazaæ, ¿e mo¿liwie najszybciej wyœlê do niego kilku ludzi. Chcê, aby dobrze siê przygotowali na to, co mo¿e ich tam czekaæ.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_05"); //To bardzo prawdopodobne. Znam siê trochê na tych stworzeniach i mogê ci powiedzieæ, i¿ nigdy siê nie poddaj¹.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_06"); //Mo¿esz mu przekazaæ, ¿e mo¿liwie najszybciej wyœlê do niego kilku ludzi. Chcê, aby dobrze przygotowali siê na to, co mo¿e ich tam zastaæ.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_07"); //Jeszcze jedna sprawa: W miêdzyczasie przeteleportowa³ siê tutaj mag. Udaj siê do niego, jest w œrodku.
 
 	Npc_ExchangeRoutine(self,"UdarBoss");
@@ -1005,7 +1005,7 @@ FUNC VOID DIA_NASZ_119_Udar_PalisadaOtwarta_Info()
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_02"); //Ludzie za palisad¹?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_03"); //Paladyni przybyli do Górniczej Doliny na chwilê, przed ca³kowitym zabudowaniem palisady. Garond za wszelk¹ cenê chcia³ wiedzieæ, co znajduje siê po drugiej stronie.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_04"); //Wys³a³ trzech rycerzy, aby przedarli siê na wybrze¿e i sprawdzili, co dzieje siê w tamtejszych terenach. Niestety, nigdy ju¿ nie wrócili.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_05"); //Jeœli znajdziesz w sobie doœæ si³, aby przekroczyæ progi ziemi orków, to mo¿esz ich poszukaæ. ¯ywych lub martwych.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_05"); //Jeœli znajdziesz w sobie doœæ si³, aby przekroczyæ progi ziem orków, to mo¿esz ich poszukaæ. ¯ywych lub martwych.
 
 	Log_CreateTopic (TOPIC_Udar_oddzial, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);

@@ -274,7 +274,7 @@ FUNC INT DIA_NASZ_230_Dymoondo_polowanie_Condition()
 FUNC VOID DIA_NASZ_230_Dymoondo_polowanie_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_230_Dymoondo_polowanie_55_00"); //Chcesz do³¹czyæ do mnie i Chrisa?
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_polowanie_55_01"); //Idziecie do lasu? Ttrzeba bardzo uwa¿aæ. Przed chwil¹ s³ysza³em wycie, ale to nie by³o wycie wilka.
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_polowanie_55_01"); //Idziecie do lasu? Trzeba bardzo uwa¿aæ. Przed chwil¹ s³ysza³em wycie, ale to nie by³o wycie wilka.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_polowanie_55_02"); //We trzech bêdziemy mieli wiêksze szanse. Pójdê z wami!
 	
 	Npc_ExchangeRoutine(self,"Follow");

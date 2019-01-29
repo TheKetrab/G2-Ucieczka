@@ -76,7 +76,7 @@ FUNC VOID DIA_NASZ_103_Johny_HelloPiosenka_Info()
 	AI_Output (other, self,"DIA_NASZ_103_Johny_HelloPiosenka_55_00"); //Hej, Johny!
 	AI_Output (self, other,"DIA_NASZ_103_Johny_HelloPiosenka_55_01"); //Czo³em. Co ciê do mnie sprowadza?
 	AI_Output (other, self,"DIA_NASZ_103_Johny_HelloPiosenka_55_02"); //W³aœciwie to przychodzê do ciebie w imieniu Silasa. To prawda, ¿e potrafisz graæ na lutni?
-	AI_Output (self, other,"DIA_NASZ_103_Johny_HelloPiosenka_55_03"); //Czy potrafiê? Owszem, posiadam niezgorsze umiejêtnoœci jednak nie uwa¿am siê za specjalistê w tej dziedzinie. Powinieneœ zg³osiæ siê do Engora, on doskonale zna siê na muzyce.
+	AI_Output (self, other,"DIA_NASZ_103_Johny_HelloPiosenka_55_03"); //Czy potrafiê? Owszem, posiadam niezgorsze umiejêtnoœci, jednak nie uwa¿am siê za specjalistê w tej dziedzinie. Powinieneœ zg³osiæ siê do Engora. On doskonale zna siê na muzyce.
 	AI_Output (self, other,"DIA_NASZ_103_Johny_HelloPiosenka_55_04"); //Swego czasu grywa³ u nas w obozie, jego muzyka to czysta poezja. Nie s¹dzi³em, ¿e mo¿na wydobywaæ z lutni takie brzmienie, a¿ do momentu kiedy go spotka³em.
 	AI_Output (other, self,"DIA_NASZ_103_Johny_HelloPiosenka_55_05"); //Dziêki za informacje.
 	

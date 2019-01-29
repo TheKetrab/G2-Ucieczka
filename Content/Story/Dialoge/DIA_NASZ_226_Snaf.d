@@ -168,18 +168,17 @@ FUNC INT DIA_NASZ_226_Snaf_PieczysteDone_Condition()
 };
 FUNC VOID DIA_NASZ_226_Snaf_PieczysteDone_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_55_00"); //Dobrze, ¿e jesteœ. W³aœnie skoñczy³em przygotowywaæ twoj¹ potrawê, proszê oto dwa soczyste kawa³ki pieczystego.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_55_00"); //Dobrze, ¿e jesteœ. W³aœnie skoñczy³em przygotowywaæ twoj¹ potrawê. Proszê, oto dwa soczyste kawa³ki pieczystego.
 	B_GiveInvItems(self,other,ItNa_PieczenDlaGotha,1);
 	B_GiveInvItems(self,other,ItNa_PieczenSnafa,1);
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_01"); //Dwa kawa³ki? Nie podejrzewa³bym, i¿ Goth jest a¿ tak wielkim ¿ar³okiem.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_02"); //To prawda, potrafi zjeœæ najwiêcej ze wszystkich. Jednak tym razem druga porcja nie jest dla niego, a dla ciebie.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_03"); //Nale¿y ci siê nagroda za fatygê. Ponadto strasznie zmarnia³eœ od naszego ostatniego spotkania, wiêc uzna³em, ¿e zechcia³byœ wrzuciæ coœ dobrego na z¹b.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_04"); //Jak za czasów Starego Obozu.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_05"); //Dziêki Snaf, milo wspominam twoj¹ kuchnie. Wybacz, ale teraz muszê ju¿ iœæ, bo stra¿nik bramy zaraz padnie z g³odu. Do zobaczenia.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_04"); //Dziêki Snaf, mi³o wspominam twoj¹ kuchnie. Wybacz, ale teraz muszê ju¿ iœæ, bo stra¿nik bramy zaraz padnie z g³odu. Do zobaczenia.
 		
 	Npc_ExchangeRoutine (self, "Start");
 	Log_SetTopicStatus (TOPIC_Snaf_pieczen, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Snaf_pieczen, "W nagrodê dosta³o mi siê nawet kawa³ek pieczeni Snafa. Tego siê nie spodziewa³em.");
+	B_LogEntry (TOPIC_Snaf_pieczen, "W nagrodê dosta³em nawet kawa³ek pieczeni Snafa. Tego siê nie spodziewa³em.");
 
 	
 };

@@ -494,7 +494,7 @@ FUNC VOID DIA_NASZ_214_Goth_Undeads_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_00"); //Chwa³a niech bêdzie bogom! Nawet nie chce wiedzieæ co mog³oby siê staæ gdybyœ nam nie pomóg³!
-	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_01"); //Co tu siê dzieje do cholery? Sk¹d wziê³y siê te szkielety i dlaczego zaatakowa³y wasz obóz?
+	AI_Output (other, self,"DIA_NASZ_214_Goth_Undeads_55_01"); //Co tu siê dzieje do cholery? Sk¹d wziê³y siê te szkielety i dlaczego zaatakowa³y wasz obóz?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_02"); //Ostatnio podzia³o siê doœæ sporo dziwnych rzeczy. W Górniczej Dolinie wszêdzie pe³no demonów i obrzydliwych zombie. Jakby tego by³o ma³o pojawi³y siê jeszcze zmutowane bestie.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_03"); //Niestety nikt z nas nie wie co siê dzieje. ¯aden z nas nie spodziewa³ siê te¿ ataku na nasz obóz!
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_04"); //Czym prêdzej udaj siê do Eraka. On zdecydowanie powie ci wiêcej na temat naszej felernej sytuacji.

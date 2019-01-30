@@ -682,15 +682,16 @@ FUNC VOID DIA_NASZ_010_Monastir_ErakHelp_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_15_00"); //Potrzebujemy twojej pomocy w sprawie...
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_01"); //Nieumar³ych, którzy wbrew zasadom panuj¹cym na tym œwiecie przemierzaj¹ œwiat œmiertelnych niepokoj¹c ich ¿ywot?
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_02"); //Doprawdy, straszne rzeczy dziej¹ siê w tym miejscu. Po raz pierwszy w swoim ¿yciu jestemœwiadkiem tak du¿ego gniewu niespokojnych dusz.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_02"); //Doprawdy, straszne rzeczy dziej¹ siê w tym miejscu. Po raz pierwszy w swoim ¿yciu jestem œwiadkiem tak du¿ego gniewu niespokojnych dusz.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_03"); //Jak myœlisz, co ich tutaj sprowadza? Jakiœ czar, a mo¿e chêæ zniszczenia?
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_04"); //Nie, to na pewno nic z tego. Od chwili kiedy siê tutaj zjawi³em pocz¹³em wyczuwaæ potê¿ne zak³ócenia w strukturze magii, kolonia zosta³a otoczona niewidzialn¹ dla oka œmiertelnika aur¹.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_05"); //Aura ta emanuje na tyle du¿¹ energi¹, ¿e mo¿e zmuszaæ nieumar³ych aby ci przybywali do tego œwiata.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Nie wiem dok³adnie jak ona dzia³a, ale najprawdopodobniej sprowadza ona tak¿e dusze, które zostaj¹ uwiêzienie w tych martwych skorupach. Zaklêcie otaczaj¹ce dolinê poprzez katusze zmusza dusze by pozosta³y w tym miejscu.
-	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_07"); //Czy mo¿emy coœ z tym zrobiæ? Je¿eli mówisz prawdê w naszym obowi¹zku le¿y pomóc tym wszystkim umêczonym duszom.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_04"); //Nie, to na pewno nic z tego. Od chwili kiedy siê tutaj zjawi³em, pocz¹³em wyczuwaæ potê¿ne zak³ócenia w strukturze magii. Kolonia zosta³a otoczona niewidzialn¹ dla oka œmiertelnika aur¹.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_05"); //Aura ta emanuje na tyle du¿¹ energi¹, ¿e mo¿e zmuszaæ nieumar³ych, aby ci przybywali do tego œwiata.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Nie wiem dok³adnie, jak ona dzia³a, ale najprawdopodobniej sprowadza ona tak¿e dusze, które zostaj¹ uwiêzienie w tych martwych skorupach.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Zaklêcie otaczaj¹ce dolinê, poprzez katusze zmusza dusze, by pozosta³y w tym miejscu.
+	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_07"); //Czy mo¿emy coœ z tym zrobiæ? Je¿eli mówisz prawdê, w naszym obowi¹zku le¿y pomóc tym wszystkim umêczonym duszom.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_08"); //Do g³owy przychodzi mi jedno rozwi¹zanie, jednak bêdzie siê ono wi¹za³o z pewnym niebezpieczeñstwem.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_09"); //Gdzieœ w Górniczej Dolinie znajduje siê jakieœ Ÿród³o mocy. Nie wiem dok³adnie czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //To w³aœnie z tego miejsca emanuje niezrozumia³a dla mnie energia, która wyró¿nia siê na tle aury jaka nas otacza.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_09"); //Gdzieœ w Górniczej Dolinie znajduje siê jakieœ Ÿród³o mocy. Nie wiem dok³adnie, czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //To w³aœnie z tego miejsca emanuje niezrozumia³a dla mnie energia, która wyró¿nia siê na tle aury, jaka nas otacza.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_11"); //Powinieneœ j¹ odszukaæ. To pierwszy i najwa¿niejszy krok. Musimy znaleŸæ Ÿród³o.
 
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Monastir sam przyzna³, ¿e w Górniczej Dolinie da siê odczuæ spore stê¿enie energii magicznej. Gdzieœ w okolicy znajduje siê jej potê¿ne Ÿród³o.");

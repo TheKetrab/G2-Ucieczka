@@ -392,7 +392,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Info()
 	if(npc_hasitems (other, ItNa_Przepis_UdziecZDzikaPoLowiecku) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Udziec z dzika po ³owiecku.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku); };
 	if(npc_hasitems (other, ItNa_Przepis_ZupaMleczna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa mleczna.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna); };
 	if(npc_hasitems (other, ItNa_Przepis_ZupaGrzybowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa grzybowa.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaZDuzychGrzybow) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa z du¿ych grzybów.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaZDuzychGrzybow) >=1 && (npc_knowsinfo(other,DIA_NASZ_226_Snaf_done))) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa z du¿ych grzybów.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow); };
 	if(npc_hasitems (other, ItNa_Przepis_ZupaJarzynowaZJagodami) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa jarzynowa z jagodami.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami); };
 	if(npc_hasitems (other, ItNa_Przepis_ZupaSerowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa serowa.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa); };
 	if(npc_hasitems (other, ItNa_Przepis_PrzysmakMysliwych) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "'Przysmak myœliwych.'",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych); };
@@ -592,13 +592,15 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow ()
 {
 	if(npc_hasitems(other, Itfo_wine) >= 1)
 	&&(npc_hasitems(other, ItFo_water) >= 2)
-	&&(npc_hasitems(other, ItPl_Mushroom_02) >= 2)
+	&&(npc_hasitems(other, ItPl_Mushroom_02) >= 3)
+	&&(npc_hasitems(other, ItAt_Meatbugflesh) >= 7)
 
 	{
 
 		B_GiveInvItems (other, self, Itfo_wine, 1);
 		B_GiveInvItems (other, self, ItFo_water, 2);
-		B_GiveInvItems (other, self, ItPl_Mushroom_02, 2);
+		B_GiveInvItems (other, self, ItPl_Mushroom_02, 3);
+		B_GiveInvItems (other, self, ItAt_Meatbugflesh, 7);
 		
 		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow_55_00"); //Zupa z du¿ych grzybów.
 		SnafSay_Momment();	
@@ -884,17 +886,21 @@ FUNC VOID DIA_NASZ_226_Snaf_help_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_help_15_00"); //Mogê ci w czymœ pomóc?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_01"); //A tak!
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_02"); //Jemy tyle miêsa œcierwojadów, kretoszczurów i zêbaczy, ¿e wszyscy mamy ju¿ tego doœæ.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_03"); //Kiedy gotowa³em jeszcze dla kopaczy w Starym Obozie, opracowa³em przepis na potrawkê z chrz¹szczy.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_04"); //Powinien dalej byæ gdzieœ w pobli¿u mojego dawnego domu.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_help_15_05"); //To znaczy gdzie?
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_06"); //Ah, wszystkie nasze drewniane domy s¹ spalone... Mo¿e arena jeszcze siê zachowa³a? Moja chata by³a w jej pobli¿u.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_02"); //Bez przerwy jemy miêso œcierwojadów, kretoszczurów i zêbaczy. Myœlê, ¿e wszyscy maj¹ tego ju¿ doœæ.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_help_55_03"); //A co z twoj¹ s³ynn¹ potrawk¹ z chrz¹szczy?
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_04"); //Jej te¿ wszyscy mieli doœæ. Ale nadal jestem przekonany, ¿e miêso tych ma³ych owadów œwietnie wp³ywa na organizm i ¿e powinniœmy je jeœæ.	
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_help_55_05"); //Na nied³ugo przed upadkiem bariery pracowa³em nad zup¹, która ³¹czy smaki grzybów i chrz¹szczy. Niestety, przepis zosta³ w mojej chacie.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_help_55_06"); //Jeœli bêdê w pobli¿u, to z pewnoœci¹ go poszukam.
 	
-	// TODO: przeoribæ, ¿e Snaf pamiêta przepis na potrawkê z chrz¹szczy... wiêc to musi byc przepis na cos innego super <- niech to jest któryœ z przepisów specjalnych z It_Nasze_Receptures
+	Wld_InsertNpc(Gobbo_Warrior_Snaf,"FP_GOBBO_SNAF_1");
+	Wld_InsertNpc(Gobbo_Green,"FP_GOBBO_SNAF_2");
+	Wld_InsertNpc(Gobbo_Green,"FP_GOBBO_SNAF_3");
+	Wld_InsertNpc(Gobbo_Green,"FP_GOBBO_SNAF_4");
+	Wld_InsertNpc(Gobbo_Green,"FP_GOBBO_SNAF_5");
 	
 	Log_CreateTopic (TOPIC_Snaf_przepis, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Snaf_przepis, LOG_RUNNING);
-	B_LogEntry (TOPIC_Snaf_przepis, "Snaf chce, bym odszuka³ jego przepis. Twierdzi, ¿e le¿y gdzieœ obok jego dawnej chaty, która niegdyœ znajdowa³a siê w pobli¿u areny.");
+	B_LogEntry (TOPIC_Snaf_przepis, "Snaf chce, bym odszuka³ jego przepis. Twierdzi, ¿e zostawi³ go w swojej chacie, która jest teraz przecie¿ spalona!");	
 };
 
 //*********************************************************************
@@ -913,7 +919,7 @@ INSTANCE DIA_NASZ_226_Snaf_ingrediens   (C_INFO)
 FUNC INT DIA_NASZ_226_Snaf_ingrediens_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_226_Snaf_help)
-		&& npc_hasitems (other, ItNa_Snaf_Przepis) >=1)
+		&& npc_hasitems (other, ItNa_Przepis_ZupaZDuzychGrzybow) >=1)
 	{
 		return TRUE;
 	};
@@ -922,21 +928,18 @@ FUNC INT DIA_NASZ_226_Snaf_ingrediens_Condition()
 FUNC VOID DIA_NASZ_226_Snaf_ingrediens_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_00"); //To chyba twój przepis.
-	B_GiveInvItems (other, self, ItNa_Snaf_Przepis, 1);
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_01"); //Nie chyba, tylko na pewno! Poznajê to pismo.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_02"); //Troszkê zabrudzony... Ale szczêsliwie pamiêtam te sk³adniki, których nie widaæ.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_03"); //Sk³adniki... no w³aœnie! Przynieœ mi je.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_04"); //Czego potrzebujesz?
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_05"); //5 piekielników, 10 miês chrz¹szczy i jeden niebieski bez dla aromatu.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_06"); //Sk¹d mam wzi¹æ tyle chrz¹szczy?
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_07"); //No có¿... Kiedyœ doœæ sporo by³o w Starym Obozie... Na Placu Wymian... Nie nie... Tam ju¿ ich nie bêdzie. Chrz¹szcze nie przepadaj¹ za orkami.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_08"); //O! Ju¿ wiem, chata Cavalorna.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_09"); //Chocia¿ nie jestem pewien, czy znajdziesz ich tam a¿ dziesiêæ. Tak jak wspomnia³em, chrz¹szcze nie lubi¹, szczególnie orkowych, odchodów.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_10"); //Ja te¿ nie lubiê i nie zamierzam siê w takich miejscach krêciæ.
+	B_GiveInvItems (other, self, ItNa_Przepis_ZupaZDuzychGrzybow, 1);
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_01"); //Nie chyba, tylko na pewno! Poznajê to pismo. Pora sprawdziæ, czy myœliwym spodoba siê zmiana diety.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_02"); //Sk³adniki... no w³aœnie! Przynieœ mi je.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_03"); //Czego dok³adnie potrzebujesz?
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_04"); //Miêso z siedmiu chrz¹szczy, dwie butelki wody, jedna wina i trzy du¿e grzyby.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_04"); //Widzisz, nawet zapamiêta³em sk³adniki! Przepis zachowaj dla siebie. Mo¿e kiedyœ nauczysz siê gotowaæ i zrobisz dla swojej ma³¿onki pyszn¹ zupê Snafa!
+	B_GiveInvItems (self, other, ItNa_Przepis_ZupaZDuzychGrzybow, 1);
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_05"); //Dziêki. Zobaczê, co da siê zrobiæ.
 
 	B_GivePlayerXP (200);
 	DodajReputacje (2,REP_MYSLIWI);
-	B_LogEntry (TOPIC_Snaf_przepis, "Odda³em Snafowi przepis. Teraz muszê donieœæ sk³adniki: 5 piekielników, 10 miês z chrz¹szczy i niebieski bez. Chrz¹szcze przebywaj¹ na terenach, gdzie nie ma orków. Jako takie miejsce Snaf wskaza³ chatê Cavalorna.");
+	B_LogEntry (TOPIC_Snaf_przepis, "Odda³em Snafowi przepis. Teraz muszê donieœæ sk³adniki: 7 miês chrz¹szczy, 2 butelki wody, 1 butelka wina i 3 du¿e grzyby.");
 };
 
 //*********************************************************************
@@ -955,9 +958,10 @@ INSTANCE DIA_NASZ_226_Snaf_done   (C_INFO)
 FUNC INT DIA_NASZ_226_Snaf_done_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_226_Snaf_ingrediens)
-		&& npc_hasitems (other, ItPl_Mushroom_01) >=5
-		&& npc_hasitems (other, ItAt_Meatbugflesh) >=10
-		&& npc_hasitems (other, ItPl_Blueplant) >=1)
+		&& npc_hasitems (other, ItPl_Mushroom_02) >=3
+		&& npc_hasitems (other, ItAt_Meatbugflesh) >=7
+		&& npc_hasitems (other, ItFo_Water) >=2
+		&& npc_hasitems (other, ItFo_Wine) >=1)
 	{
 		return TRUE;
 	};
@@ -966,20 +970,24 @@ FUNC INT DIA_NASZ_226_Snaf_done_Condition()
 FUNC VOID DIA_NASZ_226_Snaf_done_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_done_15_00"); //Oto twoje sk³adniki.
-	B_GiveInvItems (other, self, ItPl_Mushroom_01, 5);
-	B_GiveInvItems (other, self, ItAt_Meatbugflesh, 10);
-	B_GiveInvItems (other, self, ItPl_Blueplant, 1);
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_done_55_01"); //S¹ wszystkie. Masz tu trochê z³ota w nagrodê.
+	B_GiveInvItems (other, self, ItPl_Mushroom_02, 3);
+	B_GiveInvItems (other, self, ItAt_Meatbugflesh, 7);
+	B_GiveInvItems (other, self, ItFo_Water, 2);
+	B_GiveInvItems (other, self, ItFo_Wine, 1);
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_done_55_01"); //S¹ wszystkie. Wielkie dziêki! Masz tu trochê z³ota w nagrodê.
 	Createinvitems (self, ItMi_Gold, 50);
 	B_GiveInvItems (self, other, ItMi_Gold, 50);
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_done_55_02"); //Œwietnie siê spisa³eœ. PrzyjdŸ jutro, a dostaniesz ca³¹ misê potrawki!
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_done_15_03"); //Z pewnoœci¹ nie przegapiê szansy skosztowania takiego... smako³yku.
-
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_done_55_02"); //Œwietnie siê spisa³eœ, przyjacielu.
+	
+	if (hero.guild == GIL_OUT) {
+		AI_Output (self, other,"DIA_NASZ_226_Snaf_done_55_03"); //Nie zapomnij wpaœæ do mnie po coœ dobrego na obiad!
+	};
+	
 	DodajReputacje (1, REP_MYSLIWI);
 	B_GivePlayerXP (200);
-	B_LogEntry (TOPIC_Snaf_przepis, "Odda³em Snafowi sk³adniki. Mogê przyjœæ jutro po talerz tej potrawy.");
+	B_LogEntry (TOPIC_Snaf_przepis, "Odda³em Snafowi sk³adniki.");
 	Log_SetTopicStatus (TOPIC_Snaf_przepis, LOG_SUCCESS);
-	// TODO: zrobiæ przyjœcie po potrawkê na drugi dzieñ
+
 };
 
 var int SnafEatDay;
@@ -999,10 +1007,7 @@ INSTANCE DIA_NASZ_226_Snaf_jedzenie   (C_INFO)
 
 FUNC INT DIA_NASZ_226_Snaf_jedzenie_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_226_Snaf_ingrediens)
-		&& npc_hasitems (other, ItPl_Mushroom_01) >=5
-		&& npc_hasitems (other, ItAt_Meatbugflesh) >=10
-		&& npc_hasitems (other, ItPl_Blueplant) >=1)
+	if (npc_knowsinfo(other,DIA_NASZ_226_Snaf_what))
 	{
 		return TRUE;
 	};

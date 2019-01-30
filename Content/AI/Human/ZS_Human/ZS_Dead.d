@@ -547,6 +547,13 @@ func void ZS_Dead ()
 
 	};
 
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_028_Kazmin))
+	{
+		Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_SUCCESS);
+		B_LogEntry (TOPIC_Erak_plagaciemnosci, "Uœmierci³em demona. Teraz nieumarli nie powinni ju¿ straszyæ w Górniczej Dolinie.");
+	};
+	
+	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcShaman_Ur_Shak))
 	{
 		AI_Teleport	(NASZ_412_CatSan, "OW_ROCKDRAGON_06");

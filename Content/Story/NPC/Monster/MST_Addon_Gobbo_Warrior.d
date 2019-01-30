@@ -87,6 +87,25 @@ INSTANCE Gobbo_Warrior (Mst_Default_Gobbo_Warrior)
 	Npc_SetToFightMode (self, ItMw_1h_Misc_Sword); //Waffe ist nur Optik - Schaden wird NUR über STR bestimmt (Gobbo ist als Monster im Fistmode)
 	Mdl_SetModelScale(self, 1.15, 1.15, 1.15);
 };
+
+INSTANCE Gobbo_Warrior_Snaf (Mst_Default_Gobbo_Warrior)
+{
+	name = "Gruby goblin";
+	B_SetVisuals_Gobbo_Warrior();
+	Npc_SetToFightMode (self, ItMw_1h_Misc_Sword); //Waffe ist nur Optik - Schaden wird NUR über STR bestimmt (Gobbo ist als Monster im Fistmode)
+	CreateInvItems(self,ItNa_Przepis_ZupaZDuzychGrzybow,1);
+};
+
+INSTANCE Gobbo_Warrior_Kivo (Mst_Default_Gobbo_Warrior)
+{
+	name = "B³¹dz¹cy goblin";
+	B_SetVisuals_Gobbo_Warrior();
+	attribute[ATR_STRENGTH] = 70;
+	Npc_SetToFightMode (self, ItMw_Orkschlaechter); //Waffe ist nur Optik - Schaden wird NUR über STR bestimmt (Gobbo ist als Monster im Fistmode)
+	CreateInvItems(self,ItNa_Przepis_ZupaZDuzychGrzybow,1);
+};
+
+
 // ***********
 // Black Gobbo   	
 // ***********

@@ -100,7 +100,6 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertItem (ItNa_Uroboros5,"FP_NASZ_UROBOROS5");
 	Mob_CreateItems("SKRZYNIA_KALOMA", ItNa_Uroboros6, 1);
 	
-	Wld_InsertItem (ItNa_Snaf_Przepis,"NASZ_MYSLIWI_ITEM_01");
 	
 	Wld_InsertItem (ItNa_KoscBrata,"NASZ_ITEM_BRACIA_1");
 	Wld_InsertItem (ItNa_KoscBrata,"NASZ_ITEM_BRACIA_2");

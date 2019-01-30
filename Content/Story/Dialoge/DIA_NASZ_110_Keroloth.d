@@ -1996,6 +1996,7 @@ FUNC INT DIA_NASZ_110_Keroloth_PreKap4_Condition()
 
 func void PreKap()
 {
+	//print("PREKAP4");
 	pre = 1;
 	ff_applyonce(BlackScreen);
 
@@ -2018,12 +2019,23 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 	//WillGoToCastle = FALSE;
 	RemoveHookF(oCNpc__ProcessNpc,6,UratujFunc);
 
-	AI_StopProcessInfos (self);
-	if(infomanager_hasfinished())
+	//AI_StopProcessInfos (self);
+	
+	// TODO ten if zwraca FALSE !! czemu? kiedy powinna zwrocic true?
+	if(InfoManager_HasFinished())
 	{
 		PreKap();
 	};
 
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_PreKap4);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_PreKap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_PreKap4_end);
+
+	
+};
+
+func void DIA_NASZ_110_Keroloth_PreKap4_end() {
+	AI_StopProcessInfos(self);
+	PreKap();
 };
 
 /* ----- ----- -----
@@ -2103,7 +2115,6 @@ INSTANCE DIA_NASZ_110_Keroloth_Kap4   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_Kap4_Condition()	
 {
-	// TODO zmienic warunek, bo bedzie usuniete FilmKap4, ale zostawic warunek Cheat!!!
 	if (pre == 2)
 	|| (Cheat_SkipToKap4 == TRUE)
 	{
@@ -2119,19 +2130,18 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_02"); //Teraz, kiedy uda³o nam siê ju¿ opanowaæ zamek, powinniœmy zaj¹æ siêdalszymi przygotowaniami maj¹cymi na celu wzmocniæ nasz¹ pozycjê w tym miejscu.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_03"); //Szturm ze strony orków jest tylko kwesti¹ czasu i w ¿adnym wypadku nie powinniœmy dawaæ im jakichkolwiek szans na osi¹gniecie nad nami przewagi.
 	
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, "Co mam teraz zrobiæ?", DIA_NASZ_110_Keroloth_Kap4_what);
 	
 	Wld_SendTrigger ("MOVER_GESTATH_GRAVE");
 	B_StartOtherRoutine (NASZ_213_Gestath,"TOT");
 
-	B_Kapitelwechsel (4, NEWWORLD_ZEN );
 	
 	B_LogEntry (TOPIC_Keroloth_Wojna, "To koniec. Zamek zdobyty! Teraz mam udaæ siê z wieœciami o tym do Udara.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "Przejêliœmy zamek. Ale orkowie przes³ali sygna³ dymny za palisadê. Muszê udaæ siê do Udara z wieœciami o skutkach wojny oraz rozejrzeæ siê za orkowym murem...");
 
-	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
-	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, "Co mam teraz zrobiæ?", DIA_NASZ_110_Keroloth_Kap4_what);
 
 };
 
@@ -2159,14 +2169,27 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_05"); //W kolonii od d³u¿szego czasu pojawiaj¹ siê demony i nikt z nas nie wie, co jest powodem tych wydarzeñ.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Kap4_what_55_06"); //Myœlisz, ¿e to mo¿e mieæ jakiœ zwi¹zek z orkowymi szamanami?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_07"); //Nie mam pojêcia, ale lepiej nie czekaæ na ich kolejny ruch je¿eli stoj¹ i za tym.
-		
+	
+	
+	
 	Log_CreateTopic (TOPIC_Sprawy,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Sprawy, LOG_RUNNING);
 	B_LogEntry (TOPIC_Sprawy,"Szturm zakoñczy³ siê sukcesem, jednak to wcale nie oznacza, ¿e ju¿ wygraliœmy. Keroloth podejrzewa, i¿ orkowie bêd¹ chcieli przeprowadziæ kontruderzenie i odbiæ zamek si³¹. Dlatego te¿ wys³a³ mnie do obozu ³owców bym sprowadzi³ do zamku kilku wojowników. Poza tym mam odwiedziæ myœliwych i sprawdziæ, czy czegoœ potrzebuj¹ i czy s¹ bezpieczni.");
-	AI_StopProcessInfos (self);
+	//AI_StopProcessInfos (self);
 	
 	InsertUndeadsNearOUTCamp();
+
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
+
+	
 };
+
+func void DIA_NASZ_110_Keroloth_Kap4_end() {
+	B_Kapitelwechsel (4, NEWWORLD_ZEN );
+	AI_StopProcessInfos(self);
+};
+
 
 //*********************************************************************
 //	Info ErakAndUdarDone
@@ -2277,6 +2300,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	TRIA_Invite(Monastir);
     TRIA_Start();
  
+	AI_RunToNPC(NASZ_010_Monastir,hero);
+ 
 	// Keroloth
 	TRIA_Next(Keroloth);
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_00"); //Co siê tutaj sta³o?!
@@ -2346,6 +2371,9 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	else 																{	Npc_ExchangeRoutine(NASZ_010_Monastir,"InCastle"); };
 	
 	Npc_ExchangeRoutine(NASZ_110_Keroloth,"Zamek");
+	
+	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Nieumarli pojawili siê w zamku! Zniszczenie kapliczki tylko pogorszy³o sytuacjê. Jak siê okaza³o, g³ówn¹ przyczyn¹ nie by³ pos¹g demona, tylko Zaæmienie. Najwy¿sza pora rozwik³aæ tê sprawê.");
+
 };
 
 

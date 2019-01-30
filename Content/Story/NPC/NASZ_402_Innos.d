@@ -43,8 +43,8 @@ instance NASZ_402_Innos (Npc_Default)
 
 FUNC VOID Rtn_Start_402()
 {	
-	TA_Stand_Guarding   (08,00,20,00,"CASTLE_36");
-	TA_Stand_Guarding   (20,00,08,00,"CASTLE_36");
+	TA_Stand_Guarding   (08,00,20,00,"NASZ_OLDTEMPLE_INNOS");
+	TA_Stand_Guarding   (20,00,08,00,"NASZ_OLDTEMPLE_INNOS");
 };
 
 FUNC VOID Rtn_Final_402()

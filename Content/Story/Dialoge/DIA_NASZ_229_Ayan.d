@@ -636,7 +636,7 @@ func void OZYWIENIEC_S1 ()
 		Snd_Play ("MFX_GhostVoice"); 
 		Snd_Play ("MFX_Firestorm_Cast"); 
 		Snd_Play ("MFX_Lightning_Origin");
-		Wld_InsertNpc 	(NASZ_402_Innos, "CASTLE_36");
+		Wld_InsertNpc 	(NASZ_402_Innos, "NASZ_OLDTEMPLE_INNOS");
 		Wld_InsertNpc 	(NASZ_403_Adanos, "OW_ICEDRAGON_15");
 		Wld_InsertNpc 	(NASZ_404_Beliar, "DT_E3_07");
 

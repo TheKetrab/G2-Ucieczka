@@ -237,7 +237,7 @@ func void TakeFocusVob_hook()
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};	
 	
-	PrintS_Ext(ConcatStrings("Podnios³eœ: ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings("Podnios³e? ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	
 };
 
@@ -1165,7 +1165,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta³eœ zatruty! (-1HP/10S)");
+				Print("Zosta?e? zatruty! (-1HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1176,7 +1176,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta³eœ zatruty! (-5HP/10S)");
+				Print("Zosta?e? zatruty! (-5HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1188,7 +1188,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zosta³eœ zatruty! (-10HP/10S)");
+				Print("Zosta?e? zatruty! (-10HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1273,37 +1273,20 @@ func void Sleep(var int ms) {
 };
 //-
 
-var int bll;
-const int afdf = 0;
-var int fs;
-var int pre;
+var int bll; // iterator
+var int bll500; // iterator po petli w srodku
+const int afdf = 0; // 1 -> zaciemnianie, 2 -> stop, 3 -> rozjasnianie
+var int fs; // screen
+var int pre; // stan
+const int darknessSpeed = 3;
+var int setKerolothRoutineOneTime;
 func void BlackScreen(var int i)
 {
 	//if(MEM_GAME.load_screen || ) {return;};
 	
-	if(bll==500)
-	{
-		//Print("koniec");
-		View_SetAlpha(fs,RGBA(255,255,255,255));
-		afdf = 2;
-		if(pre==1)
-		{
-			B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");
-			PlayVideo ("G2UCIECZKAAFTERKAP3.BIK");
-			AI_Teleport	(hero, "OC_CENTER_04");
-			AI_Teleport	(NASZ_110_Keroloth, "OC_CENTER_04");
-			Npc_ClearAIQueue (hero);
-			Sleep(2000);
-			pre = 0;
-		};
-		//bll = 255;
-		//ff_remove(bl);
-		//return;
+	//Print(IntToString(bll));
 	
-	};
-	
-	
-	if(!afdf)
+	if(!afdf) // init afdf
 	{
 		bll = 255;
 		Print_GetScreenSize();
@@ -1312,19 +1295,60 @@ func void BlackScreen(var int i)
 		View_Open(fs);	
 		//MEM_Game.game_drawall = false;
 		
-		
-		afdf = 1;
-	
+		afdf = 1;	
 	};
+
+	if (afdf == 1) // zaciemnianie
+	{	
+		View_SetAlpha(fs,RGBA(bll,bll,bll,255));
+		bll += darknessSpeed;
+		//Print(IntToString(bll));
 	
-	if(afdf == 2)
+		if (bll >= 500) {
+			bll = 500;
+			afdf = 2;
+			View_SetAlpha(fs,RGBA(255,255,255,255));
+		};
+	}
+	
+	else if (afdf == 2)
+	{			
+		bll500 += 1;
+		
+		if (bll500 == 5) {
+			AI_Teleport	(hero, "OC_CENTER_04");
+			AI_Teleport	(NASZ_110_Keroloth, "OC_CENTER_04");
+		};
+		
+		if (bll500 == 10) {
+			// TODO: odkomentowa?
+			//PlayVideo ("G2UCIECZKAAFTERKAP3.BIK");
+			PlayVideo ("INTRO.BIK");
+		};
+	
+		if (bll500 == 15) {
+			afdf = 3;
+			Npc_ClearAIQueue (hero);
+		};
+	
+	
+	}
+	
+	else // afdf == 3 -> rozjasnianie
 	{
+		if (setKerolothRoutineOneTime == FALSE) {
+			setKerolothRoutineOneTime = TRUE;
+			Npc_ClearAIQueue (NASZ_110_Keroloth);
+			B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");
+		};
+	
 		View_SetAlpha(fs,RGBA(bll,bll,bll,255));
 		View_SetTexture(fs,"black.tga");
-		bll -= 1;
-		//Print(IntToString(bll));
-		if(bll == 256)
+		bll -= darknessSpeed;
+
+		if(bll <= 256) // calkiem jasno
 		{
+			bll = 256;
 			Npc_ClearAIQueue (hero);
 			view_delete(fs);
 			pre = 2;
@@ -1334,13 +1358,11 @@ func void BlackScreen(var int i)
 			return;
 		
 		};
-	}
-	else
-	{	
-		View_SetAlpha(fs,RGBA(bll,bll,bll,255));
-		bll += 1;
-		//Print(IntToString(bll));
 	};
+
+	
+	
+
 
 };
 

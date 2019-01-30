@@ -1,3 +1,6 @@
+// TODO: (nowe sposoby mysliwskie)
+// nie dzia³a smar do prze³¹cznika. nie trzeba go miec, zeby przekrecic
+
 
 //*********************************************************************
 //	Info EXIT 
@@ -732,7 +735,7 @@ FUNC VOID DIA_NASZ_231_Ted_Krata_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Krata_15_00"); //Oczywiœcie... Zamkniête!
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Krata_55_01"); //Gdzieœ w okolicy musi byæ prze³¹cznik otwieraj¹cy tê kratê.
-	AI_Output (other, self,"DIA_NASZ_231_Ted_Krata_55_02"); //Tak, tak, jasnê. Idê go poszukaæ.
+	AI_Output (other, self,"DIA_NASZ_231_Ted_Krata_55_02"); //Tak, tak, jasne. Idê go poszukaæ.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Krata_55_03"); //Tylko siê nie zgub!
 	
 	B_LogEntry (TOPIC_Ted_trolls, "Zamiast drzwi, magowie widocznie u¿ywali bram... Muszê znaleŸæ jakiœ sposób ¿eby otworzyæ tê tutaj do wie¿y.");

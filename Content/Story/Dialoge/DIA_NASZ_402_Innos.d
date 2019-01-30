@@ -169,7 +169,7 @@ FUNC VOID DIA_NASZ_402_Innos_doneB_Info()
 
 };
 
-
+var int KillKazzminBefore;
 //*********************************************************************
 //	Info WorkA
 //*********************************************************************
@@ -197,6 +197,7 @@ FUNC VOID DIA_NASZ_402_Innos_workA_Info()
 	AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_01"); //Bagna. Na bagnach gnije pe³no zagubionych dusz.
 	
 	if (Npc_IsDead(NASZ_028_Kazmin)) {
+		KillKazzminBefore = TRUE;
 		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_02"); //Ale... Zaraz. W³aœnie wyczuwam, ¿e ju¿ s¹ spokojne. Ty im pomog³eœ i oczyœci³eœ ich z niewiary.
 		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_03"); //Teraz ja mogê pomóc tobie. Co mam zrobiæ?
 
@@ -229,6 +230,8 @@ INSTANCE DIA_NASZ_402_Innos_doneA   (C_INFO)
 FUNC INT DIA_NASZ_402_Innos_doneA_Condition()
 {
 	if (Npc_IsDead(NASZ_028_Kazmin))
+	&& (npc_knowsinfo(other,DIA_NASZ_402_Innos_workA))
+	&& (KillKazzminBefore == FALSE)
 	{
 		return TRUE;
 	};
@@ -261,7 +264,8 @@ INSTANCE DIA_NASZ_402_Innos_GotoTP   (C_INFO)
 
 FUNC INT DIA_NASZ_402_Innos_GotoTP_Condition()
 {
-	if (Npc_IsDead(NASZ_028_Kazmin))
+	if (npc_knowsinfo(other,DIA_NASZ_402_Innos_doneA))
+	|| (KillKazzminBefore == TRUE)
 	{
 		return TRUE;
 	};

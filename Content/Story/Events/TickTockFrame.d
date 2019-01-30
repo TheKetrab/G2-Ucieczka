@@ -165,10 +165,9 @@ func void KillDemonPosag()
 		var c_item itm; itm = Npc_GetEquippedMeleeWeapon(hero);
 		if (C_BodyStateContains(hero,BS_HIT) && Npc_GetDistToWP	(hero, "NASZ_DEMON_WP") < 150  && Npc_HasReadiedMeleeWeapon(hero))
 		{
-			// TODO: bogu if item is mÅ‚ot
 			if (bIsHammer(itm))
 			{
-				B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zostaÅ‚a zniszczona, a wraz z niÄ… zagroÅ¼enie jakie deptaÅ‚o nam po piÄ™tach. Czym prÄ™dzej wrÃ³cÄ™ do maga i opowiem mu o tym co siÄ™ tutaj staÅ‚o. Poza tym dziwiÄ™ siÄ™, Å¼e nie zaatakowaÅ‚ mnie Å¼aden demon. CzyÅ¼by mag siÄ™ myliÅ‚?");
+				B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zosta³a zniszczona, a wraz z ni¹ zagro¿enie jakie depta³o nam po piêtach. Czym prêdzej wrócê do maga i opowiem mu o tym co siê tutaj sta³o. Poza tym dziwiê siê, ¿e nie zaatakowa³ mnie ¿aden demon. Czy¿by mag siê myli³?");
 				Migration_LowcyToZamek(); // migracja do zamku lowcow
 
 				Wld_PlayEffect("spellFX_Fear",  hero, hero, 0, 0, 0, FALSE );

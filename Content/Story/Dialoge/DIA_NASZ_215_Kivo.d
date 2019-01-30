@@ -1,3 +1,5 @@
+// todo: niech b³êdny goblin ³¹czy siê z misj¹ od ducha 'goblin' !!!
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -333,8 +335,9 @@ FUNC VOID DIA_NASZ_215_Kivo_help_Info()
 	AI_Output (other,self ,"DIA_NASZ_215_Kivo_help_15_05"); //Sk¹d wiesz, ¿e znajdê ten miecz w³aœnie w tym lesie?
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_help_15_06"); //Jeszcze za czasów Gomeza mój przyjaciel w³ada³ tak¹ broni¹. Któregoœ dnia poszed³ tam polowaæ i nigdy nie wróci³. Miecz musi byæ gdzieœ tam.
 
-	Wld_InsertNpc	(NASZ_413_Umarlak,"NASZ_UMARLAK"); 
-	B_KillNPC (NASZ_413_Umarlak);
+	//Wld_InsertNpc	(NASZ_413_Umarlak,"NASZ_UMARLAK"); 
+	//B_KillNPC (NASZ_413_Umarlak);
+	Wld_InsertNpc	(Gobbo_Warrior_Kivo,"NASZ_UMARLAK"); 
 
 	Log_CreateTopic (TOPIC_Kivo_zemsta, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Kivo_zemsta, LOG_RUNNING);

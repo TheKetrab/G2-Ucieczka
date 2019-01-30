@@ -96,8 +96,8 @@ INSTANCE DIA_NASZ_404_Beliar_doneC   (C_INFO)
 
 FUNC INT DIA_NASZ_404_Beliar_doneC_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_404_Beliar_portal)
-		&& (ZabilesDlaBeliara == TRUE))
+	if (npc_knowsinfo (other, DIA_NASZ_404_Beliar_portal))
+//		&& (ZabilesDlaBeliara == TRUE)) TODO: nie dzia³a zabijanie w ZS_Dead, nie wiem czemu
 	{
 		return TRUE;
 	};

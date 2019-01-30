@@ -190,7 +190,7 @@ FUNC VOID Use_AllReceptures ()
 	CreateInvItems (hero,ItNa_Przepis_UdziecZDzikaPoLowiecku, 1);	// | daje Gerold w nagrodê za misjê 'g³ód'				| +1 DEX
 	CreateInvItems (hero,ItNa_Przepis_ZupaMleczna, 1);				// | w kufrze Udara										| +1 MANA
 	CreateInvItems (hero,ItNa_Przepis_ZupaGrzybowa, 1);				// | w kufrze Louisa									| +1 DEX
-	CreateInvItems (hero,ItNa_Przepis_ZupaZDuzychGrzybow, 1);		// | w kufrze w obozie przed kopalni¹					| +1 STR
+	CreateInvItems (hero,ItNa_Przepis_ZupaZDuzychGrzybow, 1);		// | ma j¹ du¿y goblin z misji z przepisem dla Snafa	| +1 STR
 	CreateInvItems (hero,ItNa_Przepis_ZupaJarzynowaZJagodami, 1);	// | w kufrze tam gdzie siedzi Cipher i Rod w G2		| +1 STR
 	CreateInvItems (hero,ItNa_Przepis_ZupaSerowa, 1);				// | w kufrze w jaskini Phill-gobliny					| +1 STR
 	CreateInvItems (hero,ItNa_Przepis_PrzysmakMysliwych, 1);		// | daje go Aran za misjê 'Towarzystwo'				| +1 DEX
@@ -546,7 +546,7 @@ func void Use_Przepis_ZupaZDuzychGrzybow ()
 				Doc_PrintLine	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Zupa z du¿ych grzybów:"	);
 				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "W garnku umieœciæ dwa litry wody wymieszanej z po³ow¹ butelki wina, a nastêpnie gotowaæ na wolnym ogniu do momentu wrzenia. Kiedy wywar zacznie siê gotowaæ, wrzucamy do niego pokrojone kapelusze i trzonki dwóch du¿ych grzybów. Po po³owie godziny wszystko powinno byæ gotowe do jedzenia.");
+				Doc_PrintLines	( nDocID,  0, "W garnku umieœciæ miêso z siedmiu chrz¹szczy. Wlaæ dwa litry wody wymieszanej z po³ow¹ butelki wina, a nastêpnie gotowaæ na wolnym ogniu do momentu wrzenia. Kiedy wywar zacznie siê gotowaæ, wrzucamy do niego pokrojone kapelusze i trzonki trzech du¿ych grzybów. Po po³owie godziny wszystko powinno byæ gotowe do jedzenia.");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus

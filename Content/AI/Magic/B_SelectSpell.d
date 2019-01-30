@@ -94,7 +94,7 @@ func int B_SelectSpell (var C_NPC slf, var C_NPC oth)
 
 	if (Hlp_GetInstanceID(slf) == Hlp_GetInstanceID(NASZ_402_Innos))
 	{
-		if (InnosSieTeleportuje == TRUE) && (Npc_GetDistToWP	(NASZ_402_Innos, "CASTLE_36") < 1000)
+		if (InnosSieTeleportuje == TRUE) && (Npc_GetDistToWP	(NASZ_402_Innos, "NASZ_OLDTEMPLE_INNOS") < 3000)
 		{
 			if (Npc_HasItems (slf, ItNa_TeleportLowcy) == 0)
 			{	

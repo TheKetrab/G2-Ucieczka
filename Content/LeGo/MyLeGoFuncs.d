@@ -15,11 +15,6 @@ func string exitDialoge(var string i)
 };
 
 
-func int Get_AniSpeed(var c_npc slf, var string aniName)
-{
-    var int ptr;  ptr = GetAniFromAniID(slf,aniName);
-    return roundf(MEM_ReadInt(ptr+176));
-}; 
 
 var int NpcsInFight;
 func void ZmienStylWalki( /*var c_npc master*/ ) {
@@ -209,7 +204,7 @@ func void TakeFocusVob_hook()
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};	
 	
-	PrintS_Ext(ConcatStrings("Podnios³eœ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings("Podnios?e? ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	release(itm);
 	
 };
@@ -1138,7 +1133,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta³eœ zatruty! (-1HP/10S)");
+				Print("Zosta³e?zatruty! (-1HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1149,7 +1144,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta³eœ zatruty! (-5HP/10S)");
+				Print("Zosta³e?zatruty! (-5HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1161,7 +1156,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zost³eœ zatruty! (-10HP/10S)");
+				Print("Zost³e?zatruty! (-10HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		

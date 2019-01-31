@@ -22,6 +22,7 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 		return; 			//Magie gewählt!
 	};
 	
+	
 	if (Npc_IsInFightMode(slf,FMODE_MAGIC))		//Habe Magie gezogen, will aber keine benutzen!!!
 	{
 		if (!Npc_IsInFightMode(slf, FMODE_NONE))			//irgendeine ANDERE Waffe gezogen
@@ -54,9 +55,10 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 			return;
 		};
 	};
-	
+
 		
 	// FUNC
+
 	
 	// Monk ma nie uzywac kuszy
 	if (Npc_IsInFightMode (slf,FMODE_NONE))
@@ -98,9 +100,38 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 		};
 	};
 	
+	if (Npc_HasEquippedRangedWeapon(slf)) //Npc_HasReadiedRangedWeapon(slf)
+	{
+		var c_item rw; rw = Npc_GetEquippedRangedWeapon(slf);
+		
+		if(rw.flags & ITEM_BOW)
+		{  
+			if (Npc_GetDistToNpc(slf,oth) > 0)
+			{
+				if(oth.guild == GIL_FireGolem)
+				{
+					rw.munition = ItNa_LodowaStrzala;
+					B_CreateAmmo(slf);
+					AI_RemoveWeapon (slf);
+					AI_ReadyRangedWeapon (slf);	
+					return;
+				}
+				else if (oth.guild == GIL_IceGolem)
+				{
+					rw.munition = ItNa_OgnistaStrzala;
+					B_CreateAmmo(slf);
+					AI_RemoveWeapon (slf);
+					AI_ReadyRangedWeapon (slf);
+					return;
+				};
+			};
+		};
+	
+	};
+	
 	// ------ NK-Waffe ziehen ------
-	if (Npc_HasEquippedMeleeWeapon(slf))
-	&& (Npc_GetDistToNpc(slf,oth) <= FIGHT_DIST_RANGED_OUTER)
+	if (oth.guild !=gil_firegolem && oth.guild != gil_icegolem && Npc_HasEquippedMeleeWeapon(slf)
+	&& (Npc_GetDistToNpc(slf,oth) <= FIGHT_DIST_RANGED_OUTER))
 	{
 		if (!Npc_IsInFightMode(slf, FMODE_NONE))			//irgendeine ANDERE Waffe gezogen
 		{
@@ -112,9 +143,9 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 	};
 	
 	// ------ Bogen ziehen ------
-	if (Npc_HasEquippedRangedWeapon(slf))
+	if ((oth.guild !=gil_firegolem && oth.guild != gil_icegolem && Npc_HasEquippedRangedWeapon(slf))
 	&& (Npc_GetDistToNpc(slf,oth) > FIGHT_DIST_RANGED_INNER)
-	&& (C_NpcHasAttackReasonToKill (slf))
+	&& (C_NpcHasAttackReasonToKill (slf)))
 	{
 		if (!Npc_IsInFightMode(slf, FMODE_NONE))			//irgendeine ANDERE Waffe gezogen
 		{
@@ -124,6 +155,7 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 		AI_ReadyRangedWeapon (slf); //FK-Waffe ziehen
 		return;
 	};
+	
 	
 	// ------ immer noch keine Waffe ------
 	if (Npc_IsInFightMode (slf,FMODE_NONE))
@@ -146,6 +178,8 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 		AI_ReadyMeleeWeapon	(slf);
 		return;
 	};
+	
+	
 	
 	return;
 };

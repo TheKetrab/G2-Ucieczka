@@ -35,6 +35,35 @@ func void B_CreateAmmo(var C_NPC slf)
 		{
 			CreateInvItems (slf, ItRw_Bolt, 10);
 		};
-	};	
+	}
+	else if (rangedWeapon.munition == ItNa_LodowaStrzala)
+	{
+		if (Npc_HasItems(slf, ItNa_LodowaStrzala) < 10)
+		{
+			CreateInvItems (slf, ItNa_LodowaStrzala, 10);
+		};
+	}	
+	else if (rangedWeapon.munition == ItNa_OgnistaStrzala)
+	{
+		if (Npc_HasItems(slf, ItNa_OgnistaStrzala) < 10)
+		{
+			CreateInvItems (slf, ItNa_OgnistaStrzala, 10);
+		};
+	}
+	else if (rangedWeapon.munition == ItNa_OstraStrzala)
+	{
+		if (Npc_HasItems(slf, ItNa_OstraStrzala) < 10)
+		{
+			CreateInvItems (slf, ItNa_OstraStrzala, 10);
+		};
+	}	
+	else if (rangedWeapon.munition == ItRw_SharpBolt)
+	{
+		if (Npc_HasItems(slf, ItRw_SharpBolt) < 10)
+		{
+			CreateInvItems (slf, ItRw_SharpBolt, 10);
+		};
+	};
+							
 };
 

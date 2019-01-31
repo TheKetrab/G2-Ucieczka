@@ -71,6 +71,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		// Respawn
 		
 		//LAS OC
+		Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_BANDIT_02_2");	
 		Wld_InsertNpc	(Gobbo_Black,"SPAWN_OW_MOLERATS_WOOD_OM");	
 		Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_OW_SCAVENGER_BANDIT_02_2");
 		Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_SCAVENGER_BANDIT_02");

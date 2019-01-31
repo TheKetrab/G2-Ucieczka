@@ -1289,9 +1289,7 @@ func void BlackScreen(var int i)
 		};
 		
 		if (bll500 == 10) {
-			// TODO: odkomentowa?
-			//PlayVideo ("G2UCIECZKAAFTERKAP3.BIK");
-			PlayVideo ("INTRO.BIK");
+			PlayVideo ("G2UCIECZKAAFTERKAP3.BIK");
 		};
 	
 		if (bll500 == 15) {

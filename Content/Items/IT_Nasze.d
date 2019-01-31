@@ -317,7 +317,9 @@ func void XARDAS_TRIGER_2 ()
 
 func void FINISH ()
 {
-	PrintScreen	("KONIEC GRY", -1,-1, "font_old_20_white.tga",2);
+	//PrintScreen	("KONIEC GRY", -1,-1, "font_old_20_white.tga",2);
+	PlayVideo ("G2UCIECZKAOUTRO.BIK");	
+	ExitSession ();
 
 };
 

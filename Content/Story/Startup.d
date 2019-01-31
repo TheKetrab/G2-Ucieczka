@@ -469,7 +469,6 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_CAVALORN_7");	
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_CAVALORN_8");	
 
-	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_BANDIT_02_2");	
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_07_01");	
 	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_07_02");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_TREE");	

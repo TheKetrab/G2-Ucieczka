@@ -125,7 +125,7 @@ INSTANCE DIA_NASZ_217_Louis_GoToRenegaci   (C_INFO)
  	condition   = DIA_NASZ_217_Louis_GoToRenegaci_Condition;
  	information = DIA_NASZ_217_Louis_GoToRenegaci_Info;
  	permanent   = FALSE;
-	description = "ChodŸ, udamy siê zaatakowaæ bandytów.";
+	description = "ChodŸ, udamy siê zaatakowaæ paladynów renegatów.";
 };
 
 FUNC INT DIA_NASZ_217_Louis_GoToRenegaci_Condition()	
@@ -138,7 +138,7 @@ FUNC INT DIA_NASZ_217_Louis_GoToRenegaci_Condition()
 
 FUNC VOID DIA_NASZ_217_Louis_GoToRenegaci_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_217_Louis_GoToRenegaci_15_00"); //ChodŸ, udamy siê zaatakowaæ bandytów.
+	AI_Output (other, self,"DIA_NASZ_217_Louis_GoToRenegaci_15_00"); //ChodŸ, udamy siê zaatakowaæ paladynów renegatów.
 	AI_Output (self, other,"DIA_NASZ_217_Louis_GoToRenegaci_55_01"); //Mój miecz dawno nie kosztowa³ ludzkiej krwi. Dawno temu, gdy jeszcze p³ywa³em na statkach kupieckich, czêsto musieliœmy odpieraæ pirackie grabie¿e.
 	AI_Output (self, other,"DIA_NASZ_217_Louis_GoToRenegaci_55_02"); //Chocia¿ myœlê, ¿e i tak za³atwimy to ³ukami. ProwadŸ.
 

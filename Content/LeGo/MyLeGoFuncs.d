@@ -630,13 +630,14 @@ func void StaryFlyDamage (var c_npc slf, var int speed, var int x, var int y, va
     CALL__thiscall (_slf.human_ai, oCAIHuman__StartFlyDamage);
 };
  
-//var int random;
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
 	    
-	if(!victimPtr || !attackerPtr) {return 0;};
+	if(!victimPtr || !attackerPtr) {Print("B??d z pointerem do npc podczas ataku! Skontaktuj si? z tw?rcami moda."); return 0;};
 	
 	Var c_npc slf; slf = _^(attackerPtr);
 	var c_npc oth; oth = _^(victimPtr);
+	
+	if(!slf || !oth) {Print("B??d z npc podczas ataku! Skontaktuj si? z tw?rcami moda.");};
 	
 	var C_ITEM ReadiedWeapon; ReadiedWeapon = Npc_GetReadiedWeapon(slf);
 
@@ -771,7 +772,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				
 				if(ReadiedWeapon.flags & ITEM_BOW)
 				{
-					if (BowMunition == FireArrow)
+					if (ReadiedWeapon.munition  == ItNa_OgnistaStrzala)
 					{
 						if((30 - (oth.protection[PROT_MAGIC])) <= 0)
 						{
@@ -785,7 +786,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 						dmg = (slf.attribute[ATR_DEXTERITY]) + (ReadiedWeapon.damageTotal) - (oth.protection[PROT_POINT]) + MunitionDMG;
 						Wld_PlayEffect ("spellFX_RingRitual1", oth, oth, 0, 0, 0, FALSE);
 					}
-					else if (BowMunition == IceArrow)
+					else if (ReadiedWeapon.munition  == ItNa_LodowaStrzala)
 					{
 						if((30 - (oth.protection[PROT_MAGIC])) <= 0)
 						{
@@ -811,11 +812,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					}
 					else
 					{
-						if (BowMunition == SharpArrow)
+						if (ReadiedWeapon.munition  == ItNa_OstraStrzala)
 						{
 							MunitionDMG = 10;
 						}
-						else if (BowMunition == NormalArrow)
+						else if (ReadiedWeapon.munition  == NormalArrow)
 						{
 							MunitionDMG = 0;
 						};
@@ -825,11 +826,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				}
 				else
 				{
-					if (CBowMunition == SharpBolt)
+					if (ReadiedWeapon.munition  == SharpBolt)
 					{
 						MunitionDMG = 10;
 					}
-					else if (CBowMunition == NormalBolt)
+					else if (ReadiedWeapon.munition  == NormalBolt)
 					{
 						MunitionDMG = 0;
 					};
@@ -847,6 +848,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		{
 			
 				var C_Spell spl; spl = GFA_GetActiveSpellInst(slf);// _^(Npc_GetSelectedSpell(slf));
+				if(!spl) {return dmg = 0;};
 	
 				
 				if(C_NpcIsUndead(oth) && spl.damage_per_level == SPL_Damage_DESTROYUNDEAD  && !C_NpcIsBoss(oth))
@@ -903,7 +905,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			
 		};
 	};
-	
+
 	if (oth.guild == GIL_ICEGOLEM)
 	{
 		if (Npc_IsInFightMode(slf, FMODE_MELEE))
@@ -915,15 +917,16 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		}
 		else if (Npc_IsInFightMode(slf, FMODE_FAR))
 		{
-			if(ReadiedWeapon.flags & ITEM_BOW) && (BowMunition == FireArrow)
+			if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition == ItNa_OgnistaStrzala)
 			{
-				dmg = 60;
+				dmg = slf.attribute[ATR_MANA_MAX] + (slf.attribute[5]*10)/100 ;
+				return dmg;
 			}
 			else
 			{
 				dmg = 0;
 				
-				if(ReadiedWeapon.flags & ITEM_BOW) && (BowMunition == IceArrow)
+				if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition  == ItNa_LodowaStrzala)
 				{
 					if((oth.attribute[ATR_HITPOINTS] + 60) >= oth.attribute[ATR_HITPOINTS_MAX])
 					{
@@ -970,15 +973,16 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		}
 		else if (Npc_IsInFightMode(slf, FMODE_FAR))
 		{
-			if(ReadiedWeapon.flags & ITEM_BOW) && (BowMunition == IceArrow)
+			if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition  == ItNa_LodowaStrzala)
 			{
-				dmg = oth.attribute[ATR_MANA_MAX]+oth.attribute[ATR_DEXTERITY];
+				dmg = slf.attribute[ATR_MANA_MAX] + (slf.attribute[5]*10)/100 ;
+				return dmg;
 			}
 			else
 			{
 				dmg = 0;
 				
-				if(ReadiedWeapon.flags & ITEM_BOW) && (BowMunition == FireArrow)
+				if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition  == ItNa_OgnistaStrzala)
 				{
 					if((oth.attribute[ATR_HITPOINTS] + 60) >= oth.attribute[ATR_HITPOINTS_MAX])
 					{
@@ -1133,7 +1137,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta³e?zatruty! (-1HP/10S)");
+				Print("Zosta?e? zatruty! (-1HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1144,7 +1148,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta³e?zatruty! (-5HP/10S)");
+				Print("Zosta?e? zatruty! (-5HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1156,7 +1160,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zost³e?zatruty! (-10HP/10S)");
+				Print("Zosta?e? zatruty! (-10HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1181,8 +1185,6 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	//Print(IntToString(dmg));
 	return dmg;
 };
-
-
 
 	
 func void _DMG_OnDmg() {

@@ -110,11 +110,12 @@ FUNC VOID DIA_NASZ_104_Engor_IllTakeYou_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_00"); //A gdybym tak przyniós³ ci lutniê?
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_01"); //Zgodzi³byœ siê wtedy graæ wieczorami w karczmie?
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_02"); //Oczywiœcie, jednak nie s¹dzê, ¿e uda ci siê znaleŸæ to, czego potrzebujemy w tym miejscu. Zapewne wszystkie takie przedmioty zosta³y ju¿ dawno wykorzystane w celu wykonania amunicji do kusz czy ³uków, lub zwyczajnie spalili je, aby podtrzymaæ ogieñ.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Poza tym w¹tpiê, aby takie rzeczy wala³y siê gdzieœ po pod³odze lub innych jaskiniach. Jedynym rozwi¹zaniem by³oby stworzyæ lutniê od nowa, jednak i z tym mo¿e byæ k³opot.
-	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_04"); //K³opoty to ju¿ dla mnie nie pierwszyzna, dam sobie radê. Powiedz mi tylko, co muszê zrobiæ.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_05"); //Dobrze wiêc. Kiedyœ do naszego obozu przyby³ pewien myœliwy, który po kilku g³êbszych wygada³ siê, ¿e dawniej by³ bardzo dobrym lutnikiem.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_06"); //Niestety, nie pamiêtam jego imienia. Jednak jak popytasz w obozie myœliwych to na pewno ktoœ ci pomo¿e.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_02"); //Oczywiœcie. Jednak nie s¹dzê, ¿e uda ci siê znaleŸæ to, czego potrzebujemy w tym miejscu.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Zapewne wszystkie takie przedmioty zosta³y ju¿ dawno wykorzystane w celu wykonania amunicji do kusz czy ³uków, lub zwyczajnie spalone, aby podtrzymaæ ogieñ.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_04"); //Poza tym w¹tpiê, aby takie rzeczy wala³y siê gdzieœ po pod³odze lub innych jaskiniach. Jedynym rozwi¹zaniem by³oby stworzyæ lutniê od nowa, jednak i z tym mo¿e byæ k³opot.
+	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_05"); //K³opoty to ju¿ dla mnie nie pierwszyzna, dam sobie radê. Powiedz mi tylko, co muszê zrobiæ.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_06"); //Dobrze wiêc. Kiedyœ do naszego obozu przyby³ pewien myœliwy, który po kilku g³êbszych wygada³ siê, ¿e dawniej by³ bardzo dobrym lutnikiem.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_07"); //Niestety, nie pamiêtam jego imienia. Jednak jak popytasz w obozie myœliwych to na pewno ktoœ ci pomo¿e.
 	
 	Log_CreateTopic (TOPIC_Engor_lutnia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Engor_lutnia, LOG_RUNNING);

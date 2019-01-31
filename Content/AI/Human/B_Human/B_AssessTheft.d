@@ -22,9 +22,9 @@ func int C_HeroCanThiefSomething(var c_npc reactor) {
 	};
 	
 	if (C_BodyStateContains(hero, BS_SNEAK))
-	&& (((Wld_IsTime(21,00,00,00) || Wld_IsTime(00,00,04,00))
-	  && (Npc_GetDistToNpc(reactor,hero) >= 700)) // jest noc i 7 metrow
-	 || ((Wld_IsTime(04,00,21,00)) && (Npc_GetDistToNpc(reactor,hero) >= 2000))) // jest dzien i 20 metrow
+	&& (((Wld_IsTime(21,00,23,59) || Wld_IsTime(00,00,04,00))
+	  && (Npc_GetDistToNpc(reactor,hero) >= 300)) // jest noc i 3 metry
+	 || ((Wld_IsTime(04,00,21,00)) && (Npc_GetDistToNpc(reactor,hero) >= 700))) // jest dzien i 7 metrow
 	{
 		return true;
 	};

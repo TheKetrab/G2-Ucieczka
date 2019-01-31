@@ -277,7 +277,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_WorkDone_Info()
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkDone_15_00"); //Naprawi³em.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_01"); //I jak? Bardzo Ÿle to wygl¹da³o?
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkDone_15_02"); //Myœlê, ¿e niewiele brakowa³o do konsekwencji ze strony Kerolotha, o któych wspomina³eœ.
-	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_03"); //Dziêkujê. Ratujesz mi ¿ycie. Na prawdê nie chcê mieæ na pieñku z Kerolothem. To ju¿ nie ten sam rycerz, co niegdyœ na zamku. Pobyt w Górniczej Dolinie zmieni³ go nie do poznania.
+	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_03"); //Dziêkujê. Ratujesz mi ¿ycie. Naprawdê, nie chcê mieæ na pieñku z Kerolothem. To ju¿ nie ten sam rycerz, co niegdyœ na zamku. Pobyt w Górniczej Dolinie zmieni³ go nie do poznania.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_04"); //WeŸ to. Grog to najlepszy trunek na œwiecie!
 
 	Createinvitems (self, ItFo_Addon_Grog, 10);

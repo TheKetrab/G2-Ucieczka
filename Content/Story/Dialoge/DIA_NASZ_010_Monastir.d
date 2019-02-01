@@ -335,33 +335,23 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_potions()
 };
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_weapon()
 {
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_weapon_15_00"); //Przyda³aby mi siê lepsza broñ...
+
 	if(!MONASTIR_MONEY)
 	{
-		AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_weapon_15_00"); //Przyda³aby mi siê lepsza broñ...
 		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_weapon_55_01"); //Niestety nie dysponujê orê¿em, lecz mogê wspomóc ciê z³otem na zakup, jeœli zechcesz.
 		
 		MONASTIR_WEAPON = TRUE;
 		Info_ClearChoices(DIA_NASZ_010_Monastir_HelpMe);
-		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Ka¿dy pieni¹dz siê przyda.", DIA_NASZ_010_Monastir_HelpMe_give_money);
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³yby mi siê trochê z³ota.", DIA_NASZ_010_Monastir_HelpMe_money);
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Nie, dziêki.", DIA_NASZ_010_Monastir_HelpMe_money_END);
 	}
 	else 
 	{
-		AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_weapon_15_00"); //Przyda³aby mi siê lepsza broñ...
 		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_weapon_55_02"); //Niestety nie mogê spe³niæ twojej proœby, poniewa¿ nie mam na stanie orê¿u.
 		MONASTIR_WEAPON = TRUE;
 	};
 	
-};
-
-func void DIA_NASZ_010_Monastir_HelpMe_give_money()
-{
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_give_money_15_00"); //Ka¿dy pieni¹dz siê przyda.
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_55_02"); //WeŸ te monety. Nie jest tego za du¿o, lecz musi ciê to zadowoliæ.
-	Createinvitems (self, ITMI_GOLD, 100);
-	B_giveinvitems (self, other, ITMI_GOLD, 100);
-	MONASTIR_MONEY = TRUE;
-	Info_ClearChoices(DIA_NASZ_010_Monastir_HelpMe);
 };
 
 FUNC void DIA_NASZ_010_Monastir_HelpMe_money_END()
@@ -374,13 +364,13 @@ FUNC void DIA_NASZ_010_Monastir_HelpMe_money_END()
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_beliar()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_beliar_15_05"); //Odda³em czeœæ Beliarowi.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_beliar_55_06"); //Dopuœci³eœ siê nie lada wystêpku. Ale wierzê, ¿e zrobi³eœ to z koniecznoœci.
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_beliar_15_00"); //Odda³em czeœæ Beliarowi.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_beliar_55_01"); //Dopuœci³eœ siê nie lada wystêpku. Ale wierzê, ¿e zrobi³eœ to z koniecznoœci.
 
 	AI_PlayAni  (self,"T_MAGRUN_2_HEASHOOT");
 	Wld_PlayEffect("SPELLFX_TELEPORT",  self, self, 0, 0, 0, FALSE );
 
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_beliar_55_07"); //B³ogos³awiê ciê w imieniu Innosa. Niech oczyœci twoj¹ ciemn¹ duszê.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_beliar_55_02"); //B³ogos³awiê ciê w imieniu Innosa. Niech oczyœci twoj¹ ciemn¹ duszê.
 
 	AI_PlayAni  (self,"T_HEASHOOT_2_STAND");
 
@@ -392,17 +382,17 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_beliar()
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_magic()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_magic_15_08"); //Przyda³yby mi siê jakieœ magiczne zwoje.
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_magic_15_00"); //Przyda³yby mi siê jakieœ magiczne zwoje.
 	if (hero.guild == GIL_OUT) {
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_09"); //Myœlê, ¿e myœliwy powinien otrzymaæ zaklêcie, które uniemo¿liwi ruch przeciwnikowi. Dziêki temu nie zbli¿y siê do ciebie, a ty bêdziesz móg³ go ostrzelaæ z ³uku.
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_10"); //WeŸ te zaklêcia lodowej fali i bry³y lodu. Nie daj siê zabiæ!
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_01"); //Myœlê, ¿e myœliwy powinien otrzymaæ zaklêcie, które uniemo¿liwi ruch przeciwnikowi. Dziêki temu nie zbli¿y siê do ciebie, a ty bêdziesz móg³ go ostrzelaæ z ³uku.
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_02"); //WeŸ te zaklêcia lodowej fali i bry³y lodu. Nie daj siê zabiæ!
 		Createinvitems (self, ItSc_IceWave, 2);
 		B_giveinvitems (self, other, ItSc_IceWave, 2);
 		
 	};
 	if (hero.guild == GIL_DJG) {
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_11"); //Twoja zbroja zawiera trochê smoczej krwi i ³usek. Dziêki temu jest bardzo odporna na ogieñ.
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_12"); //Deszcz ognia powinien zaspokoiæ twoje potrzeby, a przy tym nie zrobi ci krzywdy.
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_03"); //Twoja zbroja zawiera trochê smoczej krwi i ³usek. Dziêki temu jest bardzo odporna na ogieñ.
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_04"); //Deszcz ognia powinien zaspokoiæ twoje potrzeby, a przy tym nie zrobi ci krzywdy.
 		Createinvitems (self, ItSc_FireRain, 2);
 		B_giveinvitems (self, other, ItSc_FireRain, 2);
 	};
@@ -412,8 +402,8 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_magic()
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_money()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_01"); //Przyda³yby mi siê trochê z³ota.
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_55_02"); //Proszê, weŸ te monety, to wszystko, co mam.
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_00"); //Przyda³yby mi siê trochê z³ota.
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety, to wszystko, co mam.
 	
 	Createinvitems (self, ITMI_GOLD, 100);
 	B_giveinvitems (self, other, ITMI_GOLD, 100);
@@ -426,8 +416,8 @@ var int MonasirExpBlessMeOnce;
 FUNC void DIA_NASZ_010_Monastir_HelpMe_BLESSME()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_15_01"); //Pob³ogos³aw mnie!
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_55_02"); //B³ogos³awiê ciê w imieniu Innosa. Niechaj ogieñ naszego Pana zawsze p³onie w twym sercu, aby dawaæ ci si³ê do postêpowania zgodnie z jego naukami.
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_15_00"); //Pob³ogos³aw mnie!
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_55_01"); //B³ogos³awiê ciê w imieniu Innosa. Niechaj ogieñ naszego Pana zawsze p³onie w twym sercu, aby dawaæ ci si³ê do postêpowania zgodnie z jego naukami.
 	
 	Snd_Play("LevelUp");
 	if (!MonasirExpBlessMeOnce)
@@ -687,12 +677,12 @@ FUNC VOID DIA_NASZ_010_Monastir_ErakHelp_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_04"); //Nie, to na pewno nic z tego. Od chwili kiedy siê tutaj zjawi³em, pocz¹³em wyczuwaæ potê¿ne zak³ócenia w strukturze magii. Kolonia zosta³a otoczona niewidzialn¹ dla oka œmiertelnika aur¹.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_05"); //Aura ta emanuje na tyle du¿¹ energi¹, ¿e mo¿e zmuszaæ nieumar³ych, aby ci przybywali do tego œwiata.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Nie wiem dok³adnie, jak ona dzia³a, ale najprawdopodobniej sprowadza ona tak¿e dusze, które zostaj¹ uwiêzienie w tych martwych skorupach.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Zaklêcie otaczaj¹ce dolinê, poprzez katusze zmusza dusze, by pozosta³y w tym miejscu.
-	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_07"); //Czy mo¿emy coœ z tym zrobiæ? Je¿eli mówisz prawdê, w naszym obowi¹zku le¿y pomóc tym wszystkim umêczonym duszom.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_08"); //Do g³owy przychodzi mi jedno rozwi¹zanie, jednak bêdzie siê ono wi¹za³o z pewnym niebezpieczeñstwem.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_09"); //Gdzieœ w Górniczej Dolinie znajduje siê jakieœ Ÿród³o mocy. Nie wiem dok³adnie, czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //To w³aœnie z tego miejsca emanuje niezrozumia³a dla mnie energia, która wyró¿nia siê na tle aury, jaka nas otacza.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_11"); //Powinieneœ j¹ odszukaæ. To pierwszy i najwa¿niejszy krok. Musimy znaleŸæ Ÿród³o.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_07"); //Zaklêcie otaczaj¹ce dolinê, poprzez katusze zmusza dusze, by pozosta³y w tym miejscu.
+	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_08"); //Czy mo¿emy coœ z tym zrobiæ? Je¿eli mówisz prawdê, w naszym obowi¹zku le¿y pomóc tym wszystkim umêczonym duszom.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_09"); //Do g³owy przychodzi mi jedno rozwi¹zanie, jednak bêdzie siê ono wi¹za³o z pewnym niebezpieczeñstwem.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //Gdzieœ w Górniczej Dolinie znajduje siê jakieœ Ÿród³o mocy. Nie wiem dok³adnie, czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_11"); //To w³aœnie z tego miejsca emanuje niezrozumia³a dla mnie energia, która wyró¿nia siê na tle aury, jaka nas otacza.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_12"); //Powinieneœ j¹ odszukaæ. To pierwszy i najwa¿niejszy krok. Musimy znaleŸæ Ÿród³o.
 
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Monastir sam przyzna³, ¿e w Górniczej Dolinie da siê odczuæ spore stê¿enie energii magicznej. Gdzieœ w okolicy znajduje siê jej potê¿ne Ÿród³o.");
 	

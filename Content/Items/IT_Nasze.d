@@ -5113,15 +5113,10 @@ func void Use_ListBandyci ()
 				Doc_SetFont		(nDocID, -1, FONT_Book);
 				Doc_SetMargins	(nDocID, -1, 50, 50, 50, 50, 1);
 				Doc_PrintLines	(nDocID,  0, "");
-				Doc_PrintLine	(nDocID,  0, ""														);
-				Doc_PrintLines	(nDocID,  0, "Ch³opaki, musicie koniecznie znaleŸæ s³aby punkt w obozie tych ca³ych myœliwych.");
-				Doc_PrintLines	(nDocID,  0, "Udajcie siê do Opuszczonej Kopalni (to ta w pobli¿u wielkiej wie¿y) i miejcie na nich oko.");
-				Doc_PrintLines	(nDocID,  0, "");
-				Doc_PrintLines	(nDocID,  0, "Swoj¹ drog¹ to oczyœciliœmy ten grobowiec obok obozu, ale to ch³ód jest naszym najwiêkszym wrogiem.");
-				Doc_PrintLines	(nDocID,  0, "Przez t¹ lodow¹ krainê w pobli¿u, musimy dawaæ wiêcej ¿arcia niewolnikom..."								);
-				Doc_PrintLines	(nDocID,  0, "");
-				Doc_PrintLine	(nDocID,  0, ""														);
-				Doc_PrintLine	(nDocID,  0, "     N."											);
+				Doc_PrintLine	(nDocID,  0, "");
+				Doc_PrintLines	(nDocID,  0, "Ch³opaki, musicie koniecznie znaleŸæ s³aby punkt w obozie tych ca³ych myœliwych. Swoj¹ drog¹ to oczyœciliœmy ten grobowiec obok obozu, ale to ch³ód jest naszym najwiêkszym wrogiem. Przez tê lodow¹ krainê w pobli¿u, musimy dawaæ wiêcej ¿arcia niewolnikom...");
+				Doc_PrintLine	(nDocID,  0, "");
+				Doc_PrintLine	(nDocID,  0, "     Nod");
 				Doc_Show		(nDocID);
 		
 };

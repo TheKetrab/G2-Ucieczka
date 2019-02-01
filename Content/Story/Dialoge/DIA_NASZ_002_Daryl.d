@@ -376,6 +376,13 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_Info()
 			
 };
 
+func void Bryson_Go_Away() {
+
+	AI_Output (self, other,"DIA_Bryson_Go_Away_55_00"); //Na Innosa! Za tê ska³ê dostanê tyle ¿arcia, ¿e ju¿ nigdy nie bêdê g³odowa³!
+	AI_Output (self, other,"DIA_Bryson_Go_Away_55_01"); //Od zawsze wiedzia³em, ¿e nie jesteœ tak bezu¿yteczny na jakiego wygl¹dasz, frajerze. ZejdŸcie mi obaj z drogi, bo mam ¿y³ê z³ota do wydobycia.
+
+};
+
 FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_iFound()
 {
 	var C_NPC Daryl; Daryl = Hlp_GetNpc (NASZ_002_Daryl);
@@ -395,9 +402,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_iFound()
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonTRIA_iFound_15_04"); //Ty sukinsynu...
 
 	// --- Bryson_Go_Away ---
-	
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_00"); //Na Innosa! Za tê ska³ê dostanê tyle ¿arcia, ¿e ju¿ nigdy nie bêdê g³odowa³!
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_01"); //Od zawsze wiedzia³em, ¿e nie jesteœ tak bezu¿yteczny na jakiego wygl¹dasz, frajerze. ZejdŸcie mi obaj z drogi, bo mam ¿y³ê z³ota do wydobycia.
+	Bryson_Go_Away();
 
 	BrysonWentToDie = TRUE;
 	
@@ -428,10 +433,8 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_ifYouWantARock()
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_ifYouWantARock_55_04"); //Co tam mówi³eœ?
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonTRIA_ifYouWantARock_15_05"); //Nic, nic, ju¿ idê.
 	
-	// --- Bryson_Go_Away ---
-	
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_00");
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_01");
+	// --- Bryson_Go_Away ---	
+	Bryson_Go_Away();
 
 	BrysonWentToDie = TRUE;
 	
@@ -463,9 +466,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines()
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_15_04"); //¯ebyœ usma¿y³ siê w otch³ani Beliara.
 	
 	// --- Bryson_Go_Away ---
-	
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_00");
-	AI_Output (self, other,"DIA_Bryson_Go_Away_55_01");
+	Bryson_Go_Away();
 
 	BrysonWentToDie = TRUE;
 	

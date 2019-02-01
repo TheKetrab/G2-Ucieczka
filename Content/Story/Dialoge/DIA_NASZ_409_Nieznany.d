@@ -61,11 +61,11 @@ func void DIA_NASZ_409_Nieznany_kto_Info ()
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_00"); //Co?! Kim¿e ty jesteœ?
 	AI_Output			(other, self, "DIA_NASZ_409_Nieznany_kto_19_01"); //To chyba ja powinienem siê o to zapytaæ.
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_02"); //Moje imiê nie jest istotne.
-	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_02"); //Wiedz jednak, ¿e strzegê potê¿nego amuletu, który nie powinien wpaœæ w rêce takiego œmiertelnika, jak ty.
-	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_02"); //Zawróæ albo bêdzie za póŸno!					
+	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_03"); //Wiedz jednak, ¿e strzegê potê¿nego amuletu, który nie powinien wpaœæ w rêce takiego œmiertelnika, jak ty.
+	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_04"); //Zawróæ albo bêdzie za póŸno!					
 																																	
-	AI_Output			(other, self, "DIA_NASZ_409_Nieznany_kto_19_03"); //Có¿, chyba nici ze wspólnego wypadu na ry¿ówkê. Przyby³em tu, aby ci go odebraæ.
-	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_04"); //Widzê, ¿e nie czujesz powagi sytuacji. Tym samym wydajesz na siebie wyrok, nieznajomy. (œmiech)
+	AI_Output			(other, self, "DIA_NASZ_409_Nieznany_kto_19_05"); //Có¿, chyba nici ze wspólnego wypadu na ry¿ówkê. Przyby³em tu, aby ci go odebraæ.
+	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_06"); //Widzê, ¿e nie czujesz powagi sytuacji. Tym samym wydajesz na siebie wyrok, nieznajomy. (œmiech)
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "No¿ cholera, wszystko musi siê komplikowaæ! Okaza³o siê, ¿e amuletu strze¿e jakiœ facet w czarnej szacie.");
 	

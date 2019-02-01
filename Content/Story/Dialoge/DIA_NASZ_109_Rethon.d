@@ -441,7 +441,7 @@ FUNC VOID DIA_NASZ_109_Rethon_orkowie_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_15_00"); //Hej, ty!
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_01"); //Biegasz ca³kiem sporo po okolicy. Mam zadanie dla kogoœ takiego jak ty.
-	AI_Output (other, self,"DIA_NASZ_109_Rethon_orkowie_55_02"); //O co chodzi? Zreszt¹ czy tylko ja wychodzê z obozu? Co z takim Korthem, na przyk³ad?
+	AI_Output (other, self,"DIA_NASZ_109_Rethon_orkowie_55_02"); //O co chodzi? Zreszt¹, czy tylko ja wychodzê z obozu? Co z takim Korthem na przyk³ad?
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_03"); //Obawiam siê, ¿e Korth nie ma jaj, by siê tym zaj¹æ. Przecie¿ to dawny stra¿nik. Oni s¹ bardziej od okaleczania pijanych mê¿czyzn w karczmie. Który z nich da³by radê kilku orkom na raz?
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_04"); //Pos³uchaj: W ca³ej Górniczej Dolinie porozbijane s¹ orkowe namioty. Przy ka¿dym z nich stoi po kilku orków. Jeœli chcemy przej¹æ zamek, to musimy zacz¹æ od skasowania ich obozów zwiadowczych.
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_05"); //Jeœli natkniesz siê na któryœ z nich, to nie szczêdŸ ¿adnego wielkoluda.
@@ -585,12 +585,12 @@ FUNC VOID DIA_NASZ_109_Rethon_FajkaStart_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_15_00"); //Zdobyliœmy zamek, uda³o siê!
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_01"); //Podziwiam twój entuzjazm, m³odzieñcze. Dla mnie to by³a kolejna sucha walka z tempymi orkowymi wojownikami.
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_03"); //Zamek jest nasz. Tylko co z tego? I tak nie wydostaniemy siê z Górniczej Doliny i pom¿emy tu. Albo z g³odu, albo z nudów.
-	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_04"); //Mogê jakoœ poprawiæ twój humor? Mo¿e jest jakiœ sposób, byœ poczu³ siê tutaj jak w domu?
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_05"); //W moich stronach jest ca³kiem inaczej. Sto³y pe³ne ¿arcia, piwo z domieszk¹ imbiru i dziczyzna wysma¿ona w punkt. A jako zwieñczenie uczty palimy fajki rzeŸbione przez najlepszych stolarzy.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_02"); //Zamek jest nasz. Tylko co z tego? I tak nie wydostaniemy siê z Górniczej Doliny i pom¿emy tu. Albo z g³odu, albo z nudów.
+	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_03"); //Mogê jakoœ poprawiæ twój humor? Mo¿e jest jakiœ sposób, byœ poczu³ siê tutaj jak w domu?
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_04"); //W moich stronach jest ca³kiem inaczej. Sto³y pe³ne ¿arcia, piwo z domieszk¹ imbiru i dziczyzna wysma¿ona w punkt. A jako zwieñczenie uczty palimy fajki rzeŸbione przez najlepszych stolarzy.
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_05"); //Czy¿byœ nie by³ amatorem bagiennego ziela?
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_05"); //Pal¹ tu go wszyscy dooko³a. Moim ostatnim ¿yczeniem przed œmierci¹ w tej okolicy by³oby zapalenie fajki. Pytanie, czy jest tu coœ takiego?
-	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_05"); //Za czasów Bariery by³o paru specjalistów od ró¿nych wyrobów tytoniowych. Zobaczê, czy uda mi siê skombinowaæ fajkê. Pomoc nadchodzi!
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_06"); //Pal¹ tu go wszyscy dooko³a. Moim ostatnim ¿yczeniem przed œmierci¹ w tej okolicy by³oby zapalenie fajki. Pytanie, czy jest tu coœ takiego?
+	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_07"); //Za czasów Bariery by³o paru specjalistów od ró¿nych wyrobów tytoniowych. Zobaczê, czy uda mi siê skombinowaæ fajkê. Pomoc nadchodzi!
 	
 	Log_CreateTopic (TOPIC_Rethon_fajka, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Rethon_fajka, LOG_RUNNING);

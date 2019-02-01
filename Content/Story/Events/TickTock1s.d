@@ -319,18 +319,6 @@ func void WillIdzieNaZamekFirstTime()
 	
 
 };*/
-/*func void Duch()
-{
-	if(Npc_HasItems(hero,ItNa_DuchSkull)>=1)
-	{
-		AI_Output(hero,hero,"DIA_Will_Duch_15_00");//Innosie, Adanosie i Beliarze... Jako pokorny śmiertelnik proszę was o wysłuchanie moich modłów.
-		ff_applyonce(BlackScreen);
-		ff_remove(Duch);
-		Wld_InsertNpc				(NASZ_026_DuchNowicjusza, hero.wp);
-		Npc_RemoveInvItems(hero,ItNa_DuchSkull,1);
-	};
-
-};*/
 
 //*******************
 //	Zamek Function

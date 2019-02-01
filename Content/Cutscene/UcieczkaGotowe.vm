@@ -1,7 +1,7 @@
 [BEGINVDF]
 Comment=
-BaseDir=C:\Program Files (x86)\JoWood\Gothic II Zlota Edycja
-VDFName=C:\Program Files (x86)\JoWood\Gothic II Zlota Edycja\Data\modvdf\Ucieczka.mod
+BaseDir=C:\Gry\Gothic II Zlota Edycja
+VDFName=C:\Gry\Gothic II Zlota Edycja\_Work\data\Scripts\Content\Cutscene\Ucieczka.mod
 [FILES]
 [EXCLUDE]
 [INCLUDE]

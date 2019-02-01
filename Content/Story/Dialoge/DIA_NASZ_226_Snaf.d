@@ -933,9 +933,9 @@ FUNC VOID DIA_NASZ_226_Snaf_ingrediens_Info()
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_02"); //Sk³adniki... no w³aœnie! Przynieœ mi je.
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_03"); //Czego dok³adnie potrzebujesz?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_04"); //Miêso z siedmiu chrz¹szczy, dwie butelki wody, jedna wina i trzy du¿e grzyby.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_04"); //Widzisz, nawet zapamiêta³em sk³adniki! Przepis zachowaj dla siebie. Mo¿e kiedyœ nauczysz siê gotowaæ i zrobisz dla swojej ma³¿onki pyszn¹ zupê Snafa!
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_ingrediens_55_05"); //Widzisz, nawet zapamiêta³em sk³adniki! Przepis zachowaj dla siebie. Mo¿e kiedyœ nauczysz siê gotowaæ i zrobisz dla swojej ma³¿onki pyszn¹ zupê Snafa!
 	B_GiveInvItems (self, other, ItNa_Przepis_ZupaZDuzychGrzybow, 1);
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_05"); //Dziêki. Zobaczê, co da siê zrobiæ.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_ingrediens_15_06"); //Dziêki. Zobaczê, co da siê zrobiæ.
 
 	B_GivePlayerXP (200);
 	DodajReputacje (2,REP_MYSLIWI);

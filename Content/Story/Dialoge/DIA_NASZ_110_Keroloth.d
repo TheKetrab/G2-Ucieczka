@@ -732,9 +732,9 @@ FUNC VOID DIA_NASZ_110_Keroloth_questnoend_Info()
 		B_GiveInvItems (other, self, ItNa_Mapa_Morska, 1);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_01"); //Co my tu mamy?
 	B_UseFakeScroll();
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questnoend_55_01"); //Myœlê, ¿e wœcieknie siê, gdy zobaczy, ¿e zniknê³a.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_01"); //Zgadzam siê. Z tej mapy korzysta³ zapewne ca³e ¿ycia. Dobrze siê spisa³eœ.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_02"); //Masz tu trochê z³ota, mo¿esz to sobie wynagrodziæ w karczmie i wypiæ parê butelek dobrego wina.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questnoend_55_02"); //Myœlê, ¿e wœcieknie siê, gdy zobaczy, ¿e zniknê³a.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_03"); //Zgadzam siê. Z tej mapy korzysta³ zapewne ca³e ¿ycia. Dobrze siê spisa³eœ.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_04"); //Masz tu trochê z³ota, mo¿esz to sobie wynagrodziæ w karczmie i wypiæ parê butelek dobrego wina.
 
 	KerolothDostalMape = TRUE;
 

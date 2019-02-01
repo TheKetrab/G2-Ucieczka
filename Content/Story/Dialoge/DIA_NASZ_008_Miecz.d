@@ -576,7 +576,7 @@ FUNC VOID DIA_NASZ_008_Miecz_wywar_Info()
 		};
 	}
 	else {
-		AI_Output (self, other,"DIA_NASZ_008_Miecz_wywar_55_06"); //Do króæset! Przecie¿ mówi³em, ¿ebyœ poczeka³ chocia¿ jeden dzieñ!
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_wywar_55_07"); //Do króæset! Przecie¿ mówi³em, ¿ebyœ poczeka³ chocia¿ jeden dzieñ!
 		AI_StopProcessInfos (self);
 	};
 };

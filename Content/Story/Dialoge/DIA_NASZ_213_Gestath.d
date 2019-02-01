@@ -834,8 +834,7 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_06"); //Znalaz³em ten list.
 				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_07"); //Poka¿ go.
 				B_UseFakeScroll();
-				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_08"); //No, no. To chyba okreœla miejsce ich obozu...
-				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_09"); //Zastanawia mnie jednak ten podpis 'N'...
+				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_08"); //No, no. To chyba okreœla miejsce ich obozu. Ciekawe, kto to taki ten Nod.
 
 				BANDZIOR_LIST = TRUE;
 				//B_LogEntry (TOPIC_Gestath_Renegaci, "");
@@ -843,16 +842,16 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 		}
 
 			else {
-				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_10"); //Niczego nowego.
-				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_11"); //Wiêc po co robisz mi nadziejê na jakieœ informacje? Bierz siê do roboty!
+				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_09"); //Niczego nowego.
+				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_10"); //Wiêc po co robisz mi nadziejê na jakieœ informacje? Bierz siê do roboty!
 			};
 		
 		if ((BANDZIOR_KILLED == TRUE) && (BANDZIOR_LIST == TRUE)) {
-			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_12"); //No dobra... W takim razie przed tob¹ kolejne zadanie.
-			AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_13"); //Niech zgadnê. Mam przenikn¹æ do ich obozu i dowiedzieæ siê, czego tu szukaj¹?
-			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_14"); //Wymagasz od siebie wiêcej, ni¿ bym ciê poprosi³. Ale niech tak bêdzie!
-			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_15"); //Jeœli chcesz prze¿yæ w ich towarzystwie, to lepiej za³atw sobie taki pancerz, jaki nosz¹.
-			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_16"); //Dowiedz siê od nich tyle, ile dasz radê. Powodzenia.
+			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_11"); //No dobra... W takim razie przed tob¹ kolejne zadanie.
+			AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_12"); //Niech zgadnê. Mam przenikn¹æ do ich obozu i dowiedzieæ siê, czego tu szukaj¹?
+			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_13"); //Wymagasz od siebie wiêcej, ni¿ bym ciê poprosi³. Ale niech tak bêdzie!
+			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_14"); //Jeœli chcesz prze¿yæ w ich towarzystwie, to lepiej za³atw sobie taki pancerz, jaki nosz¹.
+			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_15"); //Dowiedz siê od nich tyle, ile dasz radê. Powodzenia.
 			
 			B_LogEntry (TOPIC_Gestath_Renegaci, "Muszê przenikn¹æ do obozu tamtych ludzi i dowiedzieæ siê, po co przybyli do Górniczej Doliny. Szef myœliwych zasugerowa³ mi, ¿ebym za³atwi³ sobie taki sam pancerz, jaki mieli tamci ludzie.");
 		};

@@ -17,7 +17,7 @@ func void STARTUP_GLOBAL()
 	
 	
 };
-
+const int Sneak_Speed_Default_Startup = 0;
 func void INIT_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor INIT_<LevelName>)
@@ -26,12 +26,24 @@ func void INIT_GLOBAL()
 	//reinit kursora
 	Cursor_Hndl = 0;
 	LeGo_Init (LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Bloodsplats | LeGo_Saves | LeGo_PermMem | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS);
-  	
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL);
 	
-
+	if(Hlp_IsValidNpc(hero) && !Sneak_Speed_Default_Startup)
+	{
+		Set_AniSpeed(hero, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("t_sneak_2_sneakbl"),Sneak_Anim_Speed);
+		//Set_AniSpeed(oth, STR_UPPER("t_cbowsneak_2_bowsneakl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("t_bowsneak_2_bowsneakl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("s_cbowsneakl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("s_bowsneakl"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
+		Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
+		Sneak_Speed_Default_Startup = 1;
+	};
+	
 	if (!FF_Active (TickTock_1s)) {
 		FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
 	};
@@ -2031,17 +2043,6 @@ FUNC VOID STARTUP_OldWorld ()
 	
 	Kapitel = 1; //Joly: Kann hier stehen bleiben!
 	PlayVideo ("G2UCIECZKAINTRO.BIK");
-	
-	Set_AniSpeed(hero, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("t_sneak_2_sneakbl"),Sneak_Anim_Speed);
-    //Set_AniSpeed(hero, STR_UPPER("t_cbowsneak_2_bowsneakl"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("t_bowsneak_2_bowsneakl"),Sneak_Anim_Speed+);
-    Set_AniSpeed(hero, STR_UPPER("s_cbowsneakl"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("s_bowsneakl"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
-    Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
-	
 	
 	Wld_SetTime	(04,00);//Joly:nachtstart wegen video
 };

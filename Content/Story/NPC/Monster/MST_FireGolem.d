@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_FireGolem(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	IMMUNE;
 	protection	[PROT_EDGE]			=	IMMUNE;
-	protection	[PROT_POINT]		=	IMMUNE;	
+	protection	[PROT_POINT]		=	99999;	
 	protection	[PROT_FIRE]			=	0;	
 	protection	[PROT_FLY]			=	IMMUNE;
 	protection	[PROT_MAGIC]		=	0;

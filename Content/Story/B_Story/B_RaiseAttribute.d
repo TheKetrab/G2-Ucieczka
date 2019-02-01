@@ -9,7 +9,7 @@ func void B_RaiseRealAttributeLearnCounter (var C_NPC oth, var int attrib, var i
 	else if (attrib == ATR_DEXTERITY)	{	oth.aivar[REAL_DEXTERITY] = oth.aivar[REAL_DEXTERITY] + points;	}
 	else if (attrib == ATR_MANA_MAX)	{	oth.aivar[REAL_MANA_MAX] = oth.aivar[REAL_MANA_MAX] + points;	};
 };
-
+const int Sneak_Anim_Speed = 20;
 // ---------------------------------------
 func void B_RaiseAttribute (var C_NPC oth, var int attrib, var int points)
 {
@@ -36,6 +36,18 @@ func void B_RaiseAttribute (var C_NPC oth, var int attrib, var int points)
 				//Npc_SetTalentSkill 	(oth, NPC_TALENT_ACROBAT, 1);
 				//PrintScreen	(PRINT_Addon_AcrobatBonus, -1, 55, FONT_Screen, 2);
 			};
+			
+		var int speed; speed = (oth.attribute[ATR_DEXTERITY]*points)/100;
+		Set_AniSpeed(oth, STR_UPPER("s_sneakl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("t_sneak_2_sneakbl"),Sneak_Anim_Speed+speed);
+		//Set_AniSpeed(oth, STR_UPPER("t_cbowsneak_2_bowsneakl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("t_bowsneak_2_bowsneakl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("s_cbowsneakl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("s_bowsneakl"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed+speed);
+		Set_AniSpeed(oth, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed+speed);
+		Sneak_Anim_Speed+=speed;
 
 		concatText = ConcatStrings(PRINT_LearnDEX, IntToString(points));
 		//PrintScreen	(concatText, -1, -1, FONT_SCREEN, 2);

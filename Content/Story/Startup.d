@@ -15,6 +15,7 @@ func void STARTUP_GLOBAL()
 	// wird fuer jede Welt aufgerufen (vor STARTUP_<LevelName>)
 	Game_InitGerman();
 	
+	
 };
 
 func void INIT_GLOBAL()
@@ -2030,6 +2031,16 @@ FUNC VOID STARTUP_OldWorld ()
 	
 	Kapitel = 1; //Joly: Kann hier stehen bleiben!
 	PlayVideo ("G2UCIECZKAINTRO.BIK");
+	Set_AniSpeed(oth, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("t_sneak_2_sneakbl"),Sneak_Anim_Speed);
+    //Set_AniSpeed(oth, STR_UPPER("t_cbowsneak_2_bowsneakl"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("t_bowsneak_2_bowsneakl"),Sneak_Anim_Speed+);
+    Set_AniSpeed(oth, STR_UPPER("s_cbowsneakl"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("s_bowsneakl"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
+    Set_AniSpeed(oth, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
+	
 	
 	Wld_SetTime	(04,00);//Joly:nachtstart wegen video
 };

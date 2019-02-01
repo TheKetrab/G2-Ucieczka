@@ -545,9 +545,6 @@ func int Npc_UseWaterSpell(var C_NPC attacker)
 };
 
 
-
- const int _hero = 11216516;
-
 func int C_NpcIsBoss(var c_npc slf)
 {
 	if (Hlp_GetInstanceID (slf) == Hlp_GetInstanceID (Giant_Bug_Boss))

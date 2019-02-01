@@ -1,5 +1,6 @@
 const int GOTHIC_BASE_VERSION = 2;
-
+//nasze
+const int _hero = 11216516;
 //--------------------------------------
 // Nutzervariablen:
 //--------------------------------------

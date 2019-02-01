@@ -42,7 +42,7 @@ FUNC INT DIA_NASZ_007_Draal_siema_Condition()
 
 FUNC VOID DIA_NASZ_007_Draal_siema_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Na Innosa! Czy¿bym by³ uratowany?
+	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_00"); //Na Innosa! Czy¿bym by³ uratowany?
 	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Nie wygl¹dasz na bandytê. A nawet jeœli to uprzdzam: Nie mam nic, co mog³oby ci siê przydaæ, a zabijaj¹c mnie te¿ niczego nie zyskasz!
 
 	Log_CreateTopic (TOPIC_draal, LOG_MISSION);

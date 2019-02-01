@@ -27,6 +27,7 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItRw_Mil_Crossbow, 1);		
 		
 		CreateInvItems (slf, ItRw_Arrow, 500); 
+		CreateInvItems (slf, ItRw_Bolt, 500); 
 		
 		// Tarcze
 		CreateInvItems (slf, ItNa_DrewnianaTarcza1, 1);
@@ -61,6 +62,7 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItMw_2H_Axe_Old_03, 1);
 		
 		CreateInvItems (slf,ItNa_TarczaLowcy, 1);
+		CreateInvItems (slf, ItRw_Bolt, 500); 
 		
 		CreateInvItems (slf, ItRw_Arrow, 500); 
 		CreateInvItems (slf, ItNa_OgnistaStrzala, 10); 
@@ -94,6 +96,7 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItBe_Addon_Prot_Point, 1); 
 
 		CreateInvItems (slf, ItRw_Arrow, 500); 
+		CreateInvItems (slf, ItRw_Bolt, 500); 
 		
 		Johny_ItemsGiven_Chapter_3 = TRUE;
 	};

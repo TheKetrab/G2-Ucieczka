@@ -138,7 +138,7 @@ FUNC VOID DIA_NASZ_214_Goth_HavePieczyste_Info()
 	
 	Log_CreateTopic (TOPIC_Jehen_strzala, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jehen_strzala, LOG_RUNNING);
-	B_LogEntry (TOPIC_Jehen_strzala, "Poszukiwany przeze mnie myœliwy uda³ siê na polowanie w kierunku prze³êczy górniczej doliny. Mam nadzieje, ¿e nadal bêdzie w swoim obozie, albowiem poszukiwanie jednego cz³owieka w tym miejscu bêdzie graniczy³o z niemo¿liwoœci¹.");
+	B_LogEntry (TOPIC_Jehen_strzala, "Poszukiwany przeze mnie myœliwy uda³ siê na polowanie w kierunku prze³êczy Górniczej Doliny. Mam nadzieje, ¿e nadal bêdzie w swoim obozie, albowiem poszukiwanie jednego cz³owieka w tym miejscu bêdzie graniczy³o z niemo¿liwoœci¹.");
 
 };
 

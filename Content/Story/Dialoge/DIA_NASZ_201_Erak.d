@@ -330,7 +330,7 @@ FUNC VOID DIA_NASZ_201_Erak_sneak_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_sneak_55_02"); //Nie mia³eœ jeszcze okazji siê wykazaæ. ChodŸ, podkradniemy siê jak najbli¿ej i zaatakujemy.
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_sneak_15_03"); //Zaatakujemy? Nie mówi³eœ nic o walce, mieliœmy tylko obserwowaæ.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_sneak_55_04"); //Patrz na tê garstkê orków. Nie wiem jak na tobie, ale na mnie nie wywieraj¹ ¿adnego wra¿enia. Sam dam im radê, a ty chocia¿ spróbuj skradaæ siê razem ze mn¹.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_sneak_55_05"); //Ne wychodŸ na przód. Lepiej bêdzie, jak bêdziesz kilka metrów za mn¹, a ja podkradnê siê jak najbli¿ej.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_sneak_55_05"); //Nie wychodŸ na przód. Lepiej bêdzie, jak bêdziesz kilka metrów za mn¹, a ja podkradnê siê jak najbli¿ej.
 
 	self.flags = 2;
 

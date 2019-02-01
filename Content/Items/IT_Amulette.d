@@ -500,7 +500,7 @@ INSTANCE  ItAm_Prot_Fire_01(C_Item)
 	mainflag 		=	ITEM_KAT_MAGIC;
 	flags 			=	ITEM_AMULET;
 
-	value 			=	Value_Am_HpMana;
+	value 			=	650;
 
 	visual 			=	"ItAm_Hp_Mana_01.3ds";
 

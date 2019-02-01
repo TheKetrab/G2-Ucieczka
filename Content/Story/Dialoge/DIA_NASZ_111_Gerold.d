@@ -186,7 +186,7 @@ FUNC VOID DIA_NASZ_111_Gerold_500szt_Info()
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_500szt_15_09"); //Czemu sam siê nie pofatygujesz i nie pójdziesz tego wykopaæ?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_10"); //Eee... Powiedzmy, ¿e mam pewne sprawy do za³atwienia.	
 	
-	B_LogEntry (TOPIC_Gerold_Keroloth, "Gerold da³ mi trochê z³ota i powiedzia³, gdzie mogê znaleŸæ wiêcej. Muszê poszukaæ skrzy¿owanych patyków za aren¹ miêdzy dwoma drzewami i na cmentarzu, na prawo od grobu Garonda. Stra¿nik zapewne wys³a³ mnie, zeby samemu udaæ siê do swoich innych skrytek i zabraæ stamt¹d z³oto... No có¿, mam nadziejê, ¿e z³ota wystarczy.");
+	B_LogEntry (TOPIC_Gerold_Keroloth, "Gerold da³ mi trochê z³ota i powiedzia³, gdzie mogê znaleŸæ wiêcej. Muszê poszukaæ skrzy¿owanych patyków za aren¹ miêdzy dwoma drzewami i na cmentarzu, na prawo od grobu Garonda. Stra¿nik zapewne wys³a³ mnie, ¿eby samemu udaæ siê do swoich innych skrytek i zabraæ stamt¹d z³oto... No có¿, mam nadziejê, ¿e z³ota wystarczy.");
 	WillWieOSkrytceGerolda = TRUE;
 	
 	GeroldPytalesOZloto = TRUE;

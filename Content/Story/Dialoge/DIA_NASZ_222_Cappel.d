@@ -146,7 +146,7 @@ FUNC VOID DIA_NASZ_222_Cappel_koniec_Info()
 	B_GiveInvItems (other, self, ItMi_Saw, 3);
 	B_GiveInvItems (other, self, ItMw_2h_Bau_Axe, 1);
 	AI_Output (self, other,"DIA_NASZ_222_Cappel_koniec_55_01"); //Œwietnie! Wielkie dziêki. Dziêki tobie nie bêdê musia³ sam uganiaæ siê za nowymi, gdyby te u¿ywane teraz siê zepsu³y.
-	AI_Output (self, other,"DIA_NASZ_222_Cappel_koniec_55_02"); //W okolicy nie ma majstra, któy wytwarza³by dobre narzêdzia. Wszycy wal¹ m³otami w kowad³o, by produkowaæ broñ i zbroje.
+	AI_Output (self, other,"DIA_NASZ_222_Cappel_koniec_55_02"); //W okolicy nie ma majstra, który wytwarza³by dobre narzêdzia. Wszycy wal¹ m³otami w kowad³o, by produkowaæ broñ i zbroje.
 	AI_Output (self, other,"DIA_NASZ_222_Cappel_koniec_55_03"); //Raz jeszcze dziêkujê. Oto twoja nagroda.
 
 	Createinvitems (self, itmi_gold, 85);

@@ -916,7 +916,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_work1_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_work1_15_00"); //Masz dla mnie jak¹œ robotê?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_work1_55_01"); //Jest coœ do zrobienia. Innym siê nie uda³o, mo¿e pora zaanga¿owaæ w tê sprawê w³aœnie ciebie.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_work1_15_02"); //Warto spróbowaæ. O co chodzi?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_work1_55_03"); //Chodzi o kamienne golemy. Jakoœ do tej pory nikt z ³owców, którzy zajmowali siê t¹ spraw¹, nie trafi³ na ¿adnego kamiennego stwora. Chyba ¿e gdy ju¿ trafili to nie odwa¿yli siê przyst¹piæ do akcji?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_work1_55_03"); //Chodzi o kamienne golemy. Jakoœ do tej pory nikt z ³owców, którzy zajmowali siê t¹ spraw¹, nie trafi³ na ¿adnego kamiennego stwora. Chyba ¿e gdy ju¿ trafili, to nie odwa¿yli siê przyst¹piæ do akcji?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_work1_55_04"); //Ale po kolei: Gdy któregoœ wieczoru przechadza³em siê po komnatach zamku, w którymœ regale z ksiêgami natrafi³em na zwój przemiany w golema.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_work1_55_05"); //Oczywiœcie zabra³em go ze sob¹. Jednym z moich pomys³ów na szturm na zamek jest rozwalenie zamkowych murów i przebicie siê do którejœ z piwnic.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_work1_15_06"); //Wiesz, w którym miejscu uderzyæ, by przebiæ siê do piwnicy?

@@ -660,7 +660,7 @@ func void ZS_Dead ()
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_222_Cappel))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_223_Ratford))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_224_Dobar))
-	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_225_Wrzod))
+	//|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_225_Wrzod)) nie... xD
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_226_Snaf))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_227_Vachut))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_228_Chris))

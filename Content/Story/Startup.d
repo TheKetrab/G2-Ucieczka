@@ -22,7 +22,6 @@ func void INIT_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor INIT_<LevelName>)
 	Game_InitGerman();
-  //  LeGo_Init (LeGo_All |LeGo_Buffs | GFA_LEGO_FLAGS);
 	//reinit kursora
 	Cursor_Hndl = 0;
 	LeGo_Init (LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Bloodsplats | LeGo_Saves | LeGo_PermMem | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS);

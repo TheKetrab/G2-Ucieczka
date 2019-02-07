@@ -102,7 +102,32 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 	
 	if (Npc_HasEquippedRangedWeapon(slf)) //Npc_HasReadiedRangedWeapon(slf)
 	{
-		var c_item rw; rw = Npc_GetEquippedRangedWeapon(slf);
+		var c_item rw;  rw = Npc_GetEquippedArmor(oth);
+		if(rw.material == MAT_METAL)
+		{
+			rw = Npc_GetEquippedRangedWeapon(slf);
+			
+			if(rw.flags & ITEM_BOW)
+			{
+				rw.munition = ItNa_OstraStrzala;
+				B_CreateAmmo(slf);
+				AI_RemoveWeapon (slf);
+				AI_ReadyRangedWeapon (slf);	
+				return;	
+			
+			}
+			else
+			{
+				rw.munition =  ItRw_SharpBolt;
+				B_CreateAmmo(slf);
+				AI_RemoveWeapon (slf);
+				AI_ReadyRangedWeapon (slf);	
+				return;	
+			
+			};
+		};
+		
+		rw = Npc_GetEquippedRangedWeapon(slf);
 		
 		if(rw.flags & ITEM_BOW)
 		{  

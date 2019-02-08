@@ -235,7 +235,7 @@ FUNC VOID DIA_NASZ_318_Gobby_TryToDrink_Info()
 	B_GiveInvItems (self, other, ItFo_Addon_Grog, 1);
 	B_UseItem (other, ItFo_Addon_Grog);
 
-	if (other.attribute[ATR_STRENGTH] >= 50) || ((other.attribute[ATR_STRENGTH] >= 20) && (other.attribute[ATR_DEXTERITY] >= 40))
+	if (other.attribute[ATR_STRENGTH] >= 40) || ((other.attribute[ATR_STRENGTH] >= 10) && (other.attribute[ATR_DEXTERITY] >= 35))
 	{
 		AI_Output (self, other,"DIA_NASZ_318_Gobby_TryToDrink_55_02"); //Proszê, proszê!
 		AI_Output (self, other,"DIA_NASZ_318_Gobby_TryToDrink_55_03"); //Przyznam, ¿e nie spodziewa³em siê. Jesteœ swój ch³op.
@@ -251,11 +251,11 @@ FUNC VOID DIA_NASZ_318_Gobby_TryToDrink_Info()
 	else {
 		
 		if (other.attribute[ATR_STRENGTH] > other.attribute[ATR_DEXTERITY]) {
-			PrintScreen	("Wymagana si³a: 50", -1, 45, FONT_ScreenSmall, 2);
+			PrintScreen	("Wymagana si³a: 40", -1, 45, FONT_ScreenSmall, 2);
 		}
 		
 		else {
-			PrintScreen	("Wymagana si³a: 20, zrêsznoœæ: 40", -1, 45, FONT_ScreenSmall, 2);
+			PrintScreen	("Wymagana si³a: 10, zrêsznoœæ: 35", -1, 45, FONT_ScreenSmall, 2);
 		};
 		
 		AI_StartState	(other, ZS_MagicSleep, 0, "");

@@ -363,7 +363,7 @@ FUNC VOID DIA_NASZ_304_Bam_CiezkiPancerz_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_304_Bam_CiezkiPancerz_15_00"); //Sprzedaj mi zbrojê.
 	if (npc_hasitems (other, ItMi_Gold) >= 1000) {
-		if (RepEnough(50,REP_MYSLIWI)) {
+		if (RepEnough(80,REP_BANDYCI)) {
 			B_GiveInvItems (other, self, ItMi_Gold, 1000);
 			Npc_RemoveInvItems   (self, ItMi_Gold, 1000);
 			AI_Output (self, other,"DIA_NASZ_304_Bam_CiezkiPancerz_55_01"); //Proszê bardzo!
@@ -376,7 +376,7 @@ FUNC VOID DIA_NASZ_304_Bam_CiezkiPancerz_Info()
 			CiezkiPancerzBandytyKupiony = TRUE;
 		}
 		else {
-			PrintMissingRep(50,REP_MYSLIWI);
+			PrintMissingRep(80,REP_BANDYCI);
 			AI_Output (self, other,"DIA_NASZ_304_Bam_CiezkiPancerz_55_03"); //Jeszcze nie zas³ugujesz na ten pancerz.
 		};
 	}

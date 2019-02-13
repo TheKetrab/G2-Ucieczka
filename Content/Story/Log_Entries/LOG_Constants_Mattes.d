@@ -122,7 +122,6 @@ const string	TOPIC_Udar_patrol			=	"Zaginiony patrol";				//(+1L)									| (+20
 const string	TOPIC_Jenkins_bestia		=	"W poszukiwaniu nieumar³ej bestii";	// TODO:
 const string	TOPIC_Jan_helmy				=	"He³my odesz³ych ¿o³nierzy";	//+4L									| +700						| pierœcieñ ¿ycia ItRi_Hp_02
 const string	TOPIC_Udar_presja			=	"Presja czasu";					//+4M									| +700						| ---
-// TODO: Kurgan?? CHYBA NIC Z TEGO Z TYM KURGANEM, TRZEBA KOGO INNEGO, BO ON IDZIE DO TWIERDZY !!!
 
 //---------- Mysliwi ----------
 const string	TOPIC_Benito_jaszczuroludzie =	"Jaszczuroludzie";				//+4M									| +300+700=1000				| ---

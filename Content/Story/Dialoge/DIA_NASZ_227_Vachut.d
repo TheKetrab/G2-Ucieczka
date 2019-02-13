@@ -236,7 +236,7 @@ FUNC VOID DIA_NASZ_227_Vachut_follow_Info()
 		VACHUT_PROWADZENIE = TRUE;
 		Npc_ExchangeRoutine (NASZ_227_Vachut, "Guide");
 		//self.aivar[AIV_PARTYMEMBER] = TRUE;
-		Druzyna (NASZ_227_Vachut);
+		Druzyna (NASZ_227_Vachut,1);
 		AI_StopProcessInfos(self);
 	};
 
@@ -276,7 +276,7 @@ FUNC VOID DIA_NASZ_227_Vachut_bye_Info()
 	DodajReputacje (1, REP_MYSLIWI);
 	Npc_ExchangeRoutine (NASZ_227_Vachut, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_227_Vachut);
+	Druzyna (NASZ_227_Vachut,0);
 	AI_StopProcessInfos(self);
 };
 
@@ -310,7 +310,7 @@ FUNC VOID DIA_NASZ_227_Vachut_GoToRenegaci_Info()
 	
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_227_Vachut);
+	Druzyna (NASZ_227_Vachut,1);
 };
 
 
@@ -384,7 +384,7 @@ FUNC VOID DIA_NASZ_227_Vachut_QuestOK_Info()
 		AI_StopProcessInfos (self);
 		Npc_ExchangeRoutine (self, "Topielce");
 		//self.aivar[AIV_PARTYMEMBER] = TRUE;
-		Druzyna (NASZ_227_Vachut);
+		Druzyna (NASZ_227_Vachut,1);
 	}
 	else
 	{
@@ -439,7 +439,7 @@ FUNC VOID DIA_NASZ_227_Vachut_QuestPlace_Info()
 	DodajReputacje(4,REP_MYSLIWI);
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_227_Vachut);
+	Druzyna (NASZ_227_Vachut,0);
 };
 
 var int VACHUT_HELP;

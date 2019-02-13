@@ -221,6 +221,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestGoWithMe_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestGoWithMe_55_02"); //Dobra. Chêtnie zamieniê z nim dwa s³owa. ProwadŸ.
 
 	Npc_ExchangeRoutine(self,"Follow");
+	Druzyna(NASZ_304_Bam,1);
 	
 	B_LogEntry (TOPIC_Bam_kopalnia, "Bam zgodzi³ siê pójœæ ze mn¹. Mam nadziejê, ¿e da siê nabraæ.");
 	WillIdzieZBamem = TRUE;
@@ -326,6 +327,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestFinishMine_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestFinishMine_55_02"); //A poza tym, gdybyœ chcia³ kupiæ lepsz¹ zbrojê, to zajrzyj do mnie.
 
 	Npc_ExchangeRoutine(self,"Start");
+	Druzyna(NASZ_304_Bam,0);
 	Npc_ExchangeRoutine(NASZ_116_Kjorn,"Kopalnia");
 	
 	B_GivePlayerXP(400);

@@ -117,7 +117,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_GoToRenegaci_Info()
 	
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_116_Kjorn);
+	Druzyna (NASZ_116_Kjorn,1);
 };
 
 

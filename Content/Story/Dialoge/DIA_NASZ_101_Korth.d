@@ -292,7 +292,7 @@ FUNC VOID DIA_NASZ_101_Korth_prowadzenie_Info()
 	KORTH_PROWADZENIE = TRUE;
 	Npc_ExchangeRoutine (self, "Prowadzenie");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna(NASZ_101_Korth);
+	Druzyna(NASZ_101_Korth,1);
 	AI_StopProcessInfos (self);
 };
 
@@ -336,7 +336,7 @@ FUNC VOID DIA_NASZ_101_Korth_prowadzenie_koniec_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna(NASZ_101_Korth);
+	Druzyna(NASZ_101_Korth,0);
 };
 
 //*********************************************************************
@@ -408,7 +408,7 @@ FUNC VOID DIA_NASZ_101_Korth_ok_Info()
 		AI_StopProcessInfos (self);
 		Npc_ExchangeRoutine (self, "Help");
 		//self.aivar[AIV_PARTYMEMBER] = TRUE;
-		Druzyna (NASZ_101_Korth);
+		Druzyna (NASZ_101_Korth,1);
 	}
 	else {
 		AI_Output (self, other,"DIA_NASZ_101_Korth_ok_55_02"); //Podszkól siê najpierw! To mo¿e byæ niebezpieczne.
@@ -477,7 +477,7 @@ FUNC VOID DIA_NASZ_101_Korth_stop_no()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "MineB");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_101_Korth);
+	Druzyna (NASZ_101_Korth,0);
 };
 
 //*********************************************************************
@@ -515,7 +515,7 @@ FUNC VOID DIA_NASZ_101_Korth_mine_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "MineB");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_101_Korth);
+	Druzyna (NASZ_101_Korth,0);
 };
 
 //*********************************************************************

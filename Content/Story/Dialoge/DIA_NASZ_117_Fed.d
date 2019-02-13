@@ -153,7 +153,7 @@ FUNC VOID DIA_NASZ_117_Fed_GoToRenegaci_Info()
 
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_117_Fed);
+	Druzyna (NASZ_117_Fed,1);
 };
 
 //*********************************************************************

@@ -355,7 +355,7 @@ FUNC VOID DIA_NASZ_118_Ferros_GoToRenegaci_Info()
 
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_118_Ferros);
+	Druzyna (NASZ_118_Ferros,1);
 };
 
 //*********************************************************************

@@ -9,6 +9,7 @@ func void WillCantKillOrcs_SetTrue() {
 
 func void OrcSawYou() {
 
+	// TODO -> wylaczyc mozliwosc zapisywania
 	OrcSawYou_Activated = TRUE;
 	HeroSay_OrcSeenMe();
 	Fade_Status = 1;

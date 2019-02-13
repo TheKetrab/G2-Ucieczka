@@ -354,7 +354,7 @@ FUNC VOID DIA_NASZ_111_Gerold_go_Info()
 
 	Npc_ExchangeRoutine (NASZ_111_Gerold, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_111_Gerold);
+	Druzyna (NASZ_111_Gerold,1);
 	AI_StopProcessInfos (self);
 
 	B_LogEntry (TOPIC_Keroloth_duchy, "Gerold chêtnie zgodzi³ siê mi pomóc w odsy³aniu trupów do grobów.");
@@ -401,7 +401,7 @@ FUNC VOID DIA_NASZ_111_Gerold_death_Info()
 
 	B_GivePlayerXP (300);
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_111_Gerold);
+	Druzyna (NASZ_111_Gerold,0);
 };
 
 //*********************************************************************

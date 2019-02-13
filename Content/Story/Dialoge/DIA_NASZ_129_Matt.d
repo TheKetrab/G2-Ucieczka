@@ -78,7 +78,7 @@ func void MattSay_GoWithMe() {
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"ToCamp");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_129_Matt);
+	Druzyna (NASZ_129_Matt,1);
 	
 	B_InsertScoutsDJG();
 
@@ -169,7 +169,7 @@ FUNC VOID DIA_NASZ_129_Matt_InCamp_Info()
 {
 	Npc_ExchangeRoutine(self,"InCamp");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_129_Matt);
+	Druzyna (NASZ_129_Matt,0);
 
 	AI_Output (self, other,"DIA_NASZ_129_Matt_InCamp_15_00"); //No i jesteœmy, Mam nadziejê, ¿e nikt nas nie œledzi³.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_InCamp_15_01"); //Natychmiast powinieneœ porozmawiaæ z naszym przywódca, Jenkinsem. To ten stoj¹cy pod drzewem.
@@ -227,7 +227,7 @@ FUNC VOID DIA_NASZ_129_Matt_WhatALuck_yep()
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"UnderMountain");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_129_Matt);
+	Druzyna (NASZ_129_Matt,1);
 	
 };
 
@@ -241,7 +241,7 @@ FUNC VOID DIA_NASZ_129_Matt_WhatALuck_no()
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"UnderMountain");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_129_Matt);
+	Druzyna (NASZ_129_Matt,1);
 };
 
 //*********************************************************************

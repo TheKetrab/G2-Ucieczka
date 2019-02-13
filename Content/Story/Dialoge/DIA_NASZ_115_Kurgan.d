@@ -1279,22 +1279,22 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	
 	B_StartOtherRoutine (NASZ_113_Godar,"Zamek");
 	//NASZ_113_Godar.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_113_Godar);
+	Druzyna (NASZ_113_Godar,1);
 	B_StartOtherRoutine (NASZ_114_Hokurn,"Zamek");
 	//NASZ_114_Hokurn.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_114_Hokurn);
+	Druzyna (NASZ_114_Hokurn,1);
 	B_StartOtherRoutine (NASZ_115_Kurgan,"Zamek");
 	//NASZ_115_Kurgan.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_115_Kurgan);
+	Druzyna (NASZ_115_Kurgan,1);
 	B_StartOtherRoutine (NASZ_116_Kjorn,"Zamek");
 	//NASZ_116_Kjorn.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_116_Kjorn);
+	Druzyna (NASZ_116_Kjorn,1);
 	B_StartOtherRoutine (NASZ_117_Fed,"Zamek");
 	//NASZ_117_Fed.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_117_Fed);
+	Druzyna (NASZ_117_Fed,1);
 	B_StartOtherRoutine (NASZ_118_Ferros,"Zamek");
 	//NASZ_118_Ferros.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_118_Ferros);
+	Druzyna (NASZ_118_Ferros,1);
 };
 
 

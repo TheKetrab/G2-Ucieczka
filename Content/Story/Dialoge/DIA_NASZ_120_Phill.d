@@ -185,7 +185,7 @@ func void PhillTestYourSkills() {
 		PhillGoOk = TRUE;
 		Npc_ExchangeRoutine (NASZ_120_Phill, "Guide");
 		//self.aivar[AIV_PARTYMEMBER] = TRUE;
-		Druzyna (NASZ_120_Phill);
+		Druzyna (NASZ_120_Phill,1);
 		AI_StopProcessInfos (self);		
 	}
 		
@@ -288,7 +288,7 @@ FUNC VOID DIA_NASZ_120_Phill_koniec_Info()
 
 	B_LogEntry (TOPIC_Phill_lagi, "Gobiny nie ¿yj¹. Mam pozbieraæ wszystkie lagi i oddaæ Phillowi dwa tuziny.");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_120_Phill);
+	Druzyna (NASZ_120_Phill,0);
 	Npc_ExchangeRoutine (NASZ_120_Phill, "Start");
 
 };

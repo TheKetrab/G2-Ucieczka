@@ -567,7 +567,7 @@ FUNC VOID DIA_NASZ_010_Monastir_AfterOpen_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_AfterOpen_55_01"); //ChodŸ, zobaczymy co kryje to miejsce.
 
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_010_Monastir);
+	Druzyna (NASZ_010_Monastir,1);
 	Npc_ExchangeRoutine (self, "GoToFinal");
 	AI_StopProcessInfos (self);
 };
@@ -599,7 +599,7 @@ FUNC VOID DIA_NASZ_010_Monastir_StandInFinal_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_55_01"); //Musisz teraz przywo³aæ tu bogów, ¿eby odprawili rytua³.
 
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_010_Monastir);
+	Druzyna (NASZ_010_Monastir,0);
 	Npc_ExchangeRoutine (self, "Final");
 
 };

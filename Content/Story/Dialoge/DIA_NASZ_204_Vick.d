@@ -142,7 +142,7 @@ FUNC VOID DIA_NASZ_204_Vick_zgoda_Info()
 
 	Npc_ExchangeRoutine (self, "GuideA");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_204_Vick);
+	Druzyna (NASZ_204_Vick,1);
 	AI_StopProcessInfos (self);
 	
 	Wld_InsertNpc	(Molerat,"FP_ROAM_OW_WATERFALL_GOBBO10_01"); 
@@ -232,7 +232,7 @@ FUNC VOID DIA_NASZ_204_Vick_SecondStop_Info()
 
 	Npc_ExchangeRoutine (self, "START");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_204_Vick);
+	Druzyna (NASZ_204_Vick,0);
 	AI_StopProcessInfos (self);
 };
 

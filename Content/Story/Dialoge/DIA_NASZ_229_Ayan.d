@@ -168,7 +168,7 @@ func void DIA_NASZ_229_Ayan_ready_Info ()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "BeforeGraveyard");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,1);
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -273,7 +273,7 @@ func void DIA_NASZ_229_Ayan_hey_Info ()
 	Npc_ExchangeRoutine (self, "StandInHey");
 	
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,0);
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -344,7 +344,7 @@ func void DIA_NASZ_229_Ayan_KolowrotRedi_Info ()
 	Npc_ExchangeRoutine (self, "GoToBigHall");
 	
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,1);
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -620,7 +620,7 @@ func void DIA_NASZ_229_Ayan_done_Info ()
 	Npc_ExchangeRoutine (self, "Stand");
 	
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,0);
 
 };
 

@@ -303,7 +303,7 @@ FUNC VOID DIA_NASZ_308_Frut_koniec_Info()
 
 	Npc_ExchangeRoutine (NASZ_325_Grimes, "Pick");
 	//NASZ_325_Grimes.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_325_Grimes);
+	Druzyna (NASZ_325_Grimes,0);
 	DodajReputacje (15, REP_BANDYCI);
 	B_GivePlayerXP(400);
 };

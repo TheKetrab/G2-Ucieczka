@@ -394,7 +394,7 @@ FUNC VOID DIA_NASZ_008_Miecz_prowadzenie_Info()
 
 	Npc_ExchangeRoutine (self, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_008_Miecz);
+	Druzyna (NASZ_008_Miecz,1);
 	AI_StopProcessInfos (self);
 	
 };
@@ -431,7 +431,7 @@ FUNC VOID DIA_NASZ_008_Miecz_prowadzenie2_Info()
 
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_008_Miecz);
+	Druzyna (NASZ_008_Miecz,0);
 	AI_StopProcessInfos (self);
 
 };

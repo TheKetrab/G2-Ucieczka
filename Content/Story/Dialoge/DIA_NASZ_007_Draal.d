@@ -236,7 +236,7 @@ FUNC VOID DIA_NASZ_007_Draal_lets_Info()
 	
 	Npc_ExchangeRoutine (self, "Follow");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_007_Draal);
+	Druzyna (NASZ_007_Draal,1);
 	AI_StopProcessInfos (self);
 	
 	Wld_InsertNpc	(OrcWarrior_Harad,"FP_ORC_MINE_DRAAL_A"); 
@@ -277,7 +277,7 @@ FUNC VOID DIA_NASZ_007_Draal_done_Info()
 	
 	Npc_ExchangeRoutine (self, "In");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_007_Draal);
+	Druzyna (NASZ_007_Draal,0);
 	AI_StopProcessInfos (self);
 };
 

@@ -76,12 +76,12 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	//NASZ_117_Fed.aivar[AIV_PARTYMEMBER] = FALSE;	
 	//NASZ_118_Ferros.aivar[AIV_PARTYMEMBER] = FALSE;	
 
-	Druzyna (NASZ_113_Godar);
-	Druzyna (NASZ_114_Hokurn);
-	Druzyna (NASZ_115_Kurgan);
-	Druzyna (NASZ_116_Kjorn);
-	Druzyna (NASZ_117_Fed);
-	Druzyna (NASZ_118_Ferros);
+	Druzyna (NASZ_113_Godar,0);
+	Druzyna (NASZ_114_Hokurn,0);
+	Druzyna (NASZ_115_Kurgan,0);
+	Druzyna (NASZ_116_Kjorn,0);
+	Druzyna (NASZ_117_Fed,0);
+	Druzyna (NASZ_118_Ferros,0);
 
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Cholerni orkowie! Zamknêli siê w zamku, tchórze pieprzone. Jednak jeden z niewolników wyjawi³ mi, ¿e jest pewien sposób, by wywabiæ ich z zamku. Muszê zg³adziæ orkowego wodza Ur-Shaka. Genera³ przebywa gdzieœ w fortecy górskiej.");
 

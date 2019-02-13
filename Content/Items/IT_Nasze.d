@@ -1588,7 +1588,7 @@ INSTANCE ItNa_ZlotySztylet (C_Item)
 
 	value 				=	600;
 
-	damageTotal  		= 	50;
+	damageTotal  		= 	35;
 	damagetype 			=	DAM_EDGE;
 	range    			=  	RANGE_VLKDolch;		
 	
@@ -8428,7 +8428,7 @@ FUNC VOID Equip_AmuletKrzywegoOgnika()
 		Wld_SpawnNpcRange	(self,	Wisp_Helper,	1,	500);
  		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Wisp_Helper, Wisp_Helper, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_Transform_Cast");
-		Druzyna(DetWsp);
+		Druzyna(DetWsp,1);
 	};
 };
 
@@ -8441,7 +8441,7 @@ FUNC VOID UnEquip_AmuletKrzywegoOgnika()
 	if (Npc_IsDead(DetWsp) == FALSE)
 	{
 		Snd_Play ("WSP_Dead_A1");
-		Druzyna(DetWsp);
+		Druzyna(DetWsp,0);
 	};
 
 	AI_Teleport (DetWsp, "TOT");

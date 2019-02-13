@@ -279,7 +279,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_polowanie_Info()
 	
 	Npc_ExchangeRoutine(self,"Follow");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_230_Dymoondo);
+	Druzyna (NASZ_230_Dymoondo,1);
 	AI_StopProcessInfos(self);
 	
 };

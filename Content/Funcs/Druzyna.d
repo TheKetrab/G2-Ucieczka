@@ -1,19 +1,27 @@
 
-func void Druzyna (var C_NPC slf) //dodawanie lub odejmowanie goœcia z dru¿yny
+func void Druzyna (var C_NPC slf, var int add) //dodawanie lub odejmowanie goœcia z dru¿yny
 {
-	if(slf.guild > 16) { // <-- czyli jesli nie jest czlowiekiem
+	if (slf.guild > 16) { // <-- czyli jesli nie jest czlowiekiem
 		slf.aivar[AIV_PARTYMEMBER]=TRUE; // bedzie partymemberem do smierci, wiec nie trzeba wylaczac
 		return; // zeby nie modyfikowal licznika stanu druzyny
 	};
 
-	if(slf.aivar[AIV_PARTYMEMBER]==TRUE){
-		slf.aivar[AIV_PARTYMEMBER]=FALSE;
-		StanDruzyny-=1;
+	// ----- ----- ----- ----- -----
+
+	if (add == 1) {
+		if (slf.aivar[AIV_PARTYMEMBER] == FALSE) { StanDruzyny += 1; };
+		slf.aivar[AIV_PARTYMEMBER] = TRUE;
 	}
-	else{
-		slf.aivar[AIV_PARTYMEMBER]=TRUE;
-		StanDruzyny+=1;
+	
+	else if (add == 0) {
+		if (slf.aivar[AIV_PARTYMEMBER] == TRUE) { StanDruzyny -= 1; };
+		slf.aivar[AIV_PARTYMEMBER] = FALSE;
+	}
+	
+	else {
+		Print(ConcatStrings("Unknown state 'add' in 'Druzyna' func: ",IntToString(add)));
 	};
+	
 	var string dru_tekst;
 	dru_tekst = "Stan dru¿yny: ";
 	dru_tekst = ConcatStrings(dru_tekst,IntToString(StanDruzyny));

@@ -43,7 +43,7 @@ func void ZS_Dead ()
 		};
 	}
 	
-	if(self.aivar[AIV_PARTYMEMBER]==TRUE){ Druzyna(self); };
+	if(self.aivar[AIV_PARTYMEMBER]==TRUE){ Druzyna(self,0); };
 	// ------ aivars resetten ------
 	self.aivar[AIV_RANSACKED] = FALSE;
 	self.aivar[AIV_PARTYMEMBER] = FALSE;

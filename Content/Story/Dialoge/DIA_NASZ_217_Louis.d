@@ -144,7 +144,7 @@ FUNC VOID DIA_NASZ_217_Louis_GoToRenegaci_Info()
 
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_217_Louis);
+	Druzyna (NASZ_217_Louis,1);
 };
 
 

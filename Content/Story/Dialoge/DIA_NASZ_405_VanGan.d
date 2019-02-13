@@ -219,7 +219,7 @@ FUNC VOID DIA_NASZ_405_VanGan_GoA_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "GoA");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_405_VanGan);
+	Druzyna (NASZ_405_VanGan,1);
 };
 
 
@@ -320,7 +320,7 @@ FUNC VOID DIA_NASZ_405_VanGan_After_Info()
 	DodajReputacje (10, REP_BANDYCI);
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_405_VanGan);
+	Druzyna (NASZ_405_VanGan,0);
 };
 
 //*********************************************************************

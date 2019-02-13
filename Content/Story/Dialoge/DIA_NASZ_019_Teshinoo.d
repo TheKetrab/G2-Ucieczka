@@ -348,7 +348,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_JestesWolny_no()
 	
 	Npc_ExchangeRoutine (self, "FollowMain");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna(NASZ_019_Teshinoo);
+	Druzyna(NASZ_019_Teshinoo,1);
 	
 	Info_ClearChoices (DIA_NASZ_019_Teshinoo_JestesWolny);
 };

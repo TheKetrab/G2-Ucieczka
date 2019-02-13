@@ -503,3 +503,33 @@ INSTANCE Skeleton_Ghost (Mst_Default_Skeleton)
 	EquipItem (self, ItMw_1h_MISC_Sword);
 
 };
+
+INSTANCE Skeleton_Ghost_Immortal (Mst_Default_Skeleton)
+{
+	name							=	"Szkielet-duch";
+	guild							=	GIL_SKELETON;
+	aivar[AIV_MM_REAL_ID]			= 	ID_SKELETON;
+	level							=	40; 
+	flags = NPC_FLAG_GHOST | NPC_FLAG_IMMORTAL;
+	
+	//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	120; //+50 Waffe
+	attribute	[ATR_DEXTERITY]		=	120;
+	attribute	[ATR_HITPOINTS_MAX]	=	250;
+	attribute	[ATR_HITPOINTS]		=	250;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+
+	//----- Protection ----
+	protection	[PROT_BLUNT]		=	110;
+	protection	[PROT_EDGE]			=	110;
+	protection	[PROT_POINT]		=	160; 
+	protection	[PROT_FIRE]			=	110;
+	protection	[PROT_FLY]			=	110;
+	
+	fight_tactic	=	FAI_HUMAN_MASTER;
+	B_SetVisuals_Skeleton();	
+	B_SetFightSkills (self, 100);
+	EquipItem (self, ItMw_1h_MISC_Sword);
+
+};

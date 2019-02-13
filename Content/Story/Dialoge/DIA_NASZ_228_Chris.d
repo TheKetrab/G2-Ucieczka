@@ -236,7 +236,7 @@ FUNC VOID DIA_NASZ_228_Chris_go_Info()
 	
 	Npc_ExchangeRoutine (NASZ_228_Chris, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_228_Chris);
+	Druzyna (NASZ_228_Chris,1);
 	AI_StopProcessInfos(self);
 };
 
@@ -309,12 +309,12 @@ FUNC VOID DIA_NASZ_228_Chris_bye_Info()
 	if (npc_knowsinfo (other, DIA_NASZ_230_Dymoondo_polowanie)) {
 		Npc_ExchangeRoutine (NASZ_230_Dymoondo, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_230_Dymoondo);	
+		Druzyna (NASZ_230_Dymoondo,0);	
 	};
 	
 	Npc_ExchangeRoutine (NASZ_228_Chris, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_228_Chris);
+	Druzyna (NASZ_228_Chris,0);
 	AI_StopProcessInfos(self);
 };
 

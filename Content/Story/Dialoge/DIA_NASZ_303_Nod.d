@@ -148,9 +148,7 @@ FUNC INT DIA_NASZ_303_Nod_who_Condition()
 
 FUNC VOID DIA_NASZ_303_Nod_who_Info()
 {
-	//aktywuje misje z Carrym
-	B_StartOtherRoutine (NASZ_316_Carry,"Away");
-	CarryBiegnie = TRUE;
+
 	
 	AI_Output (self, other,"DIA_NASZ_303_Nod_who_15_00"); //Co tu robisz i kim jesteœ?
 

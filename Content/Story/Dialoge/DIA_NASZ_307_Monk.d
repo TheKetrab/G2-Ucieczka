@@ -299,7 +299,7 @@ FUNC VOID DIA_NASZ_307_Monk_go_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Prowadzenie");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;	
-	Druzyna (NASZ_307_Monk);
+	Druzyna (NASZ_307_Monk,1);
 	
 		
 	Wld_InsertNpc	(Wolf,"NASZ_BANDYCI_LOWCY_02"); 
@@ -378,6 +378,10 @@ FUNC INT DIA_NASZ_307_Monk_koniec_Condition()
 
 FUNC VOID DIA_NASZ_307_Monk_koniec_Info()
 {
+	//aktywuje misje z Carrym
+	B_StartOtherRoutine (NASZ_316_Carry,"Away");
+	CarryBiegnie = TRUE;
+
 	if (HeroWolfKiller >= 7) {
 		AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_15_00"); //Ale¿ z ciebie bieg³y myœliwy... Zabi³eœ wiêcej wilków ode mnie. Tego siê nie spodziewa³em.
 		AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_15_01"); //Dobra robota, jestem pod wra¿eniem m³odzieñcze. Wracamy do obozu.
@@ -413,7 +417,7 @@ FUNC VOID DIA_NASZ_307_Monk_koniec_Info()
 	else { Npc_ExchangeRoutine (self, "Start"); };
 	
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;	
-	Druzyna (NASZ_307_Monk);
+	Druzyna (NASZ_307_Monk,0);
 	
 	MonkWolfMissionReady = FALSE;
 };

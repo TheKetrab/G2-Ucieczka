@@ -171,7 +171,7 @@ FUNC VOID DIA_NASZ_218_Ammann_gofirst_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Forteca");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_218_Ammann);
+	Druzyna (NASZ_218_Ammann,1);
 
 };
 
@@ -208,7 +208,7 @@ FUNC VOID DIA_NASZ_218_Ammann_finishsecond_Info()
 	
 	Npc_ExchangeRoutine (self, "After");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_218_Ammann);
+	Druzyna (NASZ_218_Ammann,0);
 	AI_StopProcessInfos (self);
 };
 

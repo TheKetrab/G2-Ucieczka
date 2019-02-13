@@ -83,7 +83,7 @@ FUNC VOID DIA_NASZ_325_Grimes_join_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine	(self,"Follow1");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_325_Grimes);
+	Druzyna (NASZ_325_Grimes,1);
 };
 
 //*********************************************************************

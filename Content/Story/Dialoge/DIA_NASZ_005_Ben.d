@@ -678,30 +678,30 @@ FUNC VOID DIA_NASZ_005_Ben_Finish_Info()
 		
 		Npc_ExchangeRoutine (NASZ_118_Ferros, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_118_Ferros);
+		Druzyna (NASZ_118_Ferros,0);
 		
 		Npc_ExchangeRoutine (NASZ_117_Fed, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_117_Fed);
+		Druzyna (NASZ_117_Fed,0);
 		
 		Npc_ExchangeRoutine (NASZ_116_Kjorn, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_116_Kjorn);
+		Druzyna (NASZ_116_Kjorn,0);
 		
 	}
 	else {
 	
 		Npc_ExchangeRoutine (NASZ_215_Kivo, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_215_Kivo);
+		Druzyna (NASZ_215_Kivo,0);
 		
 		Npc_ExchangeRoutine (NASZ_217_Louis, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_217_Louis);
+		Druzyna (NASZ_217_Louis,0);
 		
 		Npc_ExchangeRoutine (NASZ_227_Vachut, "Start");
 		//self.aivar[AIV_PARTYMEMBER] = FALSE;
-		Druzyna (NASZ_227_Vachut);
+		Druzyna (NASZ_227_Vachut,0);
 		
 	};
 };

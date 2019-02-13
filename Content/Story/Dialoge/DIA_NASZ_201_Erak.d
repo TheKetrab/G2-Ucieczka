@@ -298,7 +298,7 @@ FUNC VOID DIA_NASZ_201_Erak_goorc_Info()
 
 	Npc_ExchangeRoutine (NASZ_201_Erak, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_201_Erak);
+	Druzyna (NASZ_201_Erak,1);
 	AI_StopProcessInfos(self);
 };
 
@@ -388,7 +388,7 @@ FUNC VOID DIA_NASZ_201_Erak_how_Info()
 	
 	Npc_ExchangeRoutine (NASZ_201_Erak, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_201_Erak);
+	Druzyna (NASZ_201_Erak,0);
 	AI_StopProcessInfos(self);
 };
 
@@ -653,7 +653,7 @@ FUNC VOID DIA_NASZ_201_Erak_comeon_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Follow");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_201_Erak);
+	Druzyna (NASZ_201_Erak,1);
 };
 
 //*********************************************************************
@@ -685,7 +685,7 @@ FUNC VOID DIA_NASZ_201_Erak_back_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_201_Erak);
+	Druzyna (NASZ_201_Erak,0);
 };
 
 //*********************************************************************
@@ -717,7 +717,7 @@ FUNC VOID DIA_NASZ_201_Erak_ImportantBack_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_201_Erak);
+	Druzyna (NASZ_201_Erak,0);
 };
 
 var int ERAK_GO;

@@ -1512,7 +1512,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_znam_Info()
 
 	Npc_ExchangeRoutine (self, "TwierdzaFollow"); // zmienione na Guide
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_110_Keroloth);
+	Druzyna (NASZ_110_Keroloth,1);
 	AI_StopProcessInfos (self);
 };
 
@@ -1563,7 +1563,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Before_Info()
 
 	Npc_ExchangeRoutine (self, "TwierdzaIn");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_110_Keroloth);
+	Druzyna (NASZ_110_Keroloth,0);
 };
 
 //*********************************************************************
@@ -2010,7 +2010,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 
 	Wld_SendTrigger ("MOVER_OGIEN_ZAMEK_1");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_110_Keroloth);
+	Druzyna (NASZ_110_Keroloth,0);
 	
 	B_GivePlayerXP(1000);
 	DodajReputacje(4,REP_LOWCY);

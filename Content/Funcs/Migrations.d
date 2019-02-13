@@ -101,25 +101,25 @@ func void Migration_InsertTwierdzaOrc() {
 func void Migration_FollowZamek() {
 
 	Npc_ExchangeRoutine (NASZ_109_Rethon, "FollowZamek");
-	Druzyna (NASZ_109_Rethon);
+	Druzyna (NASZ_109_Rethon,1);
 
 	Npc_ExchangeRoutine (NASZ_110_Keroloth, "FollowZamek");
-	Druzyna (NASZ_110_Keroloth);
+	Druzyna (NASZ_110_Keroloth,1);
 
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "FollowZamek");
-	Druzyna (NASZ_115_Kurgan);
+	Druzyna (NASZ_115_Kurgan,1);
 
 	Npc_ExchangeRoutine (NASZ_215_Kivo, "FollowZamek");
-	Druzyna (NASZ_215_Kivo);
+	Druzyna (NASZ_215_Kivo,1);
 
 	Npc_ExchangeRoutine (NASZ_218_Ammann, "FollowZamek");
-	Druzyna (NASZ_218_Ammann);
+	Druzyna (NASZ_218_Ammann,1);
 
 	Npc_ExchangeRoutine (NASZ_227_Vachut, "FollowZamek");
-	Druzyna (NASZ_227_Vachut);
+	Druzyna (NASZ_227_Vachut,1);
 
 	Npc_ExchangeRoutine (NASZ_229_Ayan, "FollowZamek");
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,1);
 
 };
 
@@ -151,25 +151,25 @@ func void Migration_GoToShamanHerszt() {
 func void Migration_GoToDowodca() {
 
 	Npc_ExchangeRoutine (NASZ_109_Rethon, "GoToDowodca");
-	Druzyna (NASZ_109_Rethon);
+	Druzyna (NASZ_109_Rethon,0);
 
 	Npc_ExchangeRoutine (NASZ_110_Keroloth, "GoToDowodca");
 	// Keroloth ma byc dalej w druzynie
 	
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "GoToDowodca");
-	Druzyna (NASZ_115_Kurgan);
+	Druzyna (NASZ_115_Kurgan,0);
 
 	Npc_ExchangeRoutine (NASZ_215_Kivo, "GoToDowodca");
-	Druzyna (NASZ_215_Kivo);
+	Druzyna (NASZ_215_Kivo,0);
 
 	Npc_ExchangeRoutine (NASZ_218_Ammann, "GoToDowodca");
-	Druzyna (NASZ_218_Ammann);
+	Druzyna (NASZ_218_Ammann,0);
 
 	Npc_ExchangeRoutine (NASZ_227_Vachut, "GoToDowodca");
-	Druzyna (NASZ_227_Vachut);
+	Druzyna (NASZ_227_Vachut,0);
 
 	Npc_ExchangeRoutine (NASZ_229_Ayan, "GoToDowodca");
-	Druzyna (NASZ_229_Ayan);
+	Druzyna (NASZ_229_Ayan,0);
 
 };
 

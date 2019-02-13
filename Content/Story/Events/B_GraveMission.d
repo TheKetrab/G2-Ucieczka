@@ -328,7 +328,7 @@ func void GraveMission_Grave9_S1 ()
 	B_GivePlayerXP (100);
 	GraveMission_Grave9_OneTime = TRUE;
 	Wld_SendTrigger ("MOVER_GRAVE9");
-	Wld_InsertNpc	(Skeleton_Ghost,"FP_GRAVE9"); 
+	Wld_InsertNpc	(Skeleton_Ghost_Immortal,"FP_GRAVE9"); 
 	IleGrobowWillPoswiecil = IleGrobowWillPoswiecil + 1;
 	WszystkieGrobyAchievement = WszystkieGrobyAchievement + 1;
 };

@@ -318,7 +318,7 @@ instance DIA_NASZ_316_Carry_Muchy		(C_INFO)
 
 func int DIA_NASZ_316_Carry_Muchy_Condition ()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_303_Nod_who))
+	if (npc_knowsinfo (other, DIA_NASZ_307_Monk_koniec))
 	&& (KAPITEL < 3)
 	{
 		return TRUE;

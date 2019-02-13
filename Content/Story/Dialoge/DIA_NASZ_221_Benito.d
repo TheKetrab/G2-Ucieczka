@@ -329,7 +329,7 @@ FUNC VOID DIA_NASZ_221_Benito_comeon_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Follow");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_221_Benito);
+	Druzyna (NASZ_221_Benito,1);
 };
 
 //*********************************************************************
@@ -413,11 +413,15 @@ FUNC VOID DIA_NASZ_221_Benito_TooFar_Info()
 	Npc_ExchangeRoutine (NASZ_201_Erak, "Bandyci");
 	Npc_ExchangeRoutine (NASZ_215_Kivo, "Bandyci");
 	//NASZ_221_Benito.aivar[AIV_PARTYMEMBER] = FALSE;
-	if (NASZ_221_Benito.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_221_Benito); };
+	//if (NASZ_221_Benito.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_221_Benito); };
 	//NASZ_201_Erak.aivar[AIV_PARTYMEMBER] = FALSE;
-	if (NASZ_201_Erak.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_201_Erak); };
+	//if (NASZ_201_Erak.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_201_Erak); };
 	//NASZ_215_Kivo.aivar[AIV_PARTYMEMBER] = FALSE;
-	if (NASZ_215_Kivo.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_215_Kivo); };
+	//if (NASZ_215_Kivo.aivar[AIV_PARTYMEMBER] == TRUE) { Druzyna (NASZ_215_Kivo); };
+	Druzyna (NASZ_221_Benito,0);
+	Druzyna (NASZ_201_Erak,0);
+	Druzyna (NASZ_215_Kivo,0);
+	
 	
 	AI_StopProcessInfos (self);
 };
@@ -450,7 +454,7 @@ FUNC VOID DIA_NASZ_221_Benito_back_Info()
 
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_221_Benito);
+	Druzyna (NASZ_221_Benito,0);
 	AI_StopProcessInfos (self);
 };
 
@@ -477,11 +481,11 @@ FUNC INT DIA_NASZ_221_Benito_ImportantBack_Condition()
 
 FUNC VOID DIA_NASZ_221_Benito_ImportantBack_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_221_Benito_ImportantBack_15_00"); //G³adko posz³o. Ale problem jaszczuroludzi za¿egnany.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_ImportantBack_15_00"); //G³adko posz³o. A wiêc problem jaszczuroludzi za¿egnany.
 
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_221_Benito);
+	Druzyna (NASZ_221_Benito,0);
 };
 
 var int BENITO_HELP;

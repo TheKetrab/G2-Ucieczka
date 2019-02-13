@@ -173,7 +173,7 @@ FUNC VOID DIA_NASZ_215_Kivo_GoToRenegaci_Info()
 
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna (NASZ_215_Kivo);
+	Druzyna (NASZ_215_Kivo,1);
 };
 
 
@@ -422,7 +422,7 @@ FUNC VOID DIA_NASZ_215_Kivo_comeon_Info()
 			AI_StopProcessInfos (self);
 			Npc_ExchangeRoutine (self, "Follow");
 			//self.aivar[AIV_PARTYMEMBER] = TRUE;
-			Druzyna (NASZ_215_Kivo);
+			Druzyna (NASZ_215_Kivo,1);
 		}
 		else {
 			AI_Output (self, other,"DIA_NASZ_215_Kivo_comeon_55_04"); //Najpierw ty pomó¿ mnie, potem ja pomogê tobie.
@@ -458,7 +458,7 @@ FUNC VOID DIA_NASZ_215_Kivo_back_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_215_Kivo);
+	Druzyna (NASZ_215_Kivo,0);
 };
 
 //*********************************************************************
@@ -489,7 +489,7 @@ FUNC VOID DIA_NASZ_215_Kivo_ImportantBack_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Bandyci");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna (NASZ_215_Kivo);
+	Druzyna (NASZ_215_Kivo,0);
 };
 
 var int KIVO_GO;

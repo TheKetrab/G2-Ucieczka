@@ -54,7 +54,7 @@ FUNC VOID DIA_NASZ_232_Jehen_siema_Info()
 	
 	Npc_ExchangeRoutine (self, "GuideToScavengers");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,1);
 	AI_StopProcessInfos (self);
 	
 	Wld_InsertNpc	(NiespokojnyScierwojad1,"FP_ROAM_NIESPOKOJNY_SCIERWOJAD_01");
@@ -105,7 +105,7 @@ FUNC VOID DIA_NASZ_232_Jehen_GoodFight_Info()
 	
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,0);
 	
 	Info_ClearChoices (DIA_NASZ_232_Jehen_GoodFight);
 		Info_AddChoice	  (DIA_NASZ_232_Jehen_GoodFight, "Nie, dziêkujê.", DIA_NASZ_232_Jehen_GoodFight_No);
@@ -178,7 +178,7 @@ FUNC VOID DIA_NASZ_232_Jehen_GothSaid_Info()
 	
 	Npc_ExchangeRoutine (self, "Prowadzenie");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,1);
 	AI_StopProcessInfos (self);
 };
 
@@ -215,7 +215,7 @@ FUNC VOID DIA_NASZ_232_Jehen_ProwadzenieKoniec_Info()
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Mysliwi");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,0);
 };
 
 var int Jehen_Robi_Nowa_Lutnie;
@@ -497,7 +497,7 @@ FUNC VOID DIA_NASZ_232_Jehen_LetsGo_Info()
 	AI_StopProcessInfos(self);
 	
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,1);
 	
 	Log_CreateTopic (TOPIC_Jehen_poscig, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jehen_poscig, LOG_RUNNING);
@@ -809,7 +809,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Bestia1_Info()
 	Npc_ExchangeRoutine(self,"Bestia1");
 	
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
-	Druzyna(NASZ_232_Jehen);
+	Druzyna(NASZ_232_Jehen,0);
 	
 	
 	AI_StopProcessInfos(self);

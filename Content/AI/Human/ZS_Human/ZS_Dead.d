@@ -225,36 +225,42 @@ func void ZS_Dead ()
 	
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Giant_Bug_Boss))
+	&& (Boss1Killed == FALSE)
 	{
 		Boss1Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Wisp_Boss))
+	&& (Boss2Killed == FALSE)
 	{
 		Boss2Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Skeleton_Lord_Garrel))
+	&& (Boss3Killed == FALSE)
 	{
 		Boss3Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_409_Nieznany))
+	&& (Boss4Killed == FALSE)
 	{
 		Boss4Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Kamashi))
+	&& (Boss5Killed == FALSE)
 	{
 		Boss5Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (MinecrawlerWarrior_Boss))
+	&& (Boss6Killed == FALSE)
 	{
 		Boss6Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
@@ -262,6 +268,7 @@ func void ZS_Dead ()
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Ozywieniec))
 	&& (OzywieniecKilledOneTime == FALSE)
+	&& (Boss7Killed == FALSE)
 	{
 		OzywieniecKilledOneTime = TRUE;
 		Boss7Killed = TRUE;
@@ -269,18 +276,21 @@ func void ZS_Dead ()
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (PanCieniostworow))
+	&& (Boss8Killed == FALSE)
 	{
 		Boss8Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_430_StaryTrup))
+	&& (Boss9Killed == FALSE)
 	{
 		Boss9Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Nasz_Potwor))
+	&& (Boss10Killed == FALSE)
 	{
 		Boss10Killed = TRUE;
 		ZabiteBossy = ZabiteBossy + 1;

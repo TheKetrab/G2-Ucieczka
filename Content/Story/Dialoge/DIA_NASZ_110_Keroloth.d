@@ -2133,8 +2133,6 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
 	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, "Co mam teraz zrobiæ?", DIA_NASZ_110_Keroloth_Kap4_what);
 	
-	Wld_SendTrigger ("MOVER_GESTATH_GRAVE");
-	B_StartOtherRoutine (NASZ_213_Gestath,"TOT");
 
 	
 	B_LogEntry (TOPIC_Keroloth_Wojna, "To koniec. Zamek zdobyty! Teraz mam udaæ siê z wieœciami o tym do Udara.");
@@ -2218,6 +2216,11 @@ FUNC VOID DIA_NASZ_110_Keroloth_ErakAndUdarDone_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_00"); //Rozmawia³em z Udarem i Erakiem.
+	
+	Log_SetTopicStatus (TOPIC_Sprawy, LOG_SUCCESS);
+	B_GivePlayerXP(500);
+	//B_LogEntry (TOPIC_Sprawy,"");
+	
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_01"); //Udar zgodzi³ siê wys³aæ do zamku kilku dodatkowych ludzi, jutro powinni ju¿ tutaj byæ.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_02"); //To naprawdê dobra wiadomoœæ, zw³aszcza, i¿ chyba bêdziemy mieli o wiele mniej czasu na przygotowania ni¿ s¹dzi³em. Kiedy ciê nie by³o dostrzegliœmy kilku zwiadowców krêc¹cych siê przy palisadzie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_03"); //Podejrzewam, ¿e orkowie obserwuj¹ nasze poczynania aby zaatakowaæ w odpowiednim momencie, kiedy nie bêdziemy na to gotowi. Mocno siê zdziwi¹ kiedy przyjdzie co do czego.
@@ -2693,18 +2696,71 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyReady_Info()
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_01"); //Aby wydzieliæ jego moc, musisz uzupe³niaæ kryszta³y w runie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_02"); //W naszym obozie, na p³askowy¿u, na którym hodujemy chmiel, znajduje siê pewien magiczny kamieñ. Tam na³adujesz miecz.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_03"); //Nie jestem tylko przekonany co do charakteru jego obra¿eñ... Musisz sam to ogarn¹æ.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_04"); //Jestem twoim d³u¿nikiem, Keroloth.
+	
+	if (hero.guild == GIL_DJG) {
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_03"); //Nie jestem tylko przekonany co do charakteru jego obra¿eñ... Musisz sam to ogarn¹æ.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_04"); //Jestem twoim d³u¿nikiem, Keroloth.
+		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_SUCCESS);
+		B_LogEntry (TOPIC_MieczRuniczny, "Miecz jest gotowy. Teraz muszê wykombinowaæ, jak go u¿ywaæ.");
+	}
+	else {
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_05"); //Przyznam siê, ¿e ju¿ go wypróbowa³em i stwierdzam, ¿e jest to bardzo niebezpieczna broñ. Byæ mo¿e jako myœliwy nie bêdziesz w stanie siê ni¹ pos³ugiwaæ.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_06"); //A wiêc przynios³em miecz i runê, a ty chcesz ten miecz dla siebie?
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_07"); //Nie, nie, Ÿle mnie zrozumia³eœ! Chodzi mi o to, ¿e mo¿esz nie byæ w stanie go udŸwign¹æ. Szkoda, ¿eby takie cudo by³o niwykorzystywane i rdzewia³o.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_08"); //Miecz jest twój, ale wiedz, ¿e chêtnie go od ciebie odkupiê.
+		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_SUCCESS);
+		B_LogEntry (TOPIC_MieczRuniczny, "Miecz jest gotowy, ale Keroloth zaproponowa³, ¿e go ode mnie odkupi. Ciekawe, czy mi siê to op³aci?");
+	};
 	
 	Log_CreateTopic (TOPIC_Artefakty,LOG_NOTE);
 	B_LogEntry (TOPIC_Artefakty,"Mogê na³adowaæ miecz runiczny kryszta³ami przy magicznym kamieniu w obozie ³owców.");
 
 	B_GivePlayerXP(500);
 	
-	Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_SUCCESS);
-	B_LogEntry (TOPIC_MieczRuniczny, "Miecz jest gotowy. Teraz muszê wykombinowaæ, jak go u¿ywaæ.");
+	
 
 };
+
+//*********************************************************************
+//	Info MieczRunicznySell
+//*********************************************************************
+INSTANCE DIA_NASZ_110_Keroloth_MieczRunicznySell   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 54;
+ 	condition   = DIA_NASZ_110_Keroloth_MieczRunicznySell_Condition;
+ 	information = DIA_NASZ_110_Keroloth_MieczRunicznySell_Info;
+ 	permanent   = FALSE;
+	description = "Oddajê ci miecz runiczny, a w zamian chcê tysi¹c sztuk z³ota.";
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznySell_Condition()
+{
+	if (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_MieczRunicznyReady))
+	&& (other.guild == GIL_OUT)
+	&& (npc_hasitems(other,ItNa_MieczRunicznyA) || npc_hasitems(other,ItNa_MieczRunicznyB) || npc_hasitems(other,ItNa_MieczRunicznyC))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznySell_Info()
+{
+
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznySell_55_00"); //Oddajê ci miecz runiczny, a w zamian chcê tysi¹c sztuk z³ota.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznySell_55_01"); //To uczciwa cena. Zgoda. Dokonajmy wiêc transakcji.
+	
+	if (npc_hasitems(other,ItNa_MieczRunicznyA)) { B_GiveInvItems(other,self,ItNa_MieczRunicznyA,1); };
+	if (npc_hasitems(other,ItNa_MieczRunicznyB)) { B_GiveInvItems(other,self,ItNa_MieczRunicznyB,1); };
+	if (npc_hasitems(other,ItNa_MieczRunicznyC)) { B_GiveInvItems(other,self,ItNa_MieczRunicznyC,1); };
+	
+	CreateInvItems(self,ItMi_Gold,1000);
+	B_GiveInvItems(self,other,ItMi_Gold,1000);
+
+	B_GivePlayerXP(1000);
+
+};
+
 
 //*********************************************************************
 //	Info SpeedRing

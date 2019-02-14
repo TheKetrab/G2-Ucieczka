@@ -452,6 +452,13 @@ func void DIA_NASZ_211_Hunt_SellFur_Info ()
 			B_GiveInvItems(other, self, ItAt_WargFur, Npc_HasItems(other, ItAt_WargFur));
 		};
 		
+		if (Npc_HasItems(other, ItNa_SkoraOrkowegoPsa) > 0)
+		{
+			AI_Output (self, other, "DIA_NASZ_211_Hunt_SellFur_11_15"); //Skóra orkowego psa... Bardzo cenne trofeum. Tych bestii nie spotyka siê ju¿ tak czêsto jak niegdyœ.
+			B_GiveInvItems(self, other, itmi_gold, (Npc_HasItems(other, ItNa_SkoraOrkowegoPsa) * 15) );
+			B_GiveInvItems(other, self, ItNa_SkoraOrkowegoPsa, Npc_HasItems(other, ItNa_SkoraOrkowegoPsa));
+		};
+
 		if (Npc_HasItems(other, ItAt_ShadowFur) > 0)
 		{
 			AI_Output (self, other, "DIA_NASZ_211_Hunt_SellFur_11_09"); //Och, nawet skóra cieniostwora, takie s¹ sporo warte.

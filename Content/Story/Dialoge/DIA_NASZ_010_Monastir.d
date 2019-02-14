@@ -891,6 +891,7 @@ FUNC VOID DIA_NASZ_010_Monastir_Kap5Start_yes()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_Kap5Start_yes_15_03"); //Tego nie wie nikt. IdŸ z b³ogos³awieñstwem.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_Kap5Start_yes_15_04"); //Niech œwiat³o Innosa odsuwa ciê od otch³ani.
 
+	Npc_ExchangeRoutine (self, "Final");
 	AI_StopProcessInfos (self);
 };
 	

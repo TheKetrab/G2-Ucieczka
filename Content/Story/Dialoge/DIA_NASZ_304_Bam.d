@@ -366,6 +366,8 @@ FUNC VOID DIA_NASZ_304_Bam_CiezkiPancerz_Info()
 	AI_Output (other, self,"DIA_NASZ_304_Bam_CiezkiPancerz_15_00"); //Sprzedaj mi zbrojê.
 	if (npc_hasitems (other, ItMi_Gold) >= 1000) {
 		if (RepEnough(80,REP_BANDYCI)) {
+			Createinvitems (self, ITNA_BAN_H, 1);
+			AI_EquipBestArmor (self);
 			B_GiveInvItems (other, self, ItMi_Gold, 1000);
 			Npc_RemoveInvItems   (self, ItMi_Gold, 1000);
 			AI_Output (self, other,"DIA_NASZ_304_Bam_CiezkiPancerz_55_01"); //Proszê bardzo!

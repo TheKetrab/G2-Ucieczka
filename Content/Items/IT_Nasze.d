@@ -6987,7 +6987,7 @@ INSTANCE  ItNa_PasMysliwego (C_Item)
 	COUNT[1]		= 10;
 	TEXT[2]			= NAME_ADDON_BONUS_1H;
 	COUNT[2]		= 5;
-	TEXT[3]			= "Bonus tylko dla myœliwych.";		
+	//TEXT[3]			= "Bonus tylko dla myœliwych.";		
 	
 	TEXT[5]			= NAME_Value;
 	COUNT[5]		= value;
@@ -6998,19 +6998,19 @@ INSTANCE  ItNa_PasMysliwego (C_Item)
 };
 FUNC VOID Equip_ItNa_PasMysliwego()
 {
-	if (self.guild == GIL_OUT)
-	{
+	//if (self.guild == GIL_OUT)
+	//{
 		B_AddFightSkill (self, NPC_TALENT_BOW, 10);
 		B_AddFightSkill (self, NPC_TALENT_1H, 5);
-	};
+	//};
 };
 FUNC VOID UnEquip_ItNa_PasMysliwego()
 {
-	if (self.guild == GIL_OUT)
-	{
+	//if (self.guild == GIL_OUT)
+	//{
 		B_AddFightSkill (self, NPC_TALENT_BOW, -10);
 		B_AddFightSkill (self, NPC_TALENT_1H, -5);
-	};
+	//};
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -7084,7 +7084,7 @@ INSTANCE  ItNa_PasLowcyOrkow (C_Item)
 	COUNT[1]		= 	5;
 	TEXT[2]			=	NAME_ADDON_BONUS_2H;		
 	COUNT[2]		= 	5;
-	TEXT[3]			=	"Bonus tylko dla ³owców orków.";		
+	//TEXT[3]			=	"Bonus tylko dla ³owców orków.";		
 
 	TEXT[5]			=   NAME_Value;
 	COUNT[5]		=   value;
@@ -7095,19 +7095,19 @@ INSTANCE  ItNa_PasLowcyOrkow (C_Item)
 };
 FUNC VOID Equip_ItNa_PasLowcyOrkow()
 {
-	if (self.guild == GIL_DJG)
-	{
+	//if (self.guild == GIL_DJG)
+	//{
 		B_AddFightSkill (self, NPC_TALENT_1H, 5);
 		B_AddFightSkill (self, NPC_TALENT_2H, 5);
-	};
+	//};
 };
 FUNC VOID UnEquip_ItNa_PasLowcyOrkow()
 {
-	if (self.guild == GIL_DJG)
-	{
+	//if (self.guild == GIL_DJG)
+	//{
 		B_AddFightSkill (self, NPC_TALENT_1H, -5);
 		B_AddFightSkill (self, NPC_TALENT_2H, -5);
-	};
+	//};
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -8386,7 +8386,7 @@ INSTANCE  ItNa_OkoSwiata(C_Item)
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE  ItNa_AmuletKrzywegoOgnika (C_Item)  
 {
-	name 			=	"Amulet Krzywego ognika";
+	name 			=	"Amulet krzywego ognika";
 
 	mainflag 		=	ITEM_KAT_MAGIC;
 	flags 			=	ITEM_AMULET;
@@ -8428,7 +8428,10 @@ FUNC VOID Equip_AmuletKrzywegoOgnika()
 		Wld_SpawnNpcRange	(self,	Wisp_Helper,	1,	500);
  		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Wisp_Helper, Wisp_Helper, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_Transform_Cast");
-		Druzyna(DetWsp,1);
+		//TODO ! ognik ma miec partymember true, to ponizej nie dziala, bo wisphelper to id a nie c_npc
+		// -> zrobic c_npc i ustawic aivara partymember na true
+		//Wisp_Helper.aivar[AIV_PARTYMEMBER] = TRUE;
+		// on NIE ma byæ w dru¿ynie! (tylko partymember)
 	};
 };
 
@@ -8441,7 +8444,6 @@ FUNC VOID UnEquip_AmuletKrzywegoOgnika()
 	if (Npc_IsDead(DetWsp) == FALSE)
 	{
 		Snd_Play ("WSP_Dead_A1");
-		Druzyna(DetWsp,0);
 	};
 
 	AI_Teleport (DetWsp, "TOT");

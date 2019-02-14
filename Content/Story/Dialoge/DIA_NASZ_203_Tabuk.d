@@ -400,7 +400,10 @@ func void DIA_NASZ_203_Tabuk_nauka_Info ()
 	if ((PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_FireTongue] == FALSE)
 		||(PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_CrawlerPlate] == FALSE)
 		||(PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Mandibles] == FALSE)
-		||(PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_DrgSnapperHorn] == FALSE))
+		||(PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_DrgSnapperHorn] == FALSE)
+		||(PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_ShadowHorn] == FALSE)
+		||(Npc_GetTalentSkill (other, NPC_TALENT_SNEAK) == FALSE)
+		)
 	{
 
 		AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_09_01"); //A co chcesz wiedzieæ?
@@ -428,7 +431,10 @@ func void DIA_NASZ_203_Tabuk_nauka_Info ()
 		{ 
 			Info_AddChoice	(DIA_NASZ_203_Tabuk_nauka, B_BuildLearnString ("Róg smoczego zêbacza",B_GetLearnCostTalent (other,NPC_TALENT_TAKEANIMALTROPHY, TROPHY_DrgSnapperHorn)),  DIA_NASZ_203_Tabuk_nauka_DrgSnapperHorn);
 		};
-
+		if (PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_ShadowHorn] == FALSE)
+		{ 
+			Info_AddChoice	(DIA_NASZ_203_Tabuk_nauka, B_BuildLearnString ("Róg cieniostwora",B_GetLearnCostTalent (other,NPC_TALENT_TAKEANIMALTROPHY, TROPHY_ShadowHorn)),  DIA_NASZ_203_Tabuk_nauka_ShadowHorn);
+		};
 						
 	}
 		
@@ -499,6 +505,16 @@ func void DIA_NASZ_203_Tabuk_nauka_DrgSnapperHorn ()
 	if (B_TeachPlayerTalentTakeAnimalTrophy (self, other, TROPHY_DrgSnapperHorn))
 		{
 			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_DrgSnapperHorn_09_00"); //Aby odci¹æ zêbaczowi jego róg, potrzebujesz naprawdê mocnego no¿a. Wbij go w sam czubek g³owy.
+		};
+	Info_ClearChoices	(DIA_NASZ_203_Tabuk_nauka);
+};
+
+func void DIA_NASZ_203_Tabuk_nauka_ShadowHorn ()
+{
+	if (B_TeachPlayerTalentTakeAnimalTrophy (self, other, TROPHY_ShadowHorn))
+		{
+			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_ShadowHorn_09_00"); //Rogi cieniostworów zdobi¹ niejeden szlachecki dom. To trofeum jest tak cenne, bo tak trudno je zdobyæ. Nie doœæ, ¿e trzeba uporaæ siê z tym potworem, to jeszcze zgrabnie wyci¹gn¹æ mu kolec z g³owy.
+			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_ShadowHorn_09_01"); //To doœæ obrzydliwe: Najpierw wytnij kwadrat w jego pysku i wyci¹gnij ca³oœæ. Potem oskub z miêsa róg, a przed sprzeda¿¹, najlepiej wymyj go dok³adnie w mocnej gorza³ce, aby zapobiec bakteriom.
 		};
 	Info_ClearChoices	(DIA_NASZ_203_Tabuk_nauka);
 };

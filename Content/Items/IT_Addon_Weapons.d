@@ -339,7 +339,7 @@ INSTANCE ItMW_Addon_Hacker_2h_02 (C_Item)
 	flags 				=	ITEM_2HD_SWD;	
 	material 			=	MAT_METAL;
 
-	value 				=	50;
+	value 				=	Value_PIR2hSword;
 
 	damageTotal			= 	45;
 	damagetype			=	DAM_EDGE;		

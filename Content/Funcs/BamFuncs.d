@@ -1,7 +1,7 @@
 
 func void Npc_EquipArmor(var c_npc slf, var int arm) {
 
-	Print("x");
+	//Print("x");
 	
 	var c_item act_armor; act_armor = Npc_GetEquippedArmor(slf);
 	var int act_armor_id; act_armor_id = Hlp_GetInstanceID(act_armor);

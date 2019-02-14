@@ -356,6 +356,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		// Funkcje
 		Migration_Kap4();
 
+		Wld_SendTrigger ("MOVER_GESTATH_GRAVE");
+		B_StartOtherRoutine (NASZ_213_Gestath,"TOT");
+		AI_Teleport(NASZ_213_Gestath,"TOT");
 		
 		Wld_SendTrigger ("ORCGATE1_SCRIPT");
 		Wld_SendTrigger ("ORCGATE2_SCRIPT");

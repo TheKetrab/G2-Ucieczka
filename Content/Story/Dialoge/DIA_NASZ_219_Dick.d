@@ -255,6 +255,11 @@ FUNC VOID DIA_NASZ_219_Dick_Dobar_Info()
 };
 
 
+func void DobarSayNoMoney() {
+	AI_Output (self, other,"DIA_NASZ_219_Dick_DobarSayNoMoney_55_00"); //Palenie kosztuje! Nie dostaniesz ode mnie niczego za darmo!
+};
+
+var int DobarMrokPolnocyKupiony;
 //*********************************************************************
 //	Info Dobar Kupowanie
 //*********************************************************************
@@ -264,14 +269,14 @@ INSTANCE DIA_NASZ_219_Dick_DobarKupowanie   (C_INFO)
  	nr          = 8;
  	condition   = DIA_NASZ_219_Dick_DobarKupowanie_Condition;
  	information = DIA_NASZ_219_Dick_DobarKupowanie_Info;
- 	permanent   = FALSE;
+ 	permanent   = TRUE;
 	description = "Sprzedaj mi Mrok Pó³nocy. (125 szt. z³ota)";
 };
 
 FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()	
 {
-	if (npc_knowsinfo (other, DIA_NASZ_219_Dick_Dobar) && npc_knowsinfo (other, DIA_NASZ_219_Dick_ziele_finish)
-		&& npc_hasitems (other, ItMi_Gold) >= 125)
+	if (npc_knowsinfo (other, DIA_NASZ_219_Dick_Dobar) && npc_knowsinfo (other, DIA_NASZ_219_Dick_ziele_finish))
+	&& (DobarMrokPolnocyKupiony == FALSE)
 	{
 		return TRUE;
 	};
@@ -280,6 +285,14 @@ FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()
 FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_219_Dick_DobarKupowanie_15_00"); //Sprzedaj mi ziele.
+	
+	if (npc_hasitems(other,ItMi_Gold) < 125) {
+		DobarSayNoMoney();
+		return;
+	};
+	
+	DobarMrokPolnocyKupiony = TRUE;
+	
 	AI_Output (self, other,"DIA_NASZ_219_Dick_DobarKupowanie_55_01"); //Interesy z tob¹ to sama przyjemnoœæ.
 	B_giveinvitems (other, self, ItMi_Gold, 125);
 
@@ -287,6 +300,80 @@ FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 	B_giveinvitems (self, other, ItNa_MrokPolnocy, 5);
 
 };
+
+//*********************************************************************
+//	Info BagienneZiele
+//*********************************************************************
+INSTANCE DIA_NASZ_219_Dick_BagienneZiele  (C_INFO)
+{
+	npc         = NASZ_219_Dick;
+ 	nr          = 8;
+ 	condition   = DIA_NASZ_219_Dick_BagienneZiele_Condition;
+ 	information = DIA_NASZ_219_Dick_BagienneZiele_Info;
+ 	permanent   = TRUE;
+	description = "Chcia³bym kupiæ bagienne ziele.";
+};
+
+FUNC INT DIA_NASZ_219_Dick_BagienneZiele_Condition()	
+{
+	if (npc_knowsinfo (other, DIA_NASZ_219_Dick_ziele_finish))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_219_Dick_BagienneZiele_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_219_Dick_BagienneZiele_15_00"); //Chcia³bym kupiæ bagienne ziele.
+	
+	Info_ClearChoices	(DIA_NASZ_219_Dick_BagienneZiele);
+	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, DIALOG_BACK 		,DIA_NASZ_219_Dick_BagienneZiele_Back);
+	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, "Ca³a roœlina. (5 szt. z³ota)"	,DIA_NASZ_219_Dick_BagienneZiele_Herb);
+	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, "£odyga bagiennego ziela. (10 szt. z³ota)"	,DIA_NASZ_219_Dick_BagienneZiele_Joint);
+	
+};
+
+func void DIA_NASZ_219_Dick_BagienneZiele_Back()
+{
+	Info_ClearChoices (DIA_NASZ_219_Dick_BagienneZiele);
+};
+
+func void DIA_NASZ_219_Dick_BagienneZiele_Herb()
+{
+	AI_Output (other, self,"DIA_NASZ_219_Dick_BagienneZiele_Herb_15_00"); //Ca³a roœlina.
+	
+	if (npc_hasitems(other,ItMi_Gold) < 5) {
+		DobarSayNoMoney();
+		return;
+	};
+
+	B_giveinvitems(other,self,ItMi_Gold,5);
+	AI_Output (self, other,"DIA_NASZ_219_Dick_BagienneZiele_Herb_15_01"); //Specjalnie dla ciebie!
+	Createinvitems (self, ItPl_SwampHerb, 1);	
+	B_giveinvitems (self, other, ItNa_MrokPolnocy, 1);
+	
+	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, "Ca³a roœlina. (5 szt. z³ota)"	,DIA_NASZ_219_Dick_BagienneZiele_Herb);
+
+};
+
+func void DIA_NASZ_219_Dick_BagienneZiele_Joint()
+{
+	AI_Output (other, self,"DIA_NASZ_219_Dick_BagienneZiele_Joint_15_00"); //£odyga bagiennego ziela.
+	
+	if (npc_hasitems(other,ItMi_Gold) < 10) {
+		DobarSayNoMoney();
+		return;
+	};
+
+	B_giveinvitems(other,self,ItMi_Gold,10);
+	AI_Output (self, other,"DIA_NASZ_219_Dick_BagienneZiele_Joint_15_01"); //Ten towar nigdy mi siê nie skoñczy!
+	Createinvitems (self, ItMi_Joint, 1);	
+	B_giveinvitems (self, other, ItMi_Joint, 1);
+
+	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, "£odyga bagiennego ziela. (10 szt. z³ota)"	,DIA_NASZ_219_Dick_BagienneZiele_Joint);
+
+};
+
 
 //*********************************************************************
 //	Info PresjaCzasu

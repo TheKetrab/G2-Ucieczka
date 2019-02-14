@@ -439,7 +439,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Claws()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = TRUE;
 };
 
@@ -462,7 +462,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Teeth()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = TRUE;
 };
 
@@ -485,7 +485,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Fur()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = TRUE;
 };
 
@@ -508,7 +508,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFSting()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = TRUE;
 };
 
@@ -531,7 +531,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFWing ()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = TRUE;
 };
 
@@ -555,7 +555,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn()
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	
-	hero.lp -= 5;
+	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = TRUE;
 };
 

@@ -409,28 +409,41 @@ func void Xardas_Old_Spawn_Warrior3_S1 ()
 	Wld_PlayEffect("spellFX_Fear",  Skeleton_Lord_Xardas_3, Skeleton_Lord_Xardas_3, 0, 0, 0, FALSE );
 };
 
+var int XARDAS_OLD_PRZELACZNIK_NIEBIESKI_ONETIME;
+var int XARDAS_OLD_PRZELACZNIK_CZARNY_ONETIME;
 var int XARDAS_OLD_PRZELACZNIK_COUNTER;
 func void Xardas_Old_PRZELACZNIK_S1 ()
 {
-	if (XARDAS_OLD_PRZELACZNIK_COUNTER >= 1)
+	if (XARDAS_OLD_PRZELACZNIK_COUNTER >= 2) {
+		return;
+	};
+	
+
+	if (Npc_GetDistToWP(hero,"XARDASOLD_PRZEL_1") < 500)
+	&& (XARDAS_OLD_PRZELACZNIK_NIEBIESKI_ONETIME == FALSE)
+	{
+		XARDAS_OLD_PRZELACZNIK_COUNTER +=1;
+		XARDAS_OLD_PRZELACZNIK_NIEBIESKI_ONETIME = TRUE;
+		Npc_RemoveInvItems	(hero ,ItNa_NiebieskiKamien, 1);
+		Snd_Play ("MFX_TELEKINESIS_STARTINVEST");
+	};
+
+	if (Npc_GetDistToWP(hero,"XARDASOLD_PRZEL_2") < 500)
+	&& (XARDAS_OLD_PRZELACZNIK_CZARNY_ONETIME == FALSE)
+	{
+		XARDAS_OLD_PRZELACZNIK_COUNTER +=1;
+		XARDAS_OLD_PRZELACZNIK_CZARNY_ONETIME = TRUE;
+		Npc_RemoveInvItems	(hero ,ItNa_CzarnyKamien, 1);
+		Snd_Play ("MFX_TELEKINESIS_STARTINVEST");
+	};	
+
+
+	if (XARDAS_OLD_PRZELACZNIK_COUNTER == 2)
 	{
 		Wld_InsertNpc	(DemonLordXardasOld,"XARDASOLD_PRZEL_3"); 
 		Wld_PlayEffect("FX_EarthQuake",  DemonLordXardasOld, DemonLordXardasOld, 0, 0, 0, FALSE );
 	};
-	
-	XARDAS_OLD_PRZELACZNIK_COUNTER = XARDAS_OLD_PRZELACZNIK_COUNTER + 1;
 
-	if (Npc_GetDistToWP(hero,"XARDASOLD_PRZEL_1") < 500)
-	{
-		Npc_RemoveInvItems	(hero ,ItNa_NiebieskiKamien, 1);
-	};
-
-	if (Npc_GetDistToWP(hero,"XARDASOLD_PRZEL_2") < 500)
-	{
-		Npc_RemoveInvItems	(hero ,ItNa_CzarnyKamien, 1);
-	};	
-
-	Snd_Play ("MFX_TELEKINESIS_STARTINVEST");
 };
 
 

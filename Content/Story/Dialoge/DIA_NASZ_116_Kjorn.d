@@ -378,7 +378,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Map_Info()
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_05"); //Ponoæ przed utworzeniem kolonii karnej, na tych terenach zamieszkiwa³o dzikie plemiê. Prymitywna kultura dzikusów.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_06"); //Mieszkali w jaskiniach w po³udniowo-wschodniej czêœci Górniczej Doliny.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_07"); //Stare ksiêgi wspominaj¹ równie¿ o jakimœ rytuale, w którym z³o¿ono ofiarê z piêciu braci. Ta sama krew w piêciu ró¿nych miejscach. Jakieœ bzdury.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_08"); //Jednak¿e jeœli ta mapa rzeczywiœce wskazuje po³o¿enia szkieletów ofiarowanych braci, to mo¿na zaryzykowaæ rozwik³anie tej tajemnicy.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_08"); //Jednak¿e, jeœli ta mapa rzeczywiœce wskazuje po³o¿enia szkieletów ofiarowanych braci, to mo¿na zaryzykowaæ rozwik³anie tej tajemnicy.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_09"); //Co ty na to?
 
 	Info_ClearChoices (DIA_NASZ_116_Kjorn_Map);

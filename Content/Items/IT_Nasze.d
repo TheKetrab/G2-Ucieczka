@@ -2265,7 +2265,7 @@ INSTANCE ItNa_Projekt_DobryDlugiMiecz (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Projekt_DobryDlugiMiecz;
 	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Dobry miecz";
+	description			= 	"Projekt broni: Dobry d³ugi miecz";
 };
 func void Use_Projekt_DobryDlugiMiecz ()
 {   
@@ -2488,7 +2488,7 @@ func void Use_Projekt_Inkwizytor ()
 				Doc_PrintLines	( nDocID,  0, "- pazury");
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Wyj¹tkowo przyjemna w dotyku skóra cieniostwora powinna znaleŸæ siê na kiju. Na jego koncu przypominaj¹ca jajo g³owica z pofa³dowaniami. Ca³oœæ zakoñczona szpicem z pazura.");
+				Doc_PrintLines	( nDocID,  0, "Wyj¹tkowo przyjemna w dotyku skóra cieniostwora powinna znaleŸæ siê na kiju. Na jego koñcu przypominaj¹ca jajo g³owica z pofa³dowaniami. Ca³oœæ zakoñczona szpicem z pazura.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2537,7 +2537,7 @@ func void Use_Projekt_RunaMocy ()
 				Doc_PrintLines	( nDocID,  0, "- ska³a krystaliczna");
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugie ostrze z kilkoma kolcami u spodu. Do drewnianej rêkojeœci nale¿y w³o¿yæ ska³ê krystaliczno¹, ostrze pokryæ magiczn¹ rud¹.");
+				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugie ostrze z kilkoma kolcami u spodu. Do drewnianej rêkojeœci nale¿y w³o¿yæ ska³ê krystaliczn¹, ostrze pokryæ magiczn¹ rud¹.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2584,7 +2584,7 @@ func void Use_Projekt_MieczBojowy ()
 				Doc_PrintLines	( nDocID,  0, "- piêæ lag");
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Rêkojeœæ tej broni zk³ada siê z kilku kawa³ków drewna, które w przekroju przypominaj¹ piêciok¹t. Dziêki temu uchwyt jest bardzo wydogny dla posiadacza. Do œrodka w³o¿one jest ostrze, formowane na p³ask¹ i d³ug¹ liniê.");
+				Doc_PrintLines	( nDocID,  0, "Rêkojeœæ tej broni sk³ada siê z kilku kawa³ków drewna, które w przekroju przypominaj¹ piêciok¹t. Dziêki temu uchwyt jest bardzo wygodny dla posiadacza. Do œrodka w³o¿one jest ostrze, formowane na p³ask¹ i d³ug¹ liniê.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2678,7 +2678,7 @@ func void Use_Projekt_MieczSedziego ()
 
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "W¹ska klinga œciêta na górze. Z czym innym nie wypada pokazaæ siê arystokracie. Mo¿na wzmocniæ ostrze przetapiaj¹c go kilkukrotnie.");
+				Doc_PrintLines	( nDocID,  0, "W¹ska klinga œciêta na górze. Z czym innym nie wypada pokazaæ siê arystokracie. Mo¿na wzmocniæ ostrze, przetapiaj¹c go kilkukrotnie.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2774,7 +2774,7 @@ func void Use_Projekt_Zmija ()
 				Doc_PrintLines	( nDocID,  0, "- per³a");
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Rozgrzewamy stal i jedn¹ bry³kê z³ota, stapiamy prêty na jednym koñcu. Pozosta³e koñce skrêcamy w spiralê i ca³oœæ montujemy w rêkojeœæ wykonan¹ z twardego drewna. Poz³acamy j¹ i mmontujemy per³ê. UWAGA - per³a nie ma tylko charakteru ozdobnego. Niesie za sob¹ duszê tej broni...");
+				Doc_PrintLines	( nDocID,  0, "Rozgrzewamy stal i jedn¹ bry³kê z³ota, stapiamy prêty na jednym koñcu. Pozosta³e koñce skrêcamy w spiralê i ca³oœæ montujemy w rêkojeœæ wykonan¹ z twardego drewna. Poz³acamy j¹ i montujemy per³ê. UWAGA - per³a nie ma tylko charakteru ozdobnego. Niesie za sob¹ duszê tej broni...");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2868,9 +2868,9 @@ func void Use_Projekt_MieczNienawisci ()
 				Doc_PrintLines	( nDocID,  0, "- piwo");
 				
 				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Dogadam siê ze Stonem. Wykujê dla niego 10 mieczy a on da je stra¿nikom. Mam tylko nadziejê, ¿e Bloodwyn nie bêdzie siê miesza³. A, i za ka¿dy miecz dostanê butelkê piwa!");
+				Doc_PrintLines	( nDocID,  0, "Dogadam siê ze Stonem. Wykujê dla niego 10 mieczy, a on da je stra¿nikom. Mam tylko nadziejê, ¿e Bloodwyn nie bêdzie siê miesza³. A, i za ka¿dy miecz dostanê butelkê piwa!");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Zanotujê ten pomys³, bo jeszcze zapomne i nici z ch³odnego trunku: Rozgrzaæ stal. Uformowaæ ostrze i wyostrzyæ g³owniê. Zostawiæ na chwilê i ponownie kuæ na wielkim ogniu. Sztych powinien byæ têpy, ¿eby móc zadawaæ ból, za to czubek bardzo osrty.");
+				Doc_PrintLines	( nDocID,  0, "Zanotujê ten pomys³, bo jeszcze zapomnê i nici z ch³odnego trunku: Rozgrzaæ stal. Uformowaæ ostrze i wyostrzyæ g³owniê. Zostawiæ na chwilê i ponownie kuæ na wielkim ogniu. Sztych powinien byæ têpy, ¿eby móc zadawaæ ból, za to czubek bardzo ostry.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Piwo ju¿ jest moje! Trochê wypijê, a resztê wymieniê na parê bry³ek.");
 				Doc_PrintLine	( nDocID,  0, "");
@@ -3249,7 +3249,7 @@ FUNC VOID Use_ItNa_KsiegaBosow()
 				Doc_PrintLines	( nDocID,  1, BossStatus);
 
 				Doc_PrintLine	( nDocID,  1, "");
-				Doc_PrintLines   ( nDocID,  1, "10. Kulompus: stra¿nik skrzyni w skrytce na prze³êczy. Kolce broni¹ce dostêpu do ko³owrotu mo¿na zdezaktywowaæ trzema przyciskami w okolicy.");
+				Doc_PrintLines   ( nDocID,  1, "10. Kulompus: stra¿nik skrzyni w skrytce na prze³êczy. Kolce broni¹ce dostêpu do ko³owrotu mo¿na zdezaktywowaæ czterema przyciskami w okolicy.");
 				BossStatus = "**";
 				BossStatus = ConcatStrings(BossStatus,"Status: ");
 				if (Boss10Killed == TRUE) { BossStatus = ConcatStrings(BossStatus,"pokonany"); } else { BossStatus = ConcatStrings(BossStatus,"¿ywy"); };
@@ -3357,6 +3357,7 @@ func void Use_Uroboros1 ()
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "Kirim tada Oija'K!");
+					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "~Mistrz Hyglas");
 					Doc_Show		( nDocID );
 					
@@ -3492,7 +3493,7 @@ func void Use_Uroboros2 ()
 					Doc_PrintLines	( nDocID,  0, "-rdest polny");
 					Doc_PrintLines	( nDocID,  0, "-róg cieniostwora");
 					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "-Dairick");
+					Doc_PrintLines	( nDocID,  0, "~Dairick");
 
 					
 					//2.Seite
@@ -3730,6 +3731,7 @@ func void Use_Uroboros5 ()
 					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, ""	);
 					Doc_PrintLines	( nDocID,  1, "Jedno wielkie bagno."					);
+					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, "~Kalom");
 					Doc_Show		( nDocID );
 					
@@ -3802,7 +3804,7 @@ func void Use_Uroboros6 ()
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
 					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLines	( nDocID,  1, "Nic nigdy siê nie koñczy. Jako ostatni z wielkich alchemików czujê siê najwiêkszy z nich. Teraz, jako najpotê¿niejszy guru w Bractwie s³awi¹ mnie tytu³em:"					);
+					Doc_PrintLines	( nDocID,  1, "Nic nigdy siê nie koñczy. Jako ostatni z wielkich alchemików czujê siê najwiêkszy z nich. Teraz, jako najpotê¿niejszy guru w Bractwie, s³awi¹ mnie tytu³em:"					);
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "~Cor Kalom");
 					Doc_Show		( nDocID );
@@ -3858,7 +3860,7 @@ func void Use_HowToEscape ()
 				Doc_PrintLines	(nDocID,  0, "Mo¿na otworzyæ bramê do lasu - potrzeba jednak jakiegoœ smaru...");
 				Doc_PrintLines	(nDocID,  0, "");
 				Doc_PrintLines	(nDocID,  0, "Wydaje mi siê, ¿e przez bramê w stronê Nowego Obozu");
-				Doc_PrintLines	(nDocID,  0, "mo¿na siê wydostaæ u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
+				Doc_PrintLines	(nDocID,  0, "mo¿na siê wydostaæ, u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
 				Doc_PrintLines	(nDocID,  0, "");
 				Doc_PrintLines	(nDocID,  0, "Oceni³em wysokoœæ tych desek nad wejœciem do kopalni");
 				Doc_PrintLines	(nDocID,  0, "i myœlê, ¿e jestem w stanie na nie skoczyæ.");
@@ -3917,7 +3919,7 @@ FUNC VOID Use_HowToEscape()
 					Doc_PrintLines	( nDocID,  0, "Zamknêli mnie. Prowadz¹ jakieœ nielegalne wydobycie rudy...");
 					Doc_PrintLine	( nDocID,  0, ""		);
 					Doc_PrintLine	( nDocID,  0, "05.05"		);
-					Doc_PrintLines	( nDocID,  0, "Mo¿na otworzyæ bramê do lasu - potrzeba jednak jakiegoœ smaru... Wydaje mi siê, ¿e przez bramê w stronê Nowego Obozu mo¿na siê wydostaæ u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
+					Doc_PrintLines	( nDocID,  0, "Mo¿na otworzyæ bramê do lasu - potrzeba jednak jakiegoœ smaru... Wydaje mi siê, ¿e przez bramê w stronê Nowego Obozu mo¿na siê wydostaæ, u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLines	( nDocID,  0, "");
 
@@ -4056,7 +4058,7 @@ FUNC VOID UseCorKalomBook()
 				Doc_SetMargins	( nDocID,  0,  275, 20, 30, 20, 1   		);  //  0 -> margins are in pixels
 				Doc_SetFont 	( nDocID,  0, FONT_Book	   			); 	// -1 -> all pages
 				Doc_PrintLine	( nDocID,  0, ""					);
-				Doc_PrintLines	( nDocID,  0, "Za³o¿ylœmy obóz. Teraz bêdê móg³ zg³êbiaæ tajniki alchemii. Przepisy gildii alchemików stoj¹ przede mn¹ otworem. Muszê odnaleŸæ resztê."	);
+				Doc_PrintLines	( nDocID,  0, "Za³o¿yliœmy obóz. Teraz bêdê móg³ zg³êbiaæ tajniki alchemii. Przepisy gildii alchemików stoj¹ przede mn¹ otworem. Muszê odnaleŸæ resztê."	);
 				Doc_PrintLine	( nDocID,  0, ""					);
 				Doc_PrintLines	( nDocID,  0, "Bractwo nabiera kszta³tu. Dziêki bagiennemu zielu zbieranemu w okolicach obozu, mogê sporz¹dzaæ mikstury ³¹cz¹ce mnie ze Œni¹cym." );
 				Doc_PrintLine	( nDocID,  0, ""					);
@@ -4753,7 +4755,7 @@ func void Use_AyanList  ()
 				Doc_PrintLine	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Willu,"	);
 				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Nie wiem, czy jeszcze pamiêtasz, co robi³em zanim zaprosi³eœ mnie do twierdzy. Chcia³em zbadaæ orkowy cmentarz, do którego nie ma dostêpu. Kiedy bêdziesz mia³ trochê czasu zajrzyj do mnie. Wpad³em na pewien pomys³, dlatego wyruszê, zanim wrócisz, a potem razem spróbujemy przeszukaæ cmentarz.");
+				Doc_PrintLines	( nDocID,  0, "Nie wiem, czy jeszcze pamiêtasz, co robi³em, zanim zaprosi³eœ mnie do twierdzy. Chcia³em zbadaæ orkowy cmentarz, do którego nie ma dostêpu. Kiedy bêdziesz mia³ trochê czasu, zajrzyj do mnie. Wpad³em na pewien pomys³, dlatego wyruszê, zanim wrócisz, a potem razem spróbujemy przeszukaæ cmentarz.");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -5682,7 +5684,7 @@ INSTANCE ItNa_TeleportOrcTown(C_Item)
 	wear				= 	WEAR_EFFECT;
 	effect				=	"SPELLFX_WEAKGLIMMER";
 
-	description			= 	"Teleportacja do orkowego miasta.";
+	description			= 	"Teleportacja do orkowego miasta";
 	
 	TEXT	[1]			=	NAME_Manakosten;			
 	COUNT	[1]			=	SPL_COST_TELEPORT;

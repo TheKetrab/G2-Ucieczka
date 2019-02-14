@@ -77,7 +77,7 @@ FUNC VOID DIA_NASZ_010_Monastir_who_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_who_15_00"); //Kim jesteœ?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_who_55_01"); //Nazywam siê Monastir. Jestem Magiem Ognia i pochodzê z Myrtany.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_who_55_02"); //Jak widzisz ludzie nie zapomnieli o was. Przybywam tu, by pomóc siê wam wydostaæ.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_who_55_02"); //Jak widzisz, ludzie nie zapomnieli o was. Przybywam tu, by pomóc siê wam wydostaæ.
 };
 
 
@@ -309,7 +309,7 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_Info()
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³aby mi siê lepsza broñ...", DIA_NASZ_010_Monastir_HelpMe_weapon);
 	};		
 	
-	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Pob³ogos³aw mnie!", DIA_NASZ_010_Monastir_HelpMe_WEAPON);
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Pob³ogos³aw mnie!", DIA_NASZ_010_Monastir_HelpMe_blessme);
 	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Koniec.", DIA_NASZ_010_Monastir_HelpMe_END);
 	
 
@@ -403,7 +403,7 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_money()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_00"); //Przyda³yby mi siê trochê z³ota.
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety, to wszystko, co mam.
+	AI_Output (self,other ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety, to wszystko, co mam.
 	
 	Createinvitems (self, ITMI_GOLD, 100);
 	B_giveinvitems (self, other, ITMI_GOLD, 100);
@@ -417,7 +417,7 @@ FUNC void DIA_NASZ_010_Monastir_HelpMe_BLESSME()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_15_00"); //Pob³ogos³aw mnie!
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_blessme_55_01"); //B³ogos³awiê ciê w imieniu Innosa. Niechaj ogieñ naszego Pana zawsze p³onie w twym sercu, aby dawaæ ci si³ê do postêpowania zgodnie z jego naukami.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_blessme_55_01"); //B³ogos³awiê ciê w imieniu Innosa. Niechaj ogieñ naszego Pana zawsze p³onie w twym sercu, aby dawaæ ci si³ê do postêpowania zgodnie z jego naukami.
 	
 	Snd_Play("LevelUp");
 	if (!MonasirExpBlessMeOnce)

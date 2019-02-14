@@ -524,7 +524,7 @@ INSTANCE ItNa_Przepis_ZupaZDuzychGrzybow (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_ZupaZDuzychGrzybow;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na zupê z du¿ych grzybów.";
+	description			= 	"Przepis na zupê z du¿ych grzybów";
 };
 
 func void Use_Przepis_ZupaZDuzychGrzybow ()
@@ -569,7 +569,7 @@ INSTANCE ItNa_Przepis_ZupaJarzynowaZJagodami (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_ZupaJarzynowaZJagodami;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na zupê jarzynow¹ z jagodami.";
+	description			= 	"Przepis na zupê jarzynow¹ z jagodami";
 };
 
 func void Use_Przepis_ZupaJarzynowaZJagodami ()
@@ -613,7 +613,7 @@ INSTANCE ItNa_Przepis_ZupaSerowa (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_ZupaSerowa;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na zupê serow¹.";
+	description			= 	"Przepis na zupê serow¹";
 };
 
 func void Use_Przepis_ZupaSerowa ()
@@ -658,7 +658,7 @@ INSTANCE ItNa_Przepis_PrzysmakMysliwych (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_PrzysmakMysliwych;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na 'przysmak myœliwych'.";
+	description			= 	"Przepis na 'przysmak myœliwych'";
 };
 
 func void Use_Przepis_PrzysmakMysliwych ()
@@ -703,7 +703,7 @@ INSTANCE ItNa_Przepis_KompotOwocowy (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_KompotOwocowy;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na kompot owocowy.";
+	description			= 	"Przepis na kompot owocowy";
 };
 
 func void Use_Przepis_KompotOwocowy ()
@@ -748,7 +748,7 @@ INSTANCE ItNa_Przepis_ZupaRybna (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_ZupaRybna;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na zupê rybn¹.";
+	description			= 	"Przepis na zupê rybn¹";
 };
 
 func void Use_Przepis_ZupaRybna ()
@@ -792,7 +792,7 @@ INSTANCE ItNa_Przepis_GulaszMiesny (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_GulaszMiesny;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na gulasz miêsny.";
+	description			= 	"Przepis na gulasz miêsny";
 };
 
 func void Use_Przepis_GulaszMiesny ()
@@ -836,7 +836,7 @@ INSTANCE ItNa_Przepis_PotrawkaZeScierwojada (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_PotrawkaZeScierwojada;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na potrawkê ze œcierwojada.";
+	description			= 	"Przepis na potrawkê ze œcierwojada";
 };
 
 func void Use_Przepis_PotrawkaZeScierwojada ()
@@ -880,7 +880,7 @@ INSTANCE ItNa_Przepis_ZupaPiwna (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_ZupaPiwna;
 	scemeName			=	"MAP";
-	description			= 	"Przepis na zupê piwn¹.";
+	description			= 	"Przepis na zupê piwn¹";
 };
 
 func void Use_Przepis_ZupaPiwna ()

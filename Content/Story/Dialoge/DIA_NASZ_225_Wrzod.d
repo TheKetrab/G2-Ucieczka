@@ -88,7 +88,7 @@ FUNC VOID DIA_NASZ_225_Wrzod_Kap4Start_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_55_01"); //Pragnienie.
 	AI_Output (other,self ,"DIA_NASZ_225_Wrzod_Kap4Start_15_02"); //To znaczy?
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_15_03"); //Mia³em sen. A w tym œnie skaka³y wokó³ mnie œcierwojady, kretoszczury i krwiopijce.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_55_04"); //Kiedy by³em jeszcze m³ody, zaliczy³em parê owiec, szczury a nawet wilki. Dopiero ten sen otworzy³ mi oczy.
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_55_04"); //Kiedy by³em jeszcze m³ody, zaliczy³em parê owiec, szczury, a nawet wilki. Dopiero ten sen otworzy³ mi oczy.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_55_05"); //Ludzie na to krzywo patrzyli, ale mi³oœæ jest œlepa. Za to w³aœnie trafi³em do kolonii.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_Kap4Start_55_06"); //Muszê skosztowaæ nowych przygód. Doznaæ czegoœ dzikiego. Chcê zasmakowaæ jamy œcierwojada, brzuszka kretoszczura, a w koñcu odw³oka krwiopijcy.
 
@@ -208,13 +208,13 @@ FUNC VOID DIA_NASZ_225_Wrzod_MonstersReady_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_01"); //Powa¿nie?!
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_02"); //Zaraz bêdê, moje maleñstwa!
 
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_03"); //Dziêkujê ci, Przyjacielu. W nagrodê weŸ ten pierœcieñ si³y.
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_03"); //Dziêkujê ci, przyjacielu. W nagrodê weŸ ten pierœcieñ si³y.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_04"); //Jesteœ moim najlepszym kumplem, zaraz po pewnym cz³owieku, którego Stary Obóz uzna³ za zdrajcê i chcia³ go zabiæ.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_05"); //Ja sam ledwo uszed³em z ¿yciem. Gdyby uda³ siê nasz plan, ¿ylibyœmy d³ugo i szczêœliwie w Starym Obozie, razem ze zwierzêtami.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_06"); //Ten przedmiot nale¿a³ w³aœnie do niego. Prze¿yliœmy wiele wspólnych przygód.
 	AI_Output (other,self,"DIA_NASZ_225_Wrzod_MonstersReady_15_07"); //Jaki plan?
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_08"); //Mieliœmy przej¹æ w³adzê nad ca³ym Starym Obozem i wypowiedzieæ wojnê tym paskudnym szkodnikom z Nowego Obozu.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_09"); //Wszyscy by mnie szanowali, a te gnojki dosta³by to, na co zas³uguj¹.
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_09"); //Wszyscy by mnie szanowali, a te gnojki dosta³yby to, na co zas³uguj¹.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_10"); //By³em zamkniêty na górze z tym oprychem Draxem, to by³ koszmar!
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_11"); //Ci¹gle mnie obra¿a³, nie da³o siê z nim normalnie porozmawiaæ.
 	AI_Output (other,self,"DIA_NASZ_225_Wrzod_MonstersReady_15_12"); //Przyjacielu, zwierzêta na ciebie czekaj¹...

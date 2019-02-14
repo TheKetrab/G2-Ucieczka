@@ -450,7 +450,7 @@ FUNC VOID DIA_NASZ_201_Erak_mission_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_mission_55_03"); //Lepiej bym tego nie uj¹³. Trochê nam to jednak zajmie, wiêc musimy siê tu zadomowiæ.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_mission_55_04"); //Szczêœliwie drewna na opa³ jest tu pod dostatkiem. Problemem jest brak jedzenia. Nie wiem, co ci bandyci jedli?
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_mission_15_05"); //Mo¿e w waszym obozie wypadowym mieliœcie tak du¿o miêsa, ¿e dwa kawa³ki na dzieñ nie wystarcz¹?
-	AI_Output (self, other,"DIA_NASZ_201_Erak_mission_55_06"); //Dwa? Taki kawa³ ch³opa jak ja, je minimum piêæ! 
+	AI_Output (self, other,"DIA_NASZ_201_Erak_mission_55_06"); //Dwa? Taki kawa³ ch³opa jak ja, zjada minimum piêæ! 
 };
 
 //*********************************************************************
@@ -479,7 +479,7 @@ FUNC VOID DIA_NASZ_201_Erak_meat_Info()
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_meat_15_00"); //Przynieœæ wam coœ?
 	AI_Output (self, other,"DIA_NASZ_201_Erak_meat_55_01"); //Ano. Przynieœ 50 kawa³ków miêsa. Na pusty ¿o³¹dek nie ma nic lepszego ni¿ kawa³ek dziczyzny.
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_meat_15_02"); //Surowego czy pieczonego?
-	AI_Output (self, other,"DIA_NASZ_201_Erak_meat_55_03"); //Obojêtne. Mam du¿o czasu, wiêc w ostatecznoœci upiekê. Dobrzy by by³o, gdyby by³o œwie¿e, a nie kilkudniowe.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_meat_55_03"); //Obojêtne. Mam du¿o czasu, wiêc w ostatecznoœci upiekê. Dobrze by by³o, gdyby by³o œwie¿e, a nie kilkudniowe.
 
 	Log_CreateTopic (TOPIC_Erak_Meat, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Erak_Meat, LOG_RUNNING);
@@ -568,7 +568,7 @@ FUNC VOID DIA_NASZ_201_Erak_WorkBDT_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_03"); //Jak siê zapewne domyœlasz, nie wszyscy bandyci byli w obozie w chwili naszego ataku.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_04"); //Musimy pozbyæ siê tych, którzy uciekli.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_05"); //Jestem przekonany, ¿e wszyscy zebrali siê w jeden punkt, w jakieœ miejsce ewakuacyjne wczeœniej ustalone.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_06"); //Jako, ¿e tyle siê wœród nich ostatnio obraca³eœ to mo¿e wiesz coœ o takiej lokacji?
+	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_06"); //Jako, ¿e tyle siê wœród nich ostatnio obraca³eœ, to mo¿e wiesz coœ o takiej lokacji?
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_WorkBDT_15_07"); //Niestety nic.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_08"); //Có¿. Tak czy inaczej oferowa³eœ swoj¹ pomoc, wiêc to zadanie nale¿y do ciebie.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_WorkBDT_55_09"); //ZnajdŸ i zabij bandytów.

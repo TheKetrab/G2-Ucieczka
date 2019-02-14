@@ -476,7 +476,7 @@ FUNC VOID DIA_NASZ_111_Gerold_GlodQuest_Info()
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_GlodQuest_55_06"); //Domyœlam siê, do czego to zmierza. Chcesz, abym ci pomóg³, tak?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_07"); //Ten dar to zarazem wielkie wyró¿nienie jak i przekleñstwo.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_08"); //Nie bêdê zanudza³ ciê szczegó³ami, musisz wiedzieæ jedynie, i¿ nie wolno mi opuœciæ posterunku bez wa¿nej przyczyny, gdy¿ inaczej popadnê w nie³askê u naszego boga.
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_09"); //Zazwyczaj nie by³o to problemem, a¿ do teraz. Jestem strasznie g³odny, a nikt w tym obozie nie ma czasu aby przynieœæ mi nieco jedzenia.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_09"); //Zazwyczaj nie by³o to problemem, a¿ do teraz. Jestem strasznie g³odny, a nikt w tym obozie nie ma czasu, aby przynieœæ mi nieco jedzenia.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_10"); //Od kilku godzin czujê, jak kiszki graj¹ mi marsza i nied³ugo zacznê chyba gryŸæ korê, ¿eby zaspokoiæ potrzeby.
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_GlodQuest_55_11"); //Nawet o tym nie myœl, jeszcze ucierpi przy tym jakieœ drzewo, albo pó³ okolicznego lasu. Postaram siê zorganizowaæ ci coœ do jedzenia.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_12"); //Tylko siê pospiesz, nie chcê tutaj czekaæ kolejnych kilku dni!

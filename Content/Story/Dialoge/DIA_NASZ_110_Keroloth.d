@@ -1453,7 +1453,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_KapThree_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_08"); //Tym bardziej, ¿e nasta³a ta chwila, na któr¹ wszyscy czekaliœmy. Chcemy odbiæ nasz zamek z r¹k orków.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_55_09"); //Jesteœcie tego pewni? W zamku jest ca³¹ horda, a nas zaledwie garstka. Jak mamy ich pokonaæ?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_10"); //Masz racjê, w otwartej walce nie mamy z nimi szans. Jednak nikt nie powiedzia³, ¿e chcemy na nich wybiec z obozu, dlatego obmyœli³em plan z Udarem i Kurganem.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_11"); //Aby daæ nam wiêksz¹ przewagê w walce potrzebujemy dobrej kryjówki, gdzie bêdziemy mogli w ukryciu przygotowaæ siê do wypadów na orków.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_11"); //Aby daæ nam wiêksz¹ przewagê w walce, potrzebujemy dobrej kryjówki, gdzie bêdziemy mogli w ukryciu przygotowaæ siê do wypadów na orków.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_12"); //Niestety nikt z nas nie wie, jakie miejsce mo¿e siê do tego nadaæ. Jeœli znajdziesz odpowiednie miejsce, to od razu mnie zawiadom.
 	
 	if (MieczRunicznyKerolothOk == TRUE) {
@@ -2127,7 +2127,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_00"); //Na Innosa! Widzisz ten ogieñ?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Kap4_55_01"); //Zapewne lada moment bêdziemy mieli towarzystwo.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_02"); //Teraz, kiedy uda³o nam siê ju¿ opanowaæ zamek, powinniœmy zaj¹æ siêdalszymi przygotowaniami maj¹cymi na celu wzmocniæ nasz¹ pozycjê w tym miejscu.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_02"); //Teraz, kiedy uda³o nam siê ju¿ opanowaæ zamek, powinniœmy zaj¹æ siê dalszymi przygotowaniami maj¹cymi na celu wzmocniæ nasz¹ pozycjê w tym miejscu.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_03"); //Szturm ze strony orków jest tylko kwesti¹ czasu i w ¿adnym wypadku nie powinniœmy dawaæ im jakichkolwiek szans na osi¹gniecie nad nami przewagi.
 	
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
@@ -2160,7 +2160,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Kap4_what_15_00"); //Co mam teraz zrobiæ?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_01"); //Chcê byœ uda³ siê do Udara i nakaza³ mu w moim imieniu by wys³a³ do zamku kilku ludzi.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_01"); //Chcê, byœ uda³ siê do Udara i nakaza³ mu w moim imieniu, ¿eby wys³a³ do zamku kilku ludzi.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_02"); //Wolê byæ przygotowany za w czasu na odparcie ataku, ni¿ potem martwiæ siê o losy swoich ludzi. 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_03"); //Powinniœmy te¿ zobaczyæ, co dzieje siê w obozie myœliwych. Dowodzi tam Erak, który zobowi¹za³ siê do udzielenia pomocy wszystkim s³abszym i rannym.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_04"); //Udaj siê tam i sprawdŸ, jak ma siê u nich sytuacja. Mam dziwne wra¿enie, i¿ przyda im siê pomoc.

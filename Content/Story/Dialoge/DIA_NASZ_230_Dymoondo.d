@@ -354,7 +354,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_HowAreYou_Info()
 	}
 	else
 	{
-		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_HowAreYou_55_03"); //Na tereny ³owieckie przybywaj¹ coraz groŸniejsze istoy.
+		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_HowAreYou_55_03"); //Na tereny ³owieckie przybywaj¹ coraz groŸniejsze istoty.
 		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_HowAreYou_55_04"); //Mo¿liwe, ¿e bêdê musia³ wkrótce opuœciæ to miejsce.
 	};
 };

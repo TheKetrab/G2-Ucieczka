@@ -452,7 +452,7 @@ FUNC VOID DIA_NASZ_232_Jehen_WhoDoISee_Info()
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_00"); //No proszê, kogo ja widzê! Co tutaj robisz?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_01"); //Witaj Jehenie, przybywam tu na proœbê Dobara. Nasz stary, poczciwy kowal nie mo¿e doczekaæ siê wyczekiwanej dostawy futer z orkowych psów.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_02"); //No to mamy powiem k³opot, gdy¿ nie mam tych skór. Ba, nawet nie zacz¹³em dobrze polowaæ!
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_03"); //Nie doœæ, ¿e coœ przep³oszy³o stad wszystkie orkowe psy, to jeszcze, jakby tego by³o ma³o, w nocy natkn¹³em siê na stworzenie wygl¹daj¹ce na przeroœniêtego cieniostwora.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_03"); //Nie doœæ, ¿e coœ przep³oszy³o st¹d wszystkie orkowe psy, to jeszcze, jakby tego by³o ma³o, w nocy natkn¹³em siê na stworzenie wygl¹daj¹ce na przeroœniêtego cieniostwora.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_04"); //Dlaczego wiêc go nie zastrzeli³eœ? Podejrzewam, i¿ jego skóra jest o wiele bardziej wytrzyma³a ni¿ ta pochodz¹ca z orkowych psów.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_05"); //Nie myœl, ze nie próbowa³em! Kiedy bestia przechodzi³a obok namiotu, poma³u z niego siê wykrad³em i zaszed³em ofiarê od ty³u, by strza³y trafi³y w najczulsze punkty w jego cielsku.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_06"); //Lecz wyobraŸ sobie, jakie musia³o byæ moje zdziwienie, kiedy œwiat³o ksiê¿yca oœwietli³o sylwetkê niedosz³ego cieniostwora.
@@ -572,7 +572,7 @@ FUNC VOID DIA_NASZ_232_Jehen_DeadWarg_Info()
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_00"); //Martwy warg? Œlady po pazurach wskazuj¹ na silne uderzenie skierowane bezpoœrednio na jego bok. To samo uderzenie pozbawi³o go od razu ¿ycia.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_01"); //Ponadto na sierœci dostrzegam dziwne plamy o fioletowej barwie, które siê... klej¹?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWarg_55_02"); //Jak myœlisz, co to mo¿e byæ? Nie wygl¹da mi to na krew, ani tym bardziej na coœ, co mog³o wydostaæ siê z cia³a warga.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_03"); //Nie, to na pewno nie krew, ani wydzielina z cia³a. Prêdzej jakaœ œlina lub coœ co ma zwil¿aæ pokarm i go rozdrabniaæ. Prawdopodobnie pochodzi od tego cieniostwora.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_03"); //Nie, to na pewno nie krew, ani wydzielina z cia³a. Prêdzej jakaœ œlina lub coœ, co ma zwil¿aæ pokarm i go rozdrabniaæ. Prawdopodobnie pochodzi od tego cieniostwora.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_04"); //To ju¿ daje nam niepokoj¹ce wskazówki, i¿ nie mamy stycznoœci ze zwyk³¹ besti¹.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_05"); //Rozejrzyj siê po okolicy. Mo¿e znajdziesz coœ wa¿nego, co umknê³o mojej uwadze.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWarg_55_06"); //Tylko nie oddalaj siê zbyt daleko bo inaczej stracê ciê z pola widzenia, a nie powinniœmy siê rozdzielaæ.
@@ -615,11 +615,12 @@ FUNC VOID DIA_NASZ_232_Jehen_DeadWargBone_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWargBone_55_01"); //Wygl¹da tak, jakby ktoœ j¹ przegryz³ i wyplu³.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_02"); //Nie pomyli³eœ siê bardzo. Kiedy ty przeszukiwa³eœ okolicê, ja przyjrza³em siê naszej ofierze.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_03"); //Koœæ, któr¹ przynios³eœ, pasowa³aby do rany na jego prawej ³apie, gdzie w³aœnie tej koœci brakuje.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_04"); //Cieniostwór, lub to z czym mamy teraz do czynienia, prawdopodobnie z³apa³o warga i wyrwa³o mu ³apê po czym uderzy³o ³ap¹ i zabi³o na miejscu. Wyj¹tkowo okrutnie jak na mój gust. Powinniœmy siê lepiej przygotowaæ.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWargBone_55_05"); //Dowiedzia³eœ siê jeszcze czegoœ?
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_06"); //Tak, jest jeszcze coœ. Uda³o mi siê znaleŸæ niewielkie, krwawe œlady prowadz¹ce w stronê tamtego klifu. Powinniœmy ju¿ ruszaæ, chodŸ.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWargBone_55_07"); //Ggdzie widzisz te œlady? Ja nigdzie nie mogê ich dostrzec!
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_08"); //Ch³opcze, jak bêdziesz myœliwym tyle lat co ja, to równie¿ nie bêdziesz mia³ z tym problemu. Za mn¹!
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_04"); //Cieniostwór, lub to z czym mamy teraz do czynienia, prawdopodobnie z³apa³o warga i wyrwa³o mu ³apê po czym uderzy³o ³ap¹ i zabi³o na miejscu.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_05"); //Wyj¹tkowo okrutnie jak na mój gust. Powinniœmy siê lepiej przygotowaæ.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWargBone_55_06"); //Dowiedzia³eœ siê jeszcze czegoœ?
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_07"); //Tak, jest jeszcze coœ. Uda³o mi siê znaleŸæ niewielkie, krwawe œlady prowadz¹ce w stronê tamtego klifu. Powinniœmy ju¿ ruszaæ, chodŸ.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_DeadWargBone_55_08"); //Gdzie widzisz te œlady? Ja nigdzie nie mogê ich dostrzec!
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_DeadWargBone_55_09"); //Ch³opcze, jak bêdziesz myœliwym tyle lat co ja, to równie¿ nie bêdziesz mia³ z tym problemu. Za mn¹!
 	
 	Npc_ExchangeRoutine(self,"Korzenie");
 	AI_StopProcessInfos(self);
@@ -654,7 +655,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Korzenie_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_00"); //Mogê zadaæ ci jedno, bardzo wa¿ne pytanie?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_01"); //Oczywiœcie, coœ siê sta³o?
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_02"); //Odk¹d zaczêliœmy iœæ tropem tego stworzenia zaczê³a bolec mnie g³owa, a im dalej idziemy, tym ból staje siê coraz bardziej nie do zniesienia. Czuje siê, jakbym zaraz mia³ eksplodowaæ!
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_02"); //Odk¹d zaczêliœmy iœæ tropem tego stworzenia, zaczê³a boleæ mnie g³owa, a im dalej idziemy, tym ból staje siê coraz bardziej nie do zniesienia. Czujê siê, jakbym zaraz mia³ eksplodowaæ!
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_03"); //Myœla³em, ¿e jedynie ja mam takie dolegliwoœci. Z ka¿dym krokiem czujê siê tak, jakby moje si³y mala³y, a moje cia³o stawa³o siê coraz s³absze i mnie wytrzyma³e.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_04"); //Dziwne rzeczy maj¹ tutaj miejsce, miejmy nadziejê, ¿e to nic powa¿nego, gdy¿ inaczej mo¿emy mieæ powa¿ne tarapaty.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_05"); //Jak ju¿ wczeœniej mówi³em, chcê siê przygotowaæ do walki z t¹ besti¹. Wróæ siê nad rzekê i powinieneœ znaleŸæ kilka rzecznych pn¹czy.
@@ -710,12 +711,12 @@ FUNC VOID DIA_NASZ_232_Jehen_KorzenieDone_Info()
 
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_01"); //Nie wspomnia³eœ jednak, i¿ ich zapach jest tak intensywny! Do teraz ³zawi¹ mi oczy.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_02"); //Musia³o to umkn¹æ mojej uwadze. Nie martw siê jednak, gdy¿ nie jest on szkodliwy dla zdrowia. Za kilka minut powinno ci przejœæ, a ja tymczasem zajmê siê ekstrakcj¹ toksyn.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_03"); //Robi³eœ to ju¿ wczeœniej? Wygl¹dasz na takiego, który zna siê nie tylko na sztuce ³owiectwa, ale i roœlinach.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_03"); //Robi³eœ to ju¿ wczeœniej? Wygl¹dasz na takiego, który zna siê nie tylko na sztuce ³owiectwa, ale i na roœlinach.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_04"); //Nauczy³em siê tej sztuki kiedy jeszcze ¿y³em w Monterze, niewielkim mieœcie w Myrtanie.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_05"); //Pewnego wieczoru przesiadywa³em w tamtejszej karczmie pij¹c piwo po ciê¿kim i d³ugotrwa³ym polowaniu na wilki, gdy spostrzeg³em, jak do œrodka wchodzi facet w sukience.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_05"); //Pewnego wieczoru przesiadywa³em w tamtejszej karczmie, pij¹c piwo po ciê¿kim i d³ugotrwa³ym polowaniu na wilki, gdy spostrzeg³em, jak do œrodka wchodzi facet w sukience.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_06"); //Dwóch goœci za nim, którzy dzier¿yli po dwa ostrza na plecach umocni³o mnie w tym, i¿ by³ to asasyn. Los chcia³, ¿e zaczêliœmy ze sob¹ rozmawiaæ, a po kilku g³êbszych zostaliœmy wrêcz kolegami.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_07"); //W okresie, kiedy przebywa³ w mieœcie, nauczy³ mnie wielu sztuczek swojego ludu, jak w³aœnie ta z produkcj¹ strza³ zanurzonych w neurotoksynie pozyskanej z rzecznych pn¹czy.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_08"); //Nie sadzi³em, ¿e mia³eœ kontakty wœród ludów pustyni.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_08"); //Nie s¹dzi³em, ¿e mia³eœ kontakty wœród ludów pustyni.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_09"); //Przez d³u¿szy czas polowa³em na zwierzynê specjalnie na ich zamówienia, gdy¿ wielu z nich chcia³o posiadaæ w swej kolekcji futra szablozêbów czy œnie¿nych wilków, a dla mnie ka¿da podró¿ do Nordmaru by³a przyjemnoœci¹.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_10"); //Nawet nie wiesz, jak têskniê za tamtejszymi górami. Niestety wojna zmusi³a mnie do ucieczki na Khorinis, gdy¿ liczy³em, ¿e bêdê tutaj bezpieczny.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_11"); //A jak widzisz los zdecydowa³ siê pójœæ mi na przekór i wrzuci³ mnie w wojnê, przed któr¹ przecie¿ ucieka³em.
@@ -843,7 +844,7 @@ FUNC INT DIA_NASZ_232_Jehen_HaveLuski_Condition()
 FUNC VOID DIA_NASZ_232_Jehen_HaveLuski_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_00"); //Wyrwa³em kilka ³usek.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_01"); //To jakaœ skorupa poroœniêta tkank¹, która tworzy³a kiedyœ cia³o tej bestii. Wydaje siê byæ bardzo wytrzyma³¹ bo znajdowa³a siê w miejscu, gdzie atakowaliœmy to stworzenie swoimi mieczami.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_01"); //To jakaœ skorupa poroœniêta tkank¹, która tworzy³a kiedyœ cia³o tej bestii. Wydaje siê byæ bardzo wytrzyma³¹, bo znajdowa³a siê w miejscu, gdzie atakowaliœmy to stworzenie swoimi mieczami.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_02"); //Byæ mo¿e to nada siê do wzmocnienia naszych pancerzy? Jak uwa¿asz?	
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_HaveLuski_55_03"); //Myœlê, ¿e Dobar by³by zadowolony, lecz to jedynie trzy ³uski. Raczej nie zrobi z tego pancerzy dla wszystkich ch³opaków, jednak masz racjê. Nale¿y mu o tym powiedzieæ, mo¿e jakoœ odtworzy to ze swojego metalu.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_HaveLuski_55_04"); //Zaczekaj... Te¿ widzia³eœ ten b³ysk? Dochodzi³ jakby spod wody. Chyba pod wulkanem jest jaskinia. 

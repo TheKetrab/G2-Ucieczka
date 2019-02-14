@@ -53,7 +53,7 @@ func void DIA_NASZ_023_DuchSekciarza_Rekonesans_Info ()
 	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_10"); //Zaæmienie! Nie wymawiaj nigdy tego s³owa w tym miejscu, chyba ¿e chcesz, aby spad³ na ciebie gniew opiekuna tego miejsca!
 	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_11"); //Nie znam ciê œmiertelniku, lecz wyczuwam w twoim duchu du¿¹ chêæ i przywi¹zanie do ¿ycia. Je¿eli nie chcesz go straciæ, czym prêdzej zawróæ! 
 	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_12"); //Pomoc naszym duszom mo¿e sprowadziæ na ciebie jedynie ból, nieszczêœcie i cierpienie trwaj¹ce przez wiecznoœæ.
-	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_13"); //ZnajdŸ Baala Oruna! Ale do mnie ju¿ wiêcej siê nie zbli¿aj...
+	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_13"); //ZnajdŸ Baal Oruna! Ale do mnie ju¿ wiêcej siê nie zbli¿aj...
 	
 	// todo : wpis w -> na bagna
 	

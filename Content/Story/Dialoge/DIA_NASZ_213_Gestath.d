@@ -1169,17 +1169,18 @@ FUNC VOID DIA_NASZ_213_Gestath_keroloth_Info()
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_07"); //Ammann... Chyba go jeszcze nie znasz. On ma specjalne zadanie. Wysla³em go po pierœcienie wiernoœci. O cholera! Zapomnia³em, ¿e kilka dni temu powiedzia³em mu, ¿e ciê do niego przyœlê... Mo¿e byæ z³y.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_08"); //No ja bym na jego miejscu uœmiechniêty nie by³.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_09"); //Jest nad obozowiskiem wypadowym Eraka. Pamiêtasz, gdzie to jest? IdŸ po prostu w stronê kamiennej twierdzy w górach. Lepiej udaj siê tam od razu.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_10"); //Vachut jest oczywiœcie u siebie, to znaczy obok ³owców orków. Szczerze mówi¹c, nie mam pojêcia, co teraz robi... Ostatni raz widzia³em go, gdy wraca³em z obozu bandytów. Wspomina³ wtedy coœ o jakichœ dziwnych topielcach...
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_11"); //Ayana powinieneœ znaleŸæ pod obozowiskiem wypadowym Eraka. Trzymaj siê rzeki i idŸ w dó³, zgodnie z jej biegiem. O ile mnie pamiêæ nie myli, to gdzieœ tam by³ cmentarz orków.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_12"); //To bêdzie naprawdê ciê¿ka bitwa, do której nale¿y siê sowicie przygotowaæ. Orkowie to nie wargi czy zêbacze, dlatego zajmie nam to wiêcej czasu ni¿ przygotowanie do zwyczajnego polowania.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_10"); //Vachut jest oczywiœcie u siebie, to znaczy obok ³owców orków. Szczerze mówi¹c, nie mam pojêcia, co teraz robi...
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_11"); //Ostatni raz widzia³em go, gdy wraca³em z obozu bandytów. Wspomina³ wtedy coœ o jakichœ dziwnych topielcach...
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_12"); //Ayana powinieneœ znaleŸæ pod obozowiskiem wypadowym Eraka. Trzymaj siê rzeki i idŸ w dó³, zgodnie z jej biegiem. O ile mnie pamiêæ nie myli, to gdzieœ tam by³ cmentarz orków.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_13"); //To bêdzie naprawdê ciê¿ka bitwa, do której nale¿y siê sowicie przygotowaæ. Orkowie to nie wargi czy zêbacze, dlatego zajmie nam to wiêcej czasu ni¿ przygotowanie do zwyczajnego polowania.
 		
 	if (hero.guild == GIL_DJG) {
-		AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_13"); //Nie martw siê jednak o to, damy sobie radê w obozie. Ty wracaj do Kerolotha i przeka¿ mu, ¿e ja i inni myœliwi staniemy po jego stronie.
-		AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_14"); //Oczywiœcie, jeœli osobiœcie przeniosê im personalne zaproszenia...
+		AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_14"); //Nie martw siê jednak o to, damy sobie radê w obozie. Ty wracaj do Kerolotha i przeka¿ mu, ¿e ja i inni myœliwi staniemy po jego stronie.
+		AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_15"); //Oczywiœcie, jeœli osobiœcie przeniosê im personalne zaproszenia...
 	}
 	else { // GIL_OUT
-		AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_15"); //Oczywiœcie pomogê, w koñcu jestem jednym z was.
-		AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_16"); //Na nic innego nie liczy³em z twojej strony. Najlepiej bierzmy siê od razu do roboty, aby nie kazaæ Kerolothowi czekaæ ze szturmem. Im d³u¿ej zwlekamy tym wiêksza szansa, i¿ orkowie odkryj¹ co planujemy.
+		AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_16"); //Oczywiœcie pomogê, w koñcu jestem jednym z was.
+		AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_17"); //Na nic innego nie liczy³em z twojej strony. Najlepiej bierzmy siê od razu do roboty, aby nie kazaæ Kerolothowi czekaæ ze szturmem. Im d³u¿ej zwlekamy tym wiêksza szansa, i¿ orkowie odkryj¹ co planujemy.
 		
 		B_LogEntry(TOPIC_Keroloth_Wojna,"Trzeba za³atwiæ kilka spraw w obozie myœliwych.");
 	};

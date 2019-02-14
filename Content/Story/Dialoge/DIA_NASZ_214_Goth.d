@@ -305,7 +305,7 @@ FUNC VOID DIA_NASZ_214_Goth_finish_Info()
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_finish_15_02"); //To cz³owiek imieniem Lens.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_03"); //Mam nadziejê, ¿e zosta³ ukarany.
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_finish_15_04"); //Nie martw siê. Ten rabuœ ju¿ gryzie ziemiê.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_05"); //Nie chcia³ bym byæ na jego miejscu. Jednak niew¹tpliwie zas³u¿y³ sobie na to. Jesteœ po¿¹dnym cz³owiekiem. Twoje zdrowie!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_05"); //Nie chcia³bym byæ na jego miejscu. Jednak niew¹tpliwie zas³u¿y³ sobie na to. Jesteœ po¿¹dnym cz³owiekiem. Twoje zdrowie!
 	B_UseItem (self,ItFo_Beer);
 	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_06"); //Oto i twoja nagroda. Trzymaj.
 
@@ -493,7 +493,7 @@ FUNC INT DIA_NASZ_214_Goth_Undeads_Condition()
 FUNC VOID DIA_NASZ_214_Goth_Undeads_Info()
 {
 
-	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_00"); //Chwa³a niech bêdzie bogom! Nawet nie chce wiedzieæ co mog³oby siê staæ gdybyœ nam nie pomóg³!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_00"); //Chwa³a niech bêdzie bogom! Nawet nie chcê wiedzieæ, co mog³oby siê staæ, gdybyœ nam nie pomóg³!
 	AI_Output (other, self,"DIA_NASZ_214_Goth_Undeads_55_01"); //Co tu siê dzieje do cholery? Sk¹d wziê³y siê te szkielety i dlaczego zaatakowa³y wasz obóz?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_02"); //Ostatnio podzia³o siê doœæ sporo dziwnych rzeczy. W Górniczej Dolinie wszêdzie pe³no demonów i obrzydliwych zombie. Jakby tego by³o ma³o pojawi³y siê jeszcze zmutowane bestie.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_03"); //Niestety nikt z nas nie wie co siê dzieje. ¯aden z nas nie spodziewa³ siê te¿ ataku na nasz obóz!
@@ -648,7 +648,7 @@ FUNC VOID DIA_NASZ_214_Goth_KilledGigant_Info()
 
 	AI_Output (other, self,"DIA_NASZ_214_Goth_KilledGigant_55_00"); //Zabi³em wszystkie bestie na p³askowy¿u.
 	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_mayme)) {
-		AI_Output (self, other,"DIA_NASZ_214_Goth_KilledGigant_15_01"); //Wszystkie? Na prawdê jesteœ wielkim wojownikiem.
+		AI_Output (self, other,"DIA_NASZ_214_Goth_KilledGigant_15_01"); //Wszystkie? Naprawdê jesteœ wielkim wojownikiem.
 	}
 	else {
 		AI_Output (self, other,"DIA_NASZ_214_Goth_KilledGigant_15_02"); //Jeœli to prawda to za³atw mi skórê trolla giganta. Ju¿ zapomnia³eœ?

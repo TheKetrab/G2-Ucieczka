@@ -613,7 +613,7 @@ FUNC VOID DIA_NASZ_231_Ted_Kap4_Info()
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_15_00"); //A co ty tu robisz?
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_55_01"); //Jakby nie by³o, nie jest to najbezpieczniejsze miejsce na spacerek. Sam trafi³em tu przez przypadek.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_55_02"); //Z lasu wypatrzy³em wie¿yczkê w tym opuszczonym klasztorze i stwierdzi³em, ¿e zbadam legendy kr¹¿¹ce o tym miejscu.
-	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_55_03"); //Ale nawet nie odwa¿y³em siê wejœæ do œrodka. Od kilku godzin stojê tu i obserwuje trolle, czy przypadkiem nie zdo³am przemkn¹æ siê obok nich.
+	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_55_03"); //Ale nawet nie odwa¿y³em siê wejœæ do œrodka. Od kilku godzin stojê tu i obserwujê trolle, czy przypadkiem nie zdo³am przemkn¹æ siê obok nich.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Kap4_55_04"); //Cholera, te bestie chyba nigdy nie œpi¹...
 
 };
@@ -673,7 +673,7 @@ FUNC VOID DIA_NASZ_231_Ted_WhatLegends_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_231_Ted_WhatLegends_15_00"); //O jakich legendach mówisz?
 	AI_Output (self, other,"DIA_NASZ_231_Ted_WhatLegends_55_01"); //Legendach, bajkach, historii... Sam ju¿ nie wiem. W ka¿dym razie, podobno na tym obszarze, dawno temu rezydowali magowie, specjalizuj¹cy siê w przemianach.
-	AI_Output (self, other,"DIA_NASZ_231_Ted_WhatLegends_55_02"); //Jeœli to prawda, to byæ mo¿ê znajdê tu jakieœ zapiski o konkretnych zwierzêtach, co znacznie u³atwi mi polowanie.
+	AI_Output (self, other,"DIA_NASZ_231_Ted_WhatLegends_55_02"); //Jeœli to prawda, to byæ mo¿e znajdê tu jakieœ zapiski o konkretnych zwierzêtach, co znacznie u³atwi mi polowanie.
 };
 
 //*********************************************************************

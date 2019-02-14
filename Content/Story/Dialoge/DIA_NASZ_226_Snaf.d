@@ -218,7 +218,7 @@ FUNC VOID DIA_NASZ_226_Snaf_GeroldPotrawka_Info()
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_GeroldPotrawka_55_05"); //Sprawa jest powa¿na, gdy¿ ten stwierdzi³, ¿e jak nie dostanie szybko czegoœ do zjedzenia, to zabierze siê za korê okolicznych drzew.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_GeroldPotrawka_55_06"); //Mam pewien pomys³. Kiedyœ, jeszcze przed moim pobytem w kolonii karnej, przygotowywa³em specjaln¹ potrawê dla pewnego bogatego kupca, który ci¹gle skar¿y³ siê na g³ód.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_GeroldPotrawka_55_07"); //Mogê przygotowaæ takie samo danie, które nieco za³agodzi dolegliwoœci twojego przyjaciela, lecz potrzebujê na to tak do trzech godzin.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_GeroldPotrawka_55_08"); //Obiecujê, ze siê nie zawiedziesz!
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_GeroldPotrawka_55_08"); //Obiecujê, ¿e siê nie zawiedziesz!
 	
 	SnafGeroldPotrawkaDay  = Wld_GetDay();
 	SnafGeroldPotrawkaHour = Wld_GetTimeHour();

@@ -78,7 +78,7 @@ func void DIA_NASZ_229_Ayan_most_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_00"); //Ju¿ wiem, jak dostaæ siê na drugi brzeg!
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_01"); //Znalaz³em tê runê teleportacyjn¹ nurkuj¹c w rzece.
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_02"); //Uwierz mi, nie by³o ³atwo! ale mam nadziejê, ¿e warto.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_02"); //Uwierz mi, nie by³o ³atwo! Ale mam nadziejê, ¿e warto.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_03"); //Szukam jakiegoœ osi³ka, bo samemu nie zamierzam siê tam wybieraæ. Mo¿e zechcesz mi towarzyszyæ?
 
 };

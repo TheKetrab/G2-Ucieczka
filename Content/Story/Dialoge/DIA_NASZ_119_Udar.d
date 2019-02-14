@@ -454,7 +454,7 @@ FUNC VOID DIA_NASZ_119_Udar_GraveMissionWhatToDo_Info()
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_06"); //A wiêc masz oczyœciæ wszystkie groby, które tu zaznaczy³em. Wpierw rozkopujesz grób, potem wlewasz wodê œwiêcon¹. Proste, prawda?
 	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_07"); //Wyruszam w drogê od razu!
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_08"); //Hola, hola! Zahacz najpierw o Brona. On sprzeda ci wodê œwiêcon¹.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_09"); //Powiedzia³eœ sprzeda? Mówi³eœ, ¿e nie po¿a³ujê, tymczasem mam p³aciæ z w³asnej kieszeni...
+	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_09"); //Powiedzia³eœ 'sprzeda'? Mówi³eœ, ¿e nie po¿a³ujê, tymczasem mam p³aciæ z w³asnej kieszeni...
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_10"); //Nie przejmuj siê, dostaniesz du¿o wiêcej ni¿ myœlisz.
 
 	GraveMissionReady = TRUE;

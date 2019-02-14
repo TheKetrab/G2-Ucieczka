@@ -208,7 +208,7 @@ FUNC VOID DIA_NASZ_402_Innos_workA_Info()
 	
 	else {
 		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_04"); //Œmiertelnicy zawierzyli swoje dusze Œni¹cemu, przez co teraz b³¹kaj¹ siê po œwiecie.
-		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_05"); //Musisz rozwi¹zaæ wielkie sprawy, które dziejê siê na bagnach. Bogowie nie mog¹ siê tam wtr¹caæ, gdy¿ to sprawa miêdzy ¿ywymi a umar³ymi.
+		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_05"); //Musisz rozwi¹zaæ wielkie sprawy, które dziej¹ siê na bagnach. Bogowie nie mog¹ siê tam wtr¹caæ, gdy¿ to sprawa miêdzy ¿ywymi a umar³ymi.
 
 		B_LogEntry (TOPIC_bogowie_work, "Innos chce, bym uratowa³ zagubione dusze na bagnach. Muszê siê tam udaæ i pomóc siê oczyœciæ.");
 	};

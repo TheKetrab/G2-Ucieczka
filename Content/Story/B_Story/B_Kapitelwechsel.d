@@ -224,6 +224,22 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_05"); 
 		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_06"); 
 
+		// blotne weze
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_ENTRANCE_03");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_ENTRANCE_02");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_01");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_02");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_3_02");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_17_01");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_7_02");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_3_01");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_8_03");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_1");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_2");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_3");
+		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_4");
+
+		
 		//LAS OC
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_MOLERAT_OCWOOD_OC4"); 
 		Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_C2"); 

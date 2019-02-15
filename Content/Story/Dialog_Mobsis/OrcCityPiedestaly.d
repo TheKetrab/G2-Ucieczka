@@ -78,6 +78,7 @@ FUNC VOID PC_OrcCityPiedestal1_Left_Info ()
 	if (Mov_OrcCity10Ready == TRUE) && (Mov_OrcCity11Ready == TRUE) && (Mov_OrcCity14Ready == TRUE)
 	{
 		CameraOrcCity_01_Redi = TRUE;
+		ff_applyonceext(secCameraEventFunc,1000,-1);
 	};
 
 };
@@ -112,6 +113,7 @@ FUNC VOID PC_OrcCityPiedestal1_Right_Info ()
 	if (Mov_OrcCity10Ready == TRUE) && (Mov_OrcCity11Ready == TRUE) && (Mov_OrcCity14Ready == TRUE)
 	{
 		CameraOrcCity_01_Redi = TRUE;
+		ff_applyonceext(secCameraEventFunc,1000,-1);
 	};
 
 };
@@ -400,6 +402,7 @@ FUNC VOID PC_OrcCityPiedestal3_Left_Info ()
 	if (Mov_OrcCity10Ready == TRUE) && (Mov_OrcCity11Ready == TRUE) && (Mov_OrcCity14Ready == TRUE)
 	{
 		CameraOrcCity_01_Redi = TRUE;
+		ff_applyonceext(secCameraEventFunc,1000,-1);
 	};
 };
 

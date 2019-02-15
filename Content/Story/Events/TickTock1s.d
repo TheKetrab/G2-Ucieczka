@@ -542,28 +542,28 @@ func void SecRitualXardasOld()
 		secXardasOld = secXardasOld + 1;
 
 		if (secXardasOld == 4) && (WojownikCieniaPrzyzywaNumer == 0) {
-		Wld_InsertNpc	(Shadowbeast_Skeleton_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");
-	
-		//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
-		secXardasOld = 0;
-		WojownikCieniaPrzyzywa = FALSE;
-		WojownikCieniaPrzyzywaNumer = 1;
+			Wld_InsertNpc	(Shadowbeast_Skeleton_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");		
+			//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
+			secXardasOld = 0;
+			WojownikCieniaPrzyzywa = FALSE;
+			WojownikCieniaPrzyzywaNumer = 1;
 		};
 
 		if (secXardasOld == 4) && (WojownikCieniaPrzyzywaNumer == 1) {
-		Wld_InsertNpc	(Draconian_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");
-		//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
-		secXardasOld = 0;
-		WojownikCieniaPrzyzywa = FALSE;
-		WojownikCieniaPrzyzywaNumer = 2;
+			Wld_InsertNpc	(Draconian_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");
+			//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
+			secXardasOld = 0;
+			WojownikCieniaPrzyzywa = FALSE;
+			WojownikCieniaPrzyzywaNumer = 2;
 		};
 		
 		if (secXardasOld == 4) && (WojownikCieniaPrzyzywaNumer == 2) {
-		Wld_InsertNpc	(Dragon_Swamp_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");
-		//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
-		secXardasOld = 0;
-		WojownikCieniaPrzyzywa = FALSE;
-		WojownikCieniaPrzyzywaNumer = 3;
+			Wld_InsertNpc	(Dragon_Swamp_XardasOld,"NASZ_XARDAS_OLD_POKOJ_2_02");
+			//Wld_PlayEffect("spellFX_DESTROYUNDEAD",  Shadowbeast_Skeleton_XardasOld, Shadowbeast_Skeleton_XardasOld, 0, 0, 0, FALSE );
+			secXardasOld = 0;
+			WojownikCieniaPrzyzywa = FALSE;
+			WojownikCieniaPrzyzywaNumer = 3;
+			ff_remove(SecRitualXardasOld);
 		};
 	};
 };
@@ -992,6 +992,7 @@ func void secCameraEventFunc()
 			secCameraEvent = 0;
 			CameraOrcCity_01_Redi = FALSE;
 			OrcCity_KamienDoSecondOdsuniety = TRUE;
+			ff_Remove(secCameraEventFunc);
 		};
 		
 

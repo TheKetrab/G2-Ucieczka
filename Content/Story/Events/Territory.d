@@ -13,6 +13,14 @@ func int C_NpcIsBandit(var c_npc slf) {
 
 // Funkcje miejsca
 func int C_IsInLowcyTerritory() {
+
+	if (Npc_GetDistToWP(hero,"NASZ_LOWCY_CMENTARZ_03") < 1500)
+	|| (Npc_GetDistToWP(hero,"NASZ_LOWCY_CMENTARZ_02") < 600)
+	{
+		return false;
+	};
+	
+
 	if (Npc_GetDistToWP(hero,"NASZ_LOWCY_DOL_15") < 1500)
 	|| (Npc_GetDistToWP(hero,"NASZ_LOWCY_ARENA_01") < 3000)
 	|| (Npc_GetDistToWP(hero,"NASZ_LOWCY_DOL_25") < 5000)

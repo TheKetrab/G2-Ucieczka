@@ -64,6 +64,8 @@ func void DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Odmowa()
 	AI_Output			(other, self, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Odmowa_15_00"); //Nie mogê tego przyj¹æ. Ka¿demu z nas nale¿y siê spokojny, wiekuisty spoczynek.
 	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Odmowa_026_01"); //W twoich s³owach wyczuwam olbrzymi¹ szczeroœæ, dlatego proszê ciê, weŸ ten pas i niech prowadzi ciê przez drogê jak¹ kroczysz.
 
+	Info_ClearChoices	(DIA_NASZ_026_DuchNowicjusza_Lojalnosc);
+	
 	Log_SetTopicStatus (TOPIC_Shrat_przyjaciel, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Shrat_przyjaciel, "Zaj¹³em siê pochówkiem zmar³ego. W nagrodê dosta³em dziwny pas.");
 	B_GivePlayerXP(500);
@@ -78,6 +80,8 @@ func void DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Przyjecie()
 	AI_Output			(other, self, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Przyjecie_15_00"); //Dziêkujê duchu za twój dar. ¯yczê ci abyœ w koñcu zazna³ wymarzonego spokoju.
 	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Przyjecie_026_01"); //To ja dziêkujê, ¿egnaj nieznajomy!
 
+	Info_ClearChoices	(DIA_NASZ_026_DuchNowicjusza_Lojalnosc);
+	
 	Log_SetTopicStatus (TOPIC_Shrat_przyjaciel, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Shrat_przyjaciel, "Zaj¹³em siê pochówkiem zmar³ego. W nagrodê dosta³em dziwny pas.");
 	B_GivePlayerXP(500);

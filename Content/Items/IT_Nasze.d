@@ -304,6 +304,7 @@ func void XARDAS_TRIGER_2 ()
 		Wld_PlayEffect("spellFX_Fear",  NASZ_429_WojownikCienia, NASZ_429_WojownikCienia, 0, 0, 0, FALSE );
 		Wld_SendTrigger ("XARDAS_OLD_MOVER_KRATA_2_SCRIPT");
 		WojownikCieniaPrzyzywa = TRUE;
+		ff_applyonceext(SecRitualXardasOld,1000,-1);
 		XardasTriger2OneTime = TRUE;
 	};
 };
@@ -336,10 +337,9 @@ func void STRZAL_Z_LUKU_SCRIPT ()
 	{
 		StrzalZLukuOneTime = TRUE;
 		B_StartOtherRoutine (NASZ_019_Teshinoo, "GoToYou");
+		B_LogEntry (TOPIC_OrcCity_In, "Dobra, otworzy³em kraty. A przede mn¹ coœ jak... orkowe miasto.");
 	};
-	
-	
-	B_LogEntry (TOPIC_OrcCity_In, "Dobra, otworzy³em kraty. A przede mn¹ coœ jak... orkowe miasto.");
+
 	Wld_SendTrigger ("MOVER_ORCCITY_06");
 	Wld_SendTrigger ("MOVER_ORCCITY_07");
 };
@@ -4044,8 +4044,9 @@ FUNC VOID UseCorKalomBook()
 	{
 		WillKnowKalomBook = TRUE;
 		UseCorKalomBookOneTime = TRUE;
-		B_LogEntry (TOPIC_BadaniaCaloma, "W tajnym laboratorium znalaz³em pamiêtnik Cor Kaloma.");
-
+		if (npc_knowsinfo(hero,DIA_NASZ_024_BaalOrun_BadaniaCorCaloma)) {
+			B_LogEntry (TOPIC_BadaniaCaloma, "W tajnym laboratorium znalaz³em pamiêtnik Cor Kaloma.");
+		};
 	};
 
 	var int nDocID;
@@ -10188,11 +10189,11 @@ INSTANCE Helmet (C_Item)
 
 FUNC VOID Use_AllHelmets ()
 {
-	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);
-	CreateInvItems (hero,ITNA_HelmBarda, 1);
-	CreateInvItems (hero,ITNA_KapturMysliwego, 1);
+	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);	// do zebrania w misji
+	CreateInvItems (hero,ITNA_HelmBarda, 1);		// na wie¿y w NO
+	CreateInvItems (hero,ITNA_KapturMysliwego, 1);	// TODO sprzedaje hunt jesli jestes mysliwym
 	CreateInvItems (hero,ITNA_RogatyHelm, 1);
-	CreateInvItems (hero,ITNA_HelmSniacego, 1);
+	CreateInvItems (hero,ITNA_HelmSniacego, 1);		// na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
 	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);
 	CreateInvItems (hero,ITNA_Maska, 1);
 };

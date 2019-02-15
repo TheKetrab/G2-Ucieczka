@@ -410,16 +410,16 @@ INSTANCE Ozywieniec		(Mst_Default_Zombie)
 	level = 70;
 
 	//----- Attribute ----
-	attribute	[ATR_HITPOINTS_MAX]	=	600;
-	attribute	[ATR_HITPOINTS]		=	600;
+	attribute	[ATR_HITPOINTS_MAX]	=	450;
+	attribute	[ATR_HITPOINTS]		=	450;
 	attribute	[ATR_STRENGTH]		= 1000;
 	attribute	[ATR_DEXTERITY]		= 1000;
 
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;	
-	protection	[PROT_FIRE]			=	100;
-	protection	[PROT_FLY]			=	100;
+	protection	[PROT_BLUNT]		=	80;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	80;	
+	protection	[PROT_FIRE]			=	80;
+	protection	[PROT_FLY]			=	80;
 	protection	[PROT_MAGIC]		=	0;
 
 	B_SetVisuals_Pal_Zombie04();

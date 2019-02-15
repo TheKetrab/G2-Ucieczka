@@ -160,8 +160,9 @@ INSTANCE BlackGobboGigant1 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	300;
-	protection	[PROT_EDGE]			=	300;
+	protection	[PROT_BLUNT]		=	200;
+	protection	[PROT_EDGE]			=	200;
+	protection	[PROT_POINT]		=	200;
 	name							=	"Goblin Gigant";
 	level = 30;
 
@@ -177,8 +178,9 @@ INSTANCE BlackGobboGigant2 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	300;
-	protection	[PROT_EDGE]			=	300;
+	protection	[PROT_BLUNT]		=	200;
+	protection	[PROT_EDGE]			=	200;
+	protection	[PROT_POINT]		=	200;
 	name							=	"Goblin Gigant";
 	level = 30;
 };
@@ -193,8 +195,9 @@ INSTANCE BlackGobboGigant3 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	300;
-	protection	[PROT_EDGE]			=	300;
+	protection	[PROT_BLUNT]		=	200;
+	protection	[PROT_EDGE]			=	200;
+	protection	[PROT_POINT]		=	200;
 	name							=	"Goblin Gigant";
 	level = 30;
 };

@@ -97,8 +97,8 @@ INSTANCE Troll_Black_Plaskowyz	(Mst_Default_Troll_Black)
 	//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	attribute	[ATR_HITPOINTS_MAX]	=	750;
-	attribute	[ATR_HITPOINTS]		=	750;
+	attribute	[ATR_HITPOINTS_MAX]	=	550;
+	attribute	[ATR_HITPOINTS]		=	550;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 

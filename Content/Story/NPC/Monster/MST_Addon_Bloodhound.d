@@ -89,10 +89,10 @@ INSTANCE Nasz_Potwor	(Mst_Default_Bloodhound)
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //----------------------------------------------------------------
-	protection	[PROT_BLUNT]		=	400;
-	protection	[PROT_EDGE]			=	400;
-	protection	[PROT_POINT]		=	400;
-	protection	[PROT_FIRE]			=	200;
-	protection	[PROT_FLY]			=	200;
-	protection	[PROT_MAGIC]		=	200;
+	protection	[PROT_BLUNT]		=	160;
+	protection	[PROT_EDGE]			=	160;
+	protection	[PROT_POINT]		=	160;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	90;
 };

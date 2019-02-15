@@ -380,7 +380,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Info()
 	
 	if(UgotujeszCosDlaMnieFirstTime == FALSE) {
 		Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);
-		B_LogEntry (TOPIC_MysliwiTrader,"Kucharz Snaf chêtnie wymieni parê nowinek z obozu wzamian za z³oto.");
+		B_LogEntry (TOPIC_MysliwiTrader,"Snaf ugotuje dla mnie specjalne potrawy, jeœli przyniosê mu przepis i sk³adniki.");
 		UgotujeszCosDlaMnieFirstTime = TRUE;
 	};
 	

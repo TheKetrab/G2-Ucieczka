@@ -1,3 +1,4 @@
+var int KjornNieBedzieUczylZrecznosci;
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -203,6 +204,7 @@ INSTANCE DIA_NASZ_116_Kjorn_Teach   (C_INFO)
 FUNC INT DIA_NASZ_116_Kjorn_Teach_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_116_Kjorn_PlsHelp))
+	&& (KjornNieBedzieUczylZrecznosci == FALSE)
 	{
 		return TRUE;
 	};
@@ -481,6 +483,126 @@ FUNC VOID DIA_NASZ_116_Kjorn_HaveBones_Info()
 	B_LogEntry (TOPIC_Kjorn_bracia, "Teraz mam udaæ siê do jeziorka, które jest na œrodku gwiazdy wyznaczonej przez miejsca pochówku braci...");
 
 };
+
+//*********************************************************************
+//	Finito
+//*********************************************************************
+INSTANCE DIA_NASZ_116_Kjorn_Finito   (C_INFO)
+{
+	npc         = NASZ_116_Kjorn;
+ 	nr          = 44;
+ 	condition   = DIA_NASZ_116_Kjorn_Finito_Condition;
+ 	information = DIA_NASZ_116_Kjorn_Finito_Info;
+ 	permanent   = FALSE;
+ 	description = "By³em nad jeziorem.";
+};
+
+FUNC INT DIA_NASZ_116_Kjorn_Finito_Condition()
+{
+	if (npc_knowsinfo (other, DIA_NASZ_116_Kjorn_HaveBones)) && (npc_hasitems (other, ItNa_AmuletZRudy) >= 1)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_Info()
+{
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_15_00"); //By³em nad jeziorem.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_01"); //I jak? Znalaz³eœ tam coœ? Mów szybko!
+	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Finito_55_02"); //Mo¿na by powiedzieæ, ¿e spotka³em siê z piêcioma braæmi. Ale ju¿ nie tylko z ich koœcmi, a ca³ymi szkieletami.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_03"); //Strzegli jakiegoœ artefaktu?
+	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Finito_55_04"); //Tak, mieli przy sobie amulet z rudy. Mam go tutaj ze sob¹.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_05"); //To by³oby spe³nienie moich marzeñ! Ile za niego chcesz?
+	
+		Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
+		Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "Daj mi sto sztuk z³ota.", DIA_NASZ_116_Kjorn_Finito_100);
+		Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "Daj mi trzysta sztuk z³ota.", DIA_NASZ_116_Kjorn_Finito_300);
+		Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "Postanowi³em zatrzymaæ go dla siebie.", DIA_NASZ_116_Kjorn_Finito_nothing);
+
+};
+
+func void FinishQuestKjorn(var int mode) {
+
+	if (mode == 1) { // zloto
+		Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_SUCCESS);
+		B_LogEntry (TOPIC_Kjorn_bracia, "Odsprzeda³em Kjornowi amulet. Niech mu s³u¿y. Z³oto przyda mi siê bardziej.");
+		B_GivePlayerXP(700);
+	}
+	else if (mode == 2) { // zostawienie dla siebie
+		Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_SUCCESS);
+		B_LogEntry (TOPIC_Kjorn_bracia, "Stwierdzi³em, ¿e zachowam amulet dla siebie. Kjorn powiedzia³, ¿e nie bêdzie ju¿ mnie uczy³ zrêcznoœci, ale có¿... Znajdzie siê ktoœ inny, kto mnie nauczy.");
+		B_GivePlayerXP(700);	
+	}
+	else {
+		Print(ConcatStrings("error: FinishQuestKjorn, mode = ",IntToString(mode)));
+	};
+};
+
+
+func void KjornSayKeep() {
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_KjornSayKeep_15_01"); //Trzymaj. Nale¿y ci siê.
+};
+
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_100()
+{
+	B_GiveInvItems(other,self,ItNa_AmuletZRudy,1);
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_100_15_00"); //Daj mi sto sztuk z³ota.
+	KjornSayKeep();
+	Createinvitems(self,itmi_gold,100);
+	B_GiveInvItems(self,other,itmi_gold,100);
+	
+	FinishQuestKjorn(1);
+	
+	Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
+};
+
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_300()
+{
+	B_GiveInvItems(other,self,ItNa_AmuletZRudy,1);
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_300_15_00"); //Daj mi trzysta sztuk z³ota.
+	KjornSayKeep();
+	Createinvitems(self,itmi_gold,300);
+	B_GiveInvItems(self,other,itmi_gold,300);
+
+	FinishQuestKjorn(1);
+
+	Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
+};
+
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_700()
+{
+	B_GiveInvItems(other,self,ItNa_AmuletZRudy,1);
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_700_15_00"); //No dobra, ale daj mi siedemset sztuk z³ota.
+	KjornSayKeep();
+	Createinvitems(self,itmi_gold,700);
+	B_GiveInvItems(self,other,itmi_gold,700);
+
+	FinishQuestKjorn(1);
+
+	Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
+};
+
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing()
+{
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_700_15_00"); //Postanowi³em zatrzymaæ go dla siebie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_01"); //Przemyœl to, przyjacielu. Naprawdê, bardzo chcia³bym go mieæ.
+
+	Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "No dobra, ale daj mi siedemset sztuk z³ota.", DIA_NASZ_116_Kjorn_Finito_700);
+	Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "I tak myœlê, ¿e mi bardziej siê przyda.", DIA_NASZ_116_Kjorn_Finito_nothing2);
+};
+	
+FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing2()
+{
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_700_15_00"); //I tak myœlê, ¿e mi bardziej siê przyda.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_01"); //A niech ciê... Ten egoizm odwróci siê przeciwko tobie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
+
+	FinishQuestKjorn(2);
+
+	KjornNieBedzieUczylZrecznosci = TRUE;
+	Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
+};
+
 
 // ************************************************************
 // 			  				PICK POCKET

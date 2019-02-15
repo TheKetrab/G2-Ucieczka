@@ -118,24 +118,24 @@ INSTANCE MinecrawlerWarrior_Boss	(Mst_Default_MinecrawlerWarrior)
 {
 	B_SetVisuals_MinecrawlerWarrior();
 	Npc_SetToFistMode(self);
-	name							=	"Samiec Pe³zaczy";	
+	name							=	"Samiec pe³zaczy";	
 	level							=	50;
 	Mdl_SetModelScale(self,	1.20,	1.20, 	1.20);
 	
 	//----- Attribute ----
 	attribute	[ATR_STRENGTH]		=	300;
 	attribute	[ATR_DEXTERITY]		=	300;
-	attribute	[ATR_HITPOINTS_MAX]	=	500;
-	attribute	[ATR_HITPOINTS]		=	500;
+	attribute	[ATR_HITPOINTS_MAX]	=	400;
+	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----
-	protection	[PROT_BLUNT]		=	200;
-	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	200;
-	protection	[PROT_FIRE]			=	200;
-	protection	[PROT_FLY]			=	200;
-	protection	[PROT_MAGIC]		=	200;
+	protection	[PROT_BLUNT]		=	100;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	100;
+	protection	[PROT_FLY]			=	110;
+	protection	[PROT_MAGIC]		=	110;
 	
 };

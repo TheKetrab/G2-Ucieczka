@@ -110,10 +110,10 @@ INSTANCE PanCieniostworow	(Mst_Default_Shadowbeast)
 	attribute	[ATR_MANA] 			=	0;
 
 	//----- Protections ----
-	protection	[PROT_BLUNT]		=	250;
-	protection	[PROT_EDGE]			=	250;
-	protection	[PROT_POINT]		=	250;
-	protection	[PROT_FIRE]			=	250;
-	protection	[PROT_FLY]			=	250;
-	protection	[PROT_MAGIC]		=	20;
+	protection	[PROT_BLUNT]		=	140;
+	protection	[PROT_EDGE]			=	140;
+	protection	[PROT_POINT]		=	140;
+	protection	[PROT_FIRE]			=	140;
+	protection	[PROT_FLY]			=	140;
+	protection	[PROT_MAGIC]		=	140;
 };

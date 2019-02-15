@@ -87,11 +87,12 @@ INSTANCE Harpy_Gigant	(Mst_Default_Harpie)
 	Npc_SetToFistMode(self);
 	aivar[AIV_MM_REAL_ID]	= 	ID_GIGANT;
 	Mdl_SetModelScale(self,	1.50,	1.50, 	1.50);
-	attribute	[ATR_HITPOINTS_MAX]	=	250;
-	attribute	[ATR_HITPOINTS]		=	250;
-	attribute	[ATR_STRENGTH]		=	250;
-	attribute	[ATR_DEXTERITY]		=	250;
-	protection	[PROT_BLUNT]		=	250;
-	protection	[PROT_EDGE]			=	250;
+	attribute	[ATR_HITPOINTS_MAX]	=	200;
+	attribute	[ATR_HITPOINTS]		=	200;
+	attribute	[ATR_STRENGTH]		=	200;
+	attribute	[ATR_DEXTERITY]		=	200;
+	protection	[PROT_BLUNT]		=	200;
+	protection	[PROT_EDGE]			=	200;
+	protection	[PROT_POINT]		=	200;
 	level = 25;
 };

@@ -82,8 +82,8 @@ FUNC VOID DIA_Follow_Sheep_follow_Info()
 	
 	Wld_InsertNpc	(Gobbo_Skeleton,"FP_PERROT_1");
 	Wld_InsertNpc	(Gobbo_Skeleton,"FP_PERROT_2");
-	Wld_InsertNpc	(Snapper,"FP_ROAM_OW_SNAPPER_CANYONCAVE5");
-	Wld_InsertNpc	(Snapper,"FP_ROAM_OW_SNAPPER_CANYONCAVE4");
+	Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_SNAPPER_CANYONCAVE5");
+	Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_SNAPPER_CANYONCAVE4");
 };
 
 //*********************************************************************

@@ -470,21 +470,6 @@ FUNC VOID DIA_NASZ_008_Miecz_waz_Info()
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_waz_55_08"); //Poza skórami potrzebujê te¿ pust¹ butelkê i wodê.
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_waz_55_09"); //To chyba wszystko. Przynieœ mi sk³adniki, a wtedy sporz¹dzê napój.
 	
-	/*
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_ENTRANCE_03");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_ENTRANCE_02");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_01");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_02");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_3_02");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_17_01");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_7_02");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_3_01");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_8_03");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_1");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_2");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_3");
-	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMPSHARK_4");
-	*/
 	
 	B_LogEntry (TOPIC_Louis_weze, "Miecz twierdzi, ¿e to nie jest bajka dla dzieci i potrafi³by nawet przyrz¹dziæ dla mnie w³aœciwy wywar. Mam mu przynieœæ dziesiêæ skór b³otnych wê¿y, wodê i pust¹ butelkê, a na popitê przyniosê 3 giny.");
 

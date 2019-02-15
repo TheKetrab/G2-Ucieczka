@@ -111,12 +111,12 @@ INSTANCE Kamashi			(Mst_Default_Draconian)
 	attribute	[ATR_MANA] 			=	0;
 
 	//----- Protection ----
-	protection	[PROT_BLUNT]	=	150;
-	protection	[PROT_EDGE]		=	150;
-	protection	[PROT_POINT]	=	150; 
-	protection	[PROT_FIRE]		=	150;
-	protection	[PROT_FLY]		=	150;
-	protection	[PROT_MAGIC]	=	150;	
+	protection	[PROT_BLUNT]	=	100;
+	protection	[PROT_EDGE]		=	100;
+	protection	[PROT_POINT]	=	100; 
+	protection	[PROT_FIRE]		=	100;
+	protection	[PROT_FLY]		=	100;
+	protection	[PROT_MAGIC]	=	100;	
 	
 	//----- HitChances -----
 	HitChance	[NPC_TALENT_1H]			= 100;
@@ -153,12 +153,12 @@ INSTANCE Ugosh			(Mst_Default_Draconian)
 	attribute	[ATR_MANA] 			=	0;
 
 	//----- Protection ----
-	protection	[PROT_BLUNT]	=	120;
-	protection	[PROT_EDGE]		=	120;
-	protection	[PROT_POINT]	=	120; 
-	protection	[PROT_FIRE]		=	120;
-	protection	[PROT_FLY]		=	120;
-	protection	[PROT_MAGIC]	=	120;	
+	protection	[PROT_BLUNT]	=	80;
+	protection	[PROT_EDGE]		=	80;
+	protection	[PROT_POINT]	=	80; 
+	protection	[PROT_FIRE]		=	80;
+	protection	[PROT_FLY]		=	80;
+	protection	[PROT_MAGIC]	=	80;	
 	
 	//----- HitChances -----
 	HitChance	[NPC_TALENT_1H]			= 100;

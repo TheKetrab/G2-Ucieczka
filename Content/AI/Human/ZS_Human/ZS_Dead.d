@@ -490,8 +490,7 @@ func void ZS_Dead ()
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_102_Lens))
 	{
-			B_LogEntry (TOPIC_Goth_kradziez, "Mapa doprowadzi³a mnie do miejsca, gdzie spotka³em z³odzieja, z którym szybko siê rozprawi³em.");
-
+		B_LogEntry (TOPIC_Goth_kradziez, "Mapa doprowadzi³a mnie do miejsca, gdzie spotka³em z³odzieja, z którym szybko siê rozprawi³em.");
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcScoutHerszt))
@@ -509,7 +508,7 @@ func void ZS_Dead ()
 		AI_PlayAni (NASZ_429_WojownikCienia,"T_PRACTICEMAGIC5");
 		Wld_PlayEffect("spellFX_Fear",  NASZ_429_WojownikCienia, NASZ_429_WojownikCienia, 0, 0, 0, FALSE );
 		WojownikCieniaPrzyzywa = TRUE;
-		ff_applyonceext(SecRitualXardasOld,1000,-1);
+		//ff_applyonceext(SecRitualXardasOld,1000,-1);
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Draconian_XardasOld)) && (WojownikCieniaPrzyzywaNumer == 2)
@@ -517,7 +516,7 @@ func void ZS_Dead ()
 		AI_PlayAni (NASZ_429_WojownikCienia,"T_PRACTICEMAGIC5");
 		Wld_PlayEffect("spellFX_Fear",  NASZ_429_WojownikCienia, NASZ_429_WojownikCienia, 0, 0, 0, FALSE );
 		WojownikCieniaPrzyzywa = TRUE;
-		ff_applyonceext(SecRitualXardasOld,1000,-1);
+		//ff_applyonceext(SecRitualXardasOld,1000,-1);
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Dragon_Swamp_XardasOld)) && (WojownikCieniaPrzyzywaNumer == 3)

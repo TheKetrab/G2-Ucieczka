@@ -107,8 +107,8 @@ INSTANCE Wisp_Boss (Mst_Default_Wisp)
 	//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	110;
 	attribute	[ATR_DEXTERITY]		=	110;
-	attribute	[ATR_HITPOINTS_MAX]	=	700; 
-	attribute	[ATR_HITPOINTS]		=	700;
+	attribute	[ATR_HITPOINTS_MAX]	=	300; 
+	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_MANA_MAX] 		=	100;
 	attribute	[ATR_MANA] 			=	100;
 	
@@ -140,8 +140,8 @@ INSTANCE Wisp_Helper (Mst_Default_Wisp)
 	//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	110;
 	attribute	[ATR_DEXTERITY]		=	110;
-	attribute	[ATR_HITPOINTS_MAX]	=	700; 
-	attribute	[ATR_HITPOINTS]		=	700;
+	attribute	[ATR_HITPOINTS_MAX]	=	500; 
+	attribute	[ATR_HITPOINTS]		=	500;
 	attribute	[ATR_MANA_MAX] 		=	100;
 	attribute	[ATR_MANA] 			=	100;
 	

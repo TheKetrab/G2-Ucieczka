@@ -45,6 +45,6 @@ FUNC VOID Rtn_Start_17 ()
 
 FUNC VOID Rtn_End_17 ()
 {	
-	TA_Stand_Guarding		(07,30,23,00,"TOT");	
+	TA_Stand_Guarding		(07,30,23,00,"TOT");
    	TA_Stand_Guarding		(23,00,07,30,"TOT");
 };

@@ -137,18 +137,18 @@ func void DIA_NASZ_024_BaalOrun_Droga_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_03"); //Jakakolwiek próba sforsowania kamiennych wrót skoñczy siê dla ciebie œmierci¹.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Droga_15_04"); //Wiêc powiedz mi, jak mogê dostaæ siê do jej wnêtrza i przegnaæ znajduj¹ce siê wewn¹trz z³o. Przecie¿ musi byæ jakiœ sposób!
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_05"); //To by³o tak dawno... Mój umys³ jak i wspomnienia s¹ teraz jedynie strzêpami wszystkiego co wiedzia³em, pogr¹¿one w wiecznej pustce jak moje zagubione ja zdaj¹ siê byæ nieuchwytne, niedoœcignione...
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_06"); //Ponadto nie mo¿emy pomóc ci bezpoœrednio. Jarzmo kl¹twy uniemo¿liwia nam sprzeciwienie siê naszemu panu. Musia³byœ znale¼æ coœ co pomog³oby ci siê do niego dostaæ, lecz niewiele ju¿ pamiêtam.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_06"); //Ponadto nie mo¿emy pomóc ci bezpoœrednio. Jarzmo kl¹twy uniemo¿liwia nam sprzeciwienie siê naszemu panu. Musia³byœ znaleŸæ coœ co pomog³oby ci siê do niego dostaæ, lecz niewiele ju¿ pamiêtam.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Droga_15_07"); //¯y³eœ w okresie kiedy to wszystko siê rozegra³o, skup siê i przypomnij to sobie!
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_08"); //To by³o tak dawno...
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_09"); //Skrawki wspomnieñ zdaj¹ siê tworzyæ bardzo niespójny obraz. Widzê przed sob¹ siebie i moich braci, zdajemy siê byæ pogr¹¿eni w ¿arliwej dyskusji.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_10"); //Jeden z nich wyci¹ga kartkê... Nie, magiczny pergamin... I zaczyna coœ na nim spisywaæ. Dopiero teraz dostrzegam mrok, jaki ogarnia nasze sylwetki. Coœ co zdaje siê nas poch³aniaæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_11"); //Ja, to ja rozrywam pergamin na kawa³ki. Ja dajê je nowicjuszom aby pochowali je w obozie, lecz nie wiem gdzie siê udali.
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_12"); //Nie wiedzieæ czemu, mam silne wra¿enie, i¿ zapisane nañ s³owa s¹ kluczem do rozwi¹zania naszej zagadki. Je¿eli chcesz poznaæ odpowied¼ na swoje pytania musisz odszukaæ fragmenty stronicy i mi je dostarczyæ.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_12"); //Nie wiedzieæ czemu, mam silne wra¿enie, i¿ zapisane nañ s³owa s¹ kluczem do rozwi¹zania naszej zagadki. Je¿eli chcesz poznaæ odpowiedŸ na swoje pytania musisz odszukaæ fragmenty stronicy i mi je dostarczyæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_13"); //Czujê magiczn¹ si³ê, która bije od spisanych tam s³ów. Nie mogê dok³adnie okreœliæ sk¹d, lecz wszystkie fragmenty znajduj¹ siê w naszym obozie. Ruszaj i strze¿ siê umar³ych, którzy nie mog¹ zaznaæ spokoju.
 	
 	Log_CreateTopic (TOPIC_Droga,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Droga, LOG_RUNNING);
-	B_LogEntry (TOPIC_Droga, "Niewiele dowiedzia³em siê od Baala za wyj¹tkiem tego, ¿e przed tymi wszystkimi wydarzeniami on jak i inni pracowali nad jakimœ magicznym zwojem. Z nieznanych mi powodów zdecydowali siê go rozerwaæ i schowaæ w najró¿niejszych miejscach obozu. Czy¿by by³y tam spisane informacje odnoœnie z³a jakie nawiedzi³o obóz? Muszê odnale¼æ je wszystkie i przynieœæ Baalowi Orunowi. On sam oczywiœcie albo nie wie albo zapomnia³ o tym, gdzie móg³bym je znale¼æ...");
+	B_LogEntry (TOPIC_Droga, "Niewiele dowiedzia³em siê od Baala za wyj¹tkiem tego, ¿e przed tymi wszystkimi wydarzeniami on jak i inni pracowali nad jakimœ magicznym zwojem. Z nieznanych mi powodów zdecydowali siê go rozerwaæ i schowaæ w najró¿niejszych miejscach obozu. Czy¿by by³y tam spisane informacje odnoœnie z³a jakie nawiedzi³o obóz? Muszê odnaleŸæ je wszystkie i przynieœæ Baalowi Orunowi. On sam oczywiœcie albo nie wie albo zapomnia³ o tym, gdzie móg³bym je znaleŸæ...");
 
 };
 ///////////////////////////////////////////////////////////////////////
@@ -190,7 +190,7 @@ func void DIA_NASZ_024_BaalOrun_DrogaDone_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_07"); //Widzê ciemnoœæ jaka ogarnia moich braci, niepohamowany ob³êd wdzieraj¹cy siê do naszych g³ów. Niepohamowana nienawiœæ wchodzi do wnêtrza naszego sanktuarium, nasi bracia zdaj¹ siê walczyæ u boku stra¿ników, lecz...
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_08"); //Teraz to widzê... Ich... Nasze wysi³ki okaza³y siê daremne bowiem przysz³o nam walczyæ z istot¹, która nie by³a przypisana do tego œwiata i nie ima³ siê jej ¿aden orê¿.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_09"); //Lecz teraz os³ab³a, pewna siebie i braku zagro¿enia jest nieœwiadoma niebezpieczeñstwa, jakie mo¿e jej zagra¿aæ. 
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_10"); //Aby wymierzyæ jej cios, musimy znale¼æ badania Kaloma, który zajmowa³ siê zg³êbianiem tajnik ¦ni¹cego i jego demonicznych s³ug.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_10"); //Aby wymierzyæ jej cios, musimy znaleŸæ badania Kaloma, który zajmowa³ siê zg³êbianiem tajnik Œni¹cego i jego demonicznych s³ug.
 	
 	B_LogEntry (TOPIC_Droga, "Nabiega³em siê po okolicy, ale ostatecznie skompletowa³em kawa³ki zwoju. Odda³em je Orunowi, który po³¹czy³ je i stworzy³ magiczny zwój. Póki co musimy kontynuowaæ przygotowania do rytua³u.");
 	Log_SetTopicStatus (TOPIC_Droga, LOG_SUCCESS);
@@ -223,7 +223,7 @@ func void DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_Info ()
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_00"); //Dlaczego ta ksi¹¿ka jest tak wa¿na?
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_01"); //O ile pamiêtam Kalom nie przeprowadza³ jakiœ istotnych badañ w dziedzinie demonologii.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_02"); //Oceniasz go jedynie na podstawie tego, co sam widzia³eœ. Niestety jego prawdziwe 'ja' i zapêdy bardzo d³ugo umyka³y naszej uwadze.
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_03"); //Tak d³ugo, i¿ nie byliœmy w stanie uchroniæ przed losem, jaki na nas spad³. Gdybyœmy byli tylko miej aroganccy w swoich poczynaniach i nie ufali œlepo ¦ni¹cemu...
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_03"); //Tak d³ugo, i¿ nie byliœmy w stanie uchroniæ przed losem, jaki na nas spad³. Gdybyœmy byli tylko miej aroganccy w swoich poczynaniach i nie ufali œlepo Œni¹cemu...
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_04"); //Wraz z ka¿dym wypowiedzianym s³owem czujê, jak moja dusza materializuje siê w duchowym œwiecie, przywracaj¹c mi coraz to nowsze wspomnienia.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_05"); //Widzisz coœ konkretnego coœ co mog³oby mi pomóc w kolejnym zadaniu?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_06"); //Widzê... Cain, niesie ze sob¹ jak¹œ ksi¹¿kê i wychodzi z laboratorium swojego mistrza. To na pewno nie by³a zwyk³a ksi¹¿ka, chocia¿ wtedy nie zwróci³em na niego zbytnio uwagi.
@@ -239,7 +239,7 @@ func void DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_Info ()
 	
 	Log_CreateTopic (TOPIC_BadaniaCaloma,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_BadaniaCaloma, LOG_RUNNING);
-	B_LogEntry (TOPIC_BadaniaCaloma, "Aby umo¿liwiæ duchom odzyskanie pe³nej œwiadomoœci muszê znale¼æ ksi¹¿kê, która zawiera zapiski Kaloma. S¹ tam odpowiedzi na nasze pytania odnoœnie z³a jakie siê tutaj zalêg³o i tego jak mo¿na je pokonaæ. Czy¿by pocz¹tkowo nawet sam Kalom nie ufa³ w pe³ni ¦ni¹cemu?");
+	B_LogEntry (TOPIC_BadaniaCaloma, "Aby umo¿liwiæ duchom odzyskanie pe³nej œwiadomoœci muszê znaleŸæ ksi¹¿kê, która zawiera zapiski Kaloma. S¹ tam odpowiedzi na nasze pytania odnoœnie z³a jakie siê tutaj zalêg³o i tego jak mo¿na je pokonaæ. Czy¿by pocz¹tkowo nawet sam Kalom nie ufa³ w pe³ni Œni¹cemu?");
 	
 	AI_StopProcessInfos (self);
 
@@ -274,7 +274,7 @@ func void DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_Info ()
 {
 	OrunDay = Wld_GetDay();
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_00"); //Znalaz³em ksi¹¿kê. 
-	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_01"); //Musia³em siê trochê natrudziæ, by j¹ znale¼æ wiêc liczê, ¿e oka¿e siê po¿yteczna w naszych dzia³aniach.
+	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_01"); //Musia³em siê trochê natrudziæ, by j¹ znaleŸæ wiêc liczê, ¿e oka¿e siê po¿yteczna w naszych dzia³aniach.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_02"); //Doskonale! Miejmy nadziejê, ¿e dziêki temu odkryjemy sposób na to, jak wygnaæ z³o. Niestety, bêdziemy potrzebowali trochê czasu, by zg³êbiæ wiedzê jaka drzemi¹ w zwoju i ksi¹¿ce, które nam dostarczy³eœ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_03"); //Wróæ do nas nastêpnego dnia, a na pewno bêdziemy mieli dla ciebie jakieœ informacje.
 	OrunBadaKsiazke = 1;
@@ -389,7 +389,7 @@ func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_01"); //Magiczna bariera we wrotach œwi¹tyni zosta³a z³amana... Czujê, czujê jak z³o, które w niej spoczywa³o rozlewa siê po obozie doprowadzaj¹c do furii wszystkich nieumar³ych, którzy siê tu znajduj¹.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_02"); //Nim ruszysz do œwi¹tyni musisz u¿yæ zwoju, który powsta³ przez po³¹czenie kawa³ków znalezionych przez ciebie.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_03"); //Dziêki temu bêdziesz traktowany jako pe³noprawny cz³onek Bractwa i magiczna bariera przy wejœciu do œwi¹tyni ciê nie powstrzyma.
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_04"); //Ale uprzedzam ciê! U¿yj zwoju dopiero wtedy, gdy za³o¿ysz na siebie wszystkie artefakty. We¼ kolejny: Ten amulet to znak okazania nam pomocy w odzyskaniu pe³nej œwiadomoœci.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_04"); //Ale uprzedzam ciê! U¿yj zwoju dopiero wtedy, gdy za³o¿ysz na siebie wszystkie artefakty. WeŸ kolejny: Ten amulet to znak okazania nam pomocy w odzyskaniu pe³nej œwiadomoœci.
 	CreateInvItems(self,ItNa_Amulet_Wojny,1);
 	
 	B_GiveInvItems(self,other,ItNa_Amulet_Wojny,1);
@@ -400,11 +400,11 @@ func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 	Createinvitems (self, ItNa_Grow, 1);
 	B_GiveInvItems(self,other,ItNa_Grow,1);
 	
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_04"); //A teraz ruszaj, nim bêdzie za pó¼no.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_04"); //A teraz ruszaj, nim bêdzie za póŸno.
 	
 	Log_CreateTopic (TOPIC_Zlo,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Zlo, LOG_RUNNING);
-	B_LogEntry (TOPIC_Zlo, "Moc bariery do ¦wi¹tyni zosta³a z³amana. Baal wrêczy³ mi zaklêcie, które powsta³o w wyniku po³¹czenia wszystkich kawa³ków pergaminu. Aby staæ siê pe³noprawnym cz³onkiem Bractwa i przejœæ przez magiczne pole w wejœciu do œwi¹tyni, mam u¿yæ zwoju z za³o¿onymi wszystkimi czterema artefaktami, które otrzyma³em od duchów.");
+	B_LogEntry (TOPIC_Zlo, "Moc bariery do Œwi¹tyni zosta³a z³amana. Baal wrêczy³ mi zaklêcie, które powsta³o w wyniku po³¹czenia wszystkich kawa³ków pergaminu. Aby staæ siê pe³noprawnym cz³onkiem Bractwa i przejœæ przez magiczne pole w wejœciu do œwi¹tyni, mam u¿yæ zwoju z za³o¿onymi wszystkimi czterema artefaktami, które otrzyma³em od duchów.");
 
 	OrunRediToTelepport = TRUE;
 };

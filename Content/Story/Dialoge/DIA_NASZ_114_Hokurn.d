@@ -87,7 +87,8 @@ INSTANCE DIA_NASZ_114_Hokurn_arena   (C_INFO)
 FUNC INT DIA_NASZ_114_Hokurn_arena_Condition()
 {
 	if ((Kurgan_walka==4)
-		&& Hlp_StrCmp(Npc_GetNearestWP(self),"NASZ_LOWCY_ARENA_01")
+		&& (Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 300)
+		&& (Npc_GetDistToWP(NASZ_113_Godar,"NASZ_LOWCY_ARENA_01") < 300)
 		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE)
 		&& (NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE))
 	{

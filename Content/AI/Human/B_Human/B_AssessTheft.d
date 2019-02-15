@@ -14,9 +14,8 @@ func int C_HeroCanThiefSomething(var c_npc reactor) {
 
 	// schowek ³owców na kilofy i pi³y
 	if (npc_hasitems(hero,ItNa_Key_Keroloth)>=1)
-	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_1")<200)
-	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_2")<200)
-
+	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_1")<500)
+	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_2")<500)
 	{
 		return true;
 	};

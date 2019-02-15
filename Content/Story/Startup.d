@@ -1383,6 +1383,10 @@ func void STARTUP_OLDCAMP ()
 	
 	//Bandyci
 
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_ANGAR_1");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_ANGAR_2");
+	
+	
 	Wld_InsertNpc	(Lurker,"FP_SLEEP_OW_BLOODFLY_04_02");
 	Wld_InsertNpc	(Lurker,"FP_OW_BLOODFLY04_SPAWN01");
 	Wld_InsertNpc	(Lurker,"FP_ROAM_OW_BLOODFLY_04_02");

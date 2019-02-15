@@ -527,7 +527,7 @@ func void PORTALSWITCH1_S1 ()
 	{
 		PORTALSWITCH1_OneTime = TRUE;
 		CameraToPortalGoes = TRUE;
-		ff_applyonceext(secCameraEventFunc,1000,-1);
+		ff_applyonceext(CameraGoesToPortal,1000,-1);
 		B_LogEntry (TOPIC_OrcCity_In, "Przekrêci³em prze³¹cznik przy szefach.");
 	};
 };
@@ -539,7 +539,7 @@ func void PORTALSWITCH2_S1 ()
 	{
 		PORTALSWITCH2_OneTime = TRUE;
 		CameraToPortalGoes = TRUE;
-		ff_applyonceext(secCameraEventFunc,1000,-1);
+		ff_applyonceext(CameraGoesToPortal,1000,-1);
 		B_LogEntry (TOPIC_OrcCity_In, "Przekrêci³em prze³¹cznik w szkole szamanów.");
 	};
 };
@@ -551,7 +551,7 @@ func void PORTALSWITCH3_S1 ()
 	{
 		PORTALSWITCH3_OneTime = TRUE;
 		CameraToPortalGoes = TRUE;
-		ff_applyonceext(secCameraEventFunc,1000,-1);
+		ff_applyonceext(CameraGoesToPortal,1000,-1);
 		B_LogEntry (TOPIC_OrcCity_In, "Przekrêci³em prze³¹cznik za wielkim szamanem.");
 	};
 };

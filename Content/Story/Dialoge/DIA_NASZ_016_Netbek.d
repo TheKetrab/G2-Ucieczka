@@ -72,6 +72,7 @@ FUNC VOID DIA_NASZ_016_Netbek_who_nope()
 	AI_Output (other,self ,"DIA_NASZ_016_Netbek_who_nope_15_00"); //Nie mam.
 	AI_Output (self, other,"DIA_NASZ_016_Netbek_who_nope_55_01"); //AAAARGH! Mój panie! Ten ból g³owy...
 	NetbekSay_NotOk();
+	Info_ClearChoices (DIA_NASZ_016_Netbek_who);
 
 };
 
@@ -83,6 +84,8 @@ FUNC VOID DIA_NASZ_016_Netbek_who_yep()
 	B_UseItem (self, ItMi_Joint);
 
 	NetbekSay_NotOk();
+	Info_ClearChoices (DIA_NASZ_016_Netbek_who);
+
 };
 
 //*********************************************************************

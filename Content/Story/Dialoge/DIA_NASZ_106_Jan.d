@@ -2165,10 +2165,11 @@ FUNC INT DIA_NASZ_106_Jan_dobar_Condition()
 
 FUNC VOID DIA_NASZ_106_Jan_dobar_Info()
 {
-	AI_Teleport(NASZ_107_Brutus,"NASZ_BRUTUS_A");
+	Npc_ClearAIQueue(NASZ_107_Brutus);
 	B_StartOtherRoutine (NASZ_107_Brutus,"Die");
+	AI_Teleport(NASZ_107_Brutus,"NASZ_BRUTUS_A");
 	B_KillNpc(NASZ_107_Brutus);
-
+	
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_dobar_15_00"); //Przychodzê odebraæ paczki dla Dobara.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_01"); //Nieczêsto zdarza siê, by przyszed³ ktoœ od Dobara.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_02"); //Jak na z³oœæ wys³a³em Brutusa dos³ownie kwadrans temu.

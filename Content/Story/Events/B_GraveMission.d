@@ -729,7 +729,7 @@ func int GraveMission_Grave20_Condition ()
 
 func void GraveMission_Grave20_S1 ()
 {
-	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób Muga");
+	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób Muga.");
 	Npc_RemoveInvItems         (hero, ItNa_WodaSwiecona_Adanos, 1);
 
 	GraveMugo = TRUE;

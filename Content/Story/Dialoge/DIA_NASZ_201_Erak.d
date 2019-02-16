@@ -220,7 +220,7 @@ FUNC VOID DIA_NASZ_201_Erak_mieso_Info()
 		ERAK_GOOD_LEVEL = TRUE;
 		Log_CreateTopic (TOPIC_Erak_mieso, LOG_MISSION);
 		Log_SetTopicStatus (TOPIC_Erak_mieso, LOG_RUNNING);
-		B_LogEntry (TOPIC_Erak_mieso, "Erak nie mo¿e samemu zanieœæ miêsa do obozu myœliwych, jednak z braku zaufanie nie powierzy tego te¿ mnie. Mam znaleŸæ chêtnego na ma³¹ wyprawê...");
+		B_LogEntry (TOPIC_Erak_mieso, "Erak nie mo¿e samemu zanieœæ miêsa do obozu myœliwych, jednak z braku zaufania nie powierzy tego te¿ mnie. Mam znaleŸæ chêtnego na ma³¹ wyprawê...");
 
 	}
 	else {
@@ -376,7 +376,7 @@ FUNC VOID DIA_NASZ_201_Erak_how_Info()
 	
 	MIS_Erak_zwiad = FALSE;
 	
-	B_LogEntry (TOPIC_Erak_zwiad, "Erak zdecydowa³ siê nie komentowaæ tego, ¿e nie pomog³em zbytnio w walce z orkami. Niemniej pochwali³ mnie za sam udzia³ i zezwoli³ na odprowadzenie Vicka do obozu myœliwych.");
+	B_LogEntry (TOPIC_Erak_zwiad, "Erak zdecydowa³ siê nie komentowaæ tego, ¿e nie pomog³em zbytnio w walce z orkami. Niemniej, pochwali³ mnie za sam udzia³ i zezwoli³ na odprowadzenie Vicka do obozu myœliwych.");
 	Log_SetTopicStatus (TOPIC_Erak_zwiad, LOG_SUCCESS);
 	
 	B_LogEntry (TOPIC_Erak_mieso, "Zrobi³em, co mia³em zrobiæ. Teraz mogê udaæ siê do obozu myœliwych razem z Vickiem.");

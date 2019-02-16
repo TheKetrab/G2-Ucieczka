@@ -208,7 +208,7 @@ func void DIA_NASZ_320_Niewolnik_help_Info ()
 
 	Log_CreateTopic (TOPIC_Monk_Frut, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_RUNNING);
-	B_LogEntry (TOPIC_Monk_Frut, "Jeden z niewolników wspomnia³ o jakiejœ k³ótnie pomiêdzy Monkiem a Frutem...");
+	B_LogEntry (TOPIC_Monk_Frut, "Jeden z niewolników wspomnia³ o jakiejœ k³ótni pomiêdzy Monkiem a Frutem...");
 };
 
 

@@ -88,7 +88,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_work_Info()
 	
 	Log_CreateTopic (TOPIC_Robotnik_deski, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Robotnik_deski, LOG_RUNNING);
-	B_LogEntry (TOPIC_Robotnik_deski, "W ci¹gu dwóch dni muszê naprawiæ filary budynku, w którym przebywa Keroloth. Wejœcie znajduje siê poza obozem. Aby naprawiæ filary muszê u¿yæ gwoŸdzi, które robotnik niestety zgubi³.");
+	B_LogEntry (TOPIC_Robotnik_deski, "W ci¹gu dwóch dni muszê naprawiæ filary budynku, w którym przebywa Keroloth. Wejœcie znajduje siê poza obozem. Aby naprawiæ filary, muszê u¿yæ gwoŸdzi, które robotnik niestety zgubi³.");
 
 	Deski_Mission = 1;
 };

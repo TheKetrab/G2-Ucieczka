@@ -890,7 +890,7 @@ FUNC VOID DIA_NASZ_223_Ratford_RatfordChestsFinish_Info()
 	DodajReputacje(2,REP_MYSLIWI);
 	
 	Log_SetTopicStatus (TOPIC_Ratford_kufry, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Ratford_kufry, "Poszukiwania przynios³y w skutki i teraz mogê kupowaæ wytrychy du¿o taniej.");
+	B_LogEntry (TOPIC_Ratford_kufry, "Poszukiwania przynios³y skutki i teraz mogê kupowaæ wytrychy du¿o taniej.");
 };
 
 

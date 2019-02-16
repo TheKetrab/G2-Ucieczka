@@ -140,7 +140,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_QuestDone_Info()
 
 	AI_StopProcessInfos(self);
 	B_UseItem(self,ItNa_MiksturaUspokajajaca);
-	B_LogEntry (TOPIC_Jeremiasz_lek, "Da³em Jeremiaszowi miksturê. Chocia¿ szczerze mówi¹c mam mieszane uczucia, czy dobrze zrobi³em.");
+	B_LogEntry (TOPIC_Jeremiasz_lek, "Da³em Jeremiaszowi miksturê. Chocia¿ szczerze mówi¹c, mam mieszane uczucia, czy dobrze zrobi³em.");
 
 };
 
@@ -432,7 +432,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 		if (hero.lp >= 10){
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_55_00"); //Tak jak mówi³em, na stole destylacyjnym mo¿esz uwarzyæ specjalne wywary. Musisz tylko nauczyæ siê go obs³ugiwaæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ buelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole.Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole. Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_03"); //W czasie gdy ska³a bêdzie siê namaczaæ, ty posiekaj w drobny maczek liœcie roœliny i wsyp do buteleczki. Zalej to wod¹, jeœli chcesz, mo¿esz tam te¿ napluæ. Haha!
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_04"); //Teraz dolej soku ³odygi, zakorkuj i mocno wstrz¹œnij.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_05"); //Co z reszt¹ ³odygi?

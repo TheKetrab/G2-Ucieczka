@@ -6850,11 +6850,11 @@ INSTANCE ITNA_ARMOR_ANCIENT (C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	90;
-	protection [PROT_BLUNT] = 	90;
-	protection [PROT_POINT] = 	90;
-	protection [PROT_FIRE] 	= 	60;
-	protection [PROT_MAGIC] = 	40;
+	protection [PROT_EDGE]	=	70;
+	protection [PROT_BLUNT] = 	70;
+	protection [PROT_POINT] = 	70;
+	protection [PROT_FIRE] 	= 	50;
+	protection [PROT_MAGIC] = 	30;
 
 	value 					=	10000;
 

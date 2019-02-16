@@ -225,7 +225,7 @@ FUNC VOID DIA_NASZ_226_Snaf_GeroldPotrawka_Info()
 	
 	GeroldPotrawka_CheckSnaf = TRUE;
 	
-	B_LogEntry (TOPIC_Gerold_glod, "Snaf ugotuje specjaln¹ potrawê. Twierdzi, ¿e powinno nieco z³agodziæ dolegliwoœci Gerolda.");
+	B_LogEntry (TOPIC_Gerold_glod, "Snaf ugotuje specjaln¹ potrawê. Twierdzi, ¿e powinna nieco z³agodziæ dolegliwoœci Gerolda.");
 	Npc_ExchangeRoutine (self, "CookingAllTheTime");
 };
 
@@ -325,7 +325,7 @@ FUNC VOID DIA_NASZ_226_Snaf_what_Info()
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_what_55_03"); //Jeœli masz jakiœ problem i chcesz siê czegokolwiek dowiedzieæ, to biegiem do mnie. Za nieznaczn¹ sumkê dowiem siê tego i owego.
 	
 	Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);
-	B_LogEntry (TOPIC_MysliwiTrader,"Kucharz Snaf chêtnie wymieni parê nowinek z obozu wzamian za z³oto.");
+	B_LogEntry (TOPIC_MysliwiTrader,"Kucharz Snaf chêtnie wymieni parê nowinek z obozu w zamian za z³oto.");
 	
 
 };

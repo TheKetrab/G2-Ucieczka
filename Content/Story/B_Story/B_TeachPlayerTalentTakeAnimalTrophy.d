@@ -53,7 +53,7 @@ func int B_TeachPlayerTalentTakeAnimalTrophy (var C_NPC slf, var C_NPC oth, var 
 	if (trophy == TROPHY_Mandibles) 		{	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] 		= TRUE;	
 	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom ¿uwaczki.");};
 	if (trophy == TROPHY_CrawlerPlate) 		{	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] 	= TRUE;	
-	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ pe³zaczom pancerze");};
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ pe³zaczom pancerze.");};
 	if (trophy == TROPHY_DrgSnapperHorn)	{	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] 	= TRUE;	
 	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ smoczym zêbaczom rogi.");};
 	if (trophy == TROPHY_DragonScale) 		{	

@@ -97,7 +97,7 @@ INSTANCE DIA_NASZ_404_Beliar_doneC   (C_INFO)
 FUNC INT DIA_NASZ_404_Beliar_doneC_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_404_Beliar_portal))
-//		&& (ZabilesDlaBeliara == TRUE)) TODO: nie dzia³a zabijanie w ZS_Dead, nie wiem czemu
+	&& (ZabilesDlaBeliara == TRUE)
 	{
 		return TRUE;
 	};
@@ -190,7 +190,6 @@ FUNC VOID DIA_NASZ_404_Beliar_doneB_Info()
 	B_GivePlayerXP(1000);
 	
 	BELIAR5K = TRUE;
-	Npc_ExchangeRoutine (self, "Final");
-	B_LogEntry (TOPIC_bogowie_work, "Beliar by³ pod wra¿eniem, ¿e upora³em siê z jego s³ugami Uda siê do orkowego miasta, jednak odprawi rytua³ wraz z braæmi tylko, jeœli z³o¿ê w ofierze 2 tysi¹ce sztuk z³ota w dowolnej kapliczce.");
+	B_LogEntry (TOPIC_bogowie_work, "Beliar by³ pod wra¿eniem, ¿e upora³em siê z jego s³ugami. Uda siê do orkowego miasta i odprawi rytua³ wraz z braæmi tylko, jeœli z³o¿ê w ofierze 2 tysi¹ce sztuk z³ota w dowolnej kapliczce.");
 
 };

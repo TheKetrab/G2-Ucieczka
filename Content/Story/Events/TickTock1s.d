@@ -56,11 +56,11 @@ func void LukorBook()
 		if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
 		{
 			RemoveHookF(oCNpc__CloseDeadNpc,5,LukorBook);
-			Print("Hmm.. Ta ksiÄ…Å¼ka moÅ¼e mi siÄ™ przydaÄ‡.");
+			Print("Hmm.. Ta ksi¹¿ka mo¿e mi siê przydaæ.");
 		}
 		else
 		{
-			B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiÄ™gÄ™ z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, Å¼e nie wiem, czy duch coÅ› odczyta. Zobaczymy, to jego problem.");
+			B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
 			RemoveHookF(oCNpc__CloseDeadNpc,5,LukorBook);
 		};
 	};
@@ -127,7 +127,7 @@ func void UratujFunc()
 	
 	var c_npc slf; slf = _^(ECX);
 	
-	//Uratuj Å‚owcÃ³w podczas szturmu
+	//Uratuj ³owców podczas szturmu
 	if (WillIdziePierwszyRazNaZamek  || WillGoToCastle) { ///WarWithOrc_Enabled == TRUE
 			if (slf.aivar[aiv_partymember] == true) {
 			   if (slf.attribute[0] <= 50) {
@@ -212,7 +212,7 @@ func void ZadanieJehen()
 	
 			Log_CreateTopic (TOPIC_Jehen_zagubiony, LOG_MISSION);
 			Log_SetTopicStatus (TOPIC_Jehen_zagubiony, LOG_RUNNING);
-			B_LogEntry (TOPIC_Jehen_zagubiony, "Dziwne, po wyjÅ›ciu z kopalni nie spotkaÅ‚em Jehena. CzyÅ¼by gdzieÅ› siÄ™ udaÅ‚? Z zakrwawionÄ… rÄ™kÄ… nie moÅ¼e byÄ‡ daleko. Chyba Å¼e porwaÅ‚ go prÄ…d rzeki albo wodospadu? MuszÄ™ go jak najszybciej odszukaÄ‡.");
+			B_LogEntry (TOPIC_Jehen_zagubiony, "Dziwne, po wyjœciu z kopalni nie spotka³em Jehena. Czy¿by gdzieœ siê uda³? Z zakrwawion¹ rêk¹ nie mo¿e byæ daleko. Chyba ¿e porwa³ go pr¹d rzeki albo wodospadu? Muszê go jak najszybciej odszukaæ.");
 			ff_remove(ZadanieJehen);
 
 		};
@@ -235,7 +235,7 @@ func void UrShakFinal()
 		B_KillNpc(NASZ_123_Lowca);
 		B_KillNpc(NASZ_108_Lowca);
 		
-		TwierdzaAtakSick = TRUE; // dziÄ™ki temu niektÃ³rzy majÄ… mniej HP
+		TwierdzaAtakSick = TRUE; // dziêki temu niektórzy maj¹ mniej HP
 		ff_remove(UrShakFinal);
 	};
 
@@ -623,7 +623,7 @@ func void Warta()
 		if (Npc_GetDistToWP	(hero, "OW_DJG_ROCKCAMP_02") > 1500) {
 			PrintScreen	("Opusciles miejsce warty.", -1,-1, FONT_ScreenSmall,2);
 			Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_FAILED);
-			B_LogEntry (TOPIC_Mysliwy_Warta, "Mimo przyjÄ™tego zadania, poniechaÅ‚em patrolowanie terenu obozu wypadowego.");
+			B_LogEntry (TOPIC_Mysliwy_Warta, "Mimo przyjêtego zadania, poniecha³em patrolowanie terenu obozu wypadowego.");
 			WillStajeNaWarcie = FALSE;
 			ff_remove(WartaScaleTime);
 			ff_remove(Warta);
@@ -640,7 +640,7 @@ func void Psikusy()
 	if(MIS_Psikusy_Ready > 0) && (Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia) >= 3)
 	
 	&&(MIS_Psikusy_Paczki_Skrzynia_OneTime == FALSE) {
-		B_LogEntry (TOPIC_Gestath_psikus, "Paczki podÅ‚oÅ¼one.");
+		B_LogEntry (TOPIC_Gestath_psikus, "Paczki pod³o¿one.");
 		MIS_Psikusy_Paczki_Skrzynia_OneTime = TRUE;
 		MIS_Psikusy_Ready = MIS_Psikusy_Ready + 1;
 	};
@@ -648,7 +648,7 @@ func void Psikusy()
 	if(MIS_Psikusy_Ready >= 4) {
 
 		Log_SetTopicStatus (TOPIC_Gestath_psikus, LOG_SUCCESS);
-		B_LogEntry (TOPIC_Gestath_psikus, "Wszystko, o co prosiÅ‚ mnie Gestath, juÅ¼ zaÅ‚atwione.");
+		B_LogEntry (TOPIC_Gestath_psikus, "Wszystko, o co prosi³ mnie Gestath, ju¿ za³atwione.");
 		B_GivePlayerXP(500);
 		
 		DodajReputacje(4,REP_MYSLIWI);
@@ -679,7 +679,7 @@ func void BronQuest()
 		secBronQuest = secBronQuest + 1;
 
 		if (secBronQuest == 6) {
-			B_LogEntry (TOPIC_Bron_woda, "Nikogo tu nie ma. MuszÄ™ przyjÅ›Ä‡ jutro w nocy.");
+			B_LogEntry (TOPIC_Bron_woda, "Nikogo tu nie ma. Muszê przyjœæ jutro w nocy.");
 			secBronQuest = 0;
 			PierwszaNocStop = TRUE;
 			BronQuestNoc1Day = Wld_GetDay ();
@@ -703,7 +703,7 @@ func void BronQuest()
 		secBronQuest = secBronQuest + 1;
 
 		if (secBronQuest == 6) {
-			B_LogEntry (TOPIC_Bron_woda, "Znowu na nikogo siÄ™ nie natknÄ…Å‚em. MoÅ¼e Bron siÄ™ pomyliÅ‚? A moÅ¼e sam zgubiÅ‚ wodÄ™ Å›wiÄ™conÄ… i nie chce siÄ™ przyznaÄ‡? Zapytam go rano.");
+			B_LogEntry (TOPIC_Bron_woda, "Znowu na nikogo siê nie natkn¹³em. Mo¿e Bron siê pomyli³? A mo¿e sam zgubi³ wodê œwiêcon¹ i nie chce siê przyznaæ? Zapytam go rano.");
 			secBronQuest = 0;
 			DrugaNocStop = TRUE;
 		};
@@ -714,7 +714,7 @@ func void BronQuest()
 	
 	if (Mob_HasItems ("SKRZYNIA_BRONA", ItNa_ZupaGrzybowa) >= 1) && (TrzeciaNocStop == FALSE)
 	{
-		B_LogEntry (TOPIC_Bron_woda, "Zupa wÅ‚oÅ¼ona do skrzyni. Teraz wystarczy zaczaiÄ‡ siÄ™ w nocy i zÅ‚apaÄ‡ zÅ‚odzieja!");
+		B_LogEntry (TOPIC_Bron_woda, "Zupa w³o¿ona do skrzyni. Teraz wystarczy zaczaiæ siê w nocy i z³apaæ z³odzieja!");
 	
 		TrzeciaNocStop = TRUE;
 		LOWCA_STOP_GADANIE = TRUE;
@@ -892,15 +892,15 @@ func void SpeedRing()
 
 
 		if (secSpeedRing == 300) {
-		PrintScreen	("Za 5 minut pierÅ›cieÅ„ straci moc", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Za 5 minut pierœcieñ straci moc", -1,-1, "font_old_20_white.tga",2);
 		};
 
 		if (secSpeedRing == 60) {
-		PrintScreen	("Za minutÄ™ pierÅ›cieÅ„ straci moc", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Za minutê pierœcieñ straci moc", -1,-1, "font_old_20_white.tga",2);
 		};
 	
 		if (secSpeedRing == 0) {
-		PrintScreen	("PierÅ›cieÅ„ straciÅ‚ moc", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Pierœcieñ straci³ moc", -1,-1, "font_old_20_white.tga",2);
 		Mdl_RemoveOverlayMDS   (hero,"HUMANS_SPRINT.MDS");
 		ff_remove(SpeedRing);
 		};
@@ -1165,7 +1165,7 @@ func void WrzodQuestInserting()
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_TARTAK_10") > 5000)
 	{
 	
-		//UWAGA: jeÅ›li zebraÅ‚eÅ› potwora, ale nie doprowadziÅ‚eÅ› go do WP, to i tak siÄ™ pojawi potwÃ³r i bÄ™dzie zaliczone zadanie.
+		//UWAGA: jeœli zebra³eœ potwora, ale nie doprowadzi³eœ go do WP, to i tak siê pojawi potwór i bêdzie zaliczone zadanie.
 		if (QuestWrzodDoprowadzilesScierwojada == TRUE) && (WrzodQuestZabralesScierwojada == 1) && (WrzodQuestScierwojadOneTime == FALSE)
 		{
 			Wld_InsertNpc	(QuestWrzodScavenger,"NASZ_ZAPALISADA_TARTAK_10");
@@ -1236,7 +1236,7 @@ func void _TickTock_1s()
 	&& !(Wld_IsTime(00,00,06,00)) // nie jest noc - czyli spi przez dzien
 	{
 		Jeremiasz_AlmostDead_NextTo_OneTime = TRUE;
-		B_LogEntry (TOPIC_Jeremiasz_lek, "Cholera, Jeremiasz leÅ¼y w Å‚Ã³Å¼ku i nie wyglÄ…da zbyt dobrze. MoÅ¼e coÅ› mu siÄ™ staÅ‚o? Lepiej pogadam o tym z Silasem. Niech wie, Å¼e z Jeremiaszem coÅ› siÄ™ staÅ‚o.");
+		B_LogEntry (TOPIC_Jeremiasz_lek, "Cholera, Jeremiasz le¿y w ³ó¿ku i nie wygl¹da zbyt dobrze. Mo¿e coœ mu siê sta³o? Lepiej pogadam o tym z Silasem. Niech wie, ¿e z Jeremiaszem coœ siê sta³o.");
 	};
 	
 
@@ -1290,7 +1290,7 @@ func void _TickTock_1s()
 	
 	if (!npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=300) 
 	{
-		B_LogEntry (TOPIC_Keroloth_Wojna, "DowÃ³dca zamku zamknÄ…Å‚ siÄ™... Jak wybijemy wszystkich orkÃ³w, to z pewnoÅ›ciÄ… stanie sam do walki!");
+		B_LogEntry (TOPIC_Keroloth_Wojna, "Dowódca zamku zamkn¹³ siê... Jak wybijemy wszystkich orków, to z pewnoœci¹ stanie sam do walki!");
 		Wld_SendTrigger ("MOVER_GATE_SZEF_ZAMEK");
 		BramaDoOrka = TRUE;
 		BramaDoOrkaTickTockOneTime = TRUE;
@@ -1308,13 +1308,13 @@ func void _TickTock_1s()
 	
 	if (Npc_GetDistToWP	(hero,"NASZ_DYMOONDO_D") < 1500) && (WillKnowAboutWayToOrc == FALSE) {
 		WillKnowAboutWayToOrc = TRUE;
-		AI_Output (hero ,hero,"DIA_Will_Dymoondo_15_00"); //A wiÄ™c da siÄ™ tutaj dostaÄ‡...
+		AI_Output (hero ,hero,"DIA_Will_Dymoondo_15_00"); //A wiêc da siê tutaj dostaæ...
 
 	};
 	
 	if (Npc_GetDistToWP (hero,"LOCATION_15_IN_2") < 1000) && (UdarQuestPatrolNaDoleOneTime == FALSE) && (UdarQuestPatrolStart == TRUE) {
 		UdarQuestPatrolNaDoleOneTime = TRUE;
-		B_LogEntry(TOPIC_Udar_patrol,"Jaskinia jest pusta, brakuje teÅ¼ Å›ladÃ³w walki tak wiÄ™c na pewno nie zostali zaatakowani. MoÅ¼e kryjÄ… siÄ™ na pÅ‚askowyÅ¼u nad tÄ… jaskiniÄ…?");
+		B_LogEntry(TOPIC_Udar_patrol,"Jaskinia jest pusta, brakuje te¿ œladów walki tak wiêc na pewno nie zostali zaatakowani. Mo¿e kryj¹ siê na p³askowy¿u nad t¹ jaskini¹?");
 		Wld_InsertNpc(NASZ_129_Matt,"OW_HOSHPAK_03");
 	};
 	
@@ -1338,36 +1338,36 @@ func void _TickTock_1s()
 	
 	if (Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) && (WillKnowAboutTwierdza == FALSE) {
 	WillKnowAboutTwierdza = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Twierdza_15_00"); //A cÃ³Å¼ to za twierdza? PotÄ™Å¼na budowla...
+	AI_Output (hero ,hero,"DIA_Will_Twierdza_15_00"); //A có¿ to za twierdza? Potê¿na budowla...
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutTwierdza == FALSE) && (WillSayDemonOneTime == FALSE) {
 	WillKnowAboutDemonPosag = TRUE;
 	WillSayDemonOneTime = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Tamten posÄ…g jakiegoÅ› demona wydaje siÄ™ byÄ‡ przepeÅ‚niony czarnÄ… magiÄ….
+	AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Tamten pos¹g jakiegoœ demona wydaje siê byæ przepe³niony czarn¹ magi¹.
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) && (KAPITEL == 1) {
-	AI_Output (hero ,hero,"DIA_Will_Wodospad_15_00"); //To zÅ‚y pomysÅ‚. Tam moÅ¼e byÄ‡ niebezpiecznie.
+	AI_Output (hero ,hero,"DIA_Will_Wodospad_15_00"); //To z³y pomys³. Tam mo¿e byæ niebezpiecznie.
 	AI_TurnAway (hero, hero);
 	AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
 	};
 
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800) && (KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) {
-		AI_Output (hero ,hero,"DIA_Will_Zapalsada_15_00"); //Lepiej zaÅ‚atwiÄ™ jeszcze kilka spraw, zanim udam siÄ™ za palisadÄ™.
+		AI_Output (hero ,hero,"DIA_Will_Zapalsada_15_00"); //Lepiej za³atwiê jeszcze kilka spraw, zanim udam siê za palisadê.
 		AI_TurnAway (hero, hero);
 		AI_GotoWP (hero, "OW_ORCBARRIER_17");
 	};
 
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_FORTECA_BLOKADA") <=200) && (WillGoToUrShack == FALSE) {
-	AI_Output (hero ,hero,"DIA_Will_Forteca_15_00"); //Nie mam ochoty siÄ™ tam wybieraÄ‡.
+	AI_Output (hero ,hero,"DIA_Will_Forteca_15_00"); //Nie mam ochoty siê tam wybieraæ.
 	AI_TurnAway (hero,hero);
 	AI_GotoWP (hero, "LOCATION_19_03_PATH_RUIN17");
 	};
 	
 	if (Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) && (WillUciekaZKopalniOneTime == FALSE) {
-	AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, udaÅ‚o siÄ™ wspiÄ…Ä‡ na skaÅ‚y. Teraz na dÃ³Å‚!
+	AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, uda³o siê wspi¹æ na ska³y. Teraz na dó³!
 	WillUciekaZKopalniOneTime = TRUE;
 	};
 	
@@ -1450,26 +1450,26 @@ func void _TickTock_1s()
 
 	if (Npc_GetDistToWP	(hero, "OW_ICEREGION_37") <=500) && (Jaszczuroludzie_1 == FALSE) && (Jaszczuroludzie_1 == FALSE) {
 	Jaszczuroludzie_1 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_00"); //Cholera, zamkniÄ™te. BÄ™dÄ™ musiaÅ‚ jakoÅ› obejÅ›Ä‡ tÄ™ bramÄ™.
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "NatrafiÅ‚em na zamkniÄ™tÄ… bramÄ™. MuszÄ™ jakoÅ› jÄ… obejÅ›Ä‡.");
+	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_00"); //Cholera, zamkniête. Bêdê musia³ jakoœ obejœæ tê bramê.
+	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Natrafi³em na zamkniêt¹ bramê. Muszê jakoœ j¹ obejœæ.");
 	};
 
 	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_96") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_97") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_98") <=500)) && (Jaszczuroludzie_2 == FALSE) {
 	Jaszczuroludzie_2 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_01"); //PrzedostaÅ‚em siÄ™ do Å›rodka. Co dalej?
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jestem w Å›rodku. Teraz pozostajÄ… poszukiwania. Benito radziÅ‚ mi iÅ›Ä‡ wzdÅ‚uÅ¼ gÃ³r.");
+	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_01"); //Przedosta³em siê do œrodka. Co dalej?
+	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jestem w œrodku. Teraz pozostaj¹ poszukiwania. Benito radzi³ mi iœæ wzd³u¿ gór.");
 	};
 		
 	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_53") <=1200) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_61") <=1200)) && (Jaszczuroludzie_3 == FALSE) {
 	Jaszczuroludzie_3 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_02"); //Tam, u ÅºrÃ³dÅ‚a wodospadu jest jakaÅ› jaskinia. Ciekawe...
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "DostrzegÅ‚em jakÄ…Å› jaskiniÄ™ na gÃ³rze wodospadu. MuszÄ™ sprÃ³bowaÄ‡ siÄ™ tam dostaÄ‡.");
+	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_02"); //Tam, u Ÿród³a wodospadu jest jakaœ jaskinia. Ciekawe...
+	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Dostrzeg³em jak¹œ jaskiniê na górze wodospadu. Muszê spróbowaæ siê tam dostaæ.");
 	};
 	
 	if ((Npc_GetDistToWP	(hero, "NASZ_PROOF_ORC") <=1200) && (Jaszczuroludzie_4 == FALSE)) {
 	Jaszczuroludzie_4 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_03"); //SkrzyÅ¼owane miecze!
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "ZnalazÅ‚em skrzyÅ¼owane miecze jaszczuroludzi i orkÃ³w. To chyba wystarczajÄ…cy dowÃ³d na to, Å¼e zawarli sojusz... Pora powiedzieÄ‡ o tym Benito.");
+	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_03"); //Skrzy¿owane miecze!
+	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Znalaz³em skrzy¿owane miecze jaszczuroludzi i orków. To chyba wystarczaj¹cy dowód na to, ¿e zawarli sojusz... Pora powiedzieæ o tym Benito.");
 	WillFoundSwordsOrcAndDraconian = TRUE;
 	B_GivePlayerXP(300);
 	};
@@ -1689,7 +1689,7 @@ func void MonsairOpenGate()
 		Wld_SendTrigger ("ORCTOWN_MOVER_01_SCRIPT");
 		Wld_SendTrigger ("ORCTOWN_MOVER_02_SCRIPT");
 		Wld_SendTrigger ("ORCTOWN_MOVER_03_SCRIPT");
-		//Wld_SendTrigger ("ORCTOWN_MOVER_04_SCRIPT"); // tu jest jakiÅ› bÅ‚Ä…d...
+		//Wld_SendTrigger ("ORCTOWN_MOVER_04_SCRIPT"); // tu jest jakiœ b³¹d...
 		Wld_SendTrigger ("ORCTOWN_MOVER_05_SCRIPT");
 		Wld_SendTrigger ("ORCTOWN_MOVER_06_SCRIPT");
 		Wld_SendTrigger ("ORCTOWN_MOVER_07_SCRIPT");
@@ -1759,7 +1759,7 @@ func void Function30s()
 	if (!npc_isdead (Wisp_Boss) && Npc_GetDistToNpc (hero, Wisp_Boss) < 500)  {
 		Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_LURKER_NC_LAKE_03");
 	};
-	//TODO: OgarnÄ…Ä‡ to z Jeremiaszem
+	//TODO: Ogarn¹æ to z Jeremiaszem
 	if (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour)) // 3h
 	&& (Jeremiasz_AlmostDead_OneTime == FALSE)
 	{

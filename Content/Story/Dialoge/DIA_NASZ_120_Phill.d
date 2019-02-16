@@ -428,7 +428,7 @@ func void DIA_NASZ_120_Phill_Gwozdzie_ok ()
 
 	AI_Output(other,self,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_04"); //Spodziewaj siê mnie niebawem.
 	
-	B_LogEntry (TOPIC_Robotnik_deski, "Cholerny drwal! Da mi paczkê tylko jeœli przyniosê mu ma³e gwoŸdzie. Muszê poprosiæ jakiegoœ kowala.");
+	B_LogEntry (TOPIC_Robotnik_deski, "Cholerny drwal! Da mi paczkê, tylko jeœli przyniosê mu ma³e gwoŸdzie. Muszê poprosiæ jakiegoœ kowala.");
 
 	WillGwozdzieGoToKowal = 1;
 	

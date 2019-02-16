@@ -343,7 +343,7 @@ func void DIA_NASZ_316_Carry_Muchy_Info ()
 
 	Log_CreateTopic (TOPIC_Carry_plyn, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Carry_plyn, LOG_RUNNING);
-	B_LogEntry (TOPIC_Carry_plyn, "Carry wys³a³ mnie po sk³adniki do swojego p³ynu przeciw owadom. Muszê przynieœæ mu 3 sztui bagiennego ziela, siarkê i ³ososia. Mam na to dwa dni.");
+	B_LogEntry (TOPIC_Carry_plyn, "Carry wys³a³ mnie po sk³adniki do swojego p³ynu przeciw owadom. Muszê przynieœæ mu 3 sztuki bagiennego ziela, siarkê i ³ososia. Mam na to dwa dni.");
 	
 	Info_ClearChoices 	(DIA_NASZ_316_Carry_Muchy);
 		Info_AddChoice		(DIA_NASZ_316_Carry_Muchy,"Przecie¿ nie masz wstêpu do obozu.",DIA_NASZ_316_Carry_Muchy_wstep);

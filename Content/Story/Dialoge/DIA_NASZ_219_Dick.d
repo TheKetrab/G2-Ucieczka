@@ -304,6 +304,7 @@ FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 //*********************************************************************
 //	Info BagienneZiele
 //*********************************************************************
+var int DickBagienneZieleOneTime;
 INSTANCE DIA_NASZ_219_Dick_BagienneZiele  (C_INFO)
 {
 	npc         = NASZ_219_Dick;
@@ -324,6 +325,13 @@ FUNC INT DIA_NASZ_219_Dick_BagienneZiele_Condition()
 
 FUNC VOID DIA_NASZ_219_Dick_BagienneZiele_Info()
 {
+	if (DickBagienneZieleOneTime == FALSE) {
+		DickBagienneZieleOneTime = TRUE;
+		Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);
+		B_LogEntry (TOPIC_MysliwiTrader,"Dick mo¿e sprzedaæ mi trochê ze swojego zapasu bagiennego ziela.");
+	};
+
+
 	AI_Output (other, self,"DIA_NASZ_219_Dick_BagienneZiele_15_00"); //Chcia³bym kupiæ bagienne ziele.
 	
 	Info_ClearChoices	(DIA_NASZ_219_Dick_BagienneZiele);

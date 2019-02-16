@@ -3,7 +3,7 @@
 // OSIAGNIECIA
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 // 1. Zabij 1000 stworzeñ.
-// 2. Zbierz 7500 sztuk z³ota.
+// 2. Stañ siê guru kopaczy.
 // 3. Poznaj przepisy Gildii Alchemików.
 // 4. Naucz siê wszystkich sztuczek z³odzejskich.
 // 5. Zostañ mistrzem areny.
@@ -44,11 +44,11 @@ func void Use_ItNa_KsiegaOsiagniec ()
 	Doc_PrintLine    ( nDocID,  0, "");
 				
 	// ----- ----- ----- ----- -----
-	Doc_PrintLines   ( nDocID,  0, "2. Zbierz 7500 szt. z³ota.");
+	Doc_PrintLines   ( nDocID,  0, "2. Stañ siê guru kopaczy.");
 	Achievement = "**";
-	Achievement = ConcatStrings(Achievement,IntToString(npc_hasitems (hero, ItMi_Gold)));
-	Achievement = ConcatStrings(Achievement,"/7500");
-	if(npc_hasitems (hero, ItMi_Gold)>=7500) { Achievement = ConcatStrings(Achievement," - zaliczone"); };
+	Achievement = ConcatStrings(Achievement,IntToString(LevelMiner));
+	Achievement = ConcatStrings(Achievement,"/100 %");
+	if(LevelMiner >= 100) { Achievement = ConcatStrings(Achievement," - zaliczone"); };
 
 	Doc_PrintLines   ( nDocID,  0, Achievement);
 	Doc_PrintLine    ( nDocID,  0, "");
@@ -185,12 +185,12 @@ func void Check_OSIAGNIECIA() {
 	};
 	
 	//2
-	if (npc_hasitems (hero, ItMi_Gold) >= 7500)
+	if (LevelMiner >= 100)
 	  && (Osiagniecie2OneTime == FALSE)
 	{
 		Osiagniecie2OneTime = TRUE;
 		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Zebra³eœ 7,5 tysi¹ca szt. z³ota!", -1,52, FONT_ScreenSmall,5);
+		PrintScreen	("Sta³eœ siê guru kopaczy", -1,52, FONT_ScreenSmall,5);
 
 		Snd_Play ("SFX_INNOSEYE");
 		hero.lp = hero.lp + 2;

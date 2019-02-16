@@ -150,7 +150,7 @@ FUNC VOID DIA_NASZ_010_Monastir_idea_Info()
 	B_LogEntry (TOPIC_Monastir_bogowie, "Wedle starej legendy za pomoc¹ zwoju ju¿ kiedyœ PRZYZWANO BOGÓW. Niestety ten, który go u¿y³, zmieni³ siê w o¿ywieñca i b³¹ka siê gdzieœ w Górniczej Dolinie.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
-	B_LogEntry (TOPIC_Fabula, "Monastir to mag z klasztoru na kontynencie. Niby przyby³, by nas uwolniæ, ale jak dla mnie to bzdura! Robarowi zale¿y z pewnoœci¹ na magicznej rudzie. Jednak skoro pojawi³a siê okazja na ucieczkê, to zamierzam j¹ wykorzystaæ. Monastir opowiedzia³ mi o sposobie na PRZYZWANIE BOGÓW. Brzmi niebezpiecznie. Podobno gdzieœ na skrajach Górniczej Doliny znajduje siê zwój... Chyba zajrzê do Ayana. Przed wojn¹ o zamek bada³ obrze¿a Kolonii w okolicy obozu wypadowego myœliwych.");
+	B_LogEntry (TOPIC_Fabula, "Monastir to mag z klasztoru na kontynencie. Niby przyby³, by nas uwolniæ, ale jak dla mnie to bzdura! Rhobarowi zale¿y z pewnoœci¹ na magicznej rudzie. Jednak skoro pojawi³a siê okazja na ucieczkê, to zamierzam j¹ wykorzystaæ. Monastir opowiedzia³ mi o sposobie na PRZYZWANIE BOGÓW. Brzmi niebezpiecznie. Podobno gdzieœ na skrajach Górniczej Doliny znajduje siê zwój... Chyba zajrzê do Ayana. Przed wojn¹ o zamek bada³ obrze¿a Kolonii w okolicy obozu wypadowego myœliwych.");
 
 	Info_ClearChoices (DIA_NASZ_010_Monastir_idea);
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_idea, "Mo¿e jakieœ wskazówki, gdzie go szukaæ?", DIA_NASZ_010_Monastir_idea_seek);

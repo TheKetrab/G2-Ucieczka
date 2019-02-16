@@ -1557,7 +1557,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Before_Info()
 	
 	Log_CreateTopic (TOPIC_Keroloth_narzedzia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Keroloth_narzedzia, LOG_RUNNING);
-	B_LogEntry (TOPIC_Keroloth_narzedzia, "Twierdza faktycznie jest w op³akanym stanie i w obecnej postaci nie wytrzyma³aby jednego szturmu orków. Mam wiec udaæ siê do zamku i poza poinformowaniem reszty w obozie o wymarszu, zabraæ stamt¹d tak¿e piêæ pi³, szeœæ m³otków i cztery kilofy.");
+	B_LogEntry (TOPIC_Keroloth_narzedzia, "Twierdza faktycznie jest w op³akanym stanie i w obecnej postaci nie wytrzyma³aby jednego szturmu orków. Mam wiêc udaæ siê do zamku i poza poinformowaniem reszty w obozie o wymarszu, zabraæ stamt¹d tak¿e piêæ pi³, szeœæ m³otków i cztery kilofy.");
 
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Keroloth dotar³ do twierdzy. Ale to dopiero pocz¹tek wojny... Muszê koniecznie za³atwiæ narzêdzia, aby wzmocniæ zabezpieczenia.");
 
@@ -1816,7 +1816,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_SzturmOrkow_Info()
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Podczas mojej nieobecnoœci orkowie uderzyli na twierdzê. Poleg³ Gestath... Musimy stawiæ im czo³a. Czas otworzyæ bramê i stan¹æ oko w oko z przeznaczeniem.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
-	B_LogEntry (TOPIC_Fabula, "Orkowie kontratakowali. Szturmuj¹ nadal twierdzê. Muszê otworzyæ bramê, rozprawiæ siê z nimi i uderzyæ na zamek dzier¿¹c w rêku kostur Ur-Shaka.");
+	B_LogEntry (TOPIC_Fabula, "Orkowie kontratakowali. Szturmuj¹ nadal twierdzê. Muszê otworzyæ bramê, rozprawiæ siê z nimi i uderzyæ na zamek, dzier¿¹c w rêku kostur Ur-Shaka.");
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_SzturmOrkow);
 	Info_AddChoice	  (DIA_NASZ_110_Keroloth_SzturmOrkow, "Do dzie³a!", DIA_NASZ_110_Keroloth_SzturmOrkow_what);
@@ -2172,7 +2172,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 	
 	Log_CreateTopic (TOPIC_Sprawy,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Sprawy, LOG_RUNNING);
-	B_LogEntry (TOPIC_Sprawy,"Szturm zakoñczy³ siê sukcesem, jednak to wcale nie oznacza, ¿e ju¿ wygraliœmy. Keroloth podejrzewa, i¿ orkowie bêd¹ chcieli przeprowadziæ kontruderzenie i odbiæ zamek si³¹. Dlatego te¿ wys³a³ mnie do obozu ³owców bym sprowadzi³ do zamku kilku wojowników. Poza tym mam odwiedziæ myœliwych i sprawdziæ, czy czegoœ potrzebuj¹ i czy s¹ bezpieczni.");
+	B_LogEntry (TOPIC_Sprawy,"Szturm zakoñczy³ siê sukcesem, jednak to wcale nie oznacza, ¿e ju¿ wygraliœmy. Keroloth podejrzewa, i¿ orkowie bêd¹ chcieli przeprowadziæ kontruderzenie i odbiæ zamek si³¹. Dlatego te¿ wys³a³ mnie do obozu ³owców, bym sprowadzi³ do zamku kilku wojowników. Poza tym, mam odwiedziæ myœliwych i sprawdziæ, czy czegoœ potrzebuj¹ i czy s¹ bezpieczni.");
 	//AI_StopProcessInfos (self);
 	
 	InsertUndeadsNearOUTCamp();

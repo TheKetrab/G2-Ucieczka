@@ -570,7 +570,7 @@ FUNC VOID DIA_NASZ_214_Goth_mayme_Info()
 	
 	Log_CreateTopic (TOPIC_Goth_plaskowyz, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Goth_plaskowyz, LOG_RUNNING);
-	B_LogEntry (TOPIC_Goth_plaskowyz, "Na prze³êczy Górniczej Doliny znajduje siê p³askowy¿, na którym z niewiadomych przyczyn pojawi³y siê gigantyczne bestie. Dok³adnie to miejsce jest w górach nad opuszczon¹ kopalni¹, któr¹ niegdyœ mo¿na by³o przedostaæ siê do Khorinis. Goth jest zainteresowany skór¹ gigantycznego czarnego trolla i zap³aci za ni¹ spor¹ sumkê. Warto by by³o jednak ubiæ wszystkie stwory stamt¹d, choæby dla zdobycia szacunku i w³asnej satyfakcji.");
+	B_LogEntry (TOPIC_Goth_plaskowyz, "Na prze³êczy Górniczej Doliny znajduje siê p³askowy¿, na którym z niewiadomych przyczyn pojawi³y siê gigantyczne bestie. Dok³adniej to miejsce jest w górach nad opuszczon¹ kopalni¹, któr¹ niegdyœ mo¿na by³o przedostaæ siê do Khorinis. Goth jest zainteresowany skór¹ gigantycznego czarnego trolla i zap³aci za ni¹ spor¹ sumkê. Warto by by³o jednak ubiæ wszystkie stwory stamt¹d, choæby dla zdobycia szacunku i w³asnej satysfakcji.");
 
 	MissionPlaskowyzRunning = TRUE;
 };

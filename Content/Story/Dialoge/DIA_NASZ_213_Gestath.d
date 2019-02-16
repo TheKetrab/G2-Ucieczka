@@ -594,7 +594,7 @@ func void DIA_NASZ_213_Gestath_WantToKillRenegat_Info ()
 		CreateInvItems (self, ItNa_TrfMeatbug, 1);									
 		B_GiveInvItems (self, other, ItNa_TrfMeatbug, 1);
 		
-		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako myœliwy! Gestath da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, ¿eby przedostaæ siê do œrodka. Mam zabraæ ze sob¹ Vachuta, Kivo  i Louisa.");
+		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako myœliwy! Gestath da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, ¿eby przedostaæ siê do œrodka. Mam zabraæ ze sob¹ Vachuta, Kivo i Louisa.");
 		
 		GestathRenegatOK = TRUE;
 		
@@ -643,7 +643,7 @@ func void DIA_NASZ_213_Gestath_FromJehen_Info ()
 func void WillSay_WhereIsAbandonedMine() {
 	AI_Output (other,self ,"WillSay_WhereIsAbandonedMine_15_00"); //Gdzie jest ta Opuszczona Kopalnia?
 	AI_Output (self, other,"WillSay_WhereIsAbandonedMine_55_01"); //Nie wiesz? Ch³opie! Przecie¿ to ta najbli¿ej Starej Wie¿y Demonów.
-	AI_Output (self, other,"WillSay_WhereIsAbandonedMine_55_02"); //Niegdyœ zajêta przez pe³zacze. O ile siê nie mylê, to przebywa³ tam kiedyœ Paladyn Silvestro. Mówi ci to coœ?
+	AI_Output (self, other,"WillSay_WhereIsAbandonedMine_55_02"); //Niegdyœ zajêta przez pe³zacze. O ile siê nie mylê, to przebywa³ tam kiedyœ paladyn Silvestro. Mówi ci to coœ?
 	AI_Output (self, other,"WillSay_WhereIsAbandonedMine_55_03"); //Na pewno tam trafisz.
 
 	
@@ -754,7 +754,7 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciOUT_Info()
 
 	Log_CreateTopic (TOPIC_Gestath_Renegaci, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Gestath_renegaci, LOG_RUNNING);
-	B_LogEntry (TOPIC_Gestath_renegaci, "W dawnej kopalni Silvestro zauwa¿ono dwójkê ludzi w nieznanych pancerzach. Moim zadaniem jest dowiedzieæ siê, kim oni s¹, a jeœli zajdzie taka potrzeba to ich zabiæ.");
+	B_LogEntry (TOPIC_Gestath_renegaci, "W dawnej kopalni Silvestra zauwa¿ono dwójkê ludzi w nieznanych pancerzach. Moim zadaniem jest dowiedzieæ siê, kim oni s¹, a jeœli zajdzie taka potrzeba, to ich zabiæ.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "W Górniczej Dolinie pojawili siê ludzie niebêd¹cy ani myœliwymi, ani ³owcami orków.");
@@ -993,7 +993,7 @@ FUNC VOID DIA_NASZ_213_Gestath_WhatToDoInfo_Info()
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_WhatToDoInfo_55_08"); //Zostawiê je w skrzyni niewolników przy obr¹banych deskach.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_WhatToDoInfo_55_09"); //Niech bêdzie. Nie daj siê z³apaæ!
 	
-	B_LogEntry (TOPIC_Gestath_renegaci, "Zanim oddam Nodowi artefakt muszê nabroiæ w obozie.");
+	B_LogEntry (TOPIC_Gestath_renegaci, "Zanim oddam Nodowi artefakt, muszê nabroiæ w obozie.");
 	
 	MIS_Psikusy_Ready = TRUE;
 	ff_applyonceext(Psikusy,1000,-1);

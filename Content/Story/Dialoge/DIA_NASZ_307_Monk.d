@@ -266,7 +266,7 @@ FUNC VOID DIA_NASZ_307_Monk_help_Info()
 
 	Log_CreateTopic (TOPIC_Monk_wataha, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Monk_wataha, LOG_RUNNING);
-	B_LogEntry (TOPIC_Monk_wataha, "Monk chce bym razem z nim zaatakowa³ watahê w pobli¿u obozu. Muszê ubiæ przynajmniej cztery wilki, ¿eby uzna³, ¿e mu siê przyda³em.");
+	B_LogEntry (TOPIC_Monk_wataha, "Monk chce, bym razem z nim zaatakowa³ watahê w pobli¿u obozu. Muszê ubiæ przynajmniej cztery wilki, ¿eby uzna³, ¿e mu siê przyda³em.");
 	
 };
 
@@ -492,7 +492,7 @@ FUNC VOID DIA_NASZ_307_Monk_win_Info()
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_05"); //A jest na tyle silny, ¿e wszyscy siê go boj¹ i nikt nie stanie po mojej stronie.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_06"); //Gdy siê k³ociliœmy ostro oberwa³em. To dlatego siedzê teraz cicho. Mimo to, nie pasuje mi taka sytuacja.
 
-	B_LogEntry (TOPIC_Monk_Frut, "Frut postêpuje niezgodnie z poleceniami Noda. Miast po dziesiêciu dniach wymieniæ siê stanowiskiem z Monkiem, on przygarn¹³ je sobie na sta³e. Problem w tym, ¿e Frut jest na tyle silny, ¿e nikt nie chce siê mu postawiæ.");
+	B_LogEntry (TOPIC_Monk_Frut, "Frut postêpuje niezgodnie z poleceniami Noda. Zamiast po dziesiêciu dniach wymieniæ siê stanowiskiem z Monkiem, on przygarn¹³ je sobie na sta³e. Problem w tym, ¿e Frut jest na tyle silny, ¿e nikt nie chce siê mu postawiæ.");
 
 };
 

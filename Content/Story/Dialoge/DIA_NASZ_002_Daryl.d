@@ -497,7 +497,7 @@ func void Bryson_Die()
 	Npc_ClearAIQueue(NASZ_004_Bryson);
 	AI_Teleport(NASZ_004_Bryson,"NASZ_KOPALNIA_BRYSON_DEAD");
 	
-	B_LogEntry (TOPIC_Ben_szkodnik, "Nasz¹ rozmowê przerwa³ krzyk dobiegaj¹cy z zamkniêtego tunelu. Oby wszystko posz³o zgodnie z planem, bo na miejscu pojawi³ siê ju¿ Marcos. Najlepiej poczekam, a¿ sobie pójdzie i dopiero wrócê do Bena.");
+	B_LogEntry (TOPIC_Ben_szkodnik, "Nasz¹ rozmowê przerwa³ krzyk, dobiegaj¹cy z zamkniêtego tunelu. Oby wszystko posz³o zgodnie z planem, bo na miejscu pojawi³ siê ju¿ Marcos. Najlepiej poczekam, a¿ sobie pójdzie i dopiero wrócê do Bena.");
 	
 	Snd_Play ("SVM_1_BERZERK");
 	Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
@@ -541,7 +541,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonAfterGoAway_Info()
 	AI_Teleport(NASZ_009_Marcos,"OW_PATH_2_04");
 	Npc_ExchangeRoutine (NASZ_009_Marcos, "GoToTria");
 
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_15_00"); //Jestem zaskoczony bo nie przypuszcza³em, ¿e pójdzie tak szybko. Ca³e szczêœcie, ¿e siê na nas nie rzuci³. Dobrze sobie poradzi³eœ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_15_00"); //Jestem zaskoczony, bo nie przypuszcza³em, ¿e pójdzie tak szybko. Ca³e szczêœcie, ¿e siê na nas nie rzuci³. Dobrze sobie poradzi³eœ.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_55_01"); //By³o blisko. Miejmy nadziejê, ¿e twoje domys³y oka¿¹ siê prawdziwe i ta ska³a zwali mu siê na g³owê, bo mam ju¿ go serdecznie doœæ.
 
 	Info_ClearChoices (DIA_NASZ_002_Daryl_BrysonAfterGoAway);
@@ -701,30 +701,30 @@ FUNC INT DIA_NASZ_002_Daryl_Taktyki1_Condition()
 };
 FUNC VOID DIA_NASZ_002_Daryl_Taktyki1_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_00"); //Daryl, przysz³a pora aby oderwaæ siê w koñcu od kopania tej rudy. Nadszed³ czas abyœ zrobi³ nam miksturê. 
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_01"); //D³ugo oczekiwa³em na tê chwilê i cierpliwoœæ siê op³aci³a. Najlepiej od razu zabiorê siê do pracy ¿ebyœmy nie tracili czasu.
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_00"); //Daryl, przysz³a pora, aby oderwaæ siê w koñcu od kopania tej rudy. Nadszed³ czas, abyœ zrobi³ nam miksturê. 
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_01"); //D³ugo oczekiwa³em na tê chwilê i cierpliwoœæ siê op³aci³a. Najlepiej od razu zabiorê siê do pracy, ¿ebyœmy nie tracili czasu.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_02"); //Jak chcesz uwarzyæ tutaj truciznê i z czego? Wiesz, ¿e nie mo¿emy zabiæ stra¿nika, ani mu bardzo zaszkodziæ?
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_03"); //Ta mieszanka nie bêdzie przeznaczona dla naszego stra¿nika. Pozwól, ¿e wprowadzê ciê w szczegó³y.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_04"); //D³ugo myœla³em nad receptur¹ trucizny, która pozwoli nam osi¹gn¹æ obrany cel.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_05"); //Postanowi³em wykorzystaæ kopalniane grzyby rosn¹ce w tunelach pozbawionych du¿ych iloœci œwiat³a. Mo¿e wygl¹daj¹ niepozornie jednak nie daj siê zwieœæ!
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_05"); //Postanowi³em wykorzystaæ kopalniane grzyby rosn¹ce w tunelach pozbawionych du¿ych iloœci œwiat³a. Mo¿e wygl¹daj¹ niepozornie, jednak nie daj siê zwieœæ!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_06"); //W ich kapeluszach znajduje siê silna toksyna, która po odpowiednim przetworzeniu potrafi pozbawiæ kogoœ przytomnoœci na kilka godzin.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_07"); //Czêsto roœliny te wykorzystywali op³acani ³owcy g³ów chc¹cy upozorowaæ swoja œmieræ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_08"); //Przez kilka godzin po za¿yciu wygl¹dasz jak prawdziwy nieboszczyk, który nie ma nawet pulsu. Kiedy ju¿ j¹ przygotujê bêdziesz musia³ j¹ wypiæ.
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_09"); //Zwariowaliœcie?! Nie wypijê czegoœ co mo¿e mnie zabiæ! Zapomnijcie o tym pomyœle!
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_09"); //Zwariowaliœcie?! Nie wypijê czegoœ, co mo¿e mnie zabiæ! Zapomnijcie o tym pomyœle!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_10"); //Nie zrobi³bym czegoœ, co mo¿e ci zaszkodziæ. Doskonale znam dzia³anie i sposoby tworzenia takich eliksirów.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_11"); //To najpewniejsza droga do wolnoœci, wierz mi. Po wypiciu tej mikstury bêdziesz wygl¹da³ jak trup.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_12"); //Stra¿nicy na pewno wyci¹gn¹ ciê z kopalni i zostawi¹ twoje 'zw³oki' przy reszcie grobów, gdzie bêd¹ ciê chcieli jutro pochowaæ. 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_13"); //Ty jednak obudzisz siê w œrodku nocy i zwyczajnie uciekniesz. A kiedy siê obudz¹, ciebie ju¿ tutaj nie bêdzie. Czy¿ to nie proste? 
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_14"); //A co je¿eli siê nie obudzê? 
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_15"); //Nie ma takiej mo¿liwoœci. Toksyny zawarte w grzybach s¹ zbyt s³abe aby kogoœ zabiæ lub trzymaæ w stanie œmierci d³u¿ej ni¿ przez piêæ godzin. Wszystko zale¿y te¿ od mieszanki. 
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_55_16"); //Nie podoba mi siê ten plan, jednak jak rozumiem nie mamy wyjœcia. Mogê ci w czyœ pomóc? 
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_17"); //Owszem. Ja pójdê przyszykowaæ flakonik, jaki uda³o mi siê wykraœæ z obozu paladynów,	ty zaœ przynieœ mi cztery grzyby. Tylko ich nie jedz! 
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_15"); //Nie ma takiej mo¿liwoœci. Toksyny zawarte w grzybach s¹ zbyt s³abe, aby kogoœ zabiæ lub trzymaæ w stanie œmierci d³u¿ej ni¿ przez piêæ godzin. Wszystko zale¿y te¿ od mieszanki. 
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_55_16"); //Nie podoba mi siê ten plan, jednak jak rozumiem nie mamy wyjœcia. Mogê ci w czymœ pomóc? 
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_17"); //Owszem. Ja pójdê przyszykowaæ flakonik, jaki uda³o mi siê wykraœæ z obozu paladynów, ty zaœ przynieœ mi cztery grzyby. Tylko ich nie jedz! 
 	
 	Wld_InsertItem (ItNa_KopalnianyGrzyb, "FP_ITEM_KOPALNIANY_GRZYB_1");
 	Wld_InsertItem (ItNa_KopalnianyGrzyb, "FP_ITEM_KOPALNIANY_GRZYB_2");
 	Wld_InsertItem (ItNa_KopalnianyGrzyb, "FP_ITEM_KOPALNIANY_GRZYB_3");
 	
-	B_LogEntry (TOPIC_Ben_Taktyki, "Ten plan to czyste szaleñstwo! Nie s¹dzi³em, ¿e aby uciec z kopalni bêdê zmuszony upozorowaæ w³asn¹ œmieræ poprzez wypicie jakiejœ trucizny. Mam tylko nadziejê, ¿e nie wpêdzi mnie to do grobu, bo nie jest mi jeszcze œpieszno na drugi œwiat. Muszê zebraæ 4 grzyby kopalniane i przynieœæ je Darylowi.");
+	B_LogEntry (TOPIC_Ben_Taktyki, "Ten plan to czyste szaleñstwo! Nie s¹dzi³em, ¿e aby uciec z kopalni, bêdê zmuszony upozorowaæ w³asn¹ œmieræ poprzez wypicie jakiejœ trucizny. Mam tylko nadziejê, ¿e nie wpêdzi mnie to do grobu, bo nie jest mi jeszcze œpieszno na drugi œwiat. Muszê zebraæ 4 grzyby kopalniane i przynieœæ je Darylowi.");
 
 };
 

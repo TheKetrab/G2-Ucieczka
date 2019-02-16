@@ -43,8 +43,8 @@ FUNC VOID Rtn_Start_17 ()
    	TA_Stand_Guarding		(23,00,07,30,"NASZ_ZAPALISADA_OB_09");
 };
 
-FUNC VOID Rtn_End_17 ()
+FUNC VOID Rtn_JoruTot_17 ()
 {	
-	TA_Stand_Guarding		(07,30,23,00,"TOT");
-   	TA_Stand_Guarding		(23,00,07,30,"TOT");
+	TA_Stand_WP		(08,00,20,00,"TOT");
+   	TA_Stand_WP		(20,00,08,00,"TOT");
 };

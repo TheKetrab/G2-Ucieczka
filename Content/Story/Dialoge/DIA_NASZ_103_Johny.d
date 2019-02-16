@@ -80,7 +80,7 @@ FUNC VOID DIA_NASZ_103_Johny_HelloPiosenka_Info()
 	AI_Output (self, other,"DIA_NASZ_103_Johny_HelloPiosenka_55_04"); //Swego czasu grywa³ u nas w obozie, jego muzyka to czysta poezja. Nie s¹dzi³em, ¿e mo¿na wydobywaæ z lutni takie brzmienie, a¿ do momentu kiedy go spotka³em.
 	AI_Output (other, self,"DIA_NASZ_103_Johny_HelloPiosenka_55_05"); //Dziêki za informacje.
 	
-	B_LogEntry (TOPIC_Silas_piosenka, "Johny co prawda potrafi graæ na lutni, jednak odes³a³ mnie do mistrza w tej dziedzinie - ³owcy orków imieniem Engor. Ten bardzo go sobie zachwala³.");
+	B_LogEntry (TOPIC_Silas_piosenka, "Johny, co prawda, potrafi graæ na lutni, jednak odes³a³ mnie do mistrza w tej dziedzinie - ³owcy orków imieniem Engor. Ten bardzo go sobie zachwala³.");
 };
 
 

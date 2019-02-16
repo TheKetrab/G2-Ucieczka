@@ -556,7 +556,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_HelpWrzod_Info()
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_HelpWrzod_55_07"); //Dobra, s³uchaj: 5 piekielników, rum, dwa rdesty polne i bry³ka rudy.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_HelpWrzod_55_08"); //Mam nadziejê, ¿e to pomo¿e. Wszystkich wykañczaj¹ te wrzaski.
 
-	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Kirgo przygotuje miksturê ³agodz¹c¹ popêd, jeœli przyniosê mu sk³adniki: 5 piekielników, rum, dwa rdesty polne i bry³ka rudy.");
+	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Kirgo przygotuje miksturê ³agodz¹c¹ popêd, jeœli przyniosê mu sk³adniki: 5 piekielników, rum, dwa rdesty polne i bry³kê rudy.");
 
 };
 

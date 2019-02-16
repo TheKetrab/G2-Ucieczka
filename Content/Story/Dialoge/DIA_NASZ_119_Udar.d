@@ -1009,7 +1009,7 @@ FUNC VOID DIA_NASZ_119_Udar_PalisadaOtwarta_Info()
 
 	Log_CreateTopic (TOPIC_Udar_oddzial, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);
-	B_LogEntry (TOPIC_Udar_oddzial, "Z powodu otwarcia siê orkowej palisady, paladyn Udar ponownie nape³ni³ siê nadziej¹ na odszukanie patrolu, który zagin¹³ za ni¹ ju¿ jakiœ czas temu. Byæ mo¿e natknê siê na grupkê ludzi eksploruj¹c tamtejsze tereny?");
+	B_LogEntry (TOPIC_Udar_oddzial, "Z powodu otwarcia siê orkowej palisady, paladyn Udar ponownie nape³ni³ siê nadziej¹ na odszukanie patrolu, który zagin¹³ za ni¹ ju¿ jakiœ czas temu. Byæ mo¿e natknê siê na grupkê ludzi, eksploruj¹c tamtejsze tereny?");
 	
 };
 

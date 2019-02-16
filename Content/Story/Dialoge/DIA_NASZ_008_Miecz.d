@@ -59,7 +59,9 @@ FUNC VOID DIA_NASZ_008_Miecz_siema_Info()
 	};
 	
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_siema_55_06"); //Nie miewam w zwyczaju dzieliæ siê swoimi problemami z nieznajomymi. Postaw jakiœ dobry alkohol, to mo¿e siê zakumplujemy.
-		
+	Log_CreateTopic (TOPIC_Miecz_ork, LOG_MISSION);
+	Log_SetTopicStatus (TOPIC_Miecz_ork, LOG_RUNNING);
+	B_LogEntry (TOPIC_Miecz_ork, "Natkn¹³em siê na pirata, który nie chce siê podzieliæ swoim problem, dopóki nie postawiê mu jakiegoœ porz¹dnego alkoholu. Byæ mo¿e to dobra okazja na znalezienie kumpla do kufla.");
 };
 
 var int MieczGrogRumOK;

@@ -22,12 +22,15 @@ FUNC VOID DIA_NASZ_017_Joru_EXIT_Info()
 {
 	if (JoruRediToTelepport == TRUE)
 	{
+		//Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
+		//Snd_Play ("MFX_TELEPORT_CAST");
+		//Npc_ClearAIQueue(self);
+		
+		//Npc_ExchangeRoutine  (NASZ_017_Joru,"JoruTot");
+		//AI_Teleport (self, "TOT"); 
+		B_StartOtherRoutine (self,"JoruTot");
 		AI_StopProcessInfos (self);
-		Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
-		Snd_Play ("MFX_TELEPORT_CAST");
-		AI_Teleport (self, "TOT"); 
-		B_StartOtherRoutine (self,"End");
-	}
+		}
 	
 	else
 	
@@ -103,7 +106,7 @@ FUNC VOID DIA_NASZ_017_Joru_Lojalnosc_Info()
 		
 	Log_CreateTopic (TOPIC_Joru_lutnia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Joru_lutnia, LOG_RUNNING);
-	B_LogEntry (TOPIC_Joru_lutnia, "Joru chcia³by abym zagra³ mu na lutni, nie jestem w tym mo¿e najlepszy, ale czego nie zrobi siê dla umêczonego ducha, by ten zazna³ spokoju.");
+	B_LogEntry (TOPIC_Joru_lutnia, "Joru chcia³by, abym zagra³ mu na lutni, nie jestem w tym mo¿e najlepszy, ale czego nie zrobi siê dla umêczonego ducha, by ten zazna³ spokoju.");
 	
 };
 

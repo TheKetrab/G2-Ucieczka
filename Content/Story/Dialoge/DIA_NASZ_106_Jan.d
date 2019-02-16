@@ -1545,7 +1545,7 @@ FUNC VOID DIA_NASZ_106_Jan_work1_Info()
 
 	Log_CreateTopic (TOPIC_Jan_zloto, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jan_zloto, LOG_RUNNING);
-	B_LogEntry (TOPIC_Jan_zloto, "Jan chce bym przyniós³ mu 10 samorodków z³ota. W Górniczej Dolinie znajdê parê ¿y³ z³ota i jeœli szczêœcie mi dopisze, dam radê wykonaæ to doœæ jasne zadanie.");
+	B_LogEntry (TOPIC_Jan_zloto, "Jan chce, bym przyniós³ mu 10 samorodków z³ota. W Górniczej Dolinie znajdê parê ¿y³ z³ota i jeœli szczêœcie mi dopisze, dam radê wykonaæ to doœæ jasne zadanie.");
 };
 
 //*********************************************************************

@@ -125,7 +125,7 @@ FUNC VOID DIA_NASZ_005_Ben_HaveYouGotAnIdea_Info()
 
 	Log_CreateTopic (TOPIC_Ben_pomysl, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ben_pomysl, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ben_pomysl, "Sytuacja w kopalni staje siê coraz gorsza. Paladyni od pewnego czasu daj¹ nam coraz mniejsze racje ¿ywnoœciowe, jednoczeœnie wymagaj¹c od nas, abyœmy pracowali z wiêksz¹ intensywnoœci¹. Ben wpad³ na pomys³: Chce, abym uda³ siê do stra¿nika i spróbowa³ go przekonaæ, by ten da³ znaæ Marcosowi, ¿e nied³ugo wszyscy pomrzemy z g³odu. W¹tpiê, ¿e to coœ da, jednak warto próbowaæ. Zastanawiam siê tylko, dlaczego ta ruda jest dla nich, a¿ tak bardzo wa¿na.");
+	B_LogEntry (TOPIC_Ben_pomysl, "Sytuacja w kopalni staje siê coraz gorsza. Paladyni od pewnego czasu daj¹ nam coraz mniejsze racje ¿ywnoœciowe, jednoczeœnie wymagaj¹c od nas, abyœmy pracowali z wiêksz¹ intensywnoœci¹. Ben wpad³ na pomys³: Chce, abym uda³ siê do stra¿nika i spróbowa³ go przekonaæ, by ten da³ znaæ Marcosowi, ¿e nied³ugo wszyscy pomrzemy z g³odu. W¹tpiê, ¿e to coœ da, jednak warto próbowaæ. Zastanawiam siê tylko, dlaczego ta ruda jest dla nich a¿ tak bardzo wa¿na.");
 
 };
 
@@ -395,7 +395,7 @@ FUNC VOID DIA_NASZ_005_Ben_WhatAreUTalkingAbout_trucizna()
 	
 	Log_CreateTopic (TOPIC_Ben_taktyki, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ben_taktyki, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ben_taktyki, "Po d³u¿szym namyœle zasugerowa³em, abyœmy stworzyli truciznê. Wprawdzie jest to niebezpieczny ruch, jednak nie mamy ju¿ czasu na zwlekanie i u¿ywanie pó³ œrodków. Pytanie od kiedy Daryl potrafi tworzyæ trucizny?");
+	B_LogEntry (TOPIC_Ben_taktyki, "Po d³u¿szym namyœle zasugerowa³em, abyœmy stworzyli truciznê. Wprawdzie jest to niebezpieczny ruch, jednak nie mamy ju¿ czasu na zwlekanie i u¿ywanie pó³ œrodków. Pytanie, od kiedy Daryl potrafi tworzyæ trucizny?");
 
 
 	Info_ClearChoices (DIA_NASZ_005_Ben_WhatAreUTalkingAbout);
@@ -491,7 +491,7 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	TRIA_Next(Sattar);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
-	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_11"); //Masz racjê, nim jednak wyruszysz zabierz nasze wyposa¿enie. Znajdziesz je w dziurze w tunelu, tobie przyda siê zdecydowanie bardziej.
+	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_11"); //Masz racjê, nim jednak wyruszysz, zabierz nasze wyposa¿enie. Znajdziesz je w dziurze w tunelu, tobie przyda siê zdecydowanie bardziej.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_12"); //No i jeszcze mikstura. Trzymaj.
 	Createinvitems (self, ItNa_TruciznaDaryl, 1);
 	B_giveinvitems (self, other, ItNa_TruciznaDaryl, 1);

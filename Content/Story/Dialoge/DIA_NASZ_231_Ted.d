@@ -738,7 +738,7 @@ FUNC VOID DIA_NASZ_231_Ted_Krata_Info()
 	AI_Output (other, self,"DIA_NASZ_231_Ted_Krata_55_02"); //Tak, tak, jasne. Idê go poszukaæ.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_Krata_55_03"); //Tylko siê nie zgub!
 	
-	B_LogEntry (TOPIC_Ted_trolls, "Zamiast drzwi, magowie widocznie u¿ywali bram... Muszê znaleŸæ jakiœ sposób ¿eby otworzyæ tê tutaj do wie¿y.");
+	B_LogEntry (TOPIC_Ted_trolls, "Zamiast drzwi, magowie widocznie u¿ywali bram... Muszê znaleŸæ jakiœ sposób, ¿eby otworzyæ tê tutaj do wie¿y.");
 
 	Npc_ExchangeRoutine (self, "UnderWieza");
 
@@ -815,7 +815,7 @@ FUNC VOID DIA_NASZ_231_Ted_AndHow_Info()
 	
 	B_GivePlayerXP (500);
 	Log_SetTopicStatus (TOPIC_Ted_trolls, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Ted_trolls, "Ted znalaz³ to czego szuka³. Dobrze, ¿e nie obesz³o siê bez nagrody.");
+	B_LogEntry (TOPIC_Ted_trolls, "Ted znalaz³ to, czego szuka³. Dobrze, ¿e nie obesz³o siê bez nagrody.");
 
 };
 

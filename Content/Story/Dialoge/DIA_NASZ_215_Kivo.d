@@ -252,7 +252,7 @@ FUNC VOID DIA_NASZ_215_Kivo_RenegaciOnPlace_Info()
 	
 	TRIA_Finish();
 	
-	B_LogEntry(TOPIC_Korth_kopalnia,"Dotarliœmy pod kopalniê. Kivo powiedzia³, ¿e zaatakujemy pod os³on¹ nocy. Muszê znaleŸæ jak¹œ szparê, by wejœæ do œrodka. Vachut da³ mi te¿ ³ój kretoszczura, ¿ebym móg³ przekrêciæ ko³owrót i otworzyæ bramê ³owcom.");
+	B_LogEntry(TOPIC_Korth_kopalnia,"Dotarliœmy pod kopalniê. Kivo powiedzia³, ¿e zaatakujemy pod os³on¹ nocy. Muszê znaleŸæ jak¹œ szparê, by wejœæ do œrodka. Vachut da³ mi te¿ ³ój kretoszczura, ¿ebym móg³ przekrêciæ ko³owrót i otworzyæ bramê myœliwym.");
 
 	
 	Info_ClearChoices (DIA_NASZ_215_Kivo_RenegaciOnPlace);

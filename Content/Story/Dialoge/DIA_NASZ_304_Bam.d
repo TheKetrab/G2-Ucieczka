@@ -142,7 +142,7 @@ FUNC VOID DIA_NASZ_304_Bam_quest_Info()
 	Log_SetTopicStatus (TOPIC_Bam_kopalnia, LOG_RUNNING);
 	
 	var string entry_kop;
-	entry_kop = "Bandycie Bamowi nie podoba siê brak informacji z kopalni Marcosa. No tak, problem w tym, ¿e pozabija³em wszystkich Paladynów. I co tu robiæ? Bandyci nie mog¹ siê dowiedziec, ¿e kopalnia pad³a, bo stali by siê bardziej ostro¿ni i niebezpieczni.";
+	entry_kop = "Bandycie Bamowi nie podoba siê brak informacji z kopalni Marcosa. No tak, problem w tym, ¿e pozabija³em wszystkich Paladynów. I co tu robiæ? Bandyci nie mog¹ siê dowiedzieæ, ¿e kopalnia pad³a, bo staliby siê bardziej ostro¿ni i niebezpieczni.";
 	
 	if (hero.guild == GIL_DJG) { B_LogEntry (TOPIC_Bam_kopalnia, ConcatStrings(entry_kop, " Najlepiej zapytam Kerolotha, co o tym myœli i co z tym zrobiæ.")); };
 	if (hero.guild == GIL_OUT) { B_LogEntry (TOPIC_Bam_kopalnia, ConcatStrings(entry_kop, " Najlepiej zapytam Gestatha, co o tym myœli i co z tym zrobiæ.")); };

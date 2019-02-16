@@ -277,7 +277,7 @@ FUNC VOID DIA_NASZ_118_Ferros_HowDoUFeel_Info()
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w sowim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ, oczywiœcie oddam ci koszty zakupy.
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_05"); //Zobaczê, co da siê zrobiæ.
 
-	B_LogEntry (TOPIC_Ferros_sny, "Feros czuje siê ju¿ lepiej lecz nadal ma k³opoty z zaœniêciem, rozwi¹zaniem ma byæ nalewka od Jeremiasza.");
+	B_LogEntry (TOPIC_Ferros_sny, "Feros czuje siê ju¿ lepiej, lecz nadal ma k³opoty z zaœniêciem. Rozwi¹zaniem ma byæ nalewka od Jeremiasza.");
 
 };
 

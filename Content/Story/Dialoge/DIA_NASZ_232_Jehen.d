@@ -730,7 +730,7 @@ FUNC VOID DIA_NASZ_232_Jehen_KorzenieDone_Info()
 	Wld_InsertNpc(NASZ_022_Trup,"NASZ_JEHEN_QUEST_05");
 	B_KillNPC(NASZ_022_Trup);
 	
-	B_LogEntry (TOPIC_Jehen_poscig, "Podczas produkcji strza³ Jehen opowiedzia³ mi co nieco o swojej przysz³oœci. Cz³owiek, który ucieka³ przed wojn¹ aby ratowaæ swe ¿ycie znalaz³ siê w jej centrum. Mimo tego nie podda³ siê i walczy dalej. Mam tylko nadziejê, ¿e w koñcu odnajdzie swój spokój. Nied³ugo po rozmowie us³yszeliœmy dziwny ryk i natychmiast pobiegliœmy w tamto miejsce...");
+	B_LogEntry (TOPIC_Jehen_poscig, "Podczas produkcji strza³ Jehen opowiedzia³ mi co nieco o swojej przesz³oœci. Cz³owiek, który ucieka³ przed wojn¹, aby ratowaæ swe, ¿ycie znalaz³ siê w jej centrum. Mimo tego nie podda³ siê i walczy dalej. Mam tylko nadziejê, ¿e w koñcu odnajdzie swój spokój. Nied³ugo po rozmowie us³yszeliœmy dziwny ryk i natychmiast pobiegliœmy w tamto miejsce...");
 };
 
 //*********************************************************************
@@ -935,7 +935,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Part2Finish_Info()
 	B_LogEntry (TOPIC_Dobar_pancerze, "Mogê zanieœæ kowalowi ³uski z tych bestii, ale nie wiem co ze skórami orkowych psów. Mo¿e te¿ kilka zdejmê?");
 	
 	Log_SetTopicStatus (TOPIC_Jehen_zagubiony, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Jehen_zagubiony, "Jehen odzyska³ si³y i wróci do obozu. Mam nadziejê, ¿e nie spotkam ju¿ wiêcej tych strasznych bestii");
+	B_LogEntry (TOPIC_Jehen_zagubiony, "Jehen odzyska³ si³y i wróci do obozu. Mam nadziejê, ¿e nie spotkam ju¿ wiêcej tych strasznych bestii.");
 	DodajReputacje(2,REP_MYSLIWI);
 	B_GivePlayerXP(700);
 

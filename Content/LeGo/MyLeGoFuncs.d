@@ -204,7 +204,7 @@ func void TakeFocusVob_hook()
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};	
 	
-	PrintS_Ext(ConcatStrings("Podnios?e? ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings("Podnios³eœ ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	release(itm);
 	
 };
@@ -629,12 +629,12 @@ func void StaryFlyDamage (var c_npc slf, var int speed, var int x, var int y, va
  
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
 	    
-	if(!victimPtr || !attackerPtr) {Print("B??d z pointerem do npc podczas ataku! Skontaktuj si? z tw?rcami moda."); return 0;};
+	if(!victimPtr || !attackerPtr) {Print("B³¹d z pointerem do npc podczas ataku! Skontaktuj siê z twórcami moda."); return 0;};
 	
 	Var c_npc slf; slf = _^(attackerPtr);
 	var c_npc oth; oth = _^(victimPtr);
 	
-	if(!slf || !oth) {Print("B??d z npc podczas ataku! Skontaktuj si? z tw?rcami moda.");};
+	if(!slf || !oth) {Print("B³¹d z npc podczas ataku! Skontaktuj siê z twórcami moda.");};
 	
 	var C_ITEM ReadiedWeapon; ReadiedWeapon = Npc_GetReadiedWeapon(slf);
 
@@ -1134,7 +1134,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta?e? zatruty! (-1HP/10S)");
+				Print("Zosta³eœ zatruty! (-1HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1145,7 +1145,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta?e? zatruty! (-5HP/10S)");
+				Print("Zosta³eœ zatruty! (-5HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1157,7 +1157,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zosta?e? zatruty! (-10HP/10S)");
+				Print("Zosta³eœ zatruty! (-10HP/10S)");
 				Snd_Play ("TRUCIZNA");
 			};
 		

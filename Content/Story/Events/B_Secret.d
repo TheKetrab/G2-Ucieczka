@@ -614,6 +614,15 @@ func void ORCCITYSKRZYNIA_S1 ()
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_16");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_17");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_18");
+		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_26");
+		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_14");
+		
+		Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_09");
+		Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_10");
+		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_11");
+		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_12");
+		
+	
 		
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_27");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_28");

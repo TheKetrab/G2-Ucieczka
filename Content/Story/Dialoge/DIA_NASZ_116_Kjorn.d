@@ -584,8 +584,8 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_700()
 
 FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing()
 {
-	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_700_15_00"); //Postanowi³em zatrzymaæ go dla siebie.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_01"); //Przemyœl to, przyjacielu. Naprawdê, bardzo chcia³bym go mieæ.
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_nothing_15_00"); //Postanowi³em zatrzymaæ go dla siebie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing_15_01"); //Przemyœl to, przyjacielu. Naprawdê, bardzo chcia³bym go mieæ.
 
 	Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "No dobra, ale daj mi siedemset sztuk z³ota.", DIA_NASZ_116_Kjorn_Finito_700);
 	Info_AddChoice	  (DIA_NASZ_116_Kjorn_Finito, "I tak myœlê, ¿e mi bardziej siê przyda.", DIA_NASZ_116_Kjorn_Finito_nothing2);
@@ -593,9 +593,9 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing()
 	
 FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing2()
 {
-	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_700_15_00"); //I tak myœlê, ¿e mi bardziej siê przyda.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_01"); //A niech ciê... Ten egoizm odwróci siê przeciwko tobie.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_700_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_00"); //I tak myœlê, ¿e mi bardziej siê przyda.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_01"); //A niech ciê... Ten egoizm odwróci siê przeciwko tobie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
 
 	FinishQuestKjorn(2);
 

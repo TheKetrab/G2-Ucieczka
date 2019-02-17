@@ -632,6 +632,8 @@ FUNC VOID DIA_NASZ_010_Monastir_GodReady_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_GodReady_15_00"); //Wszyscy bogowie s¹ gotowi.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_GodReady_55_01"); //A wiêc niech zaczynaj¹!
+	
+	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_SUCCESS);
 
 	LastRitual = TRUE;
 	FF_ApplyOnceExt (LastRitualFunc, 30000, -1);

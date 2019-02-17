@@ -400,7 +400,7 @@ func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 	Createinvitems (self, ItNa_Grow, 1);
 	B_GiveInvItems(self,other,ItNa_Grow,1);
 	
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_04"); //A teraz ruszaj, nim bêdzie za póŸno.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_05"); //A teraz ruszaj, nim bêdzie za póŸno.
 	
 	Log_CreateTopic (TOPIC_Zlo,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Zlo, LOG_RUNNING);

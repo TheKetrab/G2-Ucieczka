@@ -530,24 +530,16 @@ func void STARTUP_OLDCAMP ()
 
 	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_07");
 	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_08");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_09");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_10");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_11");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_12");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_13");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_14");
 	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_15");
 
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_19");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_20");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_21");
+	Wld_InsertNpc	(KuroK,"FP_ROAM_ORCCITY_21");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_22");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_23");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_24");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_25");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_26");
-
-	Wld_InsertNpc	(KuroK,"FP_ROAM_ORCCITY_30");
+	
+	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_30");
 	Wld_InsertNpc	(UndeadOrcWarrior,"FP_ROAM_ORCCITY_31");
 	Wld_InsertNpc	(UndeadOrcWarrior,"FP_ROAM_ORCCITY_32");
 	Wld_InsertNpc	(UndeadOrcWarrior,"FP_ROAM_ORCCITY_33");
@@ -556,18 +548,16 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_36");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_37");
 	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_38");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_39");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_40");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_41");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_42");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_43");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_44");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_ROAM_ORCCITY_39");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCCITY_40");
+	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_41");
+	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_42");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_ROAM_ORCCITY_43");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_ROAM_ORCCITY_44");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_45");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_ROAM_ORCCITY_46");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_47");
-	Wld_InsertNpc	(OrcScout,"FP_ROAM_ORCCITY_48");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_49");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_50");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCCITY_47");
+	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_48");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_51");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_52");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_53");

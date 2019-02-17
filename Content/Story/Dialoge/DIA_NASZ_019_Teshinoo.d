@@ -28,7 +28,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_EXIT_Info()
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_02"); //Ty nie biæ siê z orki. Nas za du¿o. Gdy ork wojownik boli, g³oœno wyæ.
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_03"); //To obudziæ inne orki, z miasta. Ty nie daæ im rady.
 		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_04"); //Co z innymi orkami ni¿ wojownicy?
-		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_05"); //Syn Ducha mieæ cichy g³os, elita byæ silny i nie wyæ.
+		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_05"); //Syn Ducha mieæ cichy g³os, elita byæ silny i nie wyæ. Ale orki kuszka wyæ!
 		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_06"); //Dobrze, zapamiêtam radê. Mo¿e uda mi siê przemkn¹æ niepostrze¿enie.
 
 		TeshinooEndFirstTime = TRUE;
@@ -215,7 +215,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_WidzialesJak_Info()
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_01"); //Byæ potrz¹s ska³. Kuro'K przynieœæ martwy cz³owiek tutaj.
 	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_02"); //Nie wiesz, gdzie mog¹ byæ moje rzeczy?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_03"); //Mo¿e w dom Kuro'K?
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_04"); //Kuro'K byæ ork stra¿nik. Mieæ dom blisko mury.
+	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_04"); //Kuro'K byæ ork stra¿nik. Mieæ dom blisko tutaj. Wyjœæ st¹d i skrêciæ w prawo. Tam byæ takie ska³y jak to tutaj. Tam byæ Kuro'K.
 
 };
 

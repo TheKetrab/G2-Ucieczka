@@ -95,6 +95,23 @@ func int bNpcHasHammer(var c_npc slf) {
 
 };
 
+func int C_IsPlantSkill_FactorItem()
+{
+
+	if(Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Mana_Herb_01)
+	|| Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Mana_Herb_02)
+	|| Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Mana_Herb_03)
+	|| Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Health_Herb_01)
+	|| Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Health_Herb_02)
+	|| Hlp_GetInstanceID(item) == Hlp_GetInstanceID(ItPl_Health_Herb_03)) 
+	{
+		return true;
+	};
+	
+	return false;
+
+};
+
 
 func void PercentHealSelf(var int proc, var int attrb)
 {

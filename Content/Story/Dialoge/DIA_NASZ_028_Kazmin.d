@@ -22,12 +22,22 @@ FUNC VOID DIA_NASZ_028_Kazmin_EXIT_Info()
 	AI_StopProcessInfos (self);
 	//Npc_PercDisable  		(self, 	PERC_ASSESSPLAYER);
 	//Npc_PercDisable			(self,	PERC_ASSESSTALK);
-	self.npctype = 1;
-	//self.start_aistate				= ZS_MM_AllScheduler;
+	self.npctype = 0;
+	self.start_aistate				= ZS_MM_AllScheduler;
 	Npc_SetTempAttitude (self, ATT_HOSTILE);
 	NPC_SetTarget(self, other);
-	B_Attack (self, other, AR_MonsterVsHuman, -1);
-	secSkaluj = 120;
+	B_Attack (self, other, AR_KILL, -1);
+	if(secSkaluj > 0 && FF_ACTIVE(secPrzywrocenieWielkosci))
+	{
+		WillPowiekszony = FALSE;
+		Mdl_SetModelScale(hero,	1.00,	1.00, 	1.00);
+		Wld_PlayEffect("spellFX_LIGHTSTAR_RED",  hero, hero, 0, 0, 0, FALSE );
+		Snd_Play ("DEM_AMBIENT01"); 
+		secSkaluj = 0;
+		hero.aivar[AIV_MM_ShrinkState] = 0;
+		ff_Remove(secPrzywrocenieWielkosci);
+		Print("Magia potwora zak³óci³a dzia³anie zaklêcia.");
+	};
 
 };
 
@@ -60,12 +70,12 @@ FUNC VOID DIA_NASZ_028_Kazmin_Spotkanie_Info()
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_02"); //Stoisz tu przede mn¹ z zamiarem dokonania os¹du za tych, którzy jako duchy b³¹kaj¹ siê po obozie czuj¹c wieczny ból i cierpienie.
 	AI_Output (other, self,"DIA_NASZ_028_Kazmin_Spotkanie_15_03"); //Dlaczego im to zrobi³eœ? Czy wy, demonie, istniejecie jedynie po to, aby siaæ zniszczenie i œmieræ?
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_04"); //Je¿eli tak uwa¿asz to jesteœ naprawdê ograniczon¹ istot¹, cz³owieku. Nie ka¿dy demon chce zniszczyæ œwiat. Nie ka¿dy demon jest bezmyœln¹ machin¹ do zabijania.
-	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_05"); //Gdybym by³ taki, jak reszta moich braci, ju¿ dawno le¿a³byœ na posadzce, zbieraj¹c swoje flaki.
-	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_06"); //Mój pan, w którego wierzyli tutejsi ludzie, nakaza³ mi, abym przez tysi¹ce lat skazywa³ ich dusze na cierpienie.
+	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_05"); //Gdybym by³ taki jak reszta moich braci, ju¿ dawno le¿a³ byœ na posadzce zbieraj¹c swoje flaki.
+	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_06"); //Mój pan, w którego wierzyli tutejsi ludzie, nakaza³ mi abym przez tysi¹ce lat skazywa³ ich dusze na cierpienie.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_07"); //Lecz sprzeciwi³em mu siê. Jest s³aby i nie zas³uguje na swoje dotychczasowe miano, skoro pokona³ go zwyk³y œmiertelnik.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_08"); //Od tamtej pory trzymam tutejszych ludzi na granicy pomiêdzy œmierci¹ i ¿yciem, gdy¿ przez swoje bluŸnierstwa nie zas³uguj¹ na nic innego.
-	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_09"); //Nie skazujê œmiertelników na cierpienie bez powodu, ale ci tutaj, grzeszyli odrzucaj¹c innych bogów i ³udzili siê, i¿ demon mo¿e wskazaæ im drogê ku wolnoœci.
-	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_10"); //Gro z ich braci b³¹ka siê teraz po œwiecie. Ich twarze zakrywaj¹ kaptury, spomiêdzy których mo¿na dostrzec czerwone maski.
+	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_09"); //Nie skazuje œmiertelników na cierpienie bez powodu, ale ci tutaj, grzeszyli odrzucaj¹c innych bogów i ³udzili siê, i¿ demon mo¿e wskazaæ im drogê ku wolnoœci.
+	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_10"); //Gro z ich braci b³¹ka siê teraz po œwiecie. Ich twarze zakrywaj¹ kaptury spomiêdzy, których mo¿na dostrzec czerwone maski.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_11"); //Wielu z nich umar³o, wielu nadal ¿yje pomimo tego, i¿ ich pan zosta³ ostatecznie pokonany.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_12"); //Czy cierpi¹? Owszem, nie maj¹ celu w swoim istnieniu, stracili go w chwili, kiedy poddali siê purpurowemu mrokowi.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_13"); //Mo¿na wiêc powiedzieæ, ¿e ja ratujê tutejszych ludzi od cierpienia i ¿a³osnego losu bycia marionetkami.

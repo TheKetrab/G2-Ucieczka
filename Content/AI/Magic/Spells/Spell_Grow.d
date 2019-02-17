@@ -45,15 +45,15 @@ func void Spell_Cast_Grow()
 			GrowUzyteOneTime = TRUE;
 		};
 	
-		AI_SetNpcsToState (hero, ZS_MagicGrow, 1000); //-kairo
+		//AI_SetNpcsToState (hero, ZS_MagicGrow, 1000); //-kairo
+		WillPowiekszony = TRUE;
+		ff_applyonceext(secPrzywrocenieWielkosci,1000,-1);	
 	}
 	
 	else {
 		B_KillNpc(hero);
 	};
 	
-	WillPowiekszony = TRUE;
-	ff_applyonceext(secPrzywrocenieWielkosci,1000,-1);
 
 	self.aivar[AIV_SelectSpell] += 1;
 };

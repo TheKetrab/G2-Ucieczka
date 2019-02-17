@@ -98,7 +98,18 @@ func int bNpcHasHammer(var c_npc slf) {
 
 func void PercentHealSelf(var int proc, var int attrb)
 {
-	const int atrb = attrb;
-	var int procent; procent = (self.attribute[atrb]*proc)/100;
-	Npc_ChangeAttribute(self,atrb,procent);
+	var int atrb; atrb = MEM_ReadStatArr(self.attribute,attrb+1);
+	var int procent; procent = (atrb*proc)/100;
+	
+	if(!procent)
+	{
+		procent = 1;
+	};
+	
+	if(C_IsPlantSkill_FactorItem())
+	{
+		procent*=2;
+	};
+	
+	Npc_ChangeAttribute(self,attrb,procent);
 };

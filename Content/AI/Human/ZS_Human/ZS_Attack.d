@@ -103,6 +103,13 @@ func int ZS_Attack_Loop ()
 		AI_StandUpQuick(self);
 		return LOOP_END;
 	};
+	if(other.id == 405) {
+	
+		self.aivar[AIV_PursuitEnd] = true;
+		Npc_ClearAIQueue(self);
+		AI_StandUpQuick(self);
+		return LOOP_END;
+	};
 	
 	// ------ Kampfabbruch, wenn zu weit weg ------
 	if (Npc_GetDistToNpc (self, other) > self.aivar[AIV_FightDistCancel])

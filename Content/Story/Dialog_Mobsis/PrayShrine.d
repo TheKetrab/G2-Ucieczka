@@ -107,7 +107,7 @@ FUNC VOID PrayShrine_S1 ()
 	if  (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))
 	{	
 		C_IsShrineObsessed (self);
-		if (ShrineIsObsessed == TRUE)
+		if (ShrineIsObsessed == TRUE && !D3D11_enabled)
 		{
 			Wld_PlayEffect("DEMENTOR_FX",  hero, hero, 0, 0, 0, FALSE );
 		};

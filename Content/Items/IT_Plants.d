@@ -133,7 +133,7 @@ INSTANCE ItPl_Mana_Herb_01(C_Item)
 	func void Use_Mana_Herb_01 ()
 	{			
 		//Npc_ChangeAttribute	(self,	ATR_MANA,	Mana_Mana_Herb_01*PlantSkill_Factor);
-		PercentHealSelf(Mana_Mana_Herb_01*PlantSkill_Factor,ATR_MANA);
+		PercentHealSelf(Mana_Mana_Herb_01,ATR_MANA);
 	};
 /******************************************************************************************/
 INSTANCE ItPl_Mana_Herb_02(C_Item)
@@ -161,7 +161,7 @@ INSTANCE ItPl_Mana_Herb_02(C_Item)
 
 	func void Use_Mana_Herb_02 ()
 	{			
-		PercentHealSelf(Mana_Mana_Herb_02*PlantSkill_Factor,ATR_MANA);
+		PercentHealSelf(Mana_Mana_Herb_02,ATR_MANA);
 	};
 /******************************************************************************************/
 INSTANCE ItPl_Mana_Herb_03(C_Item)
@@ -189,7 +189,7 @@ INSTANCE ItPl_Mana_Herb_03(C_Item)
 
 	func void Use_Mana_Herb_03 ()
 	{			
-		PercentHealSelf(Mana_Mana_Herb_03*PlantSkill_Factor,ATR_MANA);
+		PercentHealSelf(Mana_Mana_Herb_03,ATR_MANA);
 	};
 /******************************************************************************************/
 INSTANCE ItPl_Health_Herb_01(C_Item)
@@ -218,7 +218,7 @@ INSTANCE ItPl_Health_Herb_01(C_Item)
 
 	func void Use_Health_Herb_01 ()
 	{			
-		PercentHealSelf(HP_Health_Herb_01*PlantSkill_Factor,ATR_HITPOINTS);
+		PercentHealSelf(HP_Health_Herb_01,ATR_HITPOINTS);
 	};
 /******************************************************************************************/
 INSTANCE ItPl_Health_Herb_02(C_Item)
@@ -245,7 +245,7 @@ INSTANCE ItPl_Health_Herb_02(C_Item)
 
 	func void Use_Health_Herb_02 ()
 	{			
-		PercentHealSelf(HP_Health_Herb_02*PlantSkill_Factor,ATR_HITPOINTS);
+		PercentHealSelf(HP_Health_Herb_02,ATR_HITPOINTS);
 	};
 
 /******************************************************************************************/
@@ -271,8 +271,9 @@ INSTANCE ItPl_Health_Herb_03(C_Item)
 
 	func void Use_Health_Herb_03 ()
 	{			
-		PercentHealSelf(HP_Health_Herb_03*PlantSkill_Factor,ATR_HITPOINTS);
+		PercentHealSelf(HP_Health_Herb_03,ATR_HITPOINTS);
 	};
+
 
 /******************************************************************************************/
 INSTANCE ItPl_Dex_Herb_01(C_Item)

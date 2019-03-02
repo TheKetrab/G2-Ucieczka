@@ -97,7 +97,7 @@ func void PrintMunitionType()
 	
 				if(Hlp_IsValidHandle(MunitionName))
 				{
-					var string str; str = "U¿ywasz ";
+					var string str; str = G2U_you_use;
 					if(RangedWeapon.flags & ITEM_BOW)
 					{
 						if(BowMunition != RangedWeapon.Munition)
@@ -107,22 +107,22 @@ func void PrintMunitionType()
 						
 						if (BowMunition == FireArrow)
 						{
-							str = CS(str, "ogniste strza³y.");
+							str = CS(str, G2U_fire_arrow);
 							View_AddText(MunitionName, 700, 7000,str, PF_FONT);
 						}
 						else if (BowMunition == IceArrow)
 						{
-							str = CS(str, "lodowe strza³y.");
+							str = CS(str, G2U_ice_arrow);
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else if (BowMunition == SharpArrow)
 						{
-							str = CS(str, "ostre strza³y.");
+							str = CS(str, G2U_sharp_arrow);
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else
 						{
-							str = CS(str, "zwyk³e strza³y.");
+							str = CS(str, G2U_normal_arrow);
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						};
 					}
@@ -136,12 +136,12 @@ func void PrintMunitionType()
 						
 						if (CBowMunition == SharpBolt)
 						{
-							str = CS(str, "ostre be³ty.");
+							str = CS(str, G2U_sharp_bolt);
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						}
 						else
 						{
-							str = CS(str, "zwyk³e be³ty.");
+							str = CS(str, G2U_normal_bolt);
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						};
 					};
@@ -204,7 +204,7 @@ func void TakeFocusVob_hook()
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};	
 	
-	PrintS_Ext(ConcatStrings("Podnios³eœ ",itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings(G2U_you_take,itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	release(itm);
 	
 };
@@ -629,12 +629,12 @@ func void StaryFlyDamage (var c_npc slf, var int speed, var int x, var int y, va
  
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
 	    
-	if(!victimPtr || !attackerPtr) {Print("B³¹d z pointerem do npc podczas ataku! Skontaktuj siê z twórcami moda."); return 0;};
+	if(!victimPtr) { dmg = 0; return dmg;}; 
 	
 	Var c_npc slf; slf = _^(attackerPtr);
 	var c_npc oth; oth = _^(victimPtr);
 	
-	if(!slf || !oth) {Print("B³¹d z npc podczas ataku! Skontaktuj siê z twórcami moda.");};
+	if(!slf || !oth) {Print(G2U_error_attack);};
 	
 	var C_ITEM ReadiedWeapon; ReadiedWeapon = Npc_GetReadiedWeapon(slf);
 
@@ -1134,7 +1134,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 3)
 			{
 				Buff_Apply(hero, Poison1HP);
-				Print("Zosta³eœ zatruty! (-1HP/10S)");
+				Print(ConcatStrings(G2U_poisson," (-1HP/10S)"));
 				Snd_Play ("TRUCIZNA");
 			};
 		};
@@ -1145,7 +1145,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
-				Print("Zosta³eœ zatruty! (-5HP/10S)");
+				Print(ConcatStrings(G2U_poisson," (-5HP/10S)"));
 				Snd_Play ("TRUCIZNA");
 			};
 		
@@ -1157,7 +1157,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
 				Buff_Apply(hero, Poison10HP);
-				Print("Zosta³eœ zatruty! (-10HP/10S)");
+				Print(ConcatStrings(G2U_poisson," (-10HP/10S)"));
 				Snd_Play ("TRUCIZNA");
 			};
 		

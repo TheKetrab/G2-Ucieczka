@@ -279,7 +279,7 @@ FUNC VOID DIA_NASZ_119_Udar_goth_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_goth_15_00"); //£owcy zaatakowali myœliwych.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_goth_55_01"); //Ano. By³a taka sprawa.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_goth_55_02"); //Jednak¿e nikt jej nie wyjaœni³ i wci¹¿ wiemy tyle, co na pocz¹tku - czyli nic.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_goth_55_02"); //Jednak¿e nikt jej nie wyjaœni³ i wci¹¿ wiemy tyle, co na pocz¹tku, czyli nic.
 
 	B_LogEntry (TOPIC_Goth_kradziez, "Udar powiedzia³ mi, ¿e przywódcy obozu nie maj¹ pojêcia, kto zaatakowa³ myœliwych.");
 

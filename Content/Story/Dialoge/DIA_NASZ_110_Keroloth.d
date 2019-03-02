@@ -370,7 +370,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyes_Info()
 
 	Log_CreateTopic (TOPIC_Keroloth_gobliny, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Keroloth_gobliny, LOG_RUNNING);
-	B_LogEntry (TOPIC_Keroloth_gobliny, "Keroloth nakaza³ mi unicestwiæ gobliny znajduj¹ce siê w pobli¿u obozu.");
+	B_LogEntry (TOPIC_Keroloth_gobliny, "Keroloth nakaza³ mi zabiæ gobliny znajduj¹ce siê w pobli¿u obozu.");
 	
 };
 
@@ -404,7 +404,7 @@ FUNC INT DIA_NASZ_110_Keroloth_questyesprzypomnienie_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_questyesprzypomnienie_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questyesprzypomnienie_15_00"); //Przypomnisz mi, gdzie grasuj¹ te gobliny?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesprzypomnienie_55_01"); //Ciesz siê, ¿e zapomninalstwo nie jest zaraŸliwe. Inaczej sam zapomnia³bym, gdzie znajduje siê ta jaskinia.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesprzypomnienie_55_01"); //Ehh... Pamiêæ masz gorsz¹ ni¿ moja babcia.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesprzypomnienie_55_02"); //Wychodzisz pó³nocn¹ bram¹, skrêcasz w lewo i idziesz œcie¿k¹ za ska³y.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesprzypomnienie_55_03"); //Poœpiesz siê!
 
@@ -465,7 +465,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_ready_Info()
 	else {
 		PrintMissingRep(25,REP_LOWCY);
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_15_10"); //¯artujesz, tak?
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_11"); //Chyba jeszcze nie zacz¹³eœ. Przestañ siê oœmieszaæ.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_11"); //Próbujesz w ogóle zyskaæ tu reputacjê? Nie? No to nie zawracaj mi g³owy!
 	};
 };
 
@@ -776,7 +776,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyesend_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questyesend_15_00"); //Pozby³em siê goblinów.
 	
 	if (WillZabilGoblinaKerolotha >=2) {
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_01"); //W koñcu ha³as ustanie raz na zawsze. Bêdê móg³ skupiæ siê na planowaniu ataku i nic nie bêdzie mnie rozpraszaæ.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_01"); //Wreszcie mo¿na w spokoju planowaæ atak.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_02"); //WeŸ to z³oto i pamiêtaj, ¿e za pracê jest siê hojnie wynagradzanym.
 		Createinvitems (self, itmi_gold, 70);
 		B_giveinvitems (self, other, itmi_gold, 70);
@@ -865,7 +865,7 @@ func void DIA_NASZ_110_Keroloth_WantToKillRenegat_Info ()
 	if !(hero.guild == GIL_DJG) && (KerolothRenegatOneTime == FALSE) {
 		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_08_01"); //Marcos, paladyn renegat. Czemu chcesz z nim walczyæ?
 		AI_Output	(other, self, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_02"); //Przetrzymywa³ mnie w kopalni. Muszê po³o¿yæ kres jego postêpowaniu i uwolniæ moich przyjació³.
-		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_08_03"); //No dobrze. Ale musisz byæ ³owc¹ orków! Nie mogê ryzykowaæ œmierci któregoœ z ch³opców w obozie dla sprawy innej ni¿ atak na zamek.
+		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_08_03"); //Mo¿esz liczyæ na moje wsparcie pod warunkiem, ¿e do nas do³¹czysz. Nie bêdê ryzykowa³ œmierci¹ moich ch³opców w imiê osoby, której nawet nie znam. 
 		
 		KerolothRenegatOneTime = TRUE;
 		B_LogEntry (TOPIC_Korth_kopalnia, "Keroloth wesprze mnie tylko, jeœli stanê siê ³owc¹ orków");

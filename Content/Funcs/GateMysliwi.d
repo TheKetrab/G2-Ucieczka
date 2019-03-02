@@ -46,13 +46,10 @@ func void GateMysliwi_HeroIsComming() {
 		// + hero wo³a
 		var int random; random = Hlp_Random (4);
 
-		if (random == 0) {
+		if (random == 0 || random == 1) {
 			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_00"); //Otworzyæ bramê!
 		}
-		else if (random == 1) {
-			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_01"); //Idzie cz³owiek!
-		}
-		else if (random == 2) {
+		else if (random == 2) { // TODO zrobic, zeby ta kwestia byla tylko od strony ZEWNETRZNEJ obozu
 			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_02"); //Hej, to ja, nie ¿aden potwór!
 		}
 		else if (random == 3) {

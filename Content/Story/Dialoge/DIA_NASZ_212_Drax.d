@@ -41,7 +41,7 @@ FUNC INT DIA_NASZ_212_Drax_siema_Condition()
 
 FUNC VOID DIA_NASZ_212_Drax_siema_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_212_Drax_siema_15_00"); //Hahaha!
+	AI_Output (self, other,"DIA_NASZ_212_Drax_siema_15_00"); //Ha, ha, ha!
 	AI_Output (self, other,"DIA_NASZ_212_Drax_siema_55_01"); //W koñcu wolny.
 
 	Log_CreateTopic (TOPIC_Drax_ucieczka, LOG_MISSION);

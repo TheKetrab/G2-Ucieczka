@@ -224,6 +224,8 @@ const int 	ID_GIGANT					= 66;
 
 const int 	ID_WSCIEKLYLURKER			= 67;
 const int 	ID_ORCDOG					= 68;
+const int 	ID_BLACKWOLF				= 69;
+
 
 // ----------------------------------------------
 const int AIV_LASTBODY						= 44;	//der Body, an dem ich zuletzt gefressen habe

@@ -1795,3 +1795,6 @@ var int WillIdzieZaPalisade;
 var int Rethon_Fajka_Quest_Running;
 var int Duch_Modlitwa_Start;
 var int RethonLostWithKurgan;
+var int WillMozeIscDoKazmina;
+var int UcieklesZKopalni;
+var int MissionPlagaCiemnosciFinished;

@@ -43,7 +43,7 @@ FUNC INT DIA_NASZ_007_Draal_siema_Condition()
 FUNC VOID DIA_NASZ_007_Draal_siema_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_00"); //Na Innosa! Czy¿bym by³ uratowany?
-	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Nie wygl¹dasz na bandytê. A nawet jeœli to uprzdzam: Nie mam nic, co mog³oby ci siê przydaæ, a zabijaj¹c mnie te¿ niczego nie zyskasz!
+	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Nie wygl¹dasz na bandytê. A nawet jeœli to uprzedzam: Nie mam nic, co mog³oby ci siê przydaæ, a zabijaj¹c mnie te¿ niczego nie zyskasz!
 
 	Log_CreateTopic (TOPIC_draal, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_draal, LOG_RUNNING);
@@ -51,14 +51,14 @@ FUNC VOID DIA_NASZ_007_Draal_siema_Info()
 
 	Info_ClearChoices (DIA_NASZ_007_Draal_siema);
 
-		Info_AddChoice	  (DIA_NASZ_007_Draal_siema, "Nie zabijê ciê. Myœlê, ¿e wrêcz przeciwnie.", DIA_NASZ_007_Draal_siema_yes);
+		Info_AddChoice	  (DIA_NASZ_007_Draal_siema, "Nie bój siê. Chcê ci pomóc.", DIA_NASZ_007_Draal_siema_yes);
 		Info_AddChoice	  (DIA_NASZ_007_Draal_siema, "Ka¿dy ma coœ, co mo¿na mu zabraæ.", DIA_NASZ_007_Draal_siema_no);
 
 };
 
 FUNC VOID DIA_NASZ_007_Draal_siema_yes()
 {
-	AI_Output (other,self ,"DIA_NASZ_007_Draal_siema_yes_15_00"); //Nie zabijê ciê. Myœlê, ¿e wrêcz przeciwnie.
+	AI_Output (other,self ,"DIA_NASZ_007_Draal_siema_yes_15_00"); //Nie bój siê. Chcê ci pomóc.
 	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_yes_55_01"); //Uratujesz mnie? Jak mnie znalaz³eœ?
 	
 	if (npc_knowsinfo (other, DIA_NASZ_101_Korth_mine)) {
@@ -271,7 +271,7 @@ FUNC VOID DIA_NASZ_007_Draal_done_Info()
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_00"); //Na Innosa... ¯yjê!
 	AI_Output (other, self,"DIA_NASZ_007_Draal_done_15_01"); //IdŸ zaraz do Gestatha. Znajdziesz go w jaskini. Chyba znajdzie siê tu dla ciebie jakieœ zajêcie.
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_02"); //Wielkie dziêki. Nie zapomnê ci tego. W ramach podziêkowañ dam ci ma³¹ wskazówkê: Dobry z³odziej musi byæ nie tylko zrêczny, ale i przebieg³y.
-	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_03"); //Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, chwyæ go jedn¹ rêk¹, a drug¹ machaj i odwracaj uwagê ofiary. To zawsze pomaga - uwierz mi na s³owo.
+	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_03"); //Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, chwyæ go jedn¹ rêk¹, a drug¹ machaj i odwracaj uwagê ofiary. To zawsze pomaga, mo¿esz mi wierzyæ.
 
 	B_RaiseAttribute(other, ATR_DEXTERITY, 2);
 	

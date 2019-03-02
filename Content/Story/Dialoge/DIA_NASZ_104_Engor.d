@@ -110,8 +110,8 @@ FUNC VOID DIA_NASZ_104_Engor_IllTakeYou_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_00"); //A gdybym tak przyniós³ ci lutniê?
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_01"); //Zgodzi³byœ siê wtedy graæ wieczorami w karczmie?
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_02"); //Oczywiœcie. Jednak nie s¹dzê, ¿e uda ci siê znaleŸæ to, czego potrzebujemy w tym miejscu.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Zapewne wszystkie takie przedmioty zosta³y ju¿ dawno wykorzystane w celu wykonania amunicji do kusz czy ³uków, lub zwyczajnie spalone, aby podtrzymaæ ogieñ.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_02"); //Oczywiœcie. Jednak nie s¹dzê, byœ znalaz³ jak¹kolwiek lutniê w tej okolicy.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Zapewne wszystkie zosta³y podobne przedmioty zosta³y ju¿ dawno przerobione na groty be³tów albo tarcze, czy po prostu spalone, by podtrzymaæ ogieñ.
 	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_04"); //Poza tym w¹tpiê, aby takie rzeczy wala³y siê gdzieœ po pod³odze lub innych jaskiniach. Jedynym rozwi¹zaniem by³oby stworzyæ lutniê od nowa, jednak i z tym mo¿e byæ k³opot.
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_05"); //K³opoty to ju¿ dla mnie nie pierwszyzna, dam sobie radê. Powiedz mi tylko, co muszê zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_06"); //Dobrze wiêc. Kiedyœ do naszego obozu przyby³ pewien myœliwy, który po kilku g³êbszych wygada³ siê, ¿e dawniej by³ bardzo dobrym lutnikiem.
@@ -163,7 +163,7 @@ FUNC VOID DIA_NASZ_104_Engor_IHaveLute_Info()
 	Info_ClearChoices (DIA_NASZ_104_Engor_IHaveLute);
 		Info_AddChoice	  (DIA_NASZ_104_Engor_IHaveLute, "150 sztuk z³ota.", DIA_NASZ_104_Engor_IHaveLute_Gold);
 		Info_AddChoice	  (DIA_NASZ_104_Engor_IHaveLute, "5 ekstraktów leczniczych.", DIA_NASZ_104_Engor_IHaveLute_Potion);
-		Info_AddChoice	  (DIA_NASZ_104_Engor_IHaveLute, "Pas stalowej rêki.", DIA_NASZ_104_Engor_IHaveLute_Belt);
+		Info_AddChoice	  (DIA_NASZ_104_Engor_IHaveLute, "Pas stalowej rêki. (Obrona przed broni¹ i strza³ami: +5)", DIA_NASZ_104_Engor_IHaveLute_Belt);
 
 };
 

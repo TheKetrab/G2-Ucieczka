@@ -150,7 +150,7 @@ FUNC VOID DIA_NASZ_125_Silas_End_Info()
 	if (NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	{
 		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_01"); //S³ysza³em odg³osy walki. Nie s¹dzi³em, ¿e postanowisz za³atwiæ to w ten sposób. Uci¹³eœ mu mo¿e jaja?
-		AI_Output (other, self,"DIA_NASZ_125_Silas_End_55_02"); //Niekoniecznie...
+		AI_Output (other, self,"DIA_NASZ_125_Silas_End_55_02"); //No niezbyt...
 		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_03"); //W dawnej Kolonii tym ³achmyt¹ zajê³oby siê paru mê¿czyzn. Haha!
 		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_04"); //Tak czy owak, skoro postawi³eœ na swoim i za³atwi³eœ mój k³opot, to ja postawiê ci parê butelek najlepszego alkoholu!
 
@@ -305,7 +305,7 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenka_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_00"); //Hej, zaczekaj!
-	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_01"); //Jeszcze raz dziêkujê za pomoc. Lecz... czy móg³byœ mi pomóc z jeszcze jedn¹ spraw¹? Wiem, ¿e proszê o wiele, ale uwierz mi – to dla dobra ca³ego obozu!
+	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_01"); //Jeszcze raz dziêkujê za pomoc, ale... czy móg³byœ mi pomóc z jeszcze jedn¹ spraw¹? Wiem, ¿e proszê o wiele, ale uwierz mi, dzia³am w imiê dobra ca³ego obozu!
 	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_02"); //Brzmi powa¿nie. Co siê sta³o?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_03"); //Od d³u¿szego czasu widzê, ¿e ch³opaki nie s¹ tacy jak wczeœniej. Wielu z nich wygl¹da na przygnêbionych, smutnych i za³amanych. Nie ma w nich ju¿ tej energii jak¹ mo¿na by³o dostrzec na pocz¹tku.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_04"); //To wszystko wina tego przeklêtego miejsca. Unosz¹ca siê w atmosferze ci¹g³a groŸba zagro¿enia ze strony zielonoskórych doprowadzi ich na skraj za³amania. Musimy coœ zdzia³aæ!

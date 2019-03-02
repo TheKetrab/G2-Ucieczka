@@ -560,6 +560,7 @@ func void ZS_Dead ()
 	{
 		Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Erak_plagaciemnosci, "Uœmierci³em demona. Teraz nieumarli nie powinni ju¿ straszyæ w Górniczej Dolinie.");
+		MissionPlagaCiemnosciFinished = TRUE;
 	};
 	
 	

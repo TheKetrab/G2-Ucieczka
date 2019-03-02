@@ -118,11 +118,11 @@ FUNC INT DIA_NASZ_006_Renegat_siema3_Condition()
 
 FUNC VOID DIA_NASZ_006_Renegat_siema3_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_15_00"); //Czego tu ³achmyto? £ap za kilof i jazda do kopalni, albo sam ciê tam zaci¹gnê!
+	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_15_00"); //Czego tu, ³achmyto? £ap za kilof i jazda do kopalni albo sam ciê tam zaci¹gnê!
 	
 	Info_ClearChoices (DIA_NASZ_006_Renegat_siema3);
 		Info_AddChoice	  (DIA_NASZ_006_Renegat_siema3, "Chcê rozmawiaæ z Marcosem.", DIA_NASZ_006_Renegat_siema3_c);
-		Info_AddChoice	  (DIA_NASZ_006_Renegat_siema3, "Przysy³a mnie Ben, on i reszta ch³opców obumieraj¹ z g³odu...", DIA_NASZ_006_Renegat_siema3_b);
+		Info_AddChoice	  (DIA_NASZ_006_Renegat_siema3, "Przysy³a mnie Ben. On i reszta ch³opców obumieraj¹ z g³odu...", DIA_NASZ_006_Renegat_siema3_b);
 		Info_AddChoice	  (DIA_NASZ_006_Renegat_siema3, "Przychodzê w sprawie jedzenia...", DIA_NASZ_006_Renegat_siema3_a);
 			
 };
@@ -139,7 +139,7 @@ FUNC VOID DIA_NASZ_006_Renegat_siema3_c()
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_c_55_07"); //Jeszcze jedno s³owo i...
 	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_08"); //Pobijesz mnie? Proszê bardzo, jednak pomyœl co zrobi Marcos kiedy dowie siê, ¿e przez twoj¹ niekompetencjê wszyscy górnicy pomarli z g³odu.
 	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_09"); //Wiesz, ¿e bez nas nie wydobêdziecie nawet jednej zawszonej bry³ki rudy.
-	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_10"); //Ponadto s³ysza³em twoj¹ rozmowê z Marcosem, z jego polecenia to ty nadzorujesz kopalnie jak i nasz¹ pracê, chyba nie chcesz go wkurzyæ, co?
+	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_10"); //Ponadto, s³ysza³em twoj¹ rozmowê z Marcosem. Z jego polecenia to ty nadzorujesz kopalniê, jak i nasz¹ pracê. Chyba nie chcesz go wkurzyæ, co?
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_c_55_11"); //Niech ciê szlag, porozmawiam z Marcosem, a teraz wyjazd do kopalni zanim stracê cierpliwoœæ!
 	
 	B_LogEntry (TOPIC_Ben_pomysl, "Nie wierzê w to, ¿e mi siê uda³o! Trzeba teraz wróciæ do Bena i poinformowaæ go o sukcesie.");
@@ -152,7 +152,7 @@ FUNC VOID DIA_NASZ_006_Renegat_siema3_c()
 FUNC VOID DIA_NASZ_006_Renegat_siema3_b()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_b_15_01"); //Przysy³a mnie Ben, on i reszta ch³opców obumieraj¹ z g³odu...
+	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_b_15_01"); //Przysy³a mnie Ben. On i reszta ch³opców obumieraj¹ z g³odu...
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_b_55_02"); //Gdybyœcie pracowali ciê¿ej, racje ¿ywnoœciowe by³yby wiêksze. Nie bêdziemy utrzymywali nierobów. Jazda st¹d!
 	
 	B_LogEntry (TOPIC_Ben_pomysl, "Niestety nie uda³o mi siê dogadaæ ze stra¿nikiem, trzeba przekazaæ Benowi smutne wieœci.");
@@ -237,6 +237,7 @@ INSTANCE DIA_NASZ_006_Renegat_weapon   (C_INFO)
 FUNC INT DIA_NASZ_006_Renegat_weapon_Condition()
 {
 	if (Renegat06BiegnieOneTime == TRUE) && (KAPITEL == 1)
+	&& (UcieklesZKopalni == FALSE)
 	{
 		return TRUE;
 	};

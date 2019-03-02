@@ -78,7 +78,7 @@ FUNC VOID DIA_NASZ_211_Hunt_robota_Info()
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_01"); //Tak, w zasadzie tak.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_02"); //Jesteœ tu nowy i nikt ciê nie zna.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_03"); //Handlarz ³owców orków imieniem Johny ma na sprzeda¿ pewien amulet. Chcê go mieæ.
-	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_04"); //Kup go albo ukradnij. Jeœli jesteœ doœæ cwany, uda ci siê to.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_04"); //Kup go albo ukradnij. Jeœli jesteœ doœæ cwany, nie powinieneœ mieæ problemów.
 	
 	Log_CreateTopic (TOPIC_Hunt_amulet, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Hunt_amulet, LOG_RUNNING);
@@ -124,6 +124,62 @@ FUNC VOID DIA_NASZ_211_Hunt_koniec_Info()
 	DodajReputacje (2, REP_MYSLIWI);
 };
 
+
+func void HuntSay_NoMoney() {
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_HuntSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+};
+
+func void HuntSay_ForYou() {
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_HuntSay_ForYou_55_00"); //Proszê bardzo!
+};
+
+func void HuntSay_NoRepEnough() {
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_HuntSay_NoRepEnough_55_00"); //Jeszcze nie zas³ugujesz na ten pancerz.
+};
+
+
+var int KapturMysliwegoKupiony;
+//*********************************************************************
+//	Info Kaptur
+//*********************************************************************
+INSTANCE DIA_NASZ_211_Hunt_Kaptur   (C_INFO)
+{
+	npc         = NASZ_211_Hunt;
+ 	nr          = 4;
+ 	condition   = DIA_NASZ_211_Hunt_Kaptur_Condition;
+ 	information = DIA_NASZ_211_Hunt_Kaptur_Info;
+ 	permanent   = TRUE;
+	description = "Sprzedaj mi kaptur myœliwego. (200 szt. z³ota)";
+};
+
+FUNC INT DIA_NASZ_211_Hunt_Kaptur_Condition()	
+{
+	if (hero.guild == GIL_OUT)
+	&& (KapturMysliwegoKupiony == FALSE))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_211_Hunt_Kaptur_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_211_Hunt_Kaptur_15_00"); //Sprzedaj mi kaptur myœliwego.
+	if (npc_hasitems (other, ItMi_Gold) >= 200) {
+		Createinvitems (self, ITNA_KapturMysliwego, 1);
+		B_GiveInvItems (other, self, ItMi_Gold, 200);
+		Npc_RemoveInvItems   (self, ItMi_Gold, 200);
+		HuntSay_ForYou();
+		
+		B_Giveinvitems (self, other, ITNA_KapturMysliwego, 1);
+		KapturMysliwegoKupiony = TRUE;
+	}
+	else {		
+		HuntSay_NoMoney();
+	};
+};
+
+
+
 var int SredniPancerzMysliwegoKupiony;
 //*********************************************************************
 //	Info SredniPancerz
@@ -156,7 +212,7 @@ FUNC VOID DIA_NASZ_211_Hunt_SredniPancerz_Info()
 			AI_EquipBestArmor (self);
 			B_GiveInvItems (other, self, ItMi_Gold, 600);
 			Npc_RemoveInvItems   (self, ItMi_Gold, 600);
-			AI_Output (self, other,"DIA_NASZ_211_Hunt_SredniPancerz_55_01"); //Proszê bardzo!
+			HuntSay_ForYou();
 			
 			B_Giveinvitems (self, other, ITNA_OUT_M, 1);
 			AI_EquipBestArmor (other);
@@ -167,11 +223,11 @@ FUNC VOID DIA_NASZ_211_Hunt_SredniPancerz_Info()
 		}
 		else {
 			PrintMissingRep(50,REP_MYSLIWI);
-			AI_Output (self, other,"DIA_NASZ_211_Hunt_SredniPancerz_55_04"); //Jeszcze nie zas³ugujesz na ten pancerz.
+			HuntSay_NoRepEnough();
 		};
 	}
 	else {		
-		AI_Output (self, other,"DIA_NASZ_211_Hunt_SredniPancerz_55_05"); //Nie masz doœæ z³ota.
+		HuntSay_NoMoney();
 	};
 };
 
@@ -205,7 +261,7 @@ FUNC VOID DIA_NASZ_211_Hunt_WzmocnionaZbroja_Info()
 		if (RepEnough(80,REP_MYSLIWI)) {
 			B_GiveInvItems (other, self, ItMi_Gold, 1500);
 			Npc_RemoveInvItems   (self, ItMi_Gold, 1500);
-			AI_Output (self, other,"DIA_NASZ_211_Hunt_WzmocnionaZbroja_55_01"); //Proszê bardzo!
+			HuntSay_ForYou();
 			Createinvitems (self, ITNA_OUT_S, 1);
 			B_Giveinvitems (self, other, ITNA_OUT_S, 1);
 			AI_EquipBestArmor (other);
@@ -214,11 +270,11 @@ FUNC VOID DIA_NASZ_211_Hunt_WzmocnionaZbroja_Info()
 		}
 		else {
 			PrintMissingRep(80,REP_MYSLIWI);
-			AI_Output (self, other,"DIA_NASZ_211_Hunt_WzmocnionaZbroja_55_03"); //Jeszcze nie zas³ugujesz na ten pancerz.
+			HuntSay_NoRepEnough();
 		};
 	}
 	else {
-		AI_Output (self, other,"DIA_NASZ_211_Hunt_WzmocnionaZbroja_55_04"); //Nie masz doœæ z³ota.
+		HuntSay_NoMoney();
 	};
 };
 

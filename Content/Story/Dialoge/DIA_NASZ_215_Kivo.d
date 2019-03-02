@@ -47,7 +47,7 @@ FUNC INT DIA_NASZ_215_Kivo_siema_Condition()
 FUNC VOID DIA_NASZ_215_Kivo_siema_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_215_Kivo_siema_15_00"); //Kim jesteœ?
-	AI_Output (self, other,"DIA_NASZ_215_Kivo_siema_55_01"); //Zw¹ mnie Kivo. Jestem zawodowcem w swoim fachu.
+	AI_Output (self, other,"DIA_NASZ_215_Kivo_siema_55_01"); //Zw¹ mnie Kivo. Jestem najlepszy w swoim fachu.
 	AI_Output (other,self ,"DIA_NASZ_215_Kivo_siema_15_02"); //To znaczy?
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_siema_55_03"); //Widzisz zapewne moj¹ zbrojê. Myœliwi maj¹ grupê ludzi do zadañ specjalnych.
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_siema_55_04"); //Nie polujemy. Jesteœmy raczej stra¿nikami obozu i czasem patrolujemy okolicê, oceniamy zagro¿enie ze strony orków.

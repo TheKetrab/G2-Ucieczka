@@ -3583,7 +3583,7 @@ func void Use_Uroboros3 ()
 					//2.Seite
 					Doc_SetMargins	( nDocID,  -1, 30, 20, 275, 20, 1   		);
 					Doc_PrintLine	( nDocID,  1, ""					);
-					Doc_PrintLines	( nDocID,  1, ""	); // TODO !!! dorobic orkowa swiatynie z G1, jakies przelaczniki + ten tekst poni¿ej
+					Doc_PrintLines	( nDocID,  1, ""	);
 					Doc_PrintLines	( nDocID,  1, "A czy pójdziesz za mn¹ do orkowej œwi¹tyni? 'Tej w centrum Górniczej Doliny? Tak, pójdê' - powiedzia³em, ale z przekonaniem, ¿e ju¿ nigdy stamt¹d nie wrócê."	);
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "~Imonez");
@@ -7520,6 +7520,26 @@ INSTANCE ItNa_WywarVachuta(C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PoteznyWywar(C_Item)
+{
+	name 			=	"Wywar";
+
+	mainflag 		=	ITEM_KAT_FOOD;
+	flags 			=	ITEM_MULTI;
+
+	value 			=	0;	
+
+	visual 			=	"ItMi_Rum_02.3ds"; 
+	material 		=	MAT_GLAS;
+	on_state[0]		=	UseJabol;
+	scemeName		=	"POTIONFAST";
+
+	description		= 	name;
+	
+};
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Jabol(C_Item)
 {
 	name 			=	"Jabol";
@@ -7692,6 +7712,8 @@ FUNC VOID UseTruciznaDaryla()
 	B_GivePlayerXP(100);
 	
 	Npc_SwitchInventory_Kopalnia(self);
+	
+	UcieklesZKopalni = TRUE;
 	
 	Kopalnia_Trucizna_Uzyte = TRUE;
 	Fade_Status = 1;
@@ -8998,8 +9020,6 @@ INSTANCE ItNa_Butelka (C_Item)
 	
 	visual 				=	"ItFo_Water.3ds";
 	material 			=	MAT_GLAS;
-	scemeName			=	"POTION";
-//	on_state[0]			=	Use_Water;
 
 	description			= 	name;
 //	TEXT[1]				= 	NAME_Bonus_HP;		
@@ -10191,7 +10211,7 @@ FUNC VOID Use_AllHelmets ()
 {
 	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);	// do zebrania w misji
 	CreateInvItems (hero,ITNA_HelmBarda, 1);		// na wie¿y w NO
-	CreateInvItems (hero,ITNA_KapturMysliwego, 1);	// TODO sprzedaje hunt jesli jestes mysliwym
+	CreateInvItems (hero,ITNA_KapturMysliwego, 1);	// sprzedaje hunt jesli jestes mysliwym
 	CreateInvItems (hero,ITNA_RogatyHelm, 1);
 	CreateInvItems (hero,ITNA_HelmSniacego, 1);		// na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
 	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);
@@ -10267,7 +10287,7 @@ INSTANCE ITNA_KapturMysliwego (C_Item)
 	protection[PROT_POINT] = 15;
 	protection[PROT_FIRE] = 10;
 	protection[PROT_MAGIC] = 5;
-	value = 1500;
+	value = 200;
 	wear = WEAR_HEAD;
 	visual = "KapturMysliwego.3ds"; 
 	visual_skin = 0;

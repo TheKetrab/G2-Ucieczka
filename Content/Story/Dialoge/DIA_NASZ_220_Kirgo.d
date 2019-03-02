@@ -65,7 +65,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_siema_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_siema_15_00"); //Jesteœ alchemikiem?
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_siema_55_01"); //Trafne spostrze¿enie, aczkolwiek jestem samoukiem. Wszystko co wiem, wyczyta³em w ksiêgach Magów Ognia. Mia³em do nich dostêp, gdy Stary Obóz upad³ i na zamku pojawili siê paladyni.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_siema_55_02"); //Teraz mam kilka tych ksi¹¿ek przy sobie. Obecnie jestem chyba jedyn¹ osob¹ w Górniczej Dolinie, która babra siê w eliksiry.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_siema_55_02"); //Teraz mam kilka tych ksi¹¿ek przy sobie. Obecnie jestem chyba jedyn¹ osob¹ w Górniczej Dolinie, która babra siê w eliksirach.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_siema_55_03"); //Studiujê te¿ ró¿ne ksiêgi magiczne, wiêc jeœli chcesz, mogê zwiêkszyæ twoje magiczne zdolnoœci.
 
 	Log_CreateTopic (TOPIC_MysliwiTeacher,LOG_NOTE);
@@ -115,7 +115,7 @@ INSTANCE DIA_NASZ_220_Kirgo_lista   (C_INFO)
  	condition   = DIA_NASZ_220_Kirgo_lista_Condition;
  	information = DIA_NASZ_220_Kirgo_lista_Info;
  	permanent   = FALSE;
- 	description = "Przysy³a mnie Udar. Mam odebraæ paczkê";
+ 	description = "Przysy³a mnie Udar. Mam odebraæ paczkê.";
 };
 
 FUNC INT DIA_NASZ_220_Kirgo_lista_Condition()
@@ -132,7 +132,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_lista_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_lista_15_00"); //Przysy³a mnie Udar. Mam odebraæ paczkê.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_01"); //Nie spodziewa³em siê, ¿e przyœle tu kogoœ. No có¿, trzymaj.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_02"); //Tylko niczego nie wypij! Udar nie by³by zadowolony. Hahaha!
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_02"); //Tylko niczego nie wypij! Udar nie by³by zadowolony. Ha, ha, ha!
 
 	CreateInvItems (self, ItNa_PaczkaMikstur, 1);
 	B_GiveInvItems (self, other, ItNa_PaczkaMikstur, 1);

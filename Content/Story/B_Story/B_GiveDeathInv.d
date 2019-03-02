@@ -33,6 +33,9 @@ func void B_GiveDeathInv (var C_NPC slf)
 		
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_TROLL)			{	CreateInvItems (slf, ItAt_TrollTooth, 2);	};
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_TROLL_BLACK)	{	CreateInvItems (slf, ItAt_TrollTooth, 4);	};
+		if (slf.aivar[AIV_MM_REAL_ID] == ID_ORCBITER)		{	CreateInvItems (slf, ItAt_Teeth		, 2);	};
+		if (slf.aivar[AIV_MM_REAL_ID] == ID_BLACKWOLF)		{	CreateInvItems (slf, ItAt_Teeth		, 2);	};
+		
 	};
 	
 	// ------ Krallen verteilen ------
@@ -47,7 +50,7 @@ func void B_GiveDeathInv (var C_NPC slf)
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_BLOODHOUND)		{	CreateInvItems (slf, ItAt_Claw		, 4);	};
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_LURKER)			{	CreateInvItems (slf, ItAt_LurkerClaw, 1);	};	
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_WSCIEKLYLURKER)	{	CreateInvItems (slf, ItNa_PazurWscieklegoTopielca, 1);	};	
-
+		if (slf.aivar[AIV_MM_REAL_ID] == ID_ORCBITER)		{	CreateInvItems (slf, ItAt_Claw		, 2);	};
 		
 	};
 	
@@ -55,7 +58,7 @@ func void B_GiveDeathInv (var C_NPC slf)
 	if (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] == TRUE)
 	{
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_SHEEP)			{	CreateInvItems (slf, ItAt_SheepFur	, 1);	};
-		if (slf.aivar[AIV_MM_REAL_ID] == 100)				{	CreateInvItems (slf, ItNa_BlackWolfFur	, 1);	};
+		if (slf.aivar[AIV_MM_REAL_ID] == ID_BLACKWOLF)		{	CreateInvItems (slf, ItNa_BlackWolfFur	, 1);	};
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_WOLF)			{	CreateInvItems (slf, ItAt_WolfFur	, 1);	};
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_ICEWOLF)		{	CreateInvItems (slf, ItNa_IceWolfFur	, 1);	};
 		if (slf.aivar[AIV_MM_REAL_ID] == ID_WARG)			{	CreateInvItems (slf, ItAt_WargFur	, 1);	};

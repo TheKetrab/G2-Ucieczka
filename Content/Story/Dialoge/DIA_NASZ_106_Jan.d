@@ -84,12 +84,11 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_Info()
 	B_LogEntry (TOPIC_LowcyTrader,"Jan mo¿e wykuæ dla mnie broñ, jeœli przyniosê mu trochê zardzewia³ych mieczy i innego ¿elastwa.");
 
 	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_00"); //Wykujesz dla mnie broñ?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_55_01"); //Jesteœ kolejnym durniem, który woli MIEÆ broñ ni¿ j¹ u¿ywaæ?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_55_02"); //Jeœli nie, to pytaj Johny'ego o dostawê, a mnie daj spokój.
-	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_03"); //Mia³em na myœli specjalne projekty.
-	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_04"); //Nie znam siê na kowalstwie, a nauka tego rzemios³a zajê³aby mi szmat czasu.
-	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_05"); //Ale jeœli ty jesteœ doœwiadczony w tym fachu, to mo¿e wyku³byœ dla mnie coœ specjalnego, gdybym poprosi³?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_55_06"); //A co ja bêdê z tego mia³?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_55_01"); //Pytaj Johny'ego o dostawê, a mnie daj spokój.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_02"); //Mia³em na myœli specjalne projekty.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_03"); //Nie znam siê na kowalstwie, a nauka tego rzemios³a zajê³aby mi szmat czasu.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnie_15_04"); //Ale jeœli ty jesteœ doœwiadczony w tym fachu, to mo¿e wyku³byœ dla mnie coœ specjalnego, gdybym poprosi³?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_55_05"); //A co ja bêdê z tego mia³?
 
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
 		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Zap³acê ci z³otem.", DIA_NASZ_106_Jan_WykujeszDlaMnie_zloto);
@@ -109,17 +108,17 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce()
 {
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce_15_00"); //Mogê za³atwiaæ ci surowce.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce_15_01"); //Ca³kiem niez³y pomys³. Bêdziesz przynosi³ mi tu wszelkie ¿elastwo, jakie znajdziesz.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce_15_02"); //Zardzewia³e miecze, surowa stal, srebro. 10 sztuk wzamian za realizacjê projektu.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce_15_02"); //Zardzewia³e miecze, surowa stal, srebro. 10 sztuk w zamian za realizacjê projektu.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce_15_03"); //To co, umowa stoi?
 
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
-		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Zgoda. ¯elaztwo wzamian za wykuwanie.", DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda);
+		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Zgoda. ¯elastwo w zamian za wykuwanie.", DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda);
 		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Tak, jeœli dostanê za ka¿d¹ dostawê 50 sztuk z³ota.", DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie);	
 };
 
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda()
 {
-	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda_15_00"); //Zgoda. ¯elaztwo wzamian za wykuwanie.
+	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda_15_00"); //Zgoda. ¯elastwo w zamian za wykuwanie.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda_15_01"); //W takim razie czekam na materia³y. Przed ka¿dym zleceniem masz mi przynieœæ 10 sztuk czegoœ, co mogê przetopiæ.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_zgoda_15_02"); //Dopiero potem mo¿esz upominaæ siê o miecz.
 	
@@ -141,7 +140,7 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie()
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniezgoda()
 {
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniezgoda_15_00"); //Zgoda.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniezgoda_15_01"); //No dobra, a wiêc materia³y wzamian za troszkê z³ota i zlecenie projektu.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniezgoda_15_01"); //No dobra, a wiêc materia³y w zamian za trochê z³ota i zlecenie projektu.
 	
 	JanZaplataZaKowalstwo = 2;
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
@@ -156,7 +155,7 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30()
 	
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
 		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Dobijemy.", DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy);	
-		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Nie dobijemy", DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy);
+		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Nie dobijemy.", DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy);
 };
 
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy()
@@ -212,7 +211,7 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_wszyscy()
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_polowa()
 {
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_polowa_15_00"); //Mo¿e jakaœ po³owa z nich.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_polowa_15_01"); //No... Mniej. Ale niewa¿ne - to i tak za ma³o, ¿ebym mia³ zapotrzebowanie na magiczn¹ rudê.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_polowa_15_01"); //No... Mniej. Ale niewa¿ne. To i tak za ma³o, ¿ebym mia³ zapotrzebowanie na magiczn¹ rudê.
 	
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
 		Info_AddChoice	  (DIA_NASZ_106_Jan_WykujeszDlaMnie, "Mogê za³atwiaæ ci surowce.", DIA_NASZ_106_Jan_WykujeszDlaMnie_surowce);

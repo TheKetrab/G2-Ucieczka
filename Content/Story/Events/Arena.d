@@ -179,7 +179,10 @@ var int secRethonKurganFightFinished;
 var int RethonKurganFightFinished;
 var int RethonKurganBeginingOneTime;
 var int RethonKurganAttackOneTime;
+var int RethonKurganFightIterator;
 func void RethonKurganFight() {
+
+	RethonKurganFightIterator += 1;
 
 	// incrementation
 	if (RethonKurganFightFinished  == TRUE) { secRethonKurganFightFinished += 1; };
@@ -187,6 +190,7 @@ func void RethonKurganFight() {
 	// cond
 	if (RethonKurganBeginingOneTime == FALSE) {
 
+		Print("BeginingOneTime");
 		RethonKurganBeginingOneTime = TRUE;
 		
 		NASZ_115_Kurgan.attribute[ATR_STRENGTH] = 100;
@@ -197,16 +201,24 @@ func void RethonKurganFight() {
 		Npc_ClearAIQueue (NASZ_109_Rethon);
 		Npc_ExchangeRoutine (NASZ_109_Rethon, "Arena");
 		
-		Wld_SendTrigger("CAM_RETHON_KURGAN");
+		Wld_SendTrigger("CAM_RETHON_KURGAN"); // TODO untrigger dopiero gdy skoncza walczyc plus kilka sekund, to chyba trzeba ustawic w spacerze, zeby nie robilo automatycznie untriggera
 	};
 	
 	if (Npc_GetDistToWP(NASZ_109_Rethon,"NASZ_LOWCY_ARENA_01") < 700)
 	&& (Npc_GetDistToWP(NASZ_115_Kurgan,"NASZ_LOWCY_ARENA_01") < 700)
 	&& (RethonKurganAttackOneTime == FALSE)
+	&& (RethonKurganFightIterator >= 7) // 7 sekund
 	{	
-		RethonKurganAttackOneTime = TRUE;
+	// TODO bogu spory problem!!! nie atakuja sie wgl... czemu?
+		//Npc_ClearAIQueue (NASZ_115_Kurgan);
 		B_Attack(NASZ_115_Kurgan, NASZ_109_Rethon, AR_NONE, 1);
-		B_Attack(NASZ_109_Rethon, NASZ_115_Kurgan, AR_NONE, 1);
+		
+		//Npc_ClearAIQueue (NASZ_109_Rethon);
+		//B_Attack(NASZ_109_Rethon, NASZ_115_Kurgan, AR_NONE, 1);
+
+		Print("RethonKurganAtakOneTime");
+		RethonKurganAttackOneTime = TRUE;
+		
 	};
 	
 	
@@ -214,7 +226,10 @@ func void RethonKurganFight() {
 	if ((NASZ_109_Rethon.attribute[ATR_HITPOINTS] <= 1)
 	 || (NASZ_115_Kurgan.attribute[ATR_HITPOINTS] <= 1))
 	&& (RethonKurganFightFinished == FALSE)
+	&& (RethonKurganFightIterator >= 10)
 	{		
+		Print("Who won?");
+
 		RethonKurganFightFinished = TRUE;
 		Npc_ExchangeRoutine (NASZ_115_Kurgan, "Start");
 		Npc_ExchangeRoutine (NASZ_109_Rethon, "Start");
@@ -226,9 +241,11 @@ func void RethonKurganFight() {
 	};
 	
 	if (secRethonKurganFightFinished >= 3) {
+		Print("secAfter");
 		secRethonKurganFightFinished = 0;
+		RethonKurganFightIterator = 0;
 		Wld_SendUnTrigger("CAM_RETHON_KURGAN");
-		ff_Remove(RethonKurganFight);
+		ff_Remove(RethonKurganFight); // TODO ten remove chyba jest z³y!!!
 	};
 	
 };

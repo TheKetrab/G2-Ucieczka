@@ -128,6 +128,15 @@ FUNC VOID Rtn_InCastle_115()
 	TA_Stand_WP				(23,00,08,00,"OC_TRAIN_04");
 };
 
+FUNC VOID Rtn_ArenaZamek_115 ()
+{
+	TA_RunToWP		(08,00,23,00,"OC_SMITH_01");
+	TA_RunToWP		(23,00,08,00,"OC_SMITH_01");
+};
+
+
+
+
 FUNC VOID Rtn_UltraFinal_115 ()
 {	
 	TA_Stand_WP		(08,00,22,00,"NASZ_ULTRAFINAL_07");

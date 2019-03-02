@@ -46,6 +46,6 @@ const string	TOPIC_MysliwiTeacher		=   "Nauka w obozie myœliwych";
 const string	TOPIC_Strzaly				=   "Wyrabianie strza³";
 const string	TOPIC_Modlitwa				=   "Modlitwa";
 
-const string	TOPIC_Fabula				=   "Fabu³a";
+const string	TOPIC_Fabula				=   "Moja historia"; // niegdyœ: Fabu³a
 const string	TOPIC_TalentThief			=	"Fach z³odziejski";
 const string	TOPIC_Artefakty				=	"£adowanie artefaktów";

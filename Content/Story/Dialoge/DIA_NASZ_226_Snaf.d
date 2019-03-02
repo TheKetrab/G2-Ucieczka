@@ -321,7 +321,7 @@ FUNC VOID DIA_NASZ_226_Snaf_what_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_what_15_00"); //Wydajesz jedzenie?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_what_55_01"); //Owszem, ale to nie wszystko.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_what_55_02"); //Powinieneœ wiedzieæ, ¿e porz¹dny obiad rozwi¹zuje jêzyk nawet najwiêkszym introwerytkom.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_what_55_02"); //Powinieneœ wiedzieæ, ¿e porz¹dny obiad rozwi¹zuje jêzyk nawet najwiêkszym introwertykom.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_what_55_03"); //Jeœli masz jakiœ problem i chcesz siê czegokolwiek dowiedzieæ, to biegiem do mnie. Za nieznaczn¹ sumkê dowiem siê tego i owego.
 	
 	Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);

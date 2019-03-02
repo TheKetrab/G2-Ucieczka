@@ -288,8 +288,6 @@ FUNC VOID DIA_NASZ_216_Aran_GoKillOrc_Info()
 };
 
 
-// TODO: orkowy papier musi byc nieczytelny dla nas, Aran przeczyta: 'tu jest cos o tym, ze pod palisada jest czysto'
-// TODO: ogarnac ten obozik, te dokumenty u orkow xd
 //*********************************************************************
 //	         HaveList
 //*********************************************************************

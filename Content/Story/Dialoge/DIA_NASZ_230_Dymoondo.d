@@ -47,7 +47,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_siema_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_230_Dymoondo_siema_15_00"); //Kolejny myœliwy?
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_siema_55_01"); //Myœla³em raczej, ¿e pierwszy.
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_siema_55_02"); //Przewa¿nie mo¿na spotkaæ gdzie nie gdzie stra¿ników, ale wszyscy myœliwi przebywaj¹ w obozie.
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_siema_55_02"); //Przewa¿nie mo¿na spotkaæ gdzieniegdzie stra¿ników, ale wszyscy myœliwi przebywaj¹ w obozie.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_siema_55_03"); //No... poza grup¹ Eraka. Ale to ju¿ inna bajka. Spotka³eœ ich ju¿ mo¿e?
 
 	if (npc_knowsinfo (other, DIA_NASZ_205_Mysliwy_siema)){
@@ -194,7 +194,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_help_Info()
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_help_55_05"); //S³uchaj. Jak ju¿ wspomnia³em, jestem pocz¹tkuj¹cym myœliwym.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_help_55_06"); //Nie wiem zbyt wiele o zbieraniu trofeów. Umiem zdejmowaæ futra i wyrywaæ k³y, chocia¿ bardzo tego nie lubiê, bo muszê grzebaæ w paszczy ofiary...
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_help_55_07"); //Chcia³bym nauczyæ siê wyci¹gania pazurów. Hunt uwielbia pazury!
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_help_55_08"); //Powiedz mi jak to zrobiæ.
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_help_55_08"); //Powiedz mi, jak to zrobiæ.
 
 	Log_CreateTopic (TOPIC_Dymoondo_nauka, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Dymoondo_nauka, LOG_RUNNING);
@@ -235,7 +235,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_teach_Info()
 		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_teach_55_03"); //To wszystko?
 		AI_Output (other, self,"DIA_NASZ_230_Dymoondo_teach_15_04"); //Tak.
 		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_teach_55_05"); //Innosie! Przecie¿ to wcale nie jest takie trudne.
-		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_teach_55_06"); //Dziêki przyjacielu.
+		AI_Output (self, other,"DIA_NASZ_230_Dymoondo_teach_55_06"); //Dziêki, przyjacielu.
 
 		DYMOONDO_PAZURY = TRUE;
 		DodajReputacje (1, REP_MYSLIWI);

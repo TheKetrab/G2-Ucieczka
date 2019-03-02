@@ -865,6 +865,7 @@ INSTANCE DIA_NASZ_201_Erak_CanIHelpKap4   (C_INFO)
 FUNC INT DIA_NASZ_201_Erak_CanIHelpKap4_Condition()	
 {
 	if (npc_knowsinfo (other, DIA_NASZ_201_Erak_Kapitel4))
+	&& (!MissionPlagaCiemnosciFinished)
 	{
 			return TRUE;
 	};
@@ -876,7 +877,6 @@ FUNC VOID DIA_NASZ_201_Erak_CanIHelpKap4_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_CanIHelpKap4_55_01"); //By³oby wspaniale... Ale nie znam siê na tym.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_CanIHelpKap4_55_02"); //Póki co zanieœ raport Kerolothowi.
 
-	// TODO: jesli misja ukonczona to nie mozna porozmawiac na ten temat
 	Log_CreateTopic (TOPIC_Erak_plagaciemnosci, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_RUNNING);
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "W Górniczej Dolinie jakiœ czas temu pojawi³a siê plaga ciemnoœci. Bardzo zawiedzeni s¹ tym myœliwi, którzy nie maj¹ ludzi do obrony przed demonami. Tylko mag mo¿e mi pomóc rozwik³aæ ten problem.");

@@ -125,7 +125,7 @@ func void DIA_NASZ_223_Ratford_Teach_Info ()
 	else
 	{
 	
-		AI_Output			(self, other, "DIA_NASZ_223_Ratford_Teach_03_03"); //Co teraz?
+		AI_Output			(self, other, "DIA_NASZ_223_Ratford_Teach_03_03"); //Czego teraz?
 
 		Info_ClearChoices	(DIA_NASZ_223_Ratford_Teach);	
 		Info_AddChoice		(DIA_NASZ_223_Ratford_Teach, DIALOG_BACK, DIA_NASZ_223_Ratford_Teach_BACK);
@@ -439,8 +439,8 @@ FUNC VOID DIA_NASZ_223_Ratford_koniec_Info()
 	AI_Output (other,self ,"DIA_NASZ_223_Ratford_koniec_15_02"); //Znalaz³em tak¹ pi³ê.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_03"); //Oddaj mi j¹. Schowam j¹ przed Cappelem. Przyda mi siê, w razie gdyby drwal og³osi³, ¿e odda parê sztuk z³ota uczciwemu znalazcy.
 	B_giveinvitems (other, self, ItNa_ZapasowaPila, 1);
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_04"); //Nawet nie wiesz, jacy g³upi i œlepi s¹ ludzi. Ju¿ nie raz odwala³em takie akcje i nieŸle siê na tym wzbogaci³em.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_05"); //NieŸle siê spisa³eœ. Masz tutaj parê z³ociszy.	
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_04"); //Nawet nie wiesz, jacy g³upi i œlepi s¹ ludzie. Ju¿ nie raz odwala³em takie akcje i nieŸle siê na tym wzbogaci³em.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_05"); //NieŸle siê spisa³eœ. Masz tutaj parê z³otych monet.
 	
 	Createinvitems (self, itmi_gold, 50);
 	B_giveinvitems (self, other, itmi_gold, 50);

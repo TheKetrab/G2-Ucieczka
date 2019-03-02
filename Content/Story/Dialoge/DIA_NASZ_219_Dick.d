@@ -198,7 +198,7 @@ FUNC VOID DIA_NASZ_219_Dick_ziele_finish_Info()
 	B_giveinvitems (other, self, ItNa_PaczkaZiela, 1);
 	Createinvitems (self, ItMi_Joint, 1);	
 	B_UseItem (self, ItMi_Joint);
-	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_finish_55_02"); //Ah! Tak. Tego potrzebowa³em.
+	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_finish_55_02"); //Ahh! Tak. Tego potrzebowa³em.
 	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_finish_55_03"); //Oto twoja zap³ata. Chcia³eœ bucha, prawda? Zapalimy razem.
 
 	Createinvitems (self, ItMi_Joint, 2);
@@ -273,7 +273,7 @@ INSTANCE DIA_NASZ_219_Dick_DobarKupowanie   (C_INFO)
 	description = "Sprzedaj mi Mrok Pó³nocy. (125 szt. z³ota)";
 };
 
-FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()	
+FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_219_Dick_Dobar) && npc_knowsinfo (other, DIA_NASZ_219_Dick_ziele_finish))
 	&& (DobarMrokPolnocyKupiony == FALSE)
@@ -284,6 +284,7 @@ FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()
 
 FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 {
+	// TODO czy to dziala dobrze? test
 	AI_Output (other, self,"DIA_NASZ_219_Dick_DobarKupowanie_15_00"); //Sprzedaj mi ziele.
 	
 	if (npc_hasitems(other,ItMi_Gold) < 125) {

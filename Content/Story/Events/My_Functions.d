@@ -33,8 +33,8 @@ func int Jan_Placenie_Mam(var int rodzaj) {
 	+ npc_hasitems(hero,ItMw_2H_OrcSword_01)
 	;
 	
-	print(IntToString(rodzaj));
-	print(IntToString(suma));
+	//print(IntToString(rodzaj));
+	//print(IntToString(suma));
 	
 	
 	if(rodzaj==1 || rodzaj==2) && (suma>=10) { return true; }

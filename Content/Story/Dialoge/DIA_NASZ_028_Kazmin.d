@@ -1,4 +1,14 @@
 
+func void KAZMIN_GATE_DEAD() {
+
+	if (Npc_IsPlayer(self) && WillMozeIscDoKazmina == FALSE) {
+		B_KillNpc(self);
+	};
+
+};
+
+
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -56,11 +66,10 @@ INSTANCE DIA_NASZ_028_Kazmin_Spotkanie   (C_INFO)
 
 FUNC INT DIA_NASZ_028_Kazmin_Spotkanie_Condition()
 {
-	//TODO:
-	//if (swiatyniajestotwarta)
-	//{
+	if (WillMozeIscDoKazmina == TRUE)
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_028_Kazmin_Spotkanie_Info()
@@ -100,8 +109,12 @@ func void DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie()
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_02"); //Jednak aby siê to sta³o, potrzebujemy po³¹czyæ nasze dusze. Demon, cz³owiek, ork i o¿ywieniec.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_03"); //Mam tutaj miksturê, w której zmieszane s¹ ju¿ trzy gatunki. Potrzeba tylko ludzkiej czêœci i w³aœnie dlatego czekamy tutaj na ciebie.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_04"); //Wypij to, a bêdziemy gotowi stan¹æ przeciwko bogom. Jednak pamiêtaj: Musisz tego bardzo chcieæ, gdy¿ inaczej magia nie zadzia³a.
-	//TODO: drink cos tam
+	
+	CreateInvItems(self,ItNa_PoteznyWywar,1);
+	B_GiveInvItems(self,other);
+	AI_UseItem(hero,ItNa_PoteznyWywar);
 	hero.attribute[ATR_HITPOINTS] /= 3; // zmniejsza hp o dwie trzecie tego co sie ma
+
 	AI_Output (other, self,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_05"); //Aaargh! Co siê ze mn¹ sta³o?!
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_06"); //To tylko chwilowe os³abienie. ALE NIE ZD¥¯YSZ JU¯ SIÊ POZBIERAÆ! ZARAZ NADEJDZIE ZAÆMIENIE, A JA WYKORZYSTAM TEN CZAS, BY STAÆ SIÊ NOWYM BOGIEM!
 	AI_Output (other, self,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_07"); //O co chodzi z tym ca³ym zaæmieniem?

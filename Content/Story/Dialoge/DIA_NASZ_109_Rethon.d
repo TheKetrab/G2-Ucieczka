@@ -97,7 +97,7 @@ FUNC VOID DIA_NASZ_109_Rethon_presiema_cd()
 	
 	Log_CreateTopic (TOPIC_Rethon_szkolenie, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Rethon_szkolenie, LOG_RUNNING);
-	B_LogEntry (TOPIC_Rethon_szkolenie, "Faktycznie, trening z Rethoenm przyniós³ niemal natychmiastowe skutki. Teraz chce, abym wyzwa³ ³owców trenuj¹cych w jego pobli¿u na pojedynek. Obawiam siê, ¿e wynik bêdzie z góry przes¹dzony, lecz czego siê nie robi dla praktyki?");
+	B_LogEntry (TOPIC_Rethon_szkolenie, "Faktycznie, trening z Rethonem przyniós³ niemal natychmiastowe skutki. Teraz chce, abym wyzwa³ ³owców trenuj¹cych w jego pobli¿u na pojedynek. Obawiam siê, ¿e wynik bêdzie z góry przes¹dzony, lecz czego siê nie robi dla praktyki?");
 
 	Lowca123_PojedynekDoRozegrania = TRUE;
 	Lowca108_PojedynekDoRozegrania = TRUE;
@@ -108,7 +108,7 @@ FUNC VOID DIA_NASZ_109_Rethon_presiema_not()
 {
 	AI_Output (other,self ,"DIA_NASZ_109_Rethon_presiema_not_15_00"); //Nigdy nie by³em zbyt dobrym wojownikiem.
 	AI_Output (other,self ,"DIA_NASZ_109_Rethon_presiema_not_15_01"); //Przynajmniej je¿eli chodzi o orê¿ do walki wrêcz. Czêœciej mia³em do czynienia z ³ukami b¹dŸ kuszami, ni¿ z mieczami.
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_not_55_02"); //To nieco komplikujê sytuacjê.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_not_55_02"); //To nieco komplikuje sytuacjê.
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_not_55_03"); //Lecz nie z takich robi³em wojowników! Na pocz¹tek proponujê ma³¹ rozgrzewkê dla twoich miêœni jak i d³oni, by przyzwyczai³y siê do odpowiedniego chwytu miecza.
 	
 	DIA_NASZ_109_Rethon_presiema_cd();
@@ -165,7 +165,7 @@ FUNC VOID DIA_NASZ_109_Rethon_FightWithAll_Info()
 		B_LogEntry (TOPIC_Rethon_szkolenie, "Mimo tego, ¿e nie wyszed³em zwyciêsko z ka¿dej potyczki, Rethon by³ ze mnie zadowolony.");
 	}
 	else {
-		AI_Output (other, self,"DIA_NASZ_109_Rethon_FightWithAll_55_04"); //Pokona³em wszystkich, z którymi mia³em walczyæ!
+		AI_Output (other, self,"DIA_NASZ_109_Rethon_FightWithAll_55_04"); //Da³em im radê.
 		AI_Output (self, other,"DIA_NASZ_109_Rethon_FightWithAll_55_05"); //Doprawdy? Widocznie ch³opcom przyda siê wiêcej treningu, skoro pokona³ ich nowy przybysz.
 		
 		if(Lowca123_PojedynekWzietaTrucizna == TRUE) {
@@ -201,10 +201,11 @@ INSTANCE DIA_NASZ_109_Rethon_zadanie   (C_INFO)
 
 FUNC INT DIA_NASZ_109_Rethon_zadanie_Condition()
 {
-	if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
-	{
+	// TODO odkomentowac
+	//if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
+	//{
 		return TRUE;
-	};
+	//};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_zadanie_Info()
@@ -312,20 +313,21 @@ INSTANCE DIA_NASZ_109_Rethon_after   (C_INFO)
  	condition   = DIA_NASZ_109_Rethon_after_Condition;
  	information = DIA_NASZ_109_Rethon_after_Info;
  	permanent   = FALSE;
- 	description = "No, i jak?";
+ 	description = "No i jak?";
 };
 
 FUNC INT DIA_NASZ_109_Rethon_after_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_115_Kurgan_rethon3))
-	{
+	// TODO odkomentowaæ !!!
+	//if (RethonKurganFightFinished == TRUE)
+	//{
 		return TRUE;
-	};
+	//};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_after_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_109_Rethon_after_15_00"); //No, i jak?
+	AI_Output (other,self ,"DIA_NASZ_109_Rethon_after_15_00"); //No i jak?
 
 	if (RethonLostWithKurgan == TRUE) {
 		AI_Output (self, other,"DIA_NASZ_109_Rethon_after_55_01"); //Wygl¹da na to, ¿e przegra³em. Ale przynajmniej troszkê siê rozerwa³em.

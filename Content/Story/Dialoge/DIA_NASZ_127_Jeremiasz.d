@@ -298,7 +298,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_WouldYouTeach_Info()
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_WouldYouTeach_55_01"); //Nie uwa¿am siê za dobrego nauczyciela, ale jeœli bardzo chcesz, mo¿emy porozmawiaæ trochê o zio³ach.
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_WouldYouTeach_55_02"); //Zanim zacz¹³em zajmowaæ siê przygotowywaniem ry¿ówki dla obiboków z Nowego Obozu, by³em pomocnikiem jednego z myrtañskich znachorów.
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_WouldYouTeach_55_03"); //Na stole alchemicznym mo¿na utworzyæ miksturê lecznicz¹, ale to wiedza zarezerwowana tylko dla niewielkiej garstki osób.
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_WouldYouTeach_55_04"); //Jednak ¿eby wzmocniæ dzia³anie, zió³ wystarczy odpowiednio obchodziæ siê ze sto³em destylacyjnym, którego obecnie u¿ywam do produkcji niektórych trunków.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_WouldYouTeach_55_04"); //Jednak, ¿eby wzmocniæ dzia³anie zió³, wystarczy odpowiednio obchodziæ siê ze sto³em destylacyjnym, którego obecnie u¿ywam do produkcji niektórych trunków.
 
 	Log_CreateTopic (TOPIC_LowcyTeacher,LOG_NOTE);
 	B_LogEntry (TOPIC_LowcyTeacher,"Jeremiasz mo¿e mnie nauczyæ lepszego wykorzystywania zió³.");

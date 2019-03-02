@@ -1,3 +1,8 @@
+// TODO ogarn¹æ czy dobrze dzia³a arena w zamku w kap4
+
+var int KurganArenaQuest; // 0 - nieaktywny, 1 - aktywny, 2 - ukonczony
+
+
 var int Kurgan_rethon;
 var int Kurgan_walka;
 var int Kurgan_OK;
@@ -199,7 +204,7 @@ func void HeroWannaFightArena() {
 	}
 	
 	else if (Wld_IsTime(09,00,19,00)) {
-		AI_Output (self, other,"HeroWannaFightArena_55_08"); //Walki odbywaj¹ siê tylko wieczorami.
+		AI_Output (self, other,"HeroWannaFightArena_55_04"); //Walki odbywaj¹ siê tylko wieczorami.
 	};
 
 
@@ -259,6 +264,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_fed_Info()
 		Log_CreateTopic (TOPIC_Kurgan_arena, LOG_MISSION);
 		Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_RUNNING);
 		B_LogEntry (TOPIC_Kurgan_arena, "Kurgan, ³owca orków, organizuje walki na arenie. Szykuje siê niez³a zabawa.");
+		KurganArenaQuest = 1;
 
 		Info_ClearChoices (DIA_NASZ_115_Kurgan_fed);
 		if (npc_hasitems (other, ItMI_gold) >=100){
@@ -779,7 +785,32 @@ FUNC INT DIA_NASZ_115_Kurgan_GodarHokurnWon_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_00"); //Jesteœ mistrzem. Brawo!
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_01"); //Wyj¹tkowe widowisko. Oczywiœcie nagroda pieniê¿na! 800 sztuk dla ciebie.
+	
+	/* KAPITEL 4 */
+	if (KAPITEL >= 4) {
+	
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_01"); //Ale jest jeszcze jedna osoba, która mo¿e pogrzebaæ tw¹ dumê.
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_02"); //Stocz walkê ze mn¹! Zobaczymy, czy dasz radê tak¿e mi. ChodŸ!
+		
+		B_LogEntry(TOPIC_Kurgan_arena,"Pokona³em Godara i Hokurna. Pora na najpotê¿niejszego gladiatora, czyli szefa areny.");
+		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
+		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
+		B_GivePlayerXP (800);
+		DodajReputacje (5, REP_LOWCY);
+		Kurgan_walka=5;
+
+		Npc_ExchangeRoutine(self,"ArenaZamek");
+		AI_StopProcessInfos(self);
+		
+		return;
+	};
+	
+	// ----- ----- ----- ----
+	
+	
+	
+	
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_03"); //Wyj¹tkowe widowisko. Oczywiœcie nagroda pieniê¿na! 800 sztuk dla ciebie.
 
 	DodajReputacje (5, REP_LOWCY);
 	B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Godara i Hokurna.");
@@ -791,6 +822,11 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 	Kurgan_walka=0;
 	GODARHOKURN_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
+};
+
+
+func void KurganSay_YoudBetterKillOrc() {
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_YoudBetterKillOrc_55_00"); //Lepiej idŸ polowaæ na orków. Nie marnuj si³y na g³upie potyczki.
 };
 
 //*********************************************************************
@@ -819,7 +855,26 @@ FUNC INT DIA_NASZ_115_Kurgan_GodarHokurnLost_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnLost_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_00"); //O stary... Walka wyj¹tkowa.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_01"); //Ale jedyny klucz do nastêpnej walki to wygraæ z tymi dwoma.
+	
+	/* KAPITEL 4 */
+	if (KAPITEL >= 4) {
+	
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_01"); //Ale nie wygra³eœ, zatem nie mo¿esz szczyciæ siê tytu³em mistrza areny.
+		KurganSay_YoudBetterKillOrc();
+		
+		B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez dwóch wojowników. Niestety, okaza³o siê to dla mnie za du¿o.");
+		Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
+		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
+		Kurgan_walka=0;
+
+		
+		return;
+	};
+	
+	// ----- ----- ----- ----
+	
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_02"); //Ale jedyny klucz do nastêpnej walki to wygraæ z tymi dwoma.
 	Npc_ExchangeRoutine(NASZ_113_Godar, "START");
 	Npc_ExchangeRoutine(NASZ_114_Hokurn, "START");
 	Kurgan_walka=0;
@@ -939,6 +994,38 @@ FUNC VOID DIA_NASZ_115_Kurgan_arena_Info()
 };
 
 //*********************************************************************
+//	ArenaZamek
+//*********************************************************************
+INSTANCE DIA_NASZ_115_Kurgan_ArenaZamek   (C_INFO)
+{
+	npc         = NASZ_115_Kurgan;
+ 	nr          = 91;
+ 	condition   = DIA_NASZ_115_Kurgan_ArenaZamek_Condition;
+ 	information = DIA_NASZ_115_Kurgan_ArenaZamek_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_115_Kurgan_ArenaZamek_Condition()
+{
+	if (Kurgan_walka==5)
+	&& (Npc_GetDistToWP(other,"OC_SMITH_01") < 600)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_115_Kurgan_ArenaZamek_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaZamek_55_00"); //Gotuj broñ. Powodzenia.
+	AI_StopProcessInfos (self);
+	B_Attack(self, other, AR_NONE, 1);
+
+};
+
+
+
+//*********************************************************************
 //	DuchPrzyzwany
 //*********************************************************************
 INSTANCE DIA_NASZ_115_Kurgan_DuchPrzyzwany   (C_INFO)
@@ -981,6 +1068,14 @@ FUNC VOID DIA_NASZ_115_Kurgan_DuchPrzyzwany_end()
 	B_Attack(NASZ_401_Kurgan, other, AR_NONE, 1);
 };
 
+
+func void KurganSay_YouArePro() {
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_00"); //Jako ¿e jesteœ nowym mistrzem, dostaniesz równie¿ wspania³e ostrze.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_01"); //Zg³oœ siê po nie u Jana.
+};
+
+
+
 var int JestesMistrzemAreny;
 //*********************************************************************
 //	Kurgan Won
@@ -1007,19 +1102,38 @@ FUNC INT DIA_NASZ_115_Kurgan_kurganwon_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganwon_55_00"); //Wygl¹da na to, ¿e mamy nowego mistrza areny.
+	
+	/* KAPITEL 4 */
+	if (KAPITEL >= 4) {
+	
+		YouArePro();
+	
+		B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Kurgana i zosta³em mistrzem areny.");
+		JestesMistrzemAreny = TRUE;
+		DodajReputacje (6, REP_LOWCY);
+		B_GivePlayerXP (1000);
+		Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_SUCCESS);
+		KurganArenaQuest = 2;
+		Npc_ExchangeRoutine(NASZ_115_Kurgan, "InCastle");
+		Kurgan_walka=0;
+	
+		return;
+	};
+	
+	
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganwon_55_01"); //Przyjmij moje gratulacje, no i pieni¹dze oczywiœcie.
 
 	B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Kurgana i zosta³em mistrzem areny.");
 	Createinvitems (self, itmi_gold, 2000);
 	B_Giveinvitems (self, other, itmi_gold, 2000);
 
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganwon_55_02"); //Jako ¿e jesteœ nowym mistrzem, dostaniesz równie¿ wspania³e ostrze.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganwon_55_03"); //Zg³oœ siê po nie u Jana.
+	YouArePro();
 
 	JestesMistrzemAreny = TRUE;
 	DodajReputacje (6, REP_LOWCY);
 	B_GivePlayerXP (1000);
 	Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_SUCCESS);
+	KurganArenaQuest = 2;
 	Npc_ExchangeRoutine(NASZ_115_Kurgan, "START");
 	Kurgan_walka=0;
 	WalkaTrwa = FALSE;
@@ -1050,7 +1164,22 @@ FUNC INT DIA_NASZ_115_Kurgan_kurganlost_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_kurganlost_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_00"); //Wygra³em.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_01"); //Ale spodziewam siê, ¿e wyzwiesz mnie jeszcze raz.
+	
+	/* KAPITEL 4 */
+	if (KAPITEL >= 4) {
+
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_01"); //W sumie nie dziwiê siê, m³odzieñcze.
+		KurganSay_YoudBetterKillOrc();
+		
+		B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez Kurgana.");
+		Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		Npc_ExchangeRoutine(self, "InCastle");
+		Kurgan_walka=0;
+	
+		return;
+	};
+	
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_02"); //Ale spodziewam siê, ¿e wyzwiesz mnie jeszcze raz.
 	Npc_ExchangeRoutine(NASZ_115_Kurgan, "START");
 	Kurgan_walka=0;
 	WalkaTrwa = FALSE;
@@ -1194,7 +1323,7 @@ INSTANCE DIA_NASZ_115_Kurgan_goth   (C_INFO)
  	condition   = DIA_NASZ_115_Kurgan_goth_Condition;
  	information = DIA_NASZ_115_Kurgan_goth_Info;
  	permanent   = FALSE;
-	description = "Podobno dokonano napadu na Myœlwych.";
+	description = "Podobno dokonano napadu na myœliwych.";
 };
 
 FUNC INT DIA_NASZ_115_Kurgan_goth_Condition()	
@@ -1208,7 +1337,7 @@ FUNC INT DIA_NASZ_115_Kurgan_goth_Condition()
 
 FUNC VOID DIA_NASZ_115_Kurgan_goth_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_115_Kurgan_goth_15_00"); //Podobno dokonano napadu na myœlwych.
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_goth_15_00"); //Podobno dokonano napadu na myœliwych.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_goth_55_01"); //I dlaczego przychodzisz z tym do mnie? Coo?!
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_goth_55_02"); //Zapomnij kole¿ko. Nic tu po tobie.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_goth_55_03"); //I nie rozmawiaj nawet z moimi ch³opakami. Oni i tak nic ci nie powiedz¹.
@@ -1232,8 +1361,8 @@ INSTANCE DIA_NASZ_115_Kurgan_WhatWithArena   (C_INFO)
 
 FUNC INT DIA_NASZ_115_Kurgan_WhatWithArena_Condition()	
 {
-	if (Npc_GetDistToWP	(self, "OW_PATH_190") <= 1000)
-	  && (npc_knowsinfo (other, DIA_NASZ_115_Kurgan_kurganwon))
+	if (Npc_GetDistToWP	(self, "OW_PATH_190") <= 1000) // twierdza
+	&& (KurganArenaQuest == 1)
 	{
 		return TRUE;
 	};
@@ -1245,6 +1374,70 @@ FUNC VOID DIA_NASZ_115_Kurgan_WhatWithArena_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_WhatWithArena_15_01"); //Jak to co? Gdy tylko rozwalimy orków, wracamy do naszych potyczek!
 
 };
+
+var int HeroChceWalczycNaArenieWZamku;
+//*********************************************************************
+//	Info ArenaKap4
+//*********************************************************************
+// UWAGA: w kap4 mozna walczyc TYLKO po jednym razie, jak sie przegra to mission failed !!!
+INSTANCE DIA_NASZ_115_Kurgan_ArenaKap4   (C_INFO)
+{
+	npc         = NASZ_115_Kurgan;
+ 	nr          = 401;
+ 	condition   = DIA_NASZ_115_Kurgan_ArenaKap4_Condition;
+ 	information = DIA_NASZ_115_Kurgan_ArenaKap4_Info;
+ 	permanent   = TRUE;
+	description = "Chcia³bym stoczyæ walkê na arenie...";
+};
+
+FUNC INT DIA_NASZ_115_Kurgan_ArenaKap4_Condition()	
+{
+	if (KAPITEL >= 4)
+	&& (KurganArenaQuest == 1)
+	&& (HeroChceWalczycNaArenieWZamku == FALSE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_115_Kurgan_ArenaKap4_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_ArenaKap4_15_00"); //Chcia³bym stoczyæ walkê na arenie...
+
+	if (Wld_IsTime(21,00,23,59)) || (Wld_IsTime(00,00,06,00))
+	{
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_01"); //Mój drogi wojowniku! O tej godzinie siê œpi albo biesiaduje, a nie walczy!
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_02"); //PrzyjdŸ za dnia, wtedy o tym porozmawiamy. A tym czasem napij siê ze mn¹ piwa i opowiedz jakiœ kawa³!
+		return;
+	}
+
+	HeroChceWalczycNaArenieWZamku = TRUE;
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_03"); //A niech ciê, tobie ci¹gle ma³o! Zaraz coœ wykombinujemy. Pokona³eœ ju¿ Godara i Hokurna?
+	
+	if (npc_knowsinfo(other,DIA_NASZ_115_Kurgan_GodarHokurnWon)) {
+		AI_Output (other, self,"DIA_NASZ_115_Kurgan_ArenaKap4_15_04"); //Tak.
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_05"); //W takim razie zosta³em ju¿ tylko ja. Miejmy za sob¹ tê potyczkê. ChodŸ za mn¹!
+		Kurgan_walka = 5;
+		Npc_ExchangeRoutine(self,"ArenaZamek");
+	} else {
+		AI_Output (other, self,"DIA_NASZ_115_Kurgan_ArenaKap4_15_06"); //Nie.
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_07"); //A wiêc jazda, ju¿! Ch³opaki na pewno chêtnie spior¹ ci ty³ek. Do walki!
+		Kurgan_walka = 4;
+		B_StartOtherRoutine(NASZ_113_Godar,"ArenaZamek");
+		B_StartOtherRoutine(NASZ_114_Hokurn,"ArenaZamek");
+	};
+
+	AI_StopProcessInfos();
+};
+
+
+
+
+
+
+
+
+
 
 //*********************************************************************
 //	Info SzturmNaZamek

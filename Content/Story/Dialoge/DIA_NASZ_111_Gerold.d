@@ -73,11 +73,11 @@ FUNC INT DIA_NASZ_111_Gerold_nuda_Condition()
 FUNC VOID DIA_NASZ_111_Gerold_nuda_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_nuda_15_00"); //Nudzisz siê? W obozie jest przecie¿ du¿o pracy.
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_01"); //Mo¿e to dziwnie zabrzmi, ale jestem przyzwyczajony do pilnowania drzwi, bram, i innych.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_01"); //Mo¿e to dziwnie zabrzmi, ale jestem przyzwyczajony do pilnowania drzwi, bram i innych.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_02"); //To dopiero nudne, prawda?
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_nuda_15_03"); //Wiêc czemu nie strze¿esz którejœ z bram?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_04"); //Có¿, Keroloth jest naszym przywódc¹, a tak siê jakoœ z³o¿y³o, ¿e ten cz³owiek nigdy mnie nie lubi³.
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_05"); //Teraz po prostu nie chce, bym ja pilnowa³ bram. To prawda, by³ pewien incydent, w którym umówi³em siê z pewnym goœciem na przekazanie mi trochê ¿arcia.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_05"); //Teraz nie chce, bym ja pilnowa³ bram. W sumie siê mu trochê nie dziwiê. Jeszcze w zamku dosz³o do 'incydentu', umówi³em siê z pewnym goœciem, by przekaza³ mi trochê ¿arcia w kaplicy.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_06"); //Opuœci³em w nocy swoje stanowisko i w³aœnie w tamtym momencie do wiêzienia wgramoli³y siê olbrzymie szczury. WiêŸniowie wrzeszczeli, a Keroloth pobieg³ tam, by zrobiæ porz¹dek z gryzoniami.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_07"); //Srogo mnie ochrzani³, ale przyrzek³em, ¿e ju¿ nigdy nie odejdê od miejsca, którego pilnujê.
 };
@@ -278,7 +278,7 @@ FUNC VOID DIA_NASZ_111_Gerold_goth_Info()
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_goth_15_00"); //Czy wiesz coœ o sporach pomiêdzy myœliwymi i ³owcami?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_goth_55_01"); //Kilka dni temu ktoœ okrad³ myœliwych.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_goth_55_02"); //Niby wina spad³a na nas, ³owców, ale ja myœlê, ¿e to sprawka kogoœ z myœliwych, komu zale¿y na zwadzie pomiêdzy naszymi obozami.
-	AI_Output (other, self,"DIA_NASZ_111_Gerold_goth_15_03"); //Tylko czemu mia³o by to s³u¿yæ?
+	AI_Output (other, self,"DIA_NASZ_111_Gerold_goth_15_03"); //Tylko czemu mia³oby to s³u¿yæ?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_goth_55_04"); //Nie mam pojêcia. Jestem tutaj bezpieczny i nie obchodz¹ mnie potyczki miêdzy naszymi obozami.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_goth_55_05"); //To nie mój problem.
 
@@ -469,7 +469,7 @@ FUNC VOID DIA_NASZ_111_Gerold_GlodQuest_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_GlodQuest_15_00"); //Wygl¹da na to, ¿e spodoba³a ci siê twoja nowa praca.
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_GlodQuest_55_01"); //Ca³ymi dniami bez zmru¿enia oka stoisz na posterunku. Jak ty to robisz?
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_15_02"); //Przypominasz mi jednego goœcia z zamku, który te¿ siê o to pyta³, kiedy chcia³ odwiedziæ swojego kumpla w lochach. Nazywa³ siê bodaj¿e Gorn, i sprawia³ nam same k³opoty.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_15_02"); //Przypominasz mi jednego goœcia z zamku, który te¿ siê o to pyta³, kiedy chcia³ odwiedziæ swojego kumpla w lochach. Nazywa³ siê bodaj¿e Gorn i sprawia³ nam same k³opoty.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_03"); //Mówiê ci, dopiero kiedy dobra³o siê do niego czterech paladynów zdo³aliœmy zaci¹gn¹æ go do celi. Jeszcze nigdy nie widzia³em tak silnego faceta.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_04"); //Odpowiadaj¹c jednak na twoje pytanie: Dziêki ³asce naszego pana Innosa nie groŸny mi sen, ani tym bardziej zmêczenie.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_GlodQuest_55_05"); //To dar jaki otrzyma³em za wiern¹ s³u¿bê. Jednak jest pewien mankament...

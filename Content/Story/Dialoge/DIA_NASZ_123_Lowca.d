@@ -100,7 +100,7 @@ func void DIA_NASZ_123_Lowca_pojedynek_Info ()
 	AI_Output		(other, self, "DIA_NASZ_123_Lowca_pojedynek_55_00"); //Przyszed³em spróbowaæ swoich si³ w walce.
 	AI_Output		(self, other, "DIA_NASZ_123_Lowca_pojedynek_03_01"); //Hej, to nie jest arena! A mo¿e ja nie chcê z tob¹ walczyæ?
 	AI_Output		(other, self, "DIA_NASZ_123_Lowca_pojedynek_55_02"); //Ale ja chcê z tob¹. Jeœli wyci¹gnê miecz, bêdziesz musia³ siê broniæ. Dalej ciê nie przekona³em?
-	AI_Output		(self, other, "DIA_NASZ_123_Lowca_pojedynek_03_03"); //Czekaj, czekaj. Mo¿e to ja ciê do czegoœ przekonam? Za 30 sztuk z³ota i sprzedam ci truciznê, a ty zostawisz mnie w spokoju.
+	AI_Output		(self, other, "DIA_NASZ_123_Lowca_pojedynek_03_03"); //Czekaj, czekaj. Mo¿e to ja ciê do czegoœ przekonam? Za 30 sztuk z³ota sprzedam ci truciznê, a ty zostawisz mnie w spokoju.
 	AI_Output		(self, other, "DIA_NASZ_123_Lowca_pojedynek_55_04"); //To wyj¹tkowo dobra cena!
 
 	
@@ -183,9 +183,9 @@ FUNC VOID DIA_NASZ_123_Lowca_PoWalce_Info()
 	
 	if (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) {
 		AI_Output (self, other,"DIA_NASZ_123_Lowca_PoWalce_15_00"); //A niech ciê, ale umiesz przy³o¿yæ! ¯a³ujê, ¿e nie da³em rady ciê przekupiæ. Oszczêdzi³bym trochê siniaków.
-		AI_Output (other, self,"DIA_NASZ_123_Lowca_PoWalce_55_01"); //Z orkami nie pogadasz. W takim starciu liczyæ siê bêdzie tylko si³a, wiêc lepiej trenuj mieczem a nie jêzykiem!
+		AI_Output (other, self,"DIA_NASZ_123_Lowca_PoWalce_55_01"); //Mo¿e i tak, ale sprawiedliwa walka to dobry trening. Dziêki za walkê!
 
-		B_LogEntry (TOPIC_Rethon_szkolenie, "£owca za³atwiony. Dobrze, ¿e nie da³em siê na mówiæ na truciznê zamiast walki, bo jeszcze Rethon krzywo by na to patrzy³.");
+		B_LogEntry (TOPIC_Rethon_szkolenie, "£owca za³atwiony. Dobrze, ¿e nie da³em siê namówiæ na truciznê zamiast walki, bo jeszcze Rethon krzywo by na to patrzy³.");
 		B_GivePlayerXP (200);
 	}
 	else {

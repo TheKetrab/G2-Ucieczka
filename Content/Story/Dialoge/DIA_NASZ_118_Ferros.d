@@ -185,23 +185,20 @@ FUNC INT DIA_NASZ_118_Ferros_PodkrazoneOczy_Condition()
 FUNC VOID DIA_NASZ_118_Ferros_PodkrazoneOczy_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_PodkrazoneOczy_15_00"); //Wygl¹dasz, jakbyœ nie spa³ przez tydzieñ.
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_01"); //Bardzo œmieszne ¿artownisiu. Mo¿e zamiast wypominaæ mi oczywiste rzeczy, powiesz coœ, o czym nie wiem.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_01"); //Bardzo œmieszne, ¿artownisiu. Mo¿e zamiast wypominaæ mi oczywiste rzeczy, powiesz coœ, o czym nie wiem.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_02"); //Wybacz, ostatnio jestem strasznie rozdra¿niony. To wszystko przez te przeklête koszmary, jakie nawiedzaj¹ mnie ka¿dej nocy.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_03"); //Nie mogê ju¿ z nimi wytrzymaæ! Gdybyœ widzia³ to, co ja...
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_04"); //Te wszystkie obrazy, s¹ niemal tak realistyczne, ¿e jestem w stanie ich dotkn¹æ, a nawet poczuæ ich dotyk na moich zmys³ach.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_04"); //Obrazy w mojej g³owie s¹ tak realistyczne, ¿e jestem wrêcz w stanie ich dotkn¹æ.
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_05"); //Co konkretnie ci siê œni?
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_06"); //Ka¿dej nocy jest dok³adnie tak samo:
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_07"); //Budzê siê poœród ciemnoœci, która przenika umys³ w taki sposób, jakby czyta³a wszystkie moje myœli. Podczas tego wszystkiego stojê na kamiennej p³ycie.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_08"); //Nim zd¹¿ê siê rozejrzeæ wszystko siê rozpada, a ja sam spadam w nieprzeniknion¹ otch³añ, gdzie widz¹ sylwetki moich martwych towarzyszy. 
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_09"); //Ich twarze s¹ tak realistyczne, i¿ niemal mogê ich dotkn¹æ.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_10"); //Do teraz widzê ich agonalne twarze, proszê pomó¿ mi, bo czujê, ¿e ju¿ nied³ugo si¹dzie mi to wszystko na g³owê i zwariujê.
-	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_11"); //Niestety, ale nie mogê ci pomóc. Nie znam cz³owieka, który by³by w stanie uleczyæ czyjeœ koszmary.
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_12"); //Wiesz co? Nawet mnie to nie dziwi, nikt ju¿ nie przejmuje siê losem drugiego cz³owieka.
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_13"); //ZejdŸ mi z oczu, bo zaraz stracê cierpliwoœæ.
-	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_14"); //Spróbujê ci pomoc, ale nie wiem nawet od czego zacz¹æ. Mo¿e masz jakieœ wskazówki?
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_15"); //Hmm... Na twoim miejscu uda³bym siê do alchemika rezyduj¹cego u myœliwych, mo¿e on bêdzie w stanie mi pomóc.
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_16"); //Uda³bym siê do niego sam, ale Keroloth kaza³ mi pilnowaæ tego cholernego obozu. Nie interesuj¹ go moje problemy, ani dolegliwoœci.
-	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_17"); //Trzymaj siê, pomoc ju¿ nadchodzi.
+	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_11"); //Spróbujê ci pomoc, ale nie wiem nawet od czego zacz¹æ. Mo¿e masz jakieœ wskazówki?
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_12"); //Hmm... Na twoim miejscu uda³bym siê do alchemika rezyduj¹cego u myœliwych, mo¿e on bêdzie w stanie mi pomóc.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_13"); //Uda³bym siê do niego sam, ale Keroloth kaza³ mi pilnowaæ tego cholernego obozu. Nie interesuj¹ go moje problemy, ani dolegliwoœci.
+	AI_Output (other, self,"DIA_NASZ_118_Ferros_PodkrazoneOczy_55_14"); //Trzymaj siê, pomoc ju¿ nadchodzi.
 	
 	Log_CreateTopic (TOPIC_Ferros_sny, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ferros_sny, LOG_RUNNING);
@@ -235,7 +232,7 @@ FUNC INT DIA_NASZ_118_Ferros_MamLekarstwo_Condition()
 FUNC VOID DIA_NASZ_118_Ferros_MamLekarstwo_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamLekarstwo_15_00"); //Mam lekarstwo.
-	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamLekarstwo_15_01"); //Powinieneœ piæ codziennie po trzy krople, inaczej efekt mo¿e byæ odwrotny do zamierzanego.
+	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamLekarstwo_15_01"); //Powinieneœ piæ codziennie po trzy krople. Nie wiêcej, bo mo¿e ci siê jeszcze pogorszyæ.
 	B_GiveInvItems (other, self, ItNa_KropleFerros, 1);
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_MamLekarstwo_55_02"); //Ponadto, je¿eli rozboli ciê g³owa, to Kirgo poleci³, byœ wypi³ zimne mleko. To pomo¿e ci poradziæ sobie z dzia³aniem eliksiru.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamLekarstwo_55_03"); //Jesteœ pewien, ¿e to pomo¿e? Zreszt¹, niewa¿ne, i tak nie mamy innej alternatywy.

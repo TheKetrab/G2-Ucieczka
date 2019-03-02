@@ -1298,6 +1298,7 @@ func void _TickTock_1s()
 		if (Npc_HasEquippedMeleeWeapon(hero))
 		&& (Hlp_GetInstanceID(renegat6weapon) != ItMw_2H_Axe_L_01) // jesli bron ktora masz zalozona to nie kilof
 		&& (Renegat06BiegnieOneTime == FALSE)
+		&& (UcieklesZKopalni == FALSE)
 		&& (Npc_GetDistToNpc(NASZ_006_Renegat, hero) < 1500)
 		{
 			AI_RunToNPC(NASZ_006_Renegat, hero);

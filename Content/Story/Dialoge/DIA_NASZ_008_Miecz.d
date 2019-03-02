@@ -87,7 +87,7 @@ FUNC INT DIA_NASZ_008_Miecz_grog_Condition()
 };
 
 func void MieczSay_Thx() {
-	AI_Output (self, other,"MieczSay_Thx_55_00"); //Dziêki ci.
+	AI_Output (self, other,"MieczSay_Thx_55_00"); //Dziêki.
 };
 
 func void MieczSay_Give() {
@@ -291,7 +291,7 @@ FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem.
-	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //Rozgl¹da³em siê przez jakiœ czas, a¿ zobaczy³em orka. Prawdopodobnie szeleœci³ tak, bo pociera³ toporem o topór. Zapewne ostrzy³ swoj¹ broñ.
+	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //Rozgl¹da³em siê przez jakiœ czas, a¿ zobaczy³em orka. Prawdopodobnie szeleœci³ tak, bo pociera³ toporem o ostr¹ ska³ê. Zapewne ostrzy³ swoj¹ broñ.
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_55_02"); //Nie wpad³em na to, ¿e to dŸwiêk pocieranej zardzewia³ej stali. Jednak gdy mi o tym powiedzia³eœ, to faktycznie, to by³ dok³adnie ten dŸwiêk.
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_55_03"); //Mam nadziejê, ¿e wys³a³eœ tego orka do piachu?
 	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); //Tak. I jego ostry topór w niczym mu nie pomóg³.

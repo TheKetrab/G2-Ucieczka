@@ -338,7 +338,7 @@ FUNC VOID DIA_NASZ_224_Dobar_koniecskrety_Info()
 	AI_Output (self, other,"DIA_NASZ_224_Dobar_koniecskrety_55_01"); //¯esz ty, w mordê! Dawaj.
 	B_giveinvitems (other, self, ItNa_MrokPolnocy, 5);
 	B_UseItem (self, ItNa_MrokPolnocy);
-	AI_Output (self, other,"DIA_NASZ_224_Dobar_koniecskrety_55_02"); //O tak! Pieni¹¿ki dla pana.
+	AI_Output (self, other,"DIA_NASZ_224_Dobar_koniecskrety_55_02"); //O tak! Trzymaj trochê z³ota.
 
 	Createinvitems (self, itmi_gold, 40);
 	B_giveinvitems (self, other, itmi_gold, 40);

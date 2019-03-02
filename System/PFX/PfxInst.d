@@ -10,8 +10,77 @@
 // INSTANCE PartikelEffekt1 (C_ParticleFX) 
 // INSTANCE PartikelEffekt1 (C_ParticleFXProto) 
 
+INSTANCE UCIECZKA_FIREGATE (C_PARTICLEFX) // TODO
+{
+     ppsvalue = 100.;
+     ppsscalekeys_s = "1 2 3 4 5 6 7 8"; // 1.0
+     ppsislooping = 1;
+     ppsfps = 10;
+     shptype_s = "SPHERE";
+     shpfor_s = "object";
+     shpoffsetvec_s = "0 1 0";
+     shpdistribtype_s = "RANDOM";
+     shpdistribwalkspeed = 1.00000005e-003;
+     shpdim_s = "100";
+     shpscalekeys_s = "0 1 2 0.4 1";
+     shpscaleislooping = 1;
+     shpscaleissmooth = 1;
+     shpscalefps = 2.;
+     velvar = 5.00000007e-002;
+     lsppartavg = 800.;
+     lsppartvar = 350.;
+     flygravity_s = "0 0 0";
+     visname_s = "FIRETEXTURE_A0.TGA";
+     visorientation_s = "VELO";
+     vistexisquadpoly = 1;
+     vistexanifps = 15.;
+     vistexaniislooping = 1;
+     vistexcolorstart_s = "255 100 100";
+     vistexcolorend_s = "0 0 255";
+     vissizestart_s = "30 30";
+     vissizeendscale = 2.50000004e-002;
+     visalphafunc_s = "ADD";
+     visalphaend = 255.;
+};
+/*
 
-
+INSTANCE FIRE_HOT (C_PARTICLEFX)
+{
+     ppsvalue = 90.000000000;
+     ppsscalekeys_s = "1.0";
+     ppsislooping = 1;
+     ppsfps = 1.000000000;
+     shptype_s = "CIRCLE";
+     shpfor_s = "object";
+     shpoffsetvec_s = "0 1 0";
+     shpdistribtype_s = "RANDOM";
+     shpisvolume = 1;
+     shpdim_s = "40";
+     shpscalekeys_s = "1";
+     shpscaleislooping = 1;
+     shpscaleissmooth = 1;
+     shpscalefps = 2.000000000;
+     dirmode_s = "DIR";
+     dirangleheadvar = 360.000000000;
+     dirangleelev = 90.000000000;
+     dirangleelevvar = 20.000000000;
+     velavg = 0.200000003;
+     lsppartavg = 500.000000000;
+     lsppartvar = 200.000000000;
+     flygravity_s = "0 0.0002 0";
+     visname_s = "HUMANBURN.TGA";
+     visorientation_s = "VELO";
+     vistexisquadpoly = 1;
+     vistexanifps = 15.000000000;
+     vistexaniislooping = 1;
+     vistexcolorstart_s = "255 200 200";
+     vistexcolorend_s = "255 200 200";
+     vissizestart_s = "60 60";
+     vissizeendscale = 0.500000000;
+     visalphafunc_s = "ADD";
+     visalphastart = 255.000000000;
+};
+*/
 
 
 // ******************************************************************************************
@@ -4291,6 +4360,8 @@ INSTANCE DRAGONLOCATION_FIRE (C_PARTICLEFX)
      visalphaend = 200;
      m_bisambientpfx = 1;
 };
+
+
 
 INSTANCE GROUNDFOG (C_PARTICLEFX)
 {

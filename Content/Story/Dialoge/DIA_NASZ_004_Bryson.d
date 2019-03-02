@@ -57,7 +57,7 @@ func void DIA_NASZ_004_Bryson_hello_Info ()
 	}
 
 	else if (KOPACZ_ZAGADANIE == 1) {
-	AI_Output			(self, other, "DIA_NASZ_004_Bryson_hello_03_02"); //B¹dŸ mi³y, to mo¿e dostaniesz ode mnie parê okruchów chleba, ha ha ha!
+	AI_Output			(self, other, "DIA_NASZ_004_Bryson_hello_03_02"); //B¹dŸ mi³y, to mo¿e dostaniesz ode mnie parê okruchów chleba, ha, ha, ha!
 	KOPACZ_ZAGADANIE = 2;
 	AI_StopProcessInfos (self);
 	}

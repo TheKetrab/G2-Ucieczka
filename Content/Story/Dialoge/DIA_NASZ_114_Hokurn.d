@@ -18,7 +18,7 @@ FUNC INT DIA_NASZ_114_Hokurn_EXIT_Condition()
 
 FUNC VOID DIA_NASZ_114_Hokurn_EXIT_Info()
 {
-	Wld_SendTrigger("GUITAR_MUSIK");
+	//Wld_SendTrigger("GUITAR_MUSIK");
 	AI_StopProcessInfos (self);
 };
 
@@ -71,6 +71,11 @@ func void DIA_NASZ_114_Hokurn_hello_Info ()
 
 };
 
+
+func void HokurnSay_NoChances() {
+	AI_Output (self, other,"DIA_NASZ_114_Hokurn_HokurnSay_NoChances_55_00"); //Nie masz z nami ¿adnych szans!
+};
+
 //*********************************************************************
 //	Arena 
 //*********************************************************************
@@ -98,7 +103,7 @@ FUNC INT DIA_NASZ_114_Hokurn_arena_Condition()
 
 FUNC VOID DIA_NASZ_114_Hokurn_arena_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_114_Hokurn_arena_55_00"); //Nie masz z nami ¿adnych szans!
+	HokurnSay_NoChances();
 
 	GODARHOKURN_WALCZY = TRUE;
 	Arena_Opuszczasz_Raz = FALSE;
@@ -107,6 +112,41 @@ FUNC VOID DIA_NASZ_114_Hokurn_arena_Info()
 	B_Attack(self, other, AR_NONE, 1);
 	B_Attack(NASZ_113_Godar, other, AR_NONE, 1);
 };
+
+
+//*********************************************************************
+//	ArenaZamek
+//*********************************************************************
+INSTANCE DIA_NASZ_114_Hokurn_ArenaZamek   (C_INFO)
+{
+	npc         = NASZ_114_Hokurn;
+ 	nr          = 2;
+ 	condition   = DIA_NASZ_114_Hokurn_ArenaZamek_Condition;
+ 	information = DIA_NASZ_114_Hokurn_ArenaZamek_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_114_Hokurn_ArenaZamek_Condition()
+{
+	if (Kurgan_walka==4)
+	&& (KAPITEL >=4)
+	&& (Npc_GetDistToWP(self,"OC_SMITH_01") < 600)
+	&& (Npc_GetDistToWP(NASZ_113_Godar,"OC_SMITH_01") < 600)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_114_Hokurn_ArenaZamek_Info()
+{
+	HokurnSay_NoChances();
+
+	AI_StopProcessInfos(self);
+	B_Attack(self, other, AR_NONE, 1);
+	B_Attack(NASZ_113_Godar, other, AR_NONE, 1);
+};
+
 
 //*********************************************************************
 //	Info Mapy

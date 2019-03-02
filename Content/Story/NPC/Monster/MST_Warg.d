@@ -118,8 +118,7 @@ INSTANCE BlackWolf	(Mst_Default_Warg)
 	name							=	"Czarny wilk";
 	level							=	 10;		
 	//für Inventory
-	aivar[AIV_MM_REAL_ID]			= 	100;
-	//aivar[AIV_MM_REAL_ID]			= 	ID_WOLF;
+	aivar[AIV_MM_REAL_ID]			= 	ID_BLACKWOLF;
 	//----- Attribute ----
 	attribute	[ATR_STRENGTH]		=	90;
 	attribute	[ATR_DEXTERITY]		=	90;

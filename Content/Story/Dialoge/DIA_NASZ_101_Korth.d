@@ -82,7 +82,7 @@ FUNC VOID DIA_NASZ_101_Korth_wiecej_Info()
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_03"); //No dobrze... Kilka tygodni temu kapitan Garond zrezygnowa³ ze swojej misji w Kolonii. Stwierdzi³, ¿e nie ma ona sensu.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_04"); //Wszyscy paladyni, knechci i inni jego ludzie wyruszyli na prze³êcz Khorinis. Niestety, mimo ¿e obok zamku nie by³o du¿o orków, zwêszyli nas.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_05"); //Wys³ali za nami poœcig. Horda wyszkolonych orkowych wojowników kontra trzydziestu g³odnych i zmêczonych ludzi. Nie mieliœmy szans w otwartej walce. Ruszyliœmy biegiem w stronê prze³êczy.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_06"); //Garond nakaza³ nam odeprzeæ atak tu¿ przed prze³êcz¹ tak, aby orkowie nie wpadli w furii w okolice Khorinis.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_06"); //Na prze³êczy Garond zrozumia³, ¿e nie ma szans na ucieczkê, wiêc rozkaza³ zabiæ tylu orków, ilu damy radê.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_15_07"); //Walczyliœmy patrz¹c, jak orkowie morduj¹ najbardziej oddanych rycerzy. Nagle us³yszeliœmy dŸwiêk spadaj¹cych ska³...
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_09"); //Jak siê póŸniej dowiedzieliœmy, orkowie na prze³êczy równie¿ mieli swój oddzia³. Magowie Ognia wywo³ali trzêsienia ziemi, by odci¹æ orkom drogê do Khorinis.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_10"); //Ska³y zawali³y drogê przez prze³êcz. Pod dowództwem Kerolotha przebiliœmy siê jakoœ przez oddzia³y oszo³omionych orków.
@@ -103,7 +103,7 @@ INSTANCE DIA_NASZ_101_Korth_WillWantToKillRenegats   (C_INFO)
  	condition   = DIA_NASZ_101_Korth_WillWantToKillRenegats_Condition;
  	information = DIA_NASZ_101_Korth_WillWantToKillRenegats_Info;
  	permanent   = FALSE;
-	description = "By³em kretem w Starej Kopalni.";
+	description = "By³em kopaczem w Starej Kopalni.";
 };
 
 FUNC INT DIA_NASZ_101_Korth_WillWantToKillRenegats_Condition()	
@@ -116,11 +116,11 @@ FUNC INT DIA_NASZ_101_Korth_WillWantToKillRenegats_Condition()
 
 FUNC VOID DIA_NASZ_101_Korth_WillWantToKillRenegats_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_101_Korth_WillWantToKillRenegats_15_00"); //By³em kretem w Starej Kopalni.
+	AI_Output (other, self,"DIA_NASZ_101_Korth_WillWantToKillRenegats_15_00"); //By³em kopaczem w Starej Kopalni.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_01"); //Pod dowództwem...?
 	AI_Output (other, self,"DIA_NASZ_101_Korth_WillWantToKillRenegats_15_02"); //Paladyna Marcosa.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_03"); //To wszystko wyjaœnia. Pieprzony renegat. Zbyt d³ugo przebywa³ sam na uboczu.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_04"); //Miesi¹c temu pojawi³ siê na zamku i zaœwiadczy³, ¿e objawi³ siê mu demon. Garond chcia³ wtr¹ciæ go do wiêzienia, ale Marcos wyteleportowa³ siê z zamku.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_04"); //Miesi¹c temu pojawi³ siê na zamku i og³osi³, ¿e objawi³ siê mu demon. Garond chcia³ wtr¹ciæ go do wiêzienia, ale Marcos wyteleportowa³ siê z zamku.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_05"); //Nic wiêcej nie wiem. Nie myœla³em jednak, ¿e wróci do sprawowania pieczy nad kopalni¹...
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_06"); //No có¿... Ten problem nas nie dotyczy. Na g³owie mamy teraz orków.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jesli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bedziesz trzymaæ.
@@ -158,10 +158,10 @@ FUNC VOID DIA_NASZ_101_Korth_WhereShouldIJoin_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_101_Korth_WhereShouldIJoin_15_00"); //Z kim 'bêdê trzymaæ'?
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_01"); //Sam w Dolinie nie przetrwasz, zapomnij. Musisz coœ jeœæ i gdzieœ spaæ.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_02"); //S¹ dwa skupiska ludzkie w tym przeklêtym miejscu.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_02"); //S¹ dwa skupiska ludzi w tym przeklêtym miejscu.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_03"); //Pierwszy to obóz ³owców orków. Jesteœmy wojownikami, unicestwienie orków to nasz cel. 
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_04"); //Drugi to obóz myœliwych. Ci z kolei dzia³aj¹ raczej defensywnie. Zamierzaj¹ chyba za wszelk¹ cenê do¿yæ staroœci.	
-	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_05"); //U nas, ³owców, gorzej siê wyspaæ, bo ch³opcy ha³asuj¹ w karczmie do œrodka nocy.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_05"); //U nas, ³owców, gorzej siê wyspaæ, bo ch³opcy ha³asuj¹ w karczmie do bia³ego rana.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WhereShouldIJoin_55_06"); //Za to w naszym obozie zjesz du¿o lepiej. Ten kucharzyna myœliwych, Snaf, gotuje rzeczy, których lepiej nie wsadzaæ do gard³a.
 	
 	if (Mission_Gildia_Ready == FALSE) {
@@ -222,8 +222,8 @@ FUNC INT DIA_NASZ_101_Korth_keroloth_Condition()
 FUNC VOID DIA_NASZ_101_Korth_keroloth_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_101_Korth_keroloth_15_00"); //Kim jest Keroloth?
-	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_01"); //To mistrz walki broni¹ wrêcz. Przyby³ wraz z Garondem do Górniczej Doliny i uczy³ walczyæ pocz¹tkuj¹cych wojowników, takich jak ja. Musieli potrafiæ przetrwaæ.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_02"); //Obecnie jest szefem ³owców orków. Ca³y czas planuje odbicie zamku, chocia¿ chyba mu to nie wychodzi.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_01"); //To mistrz walki broni¹ wrêcz. Przyby³ wraz z Garondem do Górniczej Doliny i uczy³ walczyæ pocz¹tkuj¹cych wojowników, takich jak ja. Musieliœmy potrafiæ przetrwaæ.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_02"); //Obecnie jest szefem ³owców orków. Ca³y czas planuje odbicie zamku, chocia¿ nic na to nie zapowiada.
 	AI_Output (other, self,"DIA_NASZ_101_Korth_keroloth_15_03"); //Dlaczego?
 	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_04"); //Od dwóch tygodni stoimy w kropce. Brak nam broni, a przede wszystkim dobrze wyszkolonych ludzi.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_keroloth_55_05"); //Szczerze mówi¹c w¹tpiê, ¿e zamek kiedyœ znów bêdzie nale¿a³ do ludzi.
@@ -507,8 +507,8 @@ FUNC INT DIA_NASZ_101_Korth_mine_Condition()
 FUNC VOID DIA_NASZ_101_Korth_mine_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_101_Korth_mine_55_00"); //Jesteœmy przed kopalni¹. Uwierzysz, ¿e jeszcze dwa miesi¹ce temu pracowali tutaj ludzie?
-	AI_Output (self, other,"DIA_NASZ_101_Korth_mine_55_01"); //Patrz na te martwe cia³a. Pe³no tu martwych rycerzy! WejdŸ do œrodka. Mo¿e coœ lub kogoœ znajdziesz.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_mine_55_02"); //Ja zostanê tutaj i bêdê ubezpiecza³ ty³y.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_mine_55_01"); //Patrz na te martwe cia³a. To potworne...
+	AI_Output (self, other,"DIA_NASZ_101_Korth_mine_55_02"); //WejdŸ do œrodka. Mo¿e coœ lub kogoœ znajdziesz. Ja zostanê tutaj i bêdê ubezpiecza³ ty³y.
 
 	KorthIsInMine = TRUE;
 
@@ -544,7 +544,7 @@ FUNC VOID DIA_NASZ_101_Korth_MineEnd_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_101_Korth_MineEnd_55_00"); //Ci przeklêci orkowie! Dobrze, ¿e by³em w pobli¿u. O, widzê, ¿e nawet kogoœ znalaz³eœ.
 	AI_Output (other, self,"DIA_NASZ_101_Korth_MineEnd_55_01"); //Tak, Draala, by³ego wiêŸnia.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_MineEnd_55_02"); //To bez znaczenia, z pozosta³ych przy ¿yciu ludzi, przynajmniej po³owa to bandyci i skazañcy. Có¿ za ironia, królewscy rycerze i stra¿nicy walcz¹ po jednej stronie...	Musimy ³¹czyæ si³y, aby przetrwaæ.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_MineEnd_55_02"); //To bez znaczenia, z pozosta³ych przy ¿yciu ludzi, przynajmniej po³owa to przestêpcy i skazañcy. Có¿ za ironia, królewscy rycerze i stra¿nicy walcz¹ po jednej stronie... Musimy ³¹czyæ si³y, aby przetrwaæ.
 	AI_Output (other, self,"DIA_NASZ_101_Korth_MineEnd_55_03"); //Draal chce, ¿ebym doprowadzi³ go do obozu myœliwych.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_MineEnd_55_04"); //Zajmij siê tym. Ja wracam nad rzekê patrolowaæ.
 	

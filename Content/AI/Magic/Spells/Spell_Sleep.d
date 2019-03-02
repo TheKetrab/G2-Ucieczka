@@ -47,6 +47,7 @@ func int Spell_Logic_Sleep (var int manaInvested) //Parameter manaInvested wird 
 				Log_SetTopicStatus (TOPIC_Ben_metody, LOG_SUCCESS);
 				B_GivePlayerXP(100);
 				WillMaRzucicZaklecieNaStraznika = FALSE;
+				UcieklesZKopalni = TRUE;
 			};
 		
 			Npc_ClearAIQueue	(other);

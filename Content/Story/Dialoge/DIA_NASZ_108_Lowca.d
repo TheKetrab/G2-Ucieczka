@@ -99,10 +99,10 @@ func void DIA_NASZ_108_Lowca_pojedynek_Info ()
 	AI_Output		(other, self, "DIA_NASZ_108_Lowca_pojedynek_55_00"); //Chcê z tob¹ walczyæ.
 	AI_Output		(self, other, "DIA_NASZ_108_Lowca_pojedynek_03_01"); //Taki frajer, jak ty? Mam daæ ci fory, czy mo¿e raczej zabiæ?
 	AI_Output		(other, self, "DIA_NASZ_108_Lowca_pojedynek_55_02"); //W³aœnie mia³em zapytaæ o to samo, ale skoro ju¿ pytasz to chyba lepiej, jak dasz mi fory. Ja ciê zabijê.
-	AI_Output		(self, other, "DIA_NASZ_108_Lowca_pojedynek_03_03"); //Ho ho ho! Mocny w gêbie. Jak myœlisz, czemu tu jestem? Tu, w Górniczej Dolinie, ur¿n¹³em ju¿ niejednego frajera. Chcesz byæ kolejnym?
+	AI_Output		(self, other, "DIA_NASZ_108_Lowca_pojedynek_03_03"); //Ho, ho, ho! Mocny w gêbie. Jak myœlisz, czemu tu jestem? Tu, w Górniczej Dolinie, ur¿n¹³em ju¿ niejednego frajera. Chcesz byæ kolejnym?
 
 	Info_ClearChoices (DIA_NASZ_108_Lowca_pojedynek);
-		Info_AddChoice	  (DIA_NASZ_108_Lowca_pojedynek, "Tak, jak mówi³em: Mo¿esz mnie zabiæ.", DIA_NASZ_108_Lowca_pojedynek_kill);
+		Info_AddChoice	  (DIA_NASZ_108_Lowca_pojedynek, "Ju¿ ci mówi³em: Mo¿esz spróbowaæ mnie zabiæ.", DIA_NASZ_108_Lowca_pojedynek_kill);
 		if (npc_hasitems(other,ItNa_Trucizna)>=1) && (npc_knowsinfo (other, DIA_NASZ_123_Lowca_pojedynek)) {
 			Info_AddChoice	  (DIA_NASZ_108_Lowca_pojedynek, "WeŸ sobie lepiej coœ na uspokojenie. (daj truciznê)", DIA_NASZ_108_Lowca_pojedynek_trucizna);
 		};
@@ -113,7 +113,7 @@ func void DIA_NASZ_108_Lowca_pojedynek_Info ()
 
 FUNC VOID DIA_NASZ_108_Lowca_pojedynek_kill()
 {
-	AI_Output (other,self ,"DIA_NASZ_108_Lowca_pojedynek_kill_15_00"); //Tak, jak mówi³em: Mo¿esz mnie zabiæ.
+	AI_Output (other,self ,"DIA_NASZ_108_Lowca_pojedynek_kill_15_00"); //Ju¿ ci mówi³em: Mo¿esz spróbowaæ mnie zabiæ.
 	AI_Output (self, other,"DIA_NASZ_108_Lowca_pojedynek_kill_55_01"); //Sam siê o to prosisz!
 	
 	AI_StopProcessInfos (self);
@@ -235,7 +235,7 @@ FUNC VOID DIA_NASZ_108_Lowca_catch_fight()
 
 	AI_Output (other,self ,"DIA_NASZ_108_Lowca_catch_fight_15_00"); //Bo ci go mogê zaraz odci¹æ.
 		AI_ReadyMeleeWeapon		(other);
-	AI_Output (self, other,"DIA_NASZ_108_Lowca_catch_fight_55_01"); //Spróbuj wiêc!
+	AI_Output (self, other,"DIA_NASZ_108_Lowca_catch_fight_55_01"); //Tylko spróbuj!
 
 	Info_ClearChoices (DIA_NASZ_108_Lowca_catch);
 	AI_StopProcessInfos (self);

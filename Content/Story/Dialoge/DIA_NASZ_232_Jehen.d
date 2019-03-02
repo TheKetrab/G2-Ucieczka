@@ -161,9 +161,9 @@ FUNC VOID DIA_NASZ_232_Jehen_GothSaid_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_15_00"); //Tak naprawdê to Goth wspomnia³, gdzie mogê ciê znaleŸæ.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_01"); //S³ysza³em, ¿e nim zosta³eœ myœliwym, zajmowa³eœ siê wyrobem instrumentów.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_02"); //Konkretnie mam tutaj na myœli lutniê. Czy by³byœ w stanie mi pomóc?
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_03"); //No to teraz mnie naprawdê zaskoczy³eœ ch³opcze. Ju¿ od kilku dobrych lat nie zajmowa³em siê wytworem lutni i nie wiem, ile z tego jeszcze pamiêtam.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_03"); //No to teraz mnie naprawdê zaskoczy³eœ, ch³opcze. Ju¿ od kilku dobrych lat nie zajmowa³em siê wytworem lutni i nie wiem, ile z tego jeszcze pamiêtam.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_04"); //Jak rozumiem to bardzo pilna sprawa? Mogê wiedzieæ do czego jest wam ona potrzebna?
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_05"); //Potrzebuje jej Engor, chcemy, aby zagra³ w naszym obozie dla reszty ³owców. Ca³a ta sytuacja w dolinie odciska na nich swoje piêtno.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_05"); //Potrzebuje jej Engor. Chcemy, aby zagra³ w naszym obozie dla reszty ³owców. Ca³a ta sytuacja w dolinie odciska na nich swoje piêtno.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_06"); //Uwa¿amy, to znaczy ja i Silas, ¿e muzyka ukoi ich sko³atane nerwy.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_07"); //To bardzo szlachetne z waszej strony, dlatego te¿ postaram siê wam pomóc. Jednak nim to zrobimy, zechcesz potowarzyszyæ mi w drodze do obozu?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_08"); //Mam kilka rzeczy do zabrania, a sam nie dam rady z tym wszystkim.
@@ -244,7 +244,7 @@ func void Jehen_Say_AboutLute() {
 
 		Info_ClearChoices (DIA_NASZ_232_Jehen_TalkedToGestath);
 			if(npc_hasitems(other,ItMi_Gold)>=150) {
-				Info_AddChoice	  (DIA_NASZ_232_Jehen_TalkedToGestath, "Jak rozumiem, jakoœci¹ ten instrument tak¿e bêdzie odbiega³?", DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew);
+				Info_AddChoice	  (DIA_NASZ_232_Jehen_TalkedToGestath, "Myœlê, ¿e nowa lutnia sprawi Engorowi wiêksz¹ radoœæ.", DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew);
 			};
 			if(npc_hasitems(other,ItMi_Gold)>=50) {
 				Info_AddChoice	  (DIA_NASZ_232_Jehen_TalkedToGestath, "Wezmê tê, któr¹ znalaz³eœ. Nie mogê zbytnio z tym zwlekaæ.", DIA_NASZ_232_Jehen_TalkedToGestath_TakeThis);
@@ -296,7 +296,7 @@ FUNC VOID DIA_NASZ_232_Jehen_TalkedToGestath_Yes()
 {
 	AI_Output (other,self ,"DIA_NASZ_232_Jehen_TalkedToGestath_Yes_15_00"); //Tak, kaza³ przekazaæ ci te sto strza³.
 	B_GiveInvItems(other, self, ItRw_Arrow, 100);
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_Yes_15_01"); //Uczciwoœæ w tych czasach to rzadka sprawa, zw³aszcza z r¹k obcych. Dziêkuje nieznajomy.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_Yes_15_01"); //Uczciwoœæ w tych czasach to rzadka sprawa, zw³aszcza z r¹k obcych. Dziêkujê nieznajomy.
 	
 	B_GivePlayerXP(100);
 	Jehen_Say_AboutLute();
@@ -307,11 +307,10 @@ FUNC VOID DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew()
 {
 	JehenLuteCheckOneOption = TRUE;
 	
-	AI_Output (other,self ,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_00"); //Jak rozumiem, jakoœci¹ ten instrument tak¿e bêdzie odbiega³?
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_01"); //Oczywiœcie, dŸwiêk na pewno nie bêdzie tak czysty jak z nowego instrumentu.
-	AI_Output (other,self ,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_02"); //Dlatego chcia³bym, abyœ wykona³ dla mnie now¹ lutniê, proszê oto pieni¹dze.
+	AI_Output (other,self ,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_00"); //Myœlê, ¿e nowa lutnia sprawi Engorowi wiêksz¹ radoœæ.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_01"); //Oczywiœcie! DŸwiêk nowego instrumentu bêdzie na pewno przyjemniejszy dla uszu wielu ludzi.
 	B_GiveInvItems(other,self,ItMi_Gold,150);
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_03"); //Ju¿ siê robi, wróæ za dwa dni, a instrument bêdzie gotowy.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew_15_02"); //Wróæ do mnie za dwa dni, a nowa lutnia bêdzie gotowa.
 	Jehen_Robi_Nowa_Lutnie = TRUE;
 	JehenLuteDay = Wld_GetDay();
 
@@ -370,7 +369,7 @@ FUNC VOID DIA_NASZ_232_Jehen_GivingMoney_Info()
 	
 	Info_ClearChoices (DIA_NASZ_232_Jehen_GivingMoney);
 		if(npc_hasitems(other,ItMi_Gold)>=150) {
-			Info_AddChoice	  (DIA_NASZ_232_Jehen_GivingMoney, "Jak rozumiem jakoœci¹ ten instrument tak¿e bêdzie odbiega³?", DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew);
+			Info_AddChoice	  (DIA_NASZ_232_Jehen_GivingMoney, "Myœlê, ¿e nowa lutnia sprawi Engorowi wiêksz¹ radoœæ.", DIA_NASZ_232_Jehen_TalkedToGestath_MakeNew);
 		};
 		if(npc_hasitems(other,ItMi_Gold)>=50) {
 			Info_AddChoice	  (DIA_NASZ_232_Jehen_GivingMoney, "Wezmê tê, któr¹ znalaz³eœ. Nie mogê zbytnio z tym zwlekaæ.", DIA_NASZ_232_Jehen_TalkedToGestath_TakeThis);

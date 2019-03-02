@@ -1,4 +1,4 @@
-var int NASZ_228_CHRIS_TEACHPLAYER;
+var int NASZ_228_CHRIS_TEACHPLAYER_Everything;
 ///////////////////////////////////////////////////////////////////////
 //	Info EXIT 
 ///////////////////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@ func void DIA_NASZ_228_Chris_Who_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_228_Chris_Who_15_00"); //Kim jesteœ?
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_01"); //Mam na imiê Chris. Jestem myœliwym i przewodniczê ka¿demu masowemu polowaniu.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_02"); //Niech by to szlag trafi³! Tym razem Erak, we w³anej osobie, uda³ siê do obozu wypadowego i owczywiœcie przewodniczy grupie.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_02"); //Niech by to szlag trafi³! Tym razem Erak, we w³asnej osobie, uda³ siê do obozu wypadowego i owczywiœcie przewodniczy grupie.
 };
 
 var int CHRIS_DONT_BEER;
@@ -145,7 +145,7 @@ FUNC VOID DIA_NASZ_228_Chris_guide_three()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_228_Chris_guide_three_15_11"); //Dam ci trzy piwa.
-	AI_Output (self, other,"DIA_NASZ_228_Chris_guide_three_55_12"); //Trzy? Niech bêdzie. Daj znaæ jak bêdziesz gotów wyruszyæ.
+	AI_Output (self, other,"DIA_NASZ_228_Chris_guide_three_55_12"); //Trzy? Niech bêdzie. Daj znaæ, jak bêdziesz gotów wyruszyæ.
 	B_GiveInvItems (other, self, ItFo_Beer, 3);
 	B_UseItem (self, ItFo_Beer);
 
@@ -366,10 +366,11 @@ instance DIA_NASZ_228_Chris_TEACHHUNTING		(C_INFO)
 
 func int DIA_NASZ_228_Chris_TEACHHUNTING_Condition ()
 {
-	if (NASZ_228_Chris_TeachPlayer == TRUE)
-		{
-				return TRUE;
-		};
+	if (NASZ_228_CHRIS_TEACHPLAYER_Everything == FALSE)
+	&& (npc_knowsinfo (other, DIA_NASZ_228_Chris_AskTeacher))
+	{
+			return TRUE;
+	};
 };
 
 func void DIA_NASZ_228_Chris_TEACHHUNTING_Info ()
@@ -402,7 +403,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Info ()
 	else
 	{
 		AI_Output (self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_03_02"); //Niestety, nie mogê ci powiedzieæ nic, czego byœ ju¿ nie wiedzia³.
-		NASZ_228_Chris_TeachPlayer = FALSE;
+		NASZ_228_CHRIS_TEACHPLAYER_Everything = TRUE;
 	};
 };
 
@@ -457,7 +458,7 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Teeth()
 	};
 
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_00"); //Naj³atwiej jest pozbawiæ zwierzê zêbów. Natnij no¿em dzi¹s³o dooko³a zêba.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_01"); //Potem musisz ju¿ tylko uderzyæ w z¹b - i po wszystkim.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_01"); //Potem musisz ju¿ tylko uderzyæ w z¹b i po wszystkim.
 
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);

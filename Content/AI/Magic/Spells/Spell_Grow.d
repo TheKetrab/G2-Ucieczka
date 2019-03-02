@@ -45,6 +45,7 @@ func void Spell_Cast_Grow()
 			GrowUzyteOneTime = TRUE;
 		};
 	
+		WillMozeIscDoKazmina = TRUE;
 		//AI_SetNpcsToState (hero, ZS_MagicGrow, 1000); //-kairo
 		WillPowiekszony = TRUE;
 		ff_applyonceext(secPrzywrocenieWielkosci,1000,-1);	

@@ -357,7 +357,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_Info()
 	TRIA_Cam("TRIA_CAM_KOPALNIA");
 	Npc_ExchangeRoutine (NASZ_004_Bryson, "GoToTria");
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_06"); //Po ostatnim osuwisku pojawi³o siê tam z³o¿e wyj¹tkowo czystej magicznej rudy.
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_07"); //Spójrz na t¹ bry³kê. Jak myœlisz, czy stra¿nicy zgodz¹ siê nam podnieœæ racje ¿ywnoœciowe jeœli im to poka¿ê?
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_07"); //Spójrz na t¹ bry³kê. Jak myœlisz, czy stra¿nicy zgodz¹ siê nam podnieœæ racje ¿ywnoœciowe, jeœli im to poka¿ê?
 	
 	TRIA_Next(Bryson);
 	AI_TurnToNpc(other, self);
@@ -671,7 +671,7 @@ FUNC VOID DIA_NASZ_002_Daryl_Metody1_Info()
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Metody1_55_01"); //Równie¿ mam tak¹ nadziejê. Martwiê siê jedynie tym, aby stra¿nicy nie zaczêli czegoœ podejrzewaæ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_02"); //Dlatego nie powinniœmy daæ po sobie poznaæ, ¿e coœ knujemy. Ja pójdê do Bena pozmawiaæ z nim o dalszym planie.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_03"); //Ty zaœ powinieneœ siê nieco przespaæ, bo wygl¹dasz jak zombie.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_04"); //Zanim jednak udasz siê na spoczynek oddaj kamienie Sattarowi. Zapewne nie mo¿e siê ju¿ doczekaæ. Niech Innos nam sprzyja.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_04"); //Zanim jednak udasz siê na spoczynek, oddaj kamienie Sattarowi. Zapewne nie mo¿e siê ju¿ doczekaæ. Niech Innos nam sprzyja.
 	
 	Npc_ExchangeRoutine (self, "GoToBen");
 
@@ -708,7 +708,7 @@ FUNC VOID DIA_NASZ_002_Daryl_Taktyki1_Info()
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_04"); //D³ugo myœla³em nad receptur¹ trucizny, która pozwoli nam osi¹gn¹æ obrany cel.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_05"); //Postanowi³em wykorzystaæ kopalniane grzyby rosn¹ce w tunelach pozbawionych du¿ych iloœci œwiat³a. Mo¿e wygl¹daj¹ niepozornie, jednak nie daj siê zwieœæ!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_06"); //W ich kapeluszach znajduje siê silna toksyna, która po odpowiednim przetworzeniu potrafi pozbawiæ kogoœ przytomnoœci na kilka godzin.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_07"); //Czêsto roœliny te wykorzystywali op³acani ³owcy g³ów chc¹cy upozorowaæ swoja œmieræ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_07"); //Czêsto roœliny te wykorzystywali op³acani ³owcy g³ów, chc¹cy upozorowaæ swoj¹ œmieræ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_08"); //Przez kilka godzin po za¿yciu wygl¹dasz jak prawdziwy nieboszczyk, który nie ma nawet pulsu. Kiedy ju¿ j¹ przygotujê bêdziesz musia³ j¹ wypiæ.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_09"); //Zwariowaliœcie?! Nie wypijê czegoœ, co mo¿e mnie zabiæ! Zapomnijcie o tym pomyœle!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_10"); //Nie zrobi³bym czegoœ, co mo¿e ci zaszkodziæ. Doskonale znam dzia³anie i sposoby tworzenia takich eliksirów.

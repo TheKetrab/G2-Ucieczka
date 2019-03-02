@@ -118,7 +118,7 @@ FUNC VOID DIA_NASZ_005_Ben_HaveYouGotAnIdea_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_05"); //Ka¿dy pope³nia b³êdy przyjacielu, ale do rzeczy. Ty, jako jedyny z nas wszystkich, mo¿esz przemówiæ tym rycerzykom do g³owy.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_06"); //W koñcu im pomog³eœ, a nawet najwiêkszy dupek z ich zakonu czuje w sobie potrzebê sp³acania d³ugów.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_07"); //PójdŸ do stra¿nika i spróbuj przekonaæ go, aby przemówi³ Marcosowi do rozs¹dku w kwestii naszych racji ¿ywnoœciowych, zgoda?
-	AI_Output (other, self,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_08"); //Zobaczê co da siê zrobiæ, ale niczego nie obiecujê. W¹tpiê aby mnie pos³uchali.
+	AI_Output (other, self,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_08"); //Zobaczê, co da siê zrobiæ, ale niczego nie obiecujê. W¹tpiê, aby mnie pos³uchali.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_09"); //Zawsze warto próbowaæ, pamiêtaj o tym przyjacielu.
 
 	BenPomysl_Fail=1;
@@ -542,7 +542,7 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	TRIA_Next(Ben);
 	AI_Output (other, self,"DIA_NASZ_005_Ben_MetodyEnd_55_00"); //Przygotowania zosta³y skoñczone. Kiedy podejmujemy ucieczkê z kopalni?
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_01"); //To dobra wiadomoœæ, lecz sytuacja uleg³a pewnej diametralnej zmianie.
-	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_02"); //Kiedy Sattar pracowa³ nad zwojem, a ty spa³eœ odby³em d³ug¹ rozmowê z Darylem. 
+	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_02"); //Kiedy Sattar pracowa³ nad zwojem, a ty spa³eœ, odby³em d³ug¹ rozmowê z Darylem. 
 	
 	TRIA_Next(Daryl);
 	AI_TurnToNpc(other, self);

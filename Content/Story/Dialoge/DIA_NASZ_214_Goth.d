@@ -90,7 +90,7 @@ FUNC VOID DIA_NASZ_214_Goth_HelloLutnia_Info()
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HelloLutnia_55_04"); //Dobre sobie, a kto pilnowa³by wtedy bramy do obozu? Jedna chwila nieuwagi, a ze¿r¹ nas zêbacze czy inne plugastwa ¿yj¹ce w lesie.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HelloLutnia_15_05"); //Nie mogê siê st¹d ruszyæ, bo inaczej Gestath urwie mi ³eb. Ty pomo¿esz mnie, a ja tobie. Uczciwa wymiana, nie s¹dzisz?
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HelloLutnia_55_06"); //Nigdzie siê st¹d nie ruszaj, zaraz wracam.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_HelloLutnia_55_07"); //Haha! Bardzo zabawne, ¿artownisiu!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_HelloLutnia_55_07"); //Ha, ha! Bardzo zabawne, ¿artownisiu!
 
 	B_LogEntry (TOPIC_Engor_lutnia, "Oczywiœcie, aby dowiedzieæ siê kto mo¿e mi wykonaæ lutniê, muszê pobawiæ siê w ch³opca na posy³ki. Tym razem muszê przynieœæ miêso dla Gotha, bo inaczej nie powie mi, kim jest tajemniczy jegomoœæ.");
 };
@@ -129,7 +129,7 @@ FUNC VOID DIA_NASZ_214_Goth_HavePieczyste_Info()
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_04"); //Szukam kogoœ, kto zna siê na wyrobie lutni i by³by w stanie wykonaæ dla mnie taki instrument. Trop przywiód³ mnie do waszego obozu.
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_05"); //Mo¿esz mi powiedzieæ, gdzie on jest?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_06"); //Pewnie masz na myœli Jehena. Owszem, mieszka u nas, ale obecnie nie ma go w obozie. Dwa dni temu uda³ siê na polowanie.
-	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_07"); //Œwietnie, a wiesz, kiedy wróci?
+	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_07"); //Œwietnie, a wiesz kiedy wróci?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_08"); //Ciê¿ko to okreœliæ. On jako nieliczny potrafi przepadaæ bez s³owa na wiele dni, aby potem wróciæ z mas¹ trofeów i miêsa.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_HavePieczyste_55_09"); //Na twoim miejscu bym go poszuka³, zacznij od jego obozu przy prze³êczy. Wiesz, w któr¹ to stronê?
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_10"); //Oczywiœcie, dziêki za wskazówkê.
@@ -165,7 +165,7 @@ FUNC VOID DIA_NASZ_214_Goth_sytuacja_Info()
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_sytuacja_15_00"); //Co mo¿esz mi powiedzieæ o sytuacji w Dolinie?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_01"); //Tak wiêc, tu znajduje siê obóz myœliwych. Nie zale¿y nam zbytnio na odzyskaniu zamku. Mo¿na œmia³o powiedzieæ, ¿e u¿ywamy sobie ¿ycia, ile tylko mo¿emy.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_02"); //Ka¿dego dnia jemy obrzydliwie obfite posi³ki, ¿remy miêso i popijamy piwem. Co lepszego nam zosta³o? Jesteœmy uwiêzieni w dawnej Kolonii Karnej.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_03"); //Jedyne, czego tu brakuje, to kobiet. I to nie jednej - przynajmniej dziesiêciu!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_03"); //Jedyne, czego tu brakuje, to kobiet. I to nie jednej, a przynajmniej dziesiêciu!
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_04"); //Jesli jednak chcesz wiedzieæ wiêcej na temat tego, co siê sta³o z paladynami odsy³am ciê do ³owców orków.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_05"); //Ci idioci chwal¹ siê tym na prawo i na lewo.
 };
@@ -305,7 +305,7 @@ FUNC VOID DIA_NASZ_214_Goth_finish_Info()
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_finish_15_02"); //To cz³owiek imieniem Lens.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_03"); //Mam nadziejê, ¿e zosta³ ukarany.
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_finish_15_04"); //Nie martw siê. Ten rabuœ ju¿ gryzie ziemiê.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_05"); //Nie chcia³bym byæ na jego miejscu. Jednak niew¹tpliwie zas³u¿y³ sobie na to. Jesteœ po¿¹dnym cz³owiekiem. Twoje zdrowie!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_05"); //Nie chcia³bym byæ na jego miejscu. Jednak niew¹tpliwie zas³u¿y³ sobie na to. Jesteœ porz¹dnym cz³owiekiem. Twoje zdrowie!
 	B_UseItem (self,ItFo_Beer);
 	AI_Output (self, other,"DIA_NASZ_214_Goth_finish_55_06"); //Oto i twoja nagroda. Trzymaj.
 
@@ -341,7 +341,7 @@ FUNC VOID DIA_NASZ_214_Goth_teach_Info()
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_teach_15_00"); //Kto mo¿e mnie tu czegoœ nauczyæ?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_01"); //Myœliwemu potrzebna jest lekka klinga lub ostry sztylet oraz dobry ³uk.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_02"); //Walki broni¹ nauczy ciê Louis. Skubany strasznie du¿o walczy³ szablami, zreszt¹ tak tutaj trafi³.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_03"); //Jeœli chcesz nauczyæ siê strzelaæ, to powinieneœ zg³osiæ siê do kóregoœ ze stra¿ników.
+	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_03"); //Jeœli chcesz nauczyæ siê strzelaæ, to powinieneœ zg³osiæ siê do któregoœ ze stra¿ników.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_04"); //Zazwyczaj wszyscy s¹ zajêci, ale ostatnio chyba Kivo nic nie robi. Mo¿e stworzysz mu w koñcu okazjê do okazania siê bardziej po¿ytecznym?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_05"); //Zawitaj te¿ u Ratforda.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_06"); //Jeœli chodzi o patroszenie zwierzyny to Chris jest niezast¹piony.

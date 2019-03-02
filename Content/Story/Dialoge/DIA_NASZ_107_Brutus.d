@@ -70,13 +70,13 @@ FUNC INT DIA_NASZ_107_Brutus_jak_Condition()
 FUNC VOID DIA_NASZ_107_Brutus_jak_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_00"); //Jak siê tu znalaz³eœ?
-	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_01"); //Uciek³em z zamku przed tymi kud³atymi bestiami, potê¿nej postury i wzrosu. By³y ich tam ca³e stada, atakowa³y mnie!
-	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_02"); //O jakich bestiach mówisz? Co takie groŸnego mog³o siê kryæ na zamku?
-	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_03"); //Przed Chrz¹szczami, fuj! Nienawidzê tych stworzeñ, widzia³eœ, jakie s¹ ogromne i w³ochate?
-	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_04"); //Oj Brutusie, przecie¿ one s¹ takie ma³e, a ty taki du¿y, nie rozœmieszaj siê! Mo¿esz je spokojnie rozgnieœæ swoj¹ stop¹.
+	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_01"); //Uciek³em z zamku przed tymi kud³atymi bestiami, potê¿nej postury i wzrostu. By³y ich tam ca³e stada, atakowa³y mnie!
+	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_02"); //O jakich bestiach mówisz? Co takiego groŸnego mog³o siê kryæ na zamku?
+	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_03"); //Przed chrz¹szczami, fuj! Nienawidzê tych stworzeñ. Widzia³eœ, jakie s¹ ogromne i w³ochate?
+	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_04"); //Oj Brutusie, przecie¿ one s¹ takie ma³e, a ty taki du¿y, nie oœmieszaj siê! Mo¿esz je spokojnie rozgnieœæ swoj¹ stop¹.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_05"); //Gdybyœ tylko widzia³, jak one na mnie patrzy³y, by³em pewien, ¿e chcia³y mnie zjeœæ. Nie mia³em innego wyjœcia.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_06"); //Mog³em zostaæ z moj¹ star¹, to by³ jej przysmak. Nigdy w okresie naszego ma³¿eñstwa nie znalaz³em chrz¹szcza pod ³ó¿kiem...
-	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_07"); //Ale wracaj¹c do tego, jak tutaj dotar³em. W póŸniejszym okresie ukry³em siê w jakiej jaskini.
+	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_07"); //Ale wracaj¹c do tego, jak tutaj dotar³em. W póŸniejszym okresie ukry³em siê w okolicznej jaskini.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_08"); //Ca³e szczêœcie, ¿e nie by³o w niej tych paskudnych stworzeñ. Chcia³em jakoœ dostaæ siê na prze³êcz i wróciæ do Khorinis.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_09"); //Któregoœ dnia rozleg³o siê potê¿ne trzêsienie ziemi. Wyszed³em, by to sprawdziæ i zobaczy³em orków.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_10"); //Dobrze, ¿e znalaz³ mnie Korth. Gdyby nie on, nie odwa¿y³bym siê wyjœæ z mojej kryjówki.
@@ -87,7 +87,7 @@ FUNC VOID DIA_NASZ_107_Brutus_jak_Info()
 	
 	//Przewraca siê Brutus
 	AI_PlayAni(self,"T_FALLB_2_FALLENB");
-	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_13"); //Dos³ownie, mój przyjacielu, dos³ownie. A teraz wstawaj, nabra³em ciê! (œmiech)
+	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_13"); //Spokojnie, spokojnie. Nabra³em ciê!
 	AI_Wait(self,1);
 	if(!AniIsActive(self,"T_FALLB_2_FALLENB"))
 	{

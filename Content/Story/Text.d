@@ -154,11 +154,16 @@ CONST STRING MOBNAME_MISSION_GRAVE17 = "Melatonix - 'postrach najm¹drzejszych'";
 CONST STRING MOBNAME_MISSION_GRAVE18 = "Kap³an Œmiercionoœnych - 'pomœcimy ciê!'"; 	//nasz
 CONST STRING MOBNAME_MISSION_GRAVE19 = "Cassem Da-Na'rem"; 							//nasz
 CONST STRING MOBNAME_MISSION_GRAVE20 = "Mugo - 'UGA!'"; 							//nasz
-CONST STRING MOBNAME_THANKS_1 = "Bogdan Zwei II"; 					//nasz
-CONST STRING MOBNAME_THANKS_2 = "SiemekK"; 							//nasz
-CONST STRING MOBNAME_THANKS_3 = "anonimowy1121"; 					//nasz
-CONST STRING MOBNAME_THANKS_4 = "Simen"; 							//nasz
-CONST STRING MOBNAME_THANKS_5 = "Duch"; 							//nasz
+CONST STRING MOBNAME_THANKS_1 = "Bogdan Zwei II - za najszybsze odpowiedzi na theModders"; 					//nasz
+CONST STRING MOBNAME_THANKS_2 = "SiemekK - za garœæ pojedyñczych skrypcików"; 							//nasz
+CONST STRING MOBNAME_THANKS_3 = "anonimowy1121 - za pocz¹tki!"; 					//nasz
+CONST STRING MOBNAME_THANKS_4 = "Simen - za te ciê¿kie betatesty :)"; 							//nasz
+CONST STRING MOBNAME_THANKS_5 = "Duch - za ogarniêcie dubbingu"; 							//nasz
+CONST STRING MOBNAME_THANKS_6 = "Czudak - za kilka tekstur tarcz"; 							//nasz
+CONST STRING MOBNAME_THANKS_7 = "Mchuable - za tysi¹ce zdubbingowanych linijek"; 							//nasz
+CONST STRING MOBNAME_THANKS_8 = "TODO"; 							//nasz
+CONST STRING MOBNAME_THANKS_9 = "TODO"; 							//nasz
+CONST STRING MOBNAME_THANKS_10 = "TODO"; 							//nasz
 
 
 
@@ -1208,3 +1213,17 @@ const string KapWechsel_4			= "Rozdzia³ 4"					;
 const string KapWechsel_4_Text		= "Za palisad¹"			;
 const string KapWechsel_5			= "Rozdzia³ 5"					;
 const string KapWechsel_5_Text		= "Orkowe miasto"			;
+
+
+
+// Ucieczka :)
+const string G2U_you_use = "U¿ywasz ";
+const string G2U_you_take = "Podnios³eœ: ";
+const string G2U_fire_arrow = "ogniste strza³y";
+const string G2U_ice_arrow = "lodowe strza³y";
+const string G2U_sharp_arrow = "ostre strza³y";
+const string G2U_normal_arrow = "zwyk³e strza³y";
+const string G2U_sharp_bolt = "ostre be³ty";
+const string G2U_normal_bolt = "zwyk³e be³ty";
+const string G2U_error_attack = "B³¹d z npc podczas ataku! Skontaktuj siê z twórcami moda.";
+const string G2U_poisson = "Zosta³eœ zatruty!";

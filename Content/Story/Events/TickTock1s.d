@@ -1,4 +1,5 @@
 const int oCNpc__CloseDeadNpc = 7744320;
+const int oCNpc__OpenDeadNpc = 7743856;
 var int Zamek_OneTime;
 var int Jaszczuroludzie_1;
 var int Jaszczuroludzie_2;
@@ -44,27 +45,37 @@ var int NieznajomySiePojawiaMattOneTime;
 var int _LevelMiner;
 var int TPMolyFirstTime;
 var int secCameraEvent;
+var int lukorOneTime;
+var int IsOpenedDeadNpc;
 
-/*const int GIL_SKELETON					= 31	;
-const int GIL_SUMMONED_SKELETON			= 32	;
-const int GIL_SKELETON_MAGE				= 33	;*/
-
-func void LukorBook()
+func void CloseDeadNpc()
 {
-	if(Npc_HasItems(hero, ItNa_KsiegaLukora))
+	if(ECX != MEM_ReadInt(_hero)) {return;};
+	
+	if(!lukorOneTime)
 	{
-		if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
+		if(Npc_HasItems(hero, ItNa_KsiegaLukora))
 		{
-			RemoveHookF(oCNpc__CloseDeadNpc,5,LukorBook);
-			Print("Hmm.. Ta ksi¹¿ka mo¿e mi siê przydaæ.");
-		}
-		else
-		{
-			B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
-			RemoveHookF(oCNpc__CloseDeadNpc,5,LukorBook);
+			if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
+			{
+				lukorOneTime = 1;
+				Print("Hmm.. Ta ksi¹¿ka mo¿e mi siê przydaæ.");
+			}
+			else
+			{
+				B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
+				lukorOneTime = 1;
+			};
 		};
 	};
+	IsOpenedDeadNpc = 0;
 
+};
+func void OpenDeadNpc()
+{
+	if(ECX != MEM_ReadInt(_hero)) {return;};
+	
+	IsOpenedDeadNpc = 1;
 };
 
 func void InsertSkeletonJenkins()

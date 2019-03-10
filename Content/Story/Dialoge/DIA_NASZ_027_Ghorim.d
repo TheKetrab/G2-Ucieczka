@@ -100,7 +100,7 @@ func void DIA_NASZ_027_Ghorim_Lojalnosc_Info ()
 	Log_CreateTopic (TOPIC_Ghorim_ksiega, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ghorim_ksiega, LOG_RUNNING);
 	B_LogEntry (TOPIC_Ghorim_ksiega, "Duch Ghorim chcia³by poznaæ sekretne zapiski Baala Lukora, który by³ najbli¿ej ze wszystkich Guru ze ¦ni±cym. Muszê odnale¼æ jego ksiêgê, któr± zabra³ ze sob± na cmentarzysko orków.");
-	HookEngineF(oCNpc__CloseDeadNpc,5,LukorBook);
+	//HookEngineF(oCNpc__CloseDeadNpc,5,LukorBook);
 	
 
 	AI_StopProcessInfos (self);

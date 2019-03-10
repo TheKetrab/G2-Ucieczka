@@ -70,7 +70,7 @@ func void OpenSteal()
 
 func void HandleEvents_hook(/*int key*/)
 {
-	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT)
+	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
 		if(!NpcIsFighting(hero) && !C_NpcIsDown(hero) && HLP_Is_oCNpc(MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/)))
 		{
@@ -83,31 +83,6 @@ func void HandleEvents_hook(/*int key*/)
 			};		
 		
 		};
-	};
-	
-	/*if(HLP_Is_oCNpc(MEM_READINT(MEM_READINT(_hero)+2476))/*player->focus_vob*//*) 
-	{
-		if(MEM_ReadInt(ESP+4) == MEM_GetKey("keyAction") || MEM_ReadInt(ESP+4) ==MEM_GetSecondaryKey("keyAction"))
-		{
-			var c_npc fcs; fcs = _^(MEM_READINT(MEM_READINT(_hero)+2476));
-			if(Npc_IsInState(fcs, ZS_MagicSleep))
-			{
-				MEM_WriteInt(ESP+4,-1);	
-				AI_GotoNpc (hero, fcs);
-				Ai_PlayAni(hero,"T_PLUNDER");
-				OpenSteal();
-				Release(fcs);	
-			};
-		};	
-	};*/
-	
-	if(MEM_READINT(ESP+4) == KEY_1 || MEM_READINT(ESP+4) == KEY_2 || MEM_READINT(ESP+4) == KEY_3 || MEM_READINT(ESP+4) == KEY_4 ||MEM_READINT(ESP+4) == KEY_5 || MEM_READINT(ESP+4) == KEY_6 || MEM_READINT(ESP+4) ==  KEY_7 || MEM_READINT(ESP+4) ==  KEY_8 || MEM_READINT(ESP+4) == KEY_9 || MEM_READINT(ESP+4) == KEY_0 )
-	{
-		//QS_AddItem(1, 1);
-		//var int v; v = View_Create/*CenterPxl*/(2048, 2048, 6144, 6144);
-		//View_Open(v);
-		//oCItem_Render( _@(ITMW_1H_BLESSED_01), QS_World, View_GetPtr(v), floatNULL);
-		//Print("abc");
 	};
 };
 
@@ -139,14 +114,6 @@ func void Inv_Draw_Hook()
         };
 		MEM_Free(txtPtr);
     };
-	/*var int i; i = 0;
-	repeat(i,10);
-		qs_new^slot(i, iptr);
-	end;*/
-	//var int v; v = view_create(2048, 2048, 6144, 6144);
-	//oCItem_Render(iPtr, QS_World, View_GetPtr(v), floatNULL);
-    
-
 };
 
 func void RemoveChestKeyOnExit()
@@ -220,28 +187,93 @@ func void DynamicSaveSystem()
 
 
 };
-/*
-func void onTradeLeft() {
-	
-	var int value; value = MEM_ReadInt(ESP+20); // itm.value * multiplier
-	MEM_WriteInt(ESP+20, 123); // set new value
-	var oCItem itm; itm = _^(EBX); //Get the item
-	var oCNpc npc; npc = _^(MEM_InformationMan.npc); // Get the NPC
-	Print(itm.name);
-};
-func void onTradeRight() {
-	/*var int value; value = MEM_ReadInt(ESP+20); // itm.value * multiplier
-	MEM_WriteInt(ESP+20, 123); // set new value
-	var oCItem itm; itm = _^(EBX); //Get the item
-	var oCNpc npc; npc = _^(MEM_InformationMan.npc); // Get the NPC
-	Print(itm.name);*/
-//};*/
 
 func void HeroStatusFix()
 {
 	if (MEM_ReadInt(oCZoneMusic__s_herostatus) == 1)
 	{
 		MEM_WriteInt(oCZoneMusic__s_herostatus,2);
+	};
+};
+
+func void DisableFocusOfDeadNPCsWithEmptyInventory() {
+    const int once = 0;
+    if (once) {
+        return;
+    };
+    once = 1;
+
+    // Safety check in case later versions of the System Pack add this functionality
+    const int oCNpc__CollectFocusVob_deadNpc = 7552709; //0x733EC5
+    const int expected[6] = { 28870027, -1065025536, 13995791, -2135228416, -385875968, 203 };
+    if (!MEM_CompareBytes(oCNpc__CollectFocusVob_deadNpc-14, _@(expected), 4*6)) {
+        MEM_Warn("Opcode integrity-check failed. This feature must have been already implemented by someone else.");
+        return;
+    };
+
+    // Overwrite opcode with hook
+    MemoryProtectionOverride(oCNpc__CollectFocusVob_deadNpc, 5);
+    MEM_WriteInt(oCNpc__CollectFocusVob_deadNpc,    -1869574000); // 4 x nop: 0x90909090
+    MEM_WriteByte(oCNpc__CollectFocusVob_deadNpc+4, ASMINT_OP_nop);
+
+    HookEngineF(oCNpc__CollectFocusVob_deadNpc, 5, _DisableFocusOfDeadNPCsWithEmptyInventory);
+};
+func void _DisableFocusOfDeadNPCsWithEmptyInventory()
+{
+    // Get dead focus NPC
+    var oCNpc npc; npc = _^(EBP);
+    var int invPtr; invPtr = _@(npc.inventory2_vtbl);
+
+    // Check if inventory is empty
+    const int oCNpcInventory__IsEmpty = 7393696; //0x70D1A0
+    const int one = 1;
+    const int call = 0;
+    if (CALL_Begin(call)) {
+        CALL_IntParam(_@(one)); // Ignore equipped (ITEM_ACTIVE)
+        CALL_IntParam(_@(one)); // Ignore armor (ITEM_KAT_ARMOR)
+        CALL__thiscall(_@(invPtr), oCNpcInventory__IsEmpty);
+        call = CALL_End();
+    };
+
+    // Change vob type for different focus priority
+    if (CALL_RetValAsInt()) {
+        // Inventory empty: Set invalid zTVobType -> focus priority = -1 (ignored)
+        EBX = -1; // zTVobType_none
+    } 
+	else {
+        // Inventory not empty: Set mob zTVobType -> low focus priority (this is the "original" code)
+        EBX = 128; // zTVobType_mob
+   };
+ };
+
+func void VobSetVisual(var int vobPtr, var string str) 
+{
+	const int zCVob__SetVisual = 6301312; //602680
+	
+	CALL_zStringPtrParam(str);
+	CALL__thiscall(vobPtr, zCVob__SetVisual);
+};
+
+func void SHIELD_EQUIP()
+{
+	if(!ECX || !MEM_ReadInt(ESP+4)) {return;};
+	
+	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
+	if(itm.flags & ITEM_SHIELD)
+	{
+		if(ECX == MEM_ReadInt(_hero))
+		{
+			if (!WalkaTarcza)
+			{
+				MEM_WriteInt(ESP+4,0);
+				PrintScreen("Brak odpowiedniej umiejêtnoœci.",-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+				AI_PlayAni(hero,"T_DONTKNOW");
+				hero.aivar[AIV_TARCZA] = false;
+				return;
+			};
+		};
+		var int ptr; ptr = MEM_ReadInt(ESP+4);
+		VobSetVisual(ptr,itm.visual);	
 	};
 };
 
@@ -252,11 +284,14 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
+		DisableFocusOfDeadNPCsWithEmptyInventory();
+		HookEngineF(oCNpc__EquipItem,        7, SHIELD_EQUIP);
 		HookEngineF(oCNpc__ProcessNpc,6,SneakHuntingBoost); 
 		
 		HookEngineF(oCGame__TestKeys,6,CheckMarvin);
 		
-		HookEngineF(oCNpc__CloseDeadNpc,5,LukorBook);
+		HookEngineF(oCNpc__CloseDeadNpc,5,CloseDeadNpc);
+		HookEngineF(oCNpc__OpenDeadNpc,6,OpenDeadNpc);
 		HookEngineF(oCGame__GetHeroStatus,5,DynamicSaveSystem);
 		//HookEngineF(6908240,6,DynamicSaveSystem);
 		//HookEngineF(6927088,6,sneak);

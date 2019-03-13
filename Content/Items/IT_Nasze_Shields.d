@@ -15,17 +15,8 @@ func void Equip_Shield()
 		{
 			Mdl_ApplyOverlayMds (self, "HUMANS_SHIELD.MDS");
 		};
-	}
-
-    else
-	{
-		AI_UnequipWeapons(self);
-		PrintScreen("Brak odpowiedniej umiejêtnoœci.",-1,YPOS_LevelUp,FONT_ScreenSmall,2);
-		AI_PlayAni(self,"T_DONTKNOW");
-		self.aivar[AIV_TARCZA] = false;
 	};
-	
-	 };
+	};
 };
 
 func void UnEquip_Shield()

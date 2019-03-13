@@ -39,10 +39,11 @@ INSTANCE DIA_NASZ_020_Sattar_HaveYouFinished   (C_INFO)
 
 FUNC INT DIA_NASZ_020_Sattar_HaveYouFinished_Condition()	
 {
-	if (npc_knowsinfo(other,DIA_NASZ_002_Daryl_ZamieniamSie))
-	{
+	// TODO odkomentowac
+	//if (npc_knowsinfo(other,DIA_NASZ_002_Daryl_ZamieniamSie))
+	//{
 		return TRUE;
-	};
+	//};
 };
 
 FUNC VOID DIA_NASZ_020_Sattar_HaveYouFinished_Info()
@@ -93,21 +94,21 @@ FUNC INT DIA_NASZ_020_Sattar_Metody1_Condition()
 FUNC VOID DIA_NASZ_020_Sattar_Metody1_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_020_Sattar_Metody1_15_00"); //Mam nadziejê, ¿e nie jesteœ zajêty lub zbyt zmêczony, bo przychodzê do ciebie w pilnej sprawie.
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_01"); //Tak, wiem o co chodzi, s³ysza³em wasz¹ rozmowê.
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_01"); //Domyœlam siê, ¿e przysy³a ciê Ben? Najwy¿szy czas!
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_02"); //Najlepiej bêdzie jak od razu zabierzemy siê do pracy, gdy¿ bêdê potrzebowa³ potem nieco czasu, aby stworzyæ magiczn¹ formu³ê zaklêcia.
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_03"); //Nie zrozum mnie Ÿle, nie w¹tpiê w twe umiejêtnoœci magiczne, ale... Mo¿esz mi wyt³umaczyæ, jak chcesz stworzyæ zwój od podstaw?
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_04"); //Nie wiem zbyt wiele o ca³ym procesie zaklinania formu³ w zwojach. Znam jedynie kilka faktów, jakie zas³ysza³em bêd¹c pos³añcem Magów Ognia jeszcze w czasach kolonii karnej.
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_05"); //Wynika z nich, ¿e aby stworzyæ konkretny zwój trzeba znaæ nie tylko formu³ê, ale równie¿ posiadaæ odpowiednie sk³adniki.
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_06"); //Nie znajdziemy ich raczej w kopalni, a i stra¿nik nam ich raczej nie da...
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_07"); //Aby wykonaæ zaklêcie bêdzie mi potrzebny jedynie pergamin, który mia³em przy sobie w chwili kiedy mnie tu uwiêzili.
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_08"); //Na szczêœcie nie s¹ zbyt bystrzy i nie spostrzegli, i¿ mam go ze sob¹. Kto by pomyœla³, ¿e trzymanie pergaminów w sakwie siê op³aci
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_08"); //Na szczêœcie nie s¹ zbyt bystrzy i nie spostrzegli, i¿ mam go ze sob¹. Kto by pomyœla³, ¿e trzymanie pergaminów w sakwie siê op³aci?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_09"); //Je¿eli zaœ chodzi o resztê sk³adników... Dla kogoœ, kto nie ma zbyt du¿o wspólnego z t¹ sztuk¹, mo¿e wydawaæ siê to barier¹ nie do przeskoczenia.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_10"); //Musisz jednak wiedzieæ, ¿e tworzenie magicznych zwojów przypomina w pewnym stopniu sztukê alchemii, a konkretnie wyrób mikstur.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_11"); //Przy odpowiednich umiejêtnoœciach i wiedzy mo¿esz uwarzyæ mikstury przy wykorzystaniu substratów zastêpczych.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_12"); //Wystarczy wtedy znaæ w³aœciwoœci roœlin i to, jak reaguj¹ z danymi sk³adnikami, a nastêpnie zmieszaæ wszystko w odpowiednich proporcjach.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_13"); //To samo mo¿na wykorzystaæ w procesie tworzenia zwojów.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_14"); //W formu³ê jak¹ zapiszesz na pergaminie, mo¿esz tchn¹æ energiê przedmiotów, które do niej nie pasuj¹ licz¹c siê z tym, ¿e taki czar bêdzie o wiele s³abszy. 
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_15"); //To z³o¿ony proces, który w klasztorze, z jakiego pochodzê, nazywany by³ „manipulacj¹” energii. 
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_15"); //To z³o¿ony proces, który w klasztorze, z jakiego pochodzê, nazywany by³ 'manipulacj¹ energi'. 
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_16"); //Brzmi ryzykownie. Kiedy mo¿emy zacz¹æ?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_17"); //W³aœciwie ju¿ teraz. Jednak po raz kolejny bêdê potrzebowa³ twojej pomocy.
 
@@ -138,7 +139,7 @@ FUNC VOID DIA_NASZ_020_Sattar_Metody2_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_020_Sattar_Metody2_15_00"); //Jasne, powiedz tylko, co mam zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_01"); //Do stworzenia zaklêcia potrzebujê dwóch kryszta³ów, które znajduj¹ siê w kopalni.
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_02"); //Wydoby³bym je sam, jednak kompletnie siê na tym nie znam. Wiesz, ¿e jestem kiepskim górnikiem... Móg³byœ je dla mnie zdobyæ? 
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_02"); //Wydoby³bym je sam, ale marny ze mnie górnik. Ledwo potrafiê kopaæ rudê, a takie kryszta³y to nawet coœ trudniejszego. Móg³byœ je dla mnie wydobyæ?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_03"); //Najlepiej wykop tyle, ile zdo³asz. Wybiorê wtedy dwa najwiêksze i przyst¹piê do dzia³ania. 
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody2_55_04"); //Zabieram siê do roboty.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_05"); //Œwietnie! Bêdê czeka³ w tunelu z ³ó¿kiem, rozpocznê ju¿ przygotowania. 
@@ -221,6 +222,7 @@ FUNC VOID DIA_NASZ_020_Sattar_Metody4_Info()
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody4_15_00"); //Nie przypuszcza³em, ¿e to bêdzie tak trudne, ale ostatecznie uda³o mi siê. Zwój jest gotowy do u¿ycia.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody4_55_01"); //Powinniœmy wróciæ do reszty i powiedzieæ im, ¿e przygotowania dobieg³y koñca.
 	
+	B_StartOtherRoutine (NASZ_002_Daryl, "GoToBen");
 	Npc_ExchangeRoutine (self, "GoToBen");
 	
 	

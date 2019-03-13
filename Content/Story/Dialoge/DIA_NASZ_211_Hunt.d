@@ -155,7 +155,7 @@ INSTANCE DIA_NASZ_211_Hunt_Kaptur   (C_INFO)
 FUNC INT DIA_NASZ_211_Hunt_Kaptur_Condition()	
 {
 	if (hero.guild == GIL_OUT)
-	&& (KapturMysliwegoKupiony == FALSE))
+	&& (KapturMysliwegoKupiony == FALSE)
 	{
 		return TRUE;
 	};

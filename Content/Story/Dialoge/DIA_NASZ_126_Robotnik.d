@@ -77,7 +77,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_work_Info()
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_02"); //S³uchaj, mam pewien problem.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_03"); //Bo widzisz... Budynek, w którym przebywa Keroloth strasznie skrzypi. Pod³oga jest podtrzymywana przez kilka drewnianych filarów.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_04"); //Obawiam siê, ¿e konstrukcja lada moment siê za³amie.
-	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_05"); //Jeœli w ci¹gu dwóch dni ktoœ tego nie naprawi, to Keroloth urwie mi jaja i powiesi je sobie na szyji.
+	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_05"); //Jeœli w ci¹gu dwóch dni ktoœ tego nie naprawi, to Keroloth urwie mi jaja i powiesi je sobie na szyi.
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_work_55_06"); //Czemu sam siê tym nie zajmiesz?
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_07"); //Po pierwsze: Zgubi³em paczkê gwoŸdzi.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_08"); //Po drugie: Wejœcie pod owy budynek jest od zewn¹trz, a tam czyhaj¹ bestie.
@@ -276,7 +276,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_WorkDone_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkDone_15_00"); //Naprawi³em.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_01"); //I jak? Bardzo Ÿle to wygl¹da³o?
-	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkDone_15_02"); //Myœlê, ¿e niewiele brakowa³o do konsekwencji ze strony Kerolotha, o któych wspomina³eœ.
+	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkDone_15_02"); //Myœlê, ¿e niewiele brakowa³o do konsekwencji ze strony Kerolotha, o których wspomina³eœ.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_03"); //Dziêkujê. Ratujesz mi ¿ycie. Naprawdê, nie chcê mieæ na pieñku z Kerolothem. To ju¿ nie ten sam rycerz, co niegdyœ na zamku. Pobyt w Górniczej Dolinie zmieni³ go nie do poznania.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_WorkDone_55_04"); //WeŸ to. Grog to najlepszy trunek na œwiecie!
 

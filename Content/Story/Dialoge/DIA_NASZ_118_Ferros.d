@@ -113,7 +113,7 @@ FUNC VOID DIA_NASZ_118_Ferros_need_Info()
 	
 	Log_CreateTopic (TOPIC_Ferros_plomien, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ferros_plomien, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ferros_plomien, "Po zniszczeniu magii Paladynów, Feros zdecydowa³ siê zebraæ kolekcjê ich czarów zapisanych na zwojach. Brakuje mu 'œwiêtego p³omienia', którego odszukania siê podj¹³em. £owca orków s¹dzi, ¿e warto rozejrzeæ siê po terenach, z których wznosi³a siê bariera. By³y one przecie¿ ochraniane przez Paladynów i mo¿e znajdê tam jakieœ zwoje?");
+	B_LogEntry (TOPIC_Ferros_plomien, "Po zniszczeniu magii paladynów, Feros zdecydowa³ siê zebraæ kolekcjê ich czarów zapisanych na zwojach. Brakuje mu 'œwiêtego p³omienia', którego odszukania siê podj¹³em. £owca orków s¹dzi, ¿e warto rozejrzeæ siê po terenach, z których wznosi³a siê bariera. By³y one przecie¿ ochraniane przez paladynów i mo¿e znajdê tam jakieœ zwoje?");
 
 };
 
@@ -144,6 +144,7 @@ FUNC VOID DIA_NASZ_118_Ferros_NeedEnd_Info()
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_NeedEnd_15_00"); //Znalaz³em ten zwój.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_NeedEnd_55_01"); //Poka¿.
 	B_giveinvitems (other, self, ItSc_PalLight, 1);
+	Npc_RemoveInvItems(self,ItSc_PalLight,1);
 	B_UseFakeScroll();
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_NeedEnd_55_02"); //To ten! Teraz moja kolekcja jest pe³na!
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_NeedEnd_55_03"); //Dziêki. Przyjmij te mikstury w nagrodê.
@@ -234,6 +235,7 @@ FUNC VOID DIA_NASZ_118_Ferros_MamLekarstwo_Info()
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamLekarstwo_15_00"); //Mam lekarstwo.
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamLekarstwo_15_01"); //Powinieneœ piæ codziennie po trzy krople. Nie wiêcej, bo mo¿e ci siê jeszcze pogorszyæ.
 	B_GiveInvItems (other, self, ItNa_KropleFerros, 1);
+	Npc_RemoveInvItems(self,ItNa_KropleFerros,1);
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_MamLekarstwo_55_02"); //Ponadto, je¿eli rozboli ciê g³owa, to Kirgo poleci³, byœ wypi³ zimne mleko. To pomo¿e ci poradziæ sobie z dzia³aniem eliksiru.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamLekarstwo_55_03"); //Jesteœ pewien, ¿e to pomo¿e? Zreszt¹, niewa¿ne, i tak nie mamy innej alternatywy.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamLekarstwo_55_04"); //PrzyjdŸ do mnie za trzy dni. Powiem ci, jak siê czujê.
@@ -271,7 +273,7 @@ FUNC VOID DIA_NASZ_118_Ferros_HowDoUFeel_Info()
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_15_01"); //Zdecydowanie lepiej, chocia¿ nadal ciê¿ko jest mi siê wyspaæ. Prawdopodobnie to wina dzia³ania eliksiru.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_02"); //Mogê mieæ do ciebie ostatni¹ proœbê?
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_03"); //Oczywiœcie, o co chodzi?
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w sowim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ, oczywiœcie oddam ci koszty zakupy.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w swoim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ, oczywiœcie oddam ci koszty zakupy.
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_05"); //Zobaczê, co da siê zrobiæ.
 
 	B_LogEntry (TOPIC_Ferros_sny, "Feros czuje siê ju¿ lepiej, lecz nadal ma k³opoty z zaœniêciem. Rozwi¹zaniem ma byæ nalewka od Jeremiasza.");
@@ -304,9 +306,10 @@ FUNC VOID DIA_NASZ_118_Ferros_MamNalewke_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_MamNalewke_15_00"); //Mam nalewkê.
 	B_GiveInvItems(other,self,ItNa_NalewkaFerros,1);
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamNalewke_15_01"); //Ile ciê to wynios³o?
+	Npc_RemoveInvItems(self,ItNa_NalewkaFerros,1);
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamNalewke_15_01"); //Ile ciê to kosztowa³o?
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_MamNalewke_55_02"); //100 sztuk z³ota. Jeremiasz uprzedzi³ mnie tak¿e, i¿ ma ona potê¿nego kopa.
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamNalewke_55_03"); //Haha! O to mi w³aœnie chodzi, dziêki ci jeszcze raz. Tutaj masz zwrot kosztów, tak jak siê umawialiœmy i kolejne 100 za sam¹ fatygê.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_MamNalewke_55_03"); //Ha, ha! O to mi w³aœnie chodzi, dziêki ci jeszcze raz. Tutaj masz zwrot kosztów, tak jak siê umawialiœmy i kolejne 100 za sam¹ fatygê.
 	
 	Createinvitems (self, ItMi_Gold, 200);
 	B_giveinvitems (self, other, ItMi_Gold, 200);
@@ -347,7 +350,7 @@ FUNC VOID DIA_NASZ_118_Ferros_GoToRenegaci_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_GoToRenegaci_15_00"); //Mamy udaæ siê do Starej Kopalni i pozabijaæ renegatów.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_GoToRenegaci_55_01"); //Damy im radê? Ilu nas bêdzie? I w ogóle jak chcesz dostaæ siê do œrodka? Nie bêdziemy przecie¿ taszczyæ ze sob¹ drabin, bo zostaniemy zestrzeleni przy próbie przedarcia siê gór¹.
-	AI_Output (other, self,"DIA_NASZ_118_Ferros_GoToRenegaci_55_02"); //Zaatakujemy pod os³on¹ nocy we czterech. Ja, ty, Fed i Kjorn. Keroloth da³ mi zaklêcie przemiany w chrz¹szcza, dziêki któremu przedostanê siê do œrodka i otworze bramê.
+	AI_Output (other, self,"DIA_NASZ_118_Ferros_GoToRenegaci_55_02"); //Zaatakujemy pod os³on¹ nocy we czterech. Ja, ty, Fed i Kjorn. Keroloth da³ mi zaklêcie przemiany w chrz¹szcza, dziêki któremu przedostanê siê do œrodka i otworzê bramê.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_GoToRenegaci_55_03"); //Hmm... No dobra. Oby nie skoñczy³o siê zbyt krwawo.
 
 	Npc_ExchangeRoutine (self, "FollowRenegaci");
@@ -398,7 +401,7 @@ FUNC VOID DIA_NASZ_118_Ferros_RenegaciOnPlace_Info()
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_01"); //Jeszcze nie, muszê przyjrzeæ siê lepiej tym barykadom.
 	
 	if (Npc_GetDistToWP(hero,"OW_PATH_264") < (Npc_GetDistToWP(hero,"OW_PATH_148_A"))) {
-		AI_Output (other, self,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_02"); //Wy oczekujcie przy tej bramie. O ile dobrze pamiêtam ko³owrót otwiera³ w³aœnie t¹.
+		AI_Output (other, self,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_02"); //Wy oczekujcie przy tej bramie. O ile dobrze pamiêtam, ko³owrót otwiera³ w³aœnie t¹.
 	} else {
 		AI_Output (other, self,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_03"); //Wy udajcie siê pod drug¹ bramê. Stamt¹d zaatakujecie.
 	};
@@ -407,7 +410,7 @@ FUNC VOID DIA_NASZ_118_Ferros_RenegaciOnPlace_Info()
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_04"); //Czyli ta misja to atak na kopalnie renegatów? Dobrze, ¿e wczoraj ostrzy³em swój miecz.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_04"); //Czyli ta misja to atak na kopalniê renegatów? Dobrze, ¿e wczoraj ostrzy³em swój miecz.
 
 	TRIA_Next(Fed);
 	AI_TurnToNpc(other, self);
@@ -609,7 +612,7 @@ FUNC VOID DIA_NASZ_118_Ferros_Teach_STR_5High ()
 
 func void OPEN_RENEGACI_ATTACK_S1() {
 
-	Print("Funkcja dziala");
+	//Print("Funkcja dziala");
 
 	NASZ_006_Renegat.guild = GIL_BDT;
 	Npc_SetTrueGuild (NASZ_006_Renegat, GIL_BDT);

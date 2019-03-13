@@ -155,7 +155,7 @@ FUNC VOID DIA_NASZ_305_Rabon_what_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_what_15_00"); //Czym siê tu zajmujesz?
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_what_55_01"); //Mam mieæ oko na okolicê.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_what_55_02"); //Gdyby w okolicy pojawili siê jacyœ wrogowie, bestie czy ludzie, mam podnieœæ alarm.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_what_55_02"); //Na wypadek zagro¿enia mam podnieœæ alarm.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_what_55_03"); //A có¿ ciebie sprowadza tutaj, na górê?
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_what_15_04"); //Powiedzmy, ¿e nie doskwiera mi lêk wysokoœci.
 };
@@ -185,7 +185,7 @@ FUNC VOID DIA_NASZ_305_Rabon_zadanie_Info()
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_zadanie_55_02"); //Chwila nieuwagi... A ja, cholera, nie mogê siê st¹d ruszyæ. Nod srogo karze tych, którzy nie szanuj¹ swoich obowi¹zków.
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_zadanie_15_03"); //Czy twoja sakwa bêdzie wewn¹trz obozu, czy poza nim?
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_zadanie_55_04"); //W³aœnie nie wiem... Ale wola³bym, ¿eby by³a poza.
-	AI_Output (other,self ,"DIA_NASZ_305_Rabon_zadanie_15_05"); //Ah tak, z³oto przyci¹ga ka¿dego.
+	AI_Output (other,self ,"DIA_NASZ_305_Rabon_zadanie_15_05"); //No tak, z³oto przyci¹ga ka¿dego.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_zadanie_55_06"); //Nikt nie mówi, ¿e trzymam w niej z³oto... Ale nawet nie próbuj do niej zagl¹daæ! Zrozumiano?
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_zadanie_55_07"); //Jasne...
 
@@ -311,16 +311,16 @@ FUNC VOID DIA_NASZ_305_Rabon_win_ok()
 	B_giveinvitems (other, self, itmi_nugget, 10);
 	Npc_RemoveInvItems(self,itmi_nugget,10);
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_01"); //No. To w takim razie po kolei.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_02"); //W jednej z kopalñ przebywa kilku Paladynów renegatów.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_02"); //W jednej z kopalñ przebywa kilku paladynów renegatów.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_03"); //Ich dowódca nazywa siê... Ee... jakoœ na literê M.
 	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_04"); //Mo¿e Marcos?
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_05"); //Ej, sk¹d wiedzia³eœ? Zreszt¹ niewa¿ne.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_06"); //Niby moja praca jest bardzo odpowiedzialna, ale strasznie nudna. Nie dajê rady staæ tu dzieñ i noc, a wyp³ata jak¹ otrzymujê, ani krzty nie rekompensuje mi moich wysi³ków.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_07"); //Postanowi³em... zainwestowaæ, ¿e tak powiem. Zap³aci³em doœæ sporo tamtym paladynom. Po 5 tysiêcy sztuk z³ota na g³owê.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_08"); //Ale zwróci mi siê to z niewyobra¿aln¹ korzyœci¹. Co jakiœ czas, któryœ z nich dostarcza mi ca³e ich wydobycie. Nie jest tego du¿o, ale œwiadczy to przecie¿ o tym, jak cenna jest teraz magiczna ruda.
-	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_55_09"); //A im siê to op³aca?
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_10"); //Póki co? Tak. Za jakieœ 2 miesi¹ce? Ju¿ nie.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_11"); //Hej, skoro ju¿ o tym wszystkim wiesz, to mo¿e zechcesz wejœæ w jak¹œ spó³kê?
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_06"); //W ka¿dym razie dogadaliœmy siê z nimi. Jak zapewne powiedzia³ ci Samuel, rudê któr¹ wykopiemy w Górniczej Dolinie, odsprzedamy królowi.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_07"); //Naszym problemem jest niewystarczaj¹ca iloœæ kopaczy, a ich problemem to, ¿e król nie kupi³by rudy od zaprzysiêg³ych sobie rycerzy, tylko pos¹dzi³ o zdradê i skaza³ na banicjê.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_08"); //Tak wiêc oni pomagaj¹ nam w wykopaliskach, a my zajmiemy siê sprzeda¿¹ kruszcu.
+	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_09"); //Zaraz, zaraz. Jeœli tak, to dlaczego ty mia³eœ tak¹ iloœæ rudy i dlaczego tak bardzo zale¿a³o ci na tym, by nikt siê o tym nie dowiedzia³?
+	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_10"); //Ukrad³eœ j¹ Nodowi? Czy mo¿e prowadzisz jakieœ lewe interesy z renegatami na w³asn¹ rêkê?
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_11"); //Hej, tylko nie tak g³oœno! Mam z nimi dodatkowy uk³ad. Skoro ju¿ o tym wszystkim wiesz, to mo¿e zechcesz wejœæ ze mn¹ w spó³kê, zamiast paplaæ o tym wszystkim szefostwu?
 
 	B_GivePlayerXP (50);
 	DodajReputacje (5, REP_BANDYCI);
@@ -333,6 +333,8 @@ FUNC VOID DIA_NASZ_305_Rabon_win_no()
 
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_win_no_15_00"); //Zapomnij.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_no_55_01"); //W takim razie ty zapomnij o jakichkolwiek informacjach.
+	
+	B_LogEntry (TOPIC_Rabon_sakwa, "Rabon nic wiêcej mi nie powie, tak wiêc zaprzepaœci³em sprawê. To, ¿e mia³ rudê w sakiewce to marny dowód na to, ¿e prowadzi interesy z paladynami. Nikt mi nie uwierzy, a Rabon przecie¿ siê wyprze i jeszcze mi siê za wszystko dostanie.");
 	Log_SetTopicStatus (TOPIC_Rabon_sakwa, LOG_FAILED);
 	Info_ClearChoices (DIA_NASZ_305_Rabon_win);
 };
@@ -374,7 +376,7 @@ FUNC VOID DIA_NASZ_305_Rabon_hmm_Info()
 	B_StartOtherRoutine (NASZ_006_Renegat,"Rabon");
 	B_StartOtherRoutine (NASZ_011_Renegat,"Rabon");
 
-	B_LogEntry (TOPIC_Rabon_sakwa, "Rabon chce, bym przyniós³ mu magiczn¹ rudê od Paladynów. Przyda mi siê ³atwy zysk... Miejsce wymiany to chyba Kanion Trolli. No to w drogê!");
+	B_LogEntry (TOPIC_Rabon_sakwa, "Rabon chce, bym przyniós³ mu magiczn¹ rudê od paladynów. Przyda mi siê ³atwy zysk... Miejsce wymiany to chyba Kanion Trolli. No to w drogê!");
 };
 
 //*********************************************************************

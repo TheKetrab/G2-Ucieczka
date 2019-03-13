@@ -186,7 +186,7 @@ FUNC VOID DIA_NASZ_307_Monk_siema_Samuel ()
 	Info_ClearChoices 	(DIA_NASZ_307_Monk_siema);
 		if (npc_knowsinfo (other, DIA_NASZ_316_Carry_palisada)) { Info_AddChoice		(DIA_NASZ_307_Monk_siema,"Jak widaæ wszystkie dziury za³atane.",DIA_NASZ_307_Monk_siema_JakWidac); };
 		Info_AddChoice		(DIA_NASZ_307_Monk_siema,"Jakich statkach?",DIA_NASZ_307_Monk_siema_JakichStatkach);
-		if (npc_knowsinfo (other, DIA_NASZ_327_Danny_armor)) { Info_AddChoice		(DIA_NASZ_307_Monk_siema,"Stwierdzi³, ¿e Nodowi bardziej siê przydadz¹.",DIA_NASZ_307_Monk_siema_ReceDoRoboty); };
+		if (npc_knowsinfo (other, DIA_NASZ_327_Danny_armor)) { Info_AddChoice		(DIA_NASZ_307_Monk_siema,"Stwierdzi³, ¿e Nodowi bardziej siê przydam.",DIA_NASZ_307_Monk_siema_ReceDoRoboty); };
 
 };
 
@@ -227,7 +227,7 @@ FUNC VOID DIA_NASZ_307_Monk_siema_JakichStatkach ()
 
 FUNC VOID DIA_NASZ_307_Monk_siema_ReceDoRoboty ()
 {
-	AI_Output (other,self,"DIA_NASZ_307_Monk_siema_ReceDoRoboty_08_00"); //Stwierdzi³, ¿e Nodowi bardziej siê przydadz¹.
+	AI_Output (other,self,"DIA_NASZ_307_Monk_siema_ReceDoRoboty_08_00"); //Stwierdzi³, ¿e Nodowi bardziej siê przydam.
 	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_ReceDoRoboty_08_01"); //Nonsens. Pewnie sprawia³eœ tam zbyt du¿o problemów.
 	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_ReceDoRoboty_08_02"); //Chocia¿ jeœli przeszed³eœ ca³kiem sam przez góry, to mo¿e na coœ siê nadasz.
 	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_ReceDoRoboty_08_03"); //Najpierw pogadaj z nasz¹ za³og¹. Potem dopiero dopuœcimy ciê do naszego szefa.
@@ -252,7 +252,10 @@ INSTANCE DIA_NASZ_307_Monk_help   (C_INFO)
 
 FUNC INT DIA_NASZ_307_Monk_help_Condition()
 {
-	return TRUE;
+	if (npc_knowsinfo (other, DIA_NASZ_307_Monk_siema))
+	{
+		return TRUE;
+	};
 };
 
 FUNC VOID DIA_NASZ_307_Monk_help_Info()
@@ -341,7 +344,7 @@ FUNC INT DIA_NASZ_307_Monk_stop_Condition()
 FUNC VOID DIA_NASZ_307_Monk_stop_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_307_Monk_stop_55_00"); //Widzisz ju¿ tê grupkê? To nasz cel.
-	AI_Output (self, other,"DIA_NASZ_307_Monk_stop_55_01"); //Nie zapomnij liczyæ, ile garde³ ur¿n¹³eœ.
+	AI_Output (self, other,"DIA_NASZ_307_Monk_stop_55_01"); //Nie zapomnij liczyæ, ile ich ubi³eœ.
 
 	MonkWolfMissionReady = TRUE;
 	
@@ -488,7 +491,7 @@ FUNC VOID DIA_NASZ_307_Monk_win_Info()
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_01"); //Nie.
 	AI_Output (other, self,"DIA_NASZ_307_Monk_win_55_02"); //Wiêc mo¿e mam jeszcze raz sklepaæ ci buŸkê? Gadaj w tej chwili, o co ci posz³o z Frutem.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_03"); //Cholera jasna. Zgodnie z przykazaniem Fruta, najpierw ja mia³em pilnowaæ bramy, a póŸniej zaj¹æ siê administracj¹ w obozie.
-	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_04"); //Po dziesiêciu dniach, mieliœmy siê zamieniæ. Problem w tym, ¿e ten skurczysyn siê nie zamienia! Mimo i¿ minê³a ustalona iloœæ czasu.
+	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_04"); //Po dziesiêciu dniach, mieliœmy siê zamieniæ. Problem w tym, ¿e ten skurczysyn siê nie zamienia! Mimo, i¿ minê³a ustalona iloœæ czasu.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_05"); //A jest na tyle silny, ¿e wszyscy siê go boj¹ i nikt nie stanie po mojej stronie.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_06"); //Gdy siê k³ociliœmy ostro oberwa³em. To dlatego siedzê teraz cicho. Mimo to, nie pasuje mi taka sytuacja.
 
@@ -590,9 +593,12 @@ FUNC VOID DIA_NASZ_307_Monk_frutkoniec_Info()
 	Createinvitems (self, ItMi_Gold, 100);
 	B_giveinvitems (self, other, ItMi_Gold, 100);
 	AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_02"); //Robiê to, co do mnie nale¿y.
-	AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_03"); //Czy teraz po zezwolenie na wejœcie do szefa mam siê zwracaæ do ciebie, czy do Fruta?
-	AI_Output (self, other,"DIA_NASZ_307_Monk_frutkoniec_55_04"); //Do Fruta. Ja przej¹³em tylko stanowisko administracji i wydajê polecenia reszcie bandy.
-
+	
+	if (Frut_Dal_Zezwolenie_Willowi == FALSE) {
+		AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_03"); //Czy teraz po zezwolenie na wejœcie do szefa mam siê zwracaæ do ciebie, czy do Fruta?
+		AI_Output (self, other,"DIA_NASZ_307_Monk_frutkoniec_55_04"); //Do Fruta. Ja przej¹³em tylko stanowisko administracji i wydajê polecenia reszcie bandy.
+	};
+	
 	B_LogEntry (TOPIC_Monk_Frut, "Nic dziwnego, ¿e w tej zgraji maj¹ miejsce takie sceny... Mam nadziejê, ¿e szybko siê st¹d zmyjê.");
 	Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_SUCCESS);
 	B_GivePlayerXP (400);

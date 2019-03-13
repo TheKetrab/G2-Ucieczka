@@ -1766,12 +1766,12 @@ func void DIA_NASZ_106_Jan_Kap3Quest_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_00"); //Ha, wreszczie ciê widzê.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3Quest_15_01"); //Dlaczego czeka³eœ w³aœnie na mnie? Czy ju¿ tylko ja jestem tu czegoœ wart?
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_02"); //Tylko ty zwiedzasz Górnicz¹ Dolinê. Reszty albo to nie obchodzi albo s¹ znurzeni t¹ krain¹ i nie rusz¹ siê st¹d bez rozkazu Kerolotha.
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_03"); //To o co ciê poproszê, mo¿e siê wydawaæ niehumanitarne, ale aktualnie nie widzê innego rozwi¹zania.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_02"); //Tylko ty zwiedzasz Górnicz¹ Dolinê. Reszty albo to nie obchodzi albo s¹ znurzeni t¹ krain¹ i nie rusz¹ siê st¹d bez rozkazu Kerolotha. A ten aktualnie jest nieobecny.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_03"); //Moja proœba mo¿e siê wydawaæ obrzydliwa, ale chyba nie ma innego rozwi¹zania.
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_04"); //Nasi ¿o³nierze potrzebuj¹ ochrony g³owy. He³my to bardzo istotna czêœæ zbroi. Problem w tym, ¿e wykonanie ich zajmuje szmat czasu.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3Quest_15_05"); //Co wiêc wymyœli³eœ?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_06"); //Wykorzystamy he³my martwych rycerzy. Przynieœ mi ich kilka, a ja je wzmocniê i dostarczê wojownikom.
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_07"); //Potrzebujê przynajmniej piêciu okryæ g³owy.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_07"); //Przynieœ przynajmniej piêæ he³mów.
 
 	Will_Can_Take_Helmets = TRUE;
 	Log_CreateTopic (TOPIC_Jan_helmy, LOG_MISSION);
@@ -1806,7 +1806,7 @@ func void DIA_NASZ_106_Jan_WhereBodies_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_WhereBodies_15_00"); //Gdzie znajdê cia³a poleg³ych wojowników?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_WhereBodies_15_01"); //Rzecz jasna na prze³êczy! Myœlê, ¿e w kopalniach obok starej wie¿y na po³udniu równie¿ znajdziesz rycerzy i he³my.
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_WhereBodies_15_02"); //Nie zapomnij o kopalni z pe³zaczami. Gdy zajê³y kopalnie, zabi³y wielu dzielnych ludzi.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_WhereBodies_15_02"); //Nie zapomnij o kopalni z pe³zaczami. Gdy zajê³y kopalniê, zabi³y wielu dzielnych ludzi.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_WhereBodies_15_03"); //Mam nadziejê, ¿e uda mi siê odszukaæ doœæ du¿o he³mów nadaj¹cych siê do u¿ycia.
 	
 	B_LogEntry (TOPIC_Jan_helmy, "Wojownicy mog¹ le¿eæ na prze³êczy, w kopalni obok wie¿y na po³udniu albo w kopalni zajêtej przez pe³zacze.");
@@ -1839,10 +1839,10 @@ func void DIA_NASZ_106_Jan_Kap3QuestFinish_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_00"); //Przynios³em piêæ he³mów.
 	B_GiveInvItems(other,self,ItNa_KolczugaRycerza,5);
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_01"); //Doskonale, od razu zabieram siê do pracy. Mam nadziejê, ¿e œci¹ganie he³mów z rozk³adaj¹cych g³ów nie by³o bardzo ochydne?
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_01"); //Doskonale, od razu zabieram siê do pracy. Mam nadziejê, ¿e œci¹ganie he³mów z pognitych g³ów nie by³o zbyt obrzydliwe?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_02"); //Te he³my cuchn¹ niczym przypalone mleko kretoszczura...
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_03"); //Jakoœ da³em sobie radê, chocia¿ móg³yœ jakoœ mi to zrekompensowaæ. Nie s¹dzisz?
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_04"); //No tak, oczywiœcie! WeŸ ten pierœcieñ i na³ó¿ go zaraz na palec. Wzmocni ciê porz¹dnie.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_04"); //No tak, oczywiœcie! Przyjmij ten magiczny pierœcieñ. Wzmocni ciê.
 	
 	CreateInvItems(self,ItRi_Hp_02,1);
 	B_GiveInvItems(self,other,ItRi_Hp_02,1);
@@ -2045,9 +2045,9 @@ FUNC VOID DIA_NASZ_106_Jan_artefakt_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_artefakt_15_00"); //Umia³byœ po³¹czyæ te czêœci w ca³oœæ?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_artefakt_55_01"); //Chyba tak. Ju¿ dawno nie bawi³em siê pierœcieniami.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_artefakt_15_02"); //Za 200 sztuk z³ota zrobiê o co prosisz.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_artefakt_15_02"); //Za 200 sztuk z³ota zrobiê, o co prosisz.
 
-	B_LogEntry (TOPIC_Niedostepny_Klif, "Za sto sztuk z³ota Jan z³¹czy kawa³ki artefaktu.");
+	B_LogEntry (TOPIC_Niedostepny_Klif, "Za dwieœcie sztuk z³ota Jan z³¹czy kawa³ki artefaktu.");
 };
 
 //*********************************************************************
@@ -2132,7 +2132,7 @@ func void DIA_NASZ_106_Jan_artefaktready_Info ()
 	}
 	else
 	{	
-		AI_Output			(self, other, "DIA_NASZ_106_Jan_artefaktready_06_05"); //Nie, jeszcze nie. PrzyjdŸ pŸniej.
+		AI_Output			(self, other, "DIA_NASZ_106_Jan_artefaktready_06_05"); //Nie, jeszcze nie. PrzyjdŸ póŸniej.
 		AI_Output			(self, other, "DIA_NASZ_106_Jan_artefaktready_06_06"); //Jeœli bêdziesz mi przeszkadza³, potrwa to d³u¿ej.
 		
 		AI_StopProcessInfos (self);
@@ -2177,7 +2177,7 @@ FUNC VOID DIA_NASZ_106_Jan_dobar_Info()
 	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_05"); //Nie? Dziwne. Gdzie¿ on polaz³...
 	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_06"); //Jeœli chcesz mieæ te paczki to musisz go znaleŸæ.
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_dobar_15_07"); //A gdzie go szukaæ?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_08"); //Zwykle chodzi dooko³a bagna, gór¹. Musisz chyba wiêc tam go szukaæ.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_dobar_55_08"); //Zwykle chodzi dooko³a bagna, gór¹. Musisz tam go szukaæ.
 
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_BRUTUS_MEATBUG"); // chrz¹szcz obok bartwego brutusa :)
 				
@@ -2212,7 +2212,7 @@ FUNC VOID DIA_NASZ_106_Jan_BrutusIsDead_Info()
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_BrutusIsDead_15_00"); //Brutus nie ¿yje.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_BrutusIsDead_55_01"); //Co siê sta³o?
 	AI_Output (other, self,"DIA_NASZ_106_Jan_BrutusIsDead_55_02"); //Biedak sta³ siê pokarmem dla zwierzyny.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_BrutusIsDead_55_03"); //Có¿... To przykra informacja. Bêdê mia³ teraz dwa razy wiêcej pracy. No, chyba ¿e po prostu nowych mieczy bêdzie dwa razy mniej.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_BrutusIsDead_55_03"); //Có¿... To przykra informacja. Brutus by³ dobr¹ osob¹ i œwietnym pomocnikiem. Teraz tworzenie mieczy zajmie mi znacznie d³u¿ej.
 	
 	B_GivePlayerXP (100);
 

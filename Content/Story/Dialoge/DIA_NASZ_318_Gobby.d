@@ -86,6 +86,7 @@ FUNC VOID DIA_NASZ_318_Gobby_siema_Info()
 		AI_Output (other, self,"DIA_NASZ_318_Gobby_siema_55_01"); //Jestem tu z polecenia Fruta.
 		AI_Output (other, self,"DIA_NASZ_318_Gobby_siema_55_02"); //Mia³em ci wrêczyæ ten papier.
 		B_giveinvitems (other, self, ItNa_Niewolnicy, 1);
+		Npc_RemoveInvItems(self,ItNa_Niewolnicy,1);
 		B_UseFakeScroll();
 		AI_Output (self, other,"DIA_NASZ_318_Gobby_siema_15_03"); //Hmm... No dobra, czego chcesz?
 
@@ -195,8 +196,8 @@ FUNC VOID DIA_NASZ_318_Gobby_koniec_Info()
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_06"); //£¿esz. Ju¿ ja ci poka¿ê, co to znaczy byæ mocnym ch³opem.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_07"); //Pamiêtaj: Prawdziwy mê¿czyzna nie zwala siê z nóg po pierwszym, lepszym, tanim piwie.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_08"); //Takim jak ty, si³y starczy mo¿e na trzy.
-	AI_Output (other,self ,"DIA_NASZ_318_Gobby_koniec_15_09"); //Zdziwi³byœ siê, gdybyœ zobaczy³ ile takie chuchro jak ja potrafi wypiæ.
-	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_10"); //Doprawdy? Za pazuch¹ mam tu prawdziwy ogieñ dla gard³a: grog z dosypk¹ ziaren pieprzu.
+	AI_Output (other,self ,"DIA_NASZ_318_Gobby_koniec_15_09"); //Zdziwi³byœ siê, gdybyœ zobaczy³, ile takie chuchro jak ja potrafi wypiæ.
+	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_10"); //Doprawdy? Za pazuch¹ mam tu prawdziwy ogieñ dla gard³a: Grog z dosypk¹ ziaren pieprzu.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_11"); //Jeœli wypijesz go na raz, uznam ciê za swego bracha.
 
 	B_GivePlayerXP (50);

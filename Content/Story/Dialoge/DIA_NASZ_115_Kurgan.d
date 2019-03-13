@@ -626,7 +626,7 @@ FUNC INT DIA_NASZ_115_Kurgan_ferroswon_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_ferroswon_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroswon_55_00"); //To by³a œwietna walka!
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroswon_55_01"); //Nic bardziej mnie nie pasjonuje ni¿ starcie dwóch œwietnych wojowników.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroswon_55_01"); //Nic bardziej mnie nie pasjonuje, ni¿ starcie dwóch œwietnych wojowników.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroswon_55_02"); //Znalaz³em ten amulet wczoraj. Wygl¹da na przydatny. WeŸ go.
 
 	Createinvitems (self, ItAm_Hp_01, 1);
@@ -789,8 +789,8 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 	/* KAPITEL 4 */
 	if (KAPITEL >= 4) {
 	
-		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_01"); //Ale jest jeszcze jedna osoba, która mo¿e pogrzebaæ tw¹ dumê.
-		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_02"); //Stocz walkê ze mn¹! Zobaczymy, czy dasz radê tak¿e mi. ChodŸ!
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_01"); //Ale jest jeszcze jedna osoba, która mo¿e pogrzebaæ tw¹ dumê.
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_02"); //Stocz walkê ze mn¹! Zobaczymy, czy dasz radê tak¿e mi. ChodŸ!
 		
 		B_LogEntry(TOPIC_Kurgan_arena,"Pokona³em Godara i Hokurna. Pora na najpotê¿niejszego gladiatora, czyli szefa areny.");
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
@@ -1106,7 +1106,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	/* KAPITEL 4 */
 	if (KAPITEL >= 4) {
 	
-		YouArePro();
+		KurganSay_YouArePro();
 	
 		B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Kurgana i zosta³em mistrzem areny.");
 		JestesMistrzemAreny = TRUE;
@@ -1127,7 +1127,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	Createinvitems (self, itmi_gold, 2000);
 	B_Giveinvitems (self, other, itmi_gold, 2000);
 
-	YouArePro();
+	KurganSay_YouArePro();
 
 	JestesMistrzemAreny = TRUE;
 	DodajReputacje (6, REP_LOWCY);
@@ -1409,7 +1409,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_ArenaKap4_Info()
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_01"); //Mój drogi wojowniku! O tej godzinie siê œpi albo biesiaduje, a nie walczy!
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_02"); //PrzyjdŸ za dnia, wtedy o tym porozmawiamy. A tym czasem napij siê ze mn¹ piwa i opowiedz jakiœ kawa³!
 		return;
-	}
+	};
 
 	HeroChceWalczycNaArenieWZamku = TRUE;
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_03"); //A niech ciê, tobie ci¹gle ma³o! Zaraz coœ wykombinujemy. Pokona³eœ ju¿ Godara i Hokurna?
@@ -1427,16 +1427,8 @@ FUNC VOID DIA_NASZ_115_Kurgan_ArenaKap4_Info()
 		B_StartOtherRoutine(NASZ_114_Hokurn,"ArenaZamek");
 	};
 
-	AI_StopProcessInfos();
+	AI_StopProcessInfos(self);
 };
-
-
-
-
-
-
-
-
 
 
 //*********************************************************************

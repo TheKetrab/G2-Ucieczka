@@ -77,7 +77,7 @@ const string	TOPIC_MieczRuniczny			=	"Miecz runiczny";				// ---									| +500	
 //---------- Lowcy ----------
 const string	TOPIC_Keroloth_duchy		=	"Duchy";						//+4L									| +500						| kawa³ek artefaktu
 const string	TOPIC_Keroloth_golem		=	"Ska³¹ o ska³ê";				//+4L									| +500						| 120 szt. z³ota
-const string	TOPIC_Robotnik_deski		=	"Przygni³a konstrukcja";		//+4L									| +500						| 10 grogów
+const string	TOPIC_Robotnik_deski		=	"Przegni³a konstrukcja";		//+4L									| +500						| 10 grogów
 const string	TOPIC_Rethon_orkowie		=	"Orkowe posterunki";			//+6L									| +1000						| 400 szt. z³ota
 const string	TOPIC_Hokurn_mapy			=	"Stare mapy";					//+3L									| +500						| projekt miecza bojowego
 const string	TOPIC_Gerold_glod			=	"G³ód, brzmi znajomo?";			//+3L									| +500						| przepis na udziec z dzika po ³owiecku

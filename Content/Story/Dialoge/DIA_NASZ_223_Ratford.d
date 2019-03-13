@@ -615,7 +615,7 @@ func void Ratford_Say_No_Money() {
 // po 15 wytrychach
 func void Ratford_Say_Much_PickLock() {
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_Much_PickLock_55_00"); //Na co ci tyle tych wytrychów? Nie spodziewa³em siê, ¿e a¿ tak spodoba ci siê wy³amywanie zamków.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_Much_PickLock_55_01"); //A mo¿e tak czêsto ci siê ³ami¹? Haha!
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_Much_PickLock_55_01"); //A mo¿e tak czêsto ci siê ³ami¹? Ha, ha!
 };
 
 // po 40 wytrychach

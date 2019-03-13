@@ -245,7 +245,7 @@ FUNC INT DIA_NASZ_006_Renegat_weapon_Condition()
 
 FUNC VOID DIA_NASZ_006_Renegat_weapon_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_00"); //Hola, hola, sk¹d masz tê broñ?
+	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_00"); //Czekaj! Sk¹d masz t¹ pa³kê?
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_01"); //Oddawaj!
 	
 	var C_Item bron; bron = Npc_GetEquippedMeleeWeapon(hero);

@@ -477,7 +477,7 @@ FUNC VOID DIA_NASZ_120_Phill_GwozdzieDone_Info()
 	};
 	
 	if (GwozdzieKupione == 20) {	
-		AI_Output (self,other ,"DIA_NASZ_120_Phill_GwozdzieDone_15_05"); //Okej, wystarczy.
+		AI_Output (self,other ,"DIA_NASZ_120_Phill_GwozdzieDone_15_05"); //W porz¹dku, wystarczy.
 		AI_Output (self, other,"DIA_NASZ_120_Phill_GwozdzieDone_55_06"); //Z³oto zgodnie z umow¹, proszê.
 		Createinvitems (self, ItMi_Gold, 65);
 		B_giveinvitems (self, other, ItMi_Gold, 65);

@@ -51,7 +51,7 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_04"); //Co chcieli wiedzieæ orkowie?
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_05"); //O ludziach w Górniczej Dolinie... Mia³em im wszystko powiedzieæ, a ja nic nie wiedzia³em. Musia³em coœ wymyœliæ.
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_06"); //I co im powiedzia³eœ?
-	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_07"); //¯e w Górniczej Dolinie jest pe³no Paladynów, mimo ¿e opuœcili zamek. Chyba siê wystraszyli, bo zamknêli bramê do zamku.
+	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_07"); //¯e w Górniczej Dolinie jest pe³no paladynów, mimo ¿e opuœcili zamek. Chyba siê wystraszyli, bo zamknêli bramê do zamku.
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_08"); //Wiesz, jak j¹ otworzyæ?
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_09"); //Pewnie trzeba ich wywabiæ... Kiedyœ pods³ucha³em, jak mówili o jakimœ wodzu Ur-Shaku.
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_10"); //O ile siê nie mylê, to jego siedziba znajduje siê w fortecy górskiej.

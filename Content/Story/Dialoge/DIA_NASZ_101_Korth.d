@@ -125,7 +125,7 @@ FUNC VOID DIA_NASZ_101_Korth_WillWantToKillRenegats_Info()
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_06"); //No có¿... Ten problem nas nie dotyczy. Na g³owie mamy teraz orków.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jesli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bedziesz trzymaæ.
 	
-	B_LogEntry (TOPIC_Korth_kopalnia, "Marcos nie tylko jest okrutnym tyranem, ale i upad³ym Paladynem, który zaprzeda³ duszê Beliarowi. Skazañcy z jego kopalni s¹ w niebezpieczeñstwie... Trzeba ich uwolniæ, a w tym mog¹ mi pomóc ludzie z powsta³ych obozów.");
+	B_LogEntry (TOPIC_Korth_kopalnia, "Marcos nie tylko jest okrutnym tyranem, ale i upad³ym paladynem, który zaprzeda³ duszê Beliarowi. Skazañcy z jego kopalni s¹ w niebezpieczeñstwie... Trzeba ich uwolniæ, a w tym mog¹ mi pomóc ludzie z powsta³ych obozów.");
 	
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "W Górniczej Dolinie s¹ dwa skupiska ludzi: obóz myœliwych i obóz ³owców orków.");

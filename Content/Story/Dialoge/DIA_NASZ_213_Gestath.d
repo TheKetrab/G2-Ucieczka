@@ -657,6 +657,13 @@ func void GestathSay_Becareful() {
 	AI_Output (self, other,"GestathSay_Becareful_55_03"); //Przede wszystkim uwa¿aj.
 };
 
+func void GestathSay_AboutBandits() {
+
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_00"); //Pos³uchaj: Kilka dni temu, jeden ze zwiadowców, zauwa¿y³ coœ dziwnego.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_01"); //Dwóch ludzi w Opuszczonej Kopalni. Nie wiadomo kim s¹, ani tym bardziej czego chc¹. Wybierzesz siê tam i sprawdzisz, o co chodzi.
+	AI_Output (other, self,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_02"); //Mam ich zabiæ?
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_03"); //Jeœli twoim zdaniem stanowi¹ zagro¿enie, to tak.
+};
 
 //*********************************************************************
 //	Info RenegaciDJG
@@ -684,10 +691,9 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciDJG_Info()
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciDJG_55_00"); //Przysy³a mnie Keroloth.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciDJG_55_01"); //Ciebie? Chyba nie docenia powagi tej sprawy...
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciDJG_55_02"); //Ja doceniam. I jestem przekonany, ¿e podo³am wyzwaniu.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciDJG_55_03"); //Zobaczymy... S³uchaj: kilka dni temu, jeden ze zwiadowców zauwa¿y³ coœ dziwnego.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciDJG_55_04"); //Dwóch uzbrojonych ludzi w Opuszczonej Kopalni. Nie wiadomo kim, ani po co tam s¹.
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciDJG_55_05"); //Mam ich zabiæ?
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciDJG_55_06"); //Jeœli twoim zdaniem stanowi¹ zagro¿enie to tak.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciDJG_55_03"); //Zobaczymy...
+	
+	GestathSay_AboutBandits();
 
 	B_LogEntry (TOPIC_Gestath_renegaci, "Ponoæ w Opuszczonej Kopalni zauwa¿ono ludzi. Moim zadaniem jest dowiedzieæ siê, kim oni s¹, a jeœli zajdzie taka potrzeba to ich zabiæ.");
 
@@ -746,10 +752,8 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciOUT_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciOUT_55_00"); //Co mam teraz zrobiæ?
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciOUT_55_01"); //Hmm... Jestem pod wra¿eniem twojego zapa³u. Upora³eœ siê ze swoimi k³opotami, pora na inne k³opoty.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciOUT_55_02"); //Pos³uchaj: Kilka dni temu, jeden ze zwiadowców, zauwa¿y³ coœ dziwnego.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciOUT_55_03"); //Dwóch ludzi w Opuszczonej Kopalni. Nie wiadomo kim, ani po co tam s¹. Wybierzesz siê tam i sprawdzisz, o co chodzi.
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciOUT_55_04"); //Mam ich zabiæ?
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciOUT_55_05"); //Jeœli twoim zdaniem stanowi¹ zagro¿enie - tak.
+
+	GestathSay_AboutBandits();
 
 	Log_CreateTopic (TOPIC_Gestath_Renegaci, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Gestath_renegaci, LOG_RUNNING);
@@ -823,7 +827,7 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 			if (npc_isdead (NASZ_301_Bandzior) && npc_isdead (NASZ_302_Bandzior) && (!BANDZIOR_KILLED)) {
 				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_02"); //Zabi³em tych ludzi.
 				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_03"); //I? Widzia³eœ ich z bliska. Mo¿esz coœ o nich powiedzieæ?
-				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_04"); //Rzucili siê na mnie. Ich zbroje nie przypomina³y ¿adnych z tych, które nosz¹ myœliwi albo ³owcy Orków.
+				AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_04"); //Rzucili siê na mnie. Ich zbroje nie przypomina³y ¿adnych z tych, które nosz¹ myœliwi albo ³owcy orków.
 				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_05"); //To ciekawe... Widaæ nie jesteœmy sami w tej dziurze. Trzeba siê czegoœ o nich dowiedzieæ.
 
 				BANDZIOR_KILLED = TRUE;
@@ -882,11 +886,11 @@ FUNC VOID DIA_NASZ_213_Gestath_BamInfo_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_BamInfo_55_00"); //Jeden z bandytów chce wiedzieæ, co z kopalni¹.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_BamInfo_55_01"); //T¹, w której pracowa³eœ?
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_BamInfo_55_02"); //W³aœnie tak. Nie mogê mu przecie¿ powiedzieæ, ¿e wszyscy Paladyni nie ¿yj¹, a kopacze zostali uwolnieni.
+	AI_Output (other, self,"DIA_NASZ_213_Gestath_BamInfo_55_02"); //W³aœnie tak. Nie mogê mu przecie¿ powiedzieæ, ¿e wszyscy paladyni nie ¿yj¹, a kopacze zostali uwolnieni.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_BamInfo_55_03"); //Mo¿esz mu po prostu daæ trochê rudy i powiedzieæ, ¿e to od nich. Myœlê, ¿e jakieœ dwadzieœcia bry³ek wystarczy.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_BamInfo_55_04"); //A jeœli nie zdo³asz tyle uzbieraæ, to zapytaj Kerolotha, czy nie da siê tego rozwi¹zaæ bardziej subtelnie.
 
-	B_LogEntry (TOPIC_Bam_kopalnia, "Gestath zasugerowa³ mi, ¿eby daæ bandycie 20 bry³ek rudy i sk³amaæ, ¿e to dostawa od Paladynów. Mogê te¿ zapytaæ Kerolotha, co on o tym s¹dzi");
+	B_LogEntry (TOPIC_Bam_kopalnia, "Gestath zasugerowa³ mi, ¿eby daæ bandycie 20 bry³ek rudy i sk³amaæ, ¿e to dostawa od paladynów. Mogê te¿ zapytaæ Kerolotha, co on o tym s¹dzi");
 };
 
 
@@ -1084,7 +1088,7 @@ FUNC VOID DIA_NASZ_213_Gestath_KapThree_Info()
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_KapThree_55_00"); //No proszê, to¿ to nasz bohater.
 	AI_Output (other,self ,"DIA_NASZ_213_Gestath_KapThree_55_01"); //Co tu siê sta³o?
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_KapThree_55_02"); //No widzisz, kiedy ty poszed³eœ wraz z bandytami na ten klif, obóz zosta³ niemal niebroniony.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_KapThree_55_03"); //W piêciu, bez najmniejszego problemu poradziliœmy sobie z resztk¹ bandytów. PóŸniej jeszcze przysz³o ich kilku, ale byli tak zdezorientowani... Haha! Nie zdo³ali nawet dobyæ broni, a ju¿ padli trupem!
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_KapThree_55_03"); //W piêciu, bez najmniejszego problemu poradziliœmy sobie z resztk¹ bandytów. PóŸniej jeszcze przysz³o ich kilku, ale byli tak zdezorientowani... Ha, ha! Nie zdo³ali nawet dobyæ broni, a ju¿ padli trupem!
 	AI_Output (other,self ,"DIA_NASZ_213_Gestath_KapThree_55_04"); //Tak, a ich elita czeka³a na mnie i chcieli ze mn¹ zrobiæ to samo!
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_KapThree_55_05"); //Widzê, ¿e jednak wyszed³eœ z tego ca³o.
 	

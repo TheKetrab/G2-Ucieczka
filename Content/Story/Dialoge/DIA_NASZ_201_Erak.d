@@ -180,7 +180,7 @@ FUNC VOID DIA_NASZ_201_Erak_what_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_01"); //Zosta³em wys³any wraz z moimi ludŸmi na polowanie. Krótko mówi¹c, mamy dostarczyæ do obozu miêso.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_02"); //I niby wszystko w porz¹dku...
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_what_15_03"); //Ale?
-	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_04"); //Miêso ju¿ mamy. Pojawia siê jednak kwestia dostarczeniem go do obozu.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_04"); //Miêso ju¿ mamy. Pojawia siê jednak kwestia dostarczenia go do obozu.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_05"); //W okolicy panoszy siê jeszcze sporo bestii, z których mo¿emy pozyskaæ wiele skór.	
 };
 

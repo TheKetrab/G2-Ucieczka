@@ -341,7 +341,7 @@ FUNC VOID DIA_NASZ_227_Vachut_QuestKapThree_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_15_00"); //W koñcu widzê kogoœ, kto mo¿e mi pomóc!
 	AI_Output (other, self,"DIA_NASZ_227_Vachut_QuestKapThree_55_01"); //Do czego zmierzasz?
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_02"); //Niedaleko st¹d widzia³em dziwne topielce. Wydawa³y trochê siê wiêksze i bardziej agresywne... Widzia³em, jak urwa³y g³owê jednemu wilkowi. Niby zawodowo ubijam topielce, ale wola³bym, przy nich mieæ kogoœ przy sobie.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_02"); //Niedaleko st¹d widzia³em dziwne topielce. Wydawa³y trochê siê wiêksze i bardziej agresywne... Widzia³em, jak urwa³y g³owê jednemu wilkowi. Niby zawodowo ubijam topielce, ale wola³bym przy nich mieæ kogoœ przy sobie.
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_03"); //Wybierzesz siê ze mn¹?
 
 	Log_CreateTopic (TOPIC_Vachut_topielce, LOG_MISSION);
@@ -426,7 +426,7 @@ FUNC VOID DIA_NASZ_227_Vachut_QuestPlace_Info()
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestPlace_15_00"); //Sam z pewnoœci¹ nie da³bym rady.
 	AI_Output (other, self,"DIA_NASZ_227_Vachut_QuestPlace_55_01"); //Cieszê siê, ¿e mog³em pomóc.
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestPlace_55_02"); //Te topielce maj¹ wyj¹tkowo twarde pazury... Gdybyœ spotka³ jeszcze jakieœ to przynieœ mi je.
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestPlace_55_03"); //Za ka¿d¹ sztukê dostaniesz 10 sztuk z³ota.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestPlace_55_03"); //Za ka¿d¹ sztukê dostaniesz dziesiêæ z³otych monet.
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestPlace_55_04"); //A co do zap³aty... Proszê, weŸ te skóry. Hunt na pewno ci za nie zap³aci.
 
 	Createinvitems (self, ItNa_BlackWolfFur, 6);

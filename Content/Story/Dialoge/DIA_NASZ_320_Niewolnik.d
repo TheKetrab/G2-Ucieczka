@@ -262,7 +262,7 @@ func int DIA_NASZ_320_Niewolnik_can_Condition ()
 func void DIA_NASZ_320_Niewolnik_can_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_can_15_00"); //Mogê siê na coœ przydaæ?
-	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_01"); //Pewnie. Potrzebujê roœlin leczniczych do opatrzania ran sobie i moim kolegom.
+	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_01"); //Pewnie. Potrzebujê roœlin leczniczych do opatrzenia ran sobie i moim kolegom.
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_02"); //Bam lubi nas biæ... Przynieœ mi osiem zió³ leczniczych.
 	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_can_15_03"); //Gdzie rosn¹ te roœliny?
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_04"); //W lasach, na polanach, wszêdzie.
@@ -288,7 +288,7 @@ instance DIA_NASZ_320_Niewolnik_ziola		(C_INFO)
 
 func int DIA_NASZ_320_Niewolnik_ziola_Condition ()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_320_Niewolnik_long)
+	if (npc_knowsinfo (other, DIA_NASZ_320_Niewolnik_can)
 		&& npc_hasitems (other, ItPl_Health_Herb_01) >= 8)
 	{
 		return TRUE;

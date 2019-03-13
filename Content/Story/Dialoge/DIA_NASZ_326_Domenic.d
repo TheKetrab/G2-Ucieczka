@@ -130,7 +130,7 @@ func void DIA_NASZ_326_Domenic_help_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_326_Domenic_help_55_00"); //Mogê ci jakoœ pomóc?
 	AI_Output			(self, other, "DIA_NASZ_326_Domenic_help_03_01"); //Jeœli masz wiêcej czasu ode mnie, to tak.
-	AI_Output			(self, other, "DIA_NASZ_326_Domenic_help_03_02"); //Kiedy ch³opcy stawiali palisadê, ja i dwóch innych kolesi, poszliœmy rozejrzeæ siê po okolicy. Doœæ szybko siê roz³¹czyliœmy: ja pobieg³em na wschód st¹d, a oni na pó³noc.
+	AI_Output			(self, other, "DIA_NASZ_326_Domenic_help_03_02"); //Kiedy ch³opcy stawiali palisadê, ja i dwóch innych kolesi, poszliœmy rozejrzeæ siê po okolicy. Doœæ szybko siê roz³¹czyliœmy: Ja pobieg³em na wschód st¹d, a oni na pó³noc.
 	AI_Output			(self, other, "DIA_NASZ_326_Domenic_help_03_03"); //Ustrzeli³em kilka dzików i po ka¿dym popi³em porz¹dnego ³yka ginu. Nagle zorientowa³em siê, ¿e zgubi³em jedn¹ ze swoich kusz... Pewnie zostawi³em j¹ przy jakimœ pniaku, przy którym siedzia³em.
 	AI_Output			(self, other, "DIA_NASZ_326_Domenic_help_03_04"); //Nie odchodzi³em zbyt daleko, powinna byæ gdzieœ w tym zagajniku obok obozu.
 	AI_Output			(other, self, "DIA_NASZ_326_Domenic_help_03_05"); //Czemu sam jej nie poszukasz, skoro to ca³kiem blisko?

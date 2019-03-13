@@ -39,8 +39,8 @@ instance NASZ_020_Sattar (Npc_Default)
 
 FUNC VOID Rtn_Start_20 ()
 {	
-	TA_Pick_Ore	 (08,00,23,00,"NASZ_NUGGETMOB_18");
-	TA_Sit_Campfire	 (23,00,08,00,"NASZ_KOPALNIA_NOWY_18");
+	TA_Sit_Campfire	 (08,00,23,00,"NASZ_KOPALNIA_NOWY_26");
+	TA_Sit_Campfire	 (23,00,08,00,"NASZ_KOPALNIA_NOWY_26");
  
 };
 

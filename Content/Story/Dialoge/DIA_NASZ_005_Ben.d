@@ -162,7 +162,7 @@ FUNC VOID DIA_NASZ_005_Ben_Ben1_Finish_Info()
 		B_GivePlayerXP(10);
 	}
 	else {
-		AI_Output (other, self,"DIA_NASZ_005_Ben_Ben1_Finish_55_04"); //Pocz¹tkowo myœla³em, i¿ mi siê nie uda. Jednak pod naporem moich argumentów, ten baran a¿ zaniemówi³ i zgodzi³ siê porozmawiaæ z Marcosem.
+		AI_Output (other, self,"DIA_NASZ_005_Ben_Ben1_Finish_55_04"); //Myœla³em, ¿e mi siê nie uda. Jednak pod naporem moich argumentów, ten baran a¿ zaniemówi³ i zgodzi³ siê porozmawiaæ z Marcosem.
 		AI_Output (self, other,"DIA_NASZ_005_Ben_Ben1_Finish_55_05"); //To wspania³e wieœci! Ch³opcy i ja jesteœmy ci wdziêczni za pomoc! Mo¿e w koñcu zjemy coœ wiêcej ni¿ chleb i wodê...
 
 		B_GivePlayerXP(50);
@@ -374,7 +374,7 @@ FUNC VOID DIA_NASZ_005_Ben_WhatAreUTalkingAbout_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_01"); //Owszem. Nie myœl, ¿e przez ten ca³y czas pró¿nowaliœmy i nic nie robiliœmy.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_02"); //Nie bêdê ciê ju¿ d³u¿ej trzyma³ w niepewnoœci. Wraz z ch³opakami obmyœliliœmy dwa plany ucieczki. Teraz pozostaje nam wybraæ jeden z nich. 
 	AI_Output (other, self,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_03"); //Przedstawisz mi pokrótce ka¿d¹ z opcji?
-	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_04"); //Oczywiœcie. Pierwszy – i moim zdaniem najlepszy wariant – zak³ada stworzenie zwoju z zaklêciem sen, uœpienie wartownika i opuszczenie szybów w trakcie nocy, gdy reszta paladynów bêdzie ju¿ spaæ.
+	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_04"); //Oczywiœcie. Pierwszy – i moim zdaniem najlepszy wariant – zak³ada stworzenie zwoju z zaklêciem snu, uœpienie wartownika i opuszczenie szybów w trakcie nocy, gdy reszta paladynów bêdzie ju¿ spaæ.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_05"); //Drugi – bardziej ryzykowny – opiera siê na uwarzeniu trucizny i podaniu jej stra¿nikowi, który pilnuje naszego tunelu. Od razu uprzedzê twe pytanie: Mieszanka ta nie ma na celu jego zabicia.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_06"); //Jak myœlisz, który plan powinniœmy zrealizowaæ? 
 
@@ -553,7 +553,7 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	TRIA_Next(Ben);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
-	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_05"); //My wszyscy jesteœmy ju¿ w sile wieku i nie mamy takiej krzepy, jak ty przyjacielu.
+	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_05"); //My lata œwietnoœci mamy ju¿ za sob¹, przyjacielu.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_06"); //Dlatego zdecydowaliœmy abyœ to, ty jako najm³odszy z nas, uciek³ z kopalni i poszuka³ pomocy.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_07"); //W odró¿nieniu od nas, masz najwiêksze szanse w wykonaniu tego niebezpiecznego zadania.
 	

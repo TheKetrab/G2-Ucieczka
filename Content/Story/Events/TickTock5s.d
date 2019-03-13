@@ -88,7 +88,7 @@ func void TickTock_5s() {
 	if (npc_hasitems (other, ItNa_MieczRuniczny) >=1) && (MieczRunicznyLogOneTime == FALSE) {
 		Log_CreateTopic (TOPIC_MieczRuniczny, LOG_MISSION);
 		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_RUNNING);
-		B_LogEntry (TOPIC_MieczRuniczny, "Na bagnach znalaz³em dziwny orê¿. Na klindze widaæ kryszta³, który jest ukruszony. Keroloth powinien rzuciæ na to okiem. W koñcu przebywa³ wœród Paladynów... Mo¿e bêdzie wiedzia³ coœ o tym mieczu.");
+		B_LogEntry (TOPIC_MieczRuniczny, "Na bagnach znalaz³em dziwny orê¿. Na klindze widaæ kryszta³, który jest ukruszony. Keroloth powinien rzuciæ na to okiem. W koñcu przebywa³ wœród paladynów... Mo¿e bêdzie wiedzia³ coœ o tym mieczu.");
 		MieczRunicznyLogOneTime = TRUE;
 	};
 

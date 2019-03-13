@@ -358,8 +358,8 @@ func void DIA_NASZ_219_Dick_BagienneZiele_Herb()
 
 	B_giveinvitems(other,self,ItMi_Gold,5);
 	AI_Output (self, other,"DIA_NASZ_219_Dick_BagienneZiele_Herb_15_01"); //Specjalnie dla ciebie!
-	Createinvitems (self, ItPl_SwampHerb, 1);	
-	B_giveinvitems (self, other, ItNa_MrokPolnocy, 1);
+	Createinvitems (self, ItPl_SwampHerb, 1);
+	B_giveinvitems (self, other, ItPl_SwampHerb, 1);
 	
 	Info_AddChoice		(DIA_NASZ_219_Dick_BagienneZiele, "Ca³a roœlina. (5 szt. z³ota)"	,DIA_NASZ_219_Dick_BagienneZiele_Herb);
 

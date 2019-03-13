@@ -742,7 +742,9 @@ INSTANCE ItNa_Przepis_ZupaRybna (C_Item)
 	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	0;
+	value 				=	25;
+	TEXT[5]				= 	NAME_Value;
+	COUNT[5]			= 	value;
 
 	visual 				=	"ItWr_Scroll_02.3DS";
 	material 			=	MAT_LEATHER;

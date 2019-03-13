@@ -51,7 +51,7 @@ FUNC INT DIA_NASZ_205_Mysliwy_siema_Condition()
 
 FUNC VOID DIA_NASZ_205_Mysliwy_siema_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_siema_55_00"); //Hola hola.
+	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_siema_55_00"); //Hola, hola!
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_siema_55_01"); //Dok¹d tak prêdko?
 	AI_Output (other, self,"DIA_NASZ_205_Mysliwy_siema_15_02"); //Chcê rozmawiaæ z waszym szefem.
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_siema_55_03"); //W³aŸ. Erak powinien byæ w namiocie. Nieczêsto siê stamt¹d rusza.

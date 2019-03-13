@@ -449,7 +449,7 @@ FUNC VOID DIA_NASZ_119_Udar_GraveMissionWhatToDo_Info()
 	B_giveinvitems (self, other, ItNa_Mapa_GraveMission, 1);
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_02"); //Spójrz, zaznaczy³em tutaj kilkanaœcie grobów, o których wiem.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_03"); //Pamiêtaj: Interesuj¹ mnie tylko groby potê¿nych ¿o³nierzy. Rozumiesz, im potê¿niejszy ¿o³nierz, tym wiêksza ³aska Innosa.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_04"); //To znaczy nie oczyszczaæ grobów nieznanych ¿o³nierzy?
+	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_04"); //To znaczy, nie oczyszczaæ grobów nieznanych ¿o³nierzy?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_05"); //Tak, w³aœnie. Bo ich znaczenie jest ma³o wa¿ne.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_06"); //A wiêc masz oczyœciæ wszystkie groby, które tu zaznaczy³em. Wpierw rozkopujesz grób, potem wlewasz wodê œwiêcon¹. Proste, prawda?
 	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionWhatToDo_55_07"); //Wyruszam w drogê od razu!
@@ -758,9 +758,9 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolDJGStart_Info()
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_00"); //Jak to jeszcze nie powrócili?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_01"); //Niech to szlag, je¿eli dopadli ich ci przeklêci orkowie, nasz ca³y plan mo¿e legn¹æ w gruzach. Odmaszeruj ¿o³nierzu, muszê pomyœleæ.
 	// TODO: AI_GOTOWP
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_02"); //Willu, przyszed³eœ w naprawdê kiepskim momencie. Jak widzisz przed chwil¹ dowiedzieliœmy siê, ¿e nasz oddzia³ zwiadowczy, który mia³ sporz¹dziæ plany rozmieszczenia si³ orków, zagin¹³.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_03"); //Nie to jest jednak najgorsze, w tym ca³ym zamieszaniu nie mam nawet mo¿liwoœci wys³ania cz³owieka by ich poszuka³, gdy¿ wszyscy s¹ zajêci.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_04"); //Ta wojna to jedna, wielka farsa...
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_02"); //Willu, przyszed³eœ w naprawdê kiepskim momencie. Jak widzisz, przed chwil¹ dowiedzieliœmy siê, ¿e nasz oddzia³ zwiadowczy, który mia³ sporz¹dziæ plany rozmieszczenia si³ orków, zagin¹³.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_03"); //Nie to jest jednak najgorsze. Przez to ca³e zamieszanie, nie mogê nawet wys³aæ nikogo na poszukiwania. Wszyscy coœ robi¹.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_04"); //Ta wojna to jedna wielka farsa...
 	
 	Log_CreateTopic (TOPIC_Udar_patrol,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_patrol, LOG_RUNNING);
@@ -780,7 +780,7 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolDJGStart_yep()
 {
 	AI_Output (other,self ,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_15_00"); //Mogê spróbowaæ ich odszukaæ.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_01"); //Naprawdê? Zdajesz sobie sprawê z tego, ¿e to bêdzie bardzo ryzykowna misja?
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_02"); //Wszêdzie pe³no jest orków, którzy zdaj¹ siê poma³u wêszyæ wokó³ nas tak jakby coœ przeczuwali. Nie mogê ci nawet zagwarantowaæ, ¿e ci zwiadowcy wci¹¿ ¿yj¹.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_02"); //Orkowie wêsz¹, chyba coœ przeczuwaj¹. Nawet trudno mi powiedzieæ, czy ci zwiadowcy w ogóle jeszcze ¿yj¹.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_03"); //Pos³uchaj uwa¿nie: Cztery dni temu wys³aliœmy w pobli¿e zamku oddzia³ zwiadowczy, który mia³ przeprowadziæ rozeznanie w si³ach orków i sporz¹dziæ stosowne raporty na ten temat.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_04"); //Lecz od tamtej pory nie mamy z nimi ¿adnego kontaktu. Nie wpada³bym w takie przera¿enie, gdyby nie fakt, ¿e mieli do nas wróciæ po dwóch dniach.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_05"); //Powiedz mi tylko, gdzie mieli siê skryæ, a od razu wyruszê na ich poszukiwania.
@@ -794,7 +794,7 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolDJGStart_yep()
 	B_GiveInvItems(self,other,ItSc_InstantFireball,2);
 	
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_09"); //Pewnie, wszystko siê przyda.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_10"); //W takim razie ruszaj, i niech ogieñ Innosa rozgrzewa twe serce w trakcie walki.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_yep_55_10"); //W takim razie ruszaj i niech ogieñ Innosa rozgrzewa twe serce w trakcie walki.
 	UdarSay_AboutJanQuest();
 
 	B_LogEntry (TOPIC_Udar_patrol,"Mog³em siê tego spodziewaæ, oddzia³ zwiadowczy wys³any w okolice zamku zagin¹³ i na moje barki spad³o odszukanie ich. Najlepiej bêdzie zacz¹æ od jaskini, w której mieli siê schroniæ, czyli pod p³askowy¿em na po³udnie od zamku.");
@@ -830,11 +830,12 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolFinish_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_00"); //Przynoszê raport od zwiadowców.
 	B_GiveInvItems(other,self,ItNa_JenkinsRaport,1);
+	Npc_RemoveIntItems(self,ItNa_JenkinsRaport,1);
 	B_UseFakeScroll();
-	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Proszê oto notatka od Jenkinsa, w œrodku jest te¿ mapa z zaznaczonymi si³ami orków.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zasnaczonymi si³ami orków.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolFinish_15_02"); //Doskonale, ale strasznie d³ugo ci to wszystko zajê³o. Co ze zwiadowcami?
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_03"); //Znalaz³em ich, rozbili obóz niedaleko rzeki, gdzie lecz¹ swoje rany. W nocy, po której mieli wróciæ do obozu, zdecydowali siê jeszcze poobserwowaæ orków.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_04"); //W³aœnie wtedy us³yszeli dochodz¹ce stamt¹d krzyki i dziwn¹ inkantacjê, któr¹ uda³o siê odczytaæ Jenkinsowi.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_04"); //W³aœnie wtedy us³yszeli dochodz¹ce stamt¹d krzyki i dziwn¹ inkantacjê, któr¹ uda³o siê przet³umaczyæ Jenkinsowi.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_05"); //Kiedy przeczytaliœmy j¹ na g³os nagle pojawi³y siê szkielety, a gdyby tego by³o ma³o, jeszcze dwa dziwne, nieumar³e cieniostwory, które pilnowa³y tajemniczego maga na prze³êczy.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_06"); //Spotka³em siê z nim, lecz kiedy ju¿ chcia³em go zabiæ ten znikn¹³, mówi¹c, i¿ to jeszcze nie jest czas naszego starcia. Jego poplecznicy zabili Matta i z³o¿yli go w ofierze.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolFinish_15_07"); //Wystarczy! 
@@ -871,7 +872,7 @@ FUNC VOID DIA_NASZ_119_Udar_PresjaCzasu_Info()
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PresjaCzasu_15_00"); //Will, kurcze! Patrzy³eœ w ogóle na tê mapê?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PresjaCzasu_15_01"); //Zebrane wojenne doœwiadczenie od razu podpowiada mi to, czego Jenkins prawdopodobnie siê nie domyœli³.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PresjaCzasu_15_02"); //Co masz na myœli? Chodzi o orków, prawda?
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PresjaCzasu_15_03"); //Jenkins rozrysowa³ mi, jak przemieszcza³y siê orkowe grupki zwiadowcze. Jednoznacznie wynika, ¿e orkowie zamierzaj¹ zaatakowaæ myœliwych!
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PresjaCzasu_15_03"); //Jenkins rozrysowa³ mi, jak przemieszcza³y siê orkowe grupki zwiadowcze. Z tego wynika, ¿e orkowie zaatakuj¹ wkrótce myœliwych!
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PresjaCzasu_15_04"); //Musisz jak najszybciej poinformowaæ ich o tym, aby mogli siê przygotowaæ!
 	
 	Log_CreateTopic (TOPIC_Udar_presja,LOG_MISSION);

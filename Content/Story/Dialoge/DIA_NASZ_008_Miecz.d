@@ -61,7 +61,7 @@ FUNC VOID DIA_NASZ_008_Miecz_siema_Info()
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_siema_55_06"); //Nie miewam w zwyczaju dzieliæ siê swoimi problemami z nieznajomymi. Postaw jakiœ dobry alkohol, to mo¿e siê zakumplujemy.
 	Log_CreateTopic (TOPIC_Miecz_ork, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Miecz_ork, LOG_RUNNING);
-	B_LogEntry (TOPIC_Miecz_ork, "Natkn¹³em siê na pirata, który nie chce siê podzieliæ swoim problem, dopóki nie postawiê mu jakiegoœ porz¹dnego alkoholu. Byæ mo¿e to dobra okazja na znalezienie kumpla do kufla.");
+	B_LogEntry (TOPIC_Miecz_ork, "Natkn¹³em siê na pirata, który nie chce siê podzieliæ swoim problemem, dopóki nie postawiê mu jakiegoœ porz¹dnego alkoholu. Byæ mo¿e to dobra okazja na znalezienie kumpla do kufla.");
 };
 
 var int MieczGrogRumOK;
@@ -426,10 +426,16 @@ FUNC INT DIA_NASZ_008_Miecz_prowadzenie2_Condition()
 FUNC VOID DIA_NASZ_008_Miecz_prowadzenie2_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_15_00"); //To tutaj. Ja dalej siê nie wybieram i tobie te¿ nie radzê. Nie wygl¹dasz na doœæ krzepkiego, by poradziæ sobie z grupk¹ o¿ywieñców.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_55_01"); //Z racji, ¿e szkielety od strony cmentarza nie bêd¹ mnie wiêcej niepokoiæ, wracam do siebie.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_55_02"); //Bywaj.
-
-	B_LogEntry (TOPIC_Keroloth_duchy, "Wygl¹da na to, ¿e to w³aœnie na bagnie znajduje siê wylêgarnia o¿ywieñców. Czas za¿egnaæ ten problem!");
+	
+	if (npc_isdead(Skeleton_Lord_Garrel)) {
+		AI_Output (other, self,"DIA_NASZ_008_Miecz_prowadzenie2_55_01"); //To o to miejsce ci chodzi³o! Spokojnie, by³em ju¿ na bagnie i uœmierci³em przywódcê nieumar³ych.
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_55_02"); //Powa¿nie? To œwietna wiadomoœæ! Szkielety nie bêd¹ nas ju¿ wiêcej niepokoiæ. Wracam do swojej kryjówki.
+	}
+	else {
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_55_03"); //Z racji, ¿e szkielety od strony cmentarza nie bêd¹ mnie wiêcej niepokoiæ, wracam do siebie.
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_prowadzenie2_55_04"); //Bywaj.
+		B_LogEntry (TOPIC_Keroloth_duchy, "Wygl¹da na to, ¿e to w³aœnie na bagnie znajduje siê wylêgarnia o¿ywieñców. Czas za¿egnaæ ten problem!");
+	};
 
 	Npc_ExchangeRoutine (self, "Start");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;

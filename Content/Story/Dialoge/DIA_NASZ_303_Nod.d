@@ -177,7 +177,7 @@ FUNC VOID DIA_NASZ_303_Nod_who_miner()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_who_miner_15_00"); //By³ym kopaczem.
-	AI_Output (self, other,"DIA_NASZ_303_Nod_who_miner_55_01"); //Kopaczem? Cokolwiek tu robisz nie jesteœ bandyt¹... Zabiæ!
+	AI_Output (self, other,"DIA_NASZ_303_Nod_who_miner_55_01"); //Kopaczem? Cokolwiek tu robisz, nie jesteœ bandyt¹... Zabiæ!
 
 	Info_ClearChoices (DIA_NASZ_303_Nod_who);
 	Info_AddChoice	  (DIA_NASZ_303_Nod_who, "KONIEC", DIA_NASZ_303_Nod_who_kill);
@@ -333,7 +333,7 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_fight()
 
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_fight_15_00"); //Czêœci artefaktu mog¹ byæ dobrze bronione...
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_fight_55_01"); //Mo¿esz udaæ siê do Fruta. Niech da ci kilka mikstur.
-	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_fight_55_02"); //A jeœli liczysz na coœ wiêcej, to odst¹piê ci parê ³upów, gdy ju¿ znajdziemy siê w œrodku. .
+	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_fight_55_02"); //A jeœli liczysz na coœ wiêcej, to odst¹piê ci parê ³upów, gdy ju¿ znajdziemy siê w œrodku.
 
 	FRUT_MIKSTURY = TRUE;
 
@@ -344,7 +344,7 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_bieganie()
 
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_bieganie_15_00"); //Du¿o biegania przede mn¹.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_bieganie_55_01"); //A przede mn¹ du¿o czekania!
-	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_bieganie_55_02"); //PrzychodŸ do mnie z ka¿d¹ czêœci¹ artefaktu. Jeœli umrzesz to przynajmniej jakieœ ju¿ bêdê mia³.
+	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_bieganie_55_02"); //PrzychodŸ do mnie z ka¿d¹ czêœci¹ artefaktu. Jeœli umrzesz, to przynajmniej jakieœ ju¿ bêdê mia³.
 
 };
 
@@ -621,7 +621,7 @@ FUNC INT DIA_NASZ_303_Nod_wtf_Condition()
 
 FUNC VOID DIA_NASZ_303_Nod_wtf_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_303_Nod_wtf_15_00"); //Cholera jasna... co to by³o?
+	AI_Output (self, other,"DIA_NASZ_303_Nod_wtf_15_00"); //Cholera jasna... Co to by³o?
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_wtf_55_01"); //Wygl¹da na to, ¿e to miejsce rzeczywiœcie skrywa jak¹œ tajemnicê.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_wtf_55_02"); //Patrz. Jest tu jakaœ platforma teleportacyjna. Uruchom j¹ i przejdŸ dalej. My zajmiemy pozycjê i bêdziemy chroniæ twoje plecy.
 	Npc_ExchangeRoutine (NASZ_303_Nod, "Artefakt");

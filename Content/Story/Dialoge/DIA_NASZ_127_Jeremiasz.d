@@ -169,7 +169,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_AfterQuest_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_AfterQuest_15_00"); //Co... Co to by³o?
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_AfterQuest_55_01"); //Nie czujê siê, w ogóle, ani dobrze ani Ÿle.
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_AfterQuest_55_02"); //Trochê krêci mi siê w g³owie i czujê, jak pulsuj¹ moje ¿y³y. Myœlê, ¿e ten eliksir zadzia³a za jakiœ czas.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_AfterQuest_55_02"); //Trochê krêci mi siê w g³owie i czujê, jak pulsuj¹ moje ¿y³y. Myœlê, ¿e eliksir zadzia³a za jakiœ czas.
 	
 	JeremiaszAlmostDeadDay  = Wld_GetDay();
 	JeremiaszAlmostDeadHour = Wld_GetTimeHour();
@@ -203,7 +203,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_NalewkaNaSen_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_NalewkaNaSen_15_00"); //Poszukujê jakiejœ nalewki na dobry sen.
 	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_NalewkaNaSen_15_01"); //Masz jeszcze takie na sk³adzie?
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_NalewkaNaSen_55_02"); //Oczywiœcie, lecz zosta³o mi ich ju¿ naprawdê niewiele, gdy¿ w tym miejscu ciê¿ko jest znaleŸæ niezbêdne sk³adniki do ich produkcji.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_NalewkaNaSen_55_02"); //Oczywiœcie, ale nie mam ich ju¿ zbyt du¿o. Trudno o sk³adniki w tym zapomnianym przez bogów miejscu.
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_NalewkaNaSen_55_03"); //Jak dla ciebie, 100 sztuk z³ota.
 };
 
@@ -234,7 +234,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_BioreJedna_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_BioreJedna_15_00"); //Dobra, biorê jedn¹.
 	B_GiveInvItems(other,self,ItMi_Gold,100);
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_BioreJedna_55_01"); //Tylko uwa¿aj, ma potê¿nego kopa, haha!
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_BioreJedna_55_01"); //Tylko uwa¿aj, ma potê¿nego kopa. Ha, ha!
 	
 	Createinvitems (self, ItNa_NalewkaFerros, 1);
 	B_giveinvitems (self, other, ItNa_NalewkaFerros, 1);

@@ -132,7 +132,7 @@ func int DIA_NASZ_316_Carry_palisada_Condition ()
 func void DIA_NASZ_316_Carry_palisada_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_316_Carry_palisada_55_00"); //Sk¹d wziê³a siê tu ta palisada?
-	AI_Output			(self, other, "DIA_NASZ_316_Carry_palisada_03_01"); //Pamiêtasz jak miesi¹c temu nasze okrêty zmasakrowa³a orkowa flota?
+	AI_Output			(self, other, "DIA_NASZ_316_Carry_palisada_03_01"); //Pamiêtasz, jak miesi¹c temu nasze okrêty zmasakrowa³a orkowa flota?
 
 	Info_ClearChoices 	(DIA_NASZ_316_Carry_palisada);
 		Info_AddChoice		(DIA_NASZ_316_Carry_palisada,"Có¿... Chyba uderzy³em siê w g³owê.",DIA_NASZ_316_Carry_palisada_head);
@@ -194,7 +194,7 @@ FUNC VOID DIA_NASZ_316_Carry_palisada_IDK ()
 FUNC VOID DIA_NASZ_316_Carry_palisada_Przydac ()
 {
 	AI_Output (other,self,"DIA_NASZ_316_Carry_palisada_Przydac_08_00"); //Przyszed³em siê na coœ przydaæ.
-	AI_Output (self,other,"DIA_NASZ_316_Carry_palisada_Przydac_08_01"); //Samuel wys³a³ ciê tu, bo fatalnie przybijasz deski? Haha!
+	AI_Output (self,other,"DIA_NASZ_316_Carry_palisada_Przydac_08_01"); //Samuel wys³a³ ciê tu, bo fatalnie przybijasz deski? Ha, ha!
 	
 	B_LogEntry (TOPIC_Gestath_renegaci, "Uda³o mi siê nawi¹zaæ kontakt z jednym z bandytów. Uda³o im siê tu jakoœ przedostaæ przez góry. O ile dobrze zrozumia³em, tutaj szefem jest Nod, a niejaki Samuel dowodzi naprawianiem okrêtów. Chyba warto zapamiêtaæ te dwa imiona.");
 	Info_ClearChoices 	(DIA_NASZ_316_Carry_palisada);
@@ -259,7 +259,7 @@ func void DIA_NASZ_316_Carry_WhyNot_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_316_Carry_WhyNot_55_00"); //Dlaczego nie jesteœ w obozie?
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_01"); //Razem z moim kumplem zostaliœmy skazani na miesiêczn¹ banicjê.
-	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_02"); //Chcieliœmy... Ahhh. Bo widzisz, w obozie jest ork. I to nie niewolnik. Nasi traktuj¹ go jak sojuszika!
+	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_02"); //Chcieliœmy... Ahhh. Bo widzisz, w obozie jest ork. I to nie niewolnik. Nasi traktuj¹ go jak sojusznika!
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_03"); //Pewnej nocy chcieliœmy go skopaæ... I gdy ju¿ byliœmy sam na sam z nim, pojawi³ siê Perrot i wszcz¹³ alarm.
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_04"); //Nod siê wœciek³ i wyrzuci³ nas z obozu. I to na ca³y miesi¹c!
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_WhyNot_03_05"); //Od kiedy to jakaœ bestia jest cenniejsza od dwóch wieloletnich kompanów? No od kiedy, do cholery, pytam!

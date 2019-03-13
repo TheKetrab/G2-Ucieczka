@@ -1023,7 +1023,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		};
 	};
 	
-	if(oth && slf &&  _@(oth) == _@(hero) &&dmg)
+	if(victimPtr && attackerPtr && Hlp_IsValidNpc(oth) &&  _@(oth) == _@(hero) &&dmg)
 	{
 			if(slf.guild == gil_snapper && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
 			{
@@ -1129,6 +1129,8 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		if(_@(slf) == _@(OrcBiterWsciekly01) ||  _@(slf) ==_@(SwampratWsciekly01) ||  _@(slf ) ==_@(BloodflyWsciekly01) || _@(slf ) == _@(MinecrawlerWarriorWsciekly1)  || _@(slf ) == _@(WaranWsciekly01))
 		{
+			
+			
 			slf.aivar[AIV_RandomDmg] = hlp_random(11);
 
 			if(slf.aivar[AIV_RandomDmg] <= 3)
@@ -1141,7 +1143,9 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 
 		if(_@(slf) == _@(Giant_Rat_Huge01) ||  _@(slf) ==_@(SwampDroneWsciekly01) ||  _@(slf ) ==_@(Topielec_Wsciekly_A) || _@(slf ) == _@(TrollWsciekly01)  || _@(slf ) == _@(WscieklyWilk1))
 		{
-			 slf.aivar[AIV_RandomDmg] = hlp_random(11);
+			
+			
+			slf.aivar[AIV_RandomDmg] = hlp_random(11);
 			if(slf.aivar[AIV_RandomDmg] <= 5)
 			{
 				Buff_Apply(hero, Poison5HP);
@@ -1153,6 +1157,8 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		if(_@(slf) == _@(WildBloodfly01) ||  _@(slf) ==_@(GroznyJaszczurWsciekly01))
 		{			
+			
+			
 			slf.aivar[AIV_RandomDmg] = hlp_random(11);
 			if(slf.aivar[AIV_RandomDmg] <= 8 )
 			{
@@ -1165,6 +1171,8 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		if(_@(slf) == _@(Wisp_Boss))
 		{
+			if(!(attackerPtr)) {dmg = 0; return dmg;};
+			
 			if (hero.attribute[ATR_HITPOINTS] < HeroPreviousHP)
 			{
 				Wld_PlayEffect("spellFX_DESTROYUNDEAD",  hero, hero, 0, 0, 0, FALSE );

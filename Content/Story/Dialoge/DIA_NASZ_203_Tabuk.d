@@ -513,7 +513,7 @@ func void DIA_NASZ_203_Tabuk_nauka_ShadowHorn ()
 {
 	if (B_TeachPlayerTalentTakeAnimalTrophy (self, other, TROPHY_ShadowHorn))
 		{
-			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_ShadowHorn_09_00"); //Rogi cieniostworów zdobi¹ niejeden szlachecki dom. To trofeum jest tak cenne, bo tak trudno je zdobyæ. Nie doœæ, ¿e trzeba uporaæ siê z tym potworem, to jeszcze zgrabnie wyci¹gn¹æ mu kolec z g³owy.
+			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_ShadowHorn_09_00"); //Rogi cieniostworów zdobi¹ niejeden szlachecki dom, gdy¿ bardzo trudno je zdobyæ. Nie doœæ, ¿e musisz uporaæ siê z potworem, to jeszcze trzeba doœæzgrabnie usun¹æ ten róg.
 			AI_Output			(self, other, "DIA_NASZ_203_Tabuk_nauka_ShadowHorn_09_01"); //To doœæ obrzydliwe: Najpierw wytnij kwadrat w jego pysku i wyci¹gnij ca³oœæ. Potem oskub z miêsa róg, a przed sprzeda¿¹, najlepiej wymyj go dok³adnie w mocnej gorza³ce, aby zapobiec bakteriom.
 		};
 	Info_ClearChoices	(DIA_NASZ_203_Tabuk_nauka);

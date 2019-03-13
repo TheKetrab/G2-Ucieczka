@@ -251,7 +251,7 @@ FUNC VOID DIA_NASZ_114_Hokurn_TrfGolem_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_114_Hokurn_TrfGolem_15_00"); //Przyszed³em po zwój przemiany w golema.
 	AI_Output (self, other,"DIA_NASZ_114_Hokurn_TrfGolem_55_01"); //Keroloth znalaz³ kolejnego g³upiego, który bêdzie przemienia³ siê w golema, ¿eby zabiæ golema?
-	AI_Output (self, other,"DIA_NASZ_114_Hokurn_TrfGolem_55_02"); //Pomyœl: Jaki sens ma przemieniaæ siê w wilka, ¿eby zabiæ wilka? Ka¿dy myœliwy, by ciê wyœmia³...
+	AI_Output (self, other,"DIA_NASZ_114_Hokurn_TrfGolem_55_02"); //Pomyœl: Jaki sens ma przemieniaæ siê w wilka, ¿eby zabiæ wilka? Ka¿dy myœliwy by ciê wyœmia³...
 	AI_Output (self, other,"DIA_NASZ_114_Hokurn_TrfGolem_55_03"); //Dobrze, ¿e to zadanie ju¿ na mnie nie ci¹¿y. Trzymaj, oto zwój, który ciê interesuje.
 
 	Createinvitems (self, ItNa_TrfGolem, 1);

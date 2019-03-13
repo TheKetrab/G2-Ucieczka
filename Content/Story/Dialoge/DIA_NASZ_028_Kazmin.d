@@ -111,7 +111,7 @@ func void DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie()
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_Przyjecie_15_04"); //Wypij to, a bêdziemy gotowi stan¹æ przeciwko bogom. Jednak pamiêtaj: Musisz tego bardzo chcieæ, gdy¿ inaczej magia nie zadzia³a.
 	
 	CreateInvItems(self,ItNa_PoteznyWywar,1);
-	B_GiveInvItems(self,other);
+	B_GiveInvItems(self,other,ItNa_PoteznyWywar,1);
 	AI_UseItem(hero,ItNa_PoteznyWywar);
 	hero.attribute[ATR_HITPOINTS] /= 3; // zmniejsza hp o dwie trzecie tego co sie ma
 

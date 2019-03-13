@@ -247,12 +247,13 @@ INSTANCE DIA_NASZ_308_Frut_rabon   (C_INFO)
  	condition   = DIA_NASZ_308_Frut_rabon_Condition;
  	information = DIA_NASZ_308_Frut_rabon_Info;
  	permanent   = FALSE;
- 	description = "Rabon prowadzi³ interesy z Paladynami.";
+ 	description = "Rabon prowadzi³ nielegalne interesy z paladynami.";
 };
 
 FUNC INT DIA_NASZ_308_Frut_rabon_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_305_Rabon_rabon))
+	&& (npc_isdead(NASZ_305_Rabon))
 	{
 		return TRUE;
 	};
@@ -260,14 +261,16 @@ FUNC INT DIA_NASZ_308_Frut_rabon_Condition()
 
 FUNC VOID DIA_NASZ_308_Frut_rabon_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_00"); //Rabon prowadzi³ interesy z Paladynami.
+	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_00"); //Rabon prowadzi³ nielegalne interesy z paladynami.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_01"); //Prowadzi³?
-	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_02"); //Tak, ju¿ go skasowa³em.
-	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_03"); //Ha, ha! Dobra robota, m³okosie.
+	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_02"); //Tak, ju¿ go skasowa³em. Cwaniak mia³ z nimi jak¹œ dodatkow¹ umowê. Gdy znalaz³em w jego rzeczach spor¹ iloœæ rudy, powiedzia³ mi o tym i chcia³, ¿ebym zosta³ jego wspólnikiem.
+	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_03"); //Zgodzi³em siê, aby lepiej zbadaæ sprawê i zdemaskowaæ tê kanaliê. Rabon myœla³, ¿e mnie wykiwie i zaczai³ siê na mnie razem ze swoimi kolegami. Na szczêœcie uda³o mi siê zadaæ mu œmiertelny cios i wyjœæ z tego ca³o.
+	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_04"); //To by wyjaœnia³o, dlaczego ostatnio tej rudy by³o mniej, ni¿ byæ powinno. Powiedzmy, ¿e ci wierzê.
+	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_05"); //Jeœli jednak kolejne dostawy wcale nie bêd¹ wiêksze, to uznam, ¿e zabi³eœ Rabona ot tak, a ca³a twoja opowieœæ to nic nie warta bajka.
 
 	B_GivePlayerXP (400);
 	DodajReputacje (10, REP_BANDYCI);
-	B_LogEntry (TOPIC_Rabon_sakwa, "Frut ucieszy³ siê, ¿e zabi³em Rabona. A reputacja roœnie!");
+	B_LogEntry (TOPIC_Rabon_sakwa, "Frut uwierzy³ mi, ¿e zabi³em Rabona, ale jeœli kolejne dostawy rudy nie bêd¹ wiêksze, zacznie podejrzewaæ mnie o k³amstwo. Cholera, pewnie jeszcze nie wie, ¿e paladyni renegaci w kopalni nie ¿yj¹, a kopacze ju¿ nie pracuj¹. Oby dobrze siê to dla mnie skoñczy³o.");
 	Log_SetTopicStatus (TOPIC_Rabon_sakwa, LOG_SUCCESS);
 };
 
@@ -338,11 +341,12 @@ FUNC VOID DIA_NASZ_308_Frut_zezwolenie_Info()
 		B_giveinvitems (self, other, ItNa_ZezwolenieBandyci, 1);
 		AI_Output (self, other,"DIA_NASZ_308_Frut_zezwolenie_55_02"); //Poka¿ ten papier stra¿nikowi.
 		AI_Output (self, other,"DIA_NASZ_308_Frut_zezwolenie_55_03"); //Mo¿e teraz w koñcu przestaniesz zawracaæ mi g³owê...
+		Frut_Dal_Zezwolenie_Willowi = TRUE;
 	}
 	else {
 		PrintMissingRep(70,REP_BANDYCI);
 		AI_Output (self, other,"DIA_NASZ_308_Frut_zezwolenie_55_04"); //Nie wszyscy s¹ jeszcze tob¹ zachwyceni.
-		AI_Output (self, other,"DIA_NASZ_308_Frut_zezwolenie_55_05"); //Postaraj siê jeszcze.
+		AI_Output (self, other,"DIA_NASZ_308_Frut_zezwolenie_55_05"); //Postaraj siê bardziej.
 	};
 };
 
@@ -489,7 +493,7 @@ FUNC VOID DIA_NASZ_308_Frut_mikstury_power()
 FUNC VOID DIA_NASZ_308_Frut_mikstury_mana()
 {
 
-	AI_Output (self, other,"DIA_NASZ_308_Frut_mikstury_mana_55_00"); //A coœ ty, mag jakiœ? No ale dobra - w koñcu siê jej pozbêdê.
+	AI_Output (self, other,"DIA_NASZ_308_Frut_mikstury_mana_55_00"); //A coœ ty, mag jakiœ? No ale dobra, w koñcu siê jej pozbêdê.
 
 	Createinvitems (self, ItNa_SakwaMikstur_Mana, 1);
 	B_giveinvitems (self, other, ItNa_SakwaMikstur_Mana, 1);

@@ -99,7 +99,7 @@ FUNC INT DIA_NASZ_221_Benito_jaszczuroludzie_Condition()
 FUNC VOID DIA_NASZ_221_Benito_jaszczuroludzie_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_jaszczuroludzie_15_00"); //Jaszczuroludzie?
-	AI_Output (self, other,"DIA_NASZ_221_Benito_jaszczuroludzie_55_01"); //Có¿, orkowie to niejedyne bestie w tym przera¿aj¹cym miejscu. Ni to jaszczury, ni to ludzi. Paskudne istoty, które pojawi³y siê w Górniczej Dolinie wraz z przybyciem smoków.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_jaszczuroludzie_55_01"); //Có¿, orkowie to niejedyne bestie w tym przera¿aj¹cym miejscu. Ni to jaszczury, ni to ludzie. Paskudne istoty, które pojawi³y siê w Górniczej Dolinie wraz z przybyciem smoków.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_jaszczuroludzie_55_02"); //Teraz, gdy wszystkie smoki pad³y trupem, ca³e plemiê osiad³o w ruinach Nowego Obozu. Widocznie skuta lodem kraina i niska temperatura odpowiadaj¹ tym jaszczurkom.
 };
 
@@ -514,7 +514,7 @@ FUNC INT DIA_NASZ_221_Benito_TrollCanyon_Condition()
 FUNC VOID DIA_NASZ_221_Benito_TrollCanyon_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_221_Benito_TrollCanyon_15_00"); //Musisz udaæ siê do Kanionu Trolli.
-	AI_Output (self, other,"DIA_NASZ_221_Benito_TrollCanyon_55_01"); //Szykuje siê bitwa co?
+	AI_Output (self, other,"DIA_NASZ_221_Benito_TrollCanyon_55_01"); //Szykuje siê bitwa, co?
 
 		if (npc_knowsinfo (other, DIA_NASZ_221_Benito_KillDone)) {
 

@@ -98,7 +98,7 @@ INSTANCE Gobbo_Warrior_Snaf (Mst_Default_Gobbo_Warrior)
 
 INSTANCE Gobbo_Warrior_Kivo (Mst_Default_Gobbo_Warrior)
 {
-	name = "B³¹dz¹cy goblin";
+	name = "B³êdny goblin";
 	B_SetVisuals_Gobbo_Warrior();
 	attribute[ATR_STRENGTH] = 70;
 	Npc_SetToFightMode (self, ItMw_Orkschlaechter); //Waffe ist nur Optik - Schaden wird NUR über STR bestimmt (Gobbo ist als Monster im Fistmode)

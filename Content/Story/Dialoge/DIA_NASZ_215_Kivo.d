@@ -220,7 +220,7 @@ FUNC VOID DIA_NASZ_215_Kivo_RenegaciOnPlace_Info()
 	AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_01"); //Jeszcze nie, muszê przyjrzeæ siê lepiej tym barykadom.
 	
 	if (Npc_GetDistToWP(hero,"OW_PATH_264") < (Npc_GetDistToWP(hero,"OW_PATH_148_A"))) {
-		AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_02"); //Wy oczekujcie przy tej bramie. O ile dobrze pamiêtam ko³owrót otwiera³ w³aœnie t¹.
+		AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_02"); //Wy oczekujcie przy tej bramie. O ile dobrze pamiêtam, ko³owrót otwiera³ w³aœnie t¹.
 	} else {
 		AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_03"); //Wy udajcie siê pod drug¹ bramê. Stamt¹d zaatakujecie.
 	};

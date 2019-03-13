@@ -82,7 +82,7 @@ func int DIA_NASZ_315_Bandzior_hello_Condition ()
 };
 func void DIA_NASZ_315_Bandzior_hello_Info ()
 {
-	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_hello_03_00"); //Jak czegoœ chcesz to zwróæ siê do Carry'ego.
+	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_hello_03_00"); //Jak czegoœ chcesz, to zwróæ siê do Carry'ego.
 
 	AI_StopProcessInfos (self);
 };

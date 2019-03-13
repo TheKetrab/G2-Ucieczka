@@ -65,7 +65,7 @@ FUNC VOID DIA_NASZ_231_Ted_siema_Info()
 
 	B_GivePlayerXP (100);	
 	Log_SetTopicStatus (TOPIC_Kopalnia, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Kopalnia, "Jestem na wolnoœci! Teraz przyda³oby siê znaleŸæ jakiegoœ cz³owieka... Byle nie Paladyna!");		
+	B_LogEntry (TOPIC_Kopalnia, "Jestem na wolnoœci! Teraz przyda³oby siê znaleŸæ jakiegoœ cz³owieka... Byle nie paladyna!");
 
 };
 

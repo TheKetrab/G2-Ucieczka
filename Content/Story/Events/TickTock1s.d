@@ -608,7 +608,7 @@ func void Warta()
 
 		if (Npc_GetDistToWP	(hero, "OW_DJG_ROCKCAMP_02") > 800) {
 			if (WartaKomunikatTimer == 1) {
-				PrintScreen	("Wroc na stanowisko!", -1,-1, FONT_ScreenSmall,2);
+				PrintScreen	("Wróæ na stanowisko!", -1,-1, FONT_ScreenSmall,2);
 				WartaKomunikatTimer = WartaKomunikatTimer + 1;
 			}
 			else if (WartaKomunikatTimer == 6) {
@@ -621,7 +621,7 @@ func void Warta()
 		};	
 		
 		if (Npc_GetDistToWP	(hero, "OW_DJG_ROCKCAMP_02") > 1500) {
-			PrintScreen	("Opusciles miejsce warty.", -1,-1, FONT_ScreenSmall,2);
+			PrintScreen	("Opuœci³eœ miejsce warty.", -1,-1, FONT_ScreenSmall,2);
 			Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_FAILED);
 			B_LogEntry (TOPIC_Mysliwy_Warta, "Mimo przyjêtego zadania, poniecha³em patrolowanie terenu obozu wypadowego.");
 			WillStajeNaWarcie = FALSE;

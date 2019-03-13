@@ -142,9 +142,10 @@ FUNC VOID DIA_NASZ_002_Daryl_done_Info()
 
 	B_giveinvitems (other, self, ItAt_Meatbugflesh, 1);
 
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_done_55_01"); //Wielkie nieba! Dziêkujê.
-
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_done_55_04"); //Wracam do pracy, bo nie chcê oberwaæ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_done_55_01"); //Wielkie nieba! Mam to zjeœæ? Przecie¿ to robak!
+	AI_Output (other,self ,"DIA_NASZ_002_Daryl_done_15_02"); //Nie myœl o tym w ten sposób. To na pewno bogate Ÿród³o witamin i spora dawka bia³ka. Postawi ciê na nogi raz dwa!
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_done_55_03"); //Dalej nie jestem pewien... Wola³bym nie jeœæ tego na surowo. Ale pewnie nie mam wyboru, co?
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_done_55_04"); //Spróbujê. Zobaczymy, czy tego nie zwrócê. A teraz wracam do pracy, bo nie chcê oberwaæ.
 
 	DARYL_JE = TRUE;
 	B_GivePlayerXP (100);
@@ -182,7 +183,7 @@ FUNC VOID DIA_NASZ_002_Daryl_MamGrzyba_Info()
 {	
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_MamGrzyba_15_00"); //Co powiesz na kopalnianego grzyba?
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_MamGrzyba_55_01"); //Co? ¯artujesz chyba sobie! Nie wiesz, ¿e s¹ truj¹ce?
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_MamGrzyba_55_02"); //Cz³owieku, przynieœ mi kawa³ek sera, okruchê chleba albo jakieœ tandetne miêso, które da siê pogryŸæ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_MamGrzyba_55_02"); //Cz³owieku, przynieœ mi kawa³ek sera, okruchy chleba albo jakieœ nieœwie¿e miêso. Bylebym od tego nie umar³.
 	
 	B_LogEntry (TOPIC_Daryl_mieso, "Mój pomys³ z kopalnianym grzybem nie spodoba³ siê zbytnio Darylowi. Muszê wykombinowaæ coœ innego.");
 };
@@ -227,7 +228,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BenPassword_Info()
 	{
 		AI_Output (self, other,"DIA_NASZ_002_Daryl_BenPassword_55_05"); //Nareszcie nasta³a chwila, kiedy pozbêdziemy siê tego sukinsyna.
 		AI_Output (self, other,"DIA_NASZ_002_Daryl_BenPassword_55_06"); //Ostatnio z jego powodu zosta³em pobity przez stra¿ników, gdy¿ ten powiedzia³ im, ¿e z powodu choroby, nie pracujê tak efektownie jak reszta.
-		AI_Output (self, other,"DIA_NASZ_002_Daryl_BenPassword_55_07"); //Przez tydzieñ nie czu³em w³asnej g³owy i brzucha. Wracaj¹c jednak do mojego planu, to wiem ju¿, jak mo¿emy zamkn¹æ mu buŸkê.
+		AI_Output (self, other,"DIA_NASZ_002_Daryl_BenPassword_55_07"); //Przez tydzieñ ledwo siê porusza³em. Wracaj¹c jednak do mojego planu, to wiem ju¿, jak mo¿emy zamkn¹æ mu buŸkê.
 		BenPassword_Perm_False = TRUE;
 	};
 };
@@ -349,7 +350,8 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_Info()
 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_15_00"); //Ty te¿ zrobi³eœ sobie chwilow¹ przerwê?
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_01"); //Tak, od tego ³upania w ska³y nie czujê ju¿ r¹k. Nie wspominaj¹c o towarzysz¹cym od rana g³odzie, który nie chce daæ za wygran¹.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_55_02"); //Wiêc czujesz to samo co ja... Nied³ugo mój kilof rozpadnie siê w drzazgi od tego kopania, ju¿ ostrze ledwie trzyma siê na trzonku.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_55_02"); //Wiêc czujemy sie podobnie. Od tego kopania, mój kilof zaraz siê rozpadnie. Patrz, ostrze ledwo trzyma siê na trzonku.
+	// TODO T_Inspect kilof
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_55_03"); //Tylko czekaæ, a¿ wypadnie i zrobi komuœ krzywdê. Wygl¹dasz jednak na strasznie zadowolonego, dlaczego?
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_04"); //Od d³u¿szego czasu intuicja podpowiada³a mi, abym sprawdzi³ boczny tunel w sektorze Bena, w którym zakoñczyliœmy wydobycie.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonTRIA_55_05"); //Nie uwierzysz, co tam znalaz³em!
@@ -659,6 +661,7 @@ INSTANCE DIA_NASZ_002_Daryl_Metody1   (C_INFO)
 FUNC INT DIA_NASZ_002_Daryl_Metody1_Condition()
 {
 	if(npc_knowsinfo (other, DIA_NASZ_020_Sattar_Metody2))
+	&& !(npc_knowsinfo (other, DIA_NASZ_020_Sattar_Metody4))
 	&& (Npc_GetDistToWP	(self, "NASZ_KOPALNIA_NOWY_12") <=750)
 	&& (npc_hasitems (other, ItNa_Krysztal) >=2)
 	{
@@ -671,7 +674,6 @@ FUNC VOID DIA_NASZ_002_Daryl_Metody1_Info()
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Metody1_55_01"); //Równie¿ mam tak¹ nadziejê. Martwiê siê jedynie tym, aby stra¿nicy nie zaczêli czegoœ podejrzewaæ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_02"); //Dlatego nie powinniœmy daæ po sobie poznaæ, ¿e coœ knujemy. Ja pójdê do Bena pozmawiaæ z nim o dalszym planie.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_03"); //Ty zaœ powinieneœ siê nieco przespaæ, bo wygl¹dasz jak zombie.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_04"); //Zanim jednak udasz siê na spoczynek, oddaj kamienie Sattarowi. Zapewne nie mo¿e siê ju¿ doczekaæ. Niech Innos nam sprzyja.
 	
 	Npc_ExchangeRoutine (self, "GoToBen");
 

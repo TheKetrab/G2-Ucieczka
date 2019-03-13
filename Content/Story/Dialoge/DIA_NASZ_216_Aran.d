@@ -177,7 +177,7 @@ FUNC VOID DIA_NASZ_216_Aran_QuestKapi3_Info()
 	AI_Output (other, self,"DIA_NASZ_216_Aran_QuestKapi3_55_04"); //Skoro taka sytuacja trwa ju¿ kilka dni, to dlaczego sam siê tym nie zaj¹³eœ?
 	AI_Output (self, other,"DIA_NASZ_216_Aran_QuestKapi3_55_05"); //A widzisz, mam problem. W³aœnie kilka dni temu zacz¹³ mi doskwieraæ ból nogi. To na pewno przez tê zbrojê. Ugniata mnie w pachwinie.
 	AI_Output (other, self,"DIA_NASZ_216_Aran_QuestKapi3_55_06"); //Mogê siê na coœ przydaæ?
-	AI_Output (self, other,"DIA_NASZ_216_Aran_QuestKapi3_55_07"); //Udaj siê do orkowego obozu z tej strony zamku i przeszukaj go, albo idŸ do Kirgo i przynieœ mi jakieœ lekarstwo.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_QuestKapi3_55_07"); //Udaj siê do orkowego obozu z tej strony zamku i przeszukaj go. Ewentualnie idŸ do Kirgo i przynieœ mi jakieœ lekarstwo.
 	AI_Output (self, other,"DIA_NASZ_216_Aran_QuestKapi3_55_08"); //Wtedy razem wybierzemy siê do obozu orków.
 
 	Wld_InsertItem (ItNA_List_AranOrkowie,"NASZ_ZAMEK_FP_ARAN");

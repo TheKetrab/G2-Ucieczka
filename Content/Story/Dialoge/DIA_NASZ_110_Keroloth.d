@@ -441,7 +441,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_ready_Info()
 	if (RepEnough(25,REP_LOWCY)) {
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_15_01"); //Tak. W obozie s³yszy siê o tobie same dobre rzeczy. Ale to jeszcze nie wszystko!
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_02"); //Co prawda ch³opcy ciê popieraj¹, ale musisz siê sprawdziæ jako ³owca orków.
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_03"); //Muszê mieæ pewnoœæ, ¿e mogê na tobie polegaæ, gdy przyjdzie nam walczyæ. ¯e nie narobisz w gacie ze strachu, gdy zobaczy orka.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_03"); //Muszê mieæ pewnoœæ, ¿e mogê na tobie polegaæ, gdy przyjdzie nam walczyæ. ¯e nie narobisz w gacie ze strachu, gdy zobaczysz orka.
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_ready_55_04"); //Orkowie nie robi¹ na mnie wra¿enia.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_05"); //Bêdziesz mia³ okazjê to udowodniæ.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_55_06"); //W jaskini obok mostu przy zamku przebywa kilku orków. Prawdopodobnie zostali wygnani z zamku.
@@ -559,7 +559,7 @@ FUNC INT DIA_NASZ_110_Keroloth_BeALowca_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_BeALowca_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_BeALowca_15_00"); //Chcê zostaæ ³owc¹ orków.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_BeALowca_55_01"); //Wspaniale. Zatem mi³o mi og³osiæ, ¿e przyjmujê ciê w nasze szeregi. S³u¿ dzielnie i pamiêtaj: Nie daj siê zabiæ, nie orkowi.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_BeALowca_55_01"); //Wspaniale. Zatem mi³o mi og³osiæ, ¿e przyjmujê ciê w nasze szeregi. S³u¿ dzielnie i pamiêtaj: Nie daj siê zabiæ, szczególnie nie orkowi.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_BeALowca_55_02"); //Ten pancerz jest twój, trzymaj.
 
 	Createinvitems (self, ITNA_DJG_L, 1);
@@ -977,7 +977,7 @@ func void KerolothSay_GoToKirgo() {
 	B_GiveInvItems (self, other, ItNa_TrfGolem, 1);
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1Done_KerolothSay_GoToKirgo_55_02"); //Co mam zrobiæ?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1Done_KerolothSay_GoToKirgo_55_03"); //Udaj siê do alchemika z obozu myœliwych. Znam siê trochê na runach Paladynów, ale o zwojach nie wiem prawie nic.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1Done_KerolothSay_GoToKirgo_55_03"); //Udaj siê do alchemika z obozu myœliwych. Znam siê trochê na runach paladynów, ale o zwojach nie wiem prawie nic.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1Done_KerolothSay_GoToKirgo_55_04"); //Kirgo to obecnie jedyny cz³owiek w kolonii, który ma szansê odtworzyæ ten zwój i zrobiæ kilka, czy tam kilkanaœcie sztuk.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1Done_KerolothSay_GoToKirgo_55_05"); //Miejmy nadziejê, ¿e mu siê uda...
 };
@@ -985,7 +985,7 @@ func void KerolothSay_GoToKirgo() {
 FUNC VOID DIA_NASZ_110_Keroloth_Work1Done_nohassle()
 {
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Work1Done_nohassle_15_00"); //Nie mia³em ¿adnego k³opotu z pokonaniem golema.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1Done_nohassle_55_01"); //To bardzo dobra prognoza w perspektywie przebicia siê przez mury, czy choæby os³abienia umocnieñ wroga.0
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1Done_nohassle_55_01"); //To bardzo dobra prognoza w perspektywie przebicia siê przez mury, czy choæby os³abienia umocnieñ wroga.
 	KerolothSay_GoToKirgo();
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Work1Done);
 };
@@ -1079,7 +1079,7 @@ INSTANCE DIA_NASZ_110_Keroloth_artefakt   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_artefakt_Condition;
  	information = DIA_NASZ_110_Keroloth_artefakt_Info;
  	permanent   = FALSE;
-	description = "Znalaz³eœ mo¿e ostanio kawa³ek jakiegoœ pierœcienia?";
+	description = "Znalaz³eœ mo¿e ostatnio kawa³ek jakiegoœ pierœcienia?";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_artefakt_Condition()	
@@ -1092,7 +1092,7 @@ FUNC INT DIA_NASZ_110_Keroloth_artefakt_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_artefakt_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_artefakt_15_00"); //Znalaz³eœ mo¿e ostanio kawa³ek jakiegoœ pierœcienia?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_artefakt_15_00"); //Znalaz³eœ mo¿e ostatnio kawa³ek jakiegoœ pierœcienia?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_artefakt_55_01"); //Istotnie. Ciekawe sk¹d to wiesz? Zbieg okolicznoœci? A mo¿e masz coœ wspólnego z t¹ plugaw¹ istot¹, której to odebraliœmy?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_artefakt_55_02"); //Korth przypadkiem natkn¹³ siê na zwój i przyzwa³ w³aœciciela pierœcienia. Dobrze, ¿e w pobli¿u by³o kilku ³owców i pomogli zwiaæ stamt¹d Korthowi.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_artefakt_15_03"); //Pracujê dla Gestatha, ta czêœæ jest mi niezwykle potrzebna.
@@ -1247,7 +1247,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoBam_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoBam_15_00"); //Jeden z bandytów chce wiedzieæ, co z kopalni¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoBam_55_01"); //Wiedzia³em, ¿e w koñcu pojawi¹ siê k³opoty. O co dok³adnie chodzi? Skapowali siê, ¿e odciêliœmy dop³yw rudy?
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoBam_15_02"); //Otó¿ to. Szefostwo siê niecierpliwi, a ja nie chcê, by odkryli, ¿e rozbiliœmy Paladynów.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoBam_15_02"); //Otó¿ to. Szefostwo siê niecierpliwi, a ja nie chcê, by odkryli, ¿e rozbiliœmy paladynów.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoBam_55_03"); //Widzê dwa wyjœcia z sytuacji: Albo dostarczysz im ze dwadzieœcia bry³ek rudy jako dostawê, albo poka¿emy, ¿e kopalnia nadal funkcjonuje.
 
 	B_LogEntry (TOPIC_Bam_kopalnia, "Jednym z pomys³ów Kerolotha jest oddanie 20 bry³ek rudy bandytom.");
@@ -1445,14 +1445,14 @@ FUNC VOID DIA_NASZ_110_Keroloth_KapThree_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_03"); //Spoczynek musisz jednak od³o¿yæ na póŸniej, gdy¿ znów czeka nas du¿o roboty.	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_04"); //Dowiedzia³eœ siê mo¿e, czego szukali bandyci w przejêtej przez orków Górniczej Dolinie?
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_15_05"); //G³ównym powodem ich przybycia by³o wydobycie rudy, by sprzedawaæ j¹ królowi. Ich szef natrafi³ na trop potê¿nego artefaktu - Oka Œwiata.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_15_05"); //G³ównym powodem ich przybycia by³o wydobycie rudy, by sprzedawaæ j¹ królowi. Ich szef natrafi³ na trop potê¿nego artefaktu, Oka Œwiata.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_15_06"); //Odnalaz³em go i mam przy sobie.
 	B_giveinvitems (other, self, ItNa_OkoSwiata, 1);
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_07"); //Oddaj mi go. W rêkach Paladyna sprawdzi siê lepiej, ni¿ w twoich. Znam siê lepiej na magicznych przedmiotach od ciebie i jestem pewien, ¿e zdo³am w pe³ni wykorzystaæ drzemi¹c¹ w nim moc.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_07"); //Oddaj mi go. W rêkach paladyna sprawdzi siê lepiej, ni¿ w twoich. Znam siê lepiej na magicznych przedmiotach i jestem pewien, ¿e zdo³am w pe³ni wykorzystaæ drzemi¹c¹ w nim moc.
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_08"); //Tym bardziej, ¿e nasta³a ta chwila, na któr¹ wszyscy czekaliœmy. Chcemy odbiæ nasz zamek z r¹k orków.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_55_09"); //Jesteœcie tego pewni? W zamku jest ca³¹ horda, a nas zaledwie garstka. Jak mamy ich pokonaæ?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_10"); //Masz racjê, w otwartej walce nie mamy z nimi szans. Jednak nikt nie powiedzia³, ¿e chcemy na nich wybiec z obozu, dlatego obmyœli³em plan z Udarem i Kurganem.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KapThree_55_09"); //Jesteœcie tego pewni? W zamku jest ca³a horda, a nas zaledwie garstka. Jak mamy ich pokonaæ?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_10"); //Masz racjê, w otwartej walce nie mamy z nimi szans. Jednak nikt nie powiedzia³, ¿e chcemy na nich wybiec z obozu. Dlatego obmyœli³em plan z Udarem i Kurganem.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_11"); //Aby daæ nam wiêksz¹ przewagê w walce, potrzebujemy dobrej kryjówki, gdzie bêdziemy mogli w ukryciu przygotowaæ siê do wypadów na orków.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KapThree_55_12"); //Niestety nikt z nas nie wie, jakie miejsce mo¿e siê do tego nadaæ. Jeœli znajdziesz odpowiednie miejsce, to od razu mnie zawiadom.
 	
@@ -1503,7 +1503,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_znam_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_znam_15_00"); //Myœlê, ¿e znam jedno takie miejsce.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_znam_15_01"); //Bandyci handlowali z paladynami, którzy zajmowali miejsce nazywane przez nich twierdz¹. Nie jest to zbyt du¿e miejsce, ale znajduje siê w górach i ciê¿ko jest je znaleŸæ, je¿eli nie wie siê, gdzie go szukaæ.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_znam_15_02"); //Za czasów Kolonii Karnej razem z innymi myœliwymi nazywaliœmy je 'Kanionem Trolli'.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_znam_55_03"); //Kanion Trolli? Chyba widzia³em na którejœ mapie tak¹ nazwê. Wiem gdzie to jest, ale nie spodziewa³em siê, ¿e ktoœ tam coœ zbudowa³.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_znam_55_03"); //Kanion Trolli? Chyba widzia³em na którejœ mapie tak¹ nazwê. Wiem, gdzie to jest, ale nie spodziewa³em siê, ¿e ktoœ tam coœ zbudowa³.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_znam_15_04"); //ChodŸ, pójdziemy tam razem i obejrzymy dok³adniej to miejsce.
 
 	B_GivePlayerXP (300);
@@ -1933,7 +1933,7 @@ INSTANCE DIA_NASZ_110_Keroloth_MlotyPily   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_MlotyPily_Condition;
  	information = DIA_NASZ_110_Keroloth_MlotyPily_Info;
  	permanent   = FALSE;
-	description = "Przynios³em narzêdzia, tyle ile chcia³eœ.";
+	description = "Przynios³em narzêdzia, o które prosi³eœ.";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_MlotyPily_Condition()	
@@ -1949,7 +1949,7 @@ FUNC INT DIA_NASZ_110_Keroloth_MlotyPily_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_MlotyPily_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MlotyPily_15_00"); //Przynios³em narzêdzia, tyle ile chcia³eœ.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MlotyPily_15_00"); //Przynios³em narzêdzia, o które prosi³eœ.
 	
 	B_giveinvitems (other, self, ItMi_Hammer, 6);
 	B_giveinvitems (other, self, ItMi_Saw, 5);
@@ -2695,10 +2695,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyReady_Info()
 	
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_01"); //Aby wydzieliæ jego moc, musisz uzupe³niaæ kryszta³y w runie.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_02"); //W naszym obozie, na p³askowy¿u, na którym hodujemy chmiel, znajduje siê pewien magiczny kamieñ. Tam na³adujesz miecz.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_02"); //W naszym obozie, na p³askowy¿u, na którym hodujemy chmiel, znajduje siê magiczny kamieñ. Tam na³adujesz miecz.
 	
 	if (hero.guild == GIL_DJG) {
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_03"); //Nie jestem tylko przekonany co do charakteru jego obra¿eñ... Musisz sam to ogarn¹æ.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_03"); //Nie jestem tylko przekonany, co do charakteru jego obra¿eñ... Musisz sam to ogarn¹æ.
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_04"); //Jestem twoim d³u¿nikiem, Keroloth.
 		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_SUCCESS);
 		B_LogEntry (TOPIC_MieczRuniczny, "Miecz jest gotowy. Teraz muszê wykombinowaæ, jak go u¿ywaæ.");
@@ -2789,7 +2789,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_SpeedRing_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_SpeedRing_55_00"); //Znalaz³em pierœcieñ szybkoœci.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_SpeedRing_55_01"); //Wiesz mo¿e, jak go u¿ywaæ?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_SpeedRing_55_02"); //Magiczne pierœcienie trzeba ³adowaæ. Wystarczaj¹c¹ dawkê energii znajdziesz w kryszta³ach.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_SpeedRing_55_03"); //W naszym obozie, na p³askowy¿u, na którym hodujemy chmiel, znajduje siê pewien magiczny kamieñ. Tam na³adujesz pierœcieñ.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_SpeedRing_55_03"); //W naszym obozie, na p³askowy¿u, na którym hodujemy chmiel, znajduje siê magiczny kamieñ. Tam na³adujesz pierœcieñ.
 
 	Log_CreateTopic (TOPIC_Artefakty,LOG_NOTE);
 	B_LogEntry (TOPIC_Artefakty,"Pierœcieñ szybkoœci mo¿na ³adowaæ kryszta³ami w obozie ³owców orków w kamieniu na p³askowy¿u, gdzie hodowany jest chmiel.");

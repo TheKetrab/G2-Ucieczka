@@ -396,7 +396,7 @@ FUNC VOID DIA_NASZ_111_Gerold_death_Info()
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_death_15_00"); //To ju¿ wszystkie?
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_death_55_01"); //Tak, chyba tak. 
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_death_15_02"); //Ciekawe, sk¹d wziê³y siê tu te szkielety...
-	AI_Output (other, self,"DIA_NASZ_111_Gerold_death_55_03"); //Mo¿e Paladyni powychodzili z grobów?
+	AI_Output (other, self,"DIA_NASZ_111_Gerold_death_55_03"); //Mo¿e paladyni powychodzili z grobów?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_death_15_04"); //Nie, na pewno nie.	 
 
 	B_GivePlayerXP (300);

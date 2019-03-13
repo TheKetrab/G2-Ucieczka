@@ -50,7 +50,7 @@ func void DIA_NASZ_327_Danny_hello_Info ()
 
 		if !((Hlp_IsItem (armor, ItNa_BAN_M)) || (Hlp_IsItem (armor, ItNa_BAN_H)))
 		{
-			AI_Output			(self, other, "DIA_NASZ_327_Danny_hello_03_00"); //Czy¿by jakiœ tubylec? Proszê, nie atakuj mnie. Jestem zbyt stary i nie wart strzêpienia na mnie ostrza.
+			AI_Output			(self, other, "DIA_NASZ_327_Danny_hello_03_00"); //Czy¿by jakiœ tubylec? Proszê, nie atakuj mnie. Jestem zbyt stary i nie wart stêpienia na mnie ostrza.
 			DannyTalkFirstTime = TRUE;
 		};
 
@@ -112,7 +112,7 @@ func int DIA_NASZ_327_Danny_fish_Condition ()
 func void DIA_NASZ_327_Danny_fish_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_327_Danny_fish_55_00"); //Jakie ryby ³owisz?
-	AI_Output			(self, other, "DIA_NASZ_327_Danny_fish_03_01"); //To jeziorko graniczy z lodow¹ krain¹. Uwierz mi - nie chcesz w nim p³ywaæ.
+	AI_Output			(self, other, "DIA_NASZ_327_Danny_fish_03_01"); //To jeziorko graniczy z lodow¹ krain¹. Uwierz mi, ¿e nie chcesz w nim p³ywaæ.
 	AI_Output			(self, other, "DIA_NASZ_327_Danny_fish_03_02"); //Za to przeró¿ne ryby chc¹! Œledzie to najczêstszy okaz, który mo¿na tu z³owiæ.
 };
 
@@ -209,7 +209,7 @@ func void DIA_NASZ_327_Danny_sciezka_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_327_Danny_sciezka_55_00"); //Istnieje œcie¿ka przez góry?
 	AI_Output			(self, other, "DIA_NASZ_327_Danny_sciezka_03_01"); //Do Górniczej Doliny da siê zejœæ, ale powrót wydaje siê niemo¿liwy.	
-	AI_Output			(self, other, "DIA_NASZ_327_Danny_sciezka_03_02"); //Ach do czorta! Jeszcze nigdy w ¿yciu nie widzia³em takich gór.
+	AI_Output			(self, other, "DIA_NASZ_327_Danny_sciezka_03_02"); //Ach, do czorta! Jeszcze nigdy w ¿yciu nie widzia³em takich gór.
 };
 
 //*********************************************************************

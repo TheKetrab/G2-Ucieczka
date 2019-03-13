@@ -48,8 +48,8 @@ FUNC VOID Rtn_Start_316 ()
 
 FUNC VOID Rtn_Away_316 ()
 {	
-	TA_Follow_Player		 (08,00,23,00,"OW_PATH_07_15_CAVE3");
-    TA_Follow_Player	(23,00,08,00,"OW_PATH_07_15_CAVE3");
+	TA_Follow_Player		 (08,00,23,00,"OW_DJG_WATCH_STONEHENGE_01");
+    TA_Follow_Player	(23,00,08,00,"OW_DJG_WATCH_STONEHENGE_01");
 };
 
 FUNC VOID Rtn_Koniec_316 ()

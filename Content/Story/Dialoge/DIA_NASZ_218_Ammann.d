@@ -42,7 +42,7 @@ FUNC INT DIA_NASZ_218_Ammann_Hello_Condition()
 
 FUNC VOID DIA_NASZ_218_Ammann_Hello_Info()
 {
-	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Hello_55_00"); //Jesteœ wreszcie! Myœla³em, ¿e nie przyjdziesz i odlicza³em godziny, by wyruszyæ samemu.
+	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Hello_55_00"); //Jesteœ wreszcie! Myœla³em, ¿e nie przyjdziesz i w koñcu sam siê wybiorê po pierœcienie.
 	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Hello_55_01"); //Ile¿ mo¿na czekaæ? D³u¿ej siê nie da³o?
 
 	Info_ClearChoices (DIA_NASZ_218_Ammann_Hello);
@@ -130,7 +130,7 @@ FUNC INT DIA_NASZ_218_Ammann_Wiernosc_Condition()
 
 FUNC VOID DIA_NASZ_218_Ammann_Wiernosc_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_218_Ammann_Wiernosc_15_00"); //Czym s¹ te pierœcienie wienoœci?
+	AI_Output (other,self ,"DIA_NASZ_218_Ammann_Wiernosc_15_00"); //Czym s¹ te pierœcienie wiernoœci?
 	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Wiernosc_55_01"); //Nie wiem o nich zbyt wiele. Ponoæ jest ich 9 i jeœli dziewiêciu posiadaczy walczy razem, staj¹ siê silniejsi.
 	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Wiernosc_55_02"); //Zweryfikujemy to przy najbli¿szej okazji. W ka¿dym razie krêci³em siê w okolicach jeziora i znalaz³em manuskrypt. Wynika³o z niego jasno, ¿e pierœcienie zosta³y ukryte gdzieœ w górskiej fortecy.
 	AI_Output (self ,other,"DIA_NASZ_218_Ammann_Wiernosc_55_03"); //Tam w³aœnie siê wybieramy.
@@ -199,7 +199,7 @@ FUNC INT DIA_NASZ_218_Ammann_finishsecond_Condition()
 
 FUNC VOID DIA_NASZ_218_Ammann_finishsecond_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_218_Ammann_finishsecond_55_00"); //Na Innosa! Nie doœæ, ¿e pod górê to jeszcze trzeba zabijaæ tych cholernych orków.
+	AI_Output (self, other,"DIA_NASZ_218_Ammann_finishsecond_55_00"); //Na Innosa! Nie doœæ, ¿e pod górê, to jeszcze trzeba zabijaæ tych cholernych orków.
 	AI_Output (self, other,"DIA_NASZ_218_Ammann_finishsecond_55_01"); //Na wy¿szych poziomach fortecy s³ychaæ kolejnych orków. Zostanê tu, w razie gdyby nas zwêszyli. Jeœli weszlibyœmy tam razem, to nie mielibyœmy innej drogi ucieczki.
 	AI_Output (self, other,"DIA_NASZ_218_Ammann_finishsecond_55_02"); //Trzeba by³oby przebiæ siê przez armiê orków.
 	AI_Output (self, other,"DIA_NASZ_218_Ammann_finishsecond_55_03"); //W³aŸ do œrodka i przeszukaj parter. Gdybyœ us³ysza³ jakieœ odg³osy walki, to pieronem wracaj do mnie i zabieramy siê st¹d. 

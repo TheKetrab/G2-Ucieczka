@@ -280,6 +280,7 @@ FUNC INT DIA_NASZ_109_Rethon_ReadyKap3_Condition()
 	if (npc_knowsinfo (other, DIA_NASZ_109_Rethon_zadanie)
 	&& (Kurgan_OK == TRUE))
 	&& (KAPITEL >= 3)
+	&& !(npc_knowsinfo(other,DIA_NASZ_109_Rethon_ready))
 	{
 		return TRUE;
 	};
@@ -446,7 +447,7 @@ FUNC VOID DIA_NASZ_109_Rethon_orkowie_Info()
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_orkowie_55_02"); //O co chodzi? Zreszt¹, czy tylko ja wychodzê z obozu? Co z takim Korthem na przyk³ad?
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_03"); //Obawiam siê, ¿e Korth nie ma jaj, by siê tym zaj¹æ. Przecie¿ to dawny stra¿nik. Oni s¹ bardziej od okaleczania pijanych mê¿czyzn w karczmie. Który z nich da³by radê kilku orkom na raz?
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_04"); //Pos³uchaj: W ca³ej Górniczej Dolinie porozbijane s¹ orkowe namioty. Przy ka¿dym z nich stoi po kilku orków. Jeœli chcemy przej¹æ zamek, to musimy zacz¹æ od skasowania ich obozów zwiadowczych.
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_05"); //Jeœli natkniesz siê na któryœ z nich, to nie szczêdŸ ¿adnego wielkoluda.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_orkowie_55_05"); //Jeœli natkniesz siê na któryœ z nich, to nie oszczêdŸ ¿adnego wielkoluda.
 
 	Log_CreateTopic (TOPIC_Rethon_orkowie, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Rethon_orkowie, LOG_RUNNING);
@@ -505,14 +506,14 @@ FUNC VOID DIA_NASZ_109_Rethon_OrkowieKoniec_Info()
 		OrkowieObozyLicznik = OrkowieObozyLicznik +1;
 	};
 	if (OrkowyObozKopalnia == TRUE) {
-		AI_Output (other, self,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_09"); //Wyeliminowa³em orkowy obóz nad Kopalni¹ Pe³zaczy.
+		AI_Output (other, self,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_09"); //Wyeliminowa³em orkowy obóz nad kopalni¹ pe³zaczy.
 		OrkowieObozyLicznik = OrkowieObozyLicznik +1;
 	};
 	
 	//ZAKOÑCZENIE
 	if (OrkowieObozyLicznik >= 5) {
-		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_10"); //Doskonale. Schodzi³eœ wzd³u¿ i wszesz c¹³¹ Górnicz¹ Dolinê.
-		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_11"); //Obozów patroluj¹cych ju¿ nie ma. Zaœ³u¿y³eœ na nagrodê, ch³opcze.
+		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_10"); //Doskonale. Zwiedzi³eœ wzd³u¿ i wszesz c¹³¹ Górnicz¹ Dolinê.
+		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_11"); //Obozów patroluj¹cych ju¿ nie ma. Zas³u¿y³eœ na nagrodê, ch³opcze.
 
 		Createinvitems (self, ItFo_Booze, 2);
 		B_giveinvitems (self, other, ItFo_Booze, 1);
@@ -741,9 +742,9 @@ FUNC VOID DIA_Rethon_Teach_Shield()
 	else {
 
 		if (hero.lp >= 10){
-			AI_Output (self, other,"DIA_Rethon_Teach_Shield_55_02"); //Wielu pocz¹tkuj¹cych wojowników pope³nia zasadniczy b³¹d: trzymaj¹ tarczê ca³y czas uniesion¹ podczas walki, w dodatku spinaj¹c miêœnie bez przerwy.
-			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_03"); //Ogranicza to szybkoœæ ciosów mieczem, oraz szybko mêczy organizm.
-			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_04"); //Podczas walki, trzymaj tarczê opuszczon¹ - odbijaj tylko ciosy przeciwnika. Nie zapomnij tylko mocno spi¹æ rêki podczas parowania ciosu - Ÿle by siêto skoñczy³o.
+			AI_Output (self, other,"DIA_Rethon_Teach_Shield_55_02"); //Wielu pocz¹tkuj¹cych wojowników pope³nia zasadniczy b³¹d: Trzymaj¹ tarczê ca³y czas uniesion¹ podczas walki, w dodatku spinaj¹c miêœnie bez przerwy.
+			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_03"); //Ogranicza to szybkoœæ ciosów mieczem oraz szybko mêczy organizm.
+			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_04"); //Podczas walki, trzymaj tarczê opuszczon¹, odbijaj tylko ciosy przeciwnika. Nie zapomnij tylko mocno spi¹æ rêki podczas parowania ciosu, inaczej Ÿle by siê to mog³o skoñczyæ.
 			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_05"); //Muszê jednak zaznaczyæ, ¿e tarcza znacznie spowolni twoje ruchy i nie bêdziesz w stanie machaæ mieczem tak szybko, jak jesteœ w stanie bez tarczy.
 
 			B_GiveInvItems (other, self, ItMi_Gold, 300);			

@@ -65,7 +65,9 @@ func void DIA_NASZ_409_Nieznany_kto_Info ()
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_04"); //Zawróæ albo bêdzie za póŸno!					
 																																	
 	AI_Output			(other, self, "DIA_NASZ_409_Nieznany_kto_19_05"); //Có¿, chyba nici ze wspólnego wypadu na ry¿ówkê. Przyby³em tu, aby ci go odebraæ.
-	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_06"); //Widzê, ¿e nie czujesz powagi sytuacji. Tym samym wydajesz na siebie wyrok, nieznajomy. (œmiech)
+	// nieznajomy siê œmieje
+	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_06"); //Widzê, ¿e nie czujesz powagi sytuacji. Tym samym wydajesz na siebie wyrok, nieznajomy.
+	
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "No¿ cholera, wszystko musi siê komplikowaæ! Okaza³o siê, ¿e amuletu strze¿e jakiœ facet w czarnej szacie.");
 	

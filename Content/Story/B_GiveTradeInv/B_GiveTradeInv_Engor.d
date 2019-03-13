@@ -15,6 +15,7 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 		CreateInvItems (slf,ItPo_Health_01	,3);
 		CreateInvItems (slf,ItNa_Odtrutka	,2);
 		CreateInvItems (slf,ItNa_ZupaGrzybowa	,4);
+		CreateInvItems (slf,ItFo_Stew , 2); 
 
 		// ------ AmRiBe ------
 		CreateInvItems (slf,ItBe_Addon_Prot_MAGIC, 1); 

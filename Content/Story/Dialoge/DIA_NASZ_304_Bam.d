@@ -132,9 +132,9 @@ FUNC INT DIA_NASZ_304_Bam_quest_Condition()
 FUNC VOID DIA_NASZ_304_Bam_quest_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_304_Bam_quest_15_00"); //Mogê ci w czymœ pomóc?
-	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_01"); //Jeœli chcesz siê na coœ przydaæ, to mo¿esz sprawdziæ co Paladynami i ich rud¹.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_01"); //Jeœli chcesz siê na coœ przydaæ, to mo¿esz sprawdziæ co paladynami i ich rud¹.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_02"); //Od pewnego czasu nie docieraj¹ od nich ¿adne wieœci i ani krzty towaru, który nam obiecali.
-	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_03"); //Co prawda za rudê odpowiedzialni s¹ Frut, Gobby i Rabon, a ja sam nigdy nie widzia³em Marcosa, czyli szefa Paladynów, ale zaczynam siê niecierpliwiæ.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_03"); //Co prawda za rudê odpowiedzialni s¹ Frut, Gobby i Rabon, a ja sam nigdy nie widzia³em Marcosa, czyli szefa paladynów, ale zaczynam siê niecierpliwiæ.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_04"); //Mo¿esz siê zaj¹æ t¹ spraw¹. Chce wiedzieæ, czy praca wre i czemu siê tak oci¹gaj¹ z dostaw¹.
 	AI_Output (other, self,"DIA_NASZ_304_Bam_quest_55_05"); //Zajmê siê tym w takim razie.
 
@@ -142,7 +142,7 @@ FUNC VOID DIA_NASZ_304_Bam_quest_Info()
 	Log_SetTopicStatus (TOPIC_Bam_kopalnia, LOG_RUNNING);
 	
 	var string entry_kop;
-	entry_kop = "Bandycie Bamowi nie podoba siê brak informacji z kopalni Marcosa. No tak, problem w tym, ¿e pozabija³em wszystkich Paladynów. I co tu robiæ? Bandyci nie mog¹ siê dowiedzieæ, ¿e kopalnia pad³a, bo staliby siê bardziej ostro¿ni i niebezpieczni.";
+	entry_kop = "Bandycie Bamowi nie podoba siê brak informacji z kopalni Marcosa. No tak, problem w tym, ¿e pozabija³em wszystkich paladynów. I co tu robiæ? Bandyci nie mog¹ siê dowiedzieæ, ¿e kopalnia pad³a, bo staliby siê bardziej ostro¿ni i niebezpieczni.";
 	
 	if (hero.guild == GIL_DJG) { B_LogEntry (TOPIC_Bam_kopalnia, ConcatStrings(entry_kop, " Najlepiej zapytam Kerolotha, co o tym myœli i co z tym zrobiæ.")); };
 	if (hero.guild == GIL_OUT) { B_LogEntry (TOPIC_Bam_kopalnia, ConcatStrings(entry_kop, " Najlepiej zapytam Gestatha, co o tym myœli i co z tym zrobiæ.")); };
@@ -183,13 +183,13 @@ FUNC VOID DIA_NASZ_304_Bam_QuestDoneNugget_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestDoneNugget_55_01"); //Dwadzieœcia bry³ek? Myœla³em, ¿e bêdzie tego wiêcej, ale dobre i to!
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestDoneNugget_55_02"); //Przynajmniej wiem, ¿e prace nie stoj¹, a w razie czego bêdzie mo¿na ich bardziej przycisn¹æ.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestDoneNugget_55_03"); //Dobra robota. Patrzysz na mnie, jakbyœ liczy³ na to, ¿e coœ dostaniesz, mam racjê?
-	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestDoneNugget_55_04"); //Przynios³em ci bry³ki, które mog³em zostawiæ dla siebie i powiedzieæ, ¿e Paladyni nic mi nie dali. Chyba nale¿y mi siê coœ za lojalnoœæ.
+	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestDoneNugget_55_04"); //Przynios³em ci bry³ki, które mog³em zostawiæ dla siebie i powiedzieæ, ¿e paladyni nic mi nie dali. Chyba nale¿y mi siê coœ za lojalnoœæ.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestDoneNugget_55_05"); //Dostanie ci siê coœ, jeœli dop³acisz jeszcze trochê. Za twoj¹ fatygê mogê sprzedaæ ci lepsz¹ zbrojê za wyj¹tkow¹ cenê.
 	
 	B_GivePlayerXP(400);
 	DodajReputacje(10,REP_BANDYCI);
 	Log_SetTopicStatus (TOPIC_Bam_kopalnia, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Bam_kopalnia, "Doœæ dobrze mi idzie k³amanie. Bam uwierzy³, ¿e bry³ki s¹ od Paladynów i w dodatku mo¿e sprzedaæ mi lepsz¹ zbrojê bandyty po ni¿szej cenie.");
+	B_LogEntry (TOPIC_Bam_kopalnia, "Doœæ dobrze mi idzie k³amanie. Bam uwierzy³, ¿e bry³ki s¹ od paladynów i w dodatku mo¿e sprzedaæ mi lepsz¹ zbrojê bandyty po ni¿szej cenie.");
 	
 };
 
@@ -217,7 +217,7 @@ FUNC INT DIA_NASZ_304_Bam_QuestGoWithMe_Condition()
 FUNC VOID DIA_NASZ_304_Bam_QuestGoWithMe_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_304_Bam_QuestGoWithMe_15_00"); //Chyba najlepiej bêdzie, jeœli pójdziesz ze mn¹.
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestGoWithMe_55_01"); //Rozmawia³em z Marcosem i powiedzia³, ¿e jeœli nie wierzysz, ¿e prace nadal trwaj¹, to mo¿esz przyjœæ i zobaczyæ to na w³asne oczy. A rudê doœle w odpowiednim czasie.
+	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestGoWithMe_55_01"); //Rozmawia³em z Marcosem i powiedzia³, ¿e jeœli nie wierzysz, ¿e prace nadal trwaj¹, to mo¿esz przyjœæ i zobaczyæ to na w³asne oczy. A rudê doœle w odpowiednim czasie.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestGoWithMe_55_02"); //Dobra. Chêtnie zamieniê z nim dwa s³owa. ProwadŸ.
 
 	Npc_ExchangeRoutine(self,"Follow");
@@ -265,8 +265,8 @@ FUNC VOID DIA_NASZ_304_Bam_QuestTRIA_Info()
     AI_TurnToNpc(Kjorn,Bam);
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_01"); //Zbyt d³ugo nie dawaliœcie znaku ¿ycia. O ile pamiêtam, umawialiœmy siê na dziesiêæ bry³ek dziennie.
 	AI_ReadyMeleeWeapon(Bam);
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_02"); //Za takie opóŸnienia, zaczniemy wam naliczaæ prowizjê. Myœlisz, ¿e komu bardziej zale¿y na naszym uk³adzie? Nam, czy wam?
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_03"); //Mamy jeszcze inne mniejsze kopalnie, wiêc mo¿emy prowadziæ wydobycie nawet bez waszego udzia³u, a wy nie dostaniecie nic.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_02"); //Za takie opóŸnienia, zaczniemy wam naliczaæ prowizjê. Myœlisz, ¿e komu bardziej zale¿y na naszym uk³adzie? Nam czy wam?
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_03"); //Mamy jeszcze inne mniejsze kopalniê, wiêc mo¿emy prowadziæ wydobycie nawet bez waszego udzia³u, a wy nie dostaniecie nic.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_04"); //To ma siê wiêcej nie powtarzaæ, zrozumiano?
 	AI_RemoveWeapon(Bam);
 	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestTRIA_55_05"); //A ja osobiœcie przyjdê odebraæ ustalon¹ iloœæ magicznej rudy.
@@ -376,7 +376,7 @@ FUNC VOID DIA_NASZ_304_Bam_CiezkiPancerz_Info()
 			B_Giveinvitems (self, other, ITNA_BAN_H, 1);
 			AI_EquipBestArmor (other);
 			
-			AI_Output (self, other,"DIA_NASZ_304_Bam_CiezkiPancerz_55_02"); //Tylko jej nie zbrudŸ. Gdybyœ przypadkiej umar³, bêdzie s³u¿yæ nastêpnym.
+			AI_Output (self, other,"DIA_NASZ_304_Bam_CiezkiPancerz_55_02"); //Tylko jej nie zbrudŸ. Gdybyœ przypadkiem umar³, bêdzie s³u¿yæ nastêpnym.
 			CiezkiPancerzBandytyKupiony = TRUE;
 		}
 		else {

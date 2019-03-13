@@ -1798,3 +1798,4 @@ var int RethonLostWithKurgan;
 var int WillMozeIscDoKazmina;
 var int UcieklesZKopalni;
 var int MissionPlagaCiemnosciFinished;
+var int Frut_Dal_Zezwolenie_Willowi;

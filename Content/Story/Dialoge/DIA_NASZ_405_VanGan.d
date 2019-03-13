@@ -133,7 +133,7 @@ FUNC VOID DIA_NASZ_405_VanGan_what_Info()
 	AI_Output (other,self ,"DIA_NASZ_405_VanGan_what_15_00"); //Mogê ci siê na coœ przydaæ?
 	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_55_01"); //Zabójca wygnaniec byæ silny wojownik. Zabójca wygnaniec mo¿e mi pomóc.
 	AI_Output (other, self,"DIA_NASZ_405_VanGan_what_55_02"); //Yyy, mów mi Will.
-	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_55_03"); //Will? Dobrze morra.
+	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_55_03"); //Will? Dobrze, morra.
 	Info_ClearChoices (DIA_NASZ_405_VanGan_what);
 		Info_AddChoice	  (DIA_NASZ_405_VanGan_what, "Wiêc co mam zrobiæ?", DIA_NASZ_405_VanGan_what_so);
 
@@ -348,7 +348,7 @@ FUNC VOID DIA_NASZ_405_VanGan_RekaTrolla_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_405_VanGan_RekaTrolla_15_00"); //Ten miecz ci siê przyda, weŸ go.
 	B_giveinvitems (other, self, ItNa_RekaTrolla, 1);
-	AI_Output (self, other,"DIA_NASZ_405_VanGan_RekaTrolla_55_01"); //Rêka Trolla... Ten miecz zabiæ tyle orków, a teraz nale¿eæ do mnie... Dziêkujê, morra.
+	AI_Output (self, other,"DIA_NASZ_405_VanGan_RekaTrolla_55_01"); //Rêka Trolla... Ten topór zabiæ tyle morr, a teraz nale¿eæ do mnie... Dziêkujê, morra.
 
 	B_GivePlayerXP (100);
 	DodajReputacje (5, REP_BANDYCI);

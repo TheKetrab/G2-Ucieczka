@@ -3114,7 +3114,7 @@ FUNC VOID Use_ItNa_KsiegaPotworow()
 				Doc_PrintLines   ( nDocID,  1, PokonaneOrcWarrior);
 				var string PokonaneOrcShaman; PokonaneOrcShaman = "Orkowie szamani: "; PokonaneOrcShaman = ConcatStrings(PokonaneOrcShaman,IntToString(PokonaneOrcShaman_Liczba));
 				Doc_PrintLines   ( nDocID,  1, PokonaneOrcShaman);
-				var string PokonaneOrcScout; PokonaneOrcScout = "Orkowie scouci: "; PokonaneOrcScout = ConcatStrings(PokonaneOrcScout,IntToString(PokonaneOrcScout_Liczba));
+				var string PokonaneOrcScout; PokonaneOrcScout = "Orkowie zwiadowcy: "; PokonaneOrcScout = ConcatStrings(PokonaneOrcScout,IntToString(PokonaneOrcScout_Liczba));
 				Doc_PrintLines   ( nDocID,  1, PokonaneOrcScout);
 
 
@@ -5238,7 +5238,7 @@ func void Use_PradawnePismo_1 ()
  	{
 	 	Log_CreateTopic (TOPIC_Niedostepny_Klif, LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Niedostepny_Klif, LOG_RUNNING);
-		B_LogEntry (TOPIC_Niedostepny_Klif,"Na przeciw obozu bandytów jest zamurowane przejœcie. Ciekawe, co jest za nim ukryte..."); 
+		B_LogEntry (TOPIC_Niedostepny_Klif,"Klif niedaleko obozu bandytów jest ogrodzony magiczn¹ barier¹. Ciekawe, co siê tam kryje?"); 
 		Use_PradawnePismo_1_OneTime = TRUE;
 	};
 
@@ -5325,7 +5325,7 @@ INSTANCE ItNa_KeyStraznik_Moc(C_Item)
 
 	description			= 	name;
 	
-	TEXT[2]				=	"Otwiera drzwi do krypty";
+	TEXT[2]				=	"Otwiera drzwi do krypty.";
 	TEXT[3]				=   "";
 	
 };
@@ -5344,7 +5344,7 @@ INSTANCE ItNa_KeyStraznik_Sila(C_Item)
 
 	description			= 	name;
 	
-	TEXT[2]				=	"Otwiera drzwi do krypty";
+	TEXT[2]				=	"Otwiera drzwi do krypty.";
 	TEXT[3]				=   "";
 	
 };
@@ -5363,7 +5363,7 @@ INSTANCE ItNa_KeyStraznik_Odpornosc(C_Item)
 
 	description			= 	name;
 	
-	TEXT[2]				=	"Otwiera drzwi do krypty";
+	TEXT[2]				=	"Otwiera drzwi do krypty.";
 	TEXT[3]				=   "";
 	
 };

@@ -326,7 +326,7 @@ INSTANCE OrcElite_DIOberst3_Rest (Mst_Default_OrcElite)
 
 INSTANCE OrcHerszt_Sit (Mst_Default_OrcElite)
 {
-	name 					= "Ork Herszt";
+	name 					= "Ork-herszt";
 	level					= 55;
 	//-------- visual --------
 	B_SetVisuals_OrcElite();
@@ -363,7 +363,7 @@ INSTANCE OrcHerszt_Sit (Mst_Default_OrcElite)
 
 INSTANCE OrcHerszt_Roam (Mst_Default_OrcElite)
 {
-	name 					= "Ork Herszt";
+	name 					= "Ork-herszt";
 	level					= 55;
 	//-------- visual --------
 	B_SetVisuals_OrcElite();
@@ -400,7 +400,7 @@ INSTANCE OrcHerszt_Roam (Mst_Default_OrcElite)
 
 INSTANCE OrcHerszt_Rest (Mst_Default_OrcElite)
 {
-	name 					= "Ork Herszt";
+	name 					= "Ork-herszt";
 	level					= 55;
 	//-------- visual --------
 	B_SetVisuals_OrcElite();

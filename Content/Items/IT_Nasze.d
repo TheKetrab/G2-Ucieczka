@@ -5794,9 +5794,9 @@ INSTANCE ItNa_TeleportOzywieniec (C_Item)
 	wear				= 	WEAR_EFFECT;
 	effect				=	"SPELLFX_WEAKGLIMMER";
 
-	description			= 	"Teleportacja";
+	description			= 	"Kamieñ teleportacyjny na drug¹ stronê rzeki";
 	
-	TEXT	[0]			=	"Znaleziona w rzece.";			
+	TEXT	[0]			=	"Ayan rzuci³ go do rzeki.";			
 	TEXT	[1]			=	NAME_Manakosten;			
 	COUNT	[1]			=	SPL_COST_TELEPORT;
 	TEXT	[5]			=	NAME_Value;					

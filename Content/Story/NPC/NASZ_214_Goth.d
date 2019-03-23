@@ -60,6 +60,6 @@ FUNC VOID Rtn_Wait4Draal_214 ()
 
 FUNC VOID Rtn_Kap4_214 ()
 {	
-   	TA_Sleep		(08,00,20,00,"LOCATION_02_03");
-   	TA_Sleep		(20,00,08,00,"LOCATION_02_03");
+   	TA_Stand_WP		(08,00,20,00,"LOCATION_02_03");
+   	TA_Stand_WP		(20,00,08,00,"LOCATION_02_03");
 };

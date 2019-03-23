@@ -288,8 +288,8 @@ INSTANCE ItAt_Sting (C_Item)
 
 	description			= 	name;
 	TEXT[0]				= 	"";
-	TEXT[1]				= 	"Zawiera";
-	TEXT[2]				= 	"truj¹c¹ wydzielinê";
+	TEXT[1]				= 	"Zawiera truj¹c¹ wydzielinê.";
+	TEXT[2]				= 	"";
 	TEXT[3]				= 	"";
 	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
 };

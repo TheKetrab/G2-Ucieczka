@@ -1367,20 +1367,20 @@ func void _TickTock_1s()
 	
 	
 	if (Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) && (WillKnowAboutTwierdza == FALSE) {
-	WillKnowAboutTwierdza = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Twierdza_15_00"); //A có¿ to za twierdza? Potê¿na budowla...
+		WillKnowAboutTwierdza = TRUE;
+		AI_Output (hero ,hero,"DIA_Will_Twierdza_15_00"); //A có¿ to za twierdza? Potê¿na budowla...
 	};
 	
-	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutTwierdza == FALSE) && (WillSayDemonOneTime == FALSE) {
-	WillKnowAboutDemonPosag = TRUE;
-	WillSayDemonOneTime = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Tamten pos¹g jakiegoœ demona wydaje siê byæ przepe³niony czarn¹ magi¹.
+	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutDemonPosag == FALSE) && (WillSayDemonOneTime == FALSE) {
+		WillKnowAboutDemonPosag = TRUE;
+		WillSayDemonOneTime = TRUE;
+		AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Tamten pos¹g jakiegoœ demona wydaje siê byæ przepe³niony czarn¹ magi¹.
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) && (KAPITEL == 1) {
-	AI_Output (hero ,hero,"DIA_Will_Wodospad_15_00"); //To z³y pomys³. Tam mo¿e byæ niebezpiecznie.
-	AI_TurnAway (hero, hero);
-	AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
+		AI_Output (hero ,hero,"DIA_Will_Wodospad_15_00"); //To z³y pomys³. Tam mo¿e byæ niebezpiecznie.
+		AI_TurnAway (hero, hero);
+		AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
 	};
 
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800) && (KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) {
@@ -1391,14 +1391,14 @@ func void _TickTock_1s()
 
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_FORTECA_BLOKADA") <=200) && (WillGoToUrShack == FALSE) {
-	AI_Output (hero ,hero,"DIA_Will_Forteca_15_00"); //Nie mam ochoty siê tam wybieraæ.
-	AI_TurnAway (hero,hero);
-	AI_GotoWP (hero, "LOCATION_19_03_PATH_RUIN17");
+		AI_Output (hero ,hero,"DIA_Will_Forteca_15_00"); //Nie mam ochoty siê tam wybieraæ.
+		AI_TurnAway (hero,hero);
+		AI_GotoWP (hero, "LOCATION_19_03_PATH_RUIN17");
 	};
 	
 	if (Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) && (WillUciekaZKopalniOneTime == FALSE) {
-	AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, uda³o siê wspi¹æ na ska³y. Teraz na dó³!
-	WillUciekaZKopalniOneTime = TRUE;
+		AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, uda³o siê wspi¹æ na ska³y. Teraz na dó³!
+		WillUciekaZKopalniOneTime = TRUE;
 	};
 	
 	if (npc_hasitems(hero,ItNa_RytualneOstrze)>=1) && (npc_hasitems(hero,ItNa_Matt_Kartka)>=1) && (NieznajomySiePojawiaMattOneTime == FALSE) {

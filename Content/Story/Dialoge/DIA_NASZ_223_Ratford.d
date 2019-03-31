@@ -513,7 +513,7 @@ FUNC VOID DIA_NASZ_223_Ratford_Trolls_Info()
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Trolls_55_01"); //Pewnie, w m³odoœci mia³em okazjê polowaæ z ³owcami trolli. Czemu pytasz?
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_Trolls_55_02"); //Muszê znaleŸæ s³oneczny aloes.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Trolls_55_03"); //Alchemicy srogo p³ac¹ za tê roœlinê. W takim razie ja srogo policzê sobie za informacje o trollach.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_Trolls_55_04"); //Za 300 sztuk z³ota powiem ci, co wiem.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_Trolls_55_04"); //Trzysta sztuk z³ota i wszystkiego siê dowiesz.
 
 };
 
@@ -546,7 +546,7 @@ FUNC VOID DIA_NASZ_223_Ratford_Pay_Info()
 	B_giveinvitems (other, self, itmi_gold, 300);
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Pay_55_01"); //A ¿ebyœ wiedzia³, gdy ju¿ st¹d siê wydostanê, wyprawiê sobie ucztê!
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_Pay_55_02"); //To gdzie te trolle?
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_Pay_55_03"); //W górach ch³opcze. Dziœ pozosta³o tylko jedno dostêpne miejsce - klasztor zmiennokszta³tnych. Za palisad¹, po zachodniej stronie.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_Pay_55_03"); //W górach ch³opcze. Dziœ pozosta³o tylko jedno dostêpne miejsce zwane klasztorem zmiennokszta³tnych. Za palisad¹, po zachodniej stronie.
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_Pay_55_04"); //Mam nadziejê, ¿e coœ znajdê. Jeœli nie, to mo¿esz byæ pewien, ¿e siê tu pojawiê.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Pay_55_05"); //Gdybym nie by³ przekonany, ¿e znajdziesz tam trolle, to nie chcia³bym od ciebie a¿ tyle z³ota.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Pay_55_06"); //IdŸ ju¿.

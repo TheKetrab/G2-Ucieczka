@@ -269,7 +269,7 @@ FUNC INT DIA_NASZ_007_Draal_done_Condition()
 FUNC VOID DIA_NASZ_007_Draal_done_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_00"); //Na Innosa... ¯yjê!
-	AI_Output (other, self,"DIA_NASZ_007_Draal_done_15_01"); //IdŸ zaraz do Gestatha. Znajdziesz go w jaskini. Chyba znajdzie siê tu dla ciebie jakieœ zajêcie.
+	AI_Output (other, self,"DIA_NASZ_007_Draal_done_15_01"); //IdŸ zaraz do Gestatha. Przesiaduje przewa¿nie w jaskini. Chyba znajdzie tu dla ciebie jakieœ zajêcie.
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_02"); //Wielkie dziêki. Nie zapomnê ci tego. W ramach podziêkowañ dam ci ma³¹ wskazówkê: Dobry z³odziej musi byæ nie tylko zrêczny, ale i przebieg³y.
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_03"); //Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, chwyæ go jedn¹ rêk¹, a drug¹ machaj i odwracaj uwagê ofiary. To zawsze pomaga, mo¿esz mi wierzyæ.
 

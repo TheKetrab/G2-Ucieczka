@@ -494,9 +494,9 @@ FUNC VOID DIA_NASZ_214_Goth_Undeads_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_00"); //Chwa³a niech bêdzie bogom! Nawet nie chcê wiedzieæ, co mog³oby siê staæ, gdybyœ nam nie pomóg³!
-	AI_Output (other, self,"DIA_NASZ_214_Goth_Undeads_55_01"); //Co tu siê dzieje do cholery? Sk¹d wziê³y siê te szkielety i dlaczego zaatakowa³y wasz obóz?
+	AI_Output (other, self,"DIA_NASZ_214_Goth_Undeads_55_01"); //Co tu siê dzieje, do cholery? Sk¹d wziê³y siê te szkielety i dlaczego zaatakowa³y wasz obóz?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_02"); //Ostatnio podzia³o siê doœæ sporo dziwnych rzeczy. W Górniczej Dolinie wszêdzie pe³no demonów i obrzydliwych zombie. Jakby tego by³o ma³o pojawi³y siê jeszcze zmutowane bestie.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_03"); //Niestety nikt z nas nie wie co siê dzieje. ¯aden z nas nie spodziewa³ siê te¿ ataku na nasz obóz!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_03"); //Nie mamy zielonego pojêcia, co tu jest grane! Cz³owiek stoi przy bramie, a tu nagle atakuje ciê armia szkieletów!
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_04"); //Czym prêdzej udaj siê do Eraka. On zdecydowanie powie ci wiêcej na temat naszej felernej sytuacji.
 
 	B_LogEntry (TOPIC_Sprawy,"Cholera! Obóz myœliwych zosta³ zaatakowany przez nieumar³ych. Keroloth mia³ racjê ze swoim przeczuciem, i¿ ci potrzebuj¹ naszej pomocy. Erak mo¿e powiedzieæ mi o tym wiêcej.");

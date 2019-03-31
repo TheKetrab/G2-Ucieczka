@@ -339,7 +339,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_PiecBraciQuest_Info()
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_03"); //Gdy póŸniej wracaliœmy do twierdzy, poszed³em siê odlaæ.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_04"); //Do Górniczej Doliny przyby³em jako ³owca smoków, a teraz ³apiê cykora na widok orków... Ta wyprawa pokaza³a mi, czym jest strach.
 	AI_Output (other, self,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_05"); //Mów do rzeczy. Nie mam zbyt wiele czasu.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_06"); //No wiêc, gdy siê za³atwia³em, dopatrzy³em, w ziemi jakiœ kawa³ek pergaminu. Zainteresowa³o mnie to, wiêc siêgn¹³em po papier. By³a to mapa.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_06"); //No wiêc, gdy siê za³atwia³em, dopatrzy³em w ziemi jakiœ kawa³ek pergaminu. Zainteresowa³o mnie to, wiêc siêgn¹³em po papier. By³a to mapa.
 
 };
 
@@ -376,7 +376,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Map_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_02"); //Domyœlam siê, ¿e ta mapa przedstawia ulokowanie miejsc œmierci piêciu braci.
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Map_15_03"); //Jakich piêciu braci?
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_04"); //Zanim zdecydowa³em siê zaci¹gn¹æ jako £owca Smoków, sporo czyta³em o Górniczej Dolinie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_04"); //Zanim zdecydowa³em siê zaci¹gn¹æ jako ³owca smoków, sporo czyta³em o Górniczej Dolinie.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_05"); //Ponoæ przed utworzeniem kolonii karnej, na tych terenach zamieszkiwa³o dzikie plemiê. Prymitywna kultura dzikusów.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_06"); //Mieszkali w jaskiniach w po³udniowo-wschodniej czêœci Górniczej Doliny.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_07"); //Stare ksiêgi wspominaj¹ równie¿ o jakimœ rytuale, w którym z³o¿ono ofiarê z piêciu braci. Ta sama krew w piêciu ró¿nych miejscach. Jakieœ bzdury.
@@ -391,6 +391,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Map_Info()
 FUNC VOID DIA_NASZ_116_Kjorn_Map_no()
 {
 	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Map_no_55_01"); //Nie mam czasu na takie bzdury.
+	B_giveinvitems (other, self, ItNa_Mapa_Bracia, 1);
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_no_55_02"); //Gadasz g³upoty... Jak zmienisz zdanie, to wpadnij do mnie.
 	KjornOdrzucenie = TRUE;
 

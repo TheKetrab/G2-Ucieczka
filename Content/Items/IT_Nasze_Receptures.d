@@ -306,7 +306,7 @@ INSTANCE ItNa_Przepis_Orkowy1 (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_Orkowy1;
 	scemeName			=	"MAP";
-	description			= 	"Przepis w orkowym jêzyku.";
+	description			= 	"Przepis w orkowym jêzyku";
 };
 
 var int PrzepisOrkowyRunning;

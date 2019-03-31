@@ -330,7 +330,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_Info()
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_55_01"); //D³ugo walczy³em z tym zwojem i niestety, odnios³em pora¿kê.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_55_02"); //Nie potrafiê przepisaæ tego zwoju tak, by da³o siê go bezpiecznie u¿yæ. Mimo tego, ¿e zrobi³em idealn¹ kalkê kartki, coœ siê pieprzy.
 	AI_Output (other, self,"DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_55_03"); //Nie przejmuj siê. Chyba tylko Keroloth spoœród wszystkich ³owców orków wierzy w powodzenie planu ataku na zamek golemami.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_55_04"); //Trzeba prawdziwego skrybê a nie amatora, ¿eby zrobiæ zwój z takim zaklêciem. WeŸ go. Oddajê niezniszczony tak, jak prosi³eœ.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_TrfGolemTimeIsUp_55_04"); //Trzeba prawdziwego skrybê a nie amatora, ¿eby zrobiæ zwój z takim zaklêciem. WeŸ go. Oddajê niezniszczony, tak jak prosi³eœ.
 
 	Createinvitems (self, ItNa_TrfGolem, 1);
 	B_giveinvitems (self, other, ItNa_TrfGolem, 1);

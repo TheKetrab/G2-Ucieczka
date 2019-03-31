@@ -587,8 +587,8 @@ FUNC INT DIA_NASZ_109_Rethon_FajkaStart_Condition()
 FUNC VOID DIA_NASZ_109_Rethon_FajkaStart_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_15_00"); //Zdobyliœmy zamek, uda³o siê!
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_01"); //Podziwiam twój entuzjazm, m³odzieñcze. Dla mnie to by³a kolejna sucha walka z tempymi orkowymi wojownikami.
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_02"); //Zamek jest nasz. Tylko co z tego? I tak nie wydostaniemy siê z Górniczej Doliny i pomrzemy tu. Albo z g³odu, albo z nudów.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_01"); //Podziwiam twój entuzjazm, m³odzieñcze. Dla mnie to by³a kolejna sucha walka z têpymi orkowymi wojownikami.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_02"); //Zamek jest nasz. Tylko co z tego? I tak nie wydostaniemy siê z Górniczej Doliny i w koñcu tu umrzemy. Albo z g³odu, albo z nudów.
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_03"); //Mogê jakoœ poprawiæ twój humor? Mo¿e jest jakiœ sposób, byœ poczu³ siê tutaj jak w domu?
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaStart_55_04"); //W moich stronach jest ca³kiem inaczej. Sto³y pe³ne ¿arcia, piwo z domieszk¹ imbiru i dziczyzna wysma¿ona w punkt. A jako zwieñczenie uczty palimy fajki rzeŸbione przez najlepszych stolarzy.
 	AI_Output (other, self,"DIA_NASZ_109_Rethon_FajkaStart_55_05"); //Czy¿byœ nie by³ amatorem bagiennego ziela?

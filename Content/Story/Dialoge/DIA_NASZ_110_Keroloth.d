@@ -1007,7 +1007,7 @@ INSTANCE DIA_NASZ_110_Keroloth_Work1DoneEnd   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_Work1DoneEnd_Condition;
  	information = DIA_NASZ_110_Keroloth_Work1DoneEnd_Info;
  	permanent   = FALSE;
-	description = "Kirgowi nie uda³o siê przepisaæ zwoju.";
+	description = "Kirgo nie uda³o siê przepisaæ zwoju.";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_Work1DoneEnd_Condition()	
@@ -1020,9 +1020,9 @@ FUNC INT DIA_NASZ_110_Keroloth_Work1DoneEnd_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1DoneEnd_15_00"); //Kirgowi nie uda³o siê przepisaæ zwoju.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1DoneEnd_15_00"); //Kirgo nie uda³o siê przepisaæ zwoju.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_55_01"); //Ta wiadomoœæ popsu³a mi trochê dzisiejszy dzieñ.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1DoneEnd_15_02"); //Nie przejmuj siê, z pewnoœci¹ jest gro innych sposobów na odbicie zamków. A szczerze mówi¹c, ten wcale nie by³ zbyt racjonalny.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Work1DoneEnd_15_02"); //Nie przejmuj siê, z pewnoœci¹ jest mnóstwo innych sposobów na odbicie zamków. A szczerze mówi¹c, ten wcale nie by³ zbyt racjonalny.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_55_03"); //A co siê sta³o z ostatnim egzemplarzem, który ci da³em? Chcia³bym go odzyskaæ.
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Work1DoneEnd);
@@ -1036,7 +1036,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_mine()
 {
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Work1DoneEnd_mine_15_00"); //Kirgo przypadkiem zniszczy³ go w trakcie przepisywania.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_mine_55_01"); //W takim razie ta ca³a akcja to jedna wielka klapa. Mog³em lepiej wykorzystaæ te dwa zwoje.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_mine_55_02"); //Tak, czy inaczej, dziêki za pomoc. Dobra robota, Willu.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_mine_55_02"); //Tak czy inaczej, dziêki za pomoc. Dobra robota, Willu.
 
 	CreateInvItems (self, ItMi_Gold, 120);									
 	B_GiveInvItems (self, other, ItMi_Gold, 120);
@@ -1055,7 +1055,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_your()
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_00"); //Proszê, zwój znów jest twój.
 	B_GiveInvItems(other,self,ItNa_TrfGolem,1);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_01"); //Zastanawiam siê, czy mogê go jeszcze jakoœ wykorzystaæ. No nic, pomyœlê nad tym póŸniej.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_02"); //Mimo ¿e nic z tego nie wysz³o, to nale¿y ci siê ma³¹ nagroda za fatygê. Proszê.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_02"); //Mimo, ¿e nic z tego nie wysz³o, nale¿y ci siê ma³¹ nagroda za fatygê. Proszê.
 
 	CreateInvItems (self, ItMi_Gold, 120);									
 	B_GiveInvItems (self, other, ItMi_Gold, 120);
@@ -2128,7 +2128,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_00"); //Na Innosa! Widzisz ten ogieñ?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Kap4_55_01"); //Zapewne lada moment bêdziemy mieli towarzystwo.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_02"); //Teraz, kiedy uda³o nam siê ju¿ opanowaæ zamek, powinniœmy zaj¹æ siê dalszymi przygotowaniami maj¹cymi na celu wzmocniæ nasz¹ pozycjê w tym miejscu.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_03"); //Szturm ze strony orków jest tylko kwesti¹ czasu i w ¿adnym wypadku nie powinniœmy dawaæ im jakichkolwiek szans na osi¹gniecie nad nami przewagi.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_15_03"); //Szturm ze strony orków jest tylko kwesti¹ czasu i w ¿adnym wypadku nie powinniœmy dawaæ im jakichkolwiek szans na osi¹gniêcie nad nami przewagi.
 	
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
 	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, "Co mam teraz zrobiæ?", DIA_NASZ_110_Keroloth_Kap4_what);
@@ -2161,12 +2161,12 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Kap4_what_15_00"); //Co mam teraz zrobiæ?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_01"); //Chcê, byœ uda³ siê do Udara i nakaza³ mu w moim imieniu, ¿eby wys³a³ do zamku kilku ludzi.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_02"); //Wolê byæ przygotowany za w czasu na odparcie ataku, ni¿ potem martwiæ siê o losy swoich ludzi. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_02"); //Wolê byæ przygotowany zawczasu na odparcie ataku, ni¿ potem martwiæ siê o losy swoich ludzi. 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_03"); //Powinniœmy te¿ zobaczyæ, co dzieje siê w obozie myœliwych. Dowodzi tam Erak, który zobowi¹za³ siê do udzielenia pomocy wszystkim s³abszym i rannym.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_04"); //Udaj siê tam i sprawdŸ, jak ma siê u nich sytuacja. Mam dziwne wra¿enie, i¿ przyda im siê pomoc.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_05"); //W kolonii od d³u¿szego czasu pojawiaj¹ siê demony i nikt z nas nie wie, co jest powodem tych wydarzeñ.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Kap4_what_55_06"); //Myœlisz, ¿e to mo¿e mieæ jakiœ zwi¹zek z orkowymi szamanami?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_07"); //Nie mam pojêcia, ale lepiej nie czekaæ na ich kolejny ruch je¿eli stoj¹ i za tym.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_07"); //Nie mam pojêcia, ale lepiej nie czekaæ na ich kolejny ruch, je¿eli stoj¹ i za tym.
 	
 	
 	
@@ -2222,11 +2222,11 @@ FUNC VOID DIA_NASZ_110_Keroloth_ErakAndUdarDone_Info()
 	//B_LogEntry (TOPIC_Sprawy,"");
 	
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_01"); //Udar zgodzi³ siê wys³aæ do zamku kilku dodatkowych ludzi, jutro powinni ju¿ tutaj byæ.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_02"); //To naprawdê dobra wiadomoœæ, zw³aszcza, i¿ chyba bêdziemy mieli o wiele mniej czasu na przygotowania ni¿ s¹dzi³em. Kiedy ciê nie by³o dostrzegliœmy kilku zwiadowców krêc¹cych siê przy palisadzie.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_03"); //Podejrzewam, ¿e orkowie obserwuj¹ nasze poczynania aby zaatakowaæ w odpowiednim momencie, kiedy nie bêdziemy na to gotowi. Mocno siê zdziwi¹ kiedy przyjdzie co do czego.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_02"); //To naprawdê dobra wiadomoœæ, zw³aszcza, ¿e chyba bêdziemy mieli o wiele mniej czasu na przygotowania, ni¿ s¹dzi³em. Kiedy ciê nie by³o, dostrzegliœmy kilku zwiadowców krêc¹cych siê przy palisadzie.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_03"); //Podejrzewam, ¿e orkowie obserwuj¹ nasze poczynania, aby zaatakowaæ w odpowiednim momencie, kiedy nie bêdziemy na to gotowi. Mocno siê zdziwi¹, kiedy przyjdzie co do czego.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_04"); //Co ciekawe w obozie spotka³em tak¿e maga, który przeteleportowa³ siê do nas a¿ z kontynentu. Niby chce nas uratowaæ, ale nie ukrywa, ¿e królowi chodzi szczególnie o rudê.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_05"); //Nie przejmujmy siê tym. Nasza sytuacja znacznie siê polepszy³a, wiêc damy sobie radê sami.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_06"); //Niestety, nie przynoszê dobry wieœci z obozu myœliwych. Tutaj jest raport Eraka, który powinien rozjaœniæ ca³¹ sytuacjê w ich obozie.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_06"); //Niestety, nie przynoszê dobrych wieœci z obozu myœliwych. Tutaj jest raport Eraka, który powinien rozjaœniæ ca³¹ sytuacjê w ich obozie.
 
 	B_GiveInvItems(other,self,ItNa_RaportEraka,1);
 	B_UseFakeScroll();
@@ -2235,7 +2235,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_ErakAndUdarDone_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_08"); //Uda³o wam siê odeprzeæ atak? Ilu ludzi zosta³o rannych i co wa¿niejsze: Czy Erak ma dostatecznie du¿o ludzi, by siê obroniæ, nim podejmiemy dzia³ania aby to wyjaœniæ?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_09"); //Tak, uda³o nam siê odeprzeæ szturm przy jak najmniejszych stratach w³asnych. Kilku myœliwych jest lekko rannych, reszta po bitwie nadal ma zapewnion¹ opiekê.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_10"); //Powinniœmy jednak szybko podj¹æ w³aœciwe dzia³ania, gdy¿ jeden z myœliwych nie tak dawno dostrzeg³ kilka demonów, które przeczesywa³y las przed ich obozem.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_11"); //Demony? Widocznie zbyt szybko ucieszy³em siê z sytuacji w Górniczej Dolinie. Powinieneœ wykorzystaæ maga, któy do nas przyby³. Mo¿e on wie, jak temu zaradziæ?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_ErakAndUdarDone_15_11"); //Demony? Widocznie zbyt szybko ucieszy³em siê z sytuacji w Górniczej Dolinie. Powinieneœ wykorzystaæ maga, który do nas przyby³. Mo¿e on wie, jak temu zaradziæ?
 
 	Log_CreateTopic (TOPIC_Erak_plagaciemnosci, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_RUNNING);
@@ -2308,8 +2308,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	// Keroloth
 	TRIA_Next(Keroloth);
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_00"); //Co siê tutaj sta³o?!
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_01"); //To... To wszystko sta³o siê tak nagle... Trenowaliœmy kiedy na placu pojawi³ siê grupka nieumar³ych paladynów, w kilka sekund powalili kilku naszych ludzi...
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_02"); //Powstrzymaliœmy ich jednak jak¹ okropna cen¹? Na Innosa, co siê dzieje w tym przeklêtym miejscu!
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_01"); //To... To wszystko sta³o siê tak nagle... Trenowaliœmy, kiedy na placu pojawi³ siê grupka nieumar³ych. Szybko powalili kilku naszych ludzi...
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_02"); //Powstrzymaliœmy ich, ale na Innosa, co siê dzieje w tym przeklêtym miejscu?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_03"); //Kapliczka zosta³a zniszczona, nieumarli nie powinni ju¿ d³u¿ej nêkaæ tych ziem.
 
 	// Monastir
@@ -2323,7 +2323,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	TRIA_Next(Keroloth);
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_07"); //Powiedz mi czy mo¿emy coœ z tym zrobiæ? Musi byæ przecie¿ sposób by zakoñczyæ to szaleñstwo, i to raz na zawsze.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_08"); //Byæ mo¿e to zbyt œmia³e za³o¿enie, jednak podejrzewam, i¿ ju¿ dawno natkn¹³em siê na coœ co mo¿e mieæ zwi¹zek z t¹ spraw¹.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_08"); //Byæ mo¿e to zbyt œmia³e za³o¿enie, jednak podejrzewam, ¿e ju¿ dawno natkn¹³em siê na coœ, co mo¿e mieæ zwi¹zek z t¹ spraw¹.
 	
 	if (hero.guild == GIL_OUT) {
 
@@ -2335,21 +2335,21 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	
 	else if (hero.guild == GIL_DJG) {
 	
-		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_12"); //Kiedy dotar³em do obozu naszych zwiadowców ich przywódca opowiedzia³ mi o orkach, którzy odmawiali w zamku przedziwne inkantacje. Kiedy przeczytaliœmy jedn¹ z nich, zaatakowa³y nas szkielety.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_12"); //Kiedy dotar³em do obozu naszych zwiadowców, ich przywódca opowiedzia³ mi o orkach, którzy odmawiali w zamku przedziwne inkantacje. Kiedy przeczytaliœmy jedn¹ z nich, zaatakowa³y nas szkielety.
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_13"); //Po walce dostrzegliœmy przedziwne stworzenie. Oczywiœcie czym prêdzej ruszyliœmy za nim w pogoñ. Tym samym dotarliœmy do tajemniczego maga.
-		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_14"); //Po rozmowie z nim uœwiadomi³em sobie, i¿ podawa³ siê za kogoœ kogo zna³em kiedy by³em jeszcze skazañcem w kolonii.
-		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_15"); //Osoba ta by³a cz³onkiem sekty, która wierzy³a, i¿ drogê do wolnoœci zapewni im kultywowanie kultu w demona imieniem Œni¹cy.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_14"); //Po rozmowie z nim uœwiadomi³em sobie, ¿e podawa³ siê za kogoœ kogo zna³em kiedy by³em jeszcze skazañcem w kolonii.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_15"); //Zna³em go jako cz³onka Bractwa, które wierzy³o, ¿e w drodze ku wolnoœci poprowadzi ich Œni¹cy, który ostatecznie okaza³ siê demonem.
 	
 	};
 	
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_16"); //Uwa¿asz, ¿e mo¿e mieæ to zwi¹zek z obozem na bagnie? Nie by³oby to takie niedorzeczne, gdy¿ po przybyciu otrzymywa³em raporty o tajemniczych zjawiskach jakie maj¹ tam miejsce.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_16"); //Uwa¿asz, ¿e mo¿e mieæ to zwi¹zek z Obozem na Bagnie? Nie by³oby to takie niedorzeczne, gdy¿ po przybyciu otrzymywa³em raporty o tajemniczych zjawiskach, jakie maj¹ tam miejsce.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_17"); //Nalega³em by to sprawdziæ, lecz Lord Garond, œwieæ panie nad jego dusz¹, uwa¿a³, ¿e to nie bêdzie mia³o wyp³ywu na nasz¹ misjê. Teraz jednak przyszed³ czas, by to wreszcie sprawdziæ i zakoñczyæ wszystko, co siê tam dzieje.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_18"); //Ten mag wspomina³ tak¿e coœ o Zaæmieniu, które ju¿ mia³o siê rozpocz¹æ.
 
 	// Monastir
 	TRIA_Next(Monastir);
 
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_19"); //O bogowie! Je¿eli to co mówisz jest prawd¹, zosta³o nam naprawdê niewiele czasu. Je¿eli rytua³ dobiegnie koñca, to œwiat zostanie spowity w ca³kowitych ciemnoœciach a w³adzê nad nim przejm¹ demony.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_19"); //O bogowie! Je¿eli to co mówisz jest prawd¹, zosta³o nam naprawdê niewiele czasu. Je¿eli rytua³ dobiegnie koñca, to œwiat zostanie spowity w ca³kowitych ciemnoœciach, a w³adzê nad nim przejm¹ demony.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_20"); //NIE MO¯EMY DO TEGO DOPUŒCIÆ!
 	
 	B_LogEntry (TOPIC_zacmienie, "Monastir wyjaœni³ o co chodzi z tym ca³ym zaæmieniem. Wygl¹da na to, ¿e cz³onkowie dawnej sekty planuj¹ rytua³, który sprawi, ¿e w³adzê nad œwiatem obejm¹ demony. Muszê udaæ siê do obozu na bagnie i zapobiec temu ich przedsiêwziêciu.");
@@ -2358,7 +2358,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	TRIA_Next(Keroloth);
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_21"); //Udam siê na bagna i sprawdzê, co tam siê dzieje. I tak mia³em zamiar zbadaæ tereny za palisad¹.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_22"); //To dobry pomys³ Willu. Kiedy ty bêdziesz na bagnach, my zajmiemy siê obron¹ tego miejsca. G³upio by³oby, gdybyœ nie mia³ gdzie wracaæ.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_22"); //To dobry pomys³, Willu. Kiedy ty bêdziesz na bagnach, my zajmiemy siê obron¹ tego miejsca. G³upio by³oby, gdybyœ nie mia³ do czego wracaæ.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_23"); //Pamiêtaj, aby nie daæ siê z³apaæ orkom. To niezbadane tereny, wiêc przekazuj mi nowe informacje na bie¿¹co.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_24"); //Oczywiœcie, tak zrobiê!
 

@@ -80,7 +80,7 @@ FUNC VOID DIA_NASZ_412_CatSan_ToZnaczy_Info()
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_ToZnaczy_15_05"); //I nie mo¿esz ich po prostu wykurzyæ u¿ywaj¹c czarów?
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_ToZnaczy_15_06"); //To nie takie proste, cz³owieczku. Wyczuwam magiê jakiegoœ potê¿nego szamana, który ogranicza si³ê moich czarów.
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_ToZnaczy_15_07"); //Muszê dostaæ siê na górê. Jak otworzyæ tê kratê, która blokuje wyjœcie?
-	AI_Output (self, other,"DIA_NASZ_412_CatSan_ToZnaczy_15_08"); //Bardzo prosto: wystarczy wypowiedzieæ zaklêcie. Osobiœcie zamkn¹³em tê kratê i tylko ja jestem w stanie j¹ ponownie otworzyæ.
+	AI_Output (self, other,"DIA_NASZ_412_CatSan_ToZnaczy_15_08"); //Bardzo prosto: Wystarczy wypowiedzieæ zaklêcie. Osobiœcie zamkn¹³em tê kratê i tylko ja jestem w stanie j¹ ponownie otworzyæ.
 
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Duch Cat-San zamkn¹³ kratê i nie mogê iœæ dalej. Muszê zrobiæ coœ, ¿eby j¹ otworzy³!");
 };
@@ -144,8 +144,8 @@ FUNC VOID DIA_NASZ_412_CatSan_Przyniose_Info()
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_Przyniose_15_00"); //Przyniosê ci ten ca³y miecz.
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_Przyniose_15_01"); //Powiedz tylko, gdzie mam go szukaæ?
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_Przyniose_15_02"); //Widzisz te dwie dŸwignie za mn¹?
-	AI_Output (self, other,"DIA_NASZ_412_CatSan_Przyniose_15_03"); //Otwieraj¹ przejœcia do ukrytych komnat. Tylko uwa¿aj, zamkn¹³em za nimi kilku orków, którzy chcieli posiekaæ mnie - ducha - na kawa³ki.
-	AI_Output (self, other,"DIA_NASZ_412_CatSan_Przyniose_15_04"); //Myœlê, ¿e gdzieœ tam, wieki temu schowa³em Ostrze Gildii San.
+	AI_Output (self, other,"DIA_NASZ_412_CatSan_Przyniose_15_03"); //Otwieraj¹ przejœcia do ukrytych komnat. Tylko uwa¿aj, zamkn¹³em za nimi kilku orków, którzy chcieli posiekaæ mnie, ducha, na kawa³ki.
+	AI_Output (self, other,"DIA_NASZ_412_CatSan_Przyniose_15_04"); //Myœlê, ¿e gdzieœ tam, wieki temu, schowa³em Ostrze Gildii San.
 	
 	B_LogEntry (TOPIC_CatSan_ostrze, "Ostrze Gildii San jest prawdopodobnie schowane gdzieœ w ukrytych komnatach, do których przejœcia otwieraj¹ prze³¹czniki.");
 
@@ -248,7 +248,7 @@ FUNC VOID DIA_NASZ_412_CatSan_Ostrze_Info()
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_Ostrze_15_01"); //Doskonale. Otworzê wiêc kratê!
 	AI_PlayAni		(self, "HEA");
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_Ostrze_15_02"); //Czy mo¿esz mi towarzyszyæ w walce?
-	AI_Output (self, other,"DIA_NASZ_412_CatSan_Ostrze_15_03"); //Niestety, œmiertelniku, nie zrobiê tego. Magia tego szamana onieœmiela mnie. Musisz udaæ siê tam sam.
+	AI_Output (self, other,"DIA_NASZ_412_CatSan_Ostrze_15_03"); //Niestety, œmiertelniku, nie zrobiê tego. Magia tego szamana ogranicza mnie. Musisz udaæ siê tam sam.
 
 	B_giveinvitems (other, self, ItNa_CatSan_Sword, 1);
 

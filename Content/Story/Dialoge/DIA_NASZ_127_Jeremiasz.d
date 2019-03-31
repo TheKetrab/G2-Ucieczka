@@ -433,7 +433,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_55_00"); //Tak jak mówi³em, na stole destylacyjnym mo¿esz uwarzyæ specjalne wywary. Musisz tylko nauczyæ siê go obs³ugiwaæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ buelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole. Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_03"); //W czasie gdy ska³a bêdzie siê namaczaæ, ty posiekaj w drobny maczek liœcie roœliny i wsyp do buteleczki. Zalej to wod¹, jeœli chcesz, mo¿esz tam te¿ napluæ. Haha!
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_03"); //W czasie, gdy ska³a bêdzie siê namaczaæ, ty posiekaj w drobny maczek liœcie roœliny i wsyp do buteleczki. Zalej to wod¹, jeœli chcesz, mo¿esz tam te¿ napluæ. Ha, ha!
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_04"); //Teraz dolej soku ³odygi, zakorkuj i mocno wstrz¹œnij.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_05"); //Co z reszt¹ ³odygi?
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_06"); //Jest bez soku, mo¿esz j¹ wyrzuciæ.
@@ -489,7 +489,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_01"); //Proces wytwarzania tych mieszanek jest trochê d³ugi, a ja nie mam czasu za ka¿dym razem tutaj przychodziæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_02"); //Prawdziwy znawca roœlin potrafi obejœæ siê bez tworzenia mieszanki.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_03"); //Pamiêtasz, jak wspomina³em o tym, ¿e zamiast dolewaæ wody mo¿esz napluæ do œrodka?
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_04"); //To nie by³ ¿art. Œlina ma specyficzne w³aœciwoœci - wystarczy, ¿e wiesz, jak nadgryŸæ korzeñ.
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_04"); //To nie by³ ¿art. Œlina ma specyficzne w³aœciwoœci. Wystarczy wiedzieæ, jak nadgryŸæ korzeñ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_05"); //Przede wszystkim podczas zbierania staraj siê odrywaæ roœlinê jak najbli¿ej ziemi. Potem przegryŸ korzeñ od spodu i wys¹cz p³yn.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_06"); //Wydaje siê obrzydliwe...
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_07"); //M³odzieñcze, jeœli chcesz ¿yæ tak d³ugo jak ja, to mo¿e warto wypróbowaæ moje techniki?

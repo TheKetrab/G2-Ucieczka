@@ -78,7 +78,7 @@ func void DIA_NASZ_229_Ayan_most_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_00"); //Ju¿ wiem, jak dostaæ siê na drugi brzeg!
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_01"); //Znalaz³em tê runê teleportacyjn¹ nurkuj¹c w rzece.
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_02"); //Uwierz mi, nie by³o ³atwo! Ale mam nadziejê, ¿e warto.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_02"); //Uwierz mi, nie by³o ³atwo! Mam nadziejê, ¿e siê op³aci.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_most_03_03"); //Szukam jakiegoœ osi³ka, bo samemu nie zamierzam siê tam wybieraæ. Mo¿e zechcesz mi towarzyszyæ?
 
 };
@@ -93,7 +93,7 @@ instance DIA_NASZ_229_Ayan_chodzmy		(C_INFO)
 	condition	 = 	DIA_NASZ_229_Ayan_chodzmy_Condition;
 	information	 = 	DIA_NASZ_229_Ayan_chodzmy_Info;
 	permanent	 =	FALSE;
-	description	 = 	"Czemu nie.";
+	description	 = 	"Czemu nie?";
 };
 
 func int DIA_NASZ_229_Ayan_chodzmy_Condition ()
@@ -106,11 +106,11 @@ func int DIA_NASZ_229_Ayan_chodzmy_Condition ()
 
 func void DIA_NASZ_229_Ayan_chodzmy_Info ()
 {
-	AI_Output			(other, self, "DIA_NASZ_229_Ayan_chodzmy_15_00"); //Czemu nie.
+	AI_Output			(other, self, "DIA_NASZ_229_Ayan_chodzmy_15_00"); //Czemu nie?
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_chodzmy_03_01"); //Œwietnie!
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_chodzmy_03_02"); //Z tym, ¿e runa jest jedna, a nas jest dwóch.
 	AI_PlayAni (self,"R_SCRATCHHEAD");
-	AI_Output			(other, self, "DIA_NASZ_229_Ayan_chodzmy_03_03"); //Przeteleportuj siê i rzuæ runê. Dorzucisz?
+	AI_Output			(other, self, "DIA_NASZ_229_Ayan_chodzmy_03_03"); //Przeteleportuj siê i rzuæ runê. Dasz radê?
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_chodzmy_03_04"); //Nie jestem pewien... Mo¿liwe, ¿e runa spadnie do rzeki.
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_chodzmy_03_05"); //Mam tylko nadziejê, ¿e j¹ znajdê. Do zobaczenia po drugiej stronie.
 	AyanThrowReady = TRUE;
@@ -226,10 +226,10 @@ func int DIA_NASZ_229_Ayan_Closed_Condition ()
 func void DIA_NASZ_229_Ayan_Closed_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_00"); //A wiêc to orkowy grobowiec.
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_01"); //To miejsce jest przepe³nione jakimiœ z³ymi czarami. Wydaje mi siê, ¿e to za spraw¹ starych orkowych run, duchy zmar³ych pozosta³y na cmentarzu.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_01"); //To miejsce jest przepe³nione z³ymi czarami. Wydaje mi siê, ¿e to za spraw¹ starych orkowych run, duchy zmar³ych pozosta³y na cmentarzu.
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_Closed_15_02"); //Nigdy jeszcze nie spotka³em orkowego ducha.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_03"); //To tak jak ja. Zaczynam siê obawiaæ tego miejsca.
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_04"); //Patrz, ten kamieñ z pewnoœci¹ blokuje jakiœ mechanizm. Musimy znaleŸæ mechanizm, który go przesunie.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_04"); //Patrz, ten kamieñ z pewnoœci¹ blokuje jakiœ mechanizm. Musimy znaleŸæ coœ, co go przesunie.
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_Closed_15_05"); //ChodŸmy na dó³. Mo¿e tam coœ znajdziemy.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_06"); //Masz racjê. ProwadŸ.
 

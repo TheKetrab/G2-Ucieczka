@@ -1374,7 +1374,7 @@ func void _TickTock_1s()
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutDemonPosag == FALSE) && (WillSayDemonOneTime == FALSE) {
 		WillKnowAboutDemonPosag = TRUE;
 		WillSayDemonOneTime = TRUE;
-		AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Tamten pos¹g jakiegoœ demona wydaje siê byæ przepe³niony czarn¹ magi¹.
+		AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Ten pos¹g wydaje siê byæ przepe³niony czarn¹ magi¹.
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) && (KAPITEL == 1) {

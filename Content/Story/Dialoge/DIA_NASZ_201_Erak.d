@@ -833,8 +833,8 @@ FUNC VOID DIA_NASZ_201_Erak_Kapitel4_Info()
 	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_00"); //Widzia³em nieumar³ych, którzy zaatakowali wasz obóz...
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_01"); //Najpierw bandyci, potem orkowie, a teraz te nieumar³e sukinsyny, które ka¿dego dnia kilkukrotnie atakuj¹ nasz w³asny obóz. Chyba nie mo¿e byæ ju¿ gorzej.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_02"); //Dobrze, ¿e do nas zajrza³eœ. W przeciwnym wypadku mielibyœmy jeszcze wiêcej rannych ni¿ ta grupka, która teraz u nas przebywa. Gdybym wiedzia³ co bêdzie siê dzia³o, nigdy bym ich tutaj nie zabra³.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_03"); //To ju¿ nie jest bezpieczne miejsce, zw³aszcza od chili kiedy nêkaj¹ nas te truposze. Nie to jest jednak najgorsze. Ratford ostatniej nocy widzia³ w okolicy dwa cholerne demony!
-	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_04"); //Demony! Tak jakby orków nam by³o za ma³o, od tamtej pory przed brama stoi kilku ludzi, jak sam mog³eœ ju¿ zauwa¿yæ.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_03"); //To ju¿ nie jest bezpieczne miejsce, zw³aszcza od chwili kiedy nêkaj¹ nas te truposze. Nie to jest jednak najgorsze. Ratford ostatniej nocy widzia³ w okolicy dwa cholerne demony!
+	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_04"); //Demony! Tak jakby orków nam by³o za ma³o. Od tamtej pory przed bram¹ stoi kilku ludzi, jak sam mog³eœ ju¿ zauwa¿yæ.
 	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_05"); //Czy mogê wam w czymœ pomóc? Widzê, ¿e naprawdê macie tutaj du¿o roboty.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_06"); //Nie, lepiej bêdzie jak natychmiast wrócisz do Kerolotha i przeka¿esz mu raport ode mnie.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_07"); //Je¿eli naprawdê bêdziemy potrzebowali pomocy, to wyœlê do was Ratforda. On jako jedyny da radê przekraœæ siê wszêdzie, gdzie tylko siê da.
@@ -875,7 +875,7 @@ FUNC VOID DIA_NASZ_201_Erak_CanIHelpKap4_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_201_Erak_CanIHelpKap4_15_00"); //Mo¿emy coœ zrobiæ z t¹ plag¹ ciemnoœci?
 	AI_Output (self, other,"DIA_NASZ_201_Erak_CanIHelpKap4_55_01"); //By³oby wspaniale... Ale nie znam siê na tym.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_CanIHelpKap4_55_02"); //Póki co zanieœ raport Kerolothowi.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_CanIHelpKap4_55_02"); //Póki co, zanieœ raport Kerolothowi.
 
 	Log_CreateTopic (TOPIC_Erak_plagaciemnosci, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_RUNNING);

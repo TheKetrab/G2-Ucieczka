@@ -72,7 +72,7 @@ FUNC VOID DIA_NASZ_402_Innos_portal_Info()
 	AI_Output (other, self,"DIA_NASZ_402_Innos_portal_55_02"); //Potrzebujê boskiej pomocy, by otworzyæ portal.
 	AI_Output (self, other,"DIA_NASZ_402_Innos_portal_55_03"); //Portal? Dok¹d?
 	AI_Output (other, self,"DIA_NASZ_402_Innos_portal_55_04"); //W Górniczej Dolinie wci¹¿ s¹ ludzie. Musimy siê jakoœ przedostaæ do Khorinis.
-	AI_Output (self, other,"DIA_NASZ_402_Innos_portal_55_05"); //Pomogê ci, ale teraz twoja kolej. Musisz jednak coœ dla mnie zrobiæ.
+	AI_Output (self, other,"DIA_NASZ_402_Innos_portal_55_05"); //Pomogê ci, ale teraz twoja kolej. Musisz coœ dla mnie zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_402_Innos_portal_55_06"); //Ale najpierw musisz pokazaæ, ¿e radzisz sobie z ogniem. Na razie nie jestem co do tego przekonany.
 
 

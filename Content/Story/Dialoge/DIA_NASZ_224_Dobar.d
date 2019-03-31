@@ -803,7 +803,7 @@ FUNC VOID DIA_NASZ_224_Dobar_Kap4Wrzod_Info()
 {
 	AI_Output (self,other,"DIA_NASZ_224_Dobar_Kap4Wrzod_15_00"); //Hej, Willu! S³yszysz te wrzaski?
 	AI_Output (other,self,"DIA_NASZ_224_Dobar_Kap4Wrzod_55_02"); //W³aœnie siê zastanawiam, kto kogo torturuje.
-	AI_Output (self,other,"DIA_NASZ_224_Dobar_Kap4Wrzod_15_03"); //Od wczoraj Wrzód bez przerwy jêczy. Nie wiem o co mu chodzi, ale wszyscy maj¹ go ju¿ doœæ.
+	AI_Output (self,other,"DIA_NASZ_224_Dobar_Kap4Wrzod_15_03"); //Od wczoraj, Wrzód jêczy bez przerwy. Nie wiem o co mu chodzi, ale wszyscy maj¹ go ju¿ doœæ.
 	AI_Output (other,self,"DIA_NASZ_224_Dobar_Kap4Wrzod_55_04"); //W takim razie zajrzê do niego.
 	AI_Output (self,other,"DIA_NASZ_224_Dobar_Kap4Wrzod_15_05"); //W razie gdyby dobrowolnie siê nie zamkn¹³, poder¿nij mu gard³o.
 

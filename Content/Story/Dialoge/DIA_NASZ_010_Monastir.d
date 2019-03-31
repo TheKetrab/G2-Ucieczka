@@ -109,9 +109,9 @@ FUNC VOID DIA_NASZ_010_Monastir_doing_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_02"); //Rhobar, bêd¹cy zajêty walk¹ z orkami na kontynencie, nie móg³ pozwoliæ sobie na utratê wyszkolonych paladynów i ¿o³nierzy.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_03"); //Wys³a³ wiêc mnie, bym pomóg³ wam wydostaæ siê z doliny, a przy okazji by zgromadziæ i zabraæ trochê rudy.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_doing_15_04"); //Wydaje mi siê, ¿e królowi chodzi tylko o rudê...
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_05"); //Razem z Magami Ognia z klasztoru w Nordmarze opracowaliœmy bardzo siln¹ runê, która przenios³a mnie a¿ tutaj.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_05"); //Razem z Magami Ognia z klasztoru w Nordmarze opracowaliœmy bardzo silne zaklêcie, które przenios³o mnie a¿ tutaj.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_doing_15_06"); //Wiesz ju¿, jak wróciæ?
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_07"); //Tak. Jeden ze skrybów przepisuj¹cych stare i zakurzone ksiêgi narafi³ na pewn¹ wzmiankê o rycerzu z wyspy Khorinis, który przyzwa³ bogów...
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_doing_55_07"); //Tak. Jeden ze skrybów przepisuj¹cych stare i zakurzone ksiêgi natrafi³ na wzmiankê o rycerzu z wyspy Khorinis, który przyzwa³ bogów...
 	
 };
 	
@@ -169,7 +169,7 @@ FUNC VOID DIA_NASZ_010_Monastir_idea_seek()
 FUNC VOID DIA_NASZ_010_Monastir_idea_and()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_idea_and_15_00"); //Mam znaleŸæ zwój, tak?
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_idea_and_15_00"); //I ja mam znaleŸæ ten zwój?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_idea_and_55_01"); //Dok³adnie. IdŸ, znajdŸ i zabij o¿ywieñca oraz przynieœ mi ten zwój.
 
 };
@@ -201,7 +201,7 @@ FUNC VOID DIA_NASZ_010_Monastir_summoned_Info()
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_00"); //Bogowie zostali przyzwani.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_summoned_55_01"); //Przyzwani?! Ale jak to?
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_02"); //Razem z pewnym myœliwym znaleŸliœmy komnatê, w której zabiliœmy o¿ywieñca. Wtedy poleci³ mi rozejrzeæ siê na górze.
-	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_03"); //Kiedy szuka³em tam zwoju, us³ysza³em jakiœ okropny odg³os. Ayan zamieni³ siê w o¿ywieñca. Wnioskujê, ¿e u¿y³ zwoju.
+	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_03"); //Kiedy szuka³em tam zwoju, us³ysza³em jakiœ okropny odg³os. Wnioskujê, ¿e znalaz³ go pierwszy i u¿y³, poniewa¿ zamieni³ siê w o¿ywieñca.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_summoned_55_04"); //Tak, z pewnoœci¹ to zrobi³...
 	B_GivePlayerXP (1000);
 	
@@ -238,7 +238,7 @@ FUNC VOID DIA_NASZ_010_Monastir_whatnow_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_02"); //Musisz znaleŸæ bogów i przekonaæ ich, by otworzyli portal na drug¹ stronê prze³êczy.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_whatnow_15_03"); //Gdzie ich szukaæ?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_04"); //S¹ niczym b³yskawica... Ona szuka najkrótszej drogi do ziemi.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_05"); //Analogicznie - Innos powinien byæ w najgorêtszym miejscu, Adanos w wodnym... mo¿e lodowym, a Beliar w miejscu najbardziej przesi¹kniêtym czarn¹ magi¹.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_05"); //Analogicznie, Innos powinien byæ w najgorêtszym miejscu, Adanos w wodnym... mo¿e lodowym, a Beliar w miejscu najbardziej przesi¹kniêtym czarn¹ magi¹.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_whatnow_15_06"); //W takim razie w drogê...
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_07"); //Poczekaj, to nie wszystko!
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_whatnow_55_08"); //Przyzwaliœmy bogów, ¿eby otwarli portal. Musimy znaleŸæ odpowiednie miejsce, gdzie mo¿na odprawiæ rytua³. Musi byæ przepe³nione magi¹...
@@ -403,7 +403,7 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_money()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_00"); //Przyda³yby mi siê trochê z³ota.
-	AI_Output (self,other ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety, to wszystko, co mam.
+	AI_Output (self,other ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety. To wszystko, co mam.
 	
 	Createinvitems (self, ITMI_GOLD, 100);
 	B_giveinvitems (self, other, ITMI_GOLD, 100);
@@ -678,11 +678,11 @@ FUNC VOID DIA_NASZ_010_Monastir_ErakHelp_Info()
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_03"); //Jak myœlisz, co ich tutaj sprowadza? Jakiœ czar, a mo¿e chêæ zniszczenia?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_04"); //Nie, to na pewno nic z tego. Od chwili kiedy siê tutaj zjawi³em, pocz¹³em wyczuwaæ potê¿ne zak³ócenia w strukturze magii. Kolonia zosta³a otoczona niewidzialn¹ dla oka œmiertelnika aur¹.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_05"); //Aura ta emanuje na tyle du¿¹ energi¹, ¿e mo¿e zmuszaæ nieumar³ych, aby ci przybywali do tego œwiata.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Nie wiem dok³adnie, jak ona dzia³a, ale najprawdopodobniej sprowadza ona tak¿e dusze, które zostaj¹ uwiêzienie w tych martwych skorupach.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_06"); //Nie wiem dok³adnie, jak ona dzia³a, ale najprawdopodobniej sprowadza ona tak¿e dusze, które zostaj¹ uwiêzione w tych martwych skorupach.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_07"); //Zaklêcie otaczaj¹ce dolinê, poprzez katusze zmusza dusze, by pozosta³y w tym miejscu.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_ErakHelp_55_08"); //Czy mo¿emy coœ z tym zrobiæ? Je¿eli mówisz prawdê, w naszym obowi¹zku le¿y pomóc tym wszystkim umêczonym duszom.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_09"); //Do g³owy przychodzi mi jedno rozwi¹zanie, jednak bêdzie siê ono wi¹za³o z pewnym niebezpieczeñstwem.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //Gdzieœ w Górniczej Dolinie znajduje siê jakieœ Ÿród³o mocy. Nie wiem dok³adnie, czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_10"); //Gdzieœ w Górniczej Dolinie znajduje siê Ÿród³o mocy. Nie wiem dok³adnie, czym ono jest, ale prawdopodobnie bêdzie to kapliczka lub pos¹¿ek.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_11"); //To w³aœnie z tego miejsca emanuje niezrozumia³a dla mnie energia, która wyró¿nia siê na tle aury, jaka nas otacza.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_ErakHelp_55_12"); //Powinieneœ j¹ odszukaæ. To pierwszy i najwa¿niejszy krok. Musimy znaleŸæ Ÿród³o.
 
@@ -759,7 +759,7 @@ FUNC VOID DIA_NASZ_010_Monastir_IHaveMlot_Info()
 	
 	AI_PlayAni (self,"T_PRACTICEMAGIC5");	
 	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,2,0,0,TRUE);   
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_IHaveMlot_55_02"); //Innosie, pob³ogos³aw tê broñ. Spraw by sta³a siê mocna i zwyciê¿y³a potêgê ciemnoœci!
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_IHaveMlot_55_02"); //Innosie, pob³ogos³aw tê broñ. Spraw, by sta³a siê mocna i zwyciê¿y³a potêgê ciemnoœci!
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_IHaveMlot_55_03"); //To wszystko. Teraz zniszcz pos¹g uderzaj¹c w ni¹ tym m³otem.
 
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Ma³y rytua³ siê uda³. Pora zniszczyæ pos¹g!");

@@ -56,7 +56,7 @@ func void DIA_NASZ_024_BaalOrun_Lojalnosc_Info ()
 {
 	
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_00"); //Czy mogê wam jakoœ pomóc?
-	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_01"); //Musi byæ sposób aby uwolniæ was z jarzma kl¹twy.
+	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_01"); //Musi byæ sposób, aby uwolniæ was z jarzma kl¹twy.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_02"); //A dlaczego mielibyœmy wierzyæ w twoje szlachetne pobudki? Mo¿e jesteœ wys³annikiem naszego ciemiê¿cy, który ma sprawdziæ, czy nie spiskujemy przeciwko niemu?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_03"); //Nie, mój ch³opcze. Musisz najpierw udowodniæ nam, i¿ nie kieruj¹ tob¹ z³e pobudki.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_04"); //Eh, znowu bêdê musia³ robiæ za ch³opca na posy³ki.

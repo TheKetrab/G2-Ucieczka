@@ -66,8 +66,10 @@ FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 	TRIA_Next (Rudolf);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_04"); //To nie ¿aden ork idioto. To cz³owiek... Có¿ to za pancerz?
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_04"); //To nie ¿aden ork, idioto. To cz³owiek... Có¿ to za pancerz?
 	
+	
+	// TODO nie guild, tylko w zaleznosci od tego, co masz ubrane. A - lowca orkow, B - mysliwy, C - pradawnych, @up byc moze jeszcze inny? zrobic if npc has equipped a b lub c, jak nie to jkos inaczej wyjsc z tego dialogu
 	if (hero.guild == GIL_DJG) {
 		AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_05"); //Pancerz ³owcy orków.
 		AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_06"); //£owcy orków, powiadasz? Przybywasz zza palisady?
@@ -94,7 +96,7 @@ FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 	TRIA_Next (Rudolf);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_17"); //Daj ju¿ sobie spokój Netbek. To ziele kompletnie wy¿ar³o ci mózg.
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_17"); //Daj ju¿ sobie spokój, Netbek. To ziele kompletnie wy¿ar³o ci mózg.
 
 	Npc_ExchangeRoutine (NASZ_015_Rudolf, "Start");
 	Npc_ExchangeRoutine (NASZ_016_Netbek, "Start");
@@ -160,7 +162,7 @@ FUNC INT DIA_NASZ_015_Rudolf_zadanie_Condition()
 FUNC VOID DIA_NASZ_015_Rudolf_zadanie_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_015_Rudolf_zadanie_15_00"); //Jaki pamiêtnik?
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_zadanie_55_01"); //Có¿, nie przyby³em tutaj sam. By³o ze mn¹ jeszcze dwóch rycerzy - braci. Za³o¿yliœmy tutaj to niewielkie obozowisko.
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_zadanie_55_01"); //Có¿, nie przyby³em tutaj sam. By³o ze mn¹ jeszcze dwóch rycerzy, braci. Za³o¿yliœmy tutaj to niewielkie obozowisko.
 	AI_Output (self, other,"DIA_NASZ_015_Rudolf_zadanie_55_02"); //Nied³ugo potem Gerard poszed³ obserwowaæ orków. By³a deszczowa noc. Nie wróci³.
 	AI_Output (self, other,"DIA_NASZ_015_Rudolf_zadanie_55_03"); //Jego brat wyruszy³ na poszukiwania, ale równie¿ nie powróci³. Potrzebny mi jest jego pamiêtnik. Chcê wiedzieæ, jakie uczucia ¿ywi³ do mojej ¿ony.
 	AI_Output (other,self ,"DIA_NASZ_015_Rudolf_zadanie_15_04"); //To bestialstwo!
@@ -255,7 +257,7 @@ FUNC VOID DIA_NASZ_015_Rudolf_las_Info()
 	AI_Output (self,other ,"DIA_NASZ_015_Rudolf_las_15_04"); //Takiej iloœci drewna nie da siê przewieŸæ nawet dwudziestoma statkami. Dowódcy przys³ali swoich rêbaczy, którzy wyciêli ca³y las.
 	AI_Output (self,other ,"DIA_NASZ_015_Rudolf_las_15_05"); //Gdy drewna zaczê³o brakowaæ, orkowi szamani zebrali siê i... BACH! - nagle wyrós³ gêsty i przeraŸliwy las. Wydaje mi siê, ¿e tak potê¿ne zaklêcie mo¿e naruszaæ strukturê magii.
 	AI_Output (self,other ,"DIA_NASZ_015_Rudolf_las_15_06"); //W ka¿dym razie w lesie gdzieniegdzie mo¿na spotkaæ o¿ywieñców.
-	AI_Output (self,other ,"DIA_NASZ_015_Rudolf_las_15_07"); //Co do orków - maj¹ w lesie tartak albo, jak kto woli, sk³adowisko drewna. Nie zosta³o ich tam ju¿ du¿o, wiêc mo¿na kiedyœ spuœciæ im baty.
+	AI_Output (self,other ,"DIA_NASZ_015_Rudolf_las_15_07"); //Co do orków: Maj¹ w lesie tartak albo, jak kto woli, sk³adowisko drewna. Nie zosta³o ich tam ju¿ du¿o, wiêc mo¿na kiedyœ spuœciæ im baty.
 
 };
 
@@ -361,7 +363,7 @@ FUNC VOID DIA_NASZ_015_Rudolf_OrkowyPrzepis_Info()
 	B_UseFakeScroll();
 	AI_Output (self, other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_02"); //No, no! To wygl¹da na jak¹œ orkow¹ zupê. Nie jestem pewien, czy bêdzie to dobrze smakowaæ. Wydaje mi siê, ¿e twój ¿o³¹dek wypluje wszystko, zanim zd¹¿ysz opró¿niæ chocia¿ po³owê talerza.
 	AI_Output (other, self,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_03"); //Móg³byœ przet³umaczyæ dla mnie ten przepis? Niekoniecznie s³owo w s³owo, ale ¿ebym chocia¿ mniej wiêcej wiedzia³, jakich sk³adników potrzebujê.
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_04"); //Przede wszystkim surowego miêsa... Poszekaj chwilê. Zaraz zapiszê to, co rozumiem.
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_04"); //Przede wszystkim surowego miêsa... Poczekaj chwilê. Zaraz zapiszê to, co rozumiem.
 	// TODO AI_Wait 3s
 	Createinvitems (self, ItNa_Przepis_Orkowy2, 1);
 	B_giveinvitems (self, other, ItNa_Przepis_Orkowy2, 1);
@@ -370,6 +372,6 @@ FUNC VOID DIA_NASZ_015_Rudolf_OrkowyPrzepis_Info()
 	AI_Output (self ,other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_15_07"); //Fakt. Jednak mam nadziejê, ¿e tego nie zjesz.
 
 	PrzepisOrkowyZnamTresc = TRUE;
-	B_LogEntry (TOPIC_Rudolf_przyjaciel, "W koñcu dysponujê przet³umaczonym przepisem. Teraz trzeba jeszcze znaleŸæ sk³adniki i poprosiæ Snafa o przyrz¹dzenie zupy.");
+	B_LogEntry (TOPIC_Orkowy_przepis, "W koñcu dysponujê przet³umaczonym przepisem. Teraz trzeba jeszcze znaleŸæ sk³adniki i poprosiæ Snafa o przyrz¹dzenie zupy.");
 
 };

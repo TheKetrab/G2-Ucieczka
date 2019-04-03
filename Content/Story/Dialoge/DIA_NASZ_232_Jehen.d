@@ -50,7 +50,7 @@ FUNC VOID DIA_NASZ_232_Jehen_siema_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_siema_55_01"); //Ty jesteœ Jehen?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_siema_55_02"); //Zgadza siê, pomó¿ mi uporaæ siê z tymi przeroœniêtymi ptaszyskami, to porozmawiamy.
 	
-	B_LogEntry (TOPIC_Jehen_strzala, "No i proszê, znalaz³em go! Zanim jednak z nim pogadam, musimy zabiæ kilka œciewrojadów.");
+	B_LogEntry (TOPIC_Jehen_strzala, "No i proszê, znalaz³em go! Zanim jednak z nim pogadam, musimy zabiæ kilka œcierwojadów.");
 	
 	Npc_ExchangeRoutine (self, "GuideToScavengers");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;

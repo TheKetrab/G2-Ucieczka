@@ -439,7 +439,7 @@ func void ZS_Dead ()
 		
 		B_GivePlayerXP (1000);
 		Log_SetTopicStatus (TOPIC_OrcCity_In, LOG_SUCCESS);
-		B_LogEntry (TOPIC_OrcCity_In, "Droga do portalu jest bezpieczna. Monastir i inni powinni uciec z Górniczej Doliny - jeœli tylko rozsadz¹ g³az, który zablokowa³ przejœcie. Tutaj swoj¹ misjê wype³ni³em. Przede mn¹ nowe krainy.");
+		B_LogEntry (TOPIC_OrcCity_In, "Droga do portalu jest bezpieczna. Monastir i inni powinni uciec z Górniczej Doliny, jeœli tylko rozsadz¹ g³az, który zablokowa³ przejœcie. Tutaj swoj¹ misjê wype³ni³em. Przede mn¹ nowe krainy.");
 
 	};
 	
@@ -462,7 +462,6 @@ func void ZS_Dead ()
 		|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Kamashi)))
 	{
 		if ((npc_isdead (Ugosh)) && (npc_isdead (Kamashi))) {
-			B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jaszczurzy wodzowie zostali zg³adzeni.");
 			WODZOWIE_KILLED = TRUE;
 		};
 

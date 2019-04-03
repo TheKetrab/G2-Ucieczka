@@ -844,7 +844,7 @@ FUNC VOID DIA_NASZ_201_Erak_Kapitel4_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_08"); //Nawet nie wiesz, jak bardzo chcia³bym, ¿eby ci nieumarli wojownicy przestali nas nêkaæ.
 	
-	B_LogEntry (TOPIC_Sprawy,"Po rozmowie z Erakiem dosta³em raport, który muszê przekazaæ Kerolothowi. Sytuacja w obozie okaza³a siê byæ bardziej napiêt¹ ni¿ wczeœniej podejrzewa³em. Warto wspomnieæ tak¿e o szkieletach, które zaatakowa³y obóz.");
+	B_LogEntry (TOPIC_Sprawy,"Po rozmowie z Erakiem dosta³em raport, który muszê przekazaæ Kerolothowi. Sytuacja w obozie okaza³a siê byæ bardziej napiêta ni¿ wczeœniej podejrzewa³em. Warto wspomnieæ tak¿e o szkieletach, które zaatakowa³y obóz.");
 	
 };
 

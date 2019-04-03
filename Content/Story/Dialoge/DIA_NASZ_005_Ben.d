@@ -263,7 +263,7 @@ FUNC VOID DIA_NASZ_005_Ben_Ben2Escape_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben2Escape_15_04"); //Willu, jesteœ najm³odszy ze wszystkich obecnych tutaj górników. Nikt z nas nie chcia³ ryzykowaæ twoim ¿yciem u pocz¹tku spiskowania, gdy¿ w ka¿dej chwili mogliœmy zostaæ zdemaskowani.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben2Escape_15_05"); //A wiesz, co za to grozi, prawda? Œmieræ by³aby wtedy twoim wybawieniem. Od³ó¿my jednak te b³ahostki na bok. Skoro ju¿ wiesz o naszych zamiarach, to mo¿esz nam pomóc.
 	
-	B_LogEntry (TOPIC_Kopalnia, "Nie przypuszcza³em, ¿e ktoœ poza mn¹ myœli o tym, jak siê st¹d wyrwaæ. Ben przewodzi grupie kopaczy, która ma zamiar podj¹æ siê ucieczki z kopalni. Zaproponowa³ mi udzia³ w ca³ym przedsiêwziêciu. Byæ mo¿e nied³ugo zaznam œwie¿ego powietrza.");
+	B_LogEntry (TOPIC_Kopalnia, "Ben przewodzi grupie kopaczy, która ma zamiar podj¹æ siê ucieczki z kopalni. Zaproponowa³ mi udzia³ w ca³ym przedsiêwziêciu. Byæ mo¿e nied³ugo zaznam œwie¿ego powietrza.");
 		
 };
 

@@ -123,6 +123,8 @@ FUNC VOID DIA_NASZ_016_Netbek_zadanie_Info()
 
 };
 
+
+// TODO byc moze troche inaczej ten dialog...? Bo tak z dupy o tym Will mówi
 //*********************************************************************
 //	         WTF 
 //*********************************************************************

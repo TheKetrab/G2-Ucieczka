@@ -809,7 +809,7 @@ FUNC VOID DIA_NASZ_224_Dobar_Kap4Wrzod_Info()
 
 	Log_CreateTopic (TOPIC_Wrzod_zwierzeta, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Wrzod_zwierzeta, LOG_RUNNING);
-	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Dobar wyjaœni³ mi, sk¹d bior¹ siê te odg³osy w obozie myœliwych. Mo¿na siê by³o tego spodziewaæ - to Wrzód. Chyba muszê z³o¿yæ mu wizytê.");
+	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Dobar wyjaœni³ mi, sk¹d bior¹ siê te odg³osy w obozie myœliwych. Mo¿na siê by³o spodziewaæ, ¿e to Wrzód. Chyba muszê z³o¿yæ mu wizytê.");
 
 };
 

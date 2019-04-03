@@ -167,7 +167,7 @@ FUNC VOID DIA_NASZ_101_Korth_WhereShouldIJoin_Info()
 	if (Mission_Gildia_Ready == FALSE) {
 		Log_CreateTopic (TOPIC_gildia, LOG_MISSION);
 		Log_SetTopicStatus (TOPIC_gildia, LOG_RUNNING);
-		B_LogEntry (TOPIC_gildia, "W Górniczej Dolinie powsta³y dwa obozy - myœliwi i ³owcy orków. Prêdzej czy póŸniej bêdê musia³ zdecydowaæ, do kogo chcê do³¹czyæ.");
+		B_LogEntry (TOPIC_gildia, "W Górniczej Dolinie powsta³y dwa obozy: myœliwych i ³owców orków. Prêdzej czy póŸniej bêdê musia³ zdecydowaæ, do kogo chcê do³¹czyæ.");
 		Mission_Gildia_Ready = TRUE;
 	};
 };

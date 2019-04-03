@@ -497,7 +497,7 @@ func void ORCCITY_02 ()
 		
 		WillCantKillOrcs_SetTrue();
 		
-		B_LogEntry (TOPIC_OrcCity_In, "... Ale mnie boli ³eb... Co siê sta³o? Gdzie ja jestem? Muszê siê st¹d wydostaæ.");
+		B_LogEntry (TOPIC_OrcCity_In, "Ale mnie boli ³eb... Co siê sta³o? Gdzie ja jestem? Muszê siê st¹d wydostaæ.");
 	};
 };
 
@@ -528,7 +528,7 @@ func void PORTALSWITCH1_S1 ()
 		PORTALSWITCH1_OneTime = TRUE;
 		CameraToPortalGoes = TRUE;
 		ff_applyonceext(CameraGoesToPortal,1000,-1);
-		B_LogEntry (TOPIC_OrcCity_In, "Przekrêci³em prze³¹cznik przy szefach.");
+		B_LogEntry (TOPIC_OrcCity_In, "Przekrêci³em prze³¹cznik przy wodzach.");
 	};
 };
 

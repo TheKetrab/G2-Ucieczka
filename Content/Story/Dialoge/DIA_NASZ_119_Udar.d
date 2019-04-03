@@ -461,7 +461,7 @@ FUNC VOID DIA_NASZ_119_Udar_GraveMissionWhatToDo_Info()
 
 	Log_CreateTopic (TOPIC_Udar_Grave, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_Grave, LOG_RUNNING);
-	B_LogEntry (TOPIC_Udar_Grave, "Udar wymyœli³ sobie, ¿e jeœli poœwiêcê groby wielkich wojowników, to Innos zeœle na nas ³askê... Dosta³em mapê - mam rozkopaæ ka¿dy z tych grobów i wlaæ tam wodê œwiêcon¹. Powinienem œwiêciæ groby tylko wielkich wojowników - nie nieznanych ¿o³nierzy. Wodê œwiêcon¹ sprzeda mi Bron.");
+	B_LogEntry (TOPIC_Udar_Grave, "Udar wymyœli³ sobie, ¿e jeœli poœwiêcê groby wielkich wojowników, to Innos zeœle na nas ³askê... Dosta³em mapê, w zwi¹zku z czym mam rozkopaæ ka¿dy z tych grobów i wlaæ tam wodê œwiêcon¹. Powinienem œwiêciæ groby tylko wielkich wojowników - nie nieznanych ¿o³nierzy. Wodê œwiêcon¹ sprzeda mi Bron.");
 
 };
 
@@ -830,7 +830,7 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolFinish_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_00"); //Przynoszê raport od zwiadowców.
 	B_GiveInvItems(other,self,ItNa_JenkinsRaport,1);
-	Npc_RemoveIntItems(self,ItNa_JenkinsRaport,1);
+	Npc_RemoveInvItems(self,ItNa_JenkinsRaport,1);
 	B_UseFakeScroll();
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zasnaczonymi si³ami orków.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolFinish_15_02"); //Doskonale, ale strasznie d³ugo ci to wszystko zajê³o. Co ze zwiadowcami?
@@ -964,7 +964,7 @@ FUNC VOID DIA_NASZ_119_Udar_Kap4Start_Info()
 	B_StartOtherRoutine(NASZ_229_Ayan,"Start"); // Ayan przenosi sie do misji z ozywiencem
 	
 	Log_SetTopicStatus (TOPIC_Keroloth_Wojna, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Keroloth_Wojna, "Donios³em Udarowi wieœci z zamku. Tymczasem w obozie pojawi³ siê mag, który chce siê ze mn¹ spotkaæ.");
+	B_LogEntry (TOPIC_Keroloth_Wojna, "Donios³em Udarowi o wieœciach z zamku. Tymczasem w obozie pojawi³ siê mag, który chce siê ze mn¹ spotkaæ.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "W obozie ³owców orków pojawi³ siê mag. Byæ mo¿e to znak, ¿e œwiat zewnêtrzny ci¹gle siê nami interesuje?");

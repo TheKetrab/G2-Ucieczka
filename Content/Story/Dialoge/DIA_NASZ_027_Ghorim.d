@@ -139,7 +139,7 @@ func void DIA_NASZ_027_Ghorim_Ksiazka_Info ()
 
 	Wld_InsertItem (ItNa_Pierscien_Zarazy,"FP_NASZ_PIERSCIEN_GHORIM");
 	
-	B_LogEntry (TOPIC_Lojalnosc,"W nagrodê za pomoc Ghorim zaoferowa³ mi swój pierœcieñ, niestety duch nie mia³ go przy sobie. Wskaza³ mi jednak miejsce gdzie mo¿e siê znajdowaæ. Czas przeszukaæ jego chatê i jej okolice.");
+	B_LogEntry (TOPIC_Lojalnosc,"W nagrodê za pomoc, Ghorim zaoferowa³ mi swój pierœcieñ, niestety duch nie mia³ go przy sobie. Wskaza³ mi jednak miejsce, gdzie mo¿e siê znajdowaæ. Czas przeszukaæ jego chatê i jej okolicê.");
 	
 	Log_SetTopicStatus (TOPIC_Ghorim_ksiega, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Ghorim_ksiega, "Ghorim wydawa³ siê byæ zaskoczony, ¿e znalaz³em tê ksi¹¿kê. Có¿... Ja sam by³em zaskoczony, ¿e j¹ znalaz³em.");

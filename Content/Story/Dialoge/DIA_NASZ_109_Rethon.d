@@ -864,6 +864,11 @@ FUNC VOID DIA_Rethon_Teach_1H_5b ()
 	};
 };
 
+func void RethonSay_CantTeachYou() {
+	AI_Output(self,other,"RethonSay_CantTeachYou_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
+	AI_Output(self,other,"RethonSay_CantTeachYou_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+};
+
 FUNC VOID DIA_Rethon_Teach_2H_1b ()
 {
 	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
@@ -872,8 +877,7 @@ FUNC VOID DIA_Rethon_Teach_2H_1b ()
 	
 	if (other.HitChance[NPC_TALENT_2H] >= 60)
 	{
-		AI_Output(self,other,"DIA_DIA_Rethon_Teach_2H_1b_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
-		AI_Output(self,other,"DIA_DIA_Rethon_Teach_2H_1b_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
 	}
 	else {
@@ -892,8 +896,7 @@ FUNC VOID DIA_Rethon_Teach_2H_5b ()
 	
 	if (other.HitChance[NPC_TALENT_2H] >= 60)
 	{
-		AI_Output(self,other,"DIA_Rethon_Teach_2H_5b_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
-		AI_Output(self,other,"DIA_Rethon_Teach_2H_5b_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
 	}
 	else {
@@ -912,8 +915,7 @@ FUNC VOID DIA_Rethon_Teach_1H_1c ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		AI_Output(self,other,"DIA_Rethon_Teach_1H_1c_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
-		AI_Output(self,other,"DIA_Rethon_Teach_1H_1c_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
 	}
 	else {
@@ -932,8 +934,7 @@ FUNC VOID DIA_Rethon_Teach_1H_5c ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		AI_Output(self,other,"DIA_Rethon_Teach_1H_5c_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
-		AI_Output(self,other,"DIA_Rethon_Teach_1H_5c_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
 	}
 	else {

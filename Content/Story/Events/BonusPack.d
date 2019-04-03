@@ -93,7 +93,7 @@ FUNC VOID Equip_ItNa_Pas_Smierci ()
 {
 	P_Smierci_IsEquipped = TRUE;
 	
-	Print("Œledzimy ka¿dy twój krok, œiertelniku.");
+	Print("Œledzimy ka¿dy twój krok, œmiertelniku.");
 	Wld_PlayEffect("spellFX_Fear",  self, self, 0, 0, 0, FALSE );
 	Snd_Play 	("MFX_FEAR_CAST" );
 	

@@ -159,7 +159,7 @@ FUNC VOID DIA_NASZ_130_Jenkins_AreYouOK_Info()
 
 	Log_CreateTopic (TOPIC_Jenkins_bestia,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jenkins_bestia, LOG_RUNNING);
-	B_LogEntry(TOPIC_Jenkins_bestia, "Obóz zosta³ zaatakowany przez nieumar³ych. Jenkins twierdzi, i¿ mo¿e mieæ to zwi¹zek z tajemnicz¹ inkantacj¹ orkowego szamana. Teraz jednak trzeba zaj¹æ siê dwoma bestiami, które widocznie zosta³y tutaj zwabione si³¹ sprawcz¹ zaklêcia.");
+	B_LogEntry(TOPIC_Jenkins_bestia, "Obóz zosta³ zaatakowany przez nieumar³ych. Jenkins twierdzi, ¿e mo¿e mieæ to zwi¹zek z tajemnicz¹ inkantacj¹ orkowego szamana. Teraz jednak trzeba zaj¹æ siê dwoma bestiami, które widocznie zosta³y tutaj zwabione si³¹ sprawcz¹ zaklêcia.");
 
 };
 
@@ -208,6 +208,6 @@ FUNC VOID DIA_NASZ_130_Jenkins_EndOfMatt_Info()
 	Log_SetTopicStatus (TOPIC_Jenkins_bestia, LOG_SUCCESS);
 	B_LogEntry(TOPIC_Jenkins_bestia, "Niech Matt spoczywa w pokoju i ³asce Innosa.");
 
-	B_LogEntry (TOPIC_Udar_patrol,"Powinienem udaæ siê teraz do Udara i powiadomiæ go o zaistnia³ej sytuacji oraz zawiadobiæ, by przys³a³ zwiadowcom kogoœ do pomocy.");
+	B_LogEntry (TOPIC_Udar_patrol,"Powinienem udaæ siê teraz do Udara i powiadomiæ go o zaistnia³ej sytuacji oraz zawiadomiæ, by przys³a³ zwiadowcom kogoœ do pomocy.");
 
 };

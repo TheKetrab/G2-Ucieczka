@@ -196,7 +196,7 @@ FUNC VOID DIA_NASZ_316_Carry_palisada_Przydac ()
 	AI_Output (other,self,"DIA_NASZ_316_Carry_palisada_Przydac_08_00"); //Przyszed³em siê na coœ przydaæ.
 	AI_Output (self,other,"DIA_NASZ_316_Carry_palisada_Przydac_08_01"); //Samuel wys³a³ ciê tu, bo fatalnie przybijasz deski? Ha, ha!
 	
-	B_LogEntry (TOPIC_Gestath_renegaci, "Uda³o mi siê nawi¹zaæ kontakt z jednym z bandytów. Uda³o im siê tu jakoœ przedostaæ przez góry. O ile dobrze zrozumia³em, tutaj szefem jest Nod, a niejaki Samuel dowodzi naprawianiem okrêtów. Chyba warto zapamiêtaæ te dwa imiona.");
+	B_LogEntry (TOPIC_Gestath_renegaci, "Uda³o mi siê nawi¹zaæ kontakt z jednym z bandytów. Uda³o im siê tu przedostaæ przez góry. O ile dobrze zrozumia³em, tutaj szefem jest Nod, a niejaki Samuel dowodzi naprawianiem okrêtów. Chyba warto zapamiêtaæ te dwa imiona.");
 	Info_ClearChoices 	(DIA_NASZ_316_Carry_palisada);
 };
 

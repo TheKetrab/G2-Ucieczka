@@ -875,7 +875,7 @@ FUNC VOID DIA_NASZ_010_Monastir_Kap5Start_Info()
 
 	Log_CreateTopic (TOPIC_OrcCity_In, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_OrcCity_In, LOG_RUNNING);
-	B_LogEntry (TOPIC_OrcCity_In, "Szlag by to trafi³. Myœla³em, ¿e to ju¿ koniec i wydostaniemy siê z tej doliny, której ja sam mam ju¿ powoli doœæ. Bogowie odprawili rytua³ i zniknêli. £adna mi pomoc! Ale Monastir uwa¿a, ¿e nie zrobili tego bez powodu. ¯e 'panuj¹cy nad tym œwiatem' maj¹ w tym jakiœ cel. Monastir dostrzeg³, ¿e odsun¹³ siê jakiœ g³az... Ciemna droga przede mn¹...");
+	B_LogEntry (TOPIC_OrcCity_In, "Szlag by to trafi³. Myœla³em, ¿e to ju¿ koniec i wydostaniemy siê z tej doliny, której ja sam mam ju¿ powoli doœæ. Bogowie odprawili rytua³ i zniknêli. £adna mi pomoc! Ale Monastir uwa¿a, ¿e nie zrobili tego bez powodu. ¯e 'panuj¹cy nad tym œwiatem' maj¹ w tym jakiœ cel. Monastir dostrzeg³, ¿e odsun¹³ siê jakiœ g³az... Szykuje siê kolejna niebezpieczna podró¿...");
 
 	B_Kapitelwechsel (5, NEWWORLD_ZEN );
 

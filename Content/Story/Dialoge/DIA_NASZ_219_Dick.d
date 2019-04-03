@@ -166,7 +166,7 @@ FUNC VOID DIA_NASZ_219_Dick_ziele_Info()
 	Wld_InsertItem (ItNa_PaczkaZiela,"NASZ_FP_DICK_PACZKA");
 	Log_CreateTopic (TOPIC_Dick_ziele, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Dick_ziele, LOG_RUNNING);
-	B_LogEntry (TOPIC_Dick_ziele, "Dick z obozu myœliwych chcia³by odzyskaæ swoje skradzione ziele. Pewnie ktoœ je schowa³, ¿eby Dick w koñcu siê ogarn¹³. Ale chyba nic z tego dobrego nie wysz³o.");
+	B_LogEntry (TOPIC_Dick_ziele, "Dick z obozu myœliwych chcia³by odzyskaæ swoje skradzione ziele. Pewnie ktoœ je schowa³, ¿eby Dick w koñcu siê ogarn¹³.");
 };
 
 //*********************************************************************

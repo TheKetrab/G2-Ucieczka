@@ -203,7 +203,7 @@ FUNC VOID DIA_NASZ_118_Ferros_PodkrazoneOczy_Info()
 	
 	Log_CreateTopic (TOPIC_Ferros_sny, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ferros_sny, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ferros_sny, "Z powodu koszmarów sennych Feros nie mo¿e spaæ, i czuje, ¿e nied³ugo przez to zwariuje. Zaoferowa³em mu pomoc, zaœ on poleci³ mi udaæ siê do alchemika w obozie myœliwych. Czeka mnie niema³a podró¿.");
+	B_LogEntry (TOPIC_Ferros_sny, "Z powodu koszmarów sennych, Feros nie mo¿e spaæ i czuje, ¿e nied³ugo przez to zwariuje. Zaoferowa³em mu pomoc, zaœ on poleci³ mi udaæ siê do alchemika w obozie myœliwych. Czeka mnie niema³a podró¿.");
 };
 
 var int FerrosLekarstwoDay;

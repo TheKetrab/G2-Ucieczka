@@ -593,7 +593,7 @@ func void DIA_NASZ_213_Gestath_WantToKillRenegat_Info ()
 		CreateInvItems (self, ItNa_TrfMeatbug, 1);									
 		B_GiveInvItems (self, other, ItNa_TrfMeatbug, 1);
 		
-		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako myœliwy! Gestath da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, ¿eby przedostaæ siê do œrodka. Mam zabraæ ze sob¹ Vachuta, Kivo i Louisa.");
+		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako myœliwy! Gestath da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, dziêki której przedostanê siê do œrodka. Mam zabraæ ze sob¹ Vachuta, Kivo i Louisa.");
 		
 		GestathRenegatOK = TRUE;
 		

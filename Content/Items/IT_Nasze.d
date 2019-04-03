@@ -3320,7 +3320,7 @@ func void Use_Uroboros1 ()
  	{
 	 	Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Znalaz³em jak¹œ star¹ ksiêgê. Autor napisa³, ¿e piêciu mistrzów alchemii spisa³o swoje autorskie przepisy. Na nastêpnej stronie widnieje jakaœ wskazówka..."); 
+		B_LogEntry (TOPIC_Gildia_Alchemikow,"Znalaz³em jak¹œ star¹ ksiêgê. Autor napisa³, ¿e piêciu mistrzów alchemii spisa³o swoje autorskie przepisy. Na nastêpnej stronie widnieje wskazówka..."); 
 		Use_Uroboros1_OneTime = TRUE;
 		B_Add_Uroboros_Exp();
 	};	
@@ -3549,7 +3549,7 @@ func void Use_Uroboros3 ()
  	{
 		Log_CreateTopic (TOPIC_Gildia_Alchemikow, LOG_MISSION);
 		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_RUNNING);
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Kolejna ksiêga podaje przepis na lekarstwo uspokajaj¹ce mocniejsze ni¿ bagienne ziele."); 
+		B_LogEntry (TOPIC_Gildia_Alchemikow,"Kolejna ksiêga podaje przepis na lekarstwo uspokajaj¹ce, mocniejsze ni¿ bagienne ziele."); 
 		Use_Uroboros3_OneTime = TRUE;
 		WillKnowUroboros3 = TRUE;
 		PoznaneSekrety_Liczba = PoznaneSekrety_Liczba + 1;
@@ -3900,7 +3900,7 @@ FUNC VOID Use_HowToEscape()
 	//Wld_SendTrigger ("UCIECZKA_Z_KOPALNI");
 	if (Use_HowToEscape_OneTime == FALSE)
 	{
-		B_LogEntry (TOPIC_kopalnia,"W obozie przed kopalni¹, za kapliczk¹ Beliara znalaz³em jakieœ zapiski o sposobie ucieczki."); 
+		B_LogEntry (TOPIC_kopalnia,"W obozie przed kopalni¹, za kapliczk¹ Beliara, znalaz³em jakieœ zapiski o sposobie ucieczki."); 
 		Use_HowToEscape_OneTime = TRUE;
 	};
 		

@@ -172,7 +172,7 @@ FUNC VOID DIA_NASZ_306_Perrot_ok_Info()
 
 	Log_CreateTopic (TOPIC_Perrot_owca, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Perrot_owca, LOG_RUNNING);
-	B_LogEntry (TOPIC_Perrot_owca, "Bandyci szykuj¹ siê do uboju owiec. Problem polega w tym, ¿e Perrot zaprzyjaŸni³ siê z jedn¹ owieczk¹ i teraz muszê mu pomóc j¹ chroniæ. Poza tym, trzeba za³atwiæ 5 baranich kie³bas, by nie wzbudzaæ podejrzeñ.");
+	B_LogEntry (TOPIC_Perrot_owca, "Bandyci szykuj¹ siê do uboju owiec. Problem polega na tym, ¿e Perrot zaprzyjaŸni³ siê z jedn¹ owieczk¹ i teraz muszê mu pomóc j¹ chroniæ. Poza tym, trzeba za³atwiæ 5 baranich kie³bas, by nie wzbudzaæ podejrzeñ.");
 	
 	Info_ClearChoices (DIA_NASZ_306_Perrot_ok);
 		Info_AddChoice	  (DIA_NASZ_306_Perrot_ok, "Gdzie mam j¹ zaprowadziæ?", DIA_NASZ_306_Perrot_ok_place);
@@ -281,7 +281,7 @@ FUNC VOID DIA_NASZ_306_Perrot_done_Info()
 	Npc_RemoveInvItems (self, ItFo_Schafswurst, 5) ;
 	
 	Log_SetTopicStatus (TOPIC_Perrot_owca, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Perrot_owca, "Owca bezpieczna. W zamian Perrot powiedzia³ mi, ¿e jeœli chcê zagadaæ do orka, to muszê skasowaæ Donksa. To ten bandyta wygnany razem z Carrym.");
+	B_LogEntry (TOPIC_Perrot_owca, "Owca bezpieczna. W zamian Perrot, powiedzia³ mi, ¿e jeœli chcê zagadaæ do orka, to muszê skasowaæ Donksa. To ten bandyta wygnany razem z Carrym.");
 	DodajReputacje (10, REP_BANDYCI);
 	B_GivePlayerXP (400);
 	Npc_ExchangeRoutine (NASZ_306_Perrot, "Owca");

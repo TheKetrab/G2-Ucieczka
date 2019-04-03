@@ -233,7 +233,7 @@ func void DIA_NASZ_229_Ayan_Closed_Info ()
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_Closed_15_05"); //ChodŸmy na dó³. Mo¿e tam coœ znajdziemy.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_Closed_03_06"); //Masz racjê. ProwadŸ.
 
-	B_LogEntry (TOPIC_Ayan_nieznane, "Jesteœmy w jakimœ orkowym grobowcu. Pe³no tu orkowych duchów. Jakiœ kamieñ tarasuje przejœcie. Musimy znaleŸæ mechanizm, który go przesunie.");
+	B_LogEntry (TOPIC_Ayan_nieznane, "Jesteœmy w jakimœ orkowym grobowcu. Pe³no tu orkowych duchów. Ogromny kamieñ tarasuje przejœcie, wiêc musimy znaleŸæ mechanizm, który go przesunie.");
 
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "Hey");

@@ -93,20 +93,20 @@ FUNC VOID DIA_NASZ_017_Joru_Lojalnosc_Info()
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_00"); //Gdzie podziali siê moi uczniowie, gdzie oni s¹? Jak mam ich czegoœ nauczyæ je¿eli ¿aden z nich nie przychodzi na moje nauki?!
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_01"); //Oni powinni gdzieœ tutaj byæ... Taak, na pewno. Nie sprzeciwiliby siê przecie¿ woli naszego pana... O nie...
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_02"); //Ty! Kim jesteœ? Nie wygl¹dasz, jak jeden z moich uczniów! Czego tutaj szukasz, nieznajomy?
-	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_03"); //Widzê, ¿e nawet po œmierci starasz siê wykonywaæ swoje zadania, jakie otrzyma³eœ od Baalów. Wierny swoim przekonaniom, a¿ do grobowej deski.
+	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_03"); //Widzê, ¿e nawet po œmierci starasz siê wykonywaæ zadania, jakie otrzyma³eœ od Baalów. Wierny swoim przekonaniom, a¿ do grobowej deski.
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_04"); //O czym ty mówisz? Ja martwy? Przecie¿...
-	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_05"); //Masz racjê, czasami zapominam, i¿ moje ¿ycie skoñczy³o siê tak szybko. Ca³a ta si³a, jaka trzyma mego ducha w tym miejscu sprawia, ¿e ca³y czas odczuwam przedziwne wra¿enie, jakobym nadal ¿y³.
-	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_06"); //Wiesz, jak to jest byæ martwy? Kiedy przez ca³e godziny i dnie masz œwiadomoœæ, i¿ œmiertelni bawi¹ siê w najlepsze, a ty ju¿ nie mo¿esz skosztowaæ tych zabaw?
+	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_05"); //Masz racjê, czasami zapominam, ¿e moje ¿ycie skoñczy³o siê tak szybko. Ca³a ta si³a, jaka trzyma mego ducha w tym miejscu sprawia, ¿e ca³y czas odczuwam przedziwne wra¿enie, jakobym nadal ¿y³.
+	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_06"); //Wiesz, jak to jest byæ martwy? Kiedy przez ca³e godziny i dnie masz œwiadomoœæ, ¿e œmiertelni bawi¹ siê w najlepsze, a ty ju¿ nie mo¿esz skosztowaæ tych zabaw?
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_07"); //Nigdy ju¿ nie zjem soczystego jab³ka, nigdy nie napijê siê dobrego wina i nigdy nie zaznam ciep³a w objêciach kobiety. To wszystko przepad³o wraz ze mn¹.
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_08"); //Jedynie melodia lutni jaka rozbrzmiewa³a w pobliskim lesie dodawa³a mi otuchy i radowa³a m¹ umêczon¹ duszê, lecz jej muzyka zamar³a na wieki. Tak jak i posiadacz, który na niej gra³.
-	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_09"); //Chcesz, abym zagra³ ci na lutni? Nie jestem w tym najlepszy, jednak uwa¿am, i¿ móg³bym chocia¿ na kilka chwil przywo³aæ tamte wspomnienia abyœ zazna³ spokoju.
+	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_09"); //Chcesz, abym zagra³ ci na lutni? Nie jestem w tym najlepszy, jednak uwa¿am, ¿e móg³bym chocia¿ na kilka chwil przywo³aæ tamte wspomnienia abyœ zazna³ spokoju.
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lojalnosc_017_10"); //Zrobi³byœ to? Ale dlaczego œmiertelnik chce pomagaæ duszy niewiernego, który odwróci³ siê od prawdziwych bogów?
 	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_11"); //Poniewa¿ kiedyœ dobrze siê znaliœmy i chcê pomóc przyjacielowi. Po drugie ka¿dy z nas zas³uguje na drug¹ szansê mimo pope³nionych czynów.
 	AI_Output (other, self,"DIA_NASZ_017_Joru_Lojalnosc_15_12"); //Jedynie pomagaj¹c wam, umêczonym duszom, mogê udowodniæ Baalowi, ¿e kieruj¹ mn¹ szlachetne pobudki, bowiem bez tego nigdy nie wyjawi mi sposobu na to by was uratowaæ.
 		
 	Log_CreateTopic (TOPIC_Joru_lutnia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Joru_lutnia, LOG_RUNNING);
-	B_LogEntry (TOPIC_Joru_lutnia, "Joru chcia³by, abym zagra³ mu na lutni, nie jestem w tym mo¿e najlepszy, ale czego nie zrobi siê dla umêczonego ducha, by ten zazna³ spokoju.");
+	B_LogEntry (TOPIC_Joru_lutnia, "Joru chcia³by, abym zagra³ mu na lutni. Nie jestem w tym mo¿e najlepszy, ale czego nie robi siê dla umêczonego ducha, by ten zazna³ spokoju.");
 	
 };
 
@@ -120,7 +120,7 @@ INSTANCE DIA_NASZ_017_Joru_Lutnia   (C_INFO)
  	condition   = DIA_NASZ_017_Joru_Lutnia_Condition;
  	information = DIA_NASZ_017_Joru_Lutnia_Info;
  	permanent   = FALSE;
-	description	= "(Zagraj na lutni).";
+	description	= "(Zagraj na lutni)";
 };
 
 FUNC INT DIA_NASZ_017_Joru_Lutnia_Condition()
@@ -138,9 +138,9 @@ FUNC VOID DIA_NASZ_017_Joru_Lutnia_Info()
 	AI_UseItemToState(hero,ItMi_Lute,3);
 	AI_UseItemToState(hero,ItMi_Lute,4);
 	
-	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_017_00"); //Ta melodia, przypomnia³a mi o moim ¿yciu przed Koloni¹ Górnicz¹. Dziêkujê nieznajomy! Mam nadziejê, ¿e w przysz³oœci by³em dla ciebie dobrym przyjacielem.
+	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_017_00"); //Ta melodia, przypomnia³a mi o moim ¿yciu przed Koloni¹ Górnicz¹... Dziêkujê, nieznajomy! Mam nadziejê, ¿e w przesz³oœci by³em dla ciebie dobrym przyjacielem.
 	AI_Output (other, self,"DIA_NASZ_017_Joru_Lutnia_15_01"); //Nawet nie wiesz jak bardzo. Wielokrotnie ratowa³eœ mi skórê z tarapatów.
-	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_017_02"); //Willu. Zanim odejdê, w podziêce chcia³bym ci coœ daæ. Pos³uchaj:
+	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_017_02"); //Zanim odejdê, w podziêce chcia³bym ci coœ daæ. Pos³uchaj:
 
 	Info_ClearChoices	(DIA_NASZ_017_Joru_Lutnia);
 	Info_AddChoice		(DIA_NASZ_017_Joru_Lutnia, "(czekaj)" ,DIA_NASZ_017_Joru_Lutnia_Wait);

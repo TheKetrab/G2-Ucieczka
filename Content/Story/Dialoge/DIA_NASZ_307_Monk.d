@@ -495,7 +495,7 @@ FUNC VOID DIA_NASZ_307_Monk_win_Info()
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_05"); //A jest na tyle silny, ¿e wszyscy siê go boj¹ i nikt nie stanie po mojej stronie.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_06"); //Gdy siê k³ociliœmy ostro oberwa³em. To dlatego siedzê teraz cicho. Mimo to, nie pasuje mi taka sytuacja.
 
-	B_LogEntry (TOPIC_Monk_Frut, "Frut postêpuje niezgodnie z poleceniami Noda. Zamiast po dziesiêciu dniach wymieniæ siê stanowiskiem z Monkiem, on przygarn¹³ je sobie na sta³e. Problem w tym, ¿e Frut jest na tyle silny, ¿e nikt nie chce siê mu postawiæ.");
+	B_LogEntry (TOPIC_Monk_Frut, "Frut postêpuje niezgodnie z poleceniami Noda. Zamiast po dziesiêciu dniach wymieniæ siê stanowiskiem z Monkiem, przygarn¹³ je sobie na sta³e. Problem w tym, ¿e Frut jest na tyle silny, ¿e nikt nie chce siê mu postawiæ.");
 
 };
 
@@ -599,7 +599,7 @@ FUNC VOID DIA_NASZ_307_Monk_frutkoniec_Info()
 		AI_Output (self, other,"DIA_NASZ_307_Monk_frutkoniec_55_04"); //Do Fruta. Ja przej¹³em tylko stanowisko administracji i wydajê polecenia reszcie bandy.
 	};
 	
-	B_LogEntry (TOPIC_Monk_Frut, "Nic dziwnego, ¿e w tej zgraji maj¹ miejsce takie sceny... Mam nadziejê, ¿e szybko siê st¹d zmyjê.");
+	B_LogEntry (TOPIC_Monk_Frut, "Nic dziwnego, ¿e w tej zgrai maj¹ miejsce takie sceny... Mam nadziejê, ¿e szybko siê st¹d zmyjê.");
 	Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_SUCCESS);
 	B_GivePlayerXP (400);
 	DodajReputacje (10, REP_BANDYCI);

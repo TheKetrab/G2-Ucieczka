@@ -82,8 +82,8 @@ func int DIA_NASZ_025_Shrat_Lojalnosc_Condition ()
 func void DIA_NASZ_025_Shrat_Lojalnosc_Info ()
 {
 	
-	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Lojalnosc_15_00"); //Shrat, to naprawdê ty? Myœla³em, ze opuœci³eœ swój dom na bagnach tu¿ po upadku bariery!
-	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_01"); //To imiê... Wydaje siê byæ znajome lecz ju¿ nic dla mnie nie oznacza. Natomiast ty... Kim jesteœ? Œmiertelnik nie powinien by³ nigdy tutaj przychodziæ.
+	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Lojalnosc_15_00"); //Shrat, to naprawdê ty? Myœla³em, ¿e opuœci³eœ swój dom na bagnach tu¿ po upadku bariery!
+	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_01"); //To imiê... Wydaje siê byæ znajome, lecz ju¿ nic dla mnie nie oznacza. Natomiast ty... Kim jesteœ? Œmiertelnik nie powinien by³ nigdy tutaj przychodziæ.
 	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Lojalnosc_15_02"); //Wy naprawdê nic nie pamiêtacie... Przysy³a mnie Baal Orun. Chcê wam pomóc, ale abym móg³ poznaæ sposób, który mo¿e mnie do tego doprowadziæ, muszê zdobyæ wasze zaufanie.
 	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Lojalnosc_15_03"); //Powiedz mi duchu, czy jest jakiœ sposób na ukojenie twojej duszy?
 	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_04"); //Chcesz nam pomóc... Nie czêsto spotyka siê œmiertelnika, który baczy na los innych. Nie, mi niczego nie potrzeba.
@@ -146,11 +146,11 @@ func void DIA_NASZ_025_Shrat_Duch_Info ()
 {
 	
 	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Duch_15_00"); //Twój przyjaciel zazna³ spokoju poœród innych zmar³ych.
-	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Duch_025_01"); //Wyczu³em to w chwili kiedy siê po¿egnaliœcie. Dopiero teraz wyczuwam, i¿ kieruj¹ tob¹ szlachetne intencje.
+	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Duch_025_01"); //Wyczu³em to w chwili, kiedy siê po¿egnaliœcie. Teraz ju¿ wiem, ¿e kieruj¹ tob¹ szlachetne pobudki.
 	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Duch_025_02"); //Niech ciê œwiat³o prowadzi.
 	
 	ShratRediToTelepport = TRUE;
-	B_LogEntry (TOPIC_Lojalnosc, "Po dostarczeniu do Shrata wiadomoœci o jego przyjacielu ten zamilk³, i odda³ siê zadumie. Myœlê, i¿ nie bêdê go d³u¿ej niepokoi³.");	
+	B_LogEntry (TOPIC_Lojalnosc, "Po dostarczeniu do Shrata wiadomoœci o jego przyjacielu ten zamilk³ i odda³ siê zadumie. Myœlê, ¿e nie bêdê go d³u¿ej niepokoi³.");	
 
 
 };

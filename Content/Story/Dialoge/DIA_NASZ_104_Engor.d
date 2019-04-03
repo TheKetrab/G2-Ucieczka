@@ -156,7 +156,7 @@ FUNC VOID DIA_NASZ_104_Engor_IHaveLute_Info()
 	if (LutniaDlaEngora == 2) { B_GivePlayerXP(150); };
 	
 	Log_SetTopicStatus (TOPIC_Engor_lutnia, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Engor_lutnia, "Lutnia oddana.");
+	B_LogEntry (TOPIC_Engor_lutnia, "Odda³em lutniê Engorowi.");
 	B_GivePlayerXP(300);
 	DodajReputacje(2,REP_LOWCY);
 	

@@ -212,7 +212,7 @@ FUNC VOID DIA_NASZ_231_Ted_TooMuch_Info()
 	
 	Log_CreateTopic (TOPIC_Ted_mieso, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ted_mieso, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ted_mieso, "Ted w zamian za 30 kawa³ków sma¿onego miêsa sprzeda mi skórzany pancerz taniej o po³owê. To chyba uczciwa transakcja, wiêc czemu nie?");
+	B_LogEntry (TOPIC_Ted_mieso, "Ted, w zamian za 30 kawa³ków sma¿onego miêsa, sprzeda mi skórzany pancerz taniej o po³owê. To chyba uczciwa transakcja, wiêc czemu nie?");
 
 
 };
@@ -705,7 +705,7 @@ FUNC VOID DIA_NASZ_231_Ted_GoTrolls_Info()
 
 	Log_CreateTopic (TOPIC_Ted_trolls, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ted_trolls, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ted_trolls, "Natkn¹³em siê na Teda przed ruinami klasztoru za palisad¹. Myœliwy liczy, ¿e pozna tu nowe sposoby na polowanie. Przeszkod¹ s¹ tutaj potê¿ne trolle.");
+	B_LogEntry (TOPIC_Ted_trolls, "Natkn¹³em siê na Teda przed ruinami klasztoru za palisad¹. Myœliwy liczy, ¿e pozna tu nowe sposoby na polowanie. Przeszkod¹ s¹ potê¿ne trolle.");
 
 	Npc_ExchangeRoutine (self, "GoToWieza");
 };

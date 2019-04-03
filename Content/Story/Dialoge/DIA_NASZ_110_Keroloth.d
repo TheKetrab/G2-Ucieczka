@@ -883,7 +883,7 @@ func void DIA_NASZ_110_Keroloth_WantToKillRenegat_Info ()
 		CreateInvItems (self, ItNa_TrfMeatbug, 1);									
 		B_GiveInvItems (self, other, ItNa_TrfMeatbug, 1);
 		
-		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako ³owca orków! Keroloth da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, ¿eby przedostaæ siê do œrodka. Mam zabraæ ze sob¹ Feda, Kjorna i Ferosa.");
+		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako ³owca orków! Keroloth da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, dziêki której przedostanê siê do œrodka. Mam zabraæ ze sob¹ Feda, Kjorna i Ferosa.");
 
 		KerolothRenegatOK = TRUE;
 
@@ -1151,7 +1151,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_duchy_Info()
 
 	Log_CreateTopic (TOPIC_Keroloth_duchy, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Keroloth_duchy, LOG_RUNNING);
-	B_LogEntry (TOPIC_Keroloth_duchy, "Na cmentarzu ³owców orków pojawi³y siê szkielety. Muszê siê ich pozbyæ i rozwik³aæ sk¹d siê tam wziê³y.");
+	B_LogEntry (TOPIC_Keroloth_duchy, "Na cmentarzu ³owców orków pojawi³y siê szkielety. Muszê siê ich pozbyæ i rozwik³aæ, sk¹d siê tam wziê³y.");
 
 };
 
@@ -1813,7 +1813,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_SzturmOrkow_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_SzturmOrkow_15_07"); //Podczas pierwszego szturmu na twierdzê, grot orkowego be³tu trafi³ prosto w jego szyjê. Zamknêliœmy bramê i próbujemy przygotowaæ siê do kontrataku.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_SzturmOrkow_15_08"); //Nie, tak byæ nie mo¿e. Niebawem mo¿e tu nadci¹gn¹æ wiêcej orków. Idê otworzyæ bramê. Stawmy czo³a tym bestiom.
 
-	B_LogEntry (TOPIC_Keroloth_Wojna, "Podczas mojej nieobecnoœci orkowie uderzyli na twierdzê. Poleg³ Gestath... Musimy stawiæ im czo³a. Czas otworzyæ bramê i stan¹æ oko w oko z przeznaczeniem.");
+	B_LogEntry (TOPIC_Keroloth_Wojna, "Podczas mojej nieobecnoœci, orkowie uderzyli na twierdzê. Poleg³ Gestath... Musimy stawiæ im czo³a. Czas otworzyæ bramê i stan¹æ oko w oko z przeznaczeniem.");
 
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "Orkowie kontratakowali. Szturmuj¹ nadal twierdzê. Muszê otworzyæ bramê, rozprawiæ siê z nimi i uderzyæ na zamek, dzier¿¹c w rêku kostur Ur-Shaka.");
@@ -2429,7 +2429,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_OrkowyPrzepis_Info()
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_OrkowyPrzepis_55_03"); //Na twoim miejscu zapyta³bym Rudolfa. W koñcu d³ugi okres czasu przebywa³ bli¿ej tych bestii ni¿ ktokolwiek z nas.
 		B_LogEntry (TOPIC_orkowy_przepis,"Keroloth zasugerowa³ mi, abym poprosi³ o pomoc paladyna Rudolfa."); 
 	} else {
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_OrkowyPrzepis_55_04"); //Tak samo za pewne z Udarem czy Geroldem. Musia³byœ chyba znaleŸæ orka, który zna nasz jêzyk i z nim siê dogadaæ. Chyba ¿e póŸniej wykorzysta twój przepis i staniesz siê jego g³ównym daniem obiadowym!	
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_OrkowyPrzepis_55_04"); //Tak samo zapewne z Udarem czy Geroldem. Musia³byœ chyba znaleŸæ orka, który zna nasz jêzyk i z nim siê dogadaæ. Chyba, ¿e póŸniej wykorzysta twój przepis i staniesz siê jego g³ównym daniem obiadowym!	
 		B_LogEntry (TOPIC_orkowy_przepis,"Niestety, Keroloth nie by³ w stanie mi pomóc. Muszê znaleŸæ kogoœ innego, kto rozumie orkowe zapiski."); 
 	};
 
@@ -2828,6 +2828,25 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka_Info()
 	Log_CreateTopic (TOPIC_LowcyTeacher,LOG_NOTE);
 	B_LogEntry (TOPIC_LowcyTeacher,"Keroloth nauczy mnie walczyæ jak mistrz.");
 };
+
+
+func void HeroSay_LetsTrainKeroloth() {
+	AI_Output (other,self ,"HeroSay_LetsTrainKeroloth_15_00"); //Dobra. Bierzmy siê do nauki.
+};
+
+func void KerolothSay_YouDontNeedATeacher() {
+	AI_Output(self,other,"KerolothSay_YouDontNeedATeacher_04_00"); //Nie potrzebujesz ju¿ nauczyciela.
+};
+
+func void KerolothSay_YouArePro1h() {
+	AI_Output(self,other,"KerolothSay_YouArePro1h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki jednorêcznym orê¿em.
+};
+		
+func void KerolothSay_YouArePro2h() {
+	AI_Output(self,other,"KerolothSay_YouArePro2h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki broni¹ drurêczn¹.
+};
+		
+
 //*********************************************************************
 //	Info Nauka1
 //*********************************************************************
@@ -2851,7 +2870,7 @@ FUNC INT DIA_NASZ_110_Keroloth_nauka1_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_nauka1_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_nauka1_15_00"); //Dobra. Bierzmy siê do nauki.
+	HeroSay_LetsTrainKeroloth();
 	
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
@@ -2872,8 +2891,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka1_1 ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 100)
 	{
-		AI_Output(self,other,"DIA_DIA_NASZ_110_Keroloth_nauka1_1_04_00"); //Teraz jesteœ prawdziwym mistrzem walki jednorêcznym orê¿em.
-		AI_Output(self,other,"DIA_DIA_NASZ_110_Keroloth_nauka1_1_04_01"); //Nie potrzebujesz ju¿ nauczyciela.
+		KerolothSay_YouArePro1h();
+		KerolothSay_YouDontNeedATeacher();
 	};
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
@@ -2888,8 +2907,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka1_5 ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 100)
 	{
-		AI_Output(self,other,"DIA_NASZ_110_Keroloth_nauka1_5_04_00"); //Teraz jesteœ prawdziwym mistrzem walki jednorêcznym orê¿em.
-		AI_Output(self,other,"DIA_NASZ_110_Keroloth_nauka1_5_04_01"); //Nie potrzebujesz ju¿ nauczyciela.
+		KerolothSay_YouArePro1h();
+		KerolothSay_YouDontNeedATeacher();
 	};
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
@@ -2919,7 +2938,7 @@ FUNC INT DIA_NASZ_110_Keroloth_nauka2_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_nauka2_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_nauka2_15_00"); //Dobra. Bierzmy siê do nauki.
+	HeroSay_LetsTrainKeroloth();
 	
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);
@@ -2940,8 +2959,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka2_1 ()
 	
 	if (other.HitChance[NPC_TALENT_2H] >= 100)
 	{
-		AI_Output(self,other,"DIA_DIA_NASZ_110_Keroloth_nauka2_1_04_00"); //Teraz jesteœ prawdziwym mistrzem walki dwurêcznym orê¿em.
-		AI_Output(self,other,"DIA_DIA_NASZ_110_Keroloth_nauka2_1_04_01"); //Nie potrzebujesz ju¿ nauczyciela.
+		KerolothSay_YouArePro2h();
+		KerolothSay_YouDontNeedATeacher();
 	};
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);
@@ -2956,8 +2975,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka2_5 ()
 	
 	if (other.HitChance[NPC_TALENT_2H] >= 100)
 	{
-		AI_Output(self,other,"DIA_NASZ_110_Keroloth_nauka2_5_04_00"); //Teraz jesteœ prawdziwym mistrzem walki dwurêcznym orê¿em.
-		AI_Output(self,other,"DIA_NASZ_110_Keroloth_nauka2_5_04_01"); //Nie potrzebujesz ju¿ nauczyciela.
+		KerolothSay_YouArePro2h();
+		KerolothSay_YouDontNeedATeacher();
 	};
 	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
 	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);

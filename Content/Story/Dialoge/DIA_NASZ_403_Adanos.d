@@ -107,7 +107,7 @@ FUNC VOID DIA_NASZ_403_Adanos_workA_Info()
 	ADANOS_JUMP = TRUE;
 	Log_CreateTopic (TOPIC_bogowie_work, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_RUNNING);
-	B_LogEntry (TOPIC_bogowie_work, "Adanos wymyœli³ sobie, ¿e ¿eby udowodniæ wiarê, muszê wykonaæ skok w przepaœæ... Mam udaæ siê na najwy¿sz¹ wie¿ê zamku w Górniczej Dolinie, obróciæ siê na zachód i wykonaæ skok wiary.");
+	B_LogEntry (TOPIC_bogowie_work, "Adanos wymyœli³ sobie, ¿e ¿eby udowodniæ swoj¹ wiarê, muszê wykonaæ skok w przepaœæ... Mam udaæ siê na najwy¿sz¹ wie¿ê zamku w Górniczej Dolinie, obróciæ siê na zachód i wykonaæ skok wiary.");
 
 };
 

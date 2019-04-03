@@ -408,7 +408,7 @@ FUNC VOID DIA_NASZ_305_Rabon_rabon_Info()
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_rabon_55_03"); //¯egnam zatem, interesy z panem to by³a czysta przyjemnoœæ. 
 
 	B_GivePlayerXP (50);
-	B_LogEntry (TOPIC_Rabon_sakwa, "A to œwinia! Wykiwa³ mnie... Nie ujdzie mu to na sucho.");
+	B_LogEntry (TOPIC_Rabon_sakwa, "A to œwinia! Wykiwa³ mnie...");
 	RABON_WAR = TRUE;
 
 };

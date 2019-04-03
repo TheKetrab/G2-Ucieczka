@@ -176,7 +176,7 @@ FUNC VOID DIA_NASZ_129_Matt_InCamp_Info()
 	AI_Output (self, other,"DIA_NASZ_129_Matt_InCamp_15_01"); //IdŸ pogadaæ z Jenkinsem. Stoi pod drzewem.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_InCamp_15_02"); //A teraz wybacz, lecz idê przyjrzeæ siê naszym rannym towarzyszom.
 
-	B_LogEntry (TOPIC_Udar_patrol,"Dotar³em do obozu zwiadowców. Dwójka z ca³ej czwórki jest ranna i widocznie nie mo¿e siê nawet ruszaæ. Czym prêdzej powinienem porozmawiaæ z Jenkinsem o wszystkim co mia³o tutaj miejsce.");
+	B_LogEntry (TOPIC_Udar_patrol,"Dotar³em do obozu zwiadowców. Dwójka z ca³ej czwórki jest ranna i widocznie nie mo¿e siê nawet ruszaæ. Czym prêdzej powinienem porozmawiaæ z Jenkinsem o wszystkim, co mia³o tutaj miejsce.");
 
 	AI_StopProcessInfos(self);
 };
@@ -319,7 +319,7 @@ FUNC VOID DIA_NASZ_129_Matt_HowDoYou_Info()
 	AI_Output (self, other,"DIA_NASZ_129_Matt_HowDoYou_15_03"); //Nie ¿ebym siê ba³ magów czy coœ. Po prostu nie chcê skoñczyæ rozsmarowany po ca³ej okolicy.
 	AI_Output (other, self,"DIA_NASZ_129_Matt_HowDoYou_15_04"); //Skoro ju¿ tu jesteœmy, to powinniœmy dowiedzieæ siê wszystkiego o tym, co siê tutaj w³aœciwie wyprawia. ChodŸ i trzymaj siê blisko mnie.
 	
-	B_LogEntry(TOPIC_Jenkins_bestia, "W dolinie zaczynaj¹ dziaæ siê dziwne rzeczy, najpierw w trakcie walki, za sprawk¹ mg³y, teleportuje siê do mnie Matt, a potem w oddali dostrzegamy sylwetkê jakiegoœ maga. Musimy na siebie uwa¿aæ. Kto wie, jakie ma zamiary?");
+	B_LogEntry(TOPIC_Jenkins_bestia, "W dolinie zaczynaj¹ dziaæ siê dziwne rzeczy. Najpierw w trakcie walki, za sprawk¹ mg³y, teleportuje siê do mnie Matt, a potem w oddali dostrzegamy sylwetkê jakiegoœ maga. Musimy na siebie uwa¿aæ. Kto wie, jakie ma zamiary?");
 
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowMountain");

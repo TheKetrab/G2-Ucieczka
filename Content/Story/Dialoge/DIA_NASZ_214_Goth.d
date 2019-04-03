@@ -138,7 +138,7 @@ FUNC VOID DIA_NASZ_214_Goth_HavePieczyste_Info()
 	
 	Log_CreateTopic (TOPIC_Jehen_strzala, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jehen_strzala, LOG_RUNNING);
-	B_LogEntry (TOPIC_Jehen_strzala, "Poszukiwany przeze mnie myœliwy uda³ siê na polowanie w kierunku prze³êczy Górniczej Doliny. Mam nadzieje, ¿e nadal bêdzie w swoim obozie, albowiem poszukiwanie jednego cz³owieka w tym miejscu bêdzie graniczy³o z niemo¿liwoœci¹.");
+	B_LogEntry (TOPIC_Jehen_strzala, "Poszukiwany przeze mnie myœliwy uda³ siê na polowanie w kierunku prze³êczy Górniczej Doliny. Mam nadziejê, ¿e nadal bêdzie w swoim obozie, albowiem poszukiwanie jednego cz³owieka w tym miejscu bêdzie graniczy³o z niemo¿liwoœci¹.");
 
 };
 
@@ -499,7 +499,7 @@ FUNC VOID DIA_NASZ_214_Goth_Undeads_Info()
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_03"); //Nie mamy zielonego pojêcia, co tu jest grane! Cz³owiek stoi przy bramie, a tu nagle atakuje ciê armia szkieletów!
 	AI_Output (self, other,"DIA_NASZ_214_Goth_Undeads_55_04"); //Czym prêdzej udaj siê do Eraka. On zdecydowanie powie ci wiêcej na temat naszej felernej sytuacji.
 
-	B_LogEntry (TOPIC_Sprawy,"Cholera! Obóz myœliwych zosta³ zaatakowany przez nieumar³ych. Keroloth mia³ racjê ze swoim przeczuciem, i¿ ci potrzebuj¹ naszej pomocy. Erak mo¿e powiedzieæ mi o tym wiêcej.");
+	B_LogEntry (TOPIC_Sprawy,"Cholera! Obóz myœliwych zosta³ zaatakowany przez nieumar³ych. Keroloth mia³ racjê, ¿e ci potrzebuj¹ naszej pomocy. Erak mo¿e powiedzieæ mi o tym wiêcej.");
 };
 
 
@@ -570,7 +570,7 @@ FUNC VOID DIA_NASZ_214_Goth_mayme_Info()
 	
 	Log_CreateTopic (TOPIC_Goth_plaskowyz, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Goth_plaskowyz, LOG_RUNNING);
-	B_LogEntry (TOPIC_Goth_plaskowyz, "Na prze³êczy Górniczej Doliny znajduje siê p³askowy¿, na którym z niewiadomych przyczyn pojawi³y siê gigantyczne bestie. Dok³adniej to miejsce jest w górach nad opuszczon¹ kopalni¹, któr¹ niegdyœ mo¿na by³o przedostaæ siê do Khorinis. Goth jest zainteresowany skór¹ gigantycznego czarnego trolla i zap³aci za ni¹ spor¹ sumkê. Warto by by³o jednak ubiæ wszystkie stwory stamt¹d, choæby dla zdobycia szacunku i w³asnej satysfakcji.");
+	B_LogEntry (TOPIC_Goth_plaskowyz, "Na prze³êczy Górniczej Doliny znajduje siê p³askowy¿, na którym z niewiadomych przyczyn pojawi³y siê gigantyczne bestie. Goth jest zainteresowany skór¹ gigantycznego czarnego trolla i zap³aci za ni¹ spor¹ sumkê. Warto by by³o jednak ubiæ wszystkie stwory stamt¹d, choæby dla zdobycia szacunku i w³asnej satysfakcji.");
 
 	MissionPlaskowyzRunning = TRUE;
 };

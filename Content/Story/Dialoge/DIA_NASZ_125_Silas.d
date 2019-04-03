@@ -157,7 +157,7 @@ FUNC VOID DIA_NASZ_125_Silas_End_Info()
 		DodajReputacje (3, REP_LOWCY);
 		B_GivePlayerXP (300);
 		Log_SetTopicStatus (TOPIC_Silas_lanie, LOG_SUCCESS);
-		B_LogEntry (TOPIC_Silas_lanie, "Silas by³ ca³kiem zaskoczony, ¿e postawi³em siê wojownikowi.");
+		B_LogEntry (TOPIC_Silas_lanie, "Silas by³ ca³kiem zaskoczony, tym ¿e postawi³em siê wojownikowi.");
 		Createinvitems (self, ItFo_Addon_Rum, 3);
 		B_giveinvitems (self, other, ItFo_Addon_Rum, 3);
 	}
@@ -320,7 +320,7 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenka_Info()
 	
 	Log_CreateTopic (TOPIC_Silas_piosenka, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Silas_piosenka, LOG_RUNNING);
-	B_LogEntry (TOPIC_Silas_piosenka, "Silas opowiedzia³ mi o sytuacji w obozie, wielu ³owców jest przygnêbionych przez panuj¹c¹ w dolinie sytuacj¹. Aby temu zaradziæ, karczmarz poprosi³ mnie, abym poszuka³ w obozie kogoœ, kto potrafi graæ na lutni. To nie powinno byæ trudne.");
+	B_LogEntry (TOPIC_Silas_piosenka, "Silas opowiedzia³ mi o sytuacji w obozie. Wielu ³owców jest przygnêbionych przez panuj¹c¹ w dolinie sytuacj¹. Aby temu zaradziæ, karczmarz poprosi³ mnie, abym poszuka³ w obozie kogoœ, kto potrafi graæ na lutni. To nie powinno byæ trudne.");
 
 };
 

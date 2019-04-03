@@ -162,7 +162,7 @@ FUNC VOID DIA_NASZ_402_Innos_doneB_Info()
 	AI_Output (other, self,"DIA_NASZ_402_Innos_doneB_15_00"); //Oto i 10 jêzyków.
 	B_giveinvitems (other, self, ItAt_WaranFiretongue, 10);
 	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_01"); //Szczerze mówi¹c, myœla³em, ¿e zostanie z ciebie popió³. Zaskoczy³eœ mnie, œmiertelniku.
-	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_02"); //A wiêc ju¿ wiem, ¿e sprotasz mojej proœbie.
+	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_02"); //A wiêc ju¿ wiem, ¿e sprostasz mojej proœbie.
 
 	B_GivePlayerXP(1000);
 	B_LogEntry (TOPIC_bogowie_work, "Odda³em Innosowi ogniste jêzyki.");

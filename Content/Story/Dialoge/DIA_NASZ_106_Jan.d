@@ -698,7 +698,7 @@ FUNC VOID DIA_NASZ_106_Jan_Wykuj_Inkwizytor ()
 var int Oskard_OneTime;
 FUNC VOID DIA_NASZ_106_Jan_Wykuj_Oskard ()
 {
-	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_Oskard_15_00"); //El Bastardo.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_Oskard_15_00"); //Oskard.
 
 	// jesli chcesz dwa razy ten sam miecz, to zablokuj
 	if((JanOskardDay != 0) && (JanOskardDay == Wld_GetDay())) {

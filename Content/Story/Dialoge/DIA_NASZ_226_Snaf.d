@@ -489,7 +489,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu ()
 		if (SnafZupaZOrkowegoPrzepisuOneTime == FALSE) {
 			B_UseFakeScroll();
 			AI_Output (self, other,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_01"); //Ale¿ to bêdzie obrzydliwe. Ju¿ czujê ten zapach wydobywaj¹cy siê z kot³a.
-			AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_02"); //Nie chcesz widzieæ, jak to jem... To jak. Podejmiesz siê wyzwania przyrz¹dzenia takiej potrawy?
+			AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_02"); //Nie chcesz widzieæ, jak to jem... To jak? Podejmiesz siê wyzwania przyrz¹dzenia takiej potrawy?
 			SnafZupaZOrkowegoPrzepisuOneTime = TRUE;
 		};
 

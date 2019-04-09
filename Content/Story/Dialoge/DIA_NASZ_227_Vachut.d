@@ -555,6 +555,17 @@ FUNC VOID DIA_NASZ_227_Vachut_SellLurkerClaw_Info()
 };
 
 
+func void HeroSay_TeachMeRegeneration() {
+	AI_Output (other, self,"HeroSay_TeachMeRegeneration_15_00"); //Naucz mnie regeneracji.
+};
+
+func void VachutSay_NoMoney() {
+	AI_Output (self, other,"VachutSay_NoMoney_15_00"); //Nie masz doœæ z³ota.
+};
+
+func void VachutSay_NoExp() {
+	AI_Output (self, other,"VachutSay_NoExp_55_04"); //Brak ci doœwiadczenia.
+};
 
 //*********************************************************************
 //	         Regeneracja1
@@ -566,7 +577,7 @@ INSTANCE DIA_NASZ_227_Vachut_Regeneracja1   (C_INFO)
  	condition   = DIA_NASZ_227_Vachut_Regeneracja1_Condition;
  	information = DIA_NASZ_227_Vachut_Regeneracja1_Info;
  	permanent   = TRUE;
- 	description = "Naucz mnie regeneracji. (500 szt. z³ota) (Poziom 1: 10PN)";
+ 	description = "Naucz mnie regeneracji. (500 szt. z³ota) (Poziom 1: 10 PN)";
 };
 
 FUNC INT DIA_NASZ_227_Vachut_Regeneracja1_Condition()	
@@ -580,14 +591,14 @@ FUNC INT DIA_NASZ_227_Vachut_Regeneracja1_Condition()
 
 FUNC VOID DIA_NASZ_227_Vachut_Regeneracja1_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_227_Vachut_Regeneracja1_15_00"); //Naucz mnie regeneracji.
+	HeroSay_TeachMeRegeneration();
 	
 	if (npc_hasitems (other, ItMi_Gold) < 500) {
-		AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_15_01"); //Nie masz doœæ z³ota.
+		VachutSay_NoMoney();
 		}
 	else {
 
-		if (hero.lp >= 10){
+		if (hero.lp >= 10) {
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_55_02"); //Rozmawiaj ze swoim bogiem. On oczyœci twoje myœli i cia³o.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_15_03"); //To nie takie trudne! Wystarczy siê wyciszyæ.
 
@@ -599,10 +610,10 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja1_Info()
 			PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
 
 			Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 1);
-			}
+		}
 
 		else {
-			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_55_04"); //Brak ci doœwiadczenia.
+			VachutSay_NoExp();
 		};
 	};
 };
@@ -617,7 +628,7 @@ INSTANCE DIA_NASZ_227_Vachut_Regeneracja2   (C_INFO)
  	condition   = DIA_NASZ_227_Vachut_Regeneracja2_Condition;
  	information = DIA_NASZ_227_Vachut_Regeneracja2_Info;
  	permanent   = TRUE;
- 	description = "Naucz mnie regeneracji. (1000 szt. z³ota) (Poziom 2: 20PN)";
+ 	description = "Naucz mnie regeneracji. (1000 szt. z³ota) (Poziom 2: 10 PN)";
 };
 
 FUNC INT DIA_NASZ_227_Vachut_Regeneracja2_Condition()	
@@ -631,24 +642,26 @@ FUNC INT DIA_NASZ_227_Vachut_Regeneracja2_Condition()
 
 FUNC VOID DIA_NASZ_227_Vachut_Regeneracja2_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_227_Vachut_Regeneracja2_15_00"); //Naucz mnie regeneracji.
+	HeroSay_TeachMeRegeneration();
 	if (npc_hasitems (other, ItMi_Gold) < 1000) {
-		AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja2_55_01"); //Nie masz doœæ z³ota.
+		VachutSay_NoMoney();
 		}
 	else {
-		if (hero.lp >= 20){
+		if (hero.lp >= 10) {
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja2_55_02"); //Kolejny krok to wyciszenie. Skoncentruj siê na biciu serca.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja2_15_03"); //S³yszysz je? Pamiêtaj, by nie bi³o zbyt szybko.
 
 			B_GiveInvItems (other, self, ItMi_Gold, 1000);		
 			level_regeneracji = 2;
-			hero.lp = hero.lp - 20;
+			hero.lp = hero.lp - 10;
 			
 			PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
-			}
+			
+			Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 2);
+		}
 
 		else {
-			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja2_55_04"); //Brak ci doœwiadczenia.
+			VachutSay_NoExp();
 		};
 	};
 };
@@ -663,7 +676,7 @@ INSTANCE DIA_NASZ_227_Vachut_Regeneracja3   (C_INFO)
  	condition   = DIA_NASZ_227_Vachut_Regeneracja3_Condition;
  	information = DIA_NASZ_227_Vachut_Regeneracja3_Info;
  	permanent   = TRUE;
- 	description = "Naucz mnie regeneracji. (2000 szt. z³ota) (Poziom 3: 30PN)";
+ 	description = "Naucz mnie regeneracji. (2000 szt. z³ota) (Poziom 3: 10 PN)";
 };
 
 FUNC INT DIA_NASZ_227_Vachut_Regeneracja3_Condition()	
@@ -677,12 +690,12 @@ FUNC INT DIA_NASZ_227_Vachut_Regeneracja3_Condition()
 
 FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_227_Vachut_Regeneracja3_15_00"); //Naucz mnie regeneracji.
+	HeroSay_TeachMeRegeneration();
 	if (npc_hasitems (other, ItMi_Gold) < 2000) {
-		AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_55_01"); //Nie masz doœæ z³ota.
+		VachutSay_NoMoney();
 		}
 	else {
-		if (hero.lp >= 30){
+		if (hero.lp >= 10){
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_55_02"); //Teraz staniesz siê jednoœci¹ ze swoj¹ dusz¹.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_03"); //Utrzymuj wyprostowan¹ pozycjê podczas biegu. Lepiej napêdzisz kwriobieg.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_04"); //Wypij te¿ ten wywar. Wzmocni ciê.
@@ -693,13 +706,15 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 			
 			B_GiveInvItems (other, self, ItMi_Gold, 2000);	
 			level_regeneracji = 3;
-			hero.lp = hero.lp - 30;
+			hero.lp = hero.lp - 10;
 			
 			PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
+			
+			Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 3);
 		}
 
 		else {
-			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_55_05"); //Brak ci doœwiadczenia.
+			VachutSay_NoExp();
 		};
 	};
 };

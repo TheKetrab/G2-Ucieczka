@@ -46,11 +46,11 @@ FUNC VOID Rtn_Start_132 ()
 	TA_Sit_Campfire	(08,00,20,00,"NASZ_LOWCY_ZWIADOWCY_05");
 };
 
-// TODO + on ma byc martwy w zamku potem
 FUNC VOID Rtn_Kap4_132 ()
 {
-	TA_Sit_Campfire	(20,00,08,00,"NASZ_LOWCY_ZWIADOWCY_05");
-	TA_Sit_Campfire	(08,00,20,00,"NASZ_LOWCY_ZWIADOWCY_05");
+	TA_Sit_Campfire		(18,30,09,45,"NASZ_JENKINS_KAP4_03");
+	TA_Stand_Eating		(09,45,18,30,"NASZ_JENKINS_KAP4_05");
+
 };
 
 

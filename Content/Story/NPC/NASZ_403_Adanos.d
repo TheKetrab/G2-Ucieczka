@@ -45,8 +45,8 @@ instance NASZ_403_Adanos (Npc_Default)
 
 FUNC VOID Rtn_Start_403 ()
 {
-	TA_Sit_Campfire		(08,00,22,00,"OW_ICEDRAGON_15");
-	TA_Stand_Eating		(22,00,08,00,"OW_ICEDRAGON_15");	
+	TA_Practice_Magic		(08,00,22,00,"OW_ICEDRAGON_15");
+	TA_Practice_Magic		(22,00,08,00,"OW_ICEDRAGON_15");	
 };
 
 FUNC VOID Rtn_Final_403 ()

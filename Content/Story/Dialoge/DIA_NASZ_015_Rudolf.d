@@ -1,3 +1,41 @@
+
+func int WhatArmorRudolf() {
+
+	var c_item armor; armor = Npc_GetEquippedArmor (hero);
+
+	if (Hlp_IsItem (armor, ItNa_DJG_L)
+	 || Hlp_IsItem (armor, ItNa_DJG_M)
+	 || Hlp_IsItem (armor, ItNa_DJG_H)
+	 || Hlp_IsItem (armor, ItNa_DJG_S))
+	{
+		return 1;
+	};
+	
+	if (Hlp_IsItem (armor, ItNa_OUT_L)
+	 || Hlp_IsItem (armor, ItNa_OUT_M)
+	 || Hlp_IsItem (armor, ItNa_OUT_H)
+	 || Hlp_IsItem (armor, ItNa_OUT_S))
+	{
+		return 2;
+	};
+
+	if (Hlp_IsItem (armor, ItNa_BAN_L)
+	 || Hlp_IsItem (armor, ItNa_BAN_M)
+	 || Hlp_IsItem (armor, ItNa_BAN_H))
+	{
+		return 3;
+	};
+
+	if (Hlp_IsItem (armor, ITNA_ARMOR_ANCIENT))
+	{
+		return 4;
+	};
+	
+	return 0;
+};
+
+
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -19,6 +57,10 @@ FUNC INT DIA_NASZ_015_Rudolf_EXIT_Condition()
 FUNC VOID DIA_NASZ_015_Rudolf_EXIT_Info()
 {
 	AI_StopProcessInfos (self);
+};
+
+func void RudolfSay_ZzaPalisady() {
+	AI_Output (self, other,"RudolfSay_ZzaPalisady_15_00"); //Przybywasz zza palisady?
 };
 
 //*********************************************************************
@@ -66,37 +108,58 @@ FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 	TRIA_Next (Rudolf);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_04"); //To nie ¿aden ork, idioto. To cz³owiek... Có¿ to za pancerz?
 	
+	var int armorType; armorType = WhatArmorRudolf();
+
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_04"); //To nie ¿aden ork, idioto. To cz³owiek...
 	
-	// TODO nie guild, tylko w zaleznosci od tego, co masz ubrane. A - lowca orkow, B - mysliwy, C - pradawnych, @up byc moze jeszcze inny? zrobic if npc has equipped a b lub c, jak nie to jkos inaczej wyjsc z tego dialogu
-	if (hero.guild == GIL_DJG) {
-		AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_05"); //Pancerz ³owcy orków.
-		AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_06"); //£owcy orków, powiadasz? Przybywasz zza palisady?
-	}
-	else {
-		AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_07"); //Pancerz myœliwego.
-		AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_08"); //Myœliwego? A wiêc przybywasz zza palisady?
+	if (armorType > 0) {
+		AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_05"); //Có¿ to za pancerz?
+	
+		if (armorType == 1) {
+			AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_06"); //Pancerz ³owcy orków.
+			AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_07"); //£owcy orków, powiadasz?
+			RudolfSay_ZzaPalisady();
+		}
+
+		else if (armorType == 2) {
+			AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_08"); //Pancerz myœliwego.
+			AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_09"); //Myœliwego?
+			RudolfSay_ZzaPalisady();
+		}
+
+		else if (armorType == 3) {
+			AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_10"); //To pancerz bandyty, ale spokojnie. Nie nale¿ê do nich.
+			RudolfSay_ZzaPalisady();
+		}
+
+		else if (armorType == 3) {
+			AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_11"); //Znalaz³em ten pancerz w pewnej krypcie.
+			RudolfSay_ZzaPalisady();
+		};
+	} else {
+		RudolfSay_ZzaPalisady();
 	};
 
-	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_09"); //Tak. Jestem tu z polecenia Kerolotha.
+
+	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_12"); //Tak. Jestem tu z polecenia Kerolotha.
 	AI_RemoveWeapon (self);
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_10"); //Kerolotha?! S³u¿y³em z nim na zamku. Szczerze mówi¹c, myœla³em, ¿e ktoœ dawno ju¿ podci¹³ mu gard³o.
-	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_11"); //Zamek zosta³ przejêty przez orków. Kapitan Garond poleg³. Przygotowywaliœmy siê do odbicia zamku i uda³o siê nam.
-	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_12"); //Jednak¿e orkowie zza palisady otrzymali sygna³ dymny, wiêc pewnie niebawem rusz¹ z odsiecz¹.
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_13"); //To by wyjaœnia³o ich rozwœcieczenie. 	
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_13"); //Kerolotha?! S³u¿y³em z nim na zamku. Szczerze mówi¹c, myœla³em, ¿e ktoœ dawno ju¿ podci¹³ mu gard³o.
+	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_14"); //Zamek zosta³ przejêty przez orków. Kapitan Garond poleg³. Przygotowywaliœmy siê do odbicia zamku i uda³o siê nam.
+	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_15"); //Jednak¿e orkowie zza palisady otrzymali sygna³ dymny, wiêc pewnie niebawem rusz¹ z odsiecz¹.
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_16"); //To by wyjaœnia³o ich rozwœcieczenie. 	
 
 	TRIA_Next (Netbek);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_14"); //Przez te porykiwania nie mogê nawi¹zaæ kontaktu z moim mistrzem.
-	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_15"); //Kto jest twoim mistrzem?
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_16"); //Œni¹cy! On daje mi m¹droœæ i uspokaja. Jestem ostatnim Guru!
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_17"); //Przez te porykiwania nie mogê nawi¹zaæ kontaktu z moim mistrzem.
+	AI_Output (other, self,"DIA_NASZ_015_Rudolf_siema_15_18"); //Kto jest twoim mistrzem?
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_19"); //Œni¹cy! On daje mi m¹droœæ i uspokaja. Jestem ostatnim Guru!
 	
 	TRIA_Next (Rudolf);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_17"); //Daj ju¿ sobie spokój, Netbek. To ziele kompletnie wy¿ar³o ci mózg.
+	AI_Output (self, other,"DIA_NASZ_015_Rudolf_siema_15_20"); //Daj ju¿ sobie spokój, Netbek. To ziele kompletnie wy¿ar³o ci mózg.
 
 	Npc_ExchangeRoutine (NASZ_015_Rudolf, "Start");
 	Npc_ExchangeRoutine (NASZ_016_Netbek, "Start");
@@ -105,7 +168,7 @@ FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 	
 	Log_CreateTopic (TOPIC_Udar_oddzial, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);
-	B_LogEntry (TOPIC_Udar_oddzial, "Znalaz³em ludzi za palisad¹. Rycerz Rudolf i cz³onek bractwa Netbek. Powinienem powiedzieæ o tym Kerolothowi.");
+	B_LogEntry (TOPIC_Udar_oddzial, "Znalaz³em ludzi za palisad¹. Rycerz Rudolf i cz³onek bractwa Netbek. Powinienem powiedzieæ o tym Kerolothowi a nastêpnie Udarowi.");
 	
 };
 
@@ -364,7 +427,8 @@ FUNC VOID DIA_NASZ_015_Rudolf_OrkowyPrzepis_Info()
 	AI_Output (self, other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_02"); //No, no! To wygl¹da na jak¹œ orkow¹ zupê. Nie jestem pewien, czy bêdzie to dobrze smakowaæ. Wydaje mi siê, ¿e twój ¿o³¹dek wypluje wszystko, zanim zd¹¿ysz opró¿niæ chocia¿ po³owê talerza.
 	AI_Output (other, self,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_03"); //Móg³byœ przet³umaczyæ dla mnie ten przepis? Niekoniecznie s³owo w s³owo, ale ¿ebym chocia¿ mniej wiêcej wiedzia³, jakich sk³adników potrzebujê.
 	AI_Output (self, other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_55_04"); //Przede wszystkim surowego miêsa... Poczekaj chwilê. Zaraz zapiszê to, co rozumiem.
-	// TODO AI_Wait 3s
+	AI_Wait(self,1);
+	B_UseFakeScroll();
 	Createinvitems (self, ItNa_Przepis_Orkowy2, 1);
 	B_giveinvitems (self, other, ItNa_Przepis_Orkowy2, 1);
 	AI_Output (self ,other,"DIA_NASZ_015_Rudolf_OrkowyPrzepis_15_05"); //No, gotowe. Mog³em pomyliæ siê w kilku miejscach, bo nie by³em pewien znaczenia niektórych s³ów, ale ogólna idea powinna byæ dobrze przet³umaczona.

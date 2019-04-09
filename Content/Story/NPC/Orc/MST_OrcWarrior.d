@@ -418,6 +418,9 @@ INSTANCE Orc_Erak_E (Mst_Default_OrcShaman)
 	// ------ visuals ------
 	B_SetVisuals_OrcShaman();
 	
+	//-------- inventory --------
+	EquipItem (self, ItMw_2H_OrcAxe_01);
+	
 	//----- Daily Routine ----
 	start_aistate				= ZS_MM_AllScheduler;
 

@@ -112,6 +112,38 @@ FUNC VOID DIA_NASZ_217_Louis_waz_Info()
 
 };
 
+//*********************************************************************
+//	         WazFinish
+//*********************************************************************
+INSTANCE DIA_NASZ_217_Louis_wazFinish   (C_INFO)
+{
+	npc         = NASZ_217_Louis;
+ 	nr          = 10;
+ 	condition   = DIA_NASZ_217_Louis_wazFinish_Condition;
+ 	information = DIA_NASZ_217_Louis_wazFinish_Info;
+ 	permanent   = FALSE;
+ 	description	= "Wypi³em miksturê ze skór wê¿y.";
+};
+
+FUNC INT DIA_NASZ_217_Louis_wazFinish_Condition()	
+{
+	if (npc_knowsinfo(other,DIA_NASZ_008_Miecz_dziala))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_217_Louis_wazFinish_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_217_Louis_wazFinish_15_00"); //Wypi³em miksturê ze skór wê¿y.
+	AI_Output (self, other,"DIA_NASZ_217_Louis_wazFinish_15_01"); //Mówisz powa¿nie? Jakim cudem? Kto przyrz¹dzi³ dla ciebie wywar?
+	AI_Output (other, self,"DIA_NASZ_217_Louis_wazFinish_15_02"); //Prawdziwy pirat. Zrobi³ j¹ dla mnie Miecz. Mo¿esz sam siê do niego udaæ. Znajdziesz go przy zawalonej wie¿y w drodze do obozu ³owców orków.
+	AI_Output (other, self,"DIA_NASZ_217_Louis_wazFinish_15_03"); //Jednak odradzam. Ten napój jest tak obrzydliwy, ¿e nie zdecydowa³bym siê skosztowaæ go po raz drugi.
+	AI_Output (self, other,"DIA_NASZ_217_Louis_wazFinish_15_04"); //Dziêki za informacjê. Za jakiœ czas udam siê do tego pirata. Marynarskie czasy ju¿ za mn¹, wiêc chyba nie skrzy¿ujemy szabli, tylko siê dogadamy.
+
+	B_GivePlayerXP(100);
+};
+
 
 
 
@@ -179,6 +211,13 @@ FUNC VOID DIA_NASZ_217_Louis_CanUTeach_Info()
 };
 
 
+var int LouisCantTeach;
+func void LouisSay_YouArePro() {
+	AI_Output(self,other,"LouisSay_YouArePro_04_00"); //Ju¿ niczego ciê nie nauczê. Opanowa³eœ w pe³ni pirackie mistrzostwo walki szablami.
+	AI_Output(self,other,"LouisSay_YouArePro_04_01"); //Teraz musisz po prostu walczyæ, ¿eby twoje d³onie nie zapomnia³y jak trzyma siê broñ!
+	LouisCantTeach = TRUE;
+};
+
 //*********************************************************************
 //	         Teach
 //*********************************************************************
@@ -195,6 +234,7 @@ INSTANCE DIA_NASZ_217_Louis_Teach   (C_INFO)
 FUNC INT DIA_NASZ_217_Louis_Teach_Condition()	
 {
 	if (Npc_KnowsInfo (other, DIA_NASZ_217_Louis_CanUTeach))
+	&& (LouisCantTeach == FALSE)
 	{
 		return TRUE;
 	};
@@ -203,6 +243,11 @@ FUNC INT DIA_NASZ_217_Louis_Teach_Condition()
 FUNC VOID DIA_NASZ_217_Louis_Teach_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_217_Louis_Teach_15_00"); //Ucz mnie walki mieczem.
+	
+	if (other.HitChance[NPC_TALENT_1H] >= 60) {
+		LouisSay_YouArePro();
+		return;
+	};
 
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 
@@ -327,9 +372,7 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_5c ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_5c_04_00"); //Opanowa³eœ ju¿ w pe³ni pirackie mistrzostwo walki szablami.
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_5c_04_01"); //Teraz musisz po prostu walczyæ, ¿eby twoje d³onie nie zapomnia³y jak trzyma siê broñ!
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_5c_04_02"); //Jeœli chcia³byœ siê jeszcze podszkoliæ, to pogadaj z Kerolothem.
+		LouisSay_YouArePro();
 		Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 	}
 	else {

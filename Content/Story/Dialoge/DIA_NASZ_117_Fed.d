@@ -193,6 +193,36 @@ FUNC VOID DIA_NASZ_117_Fed_goth_Info()
 
 };
 
+
+//*********************************************************************
+//	Info PrayBeliar
+//*********************************************************************
+INSTANCE DIA_NASZ_117_Fed_PrayBeliar   (C_INFO)
+{
+	npc         = NASZ_117_Fed;
+ 	nr          = 500;
+ 	condition   = DIA_NASZ_117_Fed_PrayBeliar_Condition;
+ 	information = DIA_NASZ_117_Fed_PrayBeliar_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_117_Fed_PrayBeliar_Condition()
+{
+	if (npc_knowsinfo (other, DIA_NASZ_412_CatSan_UrShackKilled))
+	&& (Npc_IsInState(self, ZS_TALK))
+	&& (KAPITEL < 4)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_117_Fed_PrayBeliar_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_117_Fed_PrayBeliar_15_00"); //Modlisz siê do Beliara?
+	AI_Output (self, other,"DIA_NASZ_117_Fed_PrayBeliar_55_01"); //A do kogo mam siê modliæ, skoro Innos nam nie pomóg³?! Gestath nie ¿yje, a i ja omal nie zgin¹³em!
+};
+
 //*********************************************************************
 //	Info HowAreYou
 //*********************************************************************
@@ -225,8 +255,8 @@ FUNC VOID DIA_NASZ_117_Fed_HowAreYou_Info()
 	}
 	else
 	{
-		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_03"); //Strasznie siê stresujê. Wyruszaæ do twierdzy razem z innymi to chyba by³ kiepski pomys³.
-		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_04"); //Tylko Innos mo¿e nas uratowaæ.
+		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_03"); //Strasznie siê stresujê. Wymarsz do twierdzy razem z innymi to chyba by³ kiepski pomys³.
+		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_04"); //Tylko bogowie mog¹ nas uratowaæ.
 	};
 };
 

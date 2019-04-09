@@ -210,6 +210,11 @@ func void Migration_Kap4() {
 	B_StartOtherRoutine (NASZ_112_Peter,"Start");
 	B_StartOtherRoutine (NASZ_101_Korth,"Kap4");
 	B_StartOtherRoutine (NASZ_103_Johny,"Start");
+	
+	B_StartOtherRoutine (NASZ_130_Jenkins,"Kap4");
+	B_StartOtherRoutine (NASZ_131_Lowca,"Kap4");
+	B_StartOtherRoutine (NASZ_132_Lowca,"Kap4");
+	
 
 	B_StartOtherRoutine (NASZ_203_Tabuk,"Kap4");
 	B_StartOtherRoutine (NASZ_204_Vick,"Start");
@@ -219,6 +224,9 @@ func void Migration_Kap4() {
 	B_StartOtherRoutine (NASZ_210_Mysliwy,"Kap4");
 	B_StartOtherRoutine (NASZ_214_Goth,"Kap4");
 
+	B_StartOtherRoutine (NASZ_230_Dymoondo,"Kap4Mysliwi");
+
+	
 };
 
 

@@ -148,7 +148,7 @@ FUNC INT B_CrystalMob_Bestimmung()
 		CrystalMob_22_NASZ = (CrystalMob_22_NASZ +1);
 		return TRUE;
 	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_FOGTOWER_25") && (4 > CrystalMob_23_NASZ)
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_23") && (4 > CrystalMob_23_NASZ)
 	{
 		CrystalMob_23_NASZ = (CrystalMob_23_NASZ +1);
 		return TRUE;
@@ -168,6 +168,9 @@ FUNC INT B_CrystalMob_Bestimmung()
 		CrystalMob_26_NASZ = (CrystalMob_26_NASZ +1);
 		return TRUE;
 	}
+	
+	// TODO 27,28,29,30 - wstawic gdzies w grze
+	
 	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_27") && (4 > CrystalMob_27_NASZ)
 	{
 		CrystalMob_27_NASZ = (CrystalMob_27_NASZ +1);

@@ -12,6 +12,9 @@ instance NASZ_015_Rudolf (Npc_Default)
 	
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 4);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
+	attribute[ATR_STRENGTH] = 100;
+	aivar[REAL_STRENGTH] = 100;
+		
 		
 	// ------ Kampf-Taktik ------
 	fight_tactic		= FAI_HUMAN_STRONG;	// MASTER / STRONG / COWARD

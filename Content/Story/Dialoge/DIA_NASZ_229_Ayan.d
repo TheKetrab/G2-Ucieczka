@@ -582,6 +582,7 @@ func void DIA_NASZ_229_Ayan_Dolina_Info ()
 
 	Npc_ExchangeRoutine (self, "FollowToDead");
 	ff_applyonceExt(summon,15000,-1);
+	ff_applyonceExt(AyanKladka_TickTock1s,1000,-1);
 	
 };
 
@@ -614,6 +615,8 @@ func void DIA_NASZ_229_Ayan_done_Info ()
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_02"); //Jaki zwój? Przeszukam dok³adnie tego umarlaka. Ty idŸ na górê. Mo¿e tam znajdziesz coœ ciekawego.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_03"); //B¹dŸ ostro¿ny. To miejsce jest przesi¹kniête z³em.
 
+	ff_remove(AyanKladka_TickTock1s);
+	
 	B_LogEntry (TOPIC_Monastir_bogowie, "Wygl¹da na to, ¿e znalaz³em komnatê o¿ywieñca... Ayan poleci³ mi rozejrzeæ siê na górze, podczas gdy on sam przeszuka dok³adniej zw³oki.");
 	B_GivePlayerXP (500);
 

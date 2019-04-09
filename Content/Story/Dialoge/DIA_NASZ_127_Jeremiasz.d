@@ -178,6 +178,54 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_AfterQuest_Info()
 
 };
 
+
+//*********************************************************************
+//	Info HowdoYouFeel
+//*********************************************************************
+INSTANCE DIA_NASZ_127_Jeremiasz_HowdoYouFeel   (C_INFO)
+{
+	npc         = NASZ_127_Jeremiasz;
+ 	nr          = 5;
+ 	condition   = DIA_NASZ_127_Jeremiasz_HowdoYouFeel_Condition;
+ 	information = DIA_NASZ_127_Jeremiasz_HowdoYouFeel_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_127_Jeremiasz_HowdoYouFeel_Condition()
+{
+	if (HeroKnowsAboutJeremiahsIllness == 4)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_127_Jeremiasz_HowdoYouFeel_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_15_00"); //I jak siê czujesz, staruszku? Ca³y obóz martwi³ siê, ¿e ju¿ siê nie obudzisz.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_55_01"); //Pewnie brakowa³oby wam bardziej piwa i innych alkoholi ni¿ mnie. Teraz to sam bym siê napi³!
+	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_15_02"); //Jak siê czujesz?
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_55_03"); //W koñcu dobrze! Nie krêci mi siê w g³owie, jestem spokojny i mogê wróciæ do destylacji.
+	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_15_04"); //Bez poœpiechu! £owcy orków maj¹ sporo zapasów, a ty powinieneœ odpocz¹æ. Ta mikstura wykoñczy³a twój organizm.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_HowdoYouFeel_55_05"); //Pewnie masz racjê. Ale dziêki niej znów jestem spokojny! WeŸ te wyci¹gi z zió³. Tylko w ten sposób mogê ci siê odwdziêczyæ.
+	
+	Createinvitems(self,ItNa_WywarZieleLecznicze,7);
+	Createinvitems(self,ItNa_WywarKorzenLeczniczy,9);
+
+	B_GiveInvItems(self,other,ItNa_WywarZieleLecznicze,7);
+	B_GiveInvItems(self,other,ItNa_WywarKorzenLeczniczy,9);
+
+	B_LogEntry (TOPIC_Jeremiasz_lek, "Zadzia³a³o! Jeremiasz obudzi³ siê i znów jest spokojny i pe³en si³! Jeszcze trochê po¿yje.");
+	Log_SetTopicStatus (TOPIC_Jeremiasz_lek, LOG_SuCCESS);
+	B_GivePlayerXP(500);
+	DodajReputacje(REP_LOWCY,2);
+};
+
+
+
+
+
+
 //*********************************************************************
 //	Info NalewkaNaSen
 //*********************************************************************
@@ -464,7 +512,7 @@ INSTANCE DIA_NASZ_127_Jeremiasz_Zielarstwo2   (C_INFO)
  	condition   = DIA_NASZ_127_Jeremiasz_Zielarstwo2_Condition;
  	information = DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info;
  	permanent   = TRUE;
- 	description = "Naucz mnie zielarstwa. (1000 szt. z³ota) (Poziom 2: 20 PN)";
+ 	description = "Naucz mnie zielarstwa. (1000 szt. z³ota) (Poziom 2: 10 PN)";
 };
 
 FUNC INT DIA_NASZ_127_Jeremiasz_Zielarstwo2_Condition()	
@@ -484,7 +532,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 		JeremiaszSay_NoMoney();
 	}
 	else {
-		if (hero.lp >= 20){
+		if (hero.lp >= 10){
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_00"); //A wiêc chcia³byœ dowiedzieæ siê czegoœ jeszcze?
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_01"); //Proces wytwarzania tych mieszanek jest trochê d³ugi, a ja nie mam czasu za ka¿dym razem tutaj przychodziæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_02"); //Prawdziwy znawca roœlin potrafi obejœæ siê bez tworzenia mieszanki.
@@ -497,7 +545,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 			
 			B_GiveInvItems (other, self, ItMi_Gold, 1000);		
 			level_zielarstwa = 2;
-			hero.lp = hero.lp - 20;
+			hero.lp = hero.lp - 10;
 			
 			PrintScreen ("Nauka: Zielarstwo", -1, -1, FONT_Screen, 2);
 			

@@ -519,6 +519,70 @@ FUNC VOID DIA_NASZ_220_Kirgo_jeremiasz_Info()
 
 };
 
+
+//*********************************************************************
+//	Info MiksturaUspokajajaca
+//*********************************************************************
+INSTANCE DIA_NASZ_220_Kirgo_MiksturaUspokajajaca   (C_INFO)
+{
+	npc         = NASZ_220_Kirgo;
+ 	nr          = 9;
+ 	condition   = DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_Condition;
+ 	information = DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_Info;
+ 	permanent   = FALSE;
+ 	description = "Przychodzê w sprawie mikstury uspokajaj¹cej.";
+};
+
+FUNC INT DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_Condition()
+{
+	if (HeroKnowsAboutJeremiahsIllness == 1)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_Info()
+{
+
+	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_15_00"); //Przychodzê w sprawie mikstury uspokajaj¹cej.
+	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_15_01"); //Jakiœ czas temu da³em ci przepis, a ty j¹ dla mnie uwarzy³eœ. Wypi³ j¹ starzec, Jeremiasz, po czym gorzej siê poczu³ i zasn¹³.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_02"); //Poka¿ mi przepis.
+	B_UseFakeBookDziennik();
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_03"); //Ta ksiêga jest tak stara i zniszczona, ¿e prawdopodobnie umkn¹³ nam któryœ ze sk³adników.
+	B_UseFakeBookDziennik();
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_04"); //Oczywiœcie! Przecie¿ tu jest jeszcze napisane o ziarnach czerwonego pieprzu.
+	
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_05"); //To przyprawa, która bardzo mocno dra¿ni œluzówkê nosa. Widocznie mia³a spowodowaæ kichanie pacjenta, by os³abiæ dzia³anie mikstury.
+
+	var string s; s = "Jak siê okaza³o, przeoczyliœmy jeden sk³adnik potrzebny do stworzenia mikstury. To ziarna czerwonego pieprzu.";
+
+	if (!npc_hasitems(other,ItFo_Addon_Pfeffer_01)) {
+		
+		s = ConcatStrings(s," Tê przyprawê mogê kupiæ u Benito, który ma spory zapas ró¿nych zió³ i przypraw.");
+
+		AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_15_06"); //Gdzie mam szukaæ tego sk³adnika?
+		AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_07"); //Zg³oœ siê do Benito. Takie specyfiki znajdziesz tylko u niego.
+		
+		if (KAPITEL < 3) {
+			AI_Output (other, self,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_08"); //Gdzie znajdê tego cz³owieka?
+			AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_09"); //Nie mam pojêcia. Ostatnio wybra³ siê na tereny dawnego Nowego Obozu. Obserwuje jaszczuroludzi. Ale nie próbuj go szukaæ, bo przyp³acisz to ¿yciem.
+			AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_55_10"); //Nie wygl¹dasz na doœæ silnego, by poradziæ sobie z jaszczuroludŸmi. Benito zapewne za jakiœ czas wróci i pohandlujecie.			
+			s = ConcatStrings(s," Niestety, ten cz³owiek przebywa teraz na terenach jaszczuroludzi, a ja jestem zbyt s³aby, ¿eby go tam szukaæ. Kirgo powiedzia³, ¿e za jakiœ myœliwy wróci i bêdê móg³ z nim pohandlowaæ.");
+		};
+	};
+	
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_15_11"); //Myœlê, ¿e gdy wsypiesz pieprz do nosa Jeremiasza, to siê obudzi.
+	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MiksturaUspokajajaca_15_12"); //Dziêki za radê. Mam nadziejê, ¿e starzec nie umrze, zanim pomoc nie nadejdzie.
+	
+	s = ConcatStrings(s," Ziarna muszê wsypaæ Jeremiaszowi do nosa. To powinno go przebudziæ.");
+	
+	B_LogEntry (TOPIC_Jeremiasz_lek, s);
+	
+	HeroKnowsAboutJeremiahsIllness = 2;
+	
+};
+
+
 //*********************************************************************
 //	Info HelpWrzod
 //*********************************************************************

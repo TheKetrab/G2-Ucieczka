@@ -48,7 +48,6 @@ FUNC VOID DIA_NASZ_129_Matt_hello_Info()
 	AI_Output (other, self,"DIA_NASZ_129_Matt_hello_15_01"); //Spokojnie. Przybywam do was w imieniu Udara, który chcia³, bym was odszuka³ i dowiedzia³ siê, dlaczego nie wróciliœcie jeszcze do obozu.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_02"); //No i w³aœnie nas znalaz³eœ, a w zasadzie to jednego z nich. Reszta przebywa w zupe³nie nowym obozie, gdy¿ z tego musieliœmy uciekaæ.
 	AI_Output (other, self,"DIA_NASZ_129_Matt_hello_15_03"); //Co siê tutaj wydarzy³o?
-	// TODO: zwiadowca siada
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_04"); //Zesz³ej nocy mieliœmy zamiar przeprowadziæ ostatni zwiad. Kiedy mieliœmy ju¿ wyruszaæ, nasz przywódca, Jenkins, zwróci³ uwagê na dziwne krzyki obiegaj¹ce okolicê.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_05"); //Szybko zorientowaliœmy siê, i¿ wszystkie one dobiegaj¹ do nas z zamku, gdzie trwa³a bardzo mocna i za¿arta wymiana zdañ. Mimo ¿e znamy siê na ich mowie, to nie byliœmy w stanie dok³adnie wy³owiæ sensu tych krzyków.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_06"); //To co uda³o nam siê zrozumieæ i prze³o¿yæ na nasz jêzyk zapisaliœmy w raporcie.

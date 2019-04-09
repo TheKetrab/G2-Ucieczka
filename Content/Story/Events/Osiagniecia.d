@@ -119,7 +119,7 @@ func void Use_ItNa_KsiegaOsiagniec ()
 	Doc_PrintLine    ( nDocID,  1, "");
 
 	// ----- ----- ----- ----- -----
-	Doc_PrintLines   ( nDocID,  1, "9. Pokonaj wszystkie bossy.");
+	Doc_PrintLines   ( nDocID,  1, "9. Pokonaj wszystkich bossów.");
 	Achievement = "**";
 	Achievement = ConcatStrings(Achievement,IntToString(ZabiteBossy));
 	Achievement = ConcatStrings(Achievement,"/10");
@@ -277,7 +277,7 @@ func void Check_OSIAGNIECIA() {
 	{
 		Osiagniecie9OneTime = TRUE;
 		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Pokona³eœ wszystkie bossy!", -1,52, FONT_ScreenSmall,5);
+		PrintScreen	("Pokona³eœ wszystkich bossów!", -1,52, FONT_ScreenSmall,5);
 
 		Snd_Play ("SFX_INNOSEYE");
 		hero.lp = hero.lp + 2;

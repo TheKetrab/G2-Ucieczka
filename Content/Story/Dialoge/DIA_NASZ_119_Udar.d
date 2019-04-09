@@ -753,14 +753,9 @@ FUNC INT DIA_NASZ_119_Udar_PatrolDJGStart_Condition()
 
 FUNC VOID DIA_NASZ_119_Udar_PatrolDJGStart_Info()
 {
-	// TODO: trialog
-
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_00"); //Jak to jeszcze nie powrócili?
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_01"); //Niech to szlag, je¿eli dopadli ich ci przeklêci orkowie, nasz ca³y plan mo¿e legn¹æ w gruzach. Odmaszeruj ¿o³nierzu, muszê pomyœleæ.
-	// TODO: AI_GOTOWP
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_02"); //Willu, przyszed³eœ w naprawdê kiepskim momencie. Jak widzisz, przed chwil¹ dowiedzieliœmy siê, ¿e nasz oddzia³ zwiadowczy, który mia³ sporz¹dziæ plany rozmieszczenia si³ orków, zagin¹³.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_03"); //Nie to jest jednak najgorsze. Przez to ca³e zamieszanie, nie mogê nawet wys³aæ nikogo na poszukiwania. Wszyscy coœ robi¹.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_04"); //Ta wojna to jedna wielka farsa...
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_00"); //Willu, przyszed³eœ w naprawdê kiepskim momencie. Przed chwil¹ dowiedzieliœmy siê, ¿e nasz oddzia³ zwiadowczy, który mia³ sporz¹dziæ plany rozmieszczenia si³ orków, zagin¹³.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_01"); //Nie to jest jednak najgorsze. Przez to ca³e zamieszanie, nie mogê nawet wys³aæ nikogo na poszukiwania. Wszyscy coœ robi¹.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolDJGStart_15_02"); //Ta wojna to jedna wielka farsa...
 	
 	Log_CreateTopic (TOPIC_Udar_patrol,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_patrol, LOG_RUNNING);
@@ -923,9 +918,6 @@ FUNC VOID DIA_NASZ_119_Udar_AllIsReady_Info()
 };
 
 
-
-// TODO:  obrobic dialogi z udarem od kap4, gdy fexo wysle...
-
 //*********************************************************************
 //	Info Kap4Start
 //*********************************************************************
@@ -987,7 +979,7 @@ INSTANCE DIA_NASZ_119_Udar_PalisadaOtwarta   (C_INFO)
  	condition   = DIA_NASZ_119_Udar_PalisadaOtwarta_Condition;
  	information = DIA_NASZ_119_Udar_PalisadaOtwarta_Info;
  	permanent   = FALSE;
-	description = "Orkowie otwarli bramê na swoje tereny."; // TODO!
+	description = "Orkowie otwarli bramê na swoje tereny.";
 };
 
 FUNC INT DIA_NASZ_119_Udar_PalisadaOtwarta_Condition()	
@@ -1011,6 +1003,49 @@ FUNC VOID DIA_NASZ_119_Udar_PalisadaOtwarta_Info()
 	Log_CreateTopic (TOPIC_Udar_oddzial, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);
 	B_LogEntry (TOPIC_Udar_oddzial, "Z powodu otwarcia siê orkowej palisady, paladyn Udar ponownie nape³ni³ siê nadziej¹ na odszukanie patrolu, który zagin¹³ za ni¹ ju¿ jakiœ czas temu. Byæ mo¿e natknê siê na grupkê ludzi, eksploruj¹c tamtejsze tereny?");
+	
+};
+
+
+//*********************************************************************
+//	Info ZaginionyOddzialFinish
+//*********************************************************************
+INSTANCE DIA_NASZ_119_Udar_ZaginionyOddzialFinish   (C_INFO)
+{
+	npc         = NASZ_119_Udar;
+ 	nr          = 41;
+ 	condition   = DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Condition;
+ 	information = DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Info;
+ 	permanent   = FALSE;
+	description = "Znalaz³em za palisad¹ paladyna.";
+};
+
+FUNC INT DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Condition()	
+{
+	if (npc_knowsinfo(other,DIA_NASZ_119_Udar_Kap4Start))
+	&& (HeroSaidZaPalisadaSaLudzie == TRUE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Info()
+{
+
+	AI_Output (other, self,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_00"); //Znalaz³em za palisad¹ paladyna.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_01"); //Rudolf roz³o¿y³ obóz w lesie i po cichu zabija orków spaceruj¹cych w pobli¿u.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_02"); //Rudolf ¿yje! Skoro tak, to pewnie niebawem wróci zza palisady i obalimy beczkê piwa.
+
+	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_MamPamietnik)) {
+		AI_Output (other, self,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_03"); //Niestety, jego dwóch pozosta³ych towarzyszy nie ¿yje.
+		AI_Output (self, other,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_04"); //I tak jestem zaskoczony, ¿e Rudolf nie poleg³. Dziêkujê za informacje.
+	};
+
+	B_GivePlayerXP(500);
+	DodajReputacje(REP_LOWCY,1);
+	
+	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_SUCCESS);
+	B_LogEntry (TOPIC_Udar_oddzial, "Powiadomi³em Udara, ¿e znalaz³em ludzi za palisad¹.");
 	
 };
 

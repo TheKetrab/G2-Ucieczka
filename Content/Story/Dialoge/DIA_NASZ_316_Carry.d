@@ -230,6 +230,9 @@ func void DIA_NASZ_316_Carry_help_Info ()
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_help_03_04"); //Na dole jest jeziorko. Po drugiej stronie sta³y stare rybackie chaty. To tam go wys³aliœmy.
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_help_03_05"); //Danny to starzec. Nie wiem, pamiêtasz go? Z pewnoœci¹ on nie pamiêta ciebie. I nie ³udŸ siê, ¿e zapamiêta po twojej wizycie.
 
+	// od tej pory hero nie podejdzie tam w zbroi bandyty
+	ff_applyonceext(ZbrojaDanny_TickTock1s,1000,-1);
+	
 	B_LogEntry (TOPIC_Gestath_renegaci, "Carry wys³a³ mnie do Danny'ego po dwa ³ososie. Starzec ma podobno bardzo s³ab¹ pamiêæ, wiêc to chyba doskona³a okazja do wydobycia z niego trochê wiêcej informacji. Spróbujê pokazaæ siê mu bez pancerza. Wtedy nie bêdê musia³ udawaæ, ¿e wszystko wiem, a on i tak zapomni o naszej rozmowie.");
 	Wld_InsertNpc	(NASZ_327_Danny,"NASZ_BANDYCI_RYBY_L");
 };

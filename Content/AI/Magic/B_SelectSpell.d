@@ -107,19 +107,19 @@ func int B_SelectSpell (var C_NPC slf, var C_NPC oth)
 
 		else
 		{
-			if (Npc_HasItems (slf, ItRu_FireRain) == 0)
+			if (Npc_HasItems (slf, ItRu_ChargeFireBall) == 0)
 			{	
-				CreateInvItems (slf, ItRu_FireRain, 1);
+				CreateInvItems (slf, ItRu_ChargeFireBall, 1);
 			};
 
 			if (C_NpcHasAttackReasonToKill (self))
 			{
-				B_ReadySpell (slf, SPL_FireRain, SPL_Cost_FireRain);
+				B_ReadySpell (slf, SPL_ChargeFireBall, SPL_Cost_ChargeFireBall);
 				return TRUE;
 			}
 			else
 			{
-				B_ReadySpell (slf, SPL_FireRain, SPL_Cost_FireRain);
+				B_ReadySpell (slf, SPL_ChargeFireBall, SPL_Cost_ChargeFireBall);
 				return TRUE;
 			};
 		};	

@@ -1,6 +1,3 @@
-// TODO: (nowe sposoby mysliwskie)
-// nie dzia³a smar do prze³¹cznika. nie trzeba go miec, zeby przekrecic
-
 
 //*********************************************************************
 //	Info EXIT 

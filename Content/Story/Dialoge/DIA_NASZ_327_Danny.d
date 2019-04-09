@@ -52,6 +52,7 @@ func void DIA_NASZ_327_Danny_hello_Info ()
 		{
 			AI_Output			(self, other, "DIA_NASZ_327_Danny_hello_03_00"); //Czy¿by jakiœ tubylec? Proszê, nie atakuj mnie. Jestem zbyt stary i nie wart stêpienia na mnie ostrza.
 			DannyTalkFirstTime = TRUE;
+			ff_remove(ZbrojaDanny_TickTock1s);
 		};
 
 	}

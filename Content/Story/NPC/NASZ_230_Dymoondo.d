@@ -55,3 +55,11 @@ FUNC VOID Rtn_Kap4_230()
 	TA_Stand_ArmsCrossed (00,00,12,00,"OW_PATH_3_06");
 	TA_Stand_ArmsCrossed (12,00,00,00,"OW_PATH_3_06");
 };
+
+FUNC VOID Rtn_Kap4Mysliwi_230()
+{
+	TA_Sit_Campfire (00,00,12,00,"NASZ_MYSLIWI_DYMOONDO_KAP4");
+	TA_Sit_Campfire (12,00,00,00,"NASZ_MYSLIWI_DYMOONDO_KAP4");
+};
+
+

@@ -187,6 +187,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		
 		// Funkcje
+		
+		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, -3); // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO, dziala?
+		
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
 		B_StartOtherRoutine (NASZ_205_Mysliwy, "Kap3");
 		B_StartOtherRoutine (NASZ_232_Jehen, "Ukryty");
@@ -248,6 +251,18 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_BLOODFLY_WOOD05_04"); 
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_BLOODFLY_WOOD05_03"); 
 
+		// Kopalnia Fajetha
+		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_01");
+		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_02");
+		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_03");
+		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_04");
+		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_06");
+		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_07");
+		Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_08");
+		Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_09");
+
+
+		
 		//LAS ZAMEK
 		Wld_InsertNpc	(Razor,"FP_ROAM_OW_WOLF2_WALD_OC6"); 
 		Wld_InsertNpc	(Razor,"FP_ROAM_OW_WOLF2_WALD_OC4"); 

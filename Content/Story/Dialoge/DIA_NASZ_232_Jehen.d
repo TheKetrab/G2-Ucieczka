@@ -353,7 +353,6 @@ INSTANCE DIA_NASZ_232_Jehen_GivingMoney   (C_INFO)
 
 FUNC INT DIA_NASZ_232_Jehen_GivingMoney_Condition()	
 {
-	// TODO : czy ten dialog sie aktywuje dobrze, czy sa warunki ok?
 	if (npc_hasitems(other,ItMi_Gold)>=50)
 	&& (JehenLuteSaidNoMoney == TRUE)
 	&& (JehenLuteCheckOneOption == FALSE)

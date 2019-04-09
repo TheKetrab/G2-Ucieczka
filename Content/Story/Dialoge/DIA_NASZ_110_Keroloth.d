@@ -746,6 +746,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questnoend_Info()
 	DodajReputacje (4, REP_LOWCY);
 };
 
+
 //*********************************************************************
 //	Info QuestYesEnd
 //*********************************************************************
@@ -798,6 +799,86 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyesend_Info()
 		Log_SetTopicStatus (TOPIC_Keroloth_gobliny, LOG_FAILED);
 	};
 };
+
+
+
+
+
+
+//*********************************************************************
+//	Info Goth
+//*********************************************************************
+INSTANCE DIA_NASZ_110_Keroloth_Goth   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 15;
+ 	condition   = DIA_NASZ_110_Keroloth_Goth_Condition;
+ 	information = DIA_NASZ_110_Keroloth_Goth_Info;
+ 	permanent   = FALSE;
+	description = "Wiesz coœ o obrabowaniu myœliwego Gotha?";
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_Goth_Condition()	
+{
+	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_zadanie))
+	&& (!KNOW_THIEF)
+	&& (npc_knowsinfo(other,DIA_NASZ_106_Jan_goth) || npc_knowsinfo(other,DIA_NASZ_109_Rethon_goth))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_Goth_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Goth_15_00"); //Wiesz coœ o obrabowaniu myœliwego Gotha?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Goth_55_01"); //Wiem tyle, ¿e przez to pogorszy³y siê nasze relacje, a powinniœmy sobie pomagaæ, a nie walczyæ miêdzy sob¹.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Goth_15_02"); //Masz jakieœ podejrzenia, kto móg³ to zrobiæ?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Goth_55_03"); //I tak i nie... Jakiœ czas temu z obozu znikn¹³ Lens, który wczeœniej walczy³ na arenie. Rozmawia³em o tym z Kurganem, ale ten twierdzi, ¿e biedak zgin¹³ podczas patrolowania okolicy.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Goth_55_04"); //Jednak zbie¿noœæ w czasie tych dwóch wydarzeñ wydaje mi siê podejrzana.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_Goth_15_05"); //Dziêki za wskazówkê!
+	
+	B_LogEntry (TOPIC_Goth_kradziez, "Keroloth powiedzia³ mi, ¿e jakiœ czas temu z obozu znikn¹³ gladiator Lens. Skoro ten cz³owiek walczy³ na arenie, to mo¿e Kurgan wie coœ na ten temat?");
+
+};
+
+
+//*********************************************************************
+//	Info LensIsDead
+//*********************************************************************
+INSTANCE DIA_NASZ_110_Keroloth_LensIsDead   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 16;
+ 	condition   = DIA_NASZ_110_Keroloth_LensIsDead_Condition;
+ 	information = DIA_NASZ_110_Keroloth_LensIsDead_Info;
+ 	permanent   = FALSE;
+	description = "Mia³eœ racjê, co do Lensa.";
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_LensIsDead_Condition()	
+{
+	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_Goth))
+	&& (npc_isdead(NASZ_102_Lens))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_LensIsDead_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_LensIsDead_15_00"); //Mia³eœ racjê, co do Lensa.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_LensIsDead_15_01"); //Znalaz³em go w jednej z jaskiñ. Mia³ przy sobie wszystkie towary. Sam nie wiem, po co mu by³y. Przecie¿ kto by je od niego odkupi³?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_LensIsDead_55_02"); //W Górniczej Dolinie ludzie œwiruj¹. To nie pierwszy cz³owiek, z którym tak siê sta³o. Jeszcze na zamku dosz³y mnie s³uchy, ¿e pewien myœliwy, Engrom, próbowa³ przebiec miêdzy orkowymi namiotami na prze³êcz.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_LensIsDead_55_03"); //Niektórzy mówili, ¿e zosta³ opêtany, jednak moim zdaniem koleœ po prostu nie wytrzyma³ i pope³ni³ samobójstwo.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_LensIsDead_55_04"); //Dziêki za raport. Zabi³eœ go, prawda?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_LensIsDead_15_05"); //Tak.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_LensIsDead_55_06"); //S³usznie post¹pi³eœ. Na œwiecie nie potrzeba bandziorów i opryszczków.
+
+	B_GivePlayerXP(50);
+};
+
+
+
 
 //*********************************************************************
 //	Info WhatToDoKap2
@@ -1672,7 +1753,6 @@ FUNC VOID DIA_NASZ_110_Keroloth_HelpIsReady_Info()
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_HelpIsReady_55_04"); //Willu, chcê abyœ uda³ siê do naszego obozu i porozmawia³ z Udarem. Przydzieli³em mu ju¿ zadania, lecz zapewne przyda siê pomoc kogoœ tak bystrego jak ty.
 		
 		B_LogEntry(TOPIC_Keroloth_Wojna,"Trzeba za³atwiæ kilka spraw w obozie. Muszê udaæ siê do Udara i pomóc mu.");
-		// TODO: StartOtherRoutine Udar i ten ³owca ktorys
 	}
 	
 	else {
@@ -2493,7 +2573,21 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
 	//jeœli w pobli¿u wp nie ma ¿adnego orka
 	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Zlikwidowa³em orkowe obozowisko.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc);
-	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Za palisad¹ s¹ ludzie.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie);
+	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_siema)) {
+		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Za palisad¹ s¹ ludzie.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie);
+	};
+	if (npc_isdead(NASZ_028_Kazmin)) {
+		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Sprawy na bagnach zosta³y wyjaœnione.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp);
+	};
+};
+
+
+FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
+{
+	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_15_00"); //Sprawy na bagnach zosta³y wyjaœnione.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_01"); //¯aden demon nie pojawi siê ju¿ znik¹d?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caina i demona Kazmina.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wiadomoœci. Teraz jedyne, czego siê obawiam to kontratak orków.
 
 };
 
@@ -2514,6 +2608,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_02"); //Zachêcam ciê ¿ebyœ poszed³ tam sam i sprawdzi³.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_03"); //Wiesz co... Nie bez powodu wszyscy mówi¹, ¿e jesteœ najlepszy.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_04"); //Masz talent, ch³opcze.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_05"); //Ale nie myœl, ¿e teraz zbudujemy ³ódŸ i odp³yniemy st¹d. Na morzu na pewno pe³no jest orkowych statków. Odbicie od l¹du to samobójstwo.
 
 };
 
@@ -2528,6 +2623,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_06"); //Niewa¿ne. W ka¿dym razie Udar z pewnoœci¹ ucieszy siê, gdy go zobaczy.
 
 	HeroSaidZaPalisadaSaLudzie = TRUE;
+	B_LogEntry (TOPIC_Udar_oddzial, "Powiem równie¿ Udarowi, ¿e znalaz³em ludzi, o których mi mówi³.");
+
 };
 
 

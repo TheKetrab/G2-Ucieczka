@@ -1631,6 +1631,7 @@ var int FED_WALCZY;
 var int KJORN_WALCZY;
 var int FERROS_WALCZY;
 var int GODARHOKURN_WALCZY;
+var int KURGAN_WALCZY; // TODO ta zmienna jest chyba nie zainicjowana nigdy... 
 var int BAM_WALCZY;
 var int SzybkaNaukaTaught;
 var int PotworZabity;
@@ -1799,3 +1800,4 @@ var int WillMozeIscDoKazmina;
 var int UcieklesZKopalni;
 var int MissionPlagaCiemnosciFinished;
 var int Frut_Dal_Zezwolenie_Willowi;
+var int HeroKnowsAboutJeremiahsIllness;

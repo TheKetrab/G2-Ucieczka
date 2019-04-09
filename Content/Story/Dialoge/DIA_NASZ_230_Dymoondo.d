@@ -314,10 +314,10 @@ FUNC VOID DIA_NASZ_230_Dymoondo_Kap4_Info()
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_Kap4_55_03"); //Ostatnio widywa³em dziwne œwiat³a po drugiej stronie bajorka obok mojego obozowiska i w zasadzie mia³em to sprawdziæ...
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_Kap4_15_04"); //Ale skoro przyszed³ tu taki osi³ek jak ty...
 	AI_Output (other, self,"DIA_NASZ_230_Dymoondo_Kap4_55_05"); //Dobra, sprawdzê to przejœcie.
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_Kap4_55_06"); //Fantastycznie! Ja wracam do siebie.
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_Kap4_55_06"); //Fantastycznie! Ja wracam do naszego obozu.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_Kap4_55_07"); //Powodzenia!
 
-	Npc_ExchangeRoutine (self, "Start");
+	B_StartOtherRoutine (NASZ_230_Dymoondo,"Kap4Mysliwi");
 	B_LogEntry (TOPIC_Monastir_pomoc, "Dymoondo twierdzi, ¿e znalaz³ drogê do miasta orków. Muszê siê wspi¹æ po ska³ach na œcie¿ce miêdzy obozem bandytów a obozem myœliwych.");
 
 };

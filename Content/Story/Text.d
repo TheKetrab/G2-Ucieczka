@@ -408,13 +408,13 @@ const string TXT_SPELLS[MAX_SPELL] =
 	"Do ³owców orków",			// 91	SPL_TeleportLowcy
 	"Do obozu bandytów",		// 92	SPL_TeleportBandyci
 	"Przyzwanie Ducha",			// 93	SPL_Reserved_93
-	"Teleportacja",		// 94	SPL_Reserved_94
-	"Teleportacja",		// 95	SPL_Reserved_95
+	"Teleportacja na drug¹ stronê rzeki",		// 94	SPL_Reserved_94
+	"Teleportacja na wodospad",		// 95	SPL_Reserved_95
 	"Do twierdzy",		// 96	SPL_TeleportTwierdza
-	"Teleportacja",		// 97	SPL_Reserved_97
+	"Teleportacja",		// 97	SPL_Reserved_97 // ukryta na przeleczy
 	"Grupowe leczenie",		// 98	SPL_Reserved_98
 	"Tajemniczy zwój",		// 99	SPL_SummonStraznik
-	"Teleportacja"
+	"Do orkowego miasta"	// 100 SPL_TeleportOrcTown
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -598,10 +598,10 @@ CONST STRING TXT_TALENTS_SKILLS	[NPC_TALENT_MAX] =
 	"Zielony|Wojownik|Mistrz",									//NPC_TALENT_BOW				= 3;
 	"Zielony|Wojownik|Mistrz",									//NPC_TALENT_CROSSBOW			= 4;
 	"-|Uczony|-",												//NPC_TALENT_PICKLOCK			= 5;	//wird jetzt per DEX geregelt UND es gibt nur noch Level 0 und 1 (nicht	mehr 2)
-	"-|Uczony",													//altes	Pickpocket aus Gothic 1	- NICHT	benutzen! Bleibt als Relikt	im Code	= 6;
+	"-|Amator|Doœwiadczony|Zawodowiec|Mistrz",					// Fach zlodziejski
 	"0|1|2|3|4|5|6",											//NPC_TALENT_MAGE				= 7;	// Magiekreis
 	"-|Uczony",													//NPC_TALENT_SNEAK				= 8;
-	"-|Uczony",															//raus //NPC_TALENT_REGENERATE	= 9;
+	"-|Poziom 1|Poziom 2|Poziom 3",															//raus //NPC_TALENT_REGENERATE	= 9;
 	"-|Uczony",															//raus //NPC_TALENT_FIREMASTER	= 10;
 	"-|Uczony",													//NPC_TALENT_ACROBAT			= 11;
 	"-|Uczony",													//NPC_TALENT_PICKPOCKET			= 12;	//NEUES	Pickpocket

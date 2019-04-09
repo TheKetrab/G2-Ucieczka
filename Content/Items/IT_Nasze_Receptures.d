@@ -591,7 +591,7 @@ func void Use_Przepis_ZupaJarzynowaZJagodami ()
 				Doc_PrintLine	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Zupa jarzynowa z jagodami:"	);
 				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "W garnku na ginie i mleku zeszkliæ pokrojone na kawa³ki liœcie zió³ leczniczych i ognistych pokrzyw. Dodaæ pokrojone w drobn¹ kostkê kawa³ki rzepy i gotowaæ do momentu wrzenia. Na samym koñcu dorzucamy do wszystkiego kilka ugniecionych jagód.");
+				Doc_PrintLines	( nDocID,  0, "W garnku na ginie i mleku zeszkliæ pokrojone na kawa³ki liœcie zió³ leczniczych i ognistych pokrzyw. Dodaæ pokrojone w drobn¹ kostkê kawa³ki rzepy i gotowaæ do momentu wrzenia. Na samym koñcu dorzucamy do wszystkiego kilka ugniecionych jagód. Dwie polne i dwie leœne powinny wystarczyæ.");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -1087,7 +1087,7 @@ FUNC VOID Use_ItNa_ZupaZOrkowegoPrzepisu()
 		PrzepisOrkowyRunning = FALSE;
 	};
 
-	// todo -> zatrucie poziom pierwszy
+	// TODO -> zatrucie poziom pierwszy
 };
 
 

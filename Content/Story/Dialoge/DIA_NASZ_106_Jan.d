@@ -1857,6 +1857,8 @@ func void DIA_NASZ_106_Jan_Kap3QuestFinish_Info ()
 
 
 const int DIST_FOR_TAKING_HELMETS = 100; // 1m
+const int DIST_FOR_TAKING_FAJKA   = 200; // 1m
+
 var int Taken_Knight_Helmet_1;
 var int Taken_Knight_Helmet_2;
 var int Taken_Knight_Helmet_3;
@@ -1871,7 +1873,7 @@ func void TryToTakeHelmetFromKnight() {
 	if (Rethon_Fajka_Quest_Running == TRUE)
 	{
 	
-		if (Npc_GetDistToWP(hero,"LOCATION_23_CAVE_1_IN_1") <= DIST_FOR_TAKING_HELMETS)
+		if (Npc_GetDistToWP(hero,"LOCATION_23_CAVE_1_IN_1") <= DIST_FOR_TAKING_FAJKA)
 		&& (Taken_Rethon_Fajka == FALSE)
 		{
 			AI_PlayAni (hero, "T_PLUNDER");

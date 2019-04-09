@@ -1,6 +1,4 @@
 
-// TODO: Kurgan chyba jest nie zrobiony ???
-
 func int NpcBreakArenaLaw(var c_npc slf) {
 
 	if (Npc_GetDistToWP	(slf, "NASZ_LOWCY_ARENA_01") >=1000)
@@ -171,6 +169,35 @@ func void ARENA ()
 	};
 	
 	
+	//Kurgan
+	if (KURGAN_WALCZY == TRUE) && !(NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) {
+		if (HeroIsLeavingArena()) {
+			PrintScreen	("Opuszczasz arenê...", -1,-1, "font_old_20_white.tga",2);
+			Arena_Opuszczasz_Raz = TRUE;
+		};
+		
+		if (NpcBreakArenaLaw(hero))
+		&& (Arena_Przegrana_Raz == FALSE)
+		{
+			Arena_Przegrana_Raz = TRUE;
+			CzasZakonczycWalkeZPowoduX = TRUE;
+			Npc_ClearAIQueue(NASZ_115_Kurgan);
+			B_Attack (NASZ_115_Kurgan,hero, AR_NONE, 0);
+			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
+			NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+		};
+
+		if (NpcBreakArenaLaw(NASZ_115_Kurgan))
+		&& (Arena_Przegrana_Raz == FALSE)
+		{
+			Arena_Przegrana_Raz = TRUE;
+			CzasZakonczycWalkeZPowoduX = TRUE;
+			Npc_ClearAIQueue(NASZ_115_Kurgan);
+			B_Attack (NASZ_115_Kurgan,hero, AR_NONE, 0);
+			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
+			NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+		};
+	};
 	
 	
 };

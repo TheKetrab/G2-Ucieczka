@@ -201,11 +201,10 @@ INSTANCE DIA_NASZ_109_Rethon_zadanie   (C_INFO)
 
 FUNC INT DIA_NASZ_109_Rethon_zadanie_Condition()
 {
-	// TODO odkomentowac
-	//if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
-	//{
+	if(npc_knowsinfo(other,DIA_NASZ_109_Rethon_FightWithAll))
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_zadanie_Info()
@@ -319,11 +318,10 @@ INSTANCE DIA_NASZ_109_Rethon_after   (C_INFO)
 
 FUNC INT DIA_NASZ_109_Rethon_after_Condition()
 {
-	// TODO odkomentowaæ !!!
-	//if (RethonKurganFightFinished == TRUE)
-	//{
+	if (RethonKurganFightFinished == TRUE)
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_after_Info()
@@ -649,8 +647,16 @@ FUNC VOID DIA_NASZ_109_Rethon_FajkaEnd_Info()
 	B_GiveInvItems(other,self,tabakId,1);
 	B_UseItem(self,ItNa_Fajka);
 	
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_03"); //TODO nagroda
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_02"); //Mam dla ciebie specjaln¹ nagrodê.
+
+	Createinvitems(self,ItNa_RykSmoka,1);
+	B_GiveInvItems(self,other,ItNa_RykSmoka,1);
+
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_03"); //Gdy jeszcze zajmowa³em siê polowaniem na smoki, w jednej z jaskiñ znalaz³em nieboszczyka. Mia³ przy sobie tê oto miksturê.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_04"); //Ma zapach podobny do eliksiru si³y. Myœlê, ¿e tobie bardziej siê przyda. Tak jak mi fajka.
 	
+	B_GivePlayerXP(1000);
+	DodajReputacje(REP_LOWCY,2);
 	Log_SetTopicStatus (TOPIC_Rethon_fajka, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Rethon_fajka, "Rethon cieszy³ siê jak dziecko, gdy zapali³ fajkê. Byæ mo¿e mi tak¿e przyda³aby siê taka zabawka...");
 

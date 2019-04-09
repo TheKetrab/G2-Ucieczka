@@ -1,5 +1,7 @@
 func void TARCZA_OBOZ_WYPADOWY() {
 
+	// TODO: jesli trafisz w tarczę, to +1 do łuków i kusz (czyli razem max +6)
+
 	Print("Trafiony");
 	
 	if (Tabuk_Tarcza1 == TRUE)

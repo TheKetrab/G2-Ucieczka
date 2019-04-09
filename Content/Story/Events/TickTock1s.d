@@ -34,7 +34,6 @@ var int UdarQuestPatrolNaDoleOneTime;
 var int MarcosBiegnieOneTime;
 var int Renegat13BiegnieOneTime;
 var int Renegat14BiegnieOneTime;
-var int Jeremiasz_AlmostDead_NextTo_OneTime;
 var int SkeletonJenkinsOneTime;
 var int WillUderzylBestieSwiatynnaTeleportOneTime;
 var int BestiaSwiatynnaSec;
@@ -746,7 +745,7 @@ func void StrPotion()
 
 		secStr = secStr + 1;
 	
-		if (secStr == 30) {
+		if (secStr >= 120) {
 			hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] - 50;
 			HeroDrankStrPotionOneTime = FALSE;
 			HeroDrankStrPotion = FALSE;
@@ -779,7 +778,7 @@ func void DexPotion()
 
 		secDex = secDex + 1;
 	
-		if (secDex == 30) {
+		if (secDex >= 120) {
 			hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] - 50;
 			HeroDrankDexPotionOneTime = FALSE;
 			HeroDrankDexPotion = FALSE;
@@ -835,7 +834,7 @@ func void BDTPotion()
 
 		secBDT = secBDT + 1;
 	
-		if (secBDT == 30) {
+		if (secBDT >= 120) {
 			HeroDrankBDTPotionOneTime = FALSE;
 			HeroDrankBDTPotion = FALSE;
 			secBDT = 0;
@@ -883,7 +882,7 @@ func void CheatPotion()
 
 		secCheat = secCheat + 1;
 	
-		if (secCheat == 30) {
+		if (secCheat >= 120) {
 			hero.flags = 0;
 			HeroDrankCheatPotionOneTime = FALSE;
 			HeroDrankCheatPotion = FALSE;
@@ -1256,18 +1255,7 @@ func void _TickTock_1s()
 	};*/
 	
 	
-	// ***** ***** ***** ***** *****
-	
-	//TODO: dokonczyc zadanie z jeremiaszem  i spaniem
-	if (Jeremiasz_AlmostDead == TRUE)
-	&& (Jeremiasz_AlmostDead_NextTo_OneTime == FALSE)
-	&& (Npc_GetDistToNpc (hero, NASZ_127_Jeremiasz) < 300)
-	&& !(Wld_IsTime(00,00,06,00)) // nie jest noc - czyli spi przez dzien
-	{
-		Jeremiasz_AlmostDead_NextTo_OneTime = TRUE;
-		B_LogEntry (TOPIC_Jeremiasz_lek, "Cholera, Jeremiasz le¿y w ³ó¿ku i nie wygl¹da zbyt dobrze. Mo¿e coœ mu siê sta³o? Lepiej pogadam o tym z Silasem. Niech wie, ¿e z Jeremiaszem coœ siê sta³o.");
-	};
-	
+
 
 	if ((Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) && (PhillGraPlaying==FALSE) && (Npc_IsInState(NASZ_104_Engor, ZS_Talk)==FALSE)) {
 		B_PhillGraStartMusic();
@@ -1432,11 +1420,11 @@ func void _TickTock_1s()
 	};
 	
 	if (npc_hasitems (hero, ItNa_AmuletZRudy) >=1) && (BraciaMissionReady == TRUE) && (BraciaFunctionOneTime == FALSE) {
-		Wld_InsertNpc (Zombie01, "FP_NASZ_ZOMBIE_BRAT_1");
-		Wld_InsertNpc (Zombie01, "FP_NASZ_ZOMBIE_BRAT_2");
-		Wld_InsertNpc (Zombie01, "FP_NASZ_ZOMBIE_BRAT_3");
-		Wld_InsertNpc (Zombie01, "FP_NASZ_ZOMBIE_BRAT_4");
-		Wld_InsertNpc (Zombie01, "FP_NASZ_ZOMBIE_BRAT_5");
+		Wld_InsertNpc (SkeletonPro, "FP_NASZ_ZOMBIE_BRAT_1");
+		Wld_InsertNpc (SkeletonPro, "FP_NASZ_ZOMBIE_BRAT_2");
+		Wld_InsertNpc (Skeleton, "FP_NASZ_ZOMBIE_BRAT_3");
+		Wld_InsertNpc (SkeletonShield, "FP_NASZ_ZOMBIE_BRAT_4");
+		Wld_InsertNpc (SkeletonShield, "FP_NASZ_ZOMBIE_BRAT_5");
 		BraciaFunctionOneTime = TRUE;
 	};
 
@@ -1789,11 +1777,16 @@ func void Function30s()
 	if (!npc_isdead (Wisp_Boss) && Npc_GetDistToNpc (hero, Wisp_Boss) < 500)  {
 		Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_LURKER_NC_LAKE_03");
 	};
-	//TODO: Ogarn¹æ to z Jeremiaszem
+	
 	if (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour)) // 3h
+	&& (npc_knowsinfo(other,DIA_NASZ_127_Jeremiasz_AfterQuest))
 	&& (Jeremiasz_AlmostDead_OneTime == FALSE)
 	{
+		//Print("TimeIsUp -> Jeremiasz_AlmostDead = TRUE");
 		B_StartOtherRoutine(NASZ_127_Jeremiasz,"AlmostDead");
+		
+		ff_applyonceext(JeremiahAlmostDead_TickTock1s,1000,-1);
+
 		Jeremiasz_AlmostDead_OneTime = TRUE;
 		Jeremiasz_AlmostDead = TRUE;
 	};

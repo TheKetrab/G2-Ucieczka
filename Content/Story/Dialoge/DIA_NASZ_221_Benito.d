@@ -176,7 +176,7 @@ FUNC VOID DIA_NASZ_221_Benito_help_Info()
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_01"); //Mo¿e znajdziesz gdzieœ jakiœ dokument, który potwierdzi ich przyjacielskie albo wrogie relacje.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_02"); //Chocia¿ to bardzo w¹tpliwe. To dzikusy, wiêc raczej szukaj czegoœ, co mo¿emy uznaæ za zawarcie paktu.
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_help_15_03"); //Czyli szukaj ig³y w stogu siana, gdy nawet nie masz pewnoœci, ¿e tam jest...
-	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ to tylko i wy³¹cznie albo w jaskini albo na zboczach gór.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêtrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ to tylko i wy³¹cznie albo w jaskini albo na zboczach gór.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_05"); //Chocia¿ na twoim miejscu spróbowa³bym od gór. Mo¿e jest gdzieœ jaskinia albo wnêka miêdzy ska³ami.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_06"); //Jaszczuroludzie raczej ukryliby taki symbol, jeœli w ogóle istnieje, a nie trzymali w miejscu ³atwo dostêpnym dla wszystkich.
 

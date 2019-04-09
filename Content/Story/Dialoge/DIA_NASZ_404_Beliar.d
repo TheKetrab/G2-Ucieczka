@@ -76,7 +76,7 @@ FUNC VOID DIA_NASZ_404_Beliar_portal_Info()
 
 	Log_CreateTopic (TOPIC_bogowie_work, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_RUNNING);
-	B_LogEntry (TOPIC_bogowie_work, "Teraz muszê udowodniæ, ¿e s³u¿ê Beliarowi. Mam zabiæ jakiegoœ ³owcê orków albo myœliwego. Cholera... Chyba nie mam wyboru.");
+	B_LogEntry (TOPIC_bogowie_work, "Teraz muszê udowodniæ, ¿e s³u¿ê Beliarowi. Mam zabiæ niewinn¹ istotê. Cholera... Chyba nie mam wyboru. Chyba ¿e bogowi nie chodzi konkretnie o cz³owieka, ale mo¿e te¿ byæ niewinne zwierzê?");
 	BeliarPraca3 = TRUE;
 
 };
@@ -106,9 +106,8 @@ FUNC INT DIA_NASZ_404_Beliar_doneC_Condition()
 FUNC VOID DIA_NASZ_404_Beliar_doneC_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_404_Beliar_doneC_15_00"); //Zrobi³em to, o co prosi³eœ.
-	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneC_55_01"); //Dawno ju¿ ¿aden cz³owiek nie pokaza³ mi swojego oddania.
-	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneC_55_02"); //Kiedyœ brata³ siê ze mn¹ pewien mag imieniem Xardas.
-	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneC_55_03"); //Poddam próbie twoj¹ si³ê.
+	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneC_55_01"); //Wyczuwam w tobie wielki ¿al. Jesteœ s³aby i boli ciê czynienie z³a, ale pokaza³eœ swoje oddanie.
+	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneC_55_02"); //Teraz poddam próbie twoj¹ si³ê.
 
 };
 

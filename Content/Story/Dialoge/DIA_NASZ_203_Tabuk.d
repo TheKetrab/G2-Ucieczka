@@ -67,6 +67,7 @@ FUNC INT DIA_NASZ_203_Tabuk_Train_Condition()
 {
 	if (npc_knowsinfo(other,DIA_NASZ_203_Tabuk_siema))
 	&& (KAPITEL <= 3)
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -99,6 +100,7 @@ INSTANCE DIA_NASZ_203_Tabuk_OfCourse   (C_INFO)
 FUNC INT DIA_NASZ_203_Tabuk_OfCourse_Condition()
 {
 	if(npc_knowsinfo(other,DIA_NASZ_203_Tabuk_train))
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -148,6 +150,7 @@ FUNC INT DIA_NASZ_203_Tabuk_Zaliczone1_Condition()
 	&& (Tabuk_Tarcza1_Wystrzelono >= 3) 
 	&& (Tabuk_Tarcza1_Trafiono >= 1)
 	&& !(Npc_IsInFightMode(other, FMODE_FAR)) // jesli Will schowal luk
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -200,6 +203,7 @@ FUNC INT DIA_NASZ_203_Tabuk_Nieudane1_Condition()
 	&& (Tabuk_Tarcza1_Wystrzelono >= 3)
 	&& (Tabuk_Tarcza1_Trafiono == 0)
 	&& !(Npc_IsInFightMode(other, FMODE_FAR)) // jesli Will schowal luk
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -237,6 +241,7 @@ FUNC INT DIA_NASZ_203_Tabuk_Zaliczone2_Condition()
 	&& (Tabuk_Tarcza2_Wystrzelono >= 3) 
 	&& (Tabuk_Tarcza2_Trafiono >= 1)
 	&& !(Npc_IsInFightMode(other, FMODE_FAR)) // jesli Will schowal luk
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -263,7 +268,6 @@ FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone2_Info()
 	Log_SetTopicStatus (TOPIC_Tabuk_tarcza, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Tabuk_tarcza, "Zaliczy³em trening ³uczniczy. Myœlê, ¿e warto co jakiœ czas przyjœæ tu i trochê postrzelaæ.");
 
-	// TODO: jesli trafisz w tarczê, to +1 do ³uków i kusz (czyli razem max +6)
 };
 
 
@@ -286,6 +290,7 @@ FUNC INT DIA_NASZ_203_Tabuk_Nieudane2_Condition()
 	&& (Tabuk_Tarcza2_Wystrzelono >= 3) 
 	&& (Tabuk_Tarcza2_Trafiono == 0)
 	&& !(Npc_IsInFightMode(other, FMODE_FAR)) // jesli Will schowal luk
+	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
 	{
 		return TRUE;
 	};
@@ -465,6 +470,7 @@ func void DIA_NASZ_203_Tabuk_nauka_sneak()
 		PrintScreen ("Nauka: fach z³odziejski", -1, -1, FONT_Screen, 2);
 
 		Npc_SetTalentSkill 	(hero, NPC_TALENT_SNEAK, 1);
+		Npc_SetTalentSkill 	(hero, 6, NauczoneZlodziejskie); //umiejetnosc Fach zlodziejski
 		hero.lp = hero.lp - 5;
 	}
 	else {

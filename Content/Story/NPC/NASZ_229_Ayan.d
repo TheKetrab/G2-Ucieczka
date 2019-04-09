@@ -186,6 +186,12 @@ FUNC VOID Rtn_GoToDowodca_229()
 	TA_Stand_WP				(23,00,08,00,"OC_TRAIN_04");
 };
 
+FUNC VOID Rtn_AyansLastGuide_229()
+{	
+	TA_Guide_Player (08,00,23,00,"NASZ_OZYWIENIEC_40");
+	TA_Guide_Player (23,00,08,00,"NASZ_OZYWIENIEC_40");
+};
+
 
 FUNC VOID Rtn_InCastle_229()
 {	

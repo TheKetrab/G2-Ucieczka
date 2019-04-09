@@ -138,7 +138,7 @@ func void STARTUP_OLDCAMP ()
 	
 	Wld_InsertNpc	(NASZ_001_Kopacz,"OW_MINE2_GRIMES"); 
 	Wld_InsertNpc	(NASZ_002_Daryl,"OW_MINE2_05");
-	Wld_InsertNpc	(NASZ_003_Kopacz,"NASZ_ZAMEK_OBOZ_01");
+	// kopacz 003 pojawia sie dopiero jak idziesz na zamek z kurganem
 	Wld_InsertNpc	(NASZ_004_Bryson,"OW_MINE2_08");
 	Wld_InsertNpc	(NASZ_005_Ben,"OW_MINE2_STRF");
 	Wld_InsertNpc	(NASZ_006_Renegat,"OW_PATH_2_04");
@@ -410,6 +410,14 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(OrcScoutHerszt,"OC_KNECHTCAMP_02");
 	Wld_InsertNpc	(OrcEliteHerszt,"OC_EBR_HALL_CENTER");
 
+	// chrzaszcze u brutusa
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_01");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_02");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_03");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_04");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_05");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_06");
+	Wld_InsertNpc	(Meatbug,"FP_ROAM_MEATBUG_BRU_ZAMEK_07");
 	
 	
 
@@ -642,9 +650,6 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_04");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_05");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_06");
-	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_07");
-	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_08");
-	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_09");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_WULKAN_10");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_WULKAN_11");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_WULKAN_12");
@@ -1303,9 +1308,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Snapper,"FP_ROAM_OW_SNAPPER_INCAVE_DM1");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_OW_SNAPPER_INCAVE_DM4");
 	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_01");
-	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_04");
 	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_02");
-	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_03");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_01");
 	Wld_InsertNpc	(WscieklyWilk1,"FP_LASKOPALNIA_02");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_03");

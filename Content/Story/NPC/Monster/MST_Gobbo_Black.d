@@ -163,7 +163,7 @@ INSTANCE BlackGobboGigant1 (Mst_Default_Gobbo_Black)
 	protection	[PROT_BLUNT]		=	200;
 	protection	[PROT_EDGE]			=	200;
 	protection	[PROT_POINT]		=	200;
-	name							=	"Goblin Gigant";
+	name							=	"Olbrzymi goblin";
 	level = 30;
 
 };
@@ -181,7 +181,7 @@ INSTANCE BlackGobboGigant2 (Mst_Default_Gobbo_Black)
 	protection	[PROT_BLUNT]		=	200;
 	protection	[PROT_EDGE]			=	200;
 	protection	[PROT_POINT]		=	200;
-	name							=	"Goblin Gigant";
+	name							=	"Olbrzymi goblin";
 	level = 30;
 };
 
@@ -198,6 +198,6 @@ INSTANCE BlackGobboGigant3 (Mst_Default_Gobbo_Black)
 	protection	[PROT_BLUNT]		=	200;
 	protection	[PROT_EDGE]			=	200;
 	protection	[PROT_POINT]		=	200;
-	name							=	"Goblin Gigant";
+	name							=	"Olbrzymi goblin";
 	level = 30;
 };

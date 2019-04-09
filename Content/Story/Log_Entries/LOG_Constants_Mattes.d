@@ -30,7 +30,7 @@ const string	TOPIC_Jan_zloto				=	"Gor¹czka z³ota"; 				//+4L									| +100+200
 const string	TOPIC_Udar_mikstury			=	"Zamówienie do odebrania";		//+2L lub +3L							| +200 lub +300+100=400		| 100szt. z³ota jeœli rozpakujesz i eliksir ¿ycia od Kirgo
 const string	TOPIC_Phill_lagi			=	"Goblinie surowce"; 			//+2L									| +300						| 40szt. z³ota
 const string	TOPIC_Silas_lanie			=	"Lanie"; 						//+3L lub +2+1=3L						| (+200)+300=(500)			| 3x Rum
-const string	TOPIC_Jeremiasz_lek			=	"Lek na uspokojenie";			// TODO: dokonczyc misje
+const string	TOPIC_Jeremiasz_lek			=	"Lek na uspokojenie";			//+2l									| +500						| 7x wywar z zió³ leczniczych, 9x z korzeni
 const string	TOPIC_Jeremiasz_skladniki	=	"Sk³adniki dla gorzelnika"; 	//+2L									| +300						| nauka zielarstwa
 const string	TOPIC_Bron_woda				=	"Woda œwiêcona"; 				//+2L lub +3L							| +200 lub +400				| 4 esencje lecznicze (+ nagroda od ³owcy)
 const string	TOPIC_Keroloth_orkowie		=	"Ostatni sprawdzian";			//+5L									| +300						| pierœcieñ od orka
@@ -81,7 +81,7 @@ const string	TOPIC_Robotnik_deski		=	"Przegni³a konstrukcja";		//+4L									| +
 const string	TOPIC_Rethon_orkowie		=	"Orkowe posterunki";			//+6L									| +1000						| 400 szt. z³ota
 const string	TOPIC_Hokurn_mapy			=	"Stare mapy";					//+3L									| +500						| projekt miecza bojowego
 const string	TOPIC_Gerold_glod			=	"G³ód, brzmi znajomo?";			//+3L									| +500						| przepis na udziec z dzika po ³owiecku
-// TODO: Quest Kurgan z katapulta
+const string	TOPIC_Kurgan_katapulta		=	"Teoria katapulty i ska³y";		// TODO: Quest Kurgan z katapulta
 
 //---------- Mysliwi ----------
 const string	TOPIC_Louis_weze			=	"Wê¿owa skóra";					//+2M									| +500						| si³a i zrêcznoœæ +3
@@ -132,7 +132,7 @@ const string	TOPIC_Erak_BDT				=	"Czystki";						//+4M									| +700						| 1 e
 const string	TOPIC_Aran_noga				=	"Noga";							//+2M									| +700						| ---
 const string	TOPIC_Aran_QuestKapi3		=	"Przetrz¹sn¹æ namioty";			//+2M									| +700						| ---
 const string	TOPIC_Ammann_wiernosc		=	"Pierœcienie wiernoœci";		//+4M									| +700						| ---
-const string	TOPIC_Mysliwy_warta			=	"Pod³e gady";					//+4M									| +100 +: +500 lub +700		| ??? TODO
+const string	TOPIC_Mysliwy_warta			=	"Pod³e gady";					//+4M									| +100 +: +500 lub +700		| £uk wojenny
 const string	TOPIC_Dobar_pancerze		=	"Ulepszenie pancerzy";			//+4M									| +700						| 400 ostrych strza³
 const string	TOPIC_Jehen_poscig			=	"Poœcig za cieniostworem";		//+2M									| +100+200+400=700			| ---
 const string	TOPIC_Jehen_zagubiony		=	"Gonitwa, krew i ³uski";		//+2M									| +700						| ---
@@ -156,8 +156,8 @@ const string	TOPIC_Keroloth_zapalisada	=	"Informacje zza palisady";		// TODO
 const string	TOPIC_Jan_lowca				=	"Komplet ³owcy";				//+2L(oddanie surowcow)+4L(koniec)		| +500++500(Udar)+1000		| ???
 const string	TOPIC_Kjorn_bracia			=	"Piêciu braci";					// TODO									| +500		TODO: zrobic zakonczenie misji
 const string	TOPIC_Phill_drzewo			=	"Beznadziejny pomys³";			//+4L									| +1000						| 2 eliksiry lecznicze
-const string	TOPIC_Udar_oddzial			=	"Zaginiony oddzia³";			// TODO
-const string	TOPIC_Rethon_fajka			=	"Klasyczna fajka";				// TODO
+const string	TOPIC_Udar_oddzial			=	"Zaginiony oddzia³";			// +1L									| +500						| ---
+const string	TOPIC_Rethon_fajka			=	"Klasyczna fajka";				// +2L									| +1000						| ryk smoka
 const string	TOPIC_Rudolf_przyjaciel		=	"Fa³szywy przyjaciel";			// ---									| +1000						| pierœcieñ many
 
 

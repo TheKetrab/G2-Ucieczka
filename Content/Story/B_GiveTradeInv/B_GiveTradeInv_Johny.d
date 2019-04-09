@@ -18,7 +18,10 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItMw_Kriegshammer1, 1); 
 		CreateInvItems (slf, ItMw_Nagelkeule2, 1); 
 		CreateInvItems (slf, ItMw_Zweihaender1, 1); 
-	
+		CreateInvItems (slf, ItMw_Richtstab, 1); 
+
+
+		
 		CreateInvItems (slf, ItMiSwordraw, 5); 
 		
 		

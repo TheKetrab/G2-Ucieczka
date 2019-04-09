@@ -620,7 +620,10 @@ func void ZS_Dead ()
 	
 	//QUEST BELIARA
 	if (BeliarPraca3 == TRUE) && (ZabilesDlaBeliara == FALSE) && (C_NpcIsHero (other))
-	&& ((Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_101_Korth))
+
+	&& ((self.aivar[AIV_MM_REAL_ID] == ID_SHEEP) // jesli jest owca
+	
+	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_101_Korth))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_103_Johny))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_104_Engor))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_105_Straznik))
@@ -677,7 +680,7 @@ func void ZS_Dead ()
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_230_Dymoondo))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_231_Ted)))
 	{
-		B_LogEntry (TOPIC_bogowie_work, "Zabi³em niewinnego cz³owieka...");
+		B_LogEntry (TOPIC_bogowie_work, "Zabi³em niewinn¹ istotê...");
 		Wld_PlayEffect("spellFX_Fear",  hero, hero, 0, 0, 0, FALSE );
 		BeliarPraca3 = FALSE;
 		ZabilesDlaBeliara = TRUE;

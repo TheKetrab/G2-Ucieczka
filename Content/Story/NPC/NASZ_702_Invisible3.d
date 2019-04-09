@@ -19,8 +19,7 @@ instance NASZ_702_Invisible3 (Npc_Default)
 	EquipItem (self, ItMw_1h_MISC_Sword);
 
 	// ------ Inventory ------
-	B_CreateAmbientInv 	(self);
-		
+
 	// ------ visuals ------																			
 	Mdl_SetVisual			(self,	"HumanS.mds");
 	Mdl_ApplyOverlayMds 	(self,	"humans_1hST1.mds");

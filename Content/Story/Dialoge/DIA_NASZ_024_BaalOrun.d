@@ -385,7 +385,7 @@ func int DIA_NASZ_024_BaalOrun_RytualCD_Condition ()
 func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 {
 	
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_00"); //To... To chyba naprawdê siê uda³o, niewiarygodne! Szczerze nie przypuszcza³em, i¿ uda nam siê wyswobodziæ i odzyskaæ œwiadomoœæ.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_00"); //To... To chyba naprawdê siê uda³o, niewiarygodne! Szczerze nie przypuszcza³em, ¿e uda nam siê wyswobodziæ i odzyskaæ œwiadomoœæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_01"); //Magiczna bariera we wrotach œwi¹tyni zosta³a z³amana... Czujê... Czujê, jak z³o, które w niej spoczywa³o rozlewa siê po obozie doprowadzaj¹c do furii wszystkich nieumar³ych, którzy siê tu znajduj¹.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_02"); //Nim ruszysz do œwi¹tyni musisz u¿yæ zwoju, który powsta³ przez po³¹czenie kawa³ków znalezionych przez ciebie.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_03"); //Dziêki temu bêdziesz traktowany jako pe³noprawny cz³onek Bractwa i magiczna bariera przy wejœciu do œwi¹tyni ciê nie powstrzyma.

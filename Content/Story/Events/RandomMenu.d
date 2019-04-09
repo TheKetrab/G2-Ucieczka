@@ -1,4 +1,10 @@
 // TODO: Screen wczytywania: Johny siedzący na ławce. 'Odwiedzaj od czasu do czasu znajomych kupców, by sprawdzić, czy nie mają jakichś nowych towarów.'
+// TODO: Screen wczytywania: O klawiszu Shift
+// TODO: Screen wczytywania: O trybie sprawiedliwości
+// TODO: Screen wczytywania: O poziomie trudności
+// TODO: Screen wczytywania: Wolnce celowanie doda realizmu podczas używania broni dystansowych
+
+
 
 Func void LoadTexRandom ()
 {

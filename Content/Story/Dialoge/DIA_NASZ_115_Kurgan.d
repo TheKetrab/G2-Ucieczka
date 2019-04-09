@@ -1459,6 +1459,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_SzturmNaZamek_15_02"); //ODBIJEMY ZAMEK, ROZGNIECIEMY SI£Y ORK”W! ZOSTAWCIE SWOJE TROSKI I OBAWY TUTAJ. ODWAGA TO DRUGIE IMI  £OWC”W ORK”W!
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_SzturmNaZamek_55_03"); //Jesteúmy gotowi, prowadü.
 
+	// Pojawia sie kopacz, niewolnik orkow
+	Wld_InsertNpc	(NASZ_003_Kopacz,"NASZ_ZAMEK_OBOZ_01");
+	
 	WillIdziePierwszyRazNaZamek = TRUE;
 	HookEngineF(oCNpc__ProcessNpc,6,UratujFunc);
 	

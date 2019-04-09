@@ -323,11 +323,11 @@ FUNC VOID DIA_NASZ_205_Mysliwy_QuestDone_Info()
 		B_GivePlayerXP (500);
 	};
 
-	// TODO: nagroda cos innego niz zloto, np ³uk?? selfmade
-	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_07"); //Dziêki za pomoc. WeŸ to z³oto. Mi i tak nie jest potrzebne. 
+	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_07"); //Dziêki za pomoc. WeŸ ten ³uk. Znalaz³em go ostatnio grzebi¹c w skrzyni. Wydaje mi siê, ¿e nale¿a³ do Gestatha, ale nasz szef sprawi³ sobie ju¿ nowy.
+	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_08"); //Ja jestem przywi¹zany do swojego, a tobie nale¿y siê przyzwoita nagroda. Raz jeszcze: Dziêkujê!
 	
-	//Createinvitems (self, ItFo_Beer, 1);
-	//B_GiveInvItems (self, other, ItFo_Beer, 1);
+	Createinvitems (self, ItRw_Bow_H_03, 1);
+	B_GiveInvItems (self, other, ItRw_Bow_H_03, 1);
 
 	Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Mysliwy_Warta, "Teraz ju¿ ¿aden zêbacz nie zniszczy zapasów myœliwych.");

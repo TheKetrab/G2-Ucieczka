@@ -787,6 +787,60 @@ INSTANCE ItNa_ShaBaNakk (C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+// TODO schowac w jakiejs skrzyni na poczatku gry
+INSTANCE ItNa_MalaMaczuga (C_Item)
+{	
+	name 				=	"Ma³a maczuga";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_2HD_AXE;	
+	material 			=	MAT_WOOD;
+
+	value 				=	Value_Windknecht;
+
+	damageTotal  		= 	17;
+	damagetype 			=	DAM_BLUNT;
+	range    			=  	RANGE_Windknecht;		
+		
+	cond_atr[2]   		=	ATR_STRENGTH;
+	cond_value[2]  		=	5;
+	visual 				=	"ItMW_Club_1H_01.3DS";
+
+	description			= name;
+	
+	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+\// TODO dodac w jakiejs skrzyni na poczatku gry
+INSTANCE ItNa_Maczuga (C_Item)
+{	
+	name 				=	"Maczuga";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_2HD_AXE;	
+	material 			=	MAT_WOOD;
+
+	value 				=	Value_Sturmknecht;
+
+	damageTotal  		= 	26;
+	damagetype 			=	DAM_BLUNT;
+	range    			=  	RANGE_Sturmknecht;		
+	
+	cond_atr[2]   		=	ATR_STRENGTH;
+	cond_value[2]  		=	14;
+	visual 				=	"ItMW_Club_2H_01.3DS";
+
+	description			= 	name;
+	
+	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+
 
 INSTANCE ItNa_MieczSwiatla (C_Item)
 {	
@@ -3262,8 +3316,6 @@ FUNC VOID Use_ItNa_KsiegaBosow()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// TODO uroboros:
-// kazdy ma miec imie, po otwarciu wszystkich 6 ksiazek sie pojawiaja (jako szkielety z imieniami) i trzeba ich pozabijac
 
 // wlasciciel 'n' napisa³ przepis 'n+1'
 //            | w³aœciciel	| gdzie?								| przepis na:	
@@ -4146,9 +4198,9 @@ func void Use_Fexo ()
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_PrintLines	( nDocID,  0, "notatki fexa:"	);
-					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, "To AV mnie wykoñczy!"						);
 					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "...");
+					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!' (Piêciu braci)");
 					Doc_PrintLines	( nDocID,  0, "..."						);
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_PrintLines	( nDocID,  0, "..."						);
@@ -6162,6 +6214,8 @@ INSTANCE ItNa_Oswojenie(C_Item)
 	
 	TEXT	[1]			=	NAME_Mana_needed;			
 	COUNT	[1]			=	SPL_Cost_Scroll;
+
+	TEXT	[3]			=	"Zaklêcie powoduje neutralne zachowanie zwierzêcia wzglêdem rzucaj¹cego.";
 	
 	TEXT	[5]			=	NAME_Value;					
 	COUNT	[5]			=	value;
@@ -7826,10 +7880,10 @@ INSTANCE ItNa_RykSmoka(C_Item)
 	effect			=	"SPELLFX_ITEMGLIMMER"; 
 
 	description		= 	"Ryk smoka";
-	TEXT[1]			= 	"Zwiêksza si³ê o 50 na 30s.";
+	TEXT[1]			= 	"Zwiêksza si³ê o 50.";
 	
-	TEXT[3]			= 	NAME_Duration;				
-	COUNT[3]		= 	Time_Speed/60000;
+	TEXT[3]			= 	NAME_Sec_Duration;				
+	COUNT[3]		= 	120;
 	
 	TEXT[5]			= 	NAME_Value;					
 	COUNT[5]		= 	value;
@@ -7861,10 +7915,10 @@ INSTANCE ItNa_CienCieniostwora(C_Item)
 	effect			=	"SPELLFX_ITEMGLIMMER"; 
 
 	description		= 	"Cieñ cieniostwora";
-	TEXT[1]			= 	"Zwiêksza zrêcznoœæ o 50 na 30s.";
+	TEXT[1]			= 	"Zwiêksza zrêcznoœæ o 50.";
 	
-	TEXT[3]			= 	NAME_Duration;				
-	COUNT[3]		= 	Time_Speed/60000;
+	TEXT[3]			= 	NAME_Sec_Duration;				
+	COUNT[3]		= 	120;
 	
 	TEXT[5]			= 	NAME_Value;					
 	COUNT[5]		= 	value;
@@ -7896,10 +7950,10 @@ INSTANCE ItNa_ZmoraGwardzisty(C_Item)
 	effect			=	"SPELLFX_ITEMGLIMMER"; 
 
 	description		= 	"Zmora gwardzisty";
-	TEXT[1]			= 	"Wszystkie umiejêtnoœci z³odziejskie na 30s.";
+	TEXT[1]			= 	"Dodaje wszystkie umiejêtnoœci z³odziejskie.";
 	
-	TEXT[3]			= 	NAME_Duration;				
-	COUNT[3]		= 	Time_Speed/60000;
+	TEXT[3]			= 	NAME_Sec_Duration;				
+	COUNT[3]		= 	120;
 	
 	TEXT[5]			= 	NAME_Value;					
 	COUNT[5]		= 	value;
@@ -7939,7 +7993,10 @@ INSTANCE ItNa_MiksturaUspokajajaca (C_Item)
 
 FUNC VOID UseItNa_Uspokajajaca()
 {
-		AI_PlayAni (self, "S_SUCKENERGY_VICTIM"); 
+	// ponoc glupio wyglada
+	//AI_PlayAni (self, "S_SUCKENERGY_VICTIM");
+	// TODO przeniesc ta animacje z G1
+	AI_PlayAni(self,"T_PSI_VICTIM");
 };
 
 
@@ -7963,10 +8020,10 @@ INSTANCE ItNa_KropleDuszy(C_Item)
 
 	description		= 	"Krople duszy";
 	TEXT[1]			= 	"Czyni tego, kto j¹ wypije";
-	TEXT[1]			= 	"nieœmiertelnym przez 30s.";
+	TEXT[1]			= 	"nieœmiertelnym...";
 	
-	TEXT[3]			= 	NAME_Duration;				
-	COUNT[3]		= 	Time_Speed/60000;
+	TEXT[3]			= 	NAME_Sec_Duration;				
+	COUNT[3]		= 	120;
 	
 	TEXT[5]			= 	NAME_Value;					
 	COUNT[5]		= 	value;
@@ -8547,8 +8604,8 @@ INSTANCE  ItNa_HuntAmulet(C_Item)
 	TEXT[2]			= NAME_Bonus_Mana;
 	COUNT[2]		= MA_Amulett_Solo_Bonus;
 	
-	TEXT[3]			= PRINT_Addon_KUMU_01;
-	TEXT[4]			= PRINT_Addon_KUMU_02;
+	TEXT[3]			= "";
+	TEXT[4]			= "";
 	 
 	TEXT[5]			= NAME_Value;
 	COUNT[5]		= value;

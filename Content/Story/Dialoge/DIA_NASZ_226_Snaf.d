@@ -534,7 +534,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku ()
 FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna ()
 {
 	if(npc_hasitems(other, Itfo_milk) >= 1)
-	&&(npc_hasitems(other, ItPl_Forestberry) >= 2) // nie wiem która jagoda (mo¿e ta z bg? :Thinking:), wiêc dam leœn¹ i poln¹
+	&&(npc_hasitems(other, ItPl_Forestberry) >= 2)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 2)
 	{
 

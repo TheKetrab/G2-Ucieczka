@@ -39,11 +39,10 @@ INSTANCE DIA_NASZ_020_Sattar_HaveYouFinished   (C_INFO)
 
 FUNC INT DIA_NASZ_020_Sattar_HaveYouFinished_Condition()	
 {
-	// TODO odkomentowac
-	//if (npc_knowsinfo(other,DIA_NASZ_002_Daryl_ZamieniamSie))
-	//{
+	if (npc_knowsinfo(other,DIA_NASZ_002_Daryl_ZamieniamSie))
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_020_Sattar_HaveYouFinished_Info()
@@ -51,7 +50,7 @@ FUNC VOID DIA_NASZ_020_Sattar_HaveYouFinished_Info()
 	AI_Output (other,self ,"DIA_NASZ_020_Sattar_HaveYouFinished_15_00"); //Skoñczy³eœ ju¿ pracê nad bry³k¹ rudy?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_01"); //Wiêc przystêpujemy do dzia³ania? Nareszcie, ju¿ myœla³em, ¿e bêdê musia³ targaæ ten cholerny kawa³ek rudy przez ca³e swoje ¿ycie.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_02"); //Kilka razy mia³em ju¿ zamiar siê poddaæ, gdy¿ ruda jest cholernie twarda i ciê¿ko jest j¹ obrabiaæ w takich warunkach.
-//(œmieje siê)
+	//(œmieje siê)
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_03"); //Jednak jestem zadowolony z ostatecznego efektu. Zróbcie z niej u¿ytek, bo ja mam jej chwilowo doœæ.
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_HaveYouFinished_55_04"); //Wiedzia³em, ¿e potrafisz pos³ugiwaæ siê magi¹, bo by³eœ kiedyœ nowicjuszem, ale nie podejrzewa³em, ¿e potrafisz obrabiaæ kamienie. Gdzie siê tego nauczy³eœ?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_05"); //W czasach mojej m³odoœci du¿o czasu spêdza³em w towarzystwie ojca, który by³ bardzo cenionym jubilerem.

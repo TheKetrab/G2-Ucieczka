@@ -195,7 +195,7 @@ func void DIA_NASZ_223_Ratford_Teach_PICKPOCKET()
 	PrintScreen ("Nauka: fach z³odziejski", -1, -1, FONT_Screen, 2);
 
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_PICKPOCKET, 1);
-	Npc_SetTalentSkill 	(hero, 6, 1); //umiejetnosc Fach zlodziejski
+	Npc_SetTalentSkill 	(hero, 6, NauczoneZlodziejskie); //umiejetnosc Fach zlodziejski
 	hero.lp = hero.lp - 5;
 
 
@@ -227,7 +227,7 @@ func void DIA_NASZ_223_Ratford_Teach_ACROBAT()
 	PrintScreen ("Nauka: fach z³odziejski", -1, -1, FONT_Screen, 2);
 
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_ACROBAT, 1);
-	Npc_SetTalentSkill 	(hero, 6, 1); //umiejetnosc Fach zlodziejski
+	Npc_SetTalentSkill 	(hero, 6, NauczoneZlodziejskie); //umiejetnosc Fach zlodziejski
 	hero.lp = hero.lp - 5;
 
 	//Info_ClearChoices	(DIA_NASZ_223_Ratford_Teach);
@@ -259,7 +259,7 @@ func void DIA_NASZ_223_Ratford_Teach_SNEAK()
 	PrintScreen ("Nauka: fach z³odziejski", -1, -1, FONT_Screen, 2);
 
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_SNEAK, 1);
-	Npc_SetTalentSkill 	(hero, 6, 1); //umiejetnosc Fach zlodziejski
+	Npc_SetTalentSkill 	(hero, 6, NauczoneZlodziejskie); //umiejetnosc Fach zlodziejski
 	hero.lp = hero.lp - 5;
 
 	//Info_ClearChoices	(DIA_NASZ_223_Ratford_Teach);
@@ -295,7 +295,7 @@ func void DIA_NASZ_223_Ratford_Teach_PICKLOCK()
 	B_LogEntry (TOPIC_MysliwiTrader,"Ratford sprzeda mi wytrychy.");	
 
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_PICKLOCK, 1);
-	Npc_SetTalentSkill 	(hero, 6, 1); //umiejetnosc Fach zlodziejski
+	Npc_SetTalentSkill 	(hero, 6, NauczoneZlodziejskie); //umiejetnosc Fach zlodziejski
 	hero.lp = hero.lp - 5;
 
 	//Info_ClearChoices	(DIA_NASZ_223_Ratford_Teach);

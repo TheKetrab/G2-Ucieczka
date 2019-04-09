@@ -46,10 +46,11 @@ FUNC VOID Rtn_Start_131 ()
 	TA_Sit_Campfire	(08,00,20,00,"NASZ_LOWCY_ZWIADOWCY_06");
 };
 
-// TODO: + on ma byc martwy potem w zamku
 FUNC VOID Rtn_Kap4_131 ()
 {
-	TA_Stand_WP	(20,00,08,00,"NASZ_LOWCY_ZWIADOWCY_02");
-	TA_Stand_WP	(08,00,20,00,"NASZ_LOWCY_ZWIADOWCY_02");
+	TA_Stand_ArmsCrossed	(20,30,10,00,"NASZ_JENKINS_KAP4_02");
+	TA_Smalltalk			(10,00,14,00,"NASZ_ZAMEK_1");
+	TA_Practice_Sword		(14,00,17,00,"NASZ_JENKINS_KAP4_02");
+	TA_Smalltalk			(17,00,20,30,"NASZ_ZAMEK_1");
 };
 

@@ -5,7 +5,7 @@ instance NASZ_017_Joru (Npc_Default)
 	// ------ NSC ------
 	name 		= "Joru";
 	guild 		= GIL_MEATBUG;
-	id 			= 6;
+	id 			= 17;
 	voice 		= 5;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;

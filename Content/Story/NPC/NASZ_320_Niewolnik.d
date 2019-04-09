@@ -10,6 +10,7 @@ instance NASZ_320_Niewolnik (Npc_Default)
 	npctype		= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
+	aivar[AIV_IGNORE_Sheepkiller]	= TRUE;
 
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 1);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)

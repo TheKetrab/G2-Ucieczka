@@ -276,6 +276,67 @@ func void SHIELD_EQUIP()
 		VobSetVisual(ptr,itm.visual);	
 	};
 };
+const int oCNpc__UpdateSlots = 7645648;
+func void UpdateStaffSlot()
+{
+	if(!ECX) {return;};
+	
+	//var c_npc slf; slf = _^(ECX);
+	var int slotvob; slotvob =  GetItemSlot_(ECX,"ZS_STAFF");
+	
+	if(!slotvob) {return;};
+	
+	oCNpc_SetToSlotPosition_(ECX, slotvob, "ZS_CROSSBOW");
+};
+
+const int oCNpcInventory__HandleEvent = 7397440;
+
+func void oCNpcInventory_HandleEvent_hook()
+{
+	if(!ECX) { return;};
+	
+	var int nptr; nptr = MEM_ReadInt(ECX+160);
+	
+	if(nptr != MEM_ReadInt(_hero)) {return;};
+	
+
+	if(MEM_ReadInt(ESP+4) == MEM_GetKey("keyAction") || MEM_ReadInt(ESP+4) ==  MEM_GetSecondaryKey("keyAction"))
+	{
+		var int ptr; ptr = Inv_GetSelectedItem(ECX);
+		if(!ptr) {return;};
+		
+		var c_item itm; itm = _^(ptr);	
+		
+		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(Itna_kostur_urshaka))
+		{	
+			var c_npc slf; slf = _^(nptr);
+			MEM_WriteInt(ESP+4,-1);
+			EAX = -1;
+			if(!itm.hp)
+			{
+				if (!oCNpc_GetInvSlot_(nptr, "ZS_STAFF"))
+				{
+					oCNpc_CreateInvSlot_(nptr, "ZS_STAFF");
+				};
+				
+				Wld_InsertItem(Hlp_GetInstanceID(itm),MEM_GetAnyWP());
+				var zCTree newTreeNode; newTreeNode = _^(MEM_World.globalVobTree_firstChild);
+				var int itmPtr; itmPtr = newTreeNode.data;
+				oCNpc_PutInSlot(slf, "ZS_STAFF", itmPtr, true);
+				var int vob; vob = GetItemSlot(slf,"ZS_STAFF");
+				itm.flags = itm.flags | ITEM_ACTIVE;
+				itm.hp = 1;
+			}
+			else
+			{
+				oCNpc_RemoveFromSlot(slf, "ZS_STAFF", itmPtr, true);
+				itm.flags = itm.flags & ~ ITEM_ACTIVE;
+				itm.hp = 0;
+			};
+			
+		};	
+	};
+};
 
 func void Hooks_Global()
 {
@@ -285,6 +346,9 @@ func void Hooks_Global()
 	if(!hooks){
 		
 		DisableFocusOfDeadNPCsWithEmptyInventory();
+		
+		HookEngineF(oCNpc__UpdateSlots,6,UpdateStaffSlot);
+		HookEngineF(oCNpcInventory__HandleEvent,6,oCNpcInventory_HandleEvent_hook);
 		HookEngineF(oCNpc__EquipItem,        7, SHIELD_EQUIP);
 		HookEngineF(oCNpc__ProcessNpc,6,SneakHuntingBoost); 
 		
@@ -312,10 +376,6 @@ func void Hooks_Global()
 		//HookEngineF(7011824,5,sneak);
 		//HookEngineF(6562848,6,test);
 		//HookEngineF(6908240,6,test);
-		//const int oCViewDialogTrade__OnTransferLeftX = 6863312; //0x68B9D0
-		//HookEngineF(oCViewDialogTrade__OnTransferLeftX, 6, onTradeLeft);
-		//const int oCViewDialogTrade__OnTransferRightX = 6863632; //0x68B9D0
-		//HookEngineF(oCViewDialogTrade__OnTransferLeftX, 7, onTradeRight);
 		//const int oCMobContainer__EndInteraction = 7477584;
 		//HookEngineF(oCMobContainer__EndInteraction,6,RemoveChestKeyOnExit);
 		

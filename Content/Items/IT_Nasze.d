@@ -7559,7 +7559,7 @@ INSTANCE ItNa_WywarVachuta(C_Item)
 {
 	name 			=	"Wywar Vachuta";
 
-	mainflag 		=	ITEM_KAT_FOOD;
+	mainflag 		=	ITEM_KAT_POTIONS;
 	flags 			=	ITEM_MULTI;
 
 	value 			=	0;	
@@ -7578,7 +7578,7 @@ INSTANCE ItNa_PoteznyWywar(C_Item)
 {
 	name 			=	"Wywar";
 
-	mainflag 		=	ITEM_KAT_FOOD;
+	mainflag 		=	ITEM_KAT_POTIONS;
 	flags 			=	ITEM_MULTI;
 
 	value 			=	0;	
@@ -9782,7 +9782,7 @@ INSTANCE ItNa_WywarRoslinaLecznicza (C_Item)
 {	
 	name 				=	"Wywar z roœliny leczniczej";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_POTIONS;
 	flags 				=	ITEM_MULTI;
 	
 	value 				=	Value_Water;
@@ -9811,7 +9811,7 @@ INSTANCE ItNa_WywarZieleLecznicze (C_Item)
 {	
 	name 				=	"Wywar z zió³ leczniczych";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_POTIONS;
 	flags 				=	ITEM_MULTI;
 	
 	value 				=	Value_Water;
@@ -9839,7 +9839,7 @@ INSTANCE ItNa_WywarKorzenLeczniczy (C_Item)
 {	
 	name 				=	"Wywar z korzenia leczniczego";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_POTIONS;
 	flags 				=	ITEM_MULTI;
 	
 	value 				=	Value_Water;

@@ -202,10 +202,13 @@ func void TakeFocusVob_hook()
 	if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_FragmentZwoju))
 	{
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
+	};		
+	if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_KoloZebate))
+	{
+		B_LogEntry (TOPIC_Rethon_kurgan, "Znalaz³em ko³o zêbate. Mogê wracaæ do Kurgana.");
 	};	
 	
 	PrintS_Ext(ConcatStrings(G2U_you_take,itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
-	release(itm);
 	
 };
 
@@ -885,21 +888,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 						dmg = (spl.damage_per_level - oth.protection[PROT_MAGIC]+(slf.attribute[ATR_MANA_MAX]/20)+(slf.attribute[ATR_HITPOINTS_MAX]/50));
 					};
 				
-				}
-				else
-				{
-					if(slf.aivar[AIV_SpellLevel])
-					{
-						dmg = ((spl.damage_per_level*slf.aivar[AIV_SpellLevel]) - oth.protection[PROT_MAGIC] +(slf.attribute[ATR_MANA]/5)); 
-					}
-					else
-					{
-						dmg = (spl.damage_per_level - oth.protection[PROT_MAGIC] +(slf.attribute[ATR_MANA]/5));
-					};
-				
-				};
-				
-			
+				};	
 		};
 	};
 
@@ -1051,9 +1040,9 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				
 				if(slf.aivar[AIV_RandomDmg] <=34 || slf.aivar[AIV_RandomDmg] >=130)
 					{	
-						//AI_WaitMS(hero,100);
+						AI_WaitMS(hero,500);
 						AI_PlayAni(oth,"T_FALLB_2_FALLENB");
-						AI_Wait(oth,1);
+						//AI_Wait(oth,1);
 						dmg += (oth.attribute[1]*10)/100;
 						return dmg;
 					};

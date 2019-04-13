@@ -43,6 +43,14 @@ func void ZS_Dead ()
 		};
 	}
 	
+	//if(self.guild == GIL_GOBBO)
+	//{
+		if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Gobbo_Warrior_Kivo))
+		{
+			Npc_RemoveInvItems			(self, ItMw_Orkschlaechter, Npc_HasItems(self,ItMw_Orkschlaechter));
+		};
+	//};
+	
 	if(self.aivar[AIV_PARTYMEMBER]==TRUE){ Druzyna(self,0); };
 	// ------ aivars resetten ------
 	self.aivar[AIV_RANSACKED] = FALSE;

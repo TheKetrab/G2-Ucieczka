@@ -115,8 +115,9 @@ func int ZS_MM_Rtn_Follow_Monster_You_Loop ()
 	}
 	else
 	{
-		AI_StartState (self, ZS_MM_Rtn_Roam, 1, "NASZ_ZAPALISADA_TARTAK_10");
+		AI_StartState (self, ZS_MM_AllScheduler, 1, "NASZ_ZAPALISADA_TARTAK_10");
 		self.WP = "NASZ_ZAPALISADA_TARTAK_10"; 
+		AI_GotoWP		(self, self.wp);
 		PrintScreen ("Doprowadzi³eœ potwora.", -1, 40, FONT_ScreenSmall, 2);
 		
 		if (self.aivar[AIV_MM_REAL_ID] == ID_SCAVENGER) || (self.aivar[AIV_MM_REAL_ID] == ID_SCAVENGER_DEMON)

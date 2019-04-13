@@ -227,7 +227,7 @@ var int JehenLuteCheckOneOption;
 //*********************************************************************
 func void Jehen_Say_AboutLute() {
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_00"); //Je¿eli chodzi o lutniê to uda³o mi siê znaleŸæ jedn¹ w swoich rzeczach. Jest trochê pozadzierana, ale bêdzie siê na niej da³o graæ. Mogê ci j¹ sprzedaæ za 50 sztuk z³ota lub...
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_01"); //Je¿eli dostarczysz mi 150 z³otych monet to wykonam dla ciebie nowy instrument, z³oto oczywiœcie bêdzie mi potrzebne na pokrycie kosztów zwi¹zanych z materia³ami.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_01"); //Jeœli dostarczysz mi 150 z³otych monet to wykonam dla ciebie nowy instrument, z³oto oczywiœcie bêdzie mi potrzebne na pokrycie kosztów zwi¹zanych z materia³ami.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_02"); //Co wybierasz?
 
 	if(npc_hasitems(other,ItMi_Gold)<50) {

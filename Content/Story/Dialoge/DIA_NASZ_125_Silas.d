@@ -449,6 +449,169 @@ FUNC VOID DIA_NASZ_125_Silas_Gwozdzie_Info()
 
 };
 
+
+
+// TODO dac temu przelacznikowi visible false
+var int HeroKnowAboutSilasSwitch;
+func int SILAS_SWITCH_COND() {
+	return HeroKnowAboutSilasSwitch;
+};
+
+var int Silas_Switch_OneTime;
+func void SILAS_SWITCH_S1() {
+
+	Wld_SendTrigger("SILAS_BECZKA_MOVER");
+	Wld_SendTrigger("SILAS_KARCZMA_MOVER");
+
+	if (Silas_Switch_OneTime == FALSE) {
+		Silas_Switch_OneTime = TRUE;
+		B_LogEntry (TOPIC_Silas_ryzowka, "Uda³o siê! Znalaz³em przycisk w beczce. Pora spl¹drowaæ schowek.");
+	};
+};
+
+//*********************************************************************
+//	Info QuestKap3
+//*********************************************************************
+INSTANCE DIA_NASZ_125_Silas_QuestKap3   (C_INFO)
+{
+	npc         = NASZ_125_Silas;
+ 	nr          = 22;
+ 	condition   = DIA_NASZ_125_Silas_QuestKap3_Condition;
+ 	information = DIA_NASZ_125_Silas_QuestKap3_Info;
+ 	permanent   = FALSE;
+ 	description = "Masz pod dostatkiem beczek z piwem?";
+};
+
+FUNC INT DIA_NASZ_125_Silas_QuestKap3_Condition()
+{
+	if (KAPITEL >= 3)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_125_Silas_QuestKap3_Info()
+{
+
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_00"); //Masz pod dostatkiem beczek z piwem?
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_01"); //Na œcianie wisi ich kilka. Reszta jest schowana w piwnicy, ch³odz¹ siê. A Jeremiasz dba o to, ¿eby codziennie uzupe³niaæ nasze zapasy.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_02"); //Jednak piwo ma w sobie ma³o alkoholu i niektórym z ³owców nie wystarcza. Pijani wspominaj¹, jak Jeremiasz przyrz¹dza³ ry¿ówkê i wszyscy upijaliœmy siê ni¹ w karczmie w Nowym Obozie.
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_03"); //Pamiêtam ten trunek, ale nie by³ moim ulubionym. Raz mocno przesadzi³em i skoñczy³o siê to bardzo nieciekawie...
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_04"); //Od tamtego momentu nie mia³em stycznoœci z ry¿ówk¹ i chyba nie bêdê mia³ ju¿ okazji. Uprawy ry¿u w Nowym Obozie od dawna le¿¹ przykryte œniegiem.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_05"); //To prawda. Nie ma równie¿ zbieraczy, którzy zajmowaliby siê upraw¹ pod okiem Ry¿owego Ksiêcia. Nowego ry¿u w Górniczej Dolinie ju¿ nie wyhodujemy.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_06"); //Ale w mojej karczmie z pewnoœci¹ zosta³o jeszcze kilka beczu³ek. Niestety, tamte tereny okupuj¹ potê¿ne jaszczurki i nie sposób dostaæ siê do œrodka.
+
+	if (!npc_knowsinfo(other,DIA_NASZ_221_Benito_KillDone)) {
+		AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_07"); //Niewykluczam, ¿e niebawem siê tam wybiorê.
+	}
+	else {
+		AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_08"); //By³em tam ju¿ i mogê udaæ siê ponownie.
+	};
+	
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_09"); //Naprawdê? By³oby œwietnie, gdybyœ przyniós³ moje zapasy. Tylko musisz wiedzieæ, gdzie ich szukaæ. S¹ w schowku, ukryte przed spragnionymi Szkodnikami.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_10"); //Homer sprawi³ ten mechanizm. Tama na jeziorze to nie jego jedyne osi¹gniêcie. Ciekawe, czy prze¿y³ upadek Bariery...
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_11"); //Dobra, to gdzie schowa³eœ te beczu³ki?
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_12"); //Musisz wyjœæ na piêtro w karczmie, do pracowni Jeremiasza. Tam, po prawej stronie, przy œcianie, le¿y beczka. Musisz podejœæ do niej od lewej strony i pomacaæ.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_13"); //Gdzieœ powinna byæ wnêka, a w œrodku prze³¹cznik. Beczka zadzia³a jak ko³owrót i poci¹gnie ³añcuchy, które wyci¹gn¹ do góry drewniany stó³ piêtro ni¿ej.
+	AI_Output (other, self,"DIA_NASZ_125_Silas_QuestKap3_55_14"); //Homer sprytnie to wymyœli³.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_15"); //To prawda. Nikt nigdy siê tam nie w³ama³! Jesteœ czwartym, oprócz mnie, Jeremiasza i Homera, cz³owiekiem, który zna to sekretne miejsce.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_16"); //IdŸ wiêc i przynieœ o co proszê, a bêdziesz móg³ kolejny raz skosztowaæ ry¿ówki!
+	
+	HeroKnowAboutSilasSwitch = TRUE;
+	
+	Log_CreateTopic (TOPIC_Silas_ryzowka, LOG_MISSION);
+	Log_SetTopicStatus (TOPIC_Silas_ryzowka, LOG_RUNNING);
+	B_LogEntry (TOPIC_Silas_ryzowka, "Silas powiedzia³, ¿e w jego karczmie w Nowym Obozie s¹ jeszcze zapasy ry¿ówki. Aby dostaæ siê do miejsca, w którym s¹ schowane, muszê wyjœæ na piêtro, gdzie Jeremiasz warzy³ alkohol. Tam, po prawej stronie jest beczka przypiêta do ³añcuchów. Z jej lewej strony jest prze³¹cznik, który aktywuje mechanizm. Mam przynieœæ karczmarzowi wszystkie zapasy, które tam znajdê.");
+
+	
+};
+
+
+var int SilasRyzowkaDay;
+var int SilasRyzowkaHour;
+//*********************************************************************
+//	Info QuestKap3Finish
+//*********************************************************************
+INSTANCE DIA_NASZ_125_Silas_QuestKap3Finish   (C_INFO)
+{
+	npc         = NASZ_125_Silas;
+ 	nr          = 22;
+ 	condition   = DIA_NASZ_125_Silas_QuestKap3Finish_Condition;
+ 	information = DIA_NASZ_125_Silas_QuestKap3Finish_Info;
+ 	permanent   = FALSE;
+ 	description = "Przynios³em beczki z ry¿ówk¹.";
+};
+
+FUNC INT DIA_NASZ_125_Silas_QuestKap3Finish_Condition()
+{
+	if (npc_knowsinfo(other,DIA_NASZ_125_Silas_QuestKap3))
+	&& (npc_hasitems(other,ItNa_Beczulka) >= 2)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_125_Silas_QuestKap3Finish_Info()
+{
+
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3Finish_15_00"); //Przynios³em beczki z ry¿ówk¹.
+	B_giveinvitems(other,self,ItNa_Beczulka,2);
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Finish_55_01"); //O bogowie! Ju¿ czujê ten aromat. PrzyjdŸ za godzinê, to dostaniesz butelkê.
+	
+	Log_SetTopicStatus (TOPIC_Silas_ryzowka, LOG_SUCCESS);
+	B_LogEntry (TOPIC_Silas_ryzowka, "Odda³em karczmarzowi beczki. Ucieszy³ siê i zaprosi³ mnie na gratisow¹ butelkê. Mogê przyjœæ za godzinê.");
+	DodajReputacje(REP_LOWCY,2);
+	B_GivePlayerXP(500);
+	
+	SilasRyzowkaDay = Wld_GetDay();
+	SilasRyzowkaHour = Wld_GetTimeHour();
+};
+
+//*********************************************************************
+//	Info QuestKap3Ryzowka
+//*********************************************************************
+INSTANCE DIA_NASZ_125_Silas_QuestKap3Ryzowka   (C_INFO)
+{
+	npc         = NASZ_125_Silas;
+ 	nr          = 22;
+ 	condition   = DIA_NASZ_125_Silas_QuestKap3Ryzowka_Condition;
+ 	information = DIA_NASZ_125_Silas_QuestKap3Ryzowka_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_125_Silas_QuestKap3Ryzowka_Condition()
+{
+	if (npc_knowsinfo(other,DIA_NASZ_125_Silas_QuestKap3Ryzowka))
+	&& (TimeIsUp(-1,1,SilasRyzowkaDay,SilasRyzowkaHour)) // 1h
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_125_Silas_QuestKap3Ryzowka_Info()
+{
+
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Ryzowka_15_00"); //Zgodnie z obietnic¹, butelka dla ciebie.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Ryzowka_55_01"); //Spróbuj! Mo¿e twój ¿o³¹dek nie pamiêta ju¿, jak kiedyœ na ni¹ reagowa³. Ha, ha!
+
+	Createinvitems(self,ItNa_Ryzowka,1);
+	B_giveinvitems(self,other,ItNa_Ryzowka,1);
+	
+	SILAS_SPRZEDAJE_RYZOWKE = TRUE;
+	
+};
+
+
+
+
+
+
+
+
+
+
+
 //*********************************************************************
 //	Info Trolls
 //*********************************************************************

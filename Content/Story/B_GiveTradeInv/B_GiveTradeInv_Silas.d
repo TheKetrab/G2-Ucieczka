@@ -1,5 +1,6 @@
 
 var int Silas_ItemsGiven_Chapter_1;
+var int Silas_ItemsGiven_Ryzowka;
 
 FUNC VOID B_GiveTradeInv_Silas (var C_NPC slf)
 {
@@ -19,6 +20,14 @@ FUNC VOID B_GiveTradeInv_Silas (var C_NPC slf)
 	
 		Silas_ItemsGiven_Chapter_1 = TRUE;
 	};
+	
+	if (SILAS_SPRZEDAJE_RYZOWKE)
+	&& (Silas_ItemsGiven_Ryzowka == FALSE)
+	{
+		CreateInvItems (slf, ItNa_Ryzowka, 13); 
+		Silas_ItemsGiven_Ryzowka = TRUE;	
+	};
+	
 	
 
 };

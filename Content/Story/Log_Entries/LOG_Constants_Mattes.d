@@ -122,6 +122,7 @@ const string	TOPIC_Udar_patrol			=	"Zaginiony patrol";				//(+1L)									| (+20
 const string	TOPIC_Jenkins_bestia		=	"W poszukiwaniu nieumar³ej bestii";	// TODO:
 const string	TOPIC_Jan_helmy				=	"He³my odesz³ych ¿o³nierzy";	//+4L									| +700						| pierœcieñ ¿ycia ItRi_Hp_02
 const string	TOPIC_Udar_presja			=	"Presja czasu";					//+4M									| +700						| ---
+const string	TOPIC_Silas_ryzowka			=	"Schowek z ry¿ówk¹";			//+2M									| +500						| butelka ry¿ówki
 
 //---------- Mysliwi ----------
 const string	TOPIC_Benito_jaszczuroludzie =	"Jaszczuroludzie";				//+4M									| +300+700=1000				| ---

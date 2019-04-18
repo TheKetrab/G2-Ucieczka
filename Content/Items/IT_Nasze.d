@@ -813,7 +813,7 @@ INSTANCE ItNa_MalaMaczuga (C_Item)
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
-\// TODO dodac w jakiejs skrzyni na poczatku gry
+// TODO dodac w jakiejs skrzyni na poczatku gry
 INSTANCE ItNa_Maczuga (C_Item)
 {	
 	name 				=	"Maczuga";  
@@ -7630,6 +7630,39 @@ func void UseJabol()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+var int RyzowkaOneTime;
+INSTANCE ItNa_Ryzowka (C_Item)
+{
+	name 			=	"Ry¿ówka";
+
+	mainflag 		=	ITEM_KAT_FOOD;
+	flags 			=	ITEM_MULTI;
+
+	value 			=	20;	
+
+	visual 			=	"ItFo_Booze_01.3ds";
+	material 		=	MAT_GLAS;
+	on_state[0]		=	UseRyzowka;
+	scemeName		=	"POTIONFAST";
+
+	description		= 	name;
+			
+	
+	TEXT[5]			= 	NAME_Value;					
+	COUNT[5]		= 	value;
+
+};
+
+func void UseRyzowka()
+{
+	if (RyzowkaOneTime == FALSE) {
+		// TODO hero lp += 1, print na ekran: +1 PN
+		RyzowkaOneTime = TRUE;
+	};
+};
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 var int WyciagJagodyMax;
 INSTANCE ItNa_WyciagJagody (C_Item)
 {
@@ -8287,6 +8320,22 @@ instance ItNa_WyszlifowanaRuda(C_Item)
 	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+instance ItNa_Beczulka(C_Item)
+{
+	name = "Beczu³ka";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = 50;
+	visual = "OC_BARREL_MINI.3ds";
+	material = MAT_WOOD;
+	
+	description = "Beczu³ka ry¿ówki";
+	
+	text[5] = NAME_Value;
+	count[5] = value;
+	inv_zbias = INVCAM_ENTF_MISC2_STANDARD;
+};
 
 
 

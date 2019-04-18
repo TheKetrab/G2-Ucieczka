@@ -1,3 +1,31 @@
+var int WIELKI_DOM_DRZWI_OTWARTE;
+
+var int WielkiDomDrzwiOneTime;
+
+var int WielkiDomTimerSec;
+func void WielkiDomTimer() {
+
+	WielkiDomTimerSec += 1;
+	
+	if (WielkiDomTimerSec == 2) {
+		WIELKI_DOM_DRZWI_OTWARTE = TRUE;
+		WielkiDomTimerSec = 0;
+		ff_remove(WielkiDomTimer);
+	};
+};
+
+func void WIELKI_DOM_FUNC_S1() {
+
+	if (WielkiDomDrzwiOneTime == FALSE)
+	{
+		WielkiDomDrzwiOneTime = TRUE;
+		ff_applyonceext(WielkiDomTimer,1000,-1);
+	};
+	
+};
+
+
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -36,7 +64,11 @@ INSTANCE DIA_NASZ_212_Drax_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_212_Drax_siema_Condition()
 {
-	return TRUE;
+	// zagaduje po dwóch sekundach od otwarcia drzwi
+	if (WIELKI_DOM_DRZWI_OTWARTE == TRUE)
+	{
+		return TRUE;
+	};
 };
 
 FUNC VOID DIA_NASZ_212_Drax_siema_Info()

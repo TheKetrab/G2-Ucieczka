@@ -2,7 +2,7 @@
 instance NASZ_701_Invisible2 (Npc_Default)
 {
 	// ------ NSC ------
-	name 		= "Niewidzialny stra¿nik";	
+	name 		= "Przeklêty miecz";	
 	guild 		= GIL_SKELETON;
 	id 			= 701;
 	voice 		= 20;
@@ -19,7 +19,8 @@ instance NASZ_701_Invisible2 (Npc_Default)
 	EquipItem (self, ItMw_1h_MISC_Sword);
 
 	// ------ Inventory ------
-
+	B_CreateAmbientInv 	(self);
+		
 	// ------ visuals ------																			
 	Mdl_SetVisual			(self,	"HumanS.mds");
 	Mdl_ApplyOverlayMds 	(self,	"humans_1hST1.mds");
@@ -35,6 +36,9 @@ instance NASZ_701_Invisible2 (Npc_Default)
 
 	// ------ TA anmelden ------
 	daily_routine 		= Rtn_Start_701;
+	
+	var oCNpc slf; slf = hlp_getnpc(self);
+	slf._zCVob_bitfield[0] = slf._zCVob_bitfield[0] & ~ zCVob_bitfield0_castDynShadow;
 };
 
 FUNC VOID Rtn_Start_701 ()

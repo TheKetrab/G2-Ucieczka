@@ -373,7 +373,6 @@ FUNC VOID DIA_NASZ_305_Rabon_hmm_Info()
 
 	WillCanTalkWithRenegat = TRUE;
 	
-	B_StartOtherRoutine (NASZ_006_Renegat,"Rabon");
 	B_StartOtherRoutine (NASZ_011_Renegat,"Rabon");
 
 	B_LogEntry (TOPIC_Rabon_sakwa, "Rabon chce, bym przyniós³ mu magiczn¹ rudê od paladynów. Przyda mi siê ³atwy zysk... Miejsce wymiany to chyba Kanion Trolli. No to w drogê!");

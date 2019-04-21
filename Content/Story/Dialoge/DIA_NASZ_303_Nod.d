@@ -305,8 +305,6 @@ FUNC INT DIA_NASZ_303_Nod_pismo_Condition()
 
 FUNC VOID DIA_NASZ_303_Nod_pismo_Info()
 {
-	Wld_InsertNpc	(NASZ_408_Straznik,"OW_SAWHUT_MOLERAT_SPAWN01");
-	
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_15_00"); //Przeczyta³em.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_01"); //I? Rozumiesz coœ z tego?
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_15_02"); //Nie do koñca...
@@ -315,6 +313,8 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_Info()
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_05"); //Ten z kolei, mia³ przy sobie w³aœnie to pismo. Poza tym, przy wejœciu na klif naprzeciw naszego obozu pojawi³a siê magiczna pieczêæ.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_06"); //Jeœli dobrze siê przyjrzysz, zobaczysz miejsce na artefakt, który powinien odblokowaæ przejœcie.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_07"); //Jestem jednak przekonany, ¿e zosta³ on podzielony. Pytanie tylko, ile jest tych czêœci i gdzie ich szukaæ...
+
+	Wld_InsertNpc	(NASZ_408_Straznik,"OW_SAWHUT_MOLERAT_SPAWN01");
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "Nod chce, bym przyniós³ mu wszystkie czêœci artefaktu, który usunie magiczn¹ pieczêæ. Twierdzi, ¿e czêœci powinny znajdowaæ siê w kryptach podobnych do tej, w której on sam przebywa.");
 	

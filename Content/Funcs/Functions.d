@@ -130,3 +130,30 @@ func void PercentHealSelf(var int proc, var int attrb)
 	
 	Npc_ChangeAttribute(self,attrb,procent);
 };
+
+
+
+func void Wld_VobEffect(var string effect, var string vobName)
+{
+	var int vob; vob = MEM_SearchVobByName(vobName);
+
+	if (!vob) {
+		Print(ConcatStrings("Wld_VobEffect - not found: ",vobName));
+		return;
+	};
+
+	var zCVob destVob; destVob = _^(vob);
+	Wld_PlayEffect(effect, destVob, destVob, 0, 0, 0, FALSE );
+};
+
+
+func void Wld_VobEffect_Vob(var string effect, var int vob) // vob = vobId
+{
+	if (!vob) {
+		Print(ConcatStrings("Wld_VobEffect_Vob - not found: ",IntToString(destVob)));
+		return;
+	};
+
+	var zCVob destVob; destVob = _^(vob);
+	Wld_PlayEffect(effect, destVob, destVob, 0, 0, 0, FALSE );
+};

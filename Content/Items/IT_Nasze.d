@@ -5973,7 +5973,7 @@ INSTANCE ItNa_TrfMeatbug (C_Item)
 
 	value 				=	70;
 
-	visual				=	"ItSc_TrfGiantBug.3DS";
+	visual				=	"ItNa_TrfMeatbug_Item.3DS";
 	material			=	MAT_LEATHER;
 
 	spell			    = 	SPL_TrfGiantBug;
@@ -6037,7 +6037,7 @@ INSTANCE ItNa_TrfSwampDrone (C_Item)
 
 	value 				=	70;
 
-	visual				=	"ItSc_SumDemon.3DS";
+	visual				=	"ItNa_TrfBagTruten_Item.3DS";
 	material			=	MAT_LEATHER;
 
 	spell			    = 	SPL_TrfSheep;
@@ -6754,8 +6754,14 @@ INSTANCE ITNA_DJG_L (C_Item)
 
 	wear 					=	WEAR_TORSO;
 
-	visual 					=	"ItAr_Ranger_ADDON.3ds";
-	visual_change 			=	"Armor_Ranger_ADDON.asc";
+	// stare
+	//visual 					=	"ItAr_Ranger_ADDON.3ds";
+	//visual_change 			=	"Armor_Ranger_ADDON.asc";
+	
+	// to ma sens -> zostalo im duzo takich zbroi, czesc z lowcow to knechci z fortu
+	visual 					=	"ItAr_MIL_L.3DS";
+	visual_change 			=	"Armor_Mil_L.asc";
+	
 	visual_skin 			=	0;
 	material 				=	MAT_LEATHER;
 
@@ -8948,6 +8954,7 @@ FUNC VOID Speed1()
 			else { str = ConcatStrings(str," minut"); };
 		};
 		
+		// TODO bogu, napis w lewym górnym rogu ekranu
 		PrintScreen	(str, -1,-1, "font_old_20_white.tga",2);
 	}
 	else
@@ -8973,7 +8980,7 @@ FUNC VOID Speed2()
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_ZabiKorzen (C_Item)
 {	
-	name 				=	"¯abi Korzeñ";
+	name 				=	"¯abi korzeñ";
 
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;	

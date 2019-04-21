@@ -436,7 +436,7 @@ FUNC INT DIA_NASZ_110_Keroloth_ready_condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_ready_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ready_55_00"); //Czy jestem ju¿ gotowy, by do was do³¹czyæ?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_ready_55_00"); //Czy jestem ju¿ gotów, by do was do³¹czyæ?
 
 	if (RepEnough(25,REP_LOWCY)) {
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_ready_15_01"); //Tak. W obozie s³yszy siê o tobie same dobre rzeczy. Ale to jeszcze nie wszystko!
@@ -1474,10 +1474,17 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRuniczny_Info()
 	
 	//AI_EquipBestMeleeWeapon	(self);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_02"); //Sk¹d to masz?
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRuniczny_55_03"); //Znalaz³em na bagnach. Wydaje mi siê, ¿e nale¿a³o do Pana Cienia, którego pokona³em.
+	
+	if (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_duchy)) {
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRuniczny_55_03"); //Znalaz³em na bagnach. Wydaje mi siê, ¿e nale¿a³o do Pana Cienia, którego pokona³em.
+	} else {
+		// numerek 10, bo dodane póŸniej
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRuniczny_55_10"); //Szwêda³em sie po bagnach i zwin¹³em grupce o¿ywieñców.
+	};
+	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_04"); //Ciekawe... Wyczuwam w nim ukryt¹ energiê. Jest tu ma³y kryszta³, który powinien pulsowaæ...
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_05"); //Mo¿esz dowiedzieæ siê czegoœ wiêcej o tym mieczu?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_06"); //Oczywiœcie. Mam gdzieœ kilka ksi¹g dotycz¹cych walki mieczem. Przegl¹dnê swoje zbiory. Kojarzy mi siê, ¿e jest gdzieœ rozdzia³ o mieczach magicznych.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_06"); //Oczywiœcie. Mam gdzieœ kilka ksi¹g dotycz¹cych walki mieczem. Przejrzê swoje zbiory. Kojarzy mi siê, ¿e jest gdzieœ rozdzia³ o mieczach magicznych.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_07"); //Du¿o mieczy wykutych z magicznej rudy ma specjalne w³aœciwoœci, ale to wygl¹da na coœ o wiêkszej mocy.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_08"); //Có¿, jak tylko dowiem siê czegoœ wiêcej, to od razu dam ci znaæ.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRuniczny_15_09"); //Trzymam ciê za s³owo. Jeœli to rzeczywiœcie potê¿na broñ, to mo¿e przydaæ siê do walki z orkami.
@@ -2403,7 +2410,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	TRIA_Next(Keroloth);
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_07"); //Powiedz mi czy mo¿emy coœ z tym zrobiæ? Musi byæ przecie¿ sposób by zakoñczyæ to szaleñstwo, i to raz na zawsze.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_08"); //Byæ mo¿e to zbyt œmia³e za³o¿enie, jednak podejrzewam, ¿e ju¿ dawno natkn¹³em siê na coœ, co mo¿e mieæ zwi¹zek z t¹ spraw¹.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_08"); //Byæ mo¿e to zbyt œmia³e za³o¿enie, jednak podejrzewam, i¿ ju¿ dawno natkn¹³em siê na coœ, co mo¿e mieæ zwi¹zek z t¹ spraw¹.
 	
 	if (hero.guild == GIL_OUT) {
 
@@ -2664,7 +2671,7 @@ INSTANCE DIA_NASZ_110_Keroloth_MieczRunicznyOgien   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Condition;
  	information = DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Info;
  	permanent   = FALSE;
-	description = "Mam Ma³¹ burzê ognist¹.";
+	description = "Mam ma³¹ burzê ognist¹.";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Condition()
@@ -2678,7 +2685,7 @@ FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Info()
 {
 
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_15_00"); //Mam Ma³¹ burzê ognist¹.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_15_00"); //Mam ma³¹ burzê ognist¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
 	B_GiveInvItems (other, self, ItRu_Pyrokinesis, 1);
 	MieczRunicznyRunaDana = 1;
@@ -2696,7 +2703,7 @@ INSTANCE DIA_NASZ_110_Keroloth_MieczRunicznyLod   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_MieczRunicznyLod_Condition;
  	information = DIA_NASZ_110_Keroloth_MieczRunicznyLod_Info;
  	permanent   = FALSE;
-	description = "Mam Bry³ê lodu.";
+	description = "Mam bry³ê lodu.";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyLod_Condition()
@@ -2710,7 +2717,7 @@ FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyLod_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyLod_Info()
 {
 
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_15_00"); //Mam Bry³ê lodu.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_15_00"); //Mam bry³ê lodu.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
 	B_GiveInvItems (other, self, ItRu_IceCube, 1);
 	MieczRunicznyRunaDana = 2;
@@ -2728,12 +2735,12 @@ INSTANCE DIA_NASZ_110_Keroloth_MieczRunicznyWiatr   (C_INFO)
  	condition   = DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Condition;
  	information = DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Info;
  	permanent   = FALSE;
-	description = "Mam Piêœæ wichru.";
+	description = "Mam piêœæ wichru.";
 };
 
 FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Condition()
 {
-	if (npc_hasitems (other, ItRu_Whirlwind)) && (MieczRunicznyRunaPls == TRUE) && (MieczRunicznyRunaDana == FALSE)
+	if (npc_hasitems (other, ItRu_Windfist)) && (MieczRunicznyRunaPls == TRUE) && (MieczRunicznyRunaDana == FALSE)
 	{
 		return TRUE;
 	};
@@ -2742,9 +2749,9 @@ FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Info()
 {
 
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_15_00"); //Mam Piêœæ wichru.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_15_00"); //Mam piêœæ wichru.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
-	B_GiveInvItems (other, self, ItRu_Whirlwind, 1);
+	B_GiveInvItems (other, self, ItRu_Windfist, 1);
 	MieczRunicznyRunaDana = 3;
 
 	MieczRunicznyDay = Wld_GetDay ();

@@ -19,6 +19,7 @@ func void ZS_Practice_Magic	()
 
 func int ZS_Practice_Magic_Loop ()
 {
+
 	if (Npc_IsOnFP (self, "STAND"))
  	{ 
  		AI_AlignToFP (self);
@@ -46,6 +47,15 @@ func int ZS_Practice_Magic_Loop ()
 	if ((Npc_GetStateTime(self) > 7)
 	&& (self.aivar[AIV_TAPOSITION] == NOTINPOS))
 	{
+		if (Hlp_GetInstanceID(self) == NASZ_024_BaalOrun) {
+		
+			if (BaalOrunIsGoingToStartRitual == TRUE) {
+				RitualOrun_Start();
+				BaalOrunIsGoingToStartRitual = FALSE;
+			};
+		
+		};
+	
 		var int zufall; zufall = Hlp_Random(100);
 	
 		if (zufall <= 25)

@@ -422,6 +422,48 @@ func void STARTUP_OLDCAMP ()
 	
 
 
+	// GOBLINS
+	
+	Wld_InsertNpc	(Troll_Black,"FP_ROAM_GOBLINS_01");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_02");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_03");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_04");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_05");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_06");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_07");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_08");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_09");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_10");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_11");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_12");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_13");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_14");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_15");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_16");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_17");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_18");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_19");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_20");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_21");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_22");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_23");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_24");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_25");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_26");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_27");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_28");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_29");
+	Wld_InsertNpc	(Gobbo_Warrior,"FP_ROAM_GOBLINS_30");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_31");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_32");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_33");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_34");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_35");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_36");
+	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_GOBLINS_37");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_38");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_39");
+	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_GOBLINS_40");
 	
 	
 	

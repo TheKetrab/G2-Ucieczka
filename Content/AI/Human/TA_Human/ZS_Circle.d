@@ -25,7 +25,24 @@ func int ZS_Circle_Loop ()
 	var int randyKDW;
 	var int randyKDW_Lightstar;
 
-	if (self.guild == GIL_DMT)
+	if (Hlp_GetInstanceID(self) == NASZ_010_Monastir) {
+	
+		//Print(IntToString(Npc_GetStateTime(self)));	
+		if (Npc_GetStateTime(self) > 6)
+		{
+			if (RitualMonastir_IsGoingToStart == TRUE) {
+				RitualMonastir_Start();
+				RitualMonastir_IsGoingToStart = FALSE;
+			};
+			
+			Npc_SetStateTime (self, 0);
+			AI_PlayAni (self,"T_PRACTICEMAGIC5");	
+		};
+	}
+	
+	
+	
+	else if (self.guild == GIL_DMT)
 	{
 		randy = Hlp_Random (3000);
 	
@@ -89,7 +106,10 @@ func int ZS_Circle_Loop ()
 
 
 			};
-	} ;
+	};
+	
+	
+	
 	/*else if (MIS_RitualInnosEyeRepair != LOG_SUCCESS)
 	{
 		randy = Hlp_Random (1000);

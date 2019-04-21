@@ -85,6 +85,10 @@ func int Spell_Logic_TrfGiantBug (var int manaInvested)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_TrfGiantBug;
 		
+		if (WillWantToKillRenegats == TRUE) {
+			WillUzylPrzemianyWChrzaszcza = TRUE;
+		};
+		
 		Npc_SetActiveSpellInfo(self, Meatbug);
 		HeroIsMeatbug = TRUE;
 		return SPL_SENDCAST;

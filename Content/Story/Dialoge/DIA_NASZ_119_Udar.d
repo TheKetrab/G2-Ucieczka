@@ -824,10 +824,12 @@ FUNC INT DIA_NASZ_119_Udar_PatrolFinish_Condition()
 FUNC VOID DIA_NASZ_119_Udar_PatrolFinish_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_00"); //Przynoszê raport od zwiadowców.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zasnaczonymi si³ami orków.
+
 	B_GiveInvItems(other,self,ItNa_JenkinsRaport,1);
 	Npc_RemoveInvItems(self,ItNa_JenkinsRaport,1);
 	B_UseFakeScroll();
-	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zasnaczonymi si³ami orków.
+
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolFinish_15_02"); //Doskonale, ale strasznie d³ugo ci to wszystko zajê³o. Co ze zwiadowcami?
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_03"); //Znalaz³em ich, rozbili obóz niedaleko rzeki, gdzie lecz¹ swoje rany. W nocy, po której mieli wróciæ do obozu, zdecydowali siê jeszcze poobserwowaæ orków.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_04"); //W³aœnie wtedy us³yszeli dochodz¹ce stamt¹d krzyki i dziwn¹ inkantacjê, któr¹ uda³o siê przet³umaczyæ Jenkinsowi.

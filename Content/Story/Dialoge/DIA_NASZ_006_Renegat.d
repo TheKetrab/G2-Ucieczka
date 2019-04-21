@@ -201,7 +201,9 @@ INSTANCE DIA_NASZ_006_Renegat_kill   (C_INFO)
 
 FUNC INT DIA_NASZ_006_Renegat_kill_Condition()
 {
-	if (WillWantToKillRenegats == TRUE) && !(npc_knowsinfo (other, DIA_NASZ_305_Rabon_hmm))
+	if (WillWantToKillRenegats == TRUE)
+	&& !(Hlp_GetInstanceID(hero) == Hlp_GetInstanceID(Meatbug))
+	&& (WillUzylPrzemianyWChrzaszcza == TRUE)
 	{
 		return TRUE;
 	};
@@ -210,7 +212,7 @@ FUNC INT DIA_NASZ_006_Renegat_kill_Condition()
 FUNC VOID DIA_NASZ_006_Renegat_kill_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_kill_15_00"); //Kogo my tu mamy? Stêskniliœmy siê za tob¹.
-	AI_Output (other, self,"DIA_NASZ_006_Renegat_kill_15_01"); //Ja za wami te¿. Przyszed³em was zabiæ.
+	HeroSayIMissedYou();
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_kill_15_02"); //Zabawne! Marcos, patrz kto przyszed³.
 	AI_GotoWP (NASZ_009_Marcos, "OW_PATH_2_04");
 	Npc_ExchangeRoutine (NASZ_011_Renegat, "GoToStart");

@@ -331,7 +331,7 @@ FUNC VOID DIA_NASZ_223_Ratford_zadanie_Info()
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_zadanie_55_03"); //Co mam zrobiæ?
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_zadanie_55_04"); //Okradniesz naszego drwala. W jego skrzyni z pewnoœci¹ jest coœ ciekawego.
 	AI_Output (other,self ,"DIA_NASZ_223_Ratford_zadanie_15_05"); //Bu³ka z mas³em. Œwietne æwiczenie, jak na pocz¹tek.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_zadanie_55_06"); //Zobaczymy! Masz tydzieñ. Jak zawalisz, to uznam, ¿e przekazywanie ci mojej wiedzy to by³ z³y pomys³.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_zadanie_55_06"); //Zobaczymy! Masz tydzieñ. Jeœli zawalisz, to uznam, ¿e przekazywanie ci mojej wiedzy to by³ z³y pomys³.
 
 	Log_CreateTopic (TOPIC_Ratford_zlodziejaszek, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ratford_zlodziejaszek, LOG_RUNNING);
@@ -625,7 +625,7 @@ func void Ratford_Say_MuchMore_PickLock() {
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_02"); //To prawda. Ale kiedyœ chodzi³em wcale niemniej ni¿ ty. By³em przecie¿ myœliwym w Nowym Obozie.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_03"); //Znam Górnicz¹ Dolinê, jak w³asn¹ kieszeñ. Spl¹drowa³em wiêkszoœæ kufrów w okolicznych lasach.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_04"); //Gdy by³o tu jeszcze bezpieczniej, to znaczy przed upadkiem magicznej bariery, ukry³em kilka swoich skarbów w skrzyniach zamkniêtych przeze mnie.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_05"); //Nie przewidzia³em, ¿e wszystko tak siê potoczy. A teraz nie mam ochoty na zbieranie tamtych drobiazgów.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_05"); //Nie przewidzia³em, ¿e wszystko siê tak potoczy. A teraz nie mam ochoty na zbieranie tamtych drobiazgów.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_Say_MuchMore_PickLock_55_06"); //Ale skoro z ciebie taki podró¿nik, to mo¿e ty to za³atwisz?
 	
 };

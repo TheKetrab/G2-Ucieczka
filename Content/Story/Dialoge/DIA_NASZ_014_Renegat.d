@@ -76,7 +76,9 @@ INSTANCE DIA_NASZ_014_Renegat_kill   (C_INFO)
 
 FUNC INT DIA_NASZ_014_Renegat_kill_Condition()
 {
-	if (WillWantToKillRenegats == TRUE) && !(Hlp_GetInstanceID(hero) == Hlp_GetInstanceID(Meatbug))
+	if (WillWantToKillRenegats == TRUE)
+	&& !(Hlp_GetInstanceID(hero) == Hlp_GetInstanceID(Meatbug))
+	&& (WillUzylPrzemianyWChrzaszcza == TRUE)
 	{
 		return TRUE;
 	};

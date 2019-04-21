@@ -251,6 +251,8 @@ Story\Events\My_Functions.d
 Story\Events\NeedTeacherMine.d
 Story\Events\UseItem.d
 Story\Events\PhillGra.d
+Funcs\RitualMonastir.d
+Funcs\RitualOrun.d
 
 AI\HUMAN\TA.d
 AI\HUMAN\TA_Human\ZS*.d
@@ -330,7 +332,7 @@ STORY\B_Story\B_KapitelWechsel.d
 
 STORY\B_Content\C_ADDON_KNOWS_SCHNAPS.d
 
-
+STORY\Events\HeroSay_Something.d
 STORY\DIALOGE\DIA*.d
 STORY\B_AssignAmbientInfos\B_*.d
 

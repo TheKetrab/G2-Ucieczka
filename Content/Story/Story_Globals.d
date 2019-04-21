@@ -1802,3 +1802,7 @@ var int MissionPlagaCiemnosciFinished;
 var int Frut_Dal_Zezwolenie_Willowi;
 var int HeroKnowsAboutJeremiahsIllness;
 var int SILAS_SPRZEDAJE_RYZOWKE;
+var int RitualMonastir_IsGoingToStart;
+var int BaalOrunIsGoingToStartRitual;
+var int OrunRitual_Finished;
+var int WillUzylPrzemianyWChrzaszcza;

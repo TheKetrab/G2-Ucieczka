@@ -91,12 +91,13 @@ FUNC VOID PC_CrystalPower_PierscienSzybkosci_BACK()
 	Info_ClearChoices (PC_CrystalPower_PierscienSzybkosci);
 };
 
+// 1 kryszta³ - 5 minut
 FUNC VOID PC_CrystalPower_PierscienSzybkosci_1()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 1);
-	secSpeedRing = secSpeedRing + 60;
+	secSpeedRing = secSpeedRing + 300;
 	
-	PrintS_Ext("Do³adowano: 1 minutê", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: 5 minut", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 
 	Info_ClearChoices (PC_CrystalPower_PierscienSzybkosci);
@@ -120,9 +121,9 @@ FUNC VOID PC_CrystalPower_PierscienSzybkosci_1()
 FUNC VOID PC_CrystalPower_PierscienSzybkosci_10()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 10);
-	secSpeedRing = secSpeedRing + 600;
+	secSpeedRing = secSpeedRing + 3000;
 
-	PrintS_Ext("Do³adowano: 10 minut", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: 50 minut", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 	
 	Info_ClearChoices (PC_CrystalPower_PierscienSzybkosci);
@@ -146,9 +147,9 @@ FUNC VOID PC_CrystalPower_PierscienSzybkosci_10()
 FUNC VOID PC_CrystalPower_PierscienSzybkosci_30()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 30);
-	secSpeedRing = secSpeedRing + 1800;
+	secSpeedRing = secSpeedRing + 9000;
 	
-	PrintS_Ext("Do³adowano: 30 minut", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: 2,5 godziny", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 
 	Info_ClearChoices (PC_CrystalPower_PierscienSzybkosci);
@@ -217,12 +218,13 @@ FUNC VOID PC_CrystalPower_MieczRuniczny_BACK()
 	Info_ClearChoices (PC_CrystalPower_MieczRuniczny);
 };
 
+// 1 kryszta³ - 2 uderzenia
 FUNC VOID PC_CrystalPower_MieczRuniczny_1()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 1);
-	mocMieczRuniczny = mocMieczRuniczny + 1;
+	mocMieczRuniczny = mocMieczRuniczny + 2;
 	
-	PrintS_Ext("Do³adowano: moc na 1 uderzenie", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: moc na 2 uderzenia", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 
 	Info_ClearChoices (PC_CrystalPower_MieczRuniczny);
@@ -246,9 +248,9 @@ FUNC VOID PC_CrystalPower_MieczRuniczny_1()
 FUNC VOID PC_CrystalPower_MieczRuniczny_10()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 10);
-	mocMieczRuniczny = mocMieczRuniczny + 10;
+	mocMieczRuniczny = mocMieczRuniczny + 20;
 
-	PrintS_Ext("Do³adowano: moc na 10 uderzeñ", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: moc na 20 uderzeñ", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 
 	Info_ClearChoices (PC_CrystalPower_MieczRuniczny);
@@ -272,9 +274,9 @@ FUNC VOID PC_CrystalPower_MieczRuniczny_10()
 FUNC VOID PC_CrystalPower_MieczRuniczny_30()
 {
 	Npc_RemoveInvItems (hero, ItNa_Krysztal, 30);
-	mocMieczRuniczny = mocMieczRuniczny + 30;
+	mocMieczRuniczny = mocMieczRuniczny + 60;
 
-	PrintS_Ext("Do³adowano: moc na 10 uderzeñ", RGBA(255,255,255,0));
+	PrintS_Ext("Do³adowano: moc na 60 uderzeñ", RGBA(255,255,255,0));
 	PrintS_Ext(" ", RGBA(255,255,255,0));
 
 	Info_ClearChoices (PC_CrystalPower_MieczRuniczny);

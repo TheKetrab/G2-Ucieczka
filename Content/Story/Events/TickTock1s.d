@@ -1688,53 +1688,6 @@ var int Jeremiasz_AlmostDead_OneTime;
 	// Function30s
 	//********** **********
 
-func void MonsairOpenGate()
-{
-	
-	if (MonastirIsGoingToOpenGate == TRUE) && (MonastirOpenGateOneTime == FALSE) 
-	{
-
-		if (MonastirGateFirst == 0) {
-		
-		MonastirGateFirst = 1;
-		
-		}
-		
-		else {
-		
-		WillMozePrzejscPrzezBariere = TRUE;
-		
-		Wld_SendTrigger ("ORCTOWN_MOVER_01_SCRIPT");
-		Wld_SendTrigger ("ORCTOWN_MOVER_02_SCRIPT");
-		Wld_SendTrigger ("ORCTOWN_MOVER_03_SCRIPT");
-		//Wld_SendTrigger ("ORCTOWN_MOVER_04_SCRIPT"); // tu jest jakiœ b³¹d...
-		Wld_SendTrigger ("ORCTOWN_MOVER_05_SCRIPT");
-		Wld_SendTrigger ("ORCTOWN_MOVER_06_SCRIPT");
-		Wld_SendTrigger ("ORCTOWN_MOVER_07_SCRIPT");
-
-		Wld_InsertNpc	(NASZ_418_Duch,"FP_ORCTOWN_01");
-		Wld_InsertNpc	(NASZ_419_Duch,"FP_ORCTOWN_02");
-		Wld_InsertNpc	(NASZ_420_Duch,"FP_ORCTOWN_03");
-		Wld_InsertNpc	(NASZ_421_Duch,"FP_ORCTOWN_04");
-		Wld_InsertNpc	(NASZ_422_Duch,"FP_ORCTOWN_05");
-		Wld_InsertNpc	(NASZ_423_Duch,"FP_ORCTOWN_06");
-		Wld_InsertNpc	(NASZ_424_Duch,"FP_ORCTOWN_07");
-		Wld_InsertNpc	(NASZ_425_Duch,"FP_ORCTOWN_08");
-		Wld_InsertNpc	(NASZ_426_Duch,"FP_ORCTOWN_09");
-		Wld_InsertNpc	(NASZ_427_Duch,"FP_ORCTOWN_10");
-
-		MonastirOpenGateOneTime = TRUE;
-		ff_remove(MonsairOpenGate);
-		MonastirIsGoingToOpenGate = FALSE;
-		Npc_ExchangeRoutine (NASZ_010_Monastir, "Gate");
-	
-		Wld_PlayEffect("SPELLFX_massdeath",  NASZ_010_Monastir, NASZ_010_Monastir, 0, 0, 0, FALSE );
-		Wld_PlayEffect("SPELLFX_incovation_blue",  NASZ_010_Monastir, NASZ_010_Monastir, 0, 0, 0, FALSE );
-		Wld_PlayEffect("SPELLFX_lightstar_white",  NASZ_010_Monastir, NASZ_010_Monastir, 0, 0, 0, FALSE );
-	
-		};
-	};
-};
 
 func void LastRitualFunc()
 {

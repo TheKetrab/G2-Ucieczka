@@ -391,8 +391,8 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_magic()
 		
 	};
 	if (hero.guild == GIL_DJG) {
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_03"); //Twoja zbroja zawiera trochê smoczej krwi i ³usek. Dziêki temu jest bardzo odporna na ogieñ.
-		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_04"); //Deszcz ognia powinien zaspokoiæ twoje potrzeby, a przy tym nie zrobi ci krzywdy.
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_03"); //Mam tu coœ nieprzeciêtnego, ale uwa¿aj, by nie wyrz¹dziæ krzywdy innym ludziom!
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_magic_55_04"); //Z deszczem ognia pokonasz wszystkich swoich wrogów w kilka sekund.
 		Createinvitems (self, ItSc_FireRain, 2);
 		B_giveinvitems (self, other, ItSc_FireRain, 2);
 	};
@@ -519,11 +519,12 @@ INSTANCE DIA_NASZ_010_Monastir_MamSkladniki   (C_INFO)
 
 FUNC INT DIA_NASZ_010_Monastir_MamSkladniki_Condition()	
 {
-	if (npc_knowsinfo (other, DIA_NASZ_010_Monastir_NearGate))
-		&& (npc_hasitems (other, ItPl_Sagitta_Herb_MIS) >=5)
-	{
+	//todo odkomentowac
+	//if (npc_knowsinfo (other, DIA_NASZ_010_Monastir_NearGate))
+	//	&& (npc_hasitems (other, ItPl_Sagitta_Herb_MIS) >=5)
+	//{
 		return TRUE;
-	};
+	//};
 };
 
 FUNC VOID DIA_NASZ_010_Monastir_MamSkladniki_Info()
@@ -534,11 +535,18 @@ FUNC VOID DIA_NASZ_010_Monastir_MamSkladniki_Info()
 
 	B_GivePlayerXP(500);
 	
-	MonastirIsGoingToOpenGate = TRUE;
-	FF_ApplyOnceExt (MonsairOpenGate, 30000, -1);
 	Npc_ExchangeRoutine (self, "OpeningGate");
-	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine (NASZ_010_Monastir, "OpeningGate");
+
+	Info_ClearChoices (DIA_NASZ_010_Monastir_MamSkladniki);
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_MamSkladniki, DIALOG_ENDE, DIA_NASZ_010_Monastir_MamSkladniki_end);
 };
+
+func void DIA_NASZ_010_Monastir_MamSkladniki_end() {
+	RitualMonastir_IsGoingToStart = TRUE;
+	AI_StopProcessInfos(self);
+};
+
 
 //*********************************************************************
 //	Info AfterOpen

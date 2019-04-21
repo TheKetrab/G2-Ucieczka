@@ -358,7 +358,9 @@ func void DIA_NASZ_024_BaalOrun_Rytual_Info ()
 	
 	AI_Output			(other,self, "DIA_NASZ_024_BaalOrun_Rytual_15_02"); //Oto one, a teraz zaczynajmy, gdy¿ wyczuwam nadchodz¹ce k³opoty.
 		
+	BaalOrunIsGoingToStartRitual = TRUE;
 	AI_StopProcessInfos (self);
+	B_StartOtherRoutine(self,"OrunRitual"); // w srodku rutyny startuje ticktock z rytualem
 
 };
 ///////////////////////////////////////////////////////////////////////
@@ -376,8 +378,8 @@ instance DIA_NASZ_024_BaalOrun_RytualCD		(C_INFO)
 
 func int DIA_NASZ_024_BaalOrun_RytualCD_Condition ()
 {
-	//TODO:
-	if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual) /*&& cos z tym rytualem*/)
+	if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual))
+	&& (OrunRitual_Finished == TRUE)
 	{
 		return TRUE;
 	};

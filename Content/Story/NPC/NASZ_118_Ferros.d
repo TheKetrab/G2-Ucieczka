@@ -105,9 +105,18 @@ FUNC VOID Rtn_Odpoczynek_118 ()
 	TA_FleeToWP	(23,00,08,00,"OC_ROUND_1");		
 };
 
+
+FUNC VOID Rtn_Kap4_118 ()
+{
+	TA_Stand_Guarding	(08,00,23,00,"OW_WOODRUIN_WOLF_SPAWN");
+	TA_Stand_Guarding	(23,00,08,00,"OW_WOODRUIN_WOLF_SPAWN");		
+};
+
+
+
 FUNC VOID Rtn_InCastle_118 ()
 {
-	TA_Stand_Guarding	(08,00,23,00,"OC_GATE_GUARD_03");
-	TA_Stand_Guarding	(23,00,08,00,"OC_GATE_GUARD_03");		
+	TA_Stand_Eating	(08,00,23,00,"OC_SMITH_01");
+	TA_Stand_Eating	(23,00,08,00,"OC_SMITH_01");
 };
 

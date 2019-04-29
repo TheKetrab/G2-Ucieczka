@@ -53,7 +53,6 @@ FUNC VOID Rtn_Start_209 ()
 
 FUNC VOID Rtn_Kap4_209 ()
 {
-	TA_Stand_WP			(00,05,07,20,"LOCATION_02_04");
-	TA_Stand_WP			(07,20,09,50,"LOCATION_02_04");
-
+	TA_SmallTalk		(07,30,20,20,"NASZ_MYSLIWI_DOL_25");
+	TA_Sit_CampFire 	(20,20,07,30,"NASZ_MYSLIWI_DOL_28");
 };

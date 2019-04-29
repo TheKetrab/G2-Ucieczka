@@ -93,8 +93,8 @@ FUNC VOID Rtn_GoToDowodca_218()
 
 FUNC VOID Rtn_InCastle_218()
 {	
-	TA_Stand_ArmsCrossed		(08,00,20,00,"OC_GATE_GUARD_03");
-	TA_Stand_ArmsCrossed		(20,00,08,00,"OC_GATE_GUARD_03");
+	TA_Sit_Chair		(08,00,20,00,"NASZ_INCASTLE_CHAIR_1");
+	TA_Sit_Chair		(20,00,08,00,"NASZ_INCASTLE_CHAIR_1");
 };
 
 FUNC VOID Rtn_Odpoczynek_218 ()

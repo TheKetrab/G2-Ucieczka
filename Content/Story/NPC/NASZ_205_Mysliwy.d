@@ -60,6 +60,6 @@ FUNC VOID Rtn_Kap3Odpoczynek_205 ()
 
 FUNC VOID Rtn_Kap4_205 ()
 {
-	TA_SmallTalk	(07,00,21,00,"LOCATION_02_04");
-	TA_SmallTalk 	(21,00,07,00,"LOCATION_02_04");
+	TA_Sit_Campfire	(07,00,21,00,"NASZ_MYSLIWI_DOL_30");
+	TA_Sit_Campfire 	(21,00,07,00,"NASZ_MYSLIWI_DOL_30");
 };

@@ -65,5 +65,5 @@ FUNC VOID Rtn_Kap4_120 ()
 {	
 	Ta_Stand_ArmsCrossed		(07,30,20,10,"NASZ_LOWCY_DOL_22");
 	TA_Dance					(20,10,02,45,"NASZ_LOWCY_KARCZMA_02");
-	TA_Sit_Chair				(02,45,07,30,"NASZ_LOWCY_GORA_07");		
+	TA_Smoke_Waterpipe			(02,45,07,30,"NASZ_LOWCY_KARCZMA_22");
 };

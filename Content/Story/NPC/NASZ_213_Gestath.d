@@ -26,7 +26,7 @@ instance NASZ_213_Gestath (Npc_Default)
 	EquipItem	(self, ItRw_Bow_H_03); 
 	
 	// ------ Inwentarz ------
-	B_CreateAmbientInv (self);
+	//B_CreateAmbientInv (self); nie tworzymy mu ekwipunku, bo potem lezy martwy i sie go rabuje - a nie powinien miec wtedy nic
 	CreateInvItems (self, ItRw_Arrow,25);
 	
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird

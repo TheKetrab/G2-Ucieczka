@@ -1,33 +1,33 @@
-var int CrystalMob_01_NASZ;
-var int CrystalMob_02_NASZ;
-var int CrystalMob_03_NASZ;
-var int CrystalMob_04_NASZ;
-var int CrystalMob_05_NASZ;
-var int CrystalMob_06_NASZ;
-var int CrystalMob_07_NASZ;
-var int CrystalMob_08_NASZ;
-var int CrystalMob_09_NASZ;
-var int CrystalMob_10_NASZ;
-var int CrystalMob_11_NASZ;
-var int CrystalMob_12_NASZ;
-var int CrystalMob_13_NASZ;
-var int CrystalMob_14_NASZ;
-var int CrystalMob_15_NASZ;
-var int CrystalMob_16_NASZ;
-var int CrystalMob_17_NASZ;
-var int CrystalMob_18_NASZ;
-var int CrystalMob_19_NASZ;
-var int CrystalMob_20_NASZ;
-var int CrystalMob_21_NASZ;
-var int CrystalMob_22_NASZ;
-var int CrystalMob_23_NASZ;
-var int CrystalMob_24_NASZ;
-var int CrystalMob_25_NASZ;
-var int CrystalMob_26_NASZ;
-var int CrystalMob_27_NASZ;
-var int CrystalMob_28_NASZ;
-var int CrystalMob_29_NASZ;
-var int CrystalMob_30_NASZ;
+var int CrystalMob_01_NASZ; // inserted
+var int CrystalMob_02_NASZ; // inserted
+var int CrystalMob_03_NASZ; // inserted
+var int CrystalMob_04_NASZ; // inserted
+var int CrystalMob_05_NASZ; // inserted
+var int CrystalMob_06_NASZ; // inserted
+var int CrystalMob_07_NASZ; // inserted
+var int CrystalMob_08_NASZ; // inserted
+var int CrystalMob_09_NASZ; // inserted
+var int CrystalMob_10_NASZ; // inserted
+var int CrystalMob_11_NASZ; // inserted
+var int CrystalMob_12_NASZ; // inserted
+var int CrystalMob_13_NASZ; // inserted
+var int CrystalMob_14_NASZ; // inserted
+var int CrystalMob_15_NASZ; // inserted
+var int CrystalMob_16_NASZ; // inserted
+var int CrystalMob_17_NASZ; // inserted
+var int CrystalMob_18_NASZ; // inserted
+var int CrystalMob_19_NASZ; // inserted
+var int CrystalMob_20_NASZ; // inserted
+var int CrystalMob_21_NASZ; // inserted
+var int CrystalMob_22_NASZ; // inserted
+var int CrystalMob_23_NASZ; // inserted
+var int CrystalMob_24_NASZ; // inserted
+var int CrystalMob_25_NASZ; // inserted
+var int CrystalMob_26_NASZ; // inserted
+var int CrystalMob_27_NASZ; // TODO
+var int CrystalMob_28_NASZ; // TODO
+var int CrystalMob_29_NASZ; // TODO
+var int CrystalMob_30_NASZ; // TODO
 var int CrystalMob_bonus_percents;
 
 FUNC INT B_CrystalMob_Bestimmung()
@@ -48,7 +48,7 @@ FUNC INT B_CrystalMob_Bestimmung()
 		CrystalMob_03_NASZ = (CrystalMob_03_NASZ +1);
 		return TRUE;
 	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "OW_PATH_06_06") && (4 > CrystalMob_04_NASZ)
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_04") && (4 > CrystalMob_04_NASZ)
 	{
 		CrystalMob_04_NASZ = (CrystalMob_04_NASZ +1);
 		return TRUE;
@@ -64,11 +64,6 @@ FUNC INT B_CrystalMob_Bestimmung()
 		return TRUE;
 	}
 	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_07") && (4 > CrystalMob_07_NASZ)
-	{
-		CrystalMob_07_NASZ = (CrystalMob_07_NASZ +1);
-		return TRUE;
-	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_08") && (4 > CrystalMob_08_NASZ)
 	{
 		CrystalMob_07_NASZ = (CrystalMob_07_NASZ +1);
 		return TRUE;
@@ -168,9 +163,6 @@ FUNC INT B_CrystalMob_Bestimmung()
 		CrystalMob_26_NASZ = (CrystalMob_26_NASZ +1);
 		return TRUE;
 	}
-	
-	// TODO 27,28,29,30 - wstawic gdzies w grze
-	
 	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_27") && (4 > CrystalMob_27_NASZ)
 	{
 		CrystalMob_27_NASZ = (CrystalMob_27_NASZ +1);

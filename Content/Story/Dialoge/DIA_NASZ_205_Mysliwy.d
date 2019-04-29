@@ -333,4 +333,6 @@ FUNC VOID DIA_NASZ_205_Mysliwy_QuestDone_Info()
 	B_LogEntry (TOPIC_Mysliwy_Warta, "Teraz ju¿ ¿aden zêbacz nie zniszczy zapasów myœliwych.");
 
 	DodajReputacje (4, REP_MYSLIWI);
+	FF_Remove(WartaCz3Loop); // byc moze sie to nie wywolalo, wiec czyscimy tez teraz
+
 };

@@ -48,6 +48,6 @@ FUNC VOID Rtn_Start_206 ()
 
 FUNC VOID Rtn_Kap4_206 ()
 {
-	TA_SmallTalk	(07,00,21,00,"LOCATION_02_04");
-	TA_SmallTalk 	(21,00,07,00,"LOCATION_02_04");
+	TA_Sit_Campfire	(07,00,21,00,"NASZ_MYSLIWI_DOL_29");
+	TA_Sit_Campfire 	(21,00,07,00,"NASZ_MYSLIWI_DOL_29");
 };

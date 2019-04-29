@@ -87,11 +87,18 @@ FUNC VOID Rtn_Odpoczynek_114 ()
 	TA_FleeToWP	(23,00,08,00,"OC_ROUND_1");		
 };
 
-// TODO
+
+FUNC VOID Rtn_Kap4_114()
+{	
+	TA_Stand_Drinking			(08,00,23,00,"NASZ_LOWCY_KARCZMA_02");
+	TA_Stand_Drinking			(23,00,08,00,"NASZ_LOWCY_KARCZMA_02");
+};
+
+
 FUNC VOID Rtn_InCastle_114 ()
 {
-	TA_Stand_WP		(08,00,23,00,"NASZ_ZAMEK_10");
-	TA_Stand_WP		(23,00,08,00,"NASZ_ZAMEK_10");		
+	TA_Stand_WP		(08,00,23,00,"OC_TRAIN_02");
+	TA_Stand_WP		(23,00,08,00,"OC_TRAIN_02");		
 };
 
 FUNC VOID Rtn_ArenaZamek_114 ()

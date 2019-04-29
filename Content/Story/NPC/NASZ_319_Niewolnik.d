@@ -63,3 +63,9 @@ FUNC VOID Rtn_TwierdzaAtak_319 ()
 	TA_Stand_ArmsCrossed		(08,00,22,00,"NASZ_TWIERDZA_36");
    TA_Stand_ArmsCrossed		(22,00,08,00,"NASZ_TWIERDZA_36");
 };
+
+FUNC VOID Rtn_Kap4_319 ()
+{
+	TA_Sleep		(08,00,22,00,"NASZ_LOWCY_DOL_05");
+   TA_Sleep		(22,00,08,00,"NASZ_LOWCY_DOL_05");
+};

@@ -116,6 +116,15 @@ FUNC VOID Rtn_Odpoczynek_116 ()
 	TA_FleeToWP	(23,00,08,00,"OC_ROUND_1");		
 };
 
+
+
+FUNC VOID Rtn_Kap4_116 ()
+{
+	TA_Sit_Bench	(08,00,23,00,"NASZ_LOWCY_DOL_02");
+	TA_Sit_Bench	(23,00,08,00,"NASZ_LOWCY_DOL_02");
+};
+
+
 FUNC VOID Rtn_InCastle_116 ()
 {
 	TA_Stand_WP	(08,00,23,00,"OC_STAND_TANDOR_02");

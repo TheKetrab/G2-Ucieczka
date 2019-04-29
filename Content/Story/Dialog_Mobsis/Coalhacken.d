@@ -1,33 +1,33 @@
-var int CoalMob_01_NASZ;
-var int CoalMob_02_NASZ;
-var int CoalMob_03_NASZ;
-var int CoalMob_04_NASZ;
-var int CoalMob_05_NASZ;
-var int CoalMob_06_NASZ;
-var int CoalMob_07_NASZ;
-var int CoalMob_08_NASZ;
-var int CoalMob_09_NASZ;
-var int CoalMob_10_NASZ;
-var int CoalMob_11_NASZ;
-var int CoalMob_12_NASZ;
-var int CoalMob_13_NASZ;
-var int CoalMob_14_NASZ;
-var int CoalMob_15_NASZ;
-var int CoalMob_16_NASZ;
-var int CoalMob_17_NASZ;
-var int CoalMob_18_NASZ;
-var int CoalMob_19_NASZ;
-var int CoalMob_20_NASZ;
-var int CoalMob_21_NASZ;
-var int CoalMob_22_NASZ;
-var int CoalMob_23_NASZ;
-var int CoalMob_24_NASZ;
-var int CoalMob_25_NASZ;
-var int CoalMob_26_NASZ;
-var int CoalMob_27_NASZ;
-var int CoalMob_28_NASZ;
-var int CoalMob_29_NASZ;
-var int CoalMob_30_NASZ;
+var int CoalMob_01_NASZ; // inserted
+var int CoalMob_02_NASZ; // inserted
+var int CoalMob_03_NASZ; // inserted
+var int CoalMob_04_NASZ; // inserted
+var int CoalMob_05_NASZ; // inserted
+var int CoalMob_06_NASZ; // inserted
+var int CoalMob_07_NASZ; // inserted
+var int CoalMob_08_NASZ; // inserted
+var int CoalMob_09_NASZ; // inserted
+var int CoalMob_10_NASZ; // inserted
+var int CoalMob_11_NASZ; // inserted
+var int CoalMob_12_NASZ; // inserted
+var int CoalMob_13_NASZ; // inserted
+var int CoalMob_14_NASZ; // inserted
+var int CoalMob_15_NASZ; // inserted
+var int CoalMob_16_NASZ; // inserted
+var int CoalMob_17_NASZ; // inserted
+var int CoalMob_18_NASZ; // inserted
+var int CoalMob_19_NASZ; // inserted
+var int CoalMob_20_NASZ; // inserted
+var int CoalMob_21_NASZ; // inserted
+var int CoalMob_22_NASZ; // inserted
+var int CoalMob_23_NASZ; // inserted
+var int CoalMob_24_NASZ; // inserted
+var int CoalMob_25_NASZ; // inserted
+var int CoalMob_26_NASZ; // inserted
+var int CoalMob_27_NASZ; // inserted
+var int CoalMob_28_NASZ; // inserted
+var int CoalMob_29_NASZ; // inserted
+var int CoalMob_30_NASZ; // inserted
 var int CoalMob_bonus_percents;
 
 FUNC INT B_CoalMob_Bestimmung()

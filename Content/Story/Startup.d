@@ -199,13 +199,13 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(NASZ_128_Straznik,"NASZ_LOWCY_DOL_21");
 
 	Wld_InsertNpc	(NASZ_201_Erak,"NASZ_MYSLIWI_GRUPA_01");
-	// Wld_InsertNpc	(NASZ_202_Tival,"NASZ_MYSLIWI_GRUPA_02"); prawdopodobnie gosciu do usuniecia
+	// Wld_InsertNpc	(NASZ_202_Tival,"NASZ_MYSLIWI_GRUPA_02"); usuniêty
 	Wld_InsertNpc	(NASZ_203_Tabuk,"NASZ_MYSLIWI_GRUPA_04");
 	Wld_InsertNpc	(NASZ_204_Vick,"NASZ_MYSLIWI_GRUPA_03");
 	Wld_InsertNpc	(NASZ_205_Mysliwy,"OW_DJG_ROCKCAMP_02");
 	Wld_InsertNpc	(NASZ_206_Mysliwy,"NASZ_MYSLIWI_GRUPA_06");
-	//Wld_InsertNpc	(NASZ_207_Mysliwy,"NASZ_MYSLIWI_GRUPA_04"); prawd do usuniecia
-	//Wld_InsertNpc	(NASZ_208_Mysliwy,"ROCKCAMP");				prawd do usuniecia
+	//Wld_InsertNpc	(NASZ_207_Mysliwy,"NASZ_MYSLIWI_GRUPA_04"); usuniêty
+	//Wld_InsertNpc	(NASZ_208_Mysliwy,"ROCKCAMP");				usuniêty
 	Wld_InsertNpc	(NASZ_209_Mysliwy,"NASZ_MYSLIWI_DOL_11");
 	Wld_InsertNpc	(NASZ_210_Mysliwy,"NASZ_MYSLIWI_GRUPA_07");
 	Wld_InsertNpc	(NASZ_211_Hunt,"LOCATION_02_08");

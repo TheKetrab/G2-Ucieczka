@@ -45,7 +45,7 @@ func int DIA_NASZ_003_Kopacz_hello_Condition ()
 func void DIA_NASZ_003_Kopacz_hello_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_00"); //Wybawcy!
-	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_01"); //Co tu robisz?	
+	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_01"); //Co tu robisz?
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_02"); //Orkowie, orkowie! To oni mnie porwali!
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_03"); //Torturowali mnie... By³em wiêŸniem. Przez ca³y ten czas myœla³em tylko o szybkiej œmierci.
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_04"); //Co chcieli wiedzieæ orkowie?
@@ -58,13 +58,15 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_11"); //Dziêki za informacje. Wracaj z ch³opcami do twierdzy. Ja wyruszam zg³adziæ Ur-Shaka.	
 	
 	WillGoToUrShack = TRUE;
+	Wld_SendTrigger("FORT_1_TRIGGER"); // CatSan otwiera krate
+	
 	WillIdziePierwszyRazNaZamek = FALSE;
 	ff_applyonceext(BeforeUrShack,1000,-1);
 	
 	Npc_ExchangeRoutine (NASZ_003_Kopacz,"Twierdza");
 	Npc_ExchangeRoutine (NASZ_113_Godar,"Twierdza");
 	Npc_ExchangeRoutine (NASZ_114_Hokurn,"Twierdza");
-	Npc_ExchangeRoutine (NASZ_115_Kurgan,"Twierdza");
+	// Kurgan nie zmienia rutyny, bo musi jeszcze pogadac z Willem
 	Npc_ExchangeRoutine (NASZ_116_Kjorn,"Twierdza");
 	Npc_ExchangeRoutine (NASZ_117_Fed,"Twierdza");
 	Npc_ExchangeRoutine (NASZ_118_Ferros,"Twierdza");

@@ -169,8 +169,10 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy()
 
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy()
 {
-	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy_15_00"); //Nie dobijemy.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy_15_01"); //W takim razie poszukaj sobie innego parobka.
+	// TODO zmienic nazwe nagran w gotowych i w tych niegotowych
+	// kiedys -> DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy
+	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoNieDob_15_00"); //Nie dobijemy.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoNieDob_15_01"); //W takim razie poszukaj sobie innego parobka.
 	
 	JanZaplataZaKowalstwoFail = TRUE;
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);

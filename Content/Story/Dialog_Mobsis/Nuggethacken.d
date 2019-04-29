@@ -1,24 +1,24 @@
-var int NuggetMob_01_NASZ;
-var int NuggetMob_02_NASZ;
-var int NuggetMob_03_NASZ;
-var int NuggetMob_04_NASZ;
-var int NuggetMob_05_NASZ;
-var int NuggetMob_06_NASZ;
-var int NuggetMob_07_NASZ;
-var int NuggetMob_08_NASZ;
-var int NuggetMob_09_NASZ;
-var int NuggetMob_10_NASZ;
-var int NuggetMob_11_NASZ;
-var int NuggetMob_12_NASZ;
-var int NuggetMob_13_NASZ;
-var int NuggetMob_14_NASZ;
-var int NuggetMob_15_NASZ;
-var int NuggetMob_16_NASZ;
-var int NuggetMob_17_NASZ;
-var int NuggetMob_18_NASZ;
-var int NuggetMob_19_NASZ;
-var int NuggetMob_20_NASZ;
-var int NuggetMob_21_NASZ;
+var int NuggetMob_01_NASZ; // TODO
+var int NuggetMob_02_NASZ; // TODO
+var int NuggetMob_03_NASZ; // inserted
+var int NuggetMob_04_NASZ; // inserted
+var int NuggetMob_05_NASZ; // inserted
+var int NuggetMob_06_NASZ; // inserted
+var int NuggetMob_07_NASZ; // inserted
+var int NuggetMob_08_NASZ; // inserted
+var int NuggetMob_09_NASZ; // inserted
+var int NuggetMob_10_NASZ; // inserted
+var int NuggetMob_11_NASZ; // inserted
+var int NuggetMob_12_NASZ; // inserted
+var int NuggetMob_13_NASZ; // inserted
+var int NuggetMob_14_NASZ; // inserted
+var int NuggetMob_15_NASZ; // inserted
+var int NuggetMob_16_NASZ; // inserted
+var int NuggetMob_17_NASZ; // inserted
+var int NuggetMob_18_NASZ; // inserted
+var int NuggetMob_19_NASZ; // TODO
+var int NuggetMob_20_NASZ; // TODO
+
 var int NuggetMob_bonus_percents;
 
 FUNC INT B_NuggetMob_Bestimmung()
@@ -34,12 +34,12 @@ FUNC INT B_NuggetMob_Bestimmung()
 		NuggetMob_02_NASZ = (NuggetMob_02_NASZ +1);
 		return TRUE;
 	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "OW_MINE2_08") && (2 > NuggetMob_03_NASZ)
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_NUGGETMOB_03") && (2 > NuggetMob_03_NASZ)
 	{
 		NuggetMob_03_NASZ = (NuggetMob_03_NASZ +1);
 		return TRUE;
 	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "OW_MINE3_LEFT_07") && (2 > NuggetMob_04_NASZ)
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_NUGGETMOB_04") && (2 > NuggetMob_04_NASZ)
 	{
 		NuggetMob_04_NASZ = (NuggetMob_04_NASZ +1);
 		return TRUE;
@@ -122,11 +122,6 @@ FUNC INT B_NuggetMob_Bestimmung()
 	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_NuggetMOB_20") && (2 > NuggetMob_20_NASZ)
 	{
 		NuggetMob_20_NASZ = (NuggetMob_20_NASZ +1);
-		return TRUE;
-	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_NuggetMOB_21") && (2 > NuggetMob_21_NASZ)
-	{
-		NuggetMob_21_NASZ = (NuggetMob_21_NASZ +1);
 		return TRUE;
 	};
 

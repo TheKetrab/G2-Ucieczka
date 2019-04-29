@@ -1521,6 +1521,42 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	Druzyna (NASZ_118_Ferros,1);
 };
 
+//*********************************************************************
+//	Info AfterSzturmNaZamek
+//*********************************************************************
+INSTANCE DIA_NASZ_115_Kurgan_AfterSzturmNaZamek   (C_INFO)
+{
+	npc         = NASZ_115_Kurgan;
+ 	nr          = 131;
+ 	condition   = DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_Condition;
+ 	information = DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_Info;
+ 	permanent   = FALSE;
+	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_Condition()	
+{
+	if (npc_knowsinfo (other, DIA_NASZ_003_Kopacz_hello))
+	&& (Npc_GetDistToWP(hero,"NASZ_ZAMEK_OBOZ_01") < 3000) // 30 metrow
+	&& (!npc_isdead(OrcShaman_Ur_Shak))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_00"); //G³adko posz³o. Wygl¹da na to, ¿e wiêkszoœæ tych paskudnych stworzeñ skry³a siê w zamku.
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_01"); //Niewolnik, którego uratowaliœmy, powiedzia³ mi, ¿e darz¹ wielkim respektem szamana Ur-Shaka.
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_02"); //Udam siê do jego siedziby i zetnê mu g³owê.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_03"); //Mamy iœæ z tob¹?
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_04"); //Nie, nie. To zajê³oby zbyt du¿o czasu. Dam sobie radê, a wy zabierzcie do Kerolotha tego biedaka.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_15_05"); //W takim razie, powodzenia.
+
+	// Kurgan dopiero teraz zmienia rutyne
+	Npc_ExchangeRoutine (NASZ_115_Kurgan,"Twierdza");
+
+};
 
 // ************************************************************
 // 			  				PICK POCKET

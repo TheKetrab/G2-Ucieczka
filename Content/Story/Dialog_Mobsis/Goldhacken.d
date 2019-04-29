@@ -2,26 +2,26 @@
 // jak masz na sobie miecz i jest ich 9 to szybko kopiac znikaja wszystkie i zostaja 3
 // najprawdopodobniej te trzy brudne??
 
-var int GoldMob_01_NASZ;
-var int GoldMob_02_NASZ;
-var int GoldMob_03_NASZ;
-var int GoldMob_04_NASZ;
-var int GoldMob_05_NASZ;
-var int GoldMob_06_NASZ;
-var int GoldMob_07_NASZ;
-var int GoldMob_08_NASZ;
-var int GoldMob_09_NASZ;
-var int GoldMob_10_NASZ;
-var int GoldMob_11_NASZ;
-var int GoldMob_12_NASZ;
-var int GoldMob_13_NASZ;
-var int GoldMob_14_NASZ;
-var int GoldMob_15_NASZ;
-var int GoldMob_16_NASZ;
-var int GoldMob_17_NASZ;
-var int GoldMob_18_NASZ;
-var int GoldMob_19_NASZ;
-var int GoldMob_20_NASZ;
+var int GoldMob_01_NASZ; // inserted
+var int GoldMob_02_NASZ; // inserted
+var int GoldMob_03_NASZ; // inserted
+var int GoldMob_04_NASZ; // inserted
+var int GoldMob_05_NASZ; // inserted
+var int GoldMob_06_NASZ; // inserted
+var int GoldMob_07_NASZ; // inserted
+var int GoldMob_08_NASZ; // inserted
+var int GoldMob_09_NASZ; // inserted
+var int GoldMob_10_NASZ; // inserted
+var int GoldMob_11_NASZ; // inserted
+var int GoldMob_12_NASZ; // inserted
+var int GoldMob_13_NASZ; // inserted
+var int GoldMob_14_NASZ; // inserted
+var int GoldMob_15_NASZ; // inserted
+var int GoldMob_16_NASZ; // inserted
+var int GoldMob_17_NASZ; // inserted
+var int GoldMob_18_NASZ; // inserted
+var int GoldMob_19_NASZ; // inserted
+var int GoldMob_20_NASZ; // TODO
 var int GoldMob_bonus_percents;
 
 FUNC INT B_GoldMob_Bestimmung()
@@ -42,7 +42,7 @@ FUNC INT B_GoldMob_Bestimmung()
 		GoldMob_03_NASZ = (GoldMob_03_NASZ +1);
 		return TRUE;
 	}
-	else if Hlp_StrCmp (Npc_GetNearestWP (self), "OW_PATH_06_06") && (3 > GoldMob_04_NASZ)
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_GOLDMOB_04") && (3 > GoldMob_04_NASZ)
 	{
 		GoldMob_04_NASZ = (GoldMob_04_NASZ +1);
 		return TRUE;

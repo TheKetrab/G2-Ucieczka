@@ -293,8 +293,11 @@ FUNC VOID DIA_NASZ_213_Gestath_FurForYou_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_FurForYou_15_00"); //Mam dla ciebie skóry.
 	B_giveinvitems (other, self, ItAt_WolfFur, 1);
+	Npc_RemoveInvItems (self, ItAt_WolfFur, 1);
 	B_giveinvitems (other, self, ItNa_BlackWolfFur, 1);
+	Npc_RemoveInvItems (self, ItNa_BlackWolfFur, 1);
 	B_giveinvitems (other, self, ItNa_IceWolfFur, 1);
+	Npc_RemoveInvItems (self, ItNa_IceWolfFur, 1);
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_FurForYou_55_01"); //Niech no spojrzê.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_FurForYou_55_02"); //Dobrze naciête...
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_FurForYou_55_03"); //Tak. Potrafisz garbowaæ skóry. To daje ci ogromny plus w drodze do do³¹czenia do nas.
@@ -627,8 +630,10 @@ func int DIA_NASZ_213_Gestath_FromJehen_Condition ()
 func void DIA_NASZ_213_Gestath_FromJehen_Info ()
 {
 	AI_Output	(other, self, "DIA_NASZ_213_Gestath_FromJehen_15_00"); //Przynoszê trofea Jehena.
-	B_GiveInvItems (other, self, ItNa_JehenPaczkaZFutrami, 1);	
-	B_GiveInvItems (other, self, ItNa_JehenPaczkaZMiesem, 1);	
+	B_GiveInvItems (other, self, ItNa_JehenPaczkaZFutrami, 1);
+	B_GiveInvItems (other, self, ItNa_JehenPaczkaZMiesem, 1);
+	Npc_RemoveInvItems (self, ItNa_JehenPaczkaZFutrami, 1);
+	Npc_RemoveInvItems (self, ItNa_JehenPaczkaZMiesem, 1);
 
 	AI_Output	(self, other, "DIA_NASZ_213_Gestath_FromJehen_08_01"); //To znaczy, ¿e wróci³ ju¿ do obozu? Doskonale, przeka¿ mu proszê te sto strza³.
 	CreateInvItems (self, ItRw_Arrow, 100);
@@ -1163,6 +1168,7 @@ FUNC VOID DIA_NASZ_213_Gestath_keroloth_Info()
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_00"); //Przybywam z wiadomoœci¹ od Kerolotha. £owcy orków chc¹ zaatakowaæ i odbiæ zamek, jednak aby siê tego podj¹æ, potrzebuj¹ waszej pomocy.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_01"); //Udzia³ tak doskonale wyszkolonych ³uczników w bitwie, da³by nam olbrzymi¹ przewagê nad si³ami wroga.
 	B_giveinvitems (other, self, ItNa_List_Keroloth, 1);
+	Npc_RemoveInvItems (self,ItNa_List_Keroloth, 1);
 	B_UseFakeScroll();
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_02"); //S³ysza³em o planach Kerolotha odnoœnie zamku, jednak nie spodziewa³em siê, i¿ naprawdê podejmie siê tego ryzyka.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_03"); //Niestety, wiêkszoœæ ze stra¿ników jest zajêta swoimi sprawami i przebywaj¹ poza obozem.
@@ -1330,6 +1336,7 @@ FUNC VOID DIA_NASZ_213_Gestath_AmmannQuest_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_AmmannQuest_15_00"); //WeŸ ten pierœcieñ.
 	B_giveinvitems (other, self, ItNa_Wiernosc, 1);
+	Npc_RemoveInvItems (self,ItNa_Wiernosc, 1);
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_AmmannQuest_15_01"); //Pierœcieñ wiernoœci! A wiêc uporaliœcie siê z tym razem z Ammannem. Œwietna robota!
 
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;

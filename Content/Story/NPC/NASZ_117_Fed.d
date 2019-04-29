@@ -104,11 +104,19 @@ FUNC VOID Rtn_Odpoczynek_117 ()
 	TA_FleeToWP	(23,00,08,00,"OC_ROUND_1");		
 };
 
-// TODO: ma isc do zamku
+
+
+
+FUNC VOID Rtn_Kap4_117 ()
+{
+	TA_Sit_Campfire	(08,00,23,00,"NASZ_LOWCY_DOL_09");
+	TA_Sit_Campfire	(23,00,08,00,"NASZ_LOWCY_DOL_09");		
+};
+
 FUNC VOID Rtn_InCastle_117 ()
 {
-	TA_Stand_WP	(08,00,23,00,"OC_GUARD_PALISADE_06");
-	TA_Stand_WP	(23,00,08,00,"OC_GUARD_PALISADE_06");		
+	TA_Sit_Campfire	(08,00,23,00,"OC_CAMPFIRE_OUT_02");
+	TA_Sit_Campfire	(23,00,08,00,"OC_CAMPFIRE_OUT_02");		
 };
 
 FUNC VOID Rtn_Scena5_117 ()

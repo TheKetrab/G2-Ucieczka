@@ -582,6 +582,12 @@ FUNC VOID DIA_NASZ_120_Phill_Kap4Quest_Info()
 func void PHILL_FUNC ()
 {
 	if (PHILL_MISSION_READY == TRUE) && (PHILL_MISSION_ONETIME == FALSE) {
+		
+		if (Npc_GetDistToWP(NASZ_120_Phill,"NASZ_LOWCY_DOL_22") > 1000) {
+			Print("Phill nie widzia³ twojego wyczynu.");
+			return;
+		};
+
 		PrintScreen	("WYSZED£EŒ NA DRZEWO", -1,-1, FONT_ScreenSmall,3);
 		Snd_Play ("THRILLJINGLE_01");
 		B_GivePlayerXP (100);

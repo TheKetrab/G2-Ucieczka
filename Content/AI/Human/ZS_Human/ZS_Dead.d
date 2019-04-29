@@ -658,13 +658,13 @@ func void ZS_Dead ()
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_126_Robotnik))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_127_Jeremiasz))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_201_Erak))
-	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_202_Tival))
+	// || (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_202_Tival)) usuniety z gry
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_203_Tabuk))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_204_Vick))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_205_Mysliwy))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_206_Mysliwy))
-	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_207_Mysliwy))
-	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_208_Mysliwy))
+	// || (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_207_Mysliwy)) usuniety z gry
+	// || (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_208_Mysliwy)) usuniety z gry
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_209_Mysliwy))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_210_Mysliwy))
 	|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_211_Hunt))

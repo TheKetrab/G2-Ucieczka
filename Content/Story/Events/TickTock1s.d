@@ -1377,12 +1377,13 @@ func void _TickTock_1s()
 		AI_GotoWP (hero, "OW_ORCBARRIER_17");
 	};
 
-	
+	/* juz nieaktualne bo CatSan otwiera brame
 	if (Npc_GetDistToWP	(hero, "NASZ_FORTECA_BLOKADA") <=200) && (WillGoToUrShack == FALSE) {
 		AI_Output (hero ,hero,"DIA_Will_Forteca_15_00"); //Nie mam ochoty siê tam wybieraæ.
 		AI_TurnAway (hero,hero);
 		AI_GotoWP (hero, "LOCATION_19_03_PATH_RUIN17");
 	};
+	*/
 	
 	if (Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) && (WillUciekaZKopalniOneTime == FALSE) {
 		AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, uda³o siê wspi¹æ na ska³y. Teraz na dó³!

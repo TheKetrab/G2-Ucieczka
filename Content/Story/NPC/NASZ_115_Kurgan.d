@@ -78,7 +78,7 @@ FUNC VOID Rtn_Twierdza_115()
 FUNC VOID Rtn_Zamek_115 ()
 {
 	TA_Follow_Player	(08,00,23,00,"NASZ_ZAMEK_OBOZ_01");
-	TA_Follow_Player	(23,00,08,00,"NASZ_ZAMEK_OBOZ_01");		
+	TA_Follow_Player	(23,00,08,00,"NASZ_ZAMEK_OBOZ_01");
 };
 
 FUNC VOID Rtn_TwierdzaAtak_115()
@@ -124,8 +124,8 @@ FUNC VOID Rtn_Odpoczynek_115 ()
 
 FUNC VOID Rtn_InCastle_115()
 {	
-	TA_Stand_WP 			(08,00,23,00,"OC_TRAIN_04");
-	TA_Stand_WP				(23,00,08,00,"OC_TRAIN_04");
+	TA_Stand_Eating		(08,00,23,00,"OC_STAND_TANDOR_01");
+	TA_Stand_Eating		(23,00,08,00,"OC_STAND_TANDOR_01");
 };
 
 FUNC VOID Rtn_ArenaZamek_115 ()

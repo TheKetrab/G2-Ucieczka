@@ -4,7 +4,6 @@
 var int WillUsedWheelTwierdza;
 FUNC VOID TwierdzaAtak ()
 {
-	Print("Duza funkcja");
 	
 	//KOLOWROTEK
 	if (TwierdzaAtakReady == TRUE) {

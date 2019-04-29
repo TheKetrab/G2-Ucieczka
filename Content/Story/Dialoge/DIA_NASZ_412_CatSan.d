@@ -43,7 +43,7 @@ FUNC INT DIA_NASZ_412_CatSan_siema_Condition()
 
 FUNC VOID DIA_NASZ_412_CatSan_siema_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_412_CatSan_siema_15_00"); //Obcy!
+	AI_Output (self, other,"DIA_NASZ_412_CatSan_siema_15_00"); //Obcy! Wyczu³em, ¿e siê zbli¿asz i otworzy³em kratê.
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_siema_15_01"); //Co ty tutaj robisz, yy... duchu?
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_siema_15_02"); //Nie³atwo to ubraæ w s³owa.
 

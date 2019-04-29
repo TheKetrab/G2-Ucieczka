@@ -86,10 +86,18 @@ FUNC VOID Rtn_Odpoczynek_113 ()
 	TA_FleeToWP	(23,00,08,00,"OC_ROUND_1");		
 };
 
+
+FUNC VOID Rtn_Kap4_113()
+{	
+	TA_Stand_Drinking			(08,00,23,00,"NASZ_LOWCY_KARCZMA_06");
+	TA_Stand_Drinking			(23,00,08,00,"NASZ_LOWCY_KARCZMA_06");
+};
+
+
 FUNC VOID Rtn_InCastle_113()
 {	
-	TA_Stand_WP			(08,00,23,00,"OC_MAGE_IN");
-	TA_Stand_WP			(23,00,08,00,"OC_MAGE_IN");
+	TA_Practice_Sword			(08,00,23,00,"OC_TRAIN_04");
+	TA_Practice_Sword			(23,00,08,00,"OC_TRAIN_04");
 };
 
 FUNC VOID Rtn_ArenaZamek_113 ()

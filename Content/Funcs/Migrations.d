@@ -179,52 +179,46 @@ func void Migration_Kap4() {
 
 	Wld_InsertNpc	(NASZ_010_Monastir,"NASZ_LOWCY_GORA_09"); 
 	
-	B_StartOtherRoutine (NASZ_120_Phill, "Kap4");
-	B_StartOtherRoutine (NASZ_225_Wrzod, "Kap4");
-	B_StartOtherRoutine (NASZ_231_Ted, "Kap4");
-	B_StartOtherRoutine (NASZ_119_Udar,"Kap4");
+	B_StartOtherRoutine (NASZ_120_Phill, "Kap4");  // quest z drzewem
+	B_StartOtherRoutine (NASZ_225_Wrzod, "Kap4");  // krzyczy
+	B_StartOtherRoutine (NASZ_231_Ted, "Kap4");    // za palisade do klasztoru
+	B_StartOtherRoutine (NASZ_119_Udar,"Kap4");    // zostaje szefem
 	
-	// TODO niewolnicy do obozu mysliwych
-	B_StartOtherRoutine (NASZ_319_Niewolnik,"Twierdza");
-	B_StartOtherRoutine (NASZ_320_Niewolnik,"Twierdza");
-	B_StartOtherRoutine (NASZ_321_Niewolnik,"Twierdza");
-	B_StartOtherRoutine (NASZ_325_Grimes,"Twierdza");
+	B_StartOtherRoutine (NASZ_319_Niewolnik,"Kap4"); //
+	B_StartOtherRoutine (NASZ_320_Niewolnik,"Kap4"); // niewolnicy pracuja w obozie lowcow
+	B_StartOtherRoutine (NASZ_321_Niewolnik,"Kap4"); //
+	B_StartOtherRoutine (NASZ_325_Grimes,"Kap4");    //
 
-	B_StartOtherRoutine (NASZ_201_Erak,"Kap4");
-	B_StartOtherRoutine (NASZ_215_Kivo,"Kap4");
-	B_StartOtherRoutine (NASZ_216_Aran,"Kap4");
-	B_StartOtherRoutine (NASZ_218_Ammann,"InCastle");
-	B_StartOtherRoutine (NASZ_221_Benito,"Kap4");
-	B_StartOtherRoutine (NASZ_227_Vachut,"Start");
-	B_StartOtherRoutine (NASZ_229_Ayan,"InCastle");
+	B_StartOtherRoutine (NASZ_201_Erak,"Kap4");         // zostaje szefem
+	B_StartOtherRoutine (NASZ_215_Kivo,"Kap4");         // zamek -> stoi na murze
+	B_StartOtherRoutine (NASZ_216_Aran,"Kap4");         // oboz mysliwych -> patroluje przy bramie
+	B_StartOtherRoutine (NASZ_218_Ammann,"InCastle");   // zamek -> siedzi na krzesle
+	B_StartOtherRoutine (NASZ_221_Benito,"Kap4");       // oboz mysliwych -> patroluje przy bramie
+	B_StartOtherRoutine (NASZ_227_Vachut,"Kap4");       // zamek -> kreci roast scavenger
+	B_StartOtherRoutine (NASZ_229_Ayan,"InCastle");     // zamek -> stoi z zalozonymmi rekami pod domem magow
 
-	
-	B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");
-	B_StartOtherRoutine (NASZ_113_Godar,"Start");
-	B_StartOtherRoutine (NASZ_114_Hokurn,"Start");
-	B_StartOtherRoutine (NASZ_115_Kurgan,"InCastle");
-	B_StartOtherRoutine (NASZ_116_Kjorn,"Start");
-	B_StartOtherRoutine (NASZ_117_Fed,"Start");
-	B_StartOtherRoutine (NASZ_118_Ferros,"Start");
-	B_StartOtherRoutine (NASZ_109_Rethon,"Zamek");
-	B_StartOtherRoutine (NASZ_112_Peter,"Start");
-	B_StartOtherRoutine (NASZ_101_Korth,"Kap4");
-	B_StartOtherRoutine (NASZ_103_Johny,"Start");
-	
-	B_StartOtherRoutine (NASZ_130_Jenkins,"Kap4");
-	B_StartOtherRoutine (NASZ_131_Lowca,"Kap4");
-	B_StartOtherRoutine (NASZ_132_Lowca,"Kap4");
+	B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");    // zamek -> siedzi przy krzesle z ammannem
+	B_StartOtherRoutine (NASZ_113_Godar,"Kap4");        // -----> oboz (pije w karczmie)
+	B_StartOtherRoutine (NASZ_114_Hokurn,"Kap4");       // -----> oboz (pije w karczmie)
+	B_StartOtherRoutine (NASZ_115_Kurgan,"InCastle");   // zamek -> stoi tam gdzie Tandor w G2
+	B_StartOtherRoutine (NASZ_116_Kjorn,"Kap4");        // -----> oboz (siedzi na lawce Gerolda)
+	B_StartOtherRoutine (NASZ_117_Fed,"Kap4");          // -----> oboz (siedzi tam gdzie Daniel w Kap1)
+	B_StartOtherRoutine (NASZ_118_Ferros,"Kap4");       // -----> oboz (stoi tam gdzie na poczatku Udar)
+	B_StartOtherRoutine (NASZ_109_Rethon,"Zamek");      // zamek
+	B_StartOtherRoutine (NASZ_112_Peter,"Kap4");        // -----> oboz (siedzi na krzesle w karczmie)
+	B_StartOtherRoutine (NASZ_101_Korth,"Kap4");        // -----> oboz
+	B_StartOtherRoutine (NASZ_103_Johny,"Start");       // -----> oboz
 	
 
-	B_StartOtherRoutine (NASZ_203_Tabuk,"Kap4");
-	B_StartOtherRoutine (NASZ_204_Vick,"Start");
-	B_StartOtherRoutine (NASZ_205_Mysliwy,"Kap4");
-	B_StartOtherRoutine (NASZ_206_Mysliwy,"Kap4");
-	B_StartOtherRoutine (NASZ_209_Mysliwy,"Kap4");
-	B_StartOtherRoutine (NASZ_210_Mysliwy,"Kap4");
-	B_StartOtherRoutine (NASZ_214_Goth,"Kap4");
+	B_StartOtherRoutine (NASZ_203_Tabuk,"Kap4");        // oboz
+	B_StartOtherRoutine (NASZ_204_Vick,"Start");        // oboz mysliwych (TODO niech umrze)
+	B_StartOtherRoutine (NASZ_205_Mysliwy,"Kap4");      // oboz 
+	B_StartOtherRoutine (NASZ_206_Mysliwy,"Kap4");      // oboz 
+	B_StartOtherRoutine (NASZ_209_Mysliwy,"Kap4");      // oboz 
+	B_StartOtherRoutine (NASZ_210_Mysliwy,"Kap4");      // oboz 
+	B_StartOtherRoutine (NASZ_214_Goth,"Kap4");         // stoi przed brama z dwoma mysliwymi
 
-	B_StartOtherRoutine (NASZ_230_Dymoondo,"Kap4Mysliwi");
+	B_StartOtherRoutine (NASZ_230_Dymoondo,"Kap4Mysliwi"); // jest u mysliwych
 
 	
 };
@@ -232,14 +226,19 @@ func void Migration_Kap4() {
 
 func void Migration_LowcyToZamek() {
 
-	B_StartOtherRoutine (NASZ_101_Korth,"InCastle");
-	B_StartOtherRoutine (NASZ_103_Johny,"InCastle");
-	B_StartOtherRoutine (NASZ_112_Peter,"InCastle");
-	B_StartOtherRoutine (NASZ_113_Godar,"InCastle");
-	B_StartOtherRoutine (NASZ_114_Hokurn,"InCastle");
-	B_StartOtherRoutine (NASZ_116_Kjorn,"InCastle");
-	B_StartOtherRoutine (NASZ_117_Fed,"InCastle");
-	B_StartOtherRoutine (NASZ_118_Ferros,"InCastle");
-	// TODO: lowcy z oboziku zwiadowczego powinni tu sie pojawic
+	B_StartOtherRoutine (NASZ_101_Korth,"InCastle");   // stoi przed brama
+	B_StartOtherRoutine (NASZ_103_Johny,"InCastle");   // siedzi przy ognisku
+	B_StartOtherRoutine (NASZ_113_Godar,"InCastle");   // trenuje mieczem w zamku
+	B_StartOtherRoutine (NASZ_114_Hokurn,"InCastle");  // trenuje mieczem w zamku
+	B_StartOtherRoutine (NASZ_117_Fed,"InCastle");     // siedzi przy ognisku
+	B_StartOtherRoutine (NASZ_118_Ferros,"InCastle");  // stoi i je tam gdzie w g2
+	
+	if (hero.guild == GIL_DJG) {
+		// ci ludzie sie pojawiaja tylko jesli jestes lowca
+		B_StartOtherRoutine (NASZ_130_Jenkins,"Kap4"); // -
+		B_StartOtherRoutine (NASZ_131_Lowca,"Kap4");   // | -> ci trzej sobie stoj¹ przy bramie g³ównej
+		B_StartOtherRoutine (NASZ_132_Lowca,"Kap4");   // -
+	};
 
+	
 };

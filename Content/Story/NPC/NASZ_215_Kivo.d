@@ -101,8 +101,8 @@ FUNC VOID Rtn_GoToDowodca_215()
 
 FUNC VOID Rtn_Kap4_215()
 {	
-	TA_Stand_Guarding 			(08,00,23,00,"OW_PATH_186");
-	TA_Stand_Guarding			(23,00,08,00,"OW_PATH_186");
+	TA_Stand_Guarding 			(08,00,23,00,"OC_GUARD_PALISADE_05");
+	TA_Stand_Guarding			(23,00,08,00,"OC_GUARD_PALISADE_05");
 };
 
 FUNC VOID Rtn_FollowRenegaci_215 ()

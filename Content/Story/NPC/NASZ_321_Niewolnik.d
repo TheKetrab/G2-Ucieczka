@@ -62,3 +62,9 @@ FUNC VOID Rtn_TwierdzaAtak_321 ()
 	TA_Sit_Campfire		(08,00,22,00,"NASZ_TWIERDZA_39");
    TA_Sit_Campfire		(22,00,08,00,"NASZ_TWIERDZA_39");
 };
+
+FUNC VOID Rtn_Kap4_321 ()
+{
+	TA_Repair_Hut		(08,00,22,00,"NASZ_LOWCY_DOL_20");
+   TA_Sit_Campfire		(22,00,08,00,"NASZ_LOWCY_DOL_01");
+};

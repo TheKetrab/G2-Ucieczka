@@ -63,8 +63,8 @@ FUNC VOID Rtn_Start_110 ()
 
 FUNC VOID Rtn_TwierdzaFollow_110 ()
 {	
-	TA_Guide_Player		(08,00,20,00,"OW_PATH_186");
-	TA_Guide_Player			(20,00,08,00,"OW_PATH_186");
+	TA_RunToWP		(08,00,20,00,"OW_PATH_186");
+	TA_RunToWP			(20,00,08,00,"OW_PATH_186");
 };
 
 FUNC VOID Rtn_TwierdzaIn_110 ()
@@ -102,8 +102,8 @@ FUNC VOID Rtn_Zamek_110()
 {	
 	//TA_Stand_Guarding 			(08,00,23,00,"OC_CENTER_04");
 	//TA_Stand_Guarding			(23,00,08,00,"OC_CENTER_04");
-	TA_RunToWP 			(08,00,23,00,"OC_CENTER_04");
-	TA_RunToWP			(23,00,08,00,"OC_CENTER_04");
+	TA_Sit_Chair 			(08,00,23,00,"NASZ_INCASTLE_CHAIR_2");
+	TA_Sit_Chair			(23,00,08,00,"NASZ_INCASTLE_CHAIR_2");
 };
 
 FUNC VOID Rtn_Scena1_110()

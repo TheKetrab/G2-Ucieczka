@@ -49,7 +49,7 @@ FUNC VOID Rtn_Start_210 ()
 
 FUNC VOID Rtn_Kap4_210 ()
 {
-	TA_Stand_Eating		(07,00,21,00,"LOCATION_02_04");
-	TA_Stand_Eating 	(21,00,07,00,"LOCATION_02_04");
+	TA_SmallTalk		(07,30,20,20,"NASZ_MYSLIWI_DOL_26");
+	TA_Sit_CampFire 	(20,20,07,30,"NASZ_MYSLIWI_DOL_27");
 };
 

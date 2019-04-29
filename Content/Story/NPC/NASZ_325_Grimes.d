@@ -83,3 +83,11 @@ FUNC VOID Rtn_TwierdzaAtak_325 ()
     TA_Stand_ArmsCrossed	 (23,00,08,00,"NASZ_TWIERDZA_38");
  
 };
+
+FUNC VOID Rtn_Kap4_325 ()
+{	
+	TA_Saw	 (08,00,23,00,"NASZ_LOWCY_DOL_14");
+    TA_Sit_Campfire	 (23,00,08,00,"NASZ_LOWCY_DOL_11");
+ 
+};
+

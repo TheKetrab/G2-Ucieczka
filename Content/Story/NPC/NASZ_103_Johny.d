@@ -99,8 +99,8 @@ FUNC VOID Rtn_Spotkanie_103 ()
 
 FUNC VOID Rtn_InCastle_103 ()
 {
-	TA_Stand_WP		(20,00,05,30,"OC_GUARD_STORE_01");
-	TA_Stand_WP		(05,30,20,00,"OC_GUARD_STORE_01");
+	TA_Sit_Campfire		(20,00,05,30,"OC_CAMPFIRE_OUT_03");
+	TA_Sit_Campfire		(05,30,20,00,"OC_CAMPFIRE_OUT_03");
 };
 
 FUNC VOID Rtn_Scena5_103 ()

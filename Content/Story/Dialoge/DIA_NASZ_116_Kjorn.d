@@ -337,9 +337,9 @@ FUNC VOID DIA_NASZ_116_Kjorn_PiecBraciQuest_Info()
 	AI_Output (other, self,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_01"); //O co chodzi?
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_02"); //Pamiêtasz jak szturmowaliœmy razem zamek? Wys³aliœmy wszystkich orków do Beliara.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_03"); //Gdy póŸniej wracaliœmy do twierdzy, poszed³em siê odlaæ.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_04"); //Do Górniczej Doliny przyby³em jako ³owca smoków, a teraz ³apiê cykora na widok orków... Ta wyprawa pokaza³a mi, czym jest strach.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_04"); //Do Górniczej Doliny przyby³em jako ³owca smoków, a teraz ³apiê cykora na widok orków... Ta ca³a wyprawa pokaza³a mi, czym jest strach.
 	AI_Output (other, self,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_05"); //Mów do rzeczy. Nie mam zbyt wiele czasu.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_06"); //No wiêc, gdy siê za³atwia³em, dopatrzy³em w ziemi jakiœ kawa³ek pergaminu. Zainteresowa³o mnie to, wiêc siêgn¹³em po papier. By³a to mapa.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_PiecBraciQuest_55_06"); //Dopatrzy³em w ziemi jakiœ kawa³ek pergaminu. Zainteresowa³o mnie to, wiêc siêgn¹³em po papier. By³a to mapa.
 
 };
 

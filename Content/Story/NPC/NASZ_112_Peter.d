@@ -69,6 +69,16 @@ FUNC VOID Rtn_Zamek_112 ()
 	TA_Roast_Scavenger	 (20,00,08,00,"OC_CAMPFIRE_BARBQ");
 };
 
+
+FUNC VOID Rtn_Kap4_112 ()
+{
+	TA_Sit_Chair  (08,00,20,00,"NASZ_LOWCY_KARCZMA_23");
+	TA_Sit_Chair  (20,00,08,00,"NASZ_LOWCY_KARCZMA_23");
+};
+
+
+
+
 FUNC VOID Rtn_InCastle_112 ()
 {
 	TA_Stand_WP  (08,00,20,00,"OC_CENTER_GUARD_04");

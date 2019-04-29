@@ -89,6 +89,12 @@ FUNC VOID Rtn_GoToDowodca_227()
 	TA_Stand_WP				(23,00,08,00,"OC_TRAIN_04");
 };
 
+FUNC VOID Rtn_Kap4_227()
+{	
+	TA_Roast_Scavenger 			(08,00,23,00,"OC_CAMPFIRE_BARBQ");
+	TA_Roast_Scavenger			(23,00,08,00,"OC_CAMPFIRE_BARBQ");
+};
+
 
 FUNC VOID Rtn_Odpoczynek_227 ()
 {

@@ -42,8 +42,8 @@ instance NASZ_009_Marcos  (Npc_Default)
 
 FUNC VOID Rtn_Start_9 ()
 {	
-	TA_Sit_Bench		(08,30,21,30,"NASZ_KOPALNIA_NOWY_02");
-    TA_Sleep			(21,30,08,30,"NASZ_KOPALNIA_NOWY_02");
+	TA_Sit_Bench		(09,30,19,30,"NASZ_KOPALNIA_NOWY_02");
+    TA_Sleep			(19,30,09,30,"NASZ_KOPALNIA_NOWY_02");
 };
 
 FUNC VOID Rtn_Follow_9 ()

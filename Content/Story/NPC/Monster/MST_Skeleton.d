@@ -530,6 +530,6 @@ INSTANCE Skeleton_Ghost_Immortal (Mst_Default_Skeleton)
 	fight_tactic	=	FAI_HUMAN_MASTER;
 	B_SetVisuals_Skeleton();	
 	B_SetFightSkills (self, 100);
-	EquipItem (self, ItMw_1h_MISC_Sword);
+	EquipItem (self, ItNa_MieczSusan); // specjalny miecz
 
 };

@@ -1717,7 +1717,8 @@ INSTANCE ItNa_MieczRunicznyA (C_Item)
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_Runenschwert;		
 
-	effect				= 	"SPELLFX_FIRESWORD";
+	//effect				= 	"SPELLFX_FIRESWORD";
+	effect				=	"SPELLFX_WEAKGLIMMER_YELLOW";
 
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	65;
@@ -1745,7 +1746,9 @@ INSTANCE ItNa_MieczRunicznyB (C_Item)
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_Runenschwert;		
 
-	effect				= 	"MFX_PALLIGHT_ORIGIN";
+	//effect				= 	"MFX_PALLIGHT_ORIGIN";
+	effect				=	"SPELLFX_WEAKGLIMMER_BLUE";
+
 
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	65;
@@ -1773,8 +1776,9 @@ INSTANCE ItNa_MieczRunicznyC (C_Item)
 	damageType				= DAM_FLY;
 	range    			=  	Range_Runenschwert;		
 
-	effect = "spellfx_fireswordblack";
+	//effect = "spellfx_fireswordblack";
 	//effect				= 	"MFX_WHIRLWIND_INIT";
+	effect				=	"SPELLFX_WEAKGLIMMER";
 
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	65;
@@ -1867,6 +1871,38 @@ INSTANCE ItNa_Kosmyk (C_Item)
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_MieczSusan (C_Item) 
+{	
+	name 				=	"Grzech Szakala";
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;
+	material 			=	MAT_METAL;
+
+	value 				=	4500;
+
+	damageTotal			= 	73;
+	damagetype			=	DAM_EDGE;
+	range    			=  	Range_Special_1H_2;	
+
+	effect				=	"SPELLFX_WEAKGLIMMER_YELLOW";
+
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	76;
+	visual 				=	"ItMw_060_1h_Sword_smith_03.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+
+
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_GrzechSzakala (C_Item) 
@@ -4197,15 +4233,13 @@ func void Use_Fexo ()
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "notatki fexa:"	);
-					Doc_PrintLines	( nDocID,  0, "To AV mnie wykoñczy!"						);
+					Doc_PrintLines	( nDocID,  0, "Cz³owiek, który o¿ywi³ Star¹ Kopalniê i w¹tek na bagnie. Stworzon¹ przeze mnie 'r¹bankê' za palisad¹ zamieni³ na opowieœæ o biednych duszach nêkanych przez Kazmina i nadchodz¹ce 'Zaæmienie'.");
 					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "'To AV mnie wykoñczy!'");
 					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!' (Piêciu braci)");
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLine	( nDocID,  0, "");
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
 					Doc_Show		( nDocID );
@@ -4214,7 +4248,7 @@ func void Use_Fexo ()
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Mghej4 (C_Item)
 {
-	name 				=	"Mghej4";
+	name 				=	"Maciey";
 
 	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
@@ -4238,14 +4272,14 @@ func void Use_Mghej4 ()
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "notatki mghej4:"	);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "...");
-					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, "Multibetatester, od samego pocz¹tku, do samego koñca. Przechodzi³ pierwsze misje lata temu, gdy na zamku stacjonowali jeszcze nieusuniêci paladyni! Wielkie podziêkowania równie¿ za kilkanaœcie godzin spêdzonych w Spacerze na poprawianiu roœlinnoœci oraz stworzeniu orkowego obozu na pla¿y.");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, ""						);
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, ""						);
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
@@ -4279,14 +4313,10 @@ func void Use_PreriowyScierwojad ()
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "notatki scierwa:"	);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "...");
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, "Za model 3D zniszczonego Bractwa Œni¹cego i za kilka czarnych robót w skryptach. Dziêki!");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
@@ -4320,11 +4350,11 @@ func void Use_TheKetrab ()
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "notatki TheKetraba:"	);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "...");
-					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, "Gdybym wiedzia³, ile godzin spêdzê przy stworzeniu tej modyfikacji, to bym siê za to nigdy nie zabra³. Chocia¿ mo¿e dobrze, ¿e nie wiedzia³em..."	);
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "-> i tak suma czasów gry wszystkich konsumentów bêdzie mniejsza!"						);
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_PrintLines	( nDocID,  0, "..."						);
 					Doc_PrintLines	( nDocID,  0, "..."						);
@@ -4333,6 +4363,118 @@ func void Use_TheKetrab ()
 				
 					Doc_Show		( nDocID );
 };
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Bogu (C_Item)
+{
+	name 				=	"Bogu";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Bogu;
+	scemeName			=	"MAP";
+	description			= 	name;
+};
+func void Use_Bogu ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Gdyby nie Ty, ten mod by³by co najmniej dwa razy gorszy i dobrze o tym wiesz. Ten dzik poprawi³ multum b³êdów, z którymi sobie nie radzi³em i wprowadzi³ wiele innowacji skryptowych. Tylko dziêki niemu uda³o siê to ukoñczyæ w 2019 roku.");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Simen (C_Item)
+{
+	name 				=	"Simen";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Simen;
+	scemeName			=	"MAP";
+	description			= 	name;
+};
+func void Use_Simen ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Nale¿y Ci siê, zawodowy krytyku i narzekaczu! Z radami tego pana, 'Ucieczka' sta³a siê bardziej logiczna, ciekawsza i bugoodporna. Ile jeszcze modyfikacji uratujesz przed wydaniem jako niedorobionych?");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Mchuable (C_Item)
+{
+	name 				=	"Mchuable";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Mchuable;
+	scemeName			=	"MAP";
+	description			= 	name;
+};
+func void Use_Mchuable ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Te 2500 kwestii chyba na zawsze zostanie w Twojej g³owie, co? W mojej równie¿. I przycinanie tego, nazywanie ich i przypominanie o robocie :) Wykona³eœ kawa³ dobrej roboty. Brawo!");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
+};
+
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 instance ItNa_Mapa_Domenic (C_Item)
@@ -9433,7 +9575,8 @@ INSTANCE ItNa_Krysztal(C_Item)
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = Value_Rockcrystal;
-	visual = "ItMi_Rockcrystal.3ds";
+	//visual = "ItMi_Rockcrystal.3ds";
+	visual = "ItNa_Crystal.3ds";
 	material = MAT_STONE;
 	description = name;
 	text[5] = NAME_Value;

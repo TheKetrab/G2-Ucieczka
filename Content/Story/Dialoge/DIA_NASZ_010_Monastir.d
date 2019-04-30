@@ -1,7 +1,3 @@
-//EFEKTY DO JAKIEGOS RYTUALU:
-//PFXy w Spacerze: Invocation i LightStar
-
-// TODO: Monastir ma byc caly czas w domu udara i kerolotha
 
 var int MonastirIsGoingToOpenGate;
 //*********************************************************************
@@ -519,12 +515,11 @@ INSTANCE DIA_NASZ_010_Monastir_MamSkladniki   (C_INFO)
 
 FUNC INT DIA_NASZ_010_Monastir_MamSkladniki_Condition()	
 {
-	//todo odkomentowac
-	//if (npc_knowsinfo (other, DIA_NASZ_010_Monastir_NearGate))
-	//	&& (npc_hasitems (other, ItPl_Sagitta_Herb_MIS) >=5)
-	//{
+	if (npc_knowsinfo (other, DIA_NASZ_010_Monastir_NearGate))
+		&& (npc_hasitems (other, ItPl_Sagitta_Herb_MIS) >=5)
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_010_Monastir_MamSkladniki_Info()
@@ -601,10 +596,52 @@ FUNC INT DIA_NASZ_010_Monastir_StandInFinal_Condition()
 	};
 };
 
+func int HowManyGods() {
+
+	var int counter; counter = 0;
+	
+	if (Npc_GetDistToWP(NASZ_402_Innos,"NASZ_DYMOONDO_L") < 1000) { counter += 1; };
+	if (Npc_GetDistToWP(NASZ_403_Adanos,"NASZ_DYMOONDO_L") < 1000) { counter += 1; };
+	if (Npc_GetDistToWP(NASZ_404_Beliar,"NASZ_DYMOONDO_L") < 1000) { counter += 1; };
+
+	return counter;
+};
+
+func void LetGodsStartWithTheirRitual() {
+
+	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_SUCCESS);
+
+	LastRitual = TRUE;
+	FF_ApplyOnceExt (LastRitualFunc, 30000, -1);
+	
+	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
+	B_LogEntry (TOPIC_Fabula, "Wszystko, co mia³em zrobiæ, zrobi³em. Teraz muszê poczekaæ, a¿ Innos, Adanos oraz Beliar odprawi¹ rytua³ i przejœæ z innymi przez portal.");
+
+	B_StartOtherRoutine (NASZ_402_Innos, "Ritual");
+	B_StartOtherRoutine (NASZ_403_Adanos, "Ritual");
+	B_StartOtherRoutine (NASZ_404_Beliar, "Ritual");
+};
+
+var int WillMusiSprowadzicPozostalychBogow;
 FUNC VOID DIA_NASZ_010_Monastir_StandInFinal_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_15_00"); //Patrz. Tam na górze jest kamienny o³tarz.
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_55_01"); //Musisz teraz przywo³aæ tu bogów, ¿eby odprawili rytua³.
+
+	if (HowManyGods() == 0) {
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_55_01"); //Musisz teraz przywo³aæ tu bogów, ¿eby odprawili rytua³.
+		WillMusiSprowadzicPozostalychBogow = TRUE;
+	}
+	
+	else if (HowManyGods() == 1 || HowManyGods() == 2) {
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_55_02"); //Nawet ktoœ ju¿ tam jest! SprowadŸ wszystkich, ¿eby wspólnie odprawili rytua³.
+		WillMusiSprowadzicPozostalychBogow = TRUE;
+	}
+	
+	else {
+		AI_Output (self, other,"DIA_NASZ_010_Monastir_StandInFinal_55_03"); //S¹ równie¿ wszyscy bogowie. Niech zaczynaj¹.
+		LetGodsStartWithTheirRitual();
+	};
+	
 
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Druzyna (NASZ_010_Monastir,0);
@@ -631,6 +668,7 @@ FUNC INT DIA_NASZ_010_Monastir_GodReady_Condition()
 	&& (Npc_GetDistToWP	(NASZ_403_Adanos, "NASZ_DYMOONDO_K") < 500)
 	&& (Npc_GetDistToWP	(NASZ_404_Beliar, "NASZ_DYMOONDO_L") < 500)
 	&& (Npc_GetDistToWP	(self, "NASZ_MONASTIR_FINAL") < 500)
+	&& (WillMusiSprowadzicPozostalychBogow == TRUE)
 	{
 		return TRUE;
 	};
@@ -640,18 +678,7 @@ FUNC VOID DIA_NASZ_010_Monastir_GodReady_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_GodReady_15_00"); //Wszyscy bogowie s¹ gotowi.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_GodReady_55_01"); //A wiêc niech zaczynaj¹!
-	
-	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_SUCCESS);
-
-	LastRitual = TRUE;
-	FF_ApplyOnceExt (LastRitualFunc, 30000, -1);
-	
-	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
-	B_LogEntry (TOPIC_Fabula, "Wszystko, co mia³em zrobiæ, zrobi³em. Teraz muszê poczekaæ, a¿ Innos, Adanos oraz Beliar odprawi¹ rytua³ i przejœæ z innymi przez portal.");
-
-	B_StartOtherRoutine (NASZ_402_Innos, "Ritual");
-	B_StartOtherRoutine (NASZ_403_Adanos, "Ritual");
-	B_StartOtherRoutine (NASZ_404_Beliar, "Ritual");
+	LetGodsStartWithTheirRitual();
 
 };
 

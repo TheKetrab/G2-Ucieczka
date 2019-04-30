@@ -776,7 +776,7 @@ func void B_InitMonsterAttitudes ()
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_FRIENDLY,	GIL_DEMON					);
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_HOSTILE,	GIL_SUMMONED_DEMON			);
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_HOSTILE,	GIL_TROLL					);	// Troll / Schwarzer Troll
-	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_HOSTILE,	GIL_SWAMPSHARK				);
+	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_NEUTRAL,	GIL_SWAMPSHARK				);
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_FRIENDLY,	GIL_DRAGON					);	// Feuerdrache / Eisdrache / Felsdrache / Sumpfdrache / Untoter Drache
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_HOSTILE,	GIL_MOLERAT					);	
 	B_SetMonsterAttitude	(GIL_SKELETON,	ATT_NEUTRAL,	GIL_ORC						);	// Ork-Krieger / Ork-Shamane / Ork-Elite

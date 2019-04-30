@@ -157,13 +157,13 @@ CONST STRING MOBNAME_MISSION_GRAVE20 = "Mugo - 'UGA!'"; 							//nasz
 CONST STRING MOBNAME_THANKS_1 = "Bogdan Zwei II - za najszybsze odpowiedzi na theModders"; 					//nasz
 CONST STRING MOBNAME_THANKS_2 = "SiemekK - za garœæ pojedyñczych skrypcików"; 							//nasz
 CONST STRING MOBNAME_THANKS_3 = "anonimowy1121 - za pocz¹tki!"; 					//nasz
-CONST STRING MOBNAME_THANKS_4 = "Simen - za te ciê¿kie betatesty :)"; 							//nasz
-CONST STRING MOBNAME_THANKS_5 = "Duch - za ogarniêcie dubbingu"; 							//nasz
-CONST STRING MOBNAME_THANKS_6 = "Czudak - za kilka tekstur tarcz"; 							//nasz
-CONST STRING MOBNAME_THANKS_7 = "Mchuable - za tysi¹ce zdubbingowanych linijek"; 							//nasz
-CONST STRING MOBNAME_THANKS_8 = "TODO"; 							//nasz
-CONST STRING MOBNAME_THANKS_9 = "TODO"; 							//nasz
-CONST STRING MOBNAME_THANKS_10 = "TODO"; 							//nasz
+CONST STRING MOBNAME_THANKS_4 = "Volsufrick - za remaster filmów"; 							//nasz
+CONST STRING MOBNAME_THANKS_5 = "Fabiosek - dok³adny betatest"; 							//nasz TODO czy napewno? :P
+CONST STRING MOBNAME_THANKS_6 = "Czudak - za kilkanaœcie œwietnych tekstur"; 							//nasz
+CONST STRING MOBNAME_THANKS_7 = ""; 							//nasz TODO
+CONST STRING MOBNAME_THANKS_8 = ""; 							//nasz TODO 
+CONST STRING MOBNAME_THANKS_9 = ""; 							//nasz TODO
+CONST STRING MOBNAME_THANKS_10 = "Dziêki i tobie graczu, ¿e tu doszed³eœ!"; 							//nasz
 
 
 

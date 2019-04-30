@@ -99,6 +99,26 @@ instance MENU_STATUS (C_MENU_DEF)
 	items[56]	= "MENU_ITEM_TALENT_20_TITLE";
 	items[57]	= "MENU_ITEM_TALENT_20_SKILL";
 
+	
+	
+	// REPUTATION
+
+	items[58]	= "MENU_ITEM_REPUTATION_HEADING";
+	// --- Lowcy ------------------------------------------
+	items[59]	= "MENU_ITEM_REPUTATION_1_TITLE";
+	items[60]	= "MENU_ITEM_REPUTATION_1_RANGE";
+	items[61]	= "MENU_ITEM_REPUTATION_1_VAL";
+	// --- Mysliwi -----------------------------------------
+	items[62]	= "MENU_ITEM_REPUTATION_2_TITLE";
+	items[63]	= "MENU_ITEM_REPUTATION_2_RANGE";
+	items[64]	= "MENU_ITEM_REPUTATION_2_VAL";
+	// --- Bandyci ------------------------------------------
+	items[65]	= "MENU_ITEM_REPUTATION_3_TITLE";
+	items[66]	= "MENU_ITEM_REPUTATION_3_RANGE";
+	items[67]	= "MENU_ITEM_REPUTATION_3_VAL";
+
+	
+	
 	// ------ Eigenschaften ------
 
 	dimx		= 8192;
@@ -139,6 +159,8 @@ const int STAT_ARM_Y 		= 5650; //Armorblock
 const int STAT_TALHEAD_Y  	= 1000;
 const int STAT_TAL_Y  		= 1450; //2. Spalte - Talentblock
 
+const int STAT_REPHEAD_Y  	= 5800;
+const int STAT_REP_Y  		= 6250; 
 // ----- Zeilengrösse ------
 const int STAT_DY =  300;
 
@@ -515,3 +537,46 @@ INSTANCE MENU_ITEM_TALENT_12_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = S
 instance MENU_ITEM_TALENT_12_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 19*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 */
+
+
+
+
+
+// -------
+// Reputacja TODO
+// -------
+
+INSTANCE MENU_ITEM_REPUTATION_HEADING(C_MENU_ITEM_DEF)
+{
+
+	posx		= STAT_B_X1; 				posy = STAT_REPHEAD_Y;
+	dimx 		= STAT_B_X4 - STAT_B_X1;	dimy = STAT_DY;
+	text[0]		= "REPUTACJA";
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= (flags & ~IT_SELECTABLE)|IT_TXT_CENTER;
+};
+
+// TODO
+//
+// reputacja sie musi wyswietlac:
+// u [...] RANGA wartosc
+// tak jak jest w ksiedze statystyk (Ksiêga reputacji)
+// oraz:
+// Reputacja u bandytów ma siê pojawiaæ w dzienniku dopiero gdy rep_bandyci_s > 0
+// (Wczesniej text[0] = "")
+
+
+// ------ Lowcy ------ //
+INSTANCE MENU_ITEM_REPUTATION_1_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "U ³owców orków:"; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "RANGA";           fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "X";               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+
+// ------ Mysliwi ------ //
+INSTANCE MENU_ITEM_REPUTATION_2_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "U myœliwych: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+
+// ----- Bandyci ----- //
+INSTANCE MENU_ITEM_REPUTATION_3_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "U bandytów: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };

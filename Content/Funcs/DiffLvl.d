@@ -120,7 +120,7 @@ func int DiffEnemyDmg(var int dmg)
 		//dmg= (dmg*NormalEnemyDmg)/100;
 		return dmg;
 	}
-	else
+	else if (diffLevel == HARD)
 	{
 		dmg  = (dmg*HardEnemyDmg)/100;
 	}	

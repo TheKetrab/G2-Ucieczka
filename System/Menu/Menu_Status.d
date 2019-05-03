@@ -568,15 +568,15 @@ INSTANCE MENU_ITEM_REPUTATION_HEADING(C_MENU_ITEM_DEF)
 
 // ------ Lowcy ------ //
 INSTANCE MENU_ITEM_REPUTATION_1_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "U ³owców orków:"; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_1_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "RANGA";           fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_1_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "X";               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  0*STAT_DY; /*text[0] = "RANGA"; */       fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  0*STAT_DY; /*text[0] = "X";   */            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
 
 // ------ Mysliwi ------ //
 INSTANCE MENU_ITEM_REPUTATION_2_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "U myœliwych: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_2_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_2_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  1*STAT_DY; /*text[0] = /*"RANGA";*/            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  1*STAT_DY; /*text[0] = /*"X"; */               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
 
 // ----- Bandyci ----- //
-INSTANCE MENU_ITEM_REPUTATION_3_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "U bandytów: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_3_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_3_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = /*"U bandytów: ";*/ fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = /*"RANGA";  */          fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = "X"; */               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };

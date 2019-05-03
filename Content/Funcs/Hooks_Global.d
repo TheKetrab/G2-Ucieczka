@@ -33,7 +33,6 @@ func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 			B_GivePlayerXP(sleeper.level*10);
 		
 		};
-		Release(sleeper);
 		return;
 	};
 
@@ -44,8 +43,7 @@ func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 		//Npc_SetTarget (sleeper, hero);
 		AI_StartState (sleeper, ZS_MM_Attack, 1, "");
 	};
-	
-	Release(sleeper);
+
 };
 
 
@@ -79,7 +77,6 @@ func void HandleEvents_hook(/*int key*/)
 			if(Npc_IsInState(slf, ZS_Unconscious) || Npc_IsDead   	(slf))
 			{
 				QuickLoot(slf,hero);
-				Release(slf);
 			};		
 		
 		};
@@ -405,6 +402,7 @@ func void Hooks_Global()
 {
 	InitDamage();
 	RandomScreen_Init();
+	Install_Character_Menu_Hook() ;
 	const int hooks = 0;
 	if(!hooks){
 		

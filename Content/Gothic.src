@@ -356,7 +356,7 @@ AI\MONSTER\ZS_Monster\ZS_MM_*.d
 
 STORY\Events\*.d
 AI\Test_Skripts\*.d
-
+Funcs\DiffLvl.d
 Funcs\Hooks_Global.d
 STORY\Startup.d
 

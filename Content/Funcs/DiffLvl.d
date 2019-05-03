@@ -47,7 +47,7 @@ func int GetDiffLvl()
 {	
 	var int mPtr; mPtr =  MEM_GetMenuItemByString ("MENUITEM_OPT_JUSTICE");
 	//var zCMenuItem m; 
-	if(!mPtr) {return;};
+	if(!mPtr) {return -1;};
 	MEM_AssignInst (m, mPtr);
 	//m.m_parItemFlags = m.m_parItemFlags | IT_SELECTABLE;
 	

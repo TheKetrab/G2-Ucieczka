@@ -63,7 +63,7 @@ func void INIT_GLOBAL()
 	Hooks_Global();
 	
 	CheckDx11();
-
+	QuickSlot_Init();
 	B_AddFightSkill(hero,0,0);
 };
 
@@ -102,7 +102,7 @@ func void STARTUP_OLDCAMP ()
 	StanDruzyny=1;
 	LevelMiner = 20;
 	PlantSkill_Factor=1;
-	
+	QuickSlot_OnLoadFirstWorld();
 	//Wld_SendTrigger("");
 	
 	//ITEMS

@@ -1,9 +1,8 @@
 //var int inUse[10];
 func void QS_RemoveWeapon()
 {
-	var int ptr; ptr = QS_oCMsgWeapon_Create(7, 0);
+	var int ptr; ptr = QS_oCMsgWeapon_Create(EV_REMOVEWEAPON, 0);
 	QS_OnMessage (ptr);
-	CALL__thiscall(_@(hero),oCNpc__ClearEM);
 };
 
 func void QS_DrawWeapon(var int mode)
@@ -40,7 +39,7 @@ func void QS_HideWeapon(var oCNpc her)
 		};
 	};	
 };
-const int oCItem__Flags_Offset						= 344;	// 0x0158
+
 func void QS_DrawWeapon_Far(var int itemPtr)
 {
 	

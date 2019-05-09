@@ -68,6 +68,7 @@ const int oCMagBook__Register				= 4676528;	// 0x00475BB0	(oCItem*)
 const int oCMagBook__DeRegister 			= 4676800;	// 0x00475CC0	(oCItem*)
 const int zCModel__IsAnimationActive 		= 5727888; 	// 0x00576690
 const int oCItemContainer__IsOpen 			= 7377408; 	// 0x00709200
+const int oCItem__Flags_Offset						= 344;	// 0x0158
 
 const int zCArray__array_offset			= 0;  	// 0x00
 const int zCArray__numAlloc_offset		= 4;  	// 0x04

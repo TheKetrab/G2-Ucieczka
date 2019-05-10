@@ -132,7 +132,7 @@ FUNC INT DIA_NASZ_304_Bam_quest_Condition()
 FUNC VOID DIA_NASZ_304_Bam_quest_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_304_Bam_quest_15_00"); //Mogê ci w czymœ pomóc?
-	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_01"); //Jeœli chcesz siê na coœ przydaæ, to mo¿esz sprawdziæ co paladynami i ich rud¹.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_01"); //Jeœli chcesz siê na coœ przydaæ, to mo¿esz sprawdziæ co z paladynami i ich rud¹.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_02"); //Od pewnego czasu nie docieraj¹ od nich ¿adne wieœci i ani krzty towaru, który nam obiecali.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_03"); //Co prawda za rudê odpowiedzialni s¹ Frut, Gobby i Rabon, a ja sam nigdy nie widzia³em Marcosa, czyli szefa paladynów, ale zaczynam siê niecierpliwiæ.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_04"); //Mo¿esz siê zaj¹æ t¹ spraw¹. Chce wiedzieæ, czy praca wre i czemu siê tak oci¹gaj¹ z dostaw¹.

@@ -337,7 +337,7 @@ FUNC INT DIA_NASZ_203_Tabuk_teach_Condition()
 
 FUNC VOID DIA_NASZ_203_Tabuk_teach_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_203_Tabuk_teach_15_00"); //Mo¿esz mnie nauczyæ czegoœ o polowaniu?
+	AI_Output (other,self ,"DIA_NASZ_203_Tabuk_teach_15_00"); //Mo¿esz nauczyæ mnie czegoœ o polowaniu?
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_teach_55_01"); //Pewnie, za 400 sztuk z³ota nauczê ciê wszystkiego, co potrafiê.
 
 	Log_CreateTopic (TOPIC_MysliwiTeacher,LOG_NOTE);

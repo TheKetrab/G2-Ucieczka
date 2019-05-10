@@ -342,7 +342,7 @@ FUNC INT DIA_NASZ_228_Chris_AskTeacher_Condition()
 
 FUNC VOID DIA_NASZ_228_Chris_AskTeacher_Info()
 {
-	AI_Output(other,self,"DIA_NASZ_228_Chris_AskTeacher_15_00"); //Mo¿esz mnie nauczyæ czegoœ o polowaniu?
+	AI_Output(other,self,"DIA_NASZ_228_Chris_AskTeacher_15_00"); //Mo¿esz mnie czegoœ nauczyæ o polowaniu?
 	AI_Output(self,other,"DIA_NASZ_228_Chris_AskTeacher_03_01"); //Nie ma problemu. Za parê z³otych monet mogê ci pokazaæ, jak siê patroszy upolowane zwierzêta.
 	AI_Output(self,other,"DIA_NASZ_228_Chris_AskTeacher_03_02"); //Za futra i inne trofea mo¿na dostaæ naprawdê sporo pieniêdzy.
 

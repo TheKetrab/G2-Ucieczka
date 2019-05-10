@@ -205,7 +205,7 @@ func int DIA_NASZ_315_Bandzior_glowa_Condition ()
 func void DIA_NASZ_315_Bandzior_glowa_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_315_Bandzior_glowa_55_00"); //Van-Gan pragnie twojej g³owy.
-	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_glowa_03_01"); //Naprawdê? Wiesz co, coœ ci powiem.
+	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_glowa_03_01"); //Naprawdê? Wiesz co ci powiem?
 	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_glowa_03_02"); //Ja te¿ pragnê JEGO g³owy!
 	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_glowa_03_03"); //Masz mo¿e ochotê na ma³y uk³adzik? Chyba mi nie powiesz, ¿e ork jest wa¿niejszy od cz³owieka!
 	AI_Output			(self, other, "DIA_NASZ_315_Bandzior_glowa_03_04"); //Dam ci 300 sztuk z³ota, za JEGO g³owê. Co ty na to?

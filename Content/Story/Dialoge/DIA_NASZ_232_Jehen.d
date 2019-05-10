@@ -759,7 +759,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Trup_Info()
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Trup_55_00"); //Innosie, miej tego biedaka w opiece!
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Trup_55_01"); //Zaraz... To przecie¿ duch! Czy ta bestia by³a w stanie uœmierciæ nawet kogoœ, kto ju¿ nie ¿yje?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Trup_55_02"); //Nawet nie chcê wiedzieæ, ile¿ musia³ wycierpieæ przy kontakcie z tym stworzeniem. Spójrz na jego pancerz. Ca³y we krwi, a prawy bok tu³owia poszarpany, jakby ktoœ wyrwa³ mu skórê.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_Trup_55_03"); //To tylko umacnia nas w tym, i¿ ta bestia jest cholernie silna i niebezpieczna. Co zrobimy dalej?
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_Trup_55_03"); //To tylko umacnia nas w tym, i¿ ta bestia jest cholernie silna i niebezpieczna. Co robimy dalej?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Trup_55_04"); //W³aœnie siê nad tym zastanawiam... S³ysza³eœ? Kolejny ryk, coœ jakby warkniêcie. A! Widzê bestiê! Ruszamy, ubezpieczaj moje ty³y!
 
 	Npc_ExchangeRoutine(self,"Bestia1");
@@ -842,12 +842,12 @@ FUNC INT DIA_NASZ_232_Jehen_HaveLuski_Condition()
 FUNC VOID DIA_NASZ_232_Jehen_HaveLuski_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_00"); //Wyrwa³em kilka ³usek.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_01"); //To jakaœ skorupa poroœniêta tkank¹, która tworzy³a kiedyœ cia³o tej bestii. Wydaje siê byæ bardzo wytrzyma³¹, bo znajdowa³a siê w miejscu, gdzie atakowaliœmy to stworzenie swoimi mieczami.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_01"); //To jakaœ skorupa poroœniêta tkank¹, która tworzy³a kiedyœ cia³o tej bestii. Wydaje siê byæ bardzo wytrzyma³a, bo znajdowa³a siê w miejscu, gdzie atakowaliœmy to stworzenie swoimi mieczami.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_02"); //Byæ mo¿e to nada siê do wzmocnienia naszych pancerzy? Jak uwa¿asz?	
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_HaveLuski_55_03"); //Myœlê, ¿e Dobar by³by zadowolony, lecz to jedynie trzy ³uski. Raczej nie zrobi z tego pancerzy dla wszystkich ch³opaków, jednak masz racjê. Nale¿y mu o tym powiedzieæ, mo¿e jakoœ odtworzy to ze swojego metalu.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_HaveLuski_55_04"); //Zaczekaj... Te¿ widzia³eœ ten b³ysk? Dochodzi³ jakby spod wody. Chyba pod wulkanem jest jaskinia. 
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_HaveLuski_55_05"); //Udaj siê tam. Ja ze swoj¹ rêk¹ wola³bym nie wchodziæ do wody, bo ci¹gle krwawi. Poczekam tutaj na ciebie.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_06"); //Sprawdzê to i zaraz wrócê.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_HaveLuski_55_06"); //Sprawdzê to i wrócê.
 	
 	AI_StopProcessInfos(self);
 	

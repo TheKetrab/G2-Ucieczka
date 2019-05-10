@@ -388,7 +388,7 @@ FUNC VOID DIA_NASZ_211_Hunt_SellIce100szt_Info()
 	}
 	else
 	{
-		AI_Output (other, self,"DIA_NASZ_211_Hunt_SellIce100szt_55_01"); //Cena wynosi sto sztuk z³ota, a ty tyle nie masz.
+		AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce100szt_15_02"); //Cena wynosi sto sztuk z³ota, a ty tyle nie masz.
 	};
 
 };

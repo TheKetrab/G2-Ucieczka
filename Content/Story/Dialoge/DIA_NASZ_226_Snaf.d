@@ -75,7 +75,7 @@ FUNC VOID DIA_NASZ_226_Snaf_HelloPieczyste_Info()
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_HelloPieczyste_15_01"); //Gdybyœ przyszed³ godzinê temu, to byæ mo¿e coœ by siê osta³o, a tak to pozosta³ pusty garnek i pe³ne brzuchy wszystkich w obozie.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_HelloPieczyste_15_02"); //Je¿eli jednak chcesz, to mogê ci ugotowaæ kolejn¹ porcjê, pod warunkiem, ¿e dostarczysz mi niezbêdne sk³adniki.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_HelloPieczyste_15_03"); //Potrzebujê czterech bry³ek wêgla, osiem ciemnych grzybów, cztery kawa³ki surowego miêsa, a tak¿e butelkê wody i ginu.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_HelloPieczyste_15_04"); //Nie jesteœ pierwsz¹ osob¹, która dziœ czegoœ ode mnie oczekuje. Postaram siê dostarczyæ co potrzeba.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_HelloPieczyste_15_04"); //Nie jesteœ pierwsz¹ osob¹, która dziœ czegoœ ode mnie oczekuje. Postaram siê dostarczyæ co trzeba.
 
 	Log_CreateTopic (TOPIC_Snaf_pieczen, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Snaf_pieczen, LOG_RUNNING);

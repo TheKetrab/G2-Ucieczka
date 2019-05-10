@@ -205,7 +205,7 @@ FUNC VOID DIA_NASZ_307_Monk_siema_Nod ()
 FUNC VOID DIA_NASZ_307_Monk_siema_JakWidac ()
 {
 	AI_Output (other,self,"DIA_NASZ_307_Monk_siema_JakWidac_08_00"); //Jak widaæ wszystkie dziury za³atane.
-	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_JakWidac_08_01"); //W tydzieñ uwinêliœcie siê z takimi szkodami? Potrzebny przynajmniej miesi¹c.
+	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_JakWidac_08_01"); //W tydzieñ uwinêliœcie siê z takimi szkodami? Na to potrzebny by³ przynajmniej miesi¹c.
 	AI_Output (self,other,"DIA_NASZ_307_Monk_siema_JakWidac_08_02"); //Nie podobasz mi siê ch³opcze i do tego coœ krêcisz. Wiesz, co to oznacza?
 	MonkSay_Intruz();
 	

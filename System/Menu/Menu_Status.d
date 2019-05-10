@@ -159,8 +159,8 @@ const int STAT_ARM_Y 		= 5650; //Armorblock
 const int STAT_TALHEAD_Y  	= 1000;
 const int STAT_TAL_Y  		= 1450; //2. Spalte - Talentblock
 
-const int STAT_REPHEAD_Y  	= 5800;
-const int STAT_REP_Y  		= 6250; 
+const int STAT_REPHEAD_Y  	= 5500;
+const int STAT_REP_Y  		= 5950; 
 // ----- Zeilengrösse ------
 const int STAT_DY =  300;
 
@@ -479,24 +479,24 @@ instance MENU_ITEM_TALENT_16_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = S
 // LEERZEILE
 
 // ------ Tarcze ------ // Talent 10
-INSTANCE MENU_ITEM_TALENT_10_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-instance MENU_ITEM_TALENT_10_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_TALENT_10_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 7*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+instance MENU_ITEM_TALENT_10_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 7*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 // ------ Regeneration ------ // Talent 9
-INSTANCE MENU_ITEM_TALENT_9_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 9*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-instance MENU_ITEM_TALENT_9_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 9*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_TALENT_9_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+instance MENU_ITEM_TALENT_9_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 8*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 // ------ Mine ------ // Talent 19
-INSTANCE MENU_ITEM_TALENT_19_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 10*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-instance MENU_ITEM_TALENT_19_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 10*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_TALENT_19_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 9*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+instance MENU_ITEM_TALENT_19_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 9*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 // ------ PlantTalent ------ // Talent 21
-INSTANCE MENU_ITEM_TALENT_21_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 11*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-instance MENU_ITEM_TALENT_21_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 11*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_TALENT_21_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 10*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+instance MENU_ITEM_TALENT_21_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 10*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 // ------ SpeedLearn ------ // Talent 20
-INSTANCE MENU_ITEM_TALENT_20_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 13*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
-instance MENU_ITEM_TALENT_20_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 13*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_TALENT_20_TITLE(C_MENU_ITEM_DEF)  { posx = STAT_B_X1;posy = STAT_TAL_Y + 11*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
+instance MENU_ITEM_TALENT_20_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = STAT_TAL_Y + 11*STAT_DY;	fontName = STAT_FONT_DEFAULT;flags=flags & ~IT_SELECTABLE; };
 
 
 
@@ -543,7 +543,7 @@ instance MENU_ITEM_TALENT_12_SKILL(C_MENU_ITEM_DEF)  { posx = STAT_B_X2;posy = S
 
 
 // -------
-// Reputacja TODO
+// Reputacja
 // -------
 
 INSTANCE MENU_ITEM_REPUTATION_HEADING(C_MENU_ITEM_DEF)
@@ -556,27 +556,18 @@ INSTANCE MENU_ITEM_REPUTATION_HEADING(C_MENU_ITEM_DEF)
 	flags		= (flags & ~IT_SELECTABLE)|IT_TXT_CENTER;
 };
 
-// TODO
-//
-// reputacja sie musi wyswietlac:
-// u [...] RANGA wartosc
-// tak jak jest w ksiedze statystyk (Ksiêga reputacji)
-// oraz:
-// Reputacja u bandytów ma siê pojawiaæ w dzienniku dopiero gdy rep_bandyci_s > 0
-// (Wczesniej text[0] = "")
-
 
 // ------ Lowcy ------ //
 INSTANCE MENU_ITEM_REPUTATION_1_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "U ³owców orków:"; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_1_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  0*STAT_DY; /*text[0] = "RANGA"; */       fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_1_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  0*STAT_DY; /*text[0] = "X";   */            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "RANGA";           fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_1_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  0*STAT_DY; text[0] = "X";               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
 
 // ------ Mysliwi ------ //
 INSTANCE MENU_ITEM_REPUTATION_2_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "U myœliwych: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_2_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  1*STAT_DY; /*text[0] = /*"RANGA";*/            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_2_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  1*STAT_DY; /*text[0] = /*"X"; */               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_2_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  1*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
 
 // ----- Bandyci ----- //
-INSTANCE MENU_ITEM_REPUTATION_3_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = /*"U bandytów: ";*/ fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_3_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = /*"RANGA";  */          fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
-INSTANCE MENU_ITEM_REPUTATION_3_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  2*STAT_DY; /*text[0] = "X"; */               fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_TITLE(C_MENU_ITEM_DEF) { posx = STAT_B_X1; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "U bandytów: "; fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_RANGE(C_MENU_ITEM_DEF) { posx = STAT_B_X2; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "RANGA";            fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };
+INSTANCE MENU_ITEM_REPUTATION_3_VAL(C_MENU_ITEM_DEF)   { posx = STAT_B_X3; posy = STAT_REP_Y +  2*STAT_DY; text[0] = "X";                fontName = STAT_FONT_DEFAULT; flags = flags & ~IT_SELECTABLE; };

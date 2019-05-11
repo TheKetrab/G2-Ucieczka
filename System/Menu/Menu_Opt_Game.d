@@ -339,7 +339,7 @@ instance MENUITEM_OPT_LEVEL_CHOICE(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "£atwy|Œredni|Trudny";
+	text[0] = "£atwy|Œredni|Trudny|Bardzo Trudny|Legendarny";
 	fontname = MENU_FONT_SMALL;
 	posx = 5400;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 9) + MENU_CHOICE_YPLUS;

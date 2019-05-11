@@ -1087,7 +1087,7 @@ FUNC VOID Use_ItNa_ZupaZOrkowegoPrzepisu()
 		PrzepisOrkowyRunning = FALSE;
 	};
 
-	// TODO -> zatrucie poziom pierwszy
+	Buff_Apply(self, Poison1HP);
 };
 
 

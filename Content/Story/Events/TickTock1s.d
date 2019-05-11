@@ -57,14 +57,25 @@ func void CloseDeadNpc()
 		{
 			if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
 			{
-				lukorOneTime = 1;
 				Print("Hmm.. Ta ksi¹¿ka mo¿e mi siê przydaæ.");
 			}
 			else
 			{
 				B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
-				lukorOneTime = 1;
 			};
+			ff_applyoncedata(BlackScreen2,1000);
+			lukorOneTime = 1;
+			NASZ_029_Lukor.attribute[0] = NASZ_029_Lukor.attribute[1];
+			Npc_ClearAIQueue	(NASZ_029_Lukor);
+			//Wld_InsertNpc				(NASZ_029_Lukor, hero.wp);
+			//Wld_SpawnNpcRange	(hero,	NASZ_029_Lukor,			1,	1);
+			AI_StandUp(NASZ_029_Lukor);
+			Npc_SetTrueGuild (NASZ_029_Lukor, GIL_BDT);
+			//Npc_SetTempAttitude(NASZ_029_Lukor, ATT_HOSTILE);
+			//AI_StandUpQuick(NASZ_029_Lukor);
+			AI_DODGE(NASZ_029_Lukor);
+			B_Attack (NASZ_029_Lukor, hero, AR_KILL, 0);	
+			Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
 		};
 	};
 	IsOpenedDeadNpc = 0;

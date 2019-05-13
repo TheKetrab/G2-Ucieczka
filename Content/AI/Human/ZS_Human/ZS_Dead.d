@@ -466,6 +466,18 @@ func void ZS_Dead ()
 		B_LogEntry (TOPIC_Rabon_sakwa, "Zabi³em Rabona. Frut powinien dowiedzieæ siê o ca³ej sprawie.");
 	};
 	
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_301_Bandzior))
+	&& (Npc_IsDead(NASZ_302_Bandzior))
+	{
+		WillRabujeZbrojeBandytow(NASZ_301_Bandzior);
+	};
+
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_302_Bandzior))
+	&& (Npc_IsDead(NASZ_301_Bandzior))
+	{
+		WillRabujeZbrojeBandytow(NASZ_302_Bandzior);
+	};
+	
 	if ((Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Ugosh))
 		|| (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Kamashi)))
 	{

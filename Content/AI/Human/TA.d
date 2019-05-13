@@ -66,9 +66,10 @@ func void TA_Ghost				(var int start_h, var int start_m, var int stop_h, var int
 func void TA_Chest				(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,  start_h,start_m, stop_h, stop_m, ZS_Chest,					waypoint);};
 func void TA_Steal_Sneak		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,  start_h,start_m, stop_h, stop_m, ZS_Steal_Sneak,			waypoint);};
 func void TA_Go_Sneak_Erak		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,  start_h,start_m, stop_h, stop_m, ZS_Go_Sneak_Erak,			waypoint);};
-func void TA_WatchArena			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_WatchArena ,				waypoint);};
-func void TA_Krzyk				(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Krzyk ,					waypoint);};
-func void TA_WrzodFinal			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_WrzodFinal ,				waypoint);};
-func void TA_Stand_Torch		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Stand_Torch ,			waypoint);};
+func void TA_WatchArena			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_WatchArena,				waypoint);};
+func void TA_Krzyk				(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Krzyk,					waypoint);};
+func void TA_WrzodFinal			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_WrzodFinal,				waypoint);};
+func void TA_Stand_Torch		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Stand_Torch,				waypoint);};
+func void TA_Miecz_Sing			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Miecz_Sing,				waypoint);};
 
 

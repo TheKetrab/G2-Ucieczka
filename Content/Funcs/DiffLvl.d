@@ -172,39 +172,43 @@ func void Install_Character_Menu_Hook()
 func void Update_Character_Menu() {
 
     var string StatusReputacji;
-	if (rep_lowcy_s) >= 0  { StatusReputacji = "***NIKT"; };
-	if (rep_lowcy_s) >= 10 { StatusReputacji = "***POMOCNIK"; };
-	if (rep_lowcy_s) >= 25 { StatusReputacji = "***KOMPAN"; };
-	if (rep_lowcy_s) >= 50 { StatusReputacji = "***ZAUFANY"; };				
-	if (rep_lowcy_s) >= 75 { StatusReputacji = "***PRZYJACIEL"; };
-	if (rep_lowcy_s) >= 90 { StatusReputacji = "***BRAT"; };
+	if (rep_lowcy_s) >= 0  { StatusReputacji = "Nikt"; };
+	if (rep_lowcy_s) >= 10 { StatusReputacji = "Pomocnik"; };
+	if (rep_lowcy_s) >= 25 { StatusReputacji = "Kompan"; };
+	if (rep_lowcy_s) >= 50 { StatusReputacji = "Zaufany"; };
+	if (rep_lowcy_s) >= 75 { StatusReputacji = "Przyjaciel"; };
+	if (rep_lowcy_s) >= 90 { StatusReputacji = "Brat"; };
 
 	Update_Menu_Item("MENU_ITEM_REPUTATION_1_RANGE", StatusReputacji);
 	Update_Menu_Item("MENU_ITEM_REPUTATION_1_VAL", IntToString(rep_lowcy_s));
 	
-	if (rep_mysliwi_s) >= 0  { StatusReputacji = "***NIKT"; };
-	if (rep_mysliwi_s) >= 10 { StatusReputacji = "***POMOCNIK"; };
-	if (rep_mysliwi_s) >= 25 { StatusReputacji = "***KOMPAN"; };
-	if (rep_mysliwi_s) >= 50 { StatusReputacji = "***ZAUFANY"; };				
-	if (rep_mysliwi_s) >= 75 { StatusReputacji = "***PRZYJACIEL"; };
-	if (rep_mysliwi_s) >= 90 { StatusReputacji = "***BRAT"; };
+	if (rep_mysliwi_s) >= 0  { StatusReputacji = "Nikt"; };
+	if (rep_mysliwi_s) >= 10 { StatusReputacji = "Pomocnik"; };
+	if (rep_mysliwi_s) >= 25 { StatusReputacji = "Kompan"; };
+	if (rep_mysliwi_s) >= 50 { StatusReputacji = "Zaufany"; };
+	if (rep_mysliwi_s) >= 75 { StatusReputacji = "Przyjaciel"; };
+	if (rep_mysliwi_s) >= 90 { StatusReputacji = "Brat"; };
 
     Update_Menu_Item("MENU_ITEM_REPUTATION_2_RANGE", StatusReputacji);
 	Update_Menu_Item("MENU_ITEM_REPUTATION_2_VAL", IntToString(rep_mysliwi_s));
 	
 	if (WillKnowBanditReputation == TRUE)
 	{
-		if (rep_bandyci_s) >= 0  { StatusReputacji = "***NIKT"; };
-		if (rep_bandyci_s) >= 10 { StatusReputacji = "***POMOCNIK"; };
-		if (rep_bandyci_s) >= 25 { StatusReputacji = "***KOMPAN"; };
-		if(rep_bandyci_s) >= 50 { StatusReputacji = "***ZAUFANY"; };				
-		if (rep_bandyci_s) >= 75 { StatusReputacji = "***PRZYJACIEL"; };
-		if (rep_bandyci_s) >= 90 { StatusReputacji = "***BRAT"; };
+		if (rep_bandyci_s) >= 0  { StatusReputacji = "Nikt"; };
+		if (rep_bandyci_s) >= 10 { StatusReputacji = "Pomocnik"; };
+		if (rep_bandyci_s) >= 25 { StatusReputacji = "Kompan"; };
+		if (rep_bandyci_s) >= 50 { StatusReputacji = "Zaufany"; };
+		if (rep_bandyci_s) >= 75 { StatusReputacji = "Przyjaciel"; };
+		if (rep_bandyci_s) >= 90 { StatusReputacji = "Brat"; };
 		
 		Update_Menu_Item(" MENU_ITEM_REPUTATION_3_TITLE", "U bandytów:");
 		Update_Menu_Item("MENU_ITEM_REPUTATION_3_RANGE", StatusReputacji);
 		Update_Menu_Item("MENU_ITEM_REPUTATION_3_VAL", IntToString(rep_bandyci_s));
+	} else {
+		// nic sie nie wyswietla
+		Update_Menu_Item("MENU_ITEM_REPUTATION_3_TITLE", "");
+		Update_Menu_Item("MENU_ITEM_REPUTATION_3_RANGE", "");
+		Update_Menu_Item("MENU_ITEM_REPUTATION_3_VAL", "");
 	};
 
- 
 };

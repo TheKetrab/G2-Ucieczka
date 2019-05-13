@@ -46,10 +46,12 @@ instance NASZ_008_Miecz (Npc_Default)
 FUNC VOID Rtn_Start_8 ()
 {
 	TA_Sleep			(20,50,08,10,"NASZ_MIECZ_4");
-	TA_Stand_Eating		(08,10,10,20,"NASZ_MIECZ_5");
-	TA_Practice_Sword	(10,20,13,40,"OW_PATH_OC_NC2_TO_TOWER_06");
-	TA_Sit_Chair		(13,40,17,50,"NASZ_MIECZ_3");
-	TA_Stand_Guarding	(17,50,20,50,"OW_PATH_OC_NC2_TO_TOWER_06");
+	TA_Stand_Eating		(08,10,09,30,"NASZ_MIECZ_5");
+	TA_Miecz_Sing		(09,30,11,20,"OW_PATH_OC_NC2_TO_TOWER_06");
+	TA_Practice_Sword	(11,20,13,40,"OW_PATH_OC_NC2_TO_TOWER_06");
+	TA_Miecz_Sing		(13,40,16,20,"OW_PATH_OC_NC2_TO_TOWER_06");
+	TA_Sit_Chair		(16,20,18,30,"NASZ_MIECZ_3");
+	TA_Stand_Guarding	(18,30,20,50,"OW_PATH_OC_NC2_TO_TOWER_06");
 
 };
 

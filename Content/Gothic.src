@@ -19,6 +19,7 @@ Funcs\Teach.d
 
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
+STORY\Story_Globals.d
 GFA\GFA_G2.src
 AI\AI_INTERN\Npc_SetToMad.d
 AI\AI_INTERN\Species.d
@@ -29,7 +30,6 @@ STORY\Events\B_AWAKE_STONEGUARDIAN.d
 
 STORY\Log_Entries\Log_Constants_*.d
 STORY\XP_Constants.d
-STORY\Story_Globals.d
 Funcs\Druzyna.d
 STORY\NPC_Globals.d
 STORY\svm.d
@@ -213,6 +213,7 @@ STORY\B_Content\B_GiveThiefXP.d
 STORY\B_Story\B_GiveInvItems.d
 STORY\B_Content\B_Beklauen.d
 
+STORY\B_AssignAmbientInfos\B_Miecz_Sing.d
 STORY\B_AssignAmbientInfos\B_Announce_Herold.d
 STORY\B_AssignAmbientInfos\B_Preach_Vatras.d
 
@@ -272,6 +273,8 @@ STORY\NPC\Orc\*.d
 
 Funcs\GateTwierdza.d
 Funcs\Migrations.d
+Funcs\WillRabujeZbrojeBandytow.d
+
 
 STORY\B_Story\B_ClearDeadTrader.d
 STORY\B_GiveTradeInv\B_ClearRuneInv.d

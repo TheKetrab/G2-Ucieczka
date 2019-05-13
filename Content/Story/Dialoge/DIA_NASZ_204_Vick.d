@@ -74,7 +74,7 @@ FUNC VOID DIA_NASZ_204_Vick_stary_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_204_Vick_stary_15_00"); //Mogê ci jakoœ pomóc?
 	AI_Output (self, other,"DIA_NASZ_204_Vick_stary_55_01"); //Oj w¹tpiê. Jedyne czego potrzebujê, to powrót do obozu. To by³a ju¿ chyba ostatnia wyprawa, do której siê za³apa³em.
-	AI_Output (self, other,"DIA_NASZ_204_Vick_stary_55_02"); //Koniecznie potrzebujê glebn¹æ siê na ³ó¿ko i solidnie wypocz¹æ. Mo¿e Kirgo sporz¹dzi dla mnie jakiœ zio³owy napój, po któym wróc¹ mi si³y.		
+	AI_Output (self, other,"DIA_NASZ_204_Vick_stary_55_02"); //Koniecznie potrzebujê glebn¹æ siê na ³ó¿ko i solidnie wypocz¹æ. Mo¿e Kirgo sporz¹dzi dla mnie jakiœ zio³owy napój, po którym wróc¹ mi si³y.		
 };
 
 //*********************************************************************

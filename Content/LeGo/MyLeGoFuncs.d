@@ -893,6 +893,12 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		};
 	};
 	
+	if(_@(slf) == _@(OrcShaman_Ur_shak))
+	{
+		dmg*=2;
+		StaryFlyDamage (oth, 5, 10, 5, 10);
+	};
+	
 	if(oth.guild == GIL_STONEGOLEM)
 	{
 		if(slf.guild != GIL_STONEGOLEM)

@@ -159,7 +159,7 @@ INSTANCE OrcShaman_Ur_Shak (Mst_Default_OrcShaman)
 	level			=	100;
 
 	//----- Attributes ----	
-	attribute	[ATR_STRENGTH]		=	80;
+	attribute	[ATR_STRENGTH]		=	140;
 	attribute	[ATR_DEXTERITY]		=	80;
 	attribute	[ATR_HITPOINTS_MAX]	=	400;
 	attribute	[ATR_HITPOINTS]		=	400;
@@ -188,7 +188,7 @@ INSTANCE OrcShaman_Ur_Shak (Mst_Default_OrcShaman)
 	EquipItem (self, ItNa_Kostur_UrShaka);
 	
 	//----- Daily Routine ----
-	start_aistate				= ZS_MM_AllScheduler;
+	start_aistate				=  ZS_Kazmin;
 
 	aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
 };

@@ -17,8 +17,10 @@ func void ZS_Kazmin ()
 func void ZS_XardasDemon_Loop ()
 {
 	PrintDebugNpc			(PD_TA_LOOP,	"ZS_Kazmin_Loop");
-	
-	AI_Wait					(self,	1);
+	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NASZ_028_Kazmin))
+	{
+		AI_Wait					(self,	1);
+	};
 };
 
 func void ZS_XardasDemon_End ()

@@ -652,7 +652,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			};
 	};
 	
-	if(_@(slf) == _@(hero))
+	if(Npc_IsPlayer(slf))
 	{
 		var int FightSkill; FightSkill = Hlp_Random(99);
 		
@@ -854,6 +854,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				if(C_NpcIsUndead(oth) && spl.damage_per_level == SPL_Damage_DESTROYUNDEAD  && !C_NpcIsBoss(oth))
 				{
 					dmg = oth.attribute[0];
+					dmg = DiffCalcDmg(dmg);
 					return dmg;
 				};
 				
@@ -891,7 +892,21 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				};	
 		};
 	};
+	
+	if(oth.guild == GIL_STONEGOLEM)
+	{
+		if(slf.guild != GIL_STONEGOLEM)
+		{
+			if !((slf.damagetype & DAM_BLUNT) || (ReadiedWeapon.damagetype & DAM_BLUNT)) {return dmg = 0;};
+		};
 
+		dmg = (slf.attribute[ATR_STRENGTH] + ReadiedWeapon.damageTotal) - 5;
+		
+		dmg = DiffCalcDmgAll(dmg,slf);
+		return dmg;
+	};
+	
+	
 	if (oth.guild == GIL_ICEGOLEM)
 	{
 		if (Npc_IsInFightMode(slf, FMODE_MELEE))
@@ -906,6 +921,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition == ItNa_OgnistaStrzala)
 			{
 				dmg = slf.attribute[ATR_MANA_MAX] + (slf.attribute[5]*10)/100 ;
+				dmg = DiffCalcDmgAll(dmg,slf);
 				return dmg;
 			}
 			else
@@ -962,6 +978,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			if(ReadiedWeapon.flags & ITEM_BOW) && (ReadiedWeapon.munition  == ItNa_LodowaStrzala)
 			{
 				dmg = slf.attribute[ATR_MANA_MAX] + (slf.attribute[5]*10)/100 ;
+				dmg = DiffCalcDmgAll(dmg,slf);
 				return dmg;
 			}
 			else
@@ -985,7 +1002,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		{
 			if (Npc_UseFireSpell(slf))
 			{
-				//if(_@(slf) == _@(hero))
+				//if(_@(slf) == MEM_ReadInt(_hero))
 				//{
 					dmg = ((dmg - ((slf.attribute[ATR_MANA_MAX])/2))*2) + ((slf.attribute[ATR_MANA_MAX])/2);
 				//}
@@ -1012,7 +1029,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		};
 	};
 	
-	if(victimPtr && attackerPtr && Hlp_IsValidNpc(oth) &&  _@(oth) == _@(hero) &&dmg)
+	if(victimPtr && attackerPtr && Hlp_IsValidNpc(oth) &&  Npc_IsPlayer(oth) &&dmg)
 	{
 			if(slf.guild == gil_snapper && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
 			{
@@ -1024,6 +1041,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 					AI_Wait(oth,1);
 					dmg += (oth.attribute[1]*7)/100;
+					dmg = DiffCalcDmgAll(dmg,slf);
 					return dmg;
 				};
 			
@@ -1033,6 +1051,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				if (_@(slf) == _@(Ozywieniec))
 				{
 					StaryFlyDamage (oth, 5, 10, 5, 10);
+					dmg = DiffCalcDmgAll(dmg,slf);
 					return dmg;
 				};
 				
@@ -1044,6 +1063,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 						AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 						//AI_Wait(oth,1);
 						dmg += (oth.attribute[1]*10)/100;
+						dmg = DiffCalcDmgAll(dmg,slf);
 						return dmg;
 					};
 			
@@ -1069,6 +1089,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 						AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 						AI_Wait(oth,1);
 						dmg += (oth.attribute[1]*5)/100;
+						dmg = DiffCalcDmgAll(dmg,slf);
 						return dmg;
 					};
 			
@@ -1084,6 +1105,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 							AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 							AI_Wait(oth,1);
 							dmg += (oth.attribute[1]*2)/100;
+							dmg = DiffCalcDmgAll(dmg,slf);
 							return dmg;
 						};
 					
@@ -1097,6 +1119,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 							AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 							AI_Wait(oth,1);
 							dmg += (oth.attribute[1]*4)/100;
+							dmg = DiffCalcDmgAll(dmg,slf);
 							return dmg;
 						};
 					
@@ -1110,11 +1133,13 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 							AI_PlayAni(oth,"T_FALLB_2_FALLENB");
 							AI_Wait(oth,1);
 							dmg += (oth.attribute[1]*3)/100;
+							dmg = DiffCalcDmgAll(dmg,slf);
 							return dmg;
 						};
 					};
 			};
 			
+		dmg = DiffCalcDmgAll(dmg,slf);
 		
 		if(_@(slf) == _@(OrcBiterWsciekly01) ||  _@(slf) ==_@(SwampratWsciekly01) ||  _@(slf ) ==_@(BloodflyWsciekly01) || _@(slf ) == _@(MinecrawlerWarriorWsciekly1)  || _@(slf ) == _@(WaranWsciekly01))
 		{
@@ -1160,7 +1185,6 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		if(_@(slf) == _@(Wisp_Boss))
 		{
-			if(!(attackerPtr)) {dmg = 0; return dmg;};
 			
 			if (hero.attribute[ATR_HITPOINTS] < HeroPreviousHP)
 			{
@@ -1174,8 +1198,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 	};
 
-     
-   
+
 	//Print(IntToString(dmg));
 	return dmg;
 };
@@ -1243,6 +1266,12 @@ const int afdf = 0; // 1 -> zaciemnianie, 2 -> stop, 3 -> rozjasnianie
 var int fs; // screen
 var int pre; // stan
 const int darknessSpeed = 3;
+//nie chce mi siê kombinowaæ XD
+var int bll2; // iterator
+var int bll5002; // iterator po petli w srodku
+const int afdf2 = 0; // 1 -> zaciemnianie, 2 -> stop, 3 -> rozjasnianie
+var int fs2; // screen
+var int pre2; // stan
 var int setKerolothRoutineOneTime;
 func void BlackScreen(var int i)
 {
@@ -1322,6 +1351,71 @@ func void BlackScreen(var int i)
 		};
 	};
 
+
+
+};
+func void BlackScreen2(var int i)
+{
+	//if(MEM_GAME.load_screen || ) {return;};
+	
+	//Print(IntToString(bll));
+	
+	if(!afdf2) // init afdf
+	{
+		bll2 = 255;
+		Print_GetScreenSize();
+		fs2 = View_Create(PS_X, PS_Y, 8192 , 8192 );
+		View_SetTexture(fs2,"black.tga");
+		View_Open(fs2);	
+		//MEM_Game.game_drawall = false;
+		
+		afdf2 = 1;	
+	};
+
+	if (afdf == 1) // zaciemnianie
+	{	
+		View_SetAlpha(fs2,RGBA(bll,bll,bll,255));
+		bll2 += darknessSpeed;
+		//Print(IntToString(bll));
+	
+		if (bll2 >= 500) {
+			bll2 = 500;
+			afdf2 = 2;
+			View_SetAlpha(fs2,RGBA(255,255,255,255));
+		};
+	}
+	
+	else if (afdf2 == 2)
+	{			
+		bll5002 += 1;
+	
+		if (bll5002 == 15) {
+			afdf2 = 3;
+			Npc_ClearAIQueue (hero);
+		};
+	
+	
+	}
+	
+	else // afdf == 3 -> rozjasnianie
+	{
+		View_SetAlpha(fs2,RGBA(bll,bll,bll,255));
+		View_SetTexture(fs2,"black.tga");
+		bll2 -= darknessSpeed;
+
+		if(bll2 <= 256) // calkiem jasno
+		{
+			bll2 = 256;
+			Npc_ClearAIQueue (hero);
+			view_delete(fs2);
+			pre2 = 2;
+			//MEM_Game.game_drawall = true;
+			fs2 = 0;
+			ff_remove(blackscreen2);
+			return;
+		
+		};
+	};
 
 
 };
@@ -1419,6 +1513,7 @@ func void OrcSawYou_Active()
 			};
 			
 			FadeScreen_Start(1);
+			DisableSave();
 		}
 		
 		else if (Fade_Status == 2) // pause
@@ -1437,6 +1532,7 @@ func void OrcSawYou_Active()
 			
 			if (Fade_Pause_Counter == 200) {
 				Snd_Play ("ORC_HAPPY");
+				AllowSaving();
 				ff_remove(OrcSawYou_Active);
 			};
 		};

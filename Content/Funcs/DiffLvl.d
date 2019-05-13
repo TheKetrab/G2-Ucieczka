@@ -4,7 +4,10 @@ const string JusticeError = "B³¹d z ustawieniem trybu sprawiedliwoœci. Zosta³ on
 const int Easy = 0;			const int EasyDmg = 125; 		const int EasyEnemyDmg = 75;
 const int Normal = 1; 		const int NormalDmg = 100; 		const int NormalEnemyDmg = 100;
 const int Hard = 2;			const int HardDmg = 75; 		const int HardEnemyDmg = 125;
-const int Legendary = 3;	const int LegendaryDmg = 50; 	const int LegendaryEnemyDmg = 150;
+const int SuperHard = 2;	const int SuperHardDmg = 70; 	const int SuperHardEnemyDmg = 150;
+const int Legendary = 4;	const int LegendaryDmg = 50; 	const int LegendaryEnemyDmg = 200;
+const int defaultDMG = 5;
+const int hundred = 100;
 
 CONST INT SEL_ACTION_UNDEF			= 0;
 CONST INT SEL_ACTION_BACK			= 1;
@@ -90,20 +93,29 @@ func int DiffCalcDmg(var int dmg)
 {
 	if(diffLevel == Easy)
 	{
-		dmg = (dmg*EasyDmg)/100;
+		dmg = (dmg*EasyDmg)/hundred;
 	}
 	else if(diffLevel == Normal)
 	{
-		//dmg= (dmg*NormalDmg)/100;
+		//dmg= (dmg*NormalDmg)/hundred;
 		return dmg;
 	}
 	else if (difflevel == hard)
 	{
-		dmg = (dmg*HardDmg)/100;
+		dmg = (dmg*HardDmg)/hundred;
+	}	
+	else if (difflevel == superhard)
+	{
+		dmg = (dmg*SuperHardDmg)/hundred;
 	}
 	else
 	{
-		dmg = (dmg*LegendaryDmg)/100;
+		dmg = (dmg*LegendaryDmg)/hundred;
+	};
+	
+	if(dmg < defaultDMG)
+	{
+		dmg = defaultDMG;
 	};
 	
 	return dmg;
@@ -113,25 +125,45 @@ func int DiffEnemyDmg(var int dmg)
 {
 	if(diffLevel == Easy)
 	{
-		dmg = (dmg*EasyEnemyDmg)/100;
+		dmg = (dmg*EasyEnemyDmg)/hundred;
 	}
 	else if(diffLevel == Normal)
 	{
 		//dmg= (dmg*NormalEnemyDmg)/100;
 		return dmg;
 	}
-	else if (diffLevel == HARD)
+	else if (diffLevel == hard)
 	{
-		dmg  = (dmg*HardEnemyDmg)/100;
+		dmg  = (dmg*HardEnemyDmg)/hundred;
 	}	
+	else if (difflevel == superhard)
+	{
+		dmg = (dmg*SuperHardEnemyDmg)/hundred;
+	}
 	else
 	{
-		dmg = (dmg*LegendaryEnemyDmg)/100;
+		dmg = (dmg*LegendaryEnemyDmg)/hundred;
 	};
 	
+	if(dmg < defaultDMG)
+	{
+		dmg = defaultDMG;
+	};
 	
 	return dmg;
 };
+
+func int DiffCalcDmgAll(var int dmg, var c_npc slf)
+{
+	if(Npc_IsPlayer(slf))
+	{
+		dmg = DiffCalcDmg(dmg);
+		return dmg;
+	};
+	dmg = DiffEnemyDmg(dmg);
+	return dmg;
+};
+
 
 
 func void Update_Menu_Item(var string name, var string val) 

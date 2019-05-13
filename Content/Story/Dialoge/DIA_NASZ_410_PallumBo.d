@@ -22,9 +22,9 @@ FUNC VOID DIA_NASZ_410_PallumBo_EXIT_Info()
 
 	NASZ_410_PallumBo.guild = GIL_ORC;
 	Npc_SetTrueGuild (NASZ_410_PallumBo, GIL_ORC);
-		
-	B_Attack (NASZ_405_VanGan, NASZ_410_PallumBo, AR_KILL, 1);
-	B_Attack (NASZ_410_PallumBo, NASZ_405_VanGan, AR_KILL, 1);
+	Npc_SetTempAttitude (NASZ_410_PallumBo, ATT_HOSTILE);
+	B_Attack (NASZ_405_VanGan, NASZ_410_PallumBo, AR_KILL, 0);
+	B_Attack (NASZ_410_PallumBo, NASZ_405_VanGan, AR_KILL, 0);
 };
 
 //*********************************************************************

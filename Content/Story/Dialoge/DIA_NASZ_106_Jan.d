@@ -2248,6 +2248,49 @@ FUNC VOID DIA_NASZ_106_Jan_HowAreYou_Info()
 };
 
 
+/*********************************************************************
+//	Info KurgKan 
+//**********************************************************************/
+INSTANCE DIA_NASZ_106_Jan_KurgKan   (C_INFO)
+{
+	npc         = NASZ_106_Jan;
+	nr          = 1;
+	condition   = DIA_NASZ_106_Jan_KurgKan_Condition;
+	information = DIA_NASZ_106_Jan_KurgKan_Info;
+	description = "Sk¹d ci przyszed³ do g³owy pomys³, by dawaæ Krug-Kanowi zbrojê z blach paladyna?";
+};
+
+FUNC INT DIA_NASZ_106_Jan_KurgKan_Condition()
+{
+	if(KAPITEL >=3 && Npc_KnowsInfo(other,DIA_ORC_NASZ_Kurg_Kan_Zbroja))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_106_Jan_KurgKan_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_00"); //Sk¹d ci przyszed³ do g³owy pomys³, by dawaæ Krug-Kanowi zbrojê z blach paladyna?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_01"); //Mieliœmy pozosta³oœci zbroi po renegatach i chcia³em zrobiæ z nich coœ ciekawego. Myœlê, ¿e mi siê to uda³o.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_02"); //Z pewnoœci¹, wygl¹da bardzo interesuj¹co. Nie myœla³eœ nad tym, co powie Keroloth na to? Nie ba³eœ siê?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_03"); //Szczerze? Bardzo i w momencie, kiedy przerabia³em te blachy, co chwilê wraca³a do mnie wyobra¿enie Kerolotha, który mnie publicznie linczuje za pomys³.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_04"); //Ale pomyœl: Zbroja paladyna dopasowana do orka. Nikt na to wczeœniej nie wpad³, bo nie mia³ jak, a tu nadarzy³a siê taka okazja. Nie spróbowa³byœ na moim miejscu?
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_05"); //Rozumiem. Obudzi³a siê w tobie dusza artysty. Ale broni to mu nie chcia³eœ zrobiæ.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_06"); //Bo nie mia³em pomys³u, ale z t¹ zbroj¹… Jedna myœl i ju¿ mia³em ca³y projekt gotowy.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_07"); //No dobrze, ale jak zareagowa³ Keroloth?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_08"); //Kiedy wrêczy³em zbrojê orkowi, wszyscy siê zebrali wokó³ niego i podziwiali moje dzie³o. Nie trzeba by³o czekaæ d³ugo na reakcjê Kerolotha, który wyszed³, popatrzy³ na niego i poszed³.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_09"); //To wszystko?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_10"); //A gdzie tam! Po parunastu minutach znowu wyszed³, stan¹³ przed orkiem i… zasalutowa³ mu, jak paladyn paladynowi.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_11"); //¯artujesz?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_12"); //Nie. Powiedzia³ mu wtedy, ¿e jest bardziej godny noszenia tej zbroi, ni¿ poprzedni w³aœciciele i ma nadziejê, ¿e Krug-Kan udowodni, ¿e jest prawdziwym obroñc¹ ludzkoœci i wiary w Innosa.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_13"); //I co na to Krug-Kan?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_14"); //Odpowiedzia³, ¿e ludzkoœæ jest najwa¿niejsze, ale nie jest jeszcze przekonany, co do wiary w Innosa. Myœla³em, ¿e Keroloth wpadnie w furiê, ale on tylko siê uœmiechn¹³ i odszed³.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_15"); //Nie przyszed³ do mnie póŸniej z pretensjami, ani nic takiego, wiêc mój pomys³ siê uda³ i nie zosta³em za to ukarany.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_16"); //Najwidoczniej.
+	
+	AI_StopProcessInfos (self);
+};
+
 // ************************************************************
 // 			  				PICK POCKET
 // ************************************************************

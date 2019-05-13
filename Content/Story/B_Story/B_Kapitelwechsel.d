@@ -40,7 +40,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 
 
 		// Funkcje
-
+		//CreateInvItems(NASZ_Kurg_Kan,ItMw_2H_OrcAxe_02),1);
+		EquipItem (self, ItMw_2H_OrcAxe_02);
 		B_KillNpc(NASZ_350_Knecht);
 		B_KillNpc(NASZ_351_Knecht);
 		B_StartOtherRoutine (NASZ_111_Gerold, "Cmentarz");
@@ -185,7 +186,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		FF_ApplyOnceExt (Kap4Event, 3000, -1); //raz na 3s
 		
-		
+		B_StartOtherRoutine(NASZ_Kurg_Kan,"Kap3")
 		// Funkcje
 		
 		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, (-1) * Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia)); // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO, dziala?

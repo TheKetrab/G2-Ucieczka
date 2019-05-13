@@ -1491,6 +1491,13 @@ var int CurrentLevel; 	//Newworld_zen, Oldworld_Zen, Dragonisland_zen -> Level i
 	
 	*/	
 
+	
+//KurgKan
+var int KurgKanFollowPC;
+var int KurgKanTanczy;
+var int KurgKanGodarInfo;
+	
+	
 // MIS READY
 
 var int MIS_DARYL_READY;

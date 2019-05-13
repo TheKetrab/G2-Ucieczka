@@ -2899,7 +2899,169 @@ FUNC VOID DIA_NASZ_110_Keroloth_SpeedRing_Info()
 	B_LogEntry (TOPIC_Artefakty,"Pierœcieñ szybkoœci mo¿na ³adowaæ kryszta³ami w obozie ³owców orków w kamieniu na p³askowy¿u, gdzie hodowany jest chmiel.");
 
 };
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 55;
+ 	condition   = DIA_NASZ_110_Keroloth_KurgKan_Condition;
+ 	information = DIA_NASZ_110_Keroloth_KurgKan_Info;
+ 	permanent   = FALSE;
+	description = "Mam doœæ nietypow¹ proœbê.";
+};
 
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_Condition()
+{
+	if (SaveKurgKan == true)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_00"); //Mam doœæ nietypow¹ proœbê.
+	AI_Output (self,other,"DIA_NASZ_110_Keroloth_KurgKan_55_01"); //Ju¿ mi siê to nie podoba. Czego ci trzeba?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_02"); //Nie chcia³byœ przygarn¹æ orka do swojego obozu?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_02"); //Ha, ha, ha! Ty to masz poczucie humoru! I powiedzia³eœ to z tak powa¿n¹ min¹!
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Bo nie ¿artujê. Gdy by³em jeszcze kopaczem w Starej Kopalni, tej zawalonej, pracowa³ tam Kurg-Kan, którego schwytano podczas wojny i wrzucono do pracy z nami. Teraz, po upadku bariery, próbowa³ wróciæ do swoich braci, ale ci odrzucili go, uznaj¹c za istotê bez honoru i niegodn¹ miana orka.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Mieszka niedaleko zawalonej wie¿y i chcia³by wróciæ do ludzi, bo by³ przez wielu kopaczy dobrze traktowany.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_03"); //Urzekaj¹ca historia. A nie pomyœla³eœ o tym, ¿e to wszystko podstêp i ma kontrolowaæ nasze ruchy od œrodka? Wys³ali kogoœ, kogo czêœæ skazañców bêdzie znaæ i wzbudzaæ zaufanie?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Nie ma to ¿adnego sensu. Kurg-Kan nie wiedzia³ przecie¿, ¿e mnie spotka, a skazañców go kojarz¹cych nie ma a¿ tylu. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_03"); //Mo¿e i masz racjê, ale co z tego? Orkowie morduj¹ moich braci masowo na kontynencie. Na tych, których schwytaj¹ ¿ywcem, przeprowadzaj¹ publiczne egzekucje w podbitych miastach i poma³u robi¹ z tego paradê! Czy naprawdê uwa¿asz, ¿e dla tego jednego orka mam splamiæ swój honor i zbezczeœciæ pamiêæ o nich? Jak mo¿esz coœ takiego sugerowaæ?
+};
+
+var int KurgKanUratowany;
+
+var string rut1;
+var string rut2;
+const int oCNpc_States__GetRutinename = 7790976;
+func string GetRutineName(var c_npc slf)
+{
+	CALL_RetValIszString();
+	var int ptr; ptr = MEM_ReadInt(_@(slf)+1416);
+	if(!ptr) {return "START";};
+	CALL__thiscall(ptr,oCNpc_States__GetRutinename);
+	return CALL_RetValAszString();
+};
+
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_TrustMe   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 55;
+ 	condition   = DIA_NASZ_110_Keroloth_KurgKan_TrustMe_Condition;
+ 	information = DIA_NASZ_110_Keroloth_KurgKan_TrustMe_Info;
+ 	permanent   = FALSE;
+	description = "Mam doœæ nietypow¹ proœbê.";
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_TrustMe_Condition()
+{
+	if (Npc_KnowsInfo(other,DIA_NASZ_110_Keroloth_KurgKan))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_TrustMe_Info()
+{
+	if(RepEnough(20, REP_LOWCY))
+	{
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_00"); //Jestem tu od jakiegoœ czasu i staram siê jak mogê, by pomóc jak najwiêcej osobom w tym obozie. Chcê zostaæ przyjêty do niego, chcê zostaæ ³owc¹ orków. I mimo tego, chcê zaryzykowaæ wszystko co tutaj zrobi³em, byœ przyj¹³ tego orka. Zaufaj mi, proszê.
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_01"); //Faktycznie, sporo ju¿ zrobi³eœ i widaæ, ¿e ci zale¿y. Ale twoje dobre intencje nie oznaczaj¹ od razu, ¿e ten ork jest uczciwy… Jeœli jesteœ go tak pewny, to mo¿e za niego porêczysz?
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_02"); //Tak, porêczê.
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_03"); //Ale chcia³bym, ¿eby to nie by³y puste s³owa. Chcia³bym, ¿ebyœ przysi¹g³ na swój w³asny grób, który moim zdaniem kopiesz w³aœnie pod sob¹, ¿e jeœli ten ork w jakikolwiek zaszkodzi temu obozowi, weŸmiesz na siebie odpowiedzialnoœæ. Oskar¿ê ciê o zdradê i w³asnorêcznie powieszê na tym drzewie, które stoi na tym magazynie. Jesteœ gotowy to zrobiæ?
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_04"); //Przysiêgam, ¿e jeœli ten ork w jakikolwiek sposób zdradzi ten obóz, oddam siê w twoje rêce i pozwolê ci wykonaæ egzekucjê.
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_05"); //Nie spodziewa³em siê, ¿e powiesz to tak pewnie i siê nie zawahasz. Dobrze, przyjmê tego orka do obozu, ale bêdzie to na moich warunkach. 
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_06"); //S³ucham?
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_07"); //Przyprowadzisz go do obozu. Poinformujê o tym wszystkich, wiêc nie musisz siê obawiaæ, ¿e ktoœ go zaatakuje.
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_08"); //Zabierzesz mu broñ i potem mi j¹ dasz. Musisz byæ œwiadomy te¿ tego, ¿e ork bêdzie nam us³ugiwa³. Sprz¹ta³, czyœci³, gotowa³… 
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_09"); //Nie, mo¿e to gotowanie to z³y pomys³, jeszcze nas otruje… W ka¿dym razie, znajdziemy mu zajêcie. 
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_10"); //Myœlê, ¿e nie bêdzie mu to przeszkadzaæ.
+			AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_11"); //NIE MO¯E mu to przeszkadzaæ. No, idŸ ju¿ po niego.
+
+			KurgKanUratowany = true;
+	}
+	else
+	{
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_12"); //Zaufaj mi, proszê. Zdajê sobie sprawê, ¿e nie jestem tu d³ugo i ma³o jeszcze zrobi³em, ale…
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_13"); //No w³aœnie! Jesteœ tu nowy i nikt ciê tu tak naprawdê nie zna, a przychodzisz do mnie z tak du¿¹ proœb¹? Jak œmiesz? 
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_14"); //Masz racjê. Nie powinienem ciê o to prosiæ. 
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_15"); //No nie powinieneœ. Ale nie obawiaj siê, problem z tym orkiem zostanie bardzo szybko za¿egnany. 
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_16"); //Co?! Nie musisz go przecie¿ zabijaæ!
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_17"); //Tu trwa wojna i nie pozwolê, by ork zrujnowa³ nasze plany odbicia zamku! Ju¿ tam wysy³am swoich ludzi, a ty nawet nie myœl, by mu pomóc. 
+		
+		var string wp; wp = self.wp;
+		
+		//TODO dodaæ wp:
+		//AI_GotoWP(self,"XXX");
+		
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_18"); //Feros, Fed! Przy zawalonej wie¿y b³¹ka siê ork, zlikwidujcie zagro¿enie! Natychmiast.
+		
+		AI_GotoWP(self,wp);
+		
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_19"); //Mo¿esz siê oddaliæ i nie wa¿ siê wracaæ do tego tematu. 
+		Log_AddEntry (Topic_OrcInATrap,"Moje dzia³ania jedynie pogorszy³y sytuacjê. Mam nadziejê, ¿e orkowi uda³o siê uciec."); 
+		
+		rut1 = GetRutineName(NASZ_117_Fed);
+		rut2 = GetRutineName(NASZ_118_Ferros);
+		Npc_ExchangeRoutine(NASZ_117_Fed,"Kurgkan");
+		Npc_ExchangeRoutine(NASZ_118_Ferros,"Kurgkan");
+		B_KILLNPC(NASZ_Kurg_Kan);
+		
+	};
+	
+	AI_StopProcessInfos(self);
+	
+};
+
+INSTANCE DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+	nr          = 999;
+	condition   = DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition;
+	information = DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
+{
+	if(KurgKanFollowPC)
+	{
+		return TRUE;
+	};
+};
+//TODO: Nie wiem czy ten trialog dobrze dzia³a xd
+FUNC VOID DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
+{	
+	var C_NPC slf; slf = Hlp_GetNpc (NASZ_110_Keroloth);
+	var C_NPC slf2; slf2 = Hlp_GetNpc (NASZ_Kurg_Kan);
+	TRIA_Invite(slf);
+	TRIA_Invite(slf2);
+    TRIA_Start();
+ 
+	TRIA_Next(slf);
+	AI_TurnToNpc(other, self);
+	//other,self,
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_01"); //A wiêc to on…
+	AI_Output (other,self,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_02"); //Tak, to Kurg-Kan…
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_03"); //Nie rozmawiam z tob¹. Powiedz mi, orku, czy naprawdê chcesz zamieszkaæ w obozie ³owców orków, gdzie wszyscy bêdziemy ci zlecaæ jak najgorsz¹ robotê i nie bêdziesz zbyt dobrze traktowany?
+	TRIA_Next(slf2);
+	AI_TurnToNpc(other, self);
+	AI_TurnToNpc(hero, self);
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_04"); //Tak. Kurg-Kan nie prze¿yæ sam, a cz³owieki szanowaæ. Mieszkaæ u cz³owiek, pracowaæ dla cz³owiek. 
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_05"); //Hmmm… Myœla³em, ¿e znajdê powód, by ci nie pozwoliæ tutaj zamieszkaæ, ale faktycznie jesteœ tak zdesperowany. Dobrze, mo¿esz siê czuæ mieszkañcem tego obozu, ale pamiêtaj, ¿e jesteœ obserwowany. IdŸ do Udara, on ci wymyœli jakieœ zadanie. 
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_06"); //Dobrze, dziêkowaæ Keroloth-przywódca. 
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_07"); //Co do ciebie, Willu…
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_08"); //Tak?
+	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_09"); //Pamiêtaj, ¿e jeœli nabroi, ty za to odpowiadasz. Miej siê na bacznoœci. Daj mi jedynie jego broñ i zmiataj.
+	B_giveinvitems (hero, NASZ_110_Keroloth, ItMw_2H_OrcAxe_02,1);
+	TRIA_Finish();
+	DodajReputacje((-2), 1);
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine(NASZ_Kurg_Kan, "Karczma");
+	KurgKanTanczy = 1;
+	KurgKanFollowPC = 0;
+};
 //*********************************************************************
 //	Info Nauka
 //*********************************************************************

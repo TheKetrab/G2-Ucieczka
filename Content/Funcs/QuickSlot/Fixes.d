@@ -31,6 +31,19 @@ func void QS_SwitchHeroFix()
 	};
 };
 
+func void QSEquipWeaponFirstTimeFix()
+{
+	if(Hlp_IsValidNpc(hero) && !Npc_HasEquippedMeleeWeapon(hero)) {ff_Remove(QSEquipWeaponFirstTimeFix); return;};
+	
+	var c_item w; w = Npc_GetEquippedMeleeWeapon(hero);
+	var int ptr; ptr = _@(w);
+	if(ptr && Hlp_IsValidHandle(QS_BackgroundView))
+	{
+		QS_PutSlot(slf, 1, ptr);
+		ff_Remove(QSEquipWeaponFirstTimeFix);
+	};
+};
+
 func void QS_SpellCast_GetSpell()
 {
 	var oCNpc her;			her = Hlp_GetNpc(hero);

@@ -1422,7 +1422,31 @@ FUNC VOID DIA_NASZ_119_Udar_SzybkaNauka_Info()
 		};
 	};
 };	
-	
+
+
+INSTANCE DIA_NASZ_119_Udar_KurgKan   (C_INFO)
+{
+	npc         = NASZ_119_Udar;
+	nr          = 999;
+	condition   = DIA_NASZ_119_Udar_KurgKan_Condition;
+	information = DIA_NASZ_119_Udar_KurgKan_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_119_Udar_KurgKan_Condition()
+{
+	if(KurgKanFollowPC)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_119_Udar_KurgKan_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_119_Udar_KurgKan_15_00"); //Nie podoba mi siê to.
+	AI_StopProcessInfos (self);
+};
+
 // ************************************************************
 // 			  				PICK POCKET
 // ************************************************************

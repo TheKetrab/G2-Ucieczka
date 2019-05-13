@@ -50,6 +50,13 @@ FUNC VOID Rtn_Start_118 ()
 
 };
 
+FUNC VOID Rtn_Kurgkan_118 ()
+{	
+	TA_Stand_Guarding	(08,00,23,00,"NASZ_MIECZ_6");
+	TA_Stand_Guarding	(23,00,08,00,"NASZ_MIECZ_6");		
+};
+
+
 FUNC VOID Rtn_Arena_118 ()
 {
 	TA_Stand_Guarding	(08,00,23,00,"NASZ_LOWCY_ARENA_01");

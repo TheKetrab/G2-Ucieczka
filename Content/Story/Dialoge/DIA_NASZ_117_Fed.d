@@ -260,6 +260,43 @@ FUNC VOID DIA_NASZ_117_Fed_HowAreYou_Info()
 	};
 };
 
+//*********************************************************************
+//	Info KurgKanDead
+//*********************************************************************
+INSTANCE DIA_NASZ_117_Fed_KurgKanDead   (C_INFO)
+{
+	npc         = NASZ_117_Fed;
+ 	nr          = 500;
+ 	condition   = DIA_NASZ_117_Fed_KurgKanDead_Condition;
+ 	information = DIA_NASZ_117_Fed_KurgKanDead_Info;
+ 	permanent   = TRUE;
+	important	= true;
+};
+
+FUNC INT DIA_NASZ_117_Fed_KurgKanDead_Condition()
+{
+	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_KurgKan_TrustMe) && !KurgKanUratowany)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_117_Fed_KurgKanDead_Info()
+{
+	AI_Output (self,other,"DIA_NASZ_117_Fed_KurgKanDead_55_00"); //I kolejny orkowy zadek skopany! Nawet nie by³ wielkim wyzwaniem.
+	AI_Output (other, self,"DIA_NASZ_117_Fed_KurgKanDead_15_01"); //Gratulujê, Fed. Zabi³eœ by³ego orka-niewolnika, który nie by³ gotowy na walkê.
+	AI_Output (self,other,"DIA_NASZ_117_Fed_KurgKanDead_55_02"); //Eeee… co?
+	AI_Output (other, self,"DIA_NASZ_117_Fed_KurgKanDead_15_03"); //Niewa¿ne. ¯egnaj.
+	KurgKanUratowany = -1;
+	Log_SetTopicStatus (Topic_OrcInATrap, LOG_FAILED);
+	
+	AI_StopProcessInfos(self);
+	
+	Npc_ExchangeRoutine(NASZ_117_Fed,rut1);
+	Npc_ExchangeRoutine(NASZ_118_Ferros,rut2);
+	
+};
+
 // ************************************************************
 // 			  				PICK POCKET
 // ************************************************************

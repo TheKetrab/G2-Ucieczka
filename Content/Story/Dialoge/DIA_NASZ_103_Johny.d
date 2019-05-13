@@ -293,6 +293,29 @@ FUNC VOID DIA_NASZ_103_Johny_towary_Info()
 	B_GiveTradeInv (self);
 };
 
+INSTANCE DIA_NASZ_103_Johny_KurgKan   (C_INFO)
+{
+	npc         = NASZ_103_Johny;
+	nr          = 999;
+	condition   = DIA_NASZ_103_Johny_KurgKan_Condition;
+	information = DIA_NASZ_103_Johny_KurgKan_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_103_Johny_KurgKan_Condition()
+{
+	if(KurgKanFollowPC)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_103_Johny_KurgKan_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_103_Johny_KurgKan_15_00"); //Narzeka³em ostatnio na nudê, ale to jest chyba przesada.
+	AI_StopProcessInfos (self);
+};
+
 
 // ************************************************************
 // 			  				PICK POCKET

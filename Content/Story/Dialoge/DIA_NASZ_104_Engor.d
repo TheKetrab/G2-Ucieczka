@@ -385,6 +385,31 @@ FUNC VOID DIA_NASZ_104_Engor_towary_Info()
 	B_GiveTradeInv(self);
 };
 
+
+
+INSTANCE DIA_NASZ_104_Engor_KurgKan   (C_INFO)
+{
+	npc         = NASZ_104_Engor;
+	nr          = 999;
+	condition   = DIA_NASZ_104_Engor_KurgKan_Condition;
+	information = DIA_NASZ_104_Engor_KurgKan_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_104_Engor_KurgKan_Condition()
+{
+	if(KurgKanFollowPC)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_104_Engor_KurgKan_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_104_Engor_KurgKan_15_00"); //Jestem rozczarowany tob¹, Willu.
+	AI_StopProcessInfos (self);
+};
+
 // ************************************************************
 // 			  				PICK POCKET
 // ************************************************************

@@ -82,3 +82,48 @@ INSTANCE OrcSlave (Mst_Default_OrcSlave)
 	start_aistate				= ZS_MM_AllScheduler;
 	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
 };
+
+
+INSTANCE NASZ_Kurg_Kan (Mst_Default_OrcSlave)
+{
+	name = "Kurg-Kan";
+	
+	guild = GIL_FRIENDLY_ORC;
+	
+	id 			=		61000;	
+	level		= 		5;
+	voice 		=		18;
+	
+	Npctype 	=		NPCTYPE_MAIN;
+	//-------- visual --------
+	B_SetVisuals_OrcSlave();
+	//-------- inventory --------
+	EquipItem (self, ItMw_2H_OrcAxe_02);
+	
+	fight_tactic	=	FAI_ORC;
+	
+	//----- Daily Routine ----
+	daily_routine 	= Rtn_Start_61000;
+};
+
+FUNC VOID Rtn_Start_61000 ()
+{	
+	TA_Stand_WP  	(08,00,22,00,"NASZ_MIECZ_6");
+    TA_Stand_WP		(22,00,08,00,"NASZ_MIECZ_6");
+};
+FUNC VOID Rtn_Follow_61000 ()
+{	
+	TA_Follow_Player	(06,00,18,00,"NASZ_MIECZ_6");
+	TA_Follow_Player	(18,00,06,00,"NASZ_MIECZ_6");
+};
+FUNC VOID Rtn_Karczma_61000 ()
+{	
+	TA_Orc_Dance	(20,10,02,45,"NASZ_LOWCY_KARCZMA_02");
+	TA_Orc_Dance	(20,10,02,45,"NASZ_LOWCY_KARCZMA_02");
+};
+
+FUNC VOID Rtn_Kap3_61000 ()
+{	
+	TA_Stand_WP  	(08,00,22,00,"OW_WOODRUIN_WOLF_SPAWN");
+    TA_Stand_WP		(22,00,08,00,"OW_WOODRUIN_WOLF_SPAWN");
+};

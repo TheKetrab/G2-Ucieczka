@@ -255,6 +255,12 @@ func void UrShakFinal()
 		B_KillNpc(NASZ_213_Gestath);
 		B_KillNpc(NASZ_123_Lowca);
 		B_KillNpc(NASZ_108_Lowca);
+		B_StartOtherRoutine (NASZ_213_Gestath,"TOT");
+		AI_Teleport		(NASZ_213_Gestath, "TOT");
+		B_KillNpc(NASZ_123_Lowca);
+		B_KillNpc(NASZ_108_Lowca);
+		AI_Teleport		(NASZ_123_Lowca, "TOT");
+		AI_Teleport		(NASZ_108_Lowca, "TOT");
 		
 		TwierdzaAtakSick = TRUE; // dziêki temu niektórzy maj¹ mniej HP
 		ff_remove(UrShakFinal);

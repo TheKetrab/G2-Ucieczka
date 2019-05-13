@@ -256,12 +256,12 @@ FUNC VOID DIA_NASZ_008_Miecz_zadanie_Info()
 	Log_SetTopicStatus (TOPIC_Miecz_ork, LOG_RUNNING);
 	B_LogEntry (TOPIC_Miecz_ork, "Pirat ma problemy ze snem. Twierdzi, ¿e ktoœ podkrada siê w nocy do jego obozu. Poprosi³ mnie, abym stan¹³ na czatach i rozejrza³ siê w pobli¿u, gdy on bêdzie spa³. Œpi od dziewi¹tej do ósmej. Chyba nie wyœpiê siê tej nocy... ");
 
-	if (Wld_IsTime (04,10,23,40)) {
+	/*if (Wld_IsTime (04,10,23,40)) {
 		Wld_InsertNpc	(NASZ_451_OrkMiecz,"TOT");
 	}
 	else {
 		Wld_InsertNpc	(NASZ_451_OrkMiecz,"NASZ_MIECZ_6");
-	};
+	};*/
 	
 
 };
@@ -281,25 +281,40 @@ INSTANCE DIA_NASZ_008_Miecz_koniec   (C_INFO)
 
 FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie)
-	&& npc_isdead (NASZ_451_OrkMiecz))
+	if(npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie) && (Npc_IsDead(NASZ_Kurg_Kan) || KurgKanTanczy))
 	{
 		return TRUE;
 	};
 };
 
 FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
-{
-	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem.
-	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //Rozgl¹da³em siê przez jakiœ czas, a¿ zobaczy³em orka. Prawdopodobnie szeleœci³ tak, bo pociera³ toporem o ostr¹ ska³ê. Zapewne ostrzy³ swoj¹ broñ.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_55_02"); //Nie wpad³em na to, ¿e to dŸwiêk pocieranej zardzewia³ej stali. Jednak gdy mi o tym powiedzia³eœ, to faktycznie, to by³ dok³adnie ten dŸwiêk.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_55_03"); //Mam nadziejê, ¿e wys³a³eœ tego orka do piachu?
-	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); //Tak. I jego ostry topór w niczym mu nie pomóg³.
-	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_55_05"); //Dobrze siê spisa³eœ. Oto twoja nagroda.
+{		
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem. W nocy siedzia³ nad tob¹ ork i ciê obserwowa³. Dziwny ha³as, o którym mówi³eœ, to by³o ostrzenie jego broni.
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //Jasna cholera! Ork?! Dobrze, ¿e go zabi³eœ. Nie wiesz mo¿e, czemu tyle dni nade mn¹ siedzia³?
+		
+		if(KurgKanTanczy)
+		{
+				AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_02"); //Tak naprawdê, to go nie zabi³em. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o i chcia³ siê z tob¹ zaprzyjaŸniæ. Uzna³em, ¿e mu pomogê i od teraz ork mieszka w obozie ³owców.
+				AI_Output (self,other,"DIA_NASZ_008_Miecz_koniec_15_03"); //Co? Ha, ha, ha! Zaraz, ty tak na powa¿nie? 
+		};
+		else if(SaveKurgKan == -1)
+		{
+			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); // Tak naprawdê, nie chcia³ ci zrobiæ krzywdy. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. I dlatego te¿ go zabi³em. Trudno w tych czasach ufaæ orkowi.
+		};
+		if(SaveKurgKan != 0)
+		{
+			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
+		}
+		else
+		{
+			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_06"); //Orkom nie powinno siê ufaæ. Dobrze zrobi³eœ. Przyjmij t¹ nagrodê ode mnie.  
+		};
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_07"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
+	
 
 	Createinvitems (self, itmi_gold, 140);
 	B_giveinvitems (self, other, itmi_gold, 140);
-	B_LogEntry (TOPIC_Miecz_ork, "Kto by pomyœla³? Ork ostrz¹cy topór... Tylko nadal nie rozumiem, dlaczego robi³ to przez kilka nocy. Ale odpowiedŸ na to pytanie odesz³a razem z tym orkiem.");
+	B_LogEntry (TOPIC_Miecz_ork, "Miecz by³ zadowolony z moich nocnych dzia³añ i mnie za to wynagrodzi³.");
 	Log_SetTopicStatus (TOPIC_Miecz_ork, LOG_SUCCESS);
 	B_GivePlayerXP (400);
 	

@@ -9,7 +9,6 @@
 // *********
 // GLOBAL
 // *********
-
 func void STARTUP_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor STARTUP_<LevelName>)
@@ -28,7 +27,7 @@ func void INIT_GLOBAL()
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL);
-	
+	FF_ApplyOnceExt (QSEquipWeaponFirstTimeFix, 250, -1);
 	if(Hlp_IsValidNpc(hero) && !Sneak_Speed_Default_Startup)
 	{
 		Set_AniSpeed(hero, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);

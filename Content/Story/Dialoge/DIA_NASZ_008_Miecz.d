@@ -256,12 +256,8 @@ FUNC VOID DIA_NASZ_008_Miecz_zadanie_Info()
 	Log_SetTopicStatus (TOPIC_Miecz_ork, LOG_RUNNING);
 	B_LogEntry (TOPIC_Miecz_ork, "Pirat ma problemy ze snem. Twierdzi, ¿e ktoœ podkrada siê w nocy do jego obozu. Poprosi³ mnie, abym stan¹³ na czatach i rozejrza³ siê w pobli¿u, gdy on bêdzie spa³. Œpi od dziewi¹tej do ósmej. Chyba nie wyœpiê siê tej nocy... ");
 
-	/*if (Wld_IsTime (04,10,23,40)) {
-		Wld_InsertNpc	(NASZ_451_OrkMiecz,"TOT");
-	}
-	else {
-		Wld_InsertNpc	(NASZ_451_OrkMiecz,"NASZ_MIECZ_6");
-	};*/
+
+		Wld_InsertNpc	(NASZ_Kurg_Kan,"NASZ_MIECZ_6");
 	
 
 };
@@ -296,7 +292,7 @@ FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 		{
 				AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_02"); //Tak naprawdê, to go nie zabi³em. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o i chcia³ siê z tob¹ zaprzyjaŸniæ. Uzna³em, ¿e mu pomogê i od teraz ork mieszka w obozie ³owców.
 				AI_Output (self,other,"DIA_NASZ_008_Miecz_koniec_15_03"); //Co? Ha, ha, ha! Zaraz, ty tak na powa¿nie? 
-		};
+		}
 		else if(SaveKurgKan == -1)
 		{
 			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); // Tak naprawdê, nie chcia³ ci zrobiæ krzywdy. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. I dlatego te¿ go zabi³em. Trudno w tych czasach ufaæ orkowi.

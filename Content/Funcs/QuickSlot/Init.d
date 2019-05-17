@@ -20,14 +20,6 @@ func void QS_InitHooks()
 				oCGame__UpdateResolution_Len,
 				QS_UpdateResolution);
 	
-	HookEngineF(oCNpcInventory__HandleEvent,
-				oCNpcInventory__HandleEvent_Len,
-				QS_HandleEvent_Inventory);	
-
-	HookEngineF(oCGame__HandleEvent,
-				oCGame__HandleEvent_Len,
-				QS_Game_HandleEvent);
-	
 	HookEngineF(oCNpc__SetAsPlayer,
 				oCNpc__SetAsPlayer_Len,
 				QS_SwitchHeroFix);				
@@ -87,6 +79,11 @@ func void QS_InitBaseData()
 		
 		// Apply world only for inventory
 		MEM_WriteInt (QS_RenderWorld + zCWorld__bIsInventoryWorld_offset, true);
+	};
+	
+	if(!QS_FirstTime)
+	{
+		FF_ApplyOnceExt (QSEquipWeaponFirstTimeFix, 250, -1);
 	};
 };
 				

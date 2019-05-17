@@ -84,7 +84,6 @@ func void HandleEvents_hook(/*int key*/)
 };
 
 
-
 //var int v;
 func void Inv_Draw_Hook()
 {
@@ -352,21 +351,28 @@ func void UpdateStaffSlot()
 };
 
 const int oCNpcInventory__HandleEvent = 7397440;
-
 func void oCNpcInventory_HandleEvent_hook()
 {
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
 	
 	if(nptr != MEM_ReadInt(_hero)) {return;};
 	
-
-	if(MEM_ReadInt(ESP+4) == MEM_GetKey("keyAction") || MEM_ReadInt(ESP+4) ==  MEM_GetSecondaryKey("keyAction"))
+	
+	var int key; key = MEM_ReadInt(ESP + 4);
+	var int keyWeapon_1; keyWeapon_1 = MEM_GetKey("keyWeapon");
+	var int keyWeapon_2; keyWeapon_2 = MEM_GetSecondaryKey("keyWeapon");
+	
+	var int keyAction_1; keyAction_1 = MEM_GetKey("keyAction");
+	var int keyAction_2; keyAction_2 = MEM_GetSecondaryKey("keyAction");	
+	
+	
+	var int ptr; ptr = Inv_GetSelectedItem(ECX);
+	if(key == keyAction_1 || key == keyAction_2)
 	{
-		var int ptr; ptr = Inv_GetSelectedItem(ECX);
 		if(!ptr) {return;};
 		
 		var c_item itm; itm = _^(ptr);	
-		
+		MEM_WriteInt(ESP+4,-1);
 		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(Itna_kostur_urshaka))
 		{	
 			var c_npc slf; slf = _^(nptr);
@@ -396,7 +402,70 @@ func void oCNpcInventory_HandleEvent_hook()
 			
 		};	
 	};
+	
+	//QS
+	if(!ptr) {
+		return;
+	};
+	
+	if(key == keyWeapon_1
+	|| key == keyWeapon_2)
+	{
+		MEM_WriteInt(ESP + 4, -1);
+		return;
+	};
+	
+	if(key == MOUSE_BUTTONLEFT
+	|| key == keyAction_1
+	|| key == keyAction_2
+	|| key ==  KEY_LCONTROL)	
+	{
+		var c_item it; it = _^(ptr);
+		if(it.mainflag == ITEM_KAT_NF
+		|| it.flags & ITEM_SHIELD)
+		{
+			if(QS_GetSlotItem(1))	{
+				QS_RemoveSlot(1);
+			};
+		
+			if(!(it.flags & ITEM_ACTIVE))
+			{
+				QS_PutSlot(hero, 1, ptr);
+				it.flags = it.flags | ITEM_ACTIVE;
+			};
+			MEM_WriteInt(ESP+4,-1);
+		}
+		else if(it.flags & (ITEM_BOW | ITEM_CROSSBOW))
+		{
+			if(QS_GetSlotItem(2))	{
+				QS_RemoveSlot(2);
+			};
+		
+			if(!(it.flags & ITEM_ACTIVE))
+			{
+				QS_PutSlot(hero, 2, ptr);
+				it.flags = it.flags | ITEM_ACTIVE;
+			};
+			MEM_WriteInt(ESP+4,-1);
+		};
+		return;
+	};
+
+	
+	
+	if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); }; 
+	if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); }; 
+	if(key == KEY_3) { QS_PutSlot(hero, 3, ptr); }; 
+	if(key == KEY_4) { QS_PutSlot(hero, 4, ptr); }; 
+	if(key == KEY_5) { QS_PutSlot(hero, 5, ptr); }; 
+	if(key == KEY_6) { QS_PutSlot(hero, 6, ptr); }; 
+	if(key == KEY_7) { QS_PutSlot(hero, 7, ptr); }; 
+	if(key == KEY_8) { QS_PutSlot(hero, 8, ptr); }; 
+	if(key == KEY_9) { QS_PutSlot(hero, 9, ptr); }; 
+	if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); }; 
+	
 };
+
 
 func void Hooks_Global()
 {

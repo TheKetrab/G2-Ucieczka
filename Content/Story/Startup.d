@@ -12,11 +12,10 @@
 func void STARTUP_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor STARTUP_<LevelName>)
-	Game_InitGerman();
-	
-	
+	Game_InitGerman();	
 };
-const int Sneak_Speed_Default_Startup = 0;
+
+
 func void INIT_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor INIT_<LevelName>)
@@ -27,20 +26,6 @@ func void INIT_GLOBAL()
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL);
-	FF_ApplyOnceExt (QSEquipWeaponFirstTimeFix, 250, -1);
-	if(Hlp_IsValidNpc(hero) && !Sneak_Speed_Default_Startup)
-	{
-		Set_AniSpeed(hero, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("t_sneak_2_sneakbl"),Sneak_Anim_Speed);
-		//Set_AniSpeed(oth, STR_UPPER("t_cbowsneak_2_bowsneakl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("t_bowsneak_2_bowsneakl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("s_cbowsneakl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("s_bowsneakl"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
-		Set_AniSpeed(hero, STR_UPPER("t_sneakbl_2_sneak"),Sneak_Anim_Speed);
-		Sneak_Speed_Default_Startup = 1;
-	};
 	
 	if (!FF_Active (TickTock_1s)) {
 		FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s

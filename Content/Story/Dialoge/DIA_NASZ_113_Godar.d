@@ -78,7 +78,7 @@ INSTANCE DIA_NASZ_113_Godar_ORK   (C_INFO)
 	nr          = 999;
 	condition   = DIA_NASZ_113_Godar_ORK_Condition;
 	information = DIA_NASZ_113_Godar_ORK_Info;
-	description = "A co do orka…";
+	description = "A co do orka...";
 };
 
 FUNC INT DIA_NASZ_113_Godar_ORK_Condition()
@@ -91,26 +91,26 @@ FUNC INT DIA_NASZ_113_Godar_ORK_Condition()
 
 FUNC VOID DIA_NASZ_113_Godar_ORK_Info()
 {
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_00"); // A co do orka…
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_01"); //Tak? Czego chcesz?
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_02"); //Kurg-Kan wspomina³, ¿e wiesz, dlaczego mo¿e chodziæ z broni¹ po obozie.
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_03"); //No wiem i to ca³kiem sporo, bo zawdziêczam temu orkowi ¿ycie!
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_04"); //Co? Jak to siê sta³o?
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_05"); //Trochê g³upio siê po tym wszystkim przyznaæ, ale uznaliœmy, ¿e pójdziemy z ch³opakami na polowanie. I chcieliœmy wzi¹æ ze sob¹ orka…
-	AI_Output			(other,self,"DIA_NASZ_113_Godar_hello_03_06"); //Niech zgadnê: Bez broni, ¿eby robi³ wam za przynêtê?
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_07"); //Tak… W ka¿dym razie, chcieliœmy zapolowaæ na parê wilków, mo¿e wargów. Tymczasem na drodze wpadliœmy na najprawdziwsze brzytwy, których nie widzia³em od dawna w kolonii. Kaza³em Kurg-Kanowi podejœæ jak najbli¿ej siê da, by sprowokowa³ zwierzêta i skupi³ na siebie ich uwagê, a my je szybko zestrzelimy z kuszy.
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_08"); //I co dzia³o siê potem?
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_09"); //Zabiliœmy brzytwy, a tu nagle siê okaza³o, ¿e zamiast dwóch sztuk, by³o ich ca³e stado i zostaliœmy szybko otoczeni. Zaczê³a siê krwawa jatka i nawet nam dobrze sz³o, a¿ nie wyskoczy³ na mnie samiec alfa. Powali³ mnie na ziemiê i ca³ymi si³ami, powstrzymywa³em go, by nie odgryz³ mi g³owy.
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_10"); //Chyba wiem, do czego to zmierza.
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_11"); //Wtedy us³ysza³em ryk. A¿ mi serce zamar³o, ale wtedy okaza³o siê, ¿e ten ork leci mi na ratunek. I myœlisz, ¿e mia³ jak¹œ broñ? Nie! Pobieg³ na niego z piêœciami! Rzuci³ siê, przewracaj¹c alfê na ziemiê i...
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_12"); //Przez chwilê siê z ni¹ si³owa³. I myœlisz, ¿e udusi³ gada? Nie, chwyci³ go za szczêkê i poci¹gn¹³ tak mocno, ¿e rozerwa³ mu ³eb!
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_13"); //No to by³o naprawdê imponuj¹ce!
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_14"); //Zgadzam siê. Tote¿, razem z ch³opakami, jak wróciliœmy do obozu, opowiedzieliœmy wszystkim o tym co zrobi³. Do godziny, Keroloth wyszed³ i da³ orkowi broñ, mówi¹c ¿e na ni¹ zas³u¿y³. S³yszysz to? Keroloth maj¹c do dyspozycji wiêcej ludzi, najchêtniej zabra³by mi broñ i pancerz, a mu mówi, ¿e zas³u¿y³!
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_15"); //Widzicie? Mia³em racjê co do niego, a nie chcieliœmy mi ufaæ.
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_16"); //Wybacz, Will. Byliœmy w b³êdzie, ale wiesz, ¿e rasie, która z nami walczy od dziesi¹tek lat, trudno zaufaæ.
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_17"); //Nie szkodzi. Rozumiem. Nie wiesz mo¿e, czemu nie chcia³ mi o tym mówiæ?
-	AI_Output			(self, other, "DIA_NASZ_113_Godar_hello_03_18"); //Szczerze? Wydaje mi siê, ¿e po prostu jest skromny. Pos¹dzi³byœ kiedyœ orka o tak¹ cechê? Ha, ha!
-	AI_Output			(other,self, "DIA_NASZ_113_Godar_hello_15_19"); //Nie, pewnie nie. 
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_00"); // A co do orka...
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_01"); //Tak? Czego chcesz?
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_02"); //Kurg-Kan wspomina³, ¿e wiesz, dlaczego mo¿e chodziæ z broni¹ po obozie.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_03"); //No wiem i to ca³kiem sporo, bo zawdziêczam temu orkowi ¿ycie!
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_04"); //Co? Jak to siê sta³o?
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_05"); //Trochê g³upio siê po tym wszystkim przyznaæ, ale uznaliœmy, ¿e pójdziemy z ch³opakami na polowanie. I chcieliœmy wzi¹æ ze sob¹ orka…
+	AI_Output			(other, self,"DIA_NASZ_113_Godar_ORK_03_06"); //Niech zgadnê: Bez broni, ¿eby robi³ wam za przynêtê?
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_07"); //Tak… W ka¿dym razie, chcieliœmy zapolowaæ na parê wilków, mo¿e wargów. Tymczasem na drodze wpadliœmy na najprawdziwsze brzytwy, których nie widzia³em od dawna w kolonii. Kaza³em Kurg-Kanowi podejœæ jak najbli¿ej siê da, by sprowokowa³ zwierzêta i skupi³ na siebie ich uwagê, a my je szybko zestrzelimy z kuszy.
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_08"); //I co dzia³o siê potem?
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_09"); //Zabiliœmy brzytwy, a tu nagle siê okaza³o, ¿e zamiast dwóch sztuk, by³o ich ca³e stado i zostaliœmy szybko otoczeni. Zaczê³a siê krwawa jatka i nawet nam dobrze sz³o, a¿ nie wyskoczy³ na mnie samiec alfa. Powali³ mnie na ziemiê i ca³ymi si³ami, powstrzymywa³em go, by nie odgryz³ mi g³owy.
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_10"); //Chyba wiem, do czego to zmierza.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_11"); //Wtedy us³ysza³em ryk. A¿ mi serce zamar³o, ale wtedy okaza³o siê, ¿e ten ork leci mi na ratunek. I myœlisz, ¿e mia³ jak¹œ broñ? Nie! Pobieg³ na niego z piêœciami! Rzuci³ siê, przewracaj¹c alfê na ziemiê i...
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_12"); //Przez chwilê siê z ni¹ si³owa³. I myœlisz, ¿e udusi³ gada? Nie, chwyci³ go za szczêkê i poci¹gn¹³ tak mocno, ¿e rozerwa³ mu ³eb!
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_13"); //No to by³o naprawdê imponuj¹ce!
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_14"); //Zgadzam siê. Tote¿, razem z ch³opakami, jak wróciliœmy do obozu, opowiedzieliœmy wszystkim o tym co zrobi³. Do godziny, Keroloth wyszed³ i da³ orkowi broñ, mówi¹c ¿e na ni¹ zas³u¿y³. S³yszysz to? Keroloth maj¹c do dyspozycji wiêcej ludzi, najchêtniej zabra³by mi broñ i pancerz, a mu mówi, ¿e zas³u¿y³!
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_15"); //Widzicie? Mia³em racjê co do niego, a nie chcieliœmy mi ufaæ.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_16"); //Wybacz, Will. Byliœmy w b³êdzie, ale wiesz, ¿e rasie, która z nami walczy od dziesi¹tek lat, trudno zaufaæ.
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_17"); //Nie szkodzi. Rozumiem. Nie wiesz mo¿e, czemu nie chcia³ mi o tym mówiæ?
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_03_18"); //Szczerze? Wydaje mi siê, ¿e po prostu jest skromny. Pos¹dzi³byœ kiedyœ orka o tak¹ cechê? Ha, ha!
+	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_19"); //Nie, pewnie nie. 
 	KurgKanGodarInfo = 2;
 	AI_StopProcessInfos (self);
 };

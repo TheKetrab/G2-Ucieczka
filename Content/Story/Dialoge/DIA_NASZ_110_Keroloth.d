@@ -2920,14 +2920,14 @@ FUNC INT DIA_NASZ_110_Keroloth_KurgKan_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_00"); //Mam doœæ nietypow¹ proœbê.
-	AI_Output (self,other,"DIA_NASZ_110_Keroloth_KurgKan_55_01"); //Ju¿ mi siê to nie podoba. Czego ci trzeba?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_01"); //Ju¿ mi siê to nie podoba. Czego ci trzeba?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_02"); //Nie chcia³byœ przygarn¹æ orka do swojego obozu?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_02"); //Ha, ha, ha! Ty to masz poczucie humoru! I powiedzia³eœ to z tak powa¿n¹ min¹!
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Bo nie ¿artujê. Gdy by³em jeszcze kopaczem w Starej Kopalni, tej zawalonej, pracowa³ tam Kurg-Kan, którego schwytano podczas wojny i wrzucono do pracy z nami. Teraz, po upadku bariery, próbowa³ wróciæ do swoich braci, ale ci odrzucili go, uznaj¹c za istotê bez honoru i niegodn¹ miana orka.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Mieszka niedaleko zawalonej wie¿y i chcia³by wróciæ do ludzi, bo by³ przez wielu kopaczy dobrze traktowany.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_03"); //Urzekaj¹ca historia. A nie pomyœla³eœ o tym, ¿e to wszystko podstêp i ma kontrolowaæ nasze ruchy od œrodka? Wys³ali kogoœ, kogo czêœæ skazañców bêdzie znaæ i wzbudzaæ zaufanie?
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_03"); //Nie ma to ¿adnego sensu. Kurg-Kan nie wiedzia³ przecie¿, ¿e mnie spotka, a skazañców go kojarz¹cych nie ma a¿ tylu. 
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_03"); //Mo¿e i masz racjê, ale co z tego? Orkowie morduj¹ moich braci masowo na kontynencie. Na tych, których schwytaj¹ ¿ywcem, przeprowadzaj¹ publiczne egzekucje w podbitych miastach i poma³u robi¹ z tego paradê! Czy naprawdê uwa¿asz, ¿e dla tego jednego orka mam splamiæ swój honor i zbezczeœciæ pamiêæ o nich? Jak mo¿esz coœ takiego sugerowaæ?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_03"); //Ha, ha, ha! Ty to masz poczucie humoru! I powiedzia³eœ to z tak powa¿n¹ min¹!
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_04"); //Bo nie ¿artujê. Gdy by³em jeszcze kopaczem w Starej Kopalni, tej zawalonej, pracowa³ tam Kurg-Kan, którego schwytano podczas wojny i wrzucono do pracy z nami. Teraz, po upadku bariery, próbowa³ wróciæ do swoich braci, ale ci odrzucili go, uznaj¹c za istotê bez honoru i niegodn¹ miana orka.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_05"); //Mieszka niedaleko zawalonej wie¿y i chcia³by wróciæ do ludzi, bo by³ przez wielu kopaczy dobrze traktowany.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_06"); //Urzekaj¹ca historia. A nie pomyœla³eœ o tym, ¿e to wszystko podstêp i ma kontrolowaæ nasze ruchy od œrodka? Wys³ali kogoœ, kogo czêœæ skazañców bêdzie znaæ i wzbudzaæ zaufanie?
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_15_07"); //Nie ma to ¿adnego sensu. Kurg-Kan nie wiedzia³ przecie¿, ¿e mnie spotka, a skazañców go kojarz¹cych nie ma a¿ tylu. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_55_08"); //Mo¿e i masz racjê, ale co z tego? Orkowie morduj¹ moich braci masowo na kontynencie. Na tych, których schwytaj¹ ¿ywcem, przeprowadzaj¹ publiczne egzekucje w podbitych miastach i poma³u robi¹ z tego paradê! Czy naprawdê uwa¿asz, ¿e dla tego jednego orka mam splamiæ swój honor i zbezczeœciæ pamiêæ o nich? Jak mo¿esz coœ takiego sugerowaæ?
 };
 
 var int KurgKanUratowany;

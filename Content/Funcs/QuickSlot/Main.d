@@ -636,7 +636,7 @@ func void QSEquipWeaponFirstTimeFix()
 	
 	if(ptr && Hlp_IsValidHandle(QS_BackgroundView))
 	{
-		QS_PutSlot(slf, 1, ptr);
+		QS_PutSlot(hero, 1, ptr);
 		ff_Remove(QSEquipWeaponFirstTimeFix);
 		QS_FirstTime = true;
 	};

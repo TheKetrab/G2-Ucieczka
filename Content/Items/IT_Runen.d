@@ -484,7 +484,7 @@ INSTANCE ItRu_TeleportPassOW (C_Item)
 	COUNT	[5]			=	value;
 };
 /*******************************************************************************************/
-INSTANCE ItRu_TeleportOC (C_Item) 
+/*INSTANCE ItRu_TeleportOC (C_Item) 
 {
 	name 				=	NAME_Rune;
 
@@ -508,6 +508,31 @@ INSTANCE ItRu_TeleportOC (C_Item)
 	COUNT	[1]			=	SPL_COST_TELEPORT;
 	TEXT	[5]			=	NAME_Value;					
 	COUNT	[5]			=	value;
+};*/
+instance ItRu_TeleportOC (C_Item)
+{
+	name 		= "Teleportacja Do Zamku";
+
+	mainflag 	= ITEM_KAT_DOCS;
+	flags 		= ITEM_MISSION|ITEM_MULTI;
+
+	value 		= 50;
+
+	visual 		= "ItRu_TeleportOC.3ds";
+	material 	= MAT_LEATHER;
+
+	scemeName	= "MAP";
+	on_state[0]	= Use_ItRu_TeleportOC;
+
+	description	= name;
+	
+	TEXT[5]		= NAME_Value;
+	COUNT[5]	= value;
+};
+func void Use_ItRu_TeleportOC ()
+{
+	AI_Teleport		(self, "OC_MAGE_CENTER");
+	AI_PlayAni		(self, "T_HEASHOOT_2_STAND" );
 };
 
 /*******************************************************************************************/

@@ -426,6 +426,7 @@ func void oCNpcInventory_HandleEvent_hook()
 		{
 			if(QS_GetSlotItem(1))	{
 				QS_RemoveSlot(1);
+				it.flags = it.flags &~ ITEM_ACTIVE;
 			};
 		
 			if(!(it.flags & ITEM_ACTIVE))
@@ -433,12 +434,12 @@ func void oCNpcInventory_HandleEvent_hook()
 				QS_PutSlot(hero, 1, ptr);
 				it.flags = it.flags | ITEM_ACTIVE;
 			};
-			MEM_WriteInt(ESP+4,-1);
 		}
 		else if(it.flags & (ITEM_BOW | ITEM_CROSSBOW))
 		{
 			if(QS_GetSlotItem(2))	{
 				QS_RemoveSlot(2);
+				it.flags = it.flags &~ ITEM_ACTIVE;
 			};
 		
 			if(!(it.flags & ITEM_ACTIVE))
@@ -446,7 +447,6 @@ func void oCNpcInventory_HandleEvent_hook()
 				QS_PutSlot(hero, 2, ptr);
 				it.flags = it.flags | ITEM_ACTIVE;
 			};
-			MEM_WriteInt(ESP+4,-1);
 		};
 		return;
 	};

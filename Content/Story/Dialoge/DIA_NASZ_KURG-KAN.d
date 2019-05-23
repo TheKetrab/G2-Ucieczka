@@ -127,9 +127,9 @@ FUNC VOID DIA_ORC_NASZ_Kurg_Kan_Follow_Info()
 	AI_Output (other,self,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_00");  //Mam dla ciebie dobre wieœci. Keroloth przyjmie ciê do obozu, ale ma kilka warunków.
 	AI_Output (self,other,"DIA_ORC_NASZ_Kurg_Kan_55_Follow_01");  //Kurg-Kan s³uchaæ.
 	AI_Output (other,self,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_02");  //Musisz mi oddaæ broñ i udaæ siê tam ze mn¹ teraz. W obozie bêdziesz wykonywa³ wszystkie zadania, jakie ci przydziel¹. Sprz¹tanie, mycie, tego typu sprawy.
-	AI_Output (self,other,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_02");  //Zgadzaæ siê. Will braæ topór.
-	AI_Output (other,self,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_03");  //Dobrze, no to idziemy do obozu. Postaraj siê nie robiæ ¿adnych gwa³townych ruchów. £owcy w twojej obecnoœci mog¹ byæ trochê nerwowi. 
-	AI_Output (self,other,"DIA_ORC_NASZ_Kurg_Kan_55_Follow_04");  //ProwadŸ, przyjaciel.
+	AI_Output (self,other,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_03");  //Zgadzaæ siê. Will braæ topór.
+	AI_Output (other,self,"DIA_ORC_NASZ_Kurg_Kan_15_Follow_04");  //Dobrze, no to idziemy do obozu. Postaraj siê nie robiæ ¿adnych gwa³townych ruchów. £owcy w twojej obecnoœci mog¹ byæ trochê nerwowi. 
+	AI_Output (self,other,"DIA_ORC_NASZ_Kurg_Kan_55_Follow_05");  //ProwadŸ, przyjaciel.
 	KurgKanFollowPC	= 1;
 	AI_UnequipWeapons			(self);
 	B_giveinvitems (self, other, ItMw_2H_OrcAxe_02,1);

@@ -186,10 +186,11 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		FF_ApplyOnceExt (Kap4Event, 3000, -1); //raz na 3s
 		
-		B_StartOtherRoutine(NASZ_Kurg_Kan,"Kap3")
+		B_StartOtherRoutine(NASZ_Kurg_Kan,"Kap3");
 		// Funkcje
 		
-		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, (-1) * Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia)); // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO, dziala?
+		 // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO, dziala?
+		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, (-1) * Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia));
 		
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
 		B_StartOtherRoutine (NASZ_205_Mysliwy, "Kap3");

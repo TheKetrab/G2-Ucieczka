@@ -355,9 +355,6 @@ func void oCNpcInventory_HandleEvent_hook()
 {
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
 	
-	if(nptr != MEM_ReadInt(_hero)) {return;};
-	
-	
 	var int key; key = MEM_ReadInt(ESP + 4);
 	var int keyWeapon_1; keyWeapon_1 = MEM_GetKey("keyWeapon");
 	var int keyWeapon_2; keyWeapon_2 = MEM_GetSecondaryKey("keyWeapon");
@@ -365,14 +362,15 @@ func void oCNpcInventory_HandleEvent_hook()
 	var int keyAction_1; keyAction_1 = MEM_GetKey("keyAction");
 	var int keyAction_2; keyAction_2 = MEM_GetSecondaryKey("keyAction");	
 	
-	
 	var int ptr; ptr = Inv_GetSelectedItem(ECX);
+	if(!ptr) {
+		return;
+	};
 	if(key == keyAction_1 || key == keyAction_2)
 	{
 		if(!ptr) {return;};
 		
 		var c_item itm; itm = _^(ptr);	
-		MEM_WriteInt(ESP+4,-1);
 		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(Itna_kostur_urshaka))
 		{	
 			var c_npc slf; slf = _^(nptr);
@@ -404,9 +402,6 @@ func void oCNpcInventory_HandleEvent_hook()
 	};
 	
 	//QS
-	if(!ptr) {
-		return;
-	};
 	
 	if(key == keyWeapon_1
 	|| key == keyWeapon_2)
@@ -421,32 +416,59 @@ func void oCNpcInventory_HandleEvent_hook()
 	|| key ==  KEY_LCONTROL)	
 	{
 		var c_item it; it = _^(ptr);
+		var c_item i; 
+	
+		
 		if(it.mainflag == ITEM_KAT_NF
 		|| it.flags & ITEM_SHIELD)
 		{
+			if(it.flags & ITEM_ACTIVE)
+			{
+				i = Npc_GetEquippedMeleeWeapon(hero);
+				//QS_RemoveSlot(QS_GetSlotByItem(_@(i)));
+				oCNpc_UnequipItem(hero,_@(i));
+				//i.flags = it.flags &~ ITEM_ACTIVE;
+				return;
+			};
+			
+			i = Npc_GetEquippedMeleeWeapon(hero);
 			if(QS_GetSlotItem(1))	{
 				QS_RemoveSlot(1);
-				it.flags = it.flags &~ ITEM_ACTIVE;
+				oCNpc_UnequipItem(hero,_@(i));
 			};
-		
+			//oCNpc_UnequipItem(hero,_@(i));
 			if(!(it.flags & ITEM_ACTIVE))
 			{
+				oCNpc_UnequipItem(hero,_@(i));
 				QS_PutSlot(hero, 1, ptr);
-				it.flags = it.flags | ITEM_ACTIVE;
+				//it.flags = it.flags | ITEM_ACTIVE;
 			};
+			MEM_WriteInt(ESP+4,-1);
 		}
 		else if(it.flags & (ITEM_BOW | ITEM_CROSSBOW))
 		{
+			if(it.flags & ITEM_ACTIVE)
+			{
+				i = Npc_GetEquippedMeleeWeapon(hero);
+				//QS_RemoveSlot(QS_GetSlotByItem(_@(i)));
+				oCNpc_UnequipItem(hero,_@(i));
+				//i.flags = it.flags &~ ITEM_ACTIVE;
+				return;
+			};
+			
+			i = Npc_GetEquippedRangedWeapon(hero);
 			if(QS_GetSlotItem(2))	{
 				QS_RemoveSlot(2);
-				it.flags = it.flags &~ ITEM_ACTIVE;
+				 oCNpc_UnequipItem(hero,_@(i));
 			};
-		
-			if(!(it.flags & ITEM_ACTIVE))
+		 	if(!(it.flags & ITEM_ACTIVE))
 			{
+				 oCNpc_UnequipItem(hero,_@(i));
 				QS_PutSlot(hero, 2, ptr);
-				it.flags = it.flags | ITEM_ACTIVE;
+				//i.flags = it.flags | ITEM_ACTIVE;
 			};
+			MEM_WriteInt(ESP+4,-1);
+			
 		};
 		return;
 	};

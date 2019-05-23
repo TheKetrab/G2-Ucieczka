@@ -23,6 +23,38 @@ func int QS_GetSlotByItem(var int iPtr)
 };
 
 
+func void QS_AI_EquipWeapon	(var int itemPtr)
+{
+	var int flags; flags = MEM_ReadInt(itemPtr+oCItem__Flags_Offset);
+	var c_item i; i = _^(itemPtr);
+	var c_item itm; 
+	var int ptr; 
+	 
+	 if(i.mainflag == ITEM_KAT_NF)
+	{
+		itm =  Npc_GetEquippedMeleeWeapon(hero);
+		ptr = _@(itm);
+		if( ptr != itemPtr)
+		{
+			oCNpc_UnequipItem(hero, ptr);
+			itm.flags = itm.flags & ~ ITEM_ACTIVE;
+		};
+	}
+	else
+	{
+		itm =  Npc_GetEquippedRangedWeapon(hero);
+		ptr = _@(itm);
+		if( ptr != itemPtr)
+		{
+			oCNpc_UnequipItem(hero, ptr);
+			itm.flags = itm.flags & ~ ITEM_ACTIVE;
+		};
+	};
+	
+	AI_Function_I(hero, QS_EquipWeapon, itemPtr);
+};
+
+
 func void QS_CreateSlot(var int nr, var int itemPtr)
 {
 	MEM_Info(ConcatStrings("SlotID: ", inttostring(nr)));
@@ -57,6 +89,11 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	MEM_WriteStatArr	(QS_Data, 		nr, slotHndl);
 	MEM_Info("QS_CreateSlot #8");
 	pView = 0;
+	
+	if(it.mainflag == ITEM_KAT_NF || it.mainflag == ITEM_KAT_FF)
+	{
+		QS_AI_EquipWeapon(itemPtr);
+	};
 };
 
 func void QS_RemoveSlot(var int nr)
@@ -76,9 +113,11 @@ func void QS_RemoveSlot(var int nr)
 	
 	var int itm; itm = QS_GetSlotItem(nr);
 	var c_item i; i = _^(itm);
-	if(i.flags & ITEM_ACTIVE)
+	if(i.mainflag == ITEM_KAT_NF || i.mainflag == ITEM_KAT_FF) //QS_AI_EquipWeapon	(var int itemPtr)QS_GetSlotItem
 	{
-		i.flags = i.flags &~ ITEM_ACTIVE;
+		//QS_UnEquipWeapon(itemPtr);
+		var int itemPtr; itemPtr = QS_GetSlotItem(nr);
+		oCNpc_UnEquipItem(hero,itemPtr);
 	};
 	
 	MEM_Info("QS_RemoveSlot #4");
@@ -190,37 +229,6 @@ func void QS_DrawWeapon_Far(var int itemPtr)
 	if(QS_IsMunitionAvailable(itemPtr))	{
 		QS_DrawWeapon(FMODE_FAR);
 	};
-};
-
-func void QS_AI_EquipWeapon	(var int itemPtr)
-{
-	var int flags; flags = MEM_ReadInt(itemPtr+oCItem__Flags_Offset);
-	var c_item i; i = _^(itemPtr);
-	var c_item itm; 
-	var int ptr; 
-	 
-	 if(i.mainflag == ITEM_KAT_NF)
-	{
-		itm =  Npc_GetEquippedMeleeWeapon(hero);
-		ptr = _@(itm);
-		if( ptr != itemPtr)
-		{
-			oCNpc_UnequipItem(hero, ptr);
-			itm.flags = itm.flags & ~ ITEM_ACTIVE;
-		};
-	}
-	else
-	{
-		itm =  Npc_GetEquippedRangedWeapon(hero);
-		ptr = _@(itm);
-		if( ptr != itemPtr)
-		{
-			oCNpc_UnequipItem(hero, ptr);
-			itm.flags = itm.flags & ~ ITEM_ACTIVE;
-		};
-	};
-	
-	AI_Function_I(hero, QS_EquipWeapon, itemPtr);
 };
 
 func void QS_UseMagic(var oCNpc her, var int itemPtr)

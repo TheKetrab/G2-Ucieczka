@@ -2669,7 +2669,38 @@ INSTANCE CONTROL_RETURN     	(C_SFX_DEF) {file= "Magic_6.wav" ;					};
 				INSTANCE SVM_15_BERZERK					(C_SFX_DEF) {file= "svm_3_berzerk.wav";				vol = 110;			};				
 				INSTANCE DEMENTHOR_TALK     				(C_SFX_DEF) {file= "DementhorTalk.wav";   vol=60;     loop=1; };
 
+				// ***** ***** ***** *****
+				//      UCIECZKA
+				// ***** ***** ***** *****
+				
+				
+				// TODO CONCATSTRING SVM_MONK + INTTOSTRING
 				INSTANCE FREE_MINE_GUITAR     				(C_SFX_DEF) {file= "FREE_MINE_GUITAR.wav";   vol=130;};
+				
+				
+				INSTANCE SVM_MONK_WOLF1     				(C_SFX_DEF) {file= "SVM_MONK_WOLF1.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF2     				(C_SFX_DEF) {file= "SVM_MONK_WOLF2.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF3     				(C_SFX_DEF) {file= "SVM_MONK_WOLF3.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF4     				(C_SFX_DEF) {file= "SVM_MONK_WOLF4.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF5    					(C_SFX_DEF) {file= "SVM_MONK_WOLF5.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF6    					(C_SFX_DEF) {file= "SVM_MONK_WOLF6.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF7     				(C_SFX_DEF) {file= "SVM_MONK_WOLF7.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF8     				(C_SFX_DEF) {file= "SVM_MONK_WOLF8.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF9    					(C_SFX_DEF) {file= "SVM_MONK_WOLF9.wav";   vol=107;};
+				INSTANCE SVM_MONK_WOLF10    				(C_SFX_DEF) {file= "SVM_MONK_WOLF10.wav";   vol=107;};
+
+				INSTANCE SVM_WILL_WOLF1     				(C_SFX_DEF) {file= "SVM_WILL_WOLF1.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF2     				(C_SFX_DEF) {file= "SVM_WILL_WOLF2.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF3     				(C_SFX_DEF) {file= "SVM_WILL_WOLF3.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF4     				(C_SFX_DEF) {file= "SVM_WILL_WOLF4.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF5    					(C_SFX_DEF) {file= "SVM_WILL_WOLF5.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF6    					(C_SFX_DEF) {file= "SVM_WILL_WOLF6.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF7     				(C_SFX_DEF) {file= "SVM_WILL_WOLF7.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF8     				(C_SFX_DEF) {file= "SVM_WILL_WOLF8.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF9    					(C_SFX_DEF) {file= "SVM_WILL_WOLF9.wav";   vol=107;};
+				INSTANCE SVM_WILL_WOLF10    				(C_SFX_DEF) {file= "SVM_WILL_WOLF10.wav";   vol=107;};
+
+				INSTANCE SVM_WILL_PICKBROKE     				(C_SFX_DEF) {file= "SVM_WILL_PICKBROKE.wav";   vol=107;};
 
 
 

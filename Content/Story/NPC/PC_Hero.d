@@ -4,7 +4,7 @@ instance PC_Hero (NPC_DEFAULT)
 	name 		= "Will";
 	guild		= GIL_NONE;
 	id		= 0;
-	voice		= 15;
+	voice		= 0;
 	level		= 0;
 	Npctype		= NPCTYPE_MAIN;
 		

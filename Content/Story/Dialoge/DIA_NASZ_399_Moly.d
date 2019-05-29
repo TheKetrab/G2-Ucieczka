@@ -45,7 +45,7 @@ FUNC INT DIA_NASZ_399_Moly_me_Condition()
 
 FUNC VOID DIA_NASZ_399_Moly_me_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_399_Moly_me_15_00"); //Meee!
+	B_LieselMaeh();
 
 	AI_StopProcessInfos (self);	
 };
@@ -74,7 +74,7 @@ FUNC INT DIA_NASZ_399_Moly_follow_Condition()
 FUNC VOID DIA_NASZ_399_Moly_follow_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_399_Moly_follow_15_00"); //Chodü za mnπ.
-	AI_Output (self, other,"DIA_NASZ_399_Moly_follow_55_01"); //Meee!
+	B_LieselMaeh();
 
 	Npc_ExchangeRoutine (self, "Follow");
 	AI_StopProcessInfos (self);	
@@ -105,7 +105,7 @@ FUNC INT DIA_NASZ_399_Moly_second_Condition()
 FUNC VOID DIA_NASZ_399_Moly_second_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_399_Moly_second_15_00"); //To tutaj. Bπdü grzeczna.
-	AI_Output (self, other,"DIA_NASZ_399_Moly_second_55_01"); //Meee!
+	B_LieselMaeh();
 	AI_Output (other,self ,"DIA_NASZ_399_Moly_second_15_02"); //Mam nadziejÍ, øe to znaczy≥o "jasne"...
 
 	MolyMozeSieTepnac = FALSE;

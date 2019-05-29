@@ -181,6 +181,8 @@ const string	TOPIC_BadaniaCaloma			=	"Badania Cor Kaloma";
 const string	TOPIC_Zlo					=	"Z³o we wnêtrzu œwi¹tyni";
 
 
+const string TOPIC_ORCWEAPON = "Broñ dla Orka";
+
 
 //*****KAPITEL 5*****
 

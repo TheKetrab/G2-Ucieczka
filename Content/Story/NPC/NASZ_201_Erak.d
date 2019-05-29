@@ -110,3 +110,10 @@ FUNC VOID Rtn_UltraFinal_201 ()
 	TA_Smalltalk		(08,00,22,00,"NASZ_ULTRAFINAL_09");
 	TA_Smalltalk 	(22,00,08,00,"NASZ_ULTRAFINAL_09");
 };
+
+FUNC VOID Rtn_SmazenieMiesa_201 ()
+{	
+	TA_Cook_Pan		(08,00,22,00,"NASZ_BANDYCI_OBOZ_02");
+	TA_Cook_Pan 	(22,00,08,00,"NASZ_BANDYCI_OBOZ_02");
+};
+

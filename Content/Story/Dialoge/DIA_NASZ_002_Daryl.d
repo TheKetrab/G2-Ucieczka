@@ -26,7 +26,7 @@ FUNC VOID DIA_NASZ_002_Daryl_EXIT_Info()
 		B_UseItem (NASZ_002_Daryl, ItAt_Meatbugflesh);
 
 		AI_Output (self, other,"DIA_NASZ_002_Daryl_exit_55_00"); //Pycha!
-		AI_Output (self, other,"DIA_NASZ_002_Daryl_exit_55_01"); //Nie mogê ci nic daæ... Ale weŸ mój kij.
+		AI_Output (self, other,"DIA_NASZ_002_Daryl_exit_55_01"); //Nie mogê daæ ci nic kosztownego, ale weŸ mój kij.
 		AI_Output (self, other,"DIA_NASZ_002_Daryl_exit_55_02"); //Przyda ci siê, gdy bêdziesz chcia³ siê obroniæ przed którymœ z tych bandziorów.
 		
 		Createinvitems (self, ItMw_1h_Bau_Mace, 1);
@@ -104,7 +104,7 @@ FUNC VOID DIA_NASZ_002_Daryl_help_Info()
 	Mis_Daryl_mieso = LOG_RUNNING;
 	Log_CreateTopic (TOPIC_Daryl_mieso, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Daryl_mieso, LOG_RUNNING);
-	B_LogEntry (TOPIC_Daryl_mieso, "Daryl jest g³odny. Tylko... Co on mo¿e zjeœæ? Porcje ¿ywnoœciowe s¹ tutaj tak ma³e, ¿e ja sam umieram z g³odu.");
+	B_LogEntry (TOPIC_Daryl_mieso, "Daryl jest g³odny. Tylko... Co on mo¿e zjeœæ? Porcje ¿ywnoœciowe s¹ tutaj tak ma³e, ¿e sam umieram z g³odu.");
 
 };
 
@@ -150,7 +150,7 @@ FUNC VOID DIA_NASZ_002_Daryl_done_Info()
 	B_GivePlayerXP (100);
 	Mis_Daryl_mieso = LOG_SUCCESS;
 	Log_SetTopicStatus (TOPIC_Daryl_mieso, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Daryl_mieso, "Daryl zjad³ miêso z chrz¹szczy. Ciekawe, na ile mu to wystarczy?");
+	B_LogEntry (TOPIC_Daryl_mieso, "Daryl zjad³ miêso chrz¹szcza. Ciekawe, na ile mu to wystarczy?");
 
 	Npc_ExchangeRoutine (self, "Start");
 };
@@ -543,7 +543,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonAfterGoAway_Info()
 	Npc_ExchangeRoutine (NASZ_009_Marcos, "GoToTria");
 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_15_00"); //Jestem zaskoczony, bo nie przypuszcza³em, ¿e pójdzie tak szybko. Ca³e szczêœcie, ¿e siê na nas nie rzuci³. Dobrze sobie poradzi³eœ.
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_55_01"); //By³o blisko. Miejmy nadziejê, ¿e twoje domys³y oka¿¹ siê prawdziwe i ta ska³a zwali mu siê na g³owê, bo mam ju¿ go serdecznie doœæ.
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_55_01"); //By³o blisko. Miejmy nadziejê, ¿e twoje domys³y oka¿¹ siê prawdziwe i ta ska³a zawali mu siê na g³owê, bo mam ju¿ go serdecznie doœæ.
 
 	Info_ClearChoices (DIA_NASZ_002_Daryl_BrysonAfterGoAway);
 		Info_AddChoice	  (DIA_NASZ_002_Daryl_BrysonAfterGoAway, "Oby...", DIA_NASZ_002_Daryl_BrysonAfterGoAway_Continue);
@@ -598,7 +598,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson()
 
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_15_00"); //To przez Brysona!
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_15_01"); //Wpad³ w jak¹œ furiê, zacz¹³ nam groziæ i uda³ siê do zamkniêtego tunelu.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_55_02"); //Wspomina³ coœ o tym, ¿e wydoby³ tam wyj¹tkow¹ bry³kê rudy, dziêki której zaskarbi sobie przychylnoœæ wielmo¿nego lorda.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_55_02"); //Wspomnia³ coœ o tym, ¿e wydoby³ tam wyj¹tkow¹ bry³kê rudy, dziêki której zaskarbi sobie przychylnoœæ wielmo¿nego lorda.
 	
 	TRIA_Next (Marcos);
     AI_TurnToNpc(other, self);

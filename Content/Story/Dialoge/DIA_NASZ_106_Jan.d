@@ -160,8 +160,8 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30()
 
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy()
 {
-	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy_15_00"); //Dobijemy.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy_15_01"); //No dobra. W takim razie czekam na surowce i projekt miecza.
+	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoD_15_00"); //Dobijemy.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoD_15_01"); //No dobra. W takim razie czekam na surowce i projekt miecza.
 	
 	JanZaplataZaKowalstwo = 3;
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
@@ -169,10 +169,9 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowaniedobijemy()
 
 FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy()
 {
-	// TODO zmienic nazwe nagran w gotowych i w tych niegotowych
-	// kiedys -> DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanieniedobijemy
-	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoNieDob_15_00"); //Nie dobijemy.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoNieDob_15_01"); //W takim razie poszukaj sobie innego parobka.
+
+	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoND_15_00"); //Nie dobijemy.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targoND_15_01"); //W takim razie poszukaj sobie innego parobka.
 	
 	JanZaplataZaKowalstwoFail = TRUE;
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);

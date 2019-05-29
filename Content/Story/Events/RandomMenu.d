@@ -1,87 +1,94 @@
+// TODO Load1 -> zmienic load1oryginal, jest u mnie na kompie -> każdą kratę da się otworzyć i zabrać skrywane za nią skarby
+
+// ----- ----- ----- ----- -----
+//         RandomMenu
+// ----- ----- ----- ----- -----
+// LOAD__x -> x oznacza, ze recznie zmienilem
+// rozdzielczosc z 1440x900 na 1024x1024
 
 Func void LoadTexRandom ()
 {
-    var int random; random = Hlp_Random (4); random += 1;
-
+	var int random; random = Hlp_Random (20); random += 1;
+    
     if (random == 1)
     {
-		SetLoadTexName ("LOAD1.tga");
+		//SetLoadTexName ("LOAD1X.tga"); // TODO
     };
 	if (random == 2)
     {
-		SetLoadTexName ("LOAD2.TGA");
+		SetLoadTexName ("LOAD2X.TGA");
     };
  	if (random == 3)
     {
-		SetLoadTexName ("LOAD3.TGA");
+		SetLoadTexName ("LOAD3X.TGA");
     };
 	if (random == 4)
     {
-		SetLoadTexName ("LOAD4.TGA");
+		SetLoadTexName ("LOAD4X.TGA");
     };
 	if (random == 5)
     {
-		SetLoadTexName ("LOAD5.tga");
+		SetLoadTexName ("LOAD5X.tga");
     };
     if (random == 6)
     {
-		SetLoadTexName ("LOAD6.TGA");
+		SetLoadTexName ("LOAD6X.TGA");
     };
 	if (random == 7)
     {
-		SetLoadTexName ("LOAD7.TGA");
+		SetLoadTexName ("LOAD7X.TGA");
     };
  	if (random == 8)
     {
-		SetLoadTexName ("LOAD8.TGA");
+		SetLoadTexName ("LOAD8X.TGA");
     };
 	if (random == 9)
     {
-		SetLoadTexName ("LOAD9.TGA");
+		SetLoadTexName ("LOAD9X.TGA");
     };	
 	if (random == 10)
     {
-		SetLoadTexName ("LOAD10.TGA");
+		SetLoadTexName ("LOAD10X.TGA");
     };
 	if (random == 11)
     {
-		SetLoadTexName ("LOAD11.TGA");
+		SetLoadTexName ("LOAD11X.TGA");
     };	
 	if (random == 12)
     {
-		SetLoadTexName ("LOAD12.TGA");
+		SetLoadTexName ("LOAD12X.TGA");
     };	
 	if (random == 13)
     {
-		SetLoadTexName ("LOAD13.TGA");
+		SetLoadTexName ("LOAD13X.TGA");
     };	
 	if (random == 14)
     {
-		SetLoadTexName ("LOAD14.TGA");
+		SetLoadTexName ("LOAD14X.TGA");
     };	
 	if (random == 15)
     {
-		SetLoadTexName ("LOAD15.TGA");
+		SetLoadTexName ("LOAD15X.TGA");
     };	
 	if (random == 16)
     {
-		SetLoadTexName ("LOAD16.TGA");
+		SetLoadTexName ("LOAD16X.TGA");
     };	
 	if (random == 17)
     {
-		SetLoadTexName ("LOAD17.TGA");
+		SetLoadTexName ("LOAD17X.TGA");
     };	
 	if (random == 18)
     {
-		SetLoadTexName ("LOAD18.TGA");
+		SetLoadTexName ("LOAD18X.TGA");
     };	
 	if (random == 19)
     {
-		SetLoadTexName ("LOAD19.TGA");
+		SetLoadTexName ("LOAD19X.TGA");
     };	
 	if (random == 20)
     {
-		SetLoadTexName ("LOAD20.TGA");
+		SetLoadTexName ("LOAD20X.TGA");
     };	
 };
 

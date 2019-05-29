@@ -182,7 +182,7 @@ FUNC INT DIA_NASZ_117_Fed_goth_Condition()
 FUNC VOID DIA_NASZ_117_Fed_goth_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_15_00"); //Psst.
-	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_01"); //WeŸ tê mapê. 
+	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_01"); //WeŸ tê mapê.
 	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_02"); //A teraz uciekaj. Lepiej, ¿eby Kurgan nas razem nie zobaczy³.
 
 	CreateInvItems (self, ItNa_Mapa_Lens, 1);

@@ -320,6 +320,35 @@ CLASS C_SVM
 // ------ wird nur intern gebraucht! ------
 instance SVM_0 (C_SVM)				
 {
+	// ------ WILL
+	SC_HeyTurnAround		= 	"SVM_0_SC_HeyTurnAround"			;//Hej, ty!
+	SC_HeyTurnAround02		= 	"SVM_0_SC_HeyTurnAround02"			;//Hej, ty!
+	SC_HeyTurnAround03		= 	"SVM_0_SC_HeyTurnAround03"			;//Hej!
+	SC_HeyTurnAround04		= 	"SVM_0_SC_HeyTurnAround04"			;//Hej!
+	SC_HeyWaitASecond		= 	"SVM_0_SC_HeyWaitASecond"			;//Chwila!
+
+	DoesntWork				= 	"SVM_0_DoesntWork"					;//Nie dzia³a.
+	PickBroke				= 	"SVM_0_PickBroke"					;//Hm, z³ama³ siê...
+	NeedKey					= 	"SVM_0_NeedKey"						;//Potrzebujê do tego klucza...
+	NoMorePicks				= 	"SVM_0_NoMorePicks"					;//Nie mam ju¿ wytrychów...
+	NoPickLockTalent		= 	"SVM_0_NoPickLockTalent"			;//Nie znam siê na otwieraniu zamków.
+	PICKLOCKORKEYMISSING	= 	"SVM_0_PICKLOCKORKEYMISSING"		;//Hm... Nie mam ani klucza, ani wytrychu.
+	KEYMISSING				= 	"SVM_0_KEYMISSING"					;//Bez w³aœciwego klucza nigdy tego nie otworzê!
+	PICKLOCKMISSING			= 	"SVM_0_PICKLOCKMISSING"				;//Przyda³oby siê parê wytrychów!
+	NEVEROPEN				= 	"SVM_0_NEVEROPEN"					;//Nigdy tego nie otworzê!
+
+	MISSINGITEM				= 	"SVM_0_MISSINGITEM"					;//Czym?
+
+	NOTHINGTOGET			= 	"SVM_0_NOTHINGTOGET"				;//Niczego tu nie znajdê...
+	NOTHINGTOGET02			= 	"SVM_0_NOTHINGTOGET02"				;//Nic tu nie ma...
+	NOTHINGTOGET03			= 	"SVM_0_NOTHINGTOGET03"				;//Nie ma czego pl¹drowaæ...
+
+	Aargh_1					=	"SVM_0_Aargh_1"						;//Aargh
+	Aargh_2					=	"SVM_0_Aargh_2"						;//Aargh
+	Aargh_3					=	"SVM_0_Aargh_3"						;//Aargh
+	Dead					=	"SVM_0_Dead"						;//Aaaarhhh!
+
+	FOUNDTREASURE			=   "SVM_15_Addon_FOUNDTREASURE"		;//Ach. S¹dzê, ¿e coœ znalaz³em.
 
 };
 

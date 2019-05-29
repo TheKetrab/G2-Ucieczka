@@ -43,7 +43,7 @@ FUNC INT DIA_NASZ_414_Zombie_siema_Condition()
 
 FUNC VOID DIA_NASZ_414_Zombie_siema_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_414_Zombie_siema_15_00"); //AAA! Aguagua RA!
+	AI_Output (self, other,"DIA_NASZ_414_Zombie_siema_15_00"); //AAARG! AAA. AAGRRRR!
 	
 	AI_StopProcessInfos (self);
 	B_Attack (NASZ_414_Zombie, other, AR_KILL, 1);

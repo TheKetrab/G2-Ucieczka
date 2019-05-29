@@ -1,4 +1,3 @@
-// TODO: Dla dubbingowcow: Play_Sound("PIERWSZY!") itp
 
 func void WolfCounterText() {
 
@@ -16,64 +15,18 @@ func void WolfCounterText() {
 
 func void MonkSayWolfCounter() {
 
-	if (MonkWolfKiller == 1) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 2) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 3) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 4) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 5) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 6) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 7) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 8) {
-		WolfCounterText();
-	}
-	else if (MonkWolfKiller == 9) {
-		WolfCounterText();
-	};
+	var string snd;
+	snd = ConcatStrings("SVM_MONK_WOLF",IntToString(MonkWolfKiller));
+	Snd_Play(snd);
+	WolfCounterText();
 
 };
 
 func void HeroSayWolfCounter() {
 
-	if (HeroWolfKiller == 1) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 2) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 3) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 4) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 5) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 6) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 7) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 8) {
-		WolfCounterText();
-	}
-	else if (HeroWolfKiller == 9) {
-		WolfCounterText();
-	};
+	var string snd;
+	snd = ConcatStrings("SVM_WILL_WOLF",IntToString(MonkWolfKiller));
+	Snd_Play(snd);
+	WolfCounterText();
 
 };

@@ -140,8 +140,6 @@ FUNC VOID DIA_ORC_NASZ_Kurg_Kan_Follow_Info()
 // ***********************************************************************************************************************
 // 	  	DIA_ORC_NASZ_Kurg_Kan_BRON
 // ***********************************************************************************************************************
-//TODO: dodaæ do globals
-const string TOPIC_ORCWEAPON = "Broñ dla Orka";
 
 INSTANCE DIA_ORC_NASZ_Kurg_Kan_BRON(C_INFO)
 {

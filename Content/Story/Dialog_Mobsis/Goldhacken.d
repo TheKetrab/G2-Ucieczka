@@ -21,7 +21,7 @@ var int GoldMob_16_NASZ; // inserted
 var int GoldMob_17_NASZ; // inserted
 var int GoldMob_18_NASZ; // inserted
 var int GoldMob_19_NASZ; // inserted
-var int GoldMob_20_NASZ; // TODO
+var int GoldMob_20_NASZ; // inserted
 var int GoldMob_bonus_percents;
 
 FUNC INT B_GoldMob_Bestimmung()

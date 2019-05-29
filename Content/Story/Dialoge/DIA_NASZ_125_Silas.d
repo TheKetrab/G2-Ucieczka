@@ -451,7 +451,7 @@ FUNC VOID DIA_NASZ_125_Silas_Gwozdzie_Info()
 
 
 
-// TODO dac temu przelacznikowi visible false
+
 var int HeroKnowAboutSilasSwitch;
 func int SILAS_SWITCH_COND() {
 	return HeroKnowAboutSilasSwitch;

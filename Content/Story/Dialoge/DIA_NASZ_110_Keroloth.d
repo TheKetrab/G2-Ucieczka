@@ -1495,7 +1495,6 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRuniczny_Info()
 	B_LogEntry (TOPIC_MieczRuniczny, "Keroloth przyjrzy siê temu mieczowi.");
 };
 
-// TODO: ogarn¹æ ortografiê i interpunkcje kap 3 i 4
 var int MieczRunicznyRunaPls;
 //*********************************************************************
 //	Info KapThree
@@ -2575,11 +2574,13 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_55_03"); //Co nowego?
 	};
 
-	// TODO
-	//Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
-	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
-	//jeœli w pobli¿u wp nie ma ¿adnego orka
-	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Zlikwidowa³em orkowe obozowisko.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc);
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
+	if (WillBylZapalisada) {
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
+	};
+	if (wszyscy_orkowie_nie_zyja) {
+		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Zlikwidowa³em orkowe obozowisko.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc);
+	};
 	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_siema)) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Za palisad¹ s¹ ludzie.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie);
 	};
@@ -2595,7 +2596,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_01"); //¯aden demon nie pojawi siê ju¿ znik¹d?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caina i demona Kazmina.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wiadomoœci. Teraz jedyne, czego siê obawiam to kontratak orków.
-
+	B_GivePlayerXP(100);
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc()
@@ -2605,6 +2606,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_02"); //Na l¹dzie oko³o piêædziesiêciu. Ale na morzu zacumowane s¹ dwa statki.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_03"); //Nie chce mi siê w to wierzyæ. Albo wiêkszoœæ pop³ynê³a na kontynent, albo krêc¹ siê gdzieœ dalej.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_04"); //Poradzisz sobie z t¹ garstk¹, co? Haha!
+	B_GivePlayerXP(100);
 
 };
 
@@ -2616,6 +2618,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_03"); //Wiesz co... Nie bez powodu wszyscy mówi¹, ¿e jesteœ najlepszy.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_04"); //Masz talent, ch³opcze.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_05"); //Ale nie myœl, ¿e teraz zbudujemy ³ódŸ i odp³yniemy st¹d. Na morzu na pewno pe³no jest orkowych statków. Odbicie od l¹du to samobójstwo.
+	B_GivePlayerXP(100);
 
 };
 
@@ -2628,6 +2631,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_04"); //Nie wydajesz siê zbyt zachwycony t¹ wiadomoœci¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_05"); //Ci¹gle rywalizowaliœmy o wzglêdy Garonda. Ale jak widaæ to jego Garond wys³a³ na pewn¹ œmieræ, podczas gdy ja szkoli³em wojowników na zamku.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_06"); //Niewa¿ne. W ka¿dym razie Udar z pewnoœci¹ ucieszy siê, gdy go zobaczy.
+	B_GivePlayerXP(100);
 
 	HeroSaidZaPalisadaSaLudzie = TRUE;
 	B_LogEntry (TOPIC_Udar_oddzial, "Powiem równie¿ Udarowi, ¿e znalaz³em ludzi, o których mi mówi³.");
@@ -2682,11 +2686,15 @@ FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Condition()
 	};
 };
 
+func void KerolothSay_ComeBackTomorow() {
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
+};
+
 FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_15_00"); //Mam ma³¹ burzê ognist¹.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
+	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_Pyrokinesis, 1);
 	MieczRunicznyRunaDana = 1;
 
@@ -2718,7 +2726,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyLod_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_15_00"); //Mam bry³ê lodu.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
+	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_IceCube, 1);
 	MieczRunicznyRunaDana = 2;
 
@@ -2750,7 +2758,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_15_00"); //Mam piêœæ wichru.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_55_01"); //Wróæ do mnie jutro, miecz bêdzie gotowy.
+	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_Windfist, 1);
 	MieczRunicznyRunaDana = 3;
 
@@ -3014,16 +3022,16 @@ FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_TrustMe_Info()
 	
 };
 
-INSTANCE DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn   (C_INFO)
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn   (C_INFO)
 {
 	npc         = NASZ_110_Keroloth;
 	nr          = 999;
-	condition   = DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition;
-	information = DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info;
+	condition   = DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition;
+	information = DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info;
 	important 	= true;
 };
 
-FUNC INT DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
 {
 	if(KurgKanFollowPC)
 	{
@@ -3031,7 +3039,7 @@ FUNC INT DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
 	};
 };
 //TODO: Nie wiem czy ten trialog dobrze dzia³a xd
-FUNC VOID DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 {	
 	var C_NPC slf; slf = Hlp_GetNpc (NASZ_110_Keroloth);
 	var C_NPC slf2; slf2 = Hlp_GetNpc (NASZ_Kurg_Kan);
@@ -3042,18 +3050,18 @@ FUNC VOID DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 	TRIA_Next(slf);
 	AI_TurnToNpc(other, self);
 	//other,self,
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_01"); //A wiêc to on…
-	AI_Output (other,self,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_02"); //Tak, to Kurg-Kan…
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_03"); //Nie rozmawiam z tob¹. Powiedz mi, orku, czy naprawdê chcesz zamieszkaæ w obozie ³owców orków, gdzie wszyscy bêdziemy ci zlecaæ jak najgorsz¹ robotê i nie bêdziesz zbyt dobrze traktowany?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_01"); //A wiêc to on…
+	AI_Output (other,self,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_02"); //Tak, to Kurg-Kan…
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_03"); //Nie rozmawiam z tob¹. Powiedz mi, orku, czy naprawdê chcesz zamieszkaæ w obozie ³owców orków, gdzie wszyscy bêdziemy ci zlecaæ jak najgorsz¹ robotê i nie bêdziesz zbyt dobrze traktowany?
 	TRIA_Next(slf2);
 	AI_TurnToNpc(other, self);
 	AI_TurnToNpc(hero, self);
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_04"); //Tak. Kurg-Kan nie prze¿yæ sam, a cz³owieki szanowaæ. Mieszkaæ u cz³owiek, pracowaæ dla cz³owiek. 
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_05"); //Hmmm… Myœla³em, ¿e znajdê powód, by ci nie pozwoliæ tutaj zamieszkaæ, ale faktycznie jesteœ tak zdesperowany. Dobrze, mo¿esz siê czuæ mieszkañcem tego obozu, ale pamiêtaj, ¿e jesteœ obserwowany. IdŸ do Udara, on ci wymyœli jakieœ zadanie. 
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_06"); //Dobrze, dziêkowaæ Keroloth-przywódca. 
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_07"); //Co do ciebie, Willu…
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_08"); //Tak?
-	AI_Output (self, other,"DIA_DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_09"); //Pamiêtaj, ¿e jeœli nabroi, ty za to odpowiadasz. Miej siê na bacznoœci. Daj mi jedynie jego broñ i zmiataj.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_04"); //Tak. Kurg-Kan nie prze¿yæ sam, a cz³owieki szanowaæ. Mieszkaæ u cz³owiek, pracowaæ dla cz³owiek. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_05"); //Hmmm… Myœla³em, ¿e znajdê powód, by ci nie pozwoliæ tutaj zamieszkaæ, ale faktycznie jesteœ tak zdesperowany. Dobrze, mo¿esz siê czuæ mieszkañcem tego obozu, ale pamiêtaj, ¿e jesteœ obserwowany. IdŸ do Udara, on ci wymyœli jakieœ zadanie. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_06"); //Dobrze, dziêkowaæ Keroloth-przywódca. 
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_07"); //Co do ciebie, Willu…
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_08"); //Tak?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_09"); //Pamiêtaj, ¿e jeœli nabroi, ty za to odpowiadasz. Miej siê na bacznoœci. Daj mi jedynie jego broñ i zmiataj.
 	B_giveinvitems (hero, NASZ_110_Keroloth, ItMw_2H_OrcAxe_02,1);
 	TRIA_Finish();
 	DodajReputacje((-2), 1);

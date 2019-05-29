@@ -17,6 +17,7 @@ func void Kopalnia_Trucizna()
 			Fade_Pause_Counter += 1;
 			
 			if (Fade_Pause_Counter == 100) {
+				Npc_SwitchInventory_Kopalnia(hero);
 				Npc_ClearAIQueue (hero);
 				AI_Teleport    (hero, "NASZ_KOPALNIA_TRUP");
 			};

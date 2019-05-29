@@ -286,7 +286,7 @@ FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 {		
 		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem. W nocy siedzia³ nad tob¹ ork i ciê obserwowa³. Dziwny ha³as, o którym mówi³eœ, to by³o ostrzenie jego broni.
-		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //Jasna cholera! Ork?! Dobrze, ¿e go zabi³eœ. Nie wiesz mo¿e, czemu tyle dni nade mn¹ siedzia³?
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_01"); //Jasna cholera! Ork?! Dobrze, ¿e go zabi³eœ. Nie wiesz mo¿e, czemu tyle dni nade mn¹ siedzia³?
 		
 		if(KurgKanTanczy)
 		{
@@ -297,15 +297,17 @@ FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 		{
 			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); // Tak naprawdê, nie chcia³ ci zrobiæ krzywdy. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. I dlatego te¿ go zabi³em. Trudno w tych czasach ufaæ orkowi.
 		};
+		
+		
 		if(SaveKurgKan != 0)
 		{
-			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
+			AI_Output (self,other,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
 		}
 		else
 		{
-			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_06"); //Orkom nie powinno siê ufaæ. Dobrze zrobi³eœ. Przyjmij t¹ nagrodê ode mnie.  
+			AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_06"); //Orkom nie powinno siê ufaæ. Dobrze zrobi³eœ. Przyjmij t¹ nagrodê ode mnie.  
 		};
-		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_07"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
+		AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_07"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
 	
 
 	Createinvitems (self, itmi_gold, 140);

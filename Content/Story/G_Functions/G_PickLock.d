@@ -6,6 +6,8 @@
 
 func void G_PickLock (var int bSuccess, var int bBrokenOpen)
 {
+	
+	
 	if (bSuccess)
 	{
 		if (bBrokenOpen)
@@ -23,19 +25,23 @@ func void G_PickLock (var int bSuccess, var int bBrokenOpen)
 	{
 		if (bBrokenOpen)
 		{
+
 			Snd_Play3D 	(self, "PICKLOCK_BROKEN");
 			Print (PRINT_PICKLOCK_BROKEN);
 			
 			var int rnd; rnd = Hlp_Random(100);
 			if (rnd <= 25)
 			{
+				Snd_Play ("SVM_WILL_PICKBROKE"); // Złamał się
 				Npc_SendPassivePerc (hero, PERC_ASSESSQUIETSOUND, hero, hero);
 			};
 		}
 		else
 		{
+
 			Snd_Play3D 	(self, "PICKLOCK_FAILURE");
 			Print (PRINT_PICKLOCK_FAILURE);
+			
 		};
 	};
 };

@@ -1,5 +1,5 @@
-var int NuggetMob_01_NASZ; // TODO
-var int NuggetMob_02_NASZ; // TODO
+var int NuggetMob_01_NASZ; // inserted
+var int NuggetMob_02_NASZ; // inserted
 var int NuggetMob_03_NASZ; // inserted
 var int NuggetMob_04_NASZ; // inserted
 var int NuggetMob_05_NASZ; // inserted
@@ -16,7 +16,7 @@ var int NuggetMob_15_NASZ; // inserted
 var int NuggetMob_16_NASZ; // inserted
 var int NuggetMob_17_NASZ; // inserted
 var int NuggetMob_18_NASZ; // inserted
-var int NuggetMob_19_NASZ; // TODO
+var int NuggetMob_19_NASZ; // inserted
 var int NuggetMob_20_NASZ; // TODO
 
 var int NuggetMob_bonus_percents;

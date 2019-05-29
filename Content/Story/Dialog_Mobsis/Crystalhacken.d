@@ -24,10 +24,10 @@ var int CrystalMob_23_NASZ; // inserted
 var int CrystalMob_24_NASZ; // inserted
 var int CrystalMob_25_NASZ; // inserted
 var int CrystalMob_26_NASZ; // inserted
-var int CrystalMob_27_NASZ; // TODO
-var int CrystalMob_28_NASZ; // TODO
-var int CrystalMob_29_NASZ; // TODO
-var int CrystalMob_30_NASZ; // TODO
+var int CrystalMob_27_NASZ; // inserted
+var int CrystalMob_28_NASZ; // inserted
+var int CrystalMob_29_NASZ; // inserted
+var int CrystalMob_30_NASZ; // inserted
 var int CrystalMob_bonus_percents;
 
 FUNC INT B_CrystalMob_Bestimmung()

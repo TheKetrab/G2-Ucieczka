@@ -46,12 +46,12 @@ func void Npc_SwitchInventoryLoop_Kopalnia (var c_npc npc, var int category)
         {
                 NPC_RemoveInvItems (npc, Hlp_GetInstanceID (item), amount);
 				Mob_CreateItems ("CHEST_KOPALNIA", Hlp_GetInstanceID (item), amount);
-                Npc_SwitchInventoryLoop(npc, category);
+                Npc_SwitchInventoryLoop_Kopalnia(npc, category);
         }
         else if (category < INV_CAT_MAX-1)
         {
                 //print(ConcatStrings("Zmiana kategorii na: ", IntToString(category+1)));
-                Npc_SwitchInventoryLoop(npc, category+1);
+                Npc_SwitchInventoryLoop_Kopalnia(npc, category+1);
         };
 };
 
@@ -7946,7 +7946,8 @@ FUNC VOID UseTruciznaDaryla()
 	Log_SetTopicStatus (TOPIC_Ben_taktyki, LOG_SUCCESS);
 	B_GivePlayerXP(100);
 	
-	Npc_SwitchInventory_Kopalnia(self);
+	// przeniesione do funkcji z zaciemnieniem
+	// Npc_SwitchInventory_Kopalnia(self);
 	
 	UcieklesZKopalni = TRUE;
 	

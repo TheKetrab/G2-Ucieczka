@@ -1347,39 +1347,6 @@ FUNC VOID DIA_NASZ_115_Kurgan_goth_Info()
 };
 
 
-//*********************************************************************
-//	Info Catapult
-//*********************************************************************
-INSTANCE DIA_NASZ_115_Kurgan_catapult   (C_INFO)
-{
-	npc         = NASZ_115_Kurgan;
- 	nr          = 105;
- 	condition   = DIA_NASZ_115_Kurgan_catapult_Condition;
- 	information = DIA_NASZ_115_Kurgan_catapult_Info;
- 	permanent   = FALSE;
-	important   = TRUE;
-};
-
-FUNC INT DIA_NASZ_115_Kurgan_catapult_Condition()	
-{
-	if (KAPITEL == 2)
-//	&& TODO minely dwa dni od opcji mam kolo
-	{
-		return TRUE;
-	};
-};
-
-FUNC VOID DIA_NASZ_115_Kurgan_catapult_Info()
-{
-//TODO misja, dialog
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_catapult_15_00"); //
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_catapult_55_01"); //I dlaczego przychodzisz z tym do mnie? Coo?!
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_catapult_55_02"); //Zapomnij kole¿ko. Nic tu po tobie.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_catapult_55_03"); //I nie rozmawiaj nawet z moimi ch³opakami. Oni i tak nic ci nie powiedz¹.
-
-	B_LogEntry (TOPIC_Goth_kradziez, "Kurgan, szef areny, strasznie siê zdenerwowa³, gdy wspomnia³em mu o rozboju. To podejrzane, ale có¿ z tego, skoro nie mam nic na niego, a jego ch³opcy nic mi nie pisn¹.");
-
-};
 
 
 //*********************************************************************

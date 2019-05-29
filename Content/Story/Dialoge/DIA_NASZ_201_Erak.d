@@ -534,7 +534,7 @@ FUNC VOID DIA_NASZ_201_Erak_meatdone_Info()
 
 	if (ERAK_MIESO_SUROWE == TRUE)	{
 		AI_Output (self, other,"DIA_NASZ_201_Erak_meatdone_55_03"); //A teraz idê je upiec. Nie chcê na coœ zachorowaæ przez jedzenie surowego miêsa.
-		// TODO: Erak idzie upiec miêso
+		Npc_ExchangeRoutine(self,"SmazenieMiesa");
 	};
 };
 

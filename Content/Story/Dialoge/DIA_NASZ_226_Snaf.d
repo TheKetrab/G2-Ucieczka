@@ -331,10 +331,10 @@ FUNC VOID DIA_NASZ_226_Snaf_what_Info()
 };
 
 //*********************************************************************
-//	UgotujeszCosDlaMnie
+//	UCS - Ugotujesz Cos Dla Mnie
 //*********************************************************************
 func void Snaf_Shortage_of_ingredients() {
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_brakskladnikow_55_00"); //Brak ci sk³adników.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_UCS_brakskladnikow_55_00"); //Brak ci sk³adników.
 };
 
 func void SnafSay_Momment() {
@@ -354,18 +354,18 @@ func void Snaf_Make_Dish() {
 	AI_GoToNPC(NASZ_226_Snaf,hero);
 };
 
-var int UgotujeszCosDlaMnieFirstTime;
-INSTANCE DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie   (C_INFO)
+var int UCSFirstTime;
+INSTANCE DIA_NASZ_226_Snaf_UCS   (C_INFO)
 {
 	npc         = NASZ_226_Snaf;
  	nr          = 4;
- 	condition   = DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Condition;
- 	information = DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Info;
+ 	condition   = DIA_NASZ_226_Snaf_UCS_Condition;
+ 	information = DIA_NASZ_226_Snaf_UCS_Info;
  	permanent   = TRUE;
  	description = "Ugotujesz coœ dla mnie?";
 };
 
-FUNC INT DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Condition()
+FUNC INT DIA_NASZ_226_Snaf_UCS_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_226_Snaf_what))
 	{
@@ -373,43 +373,43 @@ FUNC INT DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Condition()
 	};
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Info()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_15_00"); //Ugotujesz coœ dla mnie?
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_55_01"); //Jeœli masz przepis i sk³adniki, to tak!
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_15_00"); //Ugotujesz coœ dla mnie?
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_UCS_55_01"); //Jeœli masz przepis i sk³adniki, to tak!
 	
-	if(UgotujeszCosDlaMnieFirstTime == FALSE) {
+	if(UCSFirstTime == FALSE) {
 		Log_CreateTopic (TOPIC_MysliwiTrader,LOG_NOTE);
 		B_LogEntry (TOPIC_MysliwiTrader,"Snaf ugotuje dla mnie specjalne potrawy, jeœli przyniosê mu przepis i sk³adniki.");
-		UgotujeszCosDlaMnieFirstTime = TRUE;
+		UCSFirstTime = TRUE;
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
-	Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, DIALOG_BACK, DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Back);
-	if(npc_hasitems (other, ItNa_Przepis_SerowyGulasz) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Serowy gulasz.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_SerowyGulasz); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaZGrzybowKopalnianych) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa z grzybów kopalnianych.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych); };
-	if(npc_hasitems (other, ItNa_Przepis_Orkowy2) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa z orkowego przepisu.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu); };
-	if(npc_hasitems (other, ItNa_Przepis_UdziecZDzikaPoLowiecku) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Udziec z dzika po ³owiecku.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaMleczna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa mleczna.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaGrzybowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa grzybowa.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaZDuzychGrzybow) >=1 && (npc_knowsinfo(other,DIA_NASZ_226_Snaf_done))) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa z du¿ych grzybów.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaJarzynowaZJagodami) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa jarzynowa z jagodami.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaSerowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa serowa.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa); };
-	if(npc_hasitems (other, ItNa_Przepis_PrzysmakMysliwych) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "'Przysmak myœliwych.'",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych); };
-	if(npc_hasitems (other, ItNa_Przepis_KompotOwocowy) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Kompot owocowy.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_KompotOwocowy); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaRybna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa rybna.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaRybna); };
-	if(npc_hasitems (other, ItNa_Przepis_GulaszMiesny) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Gulasz miêsny.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_GulaszMiesny); };
-	if(npc_hasitems (other, ItNa_Przepis_PotrawkaZeScierwojada) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Potrawka ze œcierwojada.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PotrawkaZeScierwojada); };
-	if(npc_hasitems (other, ItNa_Przepis_ZupaPiwna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie, "Zupa piwna.",DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaPiwna); };
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
+	Info_AddChoice (DIA_NASZ_226_Snaf_UCS, DIALOG_BACK, DIA_NASZ_226_Snaf_UCS_Back);
+	if(npc_hasitems (other, ItNa_Przepis_SerowyGulasz) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Serowy gulasz.",DIA_NASZ_226_Snaf_UCS_SerowyGulasz); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaZGrzybowKopalnianych) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa z grzybów kopalnianych.",DIA_NASZ_226_Snaf_UCS_ZupaZGrzybowKopalnianych); };
+	if(npc_hasitems (other, ItNa_Przepis_Orkowy2) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa z orkowego przepisu.",DIA_NASZ_226_Snaf_UCS_ZupaZOrkowegoPrzepisu); };
+	if(npc_hasitems (other, ItNa_Przepis_UdziecZDzikaPoLowiecku) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Udziec z dzika po ³owiecku.",DIA_NASZ_226_Snaf_UCS_UdziecZDzikaPoLowiecku); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaMleczna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa mleczna.",DIA_NASZ_226_Snaf_UCS_ZupaMleczna); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaGrzybowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa grzybowa.",DIA_NASZ_226_Snaf_UCS_ZupaGrzybowa); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaZDuzychGrzybow) >=1 && (npc_knowsinfo(other,DIA_NASZ_226_Snaf_done))) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa z du¿ych grzybów.",DIA_NASZ_226_Snaf_UCS_ZupaZDuzychGrzybow); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaJarzynowaZJagodami) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa jarzynowa z jagodami.",DIA_NASZ_226_Snaf_UCS_ZupaJarzynowaZJagodami); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaSerowa) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa serowa.",DIA_NASZ_226_Snaf_UCS_ZupaSerowa); };
+	if(npc_hasitems (other, ItNa_Przepis_PrzysmakMysliwych) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "'Przysmak myœliwych.'",DIA_NASZ_226_Snaf_UCS_PrzysmakMysliwych); };
+	if(npc_hasitems (other, ItNa_Przepis_KompotOwocowy) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Kompot owocowy.",DIA_NASZ_226_Snaf_UCS_KompotOwocowy); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaRybna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa rybna.",DIA_NASZ_226_Snaf_UCS_ZupaRybna); };
+	if(npc_hasitems (other, ItNa_Przepis_GulaszMiesny) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Gulasz miêsny.",DIA_NASZ_226_Snaf_UCS_GulaszMiesny); };
+	if(npc_hasitems (other, ItNa_Przepis_PotrawkaZeScierwojada) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Potrawka ze œcierwojada.",DIA_NASZ_226_Snaf_UCS_PotrawkaZeScierwojada); };
+	if(npc_hasitems (other, ItNa_Przepis_ZupaPiwna) >=1) { Info_AddChoice (DIA_NASZ_226_Snaf_UCS, "Zupa piwna.",DIA_NASZ_226_Snaf_UCS_ZupaPiwna); };
 
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_Back ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_Back ()
 {
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_SerowyGulasz ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_SerowyGulasz ()
 {
 	if(npc_hasitems(other, ItFo_Cheese) >= 4)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 2)
@@ -426,7 +426,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_SerowyGulasz ()
 		B_GiveInvItems (other, self, ItFo_Wine, 1);
 		
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_SerowyGulasz_55_00"); //Serowy gulasz.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_SerowyGulasz_55_00"); //Serowy gulasz.
 		SnafSay_Momment();
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -437,10 +437,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_SerowyGulasz ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaZGrzybowKopalnianych ()
 {
 	if(npc_hasitems(other, ItNa_KopalnianyGrzyb) >= 6)
 	&&(npc_hasitems(other, ItFo_Bread) >= 1)
@@ -452,7 +452,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych ()
 		B_GiveInvItems (other, self, ItPl_Health_Herb_03, 4);
 		B_GiveInvItems (other, self, ItAt_Sting, 1);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych_55_00"); //Zupa z grzybów kopalnianych.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaZGrzybowKopalnianych_55_00"); //Zupa z grzybów kopalnianych.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -464,11 +464,11 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZGrzybowKopalnianych ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
 var int SnafZupaZOrkowegoPrzepisuOneTime;
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaZOrkowegoPrzepisu ()
 {
 	if (npc_hasitems(other, ItFoMutton) >= 3)
 	&& (npc_hasitems(other, ItAt_Meatbugflesh) >= 5)
@@ -484,12 +484,12 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu ()
 		B_GiveInvItems (other, self, ItNa_Losos, 1);
 		B_GiveInvItems (other, self, ItNa_FriedMushroom_02, 1);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_00"); //Zupa z orkowego przepisu.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaZOrkowegoPrzepisu_55_00"); //Zupa z orkowego przepisu.
 
 		if (SnafZupaZOrkowegoPrzepisuOneTime == FALSE) {
 			B_UseFakeScroll();
-			AI_Output (self, other,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_01"); //Ale¿ to bêdzie obrzydliwe. Ju¿ czujê ten zapach wydobywaj¹cy siê z kot³a.
-			AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu_55_02"); //Nie chcesz widzieæ, jak to jem... To jak? Podejmiesz siê wyzwania przyrz¹dzenia takiej potrawy?
+			AI_Output (self, other,"DIA_NASZ_226_Snaf_UCS_ZupaZOrkowegoPrzepisu_55_01"); //Ale¿ to bêdzie obrzydliwe. Ju¿ czujê ten zapach wydobywaj¹cy siê z kot³a.
+			AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaZOrkowegoPrzepisu_55_02"); //Nie chcesz widzieæ, jak to jem... To jak? Podejmiesz siê wyzwania przyrz¹dzenia takiej potrawy?
 			SnafZupaZOrkowegoPrzepisuOneTime = TRUE;
 		};
 
@@ -504,11 +504,11 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZOrkowegoPrzepisu ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_UdziecZDzikaPoLowiecku ()
 {
 	if(npc_hasitems(other, ItNa_MiesoDzika) >= 6)
 	
@@ -516,7 +516,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku ()
 		B_GiveInvItems (other, self, ItNa_MiesoDzika, 6);
 	
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku_55_00"); //Udziec z dzika po ³owiecku.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_UdziecZDzikaPoLowiecku_55_00"); //Udziec z dzika po ³owiecku.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -528,10 +528,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_UdziecZDzikaPoLowiecku ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaMleczna ()
 {
 	if(npc_hasitems(other, Itfo_milk) >= 1)
 	&&(npc_hasitems(other, ItPl_Forestberry) >= 2)
@@ -545,7 +545,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna ()
 	//	B_GiveInvItems (other, self, ItPl_Health_Herb_03, 1);
 	//	B_GiveInvItems (other, self, ItAt_Sting, 1);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna_55_00"); //Zupa mleczna.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaMleczna_55_00"); //Zupa mleczna.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -557,10 +557,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaMleczna ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaGrzybowa ()
 {
 	if(npc_hasitems(other, ItPl_Mushroom_01) >= 5)
 	&&(npc_hasitems(other, ItPl_Blueplant) >= 2)
@@ -573,7 +573,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa ()
 		B_GiveInvItems (other, self, ItFo_Bread, 1);
 		
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa_55_00"); //Zupa grzybowa.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaGrzybowa_55_00"); //Zupa grzybowa.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -585,10 +585,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaGrzybowa ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaZDuzychGrzybow ()
 {
 	if(npc_hasitems(other, Itfo_wine) >= 1)
 	&&(npc_hasitems(other, ItFo_water) >= 2)
@@ -602,7 +602,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow ()
 		B_GiveInvItems (other, self, ItPl_Mushroom_02, 3);
 		B_GiveInvItems (other, self, ItAt_Meatbugflesh, 7);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow_55_00"); //Zupa z du¿ych grzybów.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaZDuzychGrzybow_55_00"); //Zupa z du¿ych grzybów.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -614,10 +614,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaZDuzychGrzybow ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaJarzynowaZJagodami ()
 {
 	if(npc_hasitems(other, ItPl_Health_Herb_02) >= 2)
 	&&(npc_hasitems(other, ItPl_Mana_Herb_01) >= 2)
@@ -631,7 +631,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami ()
 		B_GiveInvItems (other, self, ItPl_Forestberry, 2);
 		B_GiveInvItems (other, self, ItPl_Planeberry, 2);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami_55_00"); //Zupa jarzynowa z jagodami.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaJarzynowaZJagodami_55_00"); //Zupa jarzynowa z jagodami.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -643,10 +643,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaJarzynowaZJagodami ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaSerowa ()
 {
 	if(npc_hasitems(other, ItFo_Milk) >= 1)
 	&&(npc_hasitems(other, ItFo_Bread) >= 1)
@@ -658,7 +658,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa ()
 		B_GiveInvItems (other, self, ItFo_Beer, 1);
 		B_GiveInvItems (other, self, ItFo_cheese, 3);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa_55_00"); //Zupa serowa.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaSerowa_55_00"); //Zupa serowa.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -670,10 +670,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaSerowa ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_PrzysmakMysliwych ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 3)
 	&&(npc_hasitems(other, ItFo_Wine) >= 1)
@@ -685,7 +685,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych ()
 		B_GiveInvItems (other, self, ItFo_Apple, 3);
 		B_GiveInvItems (other, self, ItFo_Addon_Pfeffer_01, 1);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych_55_00"); //Przysmak myœliwych.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_PrzysmakMysliwych_55_00"); //Przysmak myœliwych.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -697,10 +697,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PrzysmakMysliwych ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_KompotOwocowy ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_KompotOwocowy ()
 {
 	if(npc_hasitems(other, ItFo_Apple) >= 2)
 //	&&(npc_hasitems(other, ItFo_Water) >= 2)
@@ -711,7 +711,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_KompotOwocowy ()
 		B_GiveInvItems (other, self, ItPl_Forestberry, 3);
 		B_GiveInvItems (other, self, ItPl_Planeberry, 3);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_KompotOwocowy_55_00"); //Kompot owocowy.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_KompotOwocowy_55_00"); //Kompot owocowy.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -723,10 +723,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_KompotOwocowy ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaRybna ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaRybna ()
 {
 	if(npc_hasitems(other, ItFo_Fish) >= 2)
 	&&(npc_hasitems(other, ItFo_Bread) >= 1)
@@ -736,7 +736,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaRybna ()
 		B_GiveInvItems (other, self, ItFo_Bread, 1);
 		B_GiveInvItems (other, self, ItFo_Wine, 1);
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaRybna_55_00"); //Zupa rybna.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaRybna_55_00"); //Zupa rybna.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -748,10 +748,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaRybna ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_GulaszMiesny ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_GulaszMiesny ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 5)
 	&&(npc_hasitems(other, ItPl_Mushroom_01) >= 2)
@@ -761,7 +761,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_GulaszMiesny ()
 		B_GiveInvItems (other, self, ItPl_Mushroom_01, 2);
 
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_GulaszMiesny_55_00"); //Gulasz miêsny.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_GulaszMiesny_55_00"); //Gulasz miêsny.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -773,10 +773,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_GulaszMiesny ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PotrawkaZeScierwojada ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_PotrawkaZeScierwojada ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 4)
 	&&(npc_hasitems(other, ItFo_Beer) >= 2)
@@ -786,7 +786,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PotrawkaZeScierwojada ()
 		B_GiveInvItems (other, self, ItFo_Beer, 1);
 
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PotrawkaZeScierwojada55_00"); //Potrawka ze œcierwojada.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_PotrawkaZeScierwojada55_00"); //Potrawka ze œcierwojada.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -798,10 +798,10 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_PotrawkaZeScierwojada ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
-FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaPiwna ()
+FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaPiwna ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 3)
 	&&(npc_hasitems(other, ItFo_Beer) >= 4)
@@ -811,7 +811,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaPiwna ()
 		B_GiveInvItems (other, self, ItFo_Beer, 4);
 
 		
-		AI_Output (other, self,"DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaPiwna_55_00"); //Zupa piwna.
+		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaPiwna_55_00"); //Zupa piwna.
 		SnafSay_Momment();	
 		Snaf_Make_Dish();
 		SnafSay_Keep();
@@ -823,7 +823,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie_ZupaPiwna ()
 		Snaf_Shortage_of_ingredients();
 	};
 	
-	Info_ClearChoices (DIA_NASZ_226_Snaf_UgotujeszCosDlaMnie);
+	Info_ClearChoices (DIA_NASZ_226_Snaf_UCS);
 };
 
 

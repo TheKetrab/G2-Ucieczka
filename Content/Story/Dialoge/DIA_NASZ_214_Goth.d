@@ -194,7 +194,7 @@ FUNC INT DIA_NASZ_214_Goth_lowcy_Condition()
 FUNC VOID DIA_NASZ_214_Goth_lowcy_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_lowcy_15_00"); //Czemu tak nie znosisz ³owców orków?
-	AI_Output (self, other,"DIA_NASZ_214_Goth_lowcy_55_01"); //Nie tak dawno temu skrzadziono nam wszystkie trofea! S¹ zwyk³ymi rabusiami.
+	AI_Output (self, other,"DIA_NASZ_214_Goth_lowcy_55_01"); //Nie tak dawno temu skradziono nam wszystkie trofea! S¹ zwyk³ymi rabusiami.
 	AI_Output (other,self ,"DIA_NASZ_214_Goth_lowcy_15_02"); //Ale¿ to dawni rycerze. Jakim cudem mogli dokonaæ rabunku?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_lowcy_55_03"); //Prócz rycerzy, do ³owców orków nale¿¹ te¿ bandyci, którzy zamieszkiwali Górnicz¹ Dolinê. Ta grupa ludzi to zbieranina têpych osi³ków.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_lowcy_55_04"); //To w³aœnie oni s¹ odpowiedzialni za kradzie¿ naszych zdobyczy.
@@ -327,7 +327,7 @@ INSTANCE DIA_NASZ_214_Goth_teach   (C_INFO)
  	nr          = 7;
  	condition   = DIA_NASZ_214_Goth_teach_Condition;
  	information = DIA_NASZ_214_Goth_teach_Info;
- 	permanent   = TRUE;
+ 	permanent   = FALSE;
  	description = "Kto mo¿e mnie tu czegoœ nauczyæ?";
 };
 
@@ -345,7 +345,7 @@ FUNC VOID DIA_NASZ_214_Goth_teach_Info()
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_04"); //Zazwyczaj wszyscy s¹ zajêci, ale ostatnio chyba Kivo nic nie robi. Mo¿e stworzysz mu w koñcu okazjê do okazania siê bardziej po¿ytecznym?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_05"); //Zawitaj te¿ u Ratforda.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_06"); //Jeœli chodzi o patroszenie zwierzyny to Chris jest niezast¹piony.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_07"); //Ewentualnie Vachut, ale on zadomowi³ siê w pobli¿u ³owców orków. Ten to dopiero zna siê na rzeczy!
+	AI_Output (self, other,"DIA_NASZ_214_Goth_teach_55_07"); //Ewentualnie Vachut, ale on zadomowi³ siê w pobli¿u ³owców orków. Ten to dopiero siê zna na rzeczy!
 
 	GothSaidAboutTeacher = TRUE;
 };

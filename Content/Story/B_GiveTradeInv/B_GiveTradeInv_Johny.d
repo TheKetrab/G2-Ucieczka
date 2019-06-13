@@ -42,7 +42,6 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		// ------ Ringe / Amulette ------
 		CreateInvItems (slf, ItBE_Addon_Leather_01, 1); 
 		CreateInvItems (slf, ItNa_PasStalowejReki		, 1); 
-		CreateInvItems (slf, ItAm_Prot_Edge_01		, 1); 
 		CreateInvItems (slf, ItNa_HuntAmulet		, 1); 
 		
 		
@@ -93,6 +92,7 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItRw_SharpBolt, 50); 
 
 		CreateInvItems (slf,ItNa_StalowaTarczaLowcy, 1);
+		CreateInvItems (slf, ItAm_Prot_Edge_01		, 1); 
 		
 		CreateInvItems (slf, ItMi_Gold, 100); 
 		CreateInvItems (slf, ItMiSwordraw, 5); 

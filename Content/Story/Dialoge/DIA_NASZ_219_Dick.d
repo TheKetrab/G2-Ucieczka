@@ -104,7 +104,7 @@ FUNC VOID DIA_NASZ_219_Dick_why_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_219_Dick_why_15_00"); //Co ciê gryzie?
 	AI_Output (self, other,"DIA_NASZ_219_Dick_why_55_01"); //W nocy ktoœ zabra³ mi moje ziele i nie mam czym siê zadowalaæ. Bez tego czujê siê jak œcierwojad na wielkim oceanie.
-	AI_Output (self, other,"DIA_NASZ_219_Dick_why_55_02"); //Nie wiem, co mam robiæ, nie wiem, jak dalej ¿yæ. Najgorsze jest to, ¿e kogo bym nie poprosi³ o pomoc, œmieje siê i mówi, ¿e kilka dni bez palenia dobrze mi zrobi.
+	AI_Output (self, other,"DIA_NASZ_219_Dick_why_55_02"); //Nie wiem, co robiæ, nie wiem, jak dalej ¿yæ. Najgorsze jest to, ¿e kogo bym nie poprosi³ o pomoc, œmieje siê i mówi, ¿e kilka dni bez palenia dobrze mi zrobi.
 };
 
 //*********************************************************************
@@ -160,7 +160,7 @@ FUNC VOID DIA_NASZ_219_Dick_ziele_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_219_Dick_ziele_15_00"); //Co byœ powiedzia³ na to, ¿ebym przyniós³ ci skradzione ziele?
 	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_55_01"); //Ty? Pierwszy cz³owiek, który mówi do rzeczy! Œwietnie.
-	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_55_02"); //Powiedzmy, ¿e jeœli przyniesiesz mi moje ziele, to dostaniesz sto sztuk z³ota. Nadal zainteresowany poszukiwaniami?
+	AI_Output (self, other,"DIA_NASZ_219_Dick_ziele_55_02"); //Powiedzmy, ¿e je¿eli przyniesiesz mi moje ziele, to dostaniesz sto sztuk z³ota. Nadal zainteresowany poszukiwaniami?
 	AI_Output (other, self,"DIA_NASZ_219_Dick_ziele_15_03"); //Do³ó¿ do tego jeszcze jedn¹ ³odygê bagiennego ziela i zamieniam siê w detektywa!
 
 	Wld_InsertItem (ItNa_PaczkaZiela,"NASZ_FP_DICK_PACZKA");
@@ -284,8 +284,7 @@ FUNC INT DIA_NASZ_219_Dick_DobarKupowanie_Condition()
 
 FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 {
-	// TODO czy to dziala dobrze? test
-	AI_Output (other, self,"DIA_NASZ_219_Dick_DobarKupowanie_15_00"); //Sprzedaj mi ziele.
+	AI_Output (other, self,"DIA_NASZ_219_Dick_DobarKupowanie_15_00"); //Sprzedaj mi Mrok Pó³nocy.
 	
 	if (npc_hasitems(other,ItMi_Gold) < 125) {
 		DobarSayNoMoney();

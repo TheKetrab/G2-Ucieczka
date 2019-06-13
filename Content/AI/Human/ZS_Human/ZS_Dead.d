@@ -442,13 +442,21 @@ func void ZS_Dead ()
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_550_Straznik))
 	{
 		DoForSphere(ZabijWojownikow);
-		AI_Output (hero ,hero,"DIA_Will_OrcCityEnd_15_00"); //Hmmm... Monastir i inni powinni ruszyæ za mn¹. Tak siê umawialiœmy.
-		AI_Output (hero ,hero,"DIA_Will_OrcCityEnd_15_01"); //A wiêc teraz muszê wypróbowaæ portal...
+		HeroSay_OrcCity_Portal();
 		
+		// otiweraja sie kraty
+		Wld_SendTrigger ("MOVER_ORCCITY_30");
+		Wld_SendTrigger ("MOVER_ORCCITY_31");
+		Wld_SendTrigger ("MOVER_ORCCITY_32");
+		Wld_SendTrigger ("MOVER_ORCCITY_33");
+		Wld_SendTrigger ("MOVER_ORCCITY_34");
+		Wld_SendTrigger ("MOVER_ORCCITY_35");
+	
 		B_GivePlayerXP (1000);
 		Log_SetTopicStatus (TOPIC_OrcCity_In, LOG_SUCCESS);
 		B_LogEntry (TOPIC_OrcCity_In, "Droga do portalu jest bezpieczna. Monastir i inni powinni uciec z Górniczej Doliny, jeœli tylko rozsadz¹ g³az, który zablokowa³ przejœcie. Tutaj swoj¹ misjê wype³ni³em. Przede mn¹ nowe krainy.");
 
+		HeroCanFinish = TRUE;
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_212_Drax))
@@ -577,9 +585,19 @@ func void ZS_Dead ()
 
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_028_Kazmin))
 	{
+		Log_SetTopicStatus (TOPIC_Zlo, LOG_SUCCESS);
+	
 		Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Erak_plagaciemnosci, "Uœmierci³em demona. Teraz nieumarli nie powinni ju¿ straszyæ w Górniczej Dolinie.");
 		MissionPlagaCiemnosciFinished = TRUE;
+	};
+	
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Skeleton_Lord))
+	&& (FinalBattleStarted == TRUE)
+	{
+		// zmienna sie zwieksza o 2, gdy on przyzywa,
+		// a zmniejsza o 1, gdy ty zabijasz
+		WojownicyCieniaPrzyzwani -= 1;
 	};
 	
 	

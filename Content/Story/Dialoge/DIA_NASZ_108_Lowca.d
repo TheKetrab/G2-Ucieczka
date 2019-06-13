@@ -187,6 +187,7 @@ FUNC VOID DIA_NASZ_108_Lowca_PoWalce_Info()
 
 };
 
+var int Lowca108WalkaOSikanie;
 ///////////////////////////////////////////////////////////////////////
 //	Info Catch
 ///////////////////////////////////////////////////////////////////////
@@ -217,7 +218,7 @@ func void DIA_NASZ_108_Lowca_catch_Info ()
 	AI_Output		(other, self, "DIA_NASZ_108_Lowca_catch_55_00"); //Nie wstyd ci tak sikaæ przy wszystkich?
 	AI_Output		(self, other, "DIA_NASZ_108_Lowca_catch_03_01"); //Nie wiem jak ty, ale ja MAM siê czym chwaliæ.
 	AI_Output		(other, self, "DIA_NASZ_108_Lowca_catch_55_02"); //Przestañ, w tej chwili! Silas nie ¿yczy sobie takich odra¿aj¹cych praktyk pod swoj¹ karczm¹.
-	AI_Output		(self, other, "DIA_NASZ_108_Lowca_catch_03_03"); //Daj mi chocia¿ jeden powód, dla którego mia³ym przestaæ.
+	AI_Output		(self, other, "DIA_NASZ_108_Lowca_catch_03_03"); //Daj mi chocia¿ jeden powód, dla którego mia³bym przestaæ.
 
 	//Npc_ExchangeRoutine (self, "Start");
 	self.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
@@ -237,6 +238,8 @@ FUNC VOID DIA_NASZ_108_Lowca_catch_fight()
 		AI_ReadyMeleeWeapon		(other);
 	AI_Output (self, other,"DIA_NASZ_108_Lowca_catch_fight_55_01"); //Tylko spróbuj!
 
+	Lowca108WalkaOSikanie = TRUE;
+	
 	Info_ClearChoices (DIA_NASZ_108_Lowca_catch);
 	AI_StopProcessInfos (self);
 	B_Attack (self, other, AR_NONE, 1);
@@ -255,7 +258,7 @@ FUNC VOID DIA_NASZ_108_Lowca_catch_gold()
 	
 	AI_Output (other,self ,"DIA_NASZ_108_Lowca_catch_gold_15_00"); //Dam ci z³oto.
 	B_giveinvitems 	(other, self, ItMi_Gold, 50);	
-	AI_Output (self, other,"DIA_NASZ_108_Lowca_catch_gold_55_01"); //Za tak¹ sumkê mogê chyba mogê z tym skoñczyæ na jakiœ czas...
+	AI_Output (self, other,"DIA_NASZ_108_Lowca_catch_gold_55_01"); //Za tak¹ sumkê mogê chyba z tym skoñczyæ na jakiœ czas...
 
 	NPC_RemoveInvItems	(self, ItMi_Gold, 50);
 	LOWCA_SIKA_END = TRUE;
@@ -285,6 +288,7 @@ func int DIA_NASZ_108_Lowca_walka_Condition ()
 		&& (!LOWCA_SIKA_WALKA_ONETIME)
 		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST))
 		&& (npc_knowsinfo(other,DIA_NASZ_108_Lowca_catch))
+		&& (Lowca108WalkaOSikanie == TRUE)
 
 	{
 		return TRUE;

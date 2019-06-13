@@ -109,7 +109,7 @@ FUNC INT DIA_NASZ_103_Johny_goth_Condition()
 FUNC VOID DIA_NASZ_103_Johny_goth_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_103_Johny_goth_15_00"); //Ponoæ któryœ z ³owców orków okrad³ myœliwych.
-	AI_Output (self, other,"DIA_NASZ_103_Johny_goth_55_01"); //Doprawdy? To by wyjaœnia³o, sk¹d mam tê dziwn¹ paczkê z mieczami...
+	AI_Output (self, other,"DIA_NASZ_103_Johny_goth_55_01"); //Doprawdy? To by wyjaœnia³o, sk¹d mam t¹ dziwn¹ paczkê z mieczami...
 	AI_Output (self, other,"DIA_NASZ_103_Johny_goth_55_02"); //Ktoœ podrzuci³ mi j¹ kilka dni temu.
 
 	B_LogEntry (TOPIC_Goth_kradziez, "Handlarz Johny jest w posiadaniu paczki mieczy jednorêcznych.");
@@ -157,7 +157,7 @@ FUNC VOID DIA_NASZ_103_Johny_paczka_znika()
 	AI_Output (other,self ,"DIA_NASZ_103_Johny_paczka_znika_15_00"); //Myœlê, ¿e nie chcia³byœ, by z twoich zapasów coœ zniknê³o.
 	AI_Output (self, other,"DIA_NASZ_103_Johny_paczka_znika_55_01"); //Czy ty mi grozisz? Wiesz, ¿e Keroloth nie cierpi z³odziejów.
 	AI_Output (other, self,"DIA_NASZ_103_Johny_paczka_znika_55_02"); //W takim razie zastanów siê: Co myœli o zwracaniu ukradzionych rzeczy? Chyba nie chcesz, ¿eby dowiedzia³ siê, ¿e œwiadomie zatrzymujesz rzeczy nienale¿¹ce do ciebie?
-	AI_Output (self, other,"DIA_NASZ_103_Johny_paczka_znika_55_03"); //Raczej nie... Niech ci bêdzie, odsprzedam paczkê za trzydzieœci sztuk z³ota. Ale móg³byœ postawiæ mi za to chocia¿ dobre piwo!
+	AI_Output (self, other,"DIA_NASZ_103_Johny_paczka_znika_55_03"); //Raczej nie... Niech ci bêdzie, odsprzedam paczkê za trzydzieœci sztuk z³ota. Ale móg³byœ postawiæ mi chocia¿ za to dobre piwo!
 	
 	Info_ClearChoices (DIA_NASZ_103_Johny_paczka);
 

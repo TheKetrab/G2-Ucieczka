@@ -196,7 +196,7 @@ FUNC VOID DIA_NASZ_227_Vachut_can_Info()
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_can_55_02"); //Ale bêdzie ciê to doœæ sporo kosztowa³o...
 
 	Log_CreateTopic (TOPIC_MysliwiTeacher,LOG_NOTE);
-	B_LogEntry (TOPIC_MysliwiTeacher,"Vachut na Varancie pozna³ sztukê regeneracji. Mo¿e przekazaæ mi wiedzê na ten temat.");
+	B_LogEntry (TOPIC_MysliwiTeacher,"Vachut w Varancie pozna³ sztukê regeneracji. Mo¿e przekazaæ mi wiedzê na ten temat.");
 };
 
 var int VACHUT_PROWADZENIE;
@@ -341,8 +341,9 @@ FUNC VOID DIA_NASZ_227_Vachut_QuestKapThree_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_15_00"); //W koñcu widzê kogoœ, kto mo¿e mi pomóc!
 	AI_Output (other, self,"DIA_NASZ_227_Vachut_QuestKapThree_55_01"); //Do czego zmierzasz?
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_02"); //Niedaleko st¹d widzia³em dziwne topielce. Wydawa³y trochê siê wiêksze i bardziej agresywne... Widzia³em, jak urwa³y g³owê jednemu wilkowi. Niby zawodowo ubijam topielce, ale wola³bym przy nich mieæ kogoœ przy sobie.
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_03"); //Wybierzesz siê ze mn¹?
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_02"); //Niedaleko st¹d widzia³em dziwne topielce. Wydawa³y siê trochê wiêksze i bardziej agresywne... Widzia³em, jak urywa³y g³owê jednemu wilkowi.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_03"); //Niby zawodowo ubijam topielce, ale wola³bym przy nich mieæ kogoœ przy sobie.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_QuestKapThree_55_04"); //Wybierzesz siê ze mn¹?
 
 	Log_CreateTopic (TOPIC_Vachut_topielce, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Vachut_topielce, LOG_RUNNING);
@@ -515,10 +516,7 @@ FUNC VOID DIA_NASZ_227_Vachut_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };

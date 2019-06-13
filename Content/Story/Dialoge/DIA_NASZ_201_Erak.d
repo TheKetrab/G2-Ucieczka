@@ -181,7 +181,7 @@ FUNC VOID DIA_NASZ_201_Erak_what_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_02"); //I niby wszystko w porz¹dku...
 	AI_Output (other,self ,"DIA_NASZ_201_Erak_what_15_03"); //Ale?
 	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_04"); //Miêso ju¿ mamy. Pojawia siê jednak kwestia dostarczenia go do obozu.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_05"); //W okolicy panoszy siê jeszcze sporo bestii, z których mo¿emy pozyskaæ wiele skór.	
+	AI_Output (self, other,"DIA_NASZ_201_Erak_what_55_05"); //W okolicy panoszy siê sporo bestii, z których mo¿emy pozyskaæ wiele skór.
 };
 
 var int ERAK_GOOD_LEVEL;
@@ -215,7 +215,7 @@ FUNC VOID DIA_NASZ_201_Erak_mieso_Info()
 
 		AI_Output (self, other,"DIA_NASZ_201_Erak_mieso_55_01"); //No dobra, ale jak¹ mam gwarancjê, ¿e akurat nie zjesz tego miêsa?
 		AI_Output (other,self ,"DIA_NASZ_201_Erak_mieso_15_02"); //Eee... ee...
-		AI_Output (self, other,"DIA_NASZ_201_Erak_mieso_55_03"); //Tak myœla³em. Jesli chcesz jednak pomóc, musisz znaleŸæ kogoœ, kto niós³by miêso. Wówczas ochrania³byœ go i moglibyœcie iœæ razem.
+		AI_Output (self, other,"DIA_NASZ_201_Erak_mieso_55_03"); //Tak myœla³em. Jeœli chcesz jednak pomóc, musisz znaleŸæ kogoœ, kto niós³by miêso. Wówczas ochrania³byœ go i moglibyœcie iœæ razem.
 
 		ERAK_GOOD_LEVEL = TRUE;
 		Log_CreateTopic (TOPIC_Erak_mieso, LOG_MISSION);
@@ -239,7 +239,7 @@ INSTANCE DIA_NASZ_201_Erak_vick   (C_INFO)
  	condition   = DIA_NASZ_201_Erak_vick_Condition;
  	information = DIA_NASZ_201_Erak_vick_Info;
  	permanent   = FALSE;
- 	description = "Vick zgodzi³ siê nieœæ miêso.";
+ 	description = "Vick zgodzi³ siê zanieœæ miêso.";
 };
 
 FUNC INT DIA_NASZ_201_Erak_vick_Condition()	
@@ -252,7 +252,7 @@ FUNC INT DIA_NASZ_201_Erak_vick_Condition()
 
 FUNC VOID DIA_NASZ_201_Erak_vick_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_201_Erak_vick_15_00"); //Vick zgodzi³ siê nieœæ miêso.
+	AI_Output (other,self ,"DIA_NASZ_201_Erak_vick_15_00"); //Vick zgodzi³ siê zanieœæ miêso.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_vick_55_01"); //Wspaniale, zatem wiem ju¿ kogo wys³aæ. Teraz pytanie, czy jesteœ doœæ odwa¿ny, nie stchórzysz i nie uciekniesz, gdy tylko pojawi¹ siê g³odne wilki albo, co gorsza, orkowie.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_vick_55_02"); //Zanim pójdziesz razem z Vickiem, udasz siê ze mn¹ na zwiad. Pod nami stacjonuje grupka orków. Poobserwujemy ich razem.
 	
@@ -798,10 +798,7 @@ FUNC VOID DIA_NASZ_201_Erak_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };
@@ -831,7 +828,7 @@ FUNC INT DIA_NASZ_201_Erak_Kapitel4_Condition()
 FUNC VOID DIA_NASZ_201_Erak_Kapitel4_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_00"); //Widzia³em nieumar³ych, którzy zaatakowali wasz obóz...
-	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_01"); //Najpierw bandyci, potem orkowie, a teraz te nieumar³e sukinsyny, które ka¿dego dnia kilkukrotnie atakuj¹ nasz w³asny obóz. Chyba nie mo¿e byæ ju¿ gorzej.
+	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_01"); //Najpierw bandyci, potem orkowie, a teraz te nieumar³e sukinsyny, które ka¿dego dnia kilkakrotnie atakuj¹ nasz w³asny obóz. Chyba nie mo¿e byæ ju¿ gorzej.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_02"); //Dobrze, ¿e do nas zajrza³eœ. W przeciwnym wypadku mielibyœmy jeszcze wiêcej rannych ni¿ ta grupka, która teraz u nas przebywa. Gdybym wiedzia³ co bêdzie siê dzia³o, nigdy bym ich tutaj nie zabra³.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_03"); //To ju¿ nie jest bezpieczne miejsce, zw³aszcza od chwili kiedy nêkaj¹ nas te truposze. Nie to jest jednak najgorsze. Ratford ostatniej nocy widzia³ w okolicy dwa cholerne demony!
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_04"); //Demony! Tak jakby orków nam by³o za ma³o. Od tamtej pory przed bram¹ stoi kilku ludzi, jak sam mog³eœ ju¿ zauwa¿yæ.

@@ -192,9 +192,9 @@ FUNC VOID DIA_NASZ_308_Frut_zadanie_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_00"); //Mogê siê na coœ przydaæ?
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_01"); //Potrzebujê tu nowego niewolnika. Ci ju¿ s³abn¹, a przyda siê trochê œwie¿ych si³.
-	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_02"); //Udasz siê do naszej kopalni i powiesz Gobby'emu, ¿e ma daæ ci wydaæ jakiegoœ cz³owieka.
+	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_02"); //Udasz siê do naszej kopalni i powiesz Gobby'emu, ¿e ma ci wydaæ jakiegoœ cz³owieka.
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_03"); //Gdzie jest ta kopalnia?
-	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_04"); //P³yñ ca³y czas w górê rzeki od zamku. Nie wychodŸ z wody. I przestañ ju¿ zadawaæ te cholerne pytania!
+	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_04"); //P³yñ ca³y czas w górê rzeki od zamku. Nie wychodŸ z wody. I przestañ ju¿ w koñcu zadawaæ te cholerne pytania!
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_05"); //Ale przecie¿ tam jest wodospad. Jak mam p³yn¹æ w górê wodospadu?
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_06"); //Wymyœlisz coœ... Co za baran...
 
@@ -264,7 +264,7 @@ FUNC VOID DIA_NASZ_308_Frut_rabon_Info()
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_00"); //Rabon prowadzi³ nielegalne interesy z paladynami.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_01"); //Prowadzi³?
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_02"); //Tak, ju¿ go skasowa³em. Cwaniak mia³ z nimi jak¹œ dodatkow¹ umowê. Gdy znalaz³em w jego rzeczach spor¹ iloœæ rudy, powiedzia³ mi o tym i chcia³, ¿ebym zosta³ jego wspólnikiem.
-	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_03"); //Zgodzi³em siê, aby lepiej zbadaæ sprawê i zdemaskowaæ tê kanaliê. Rabon myœla³, ¿e mnie wykiwie i zaczai³ siê na mnie razem ze swoimi kolegami. Na szczêœcie uda³o mi siê zadaæ mu œmiertelny cios i wyjœæ z tego ca³o.
+	AI_Output (other,self ,"DIA_NASZ_308_Frut_rabon_15_03"); //Zgodzi³em siê, aby lepiej zbadaæ sprawê i zdemaskowaæ tê kanaliê. Rabon myœla³, ¿e mnie wykiwa i zaczai³ siê na mnie razem ze swoimi kolegami. Na szczêœcie uda³o mi siê zadaæ mu œmiertelny cios i wyjœæ z tego ca³o.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_04"); //To by wyjaœnia³o, dlaczego ostatnio tej rudy by³o mniej, ni¿ byæ powinno. Powiedzmy, ¿e ci wierzê.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_rabon_55_05"); //Jeœli jednak kolejne dostawy wcale nie bêd¹ wiêksze, to uznam, ¿e zabi³eœ Rabona ot tak, a ca³a twoja opowieœæ to nic nie warta bajka.
 
@@ -375,7 +375,7 @@ FUNC VOID DIA_NASZ_308_Frut_Monk_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_Monk_15_00"); //Pozdrowienia od Monka.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_Monk_55_01"); //¯artujesz sobie chyba, nowy.
-	AI_Output (other, self,"DIA_NASZ_308_Frut_Monk_55_02"); //Prócz pozdrowieñ mia³em przekazaæ ci te¿ porz¹dnego kopa w dupê.
+	AI_Output (other, self,"DIA_NASZ_308_Frut_Monk_55_02"); //Prócz pozdrowieñ mia³em przekazaæ ci te¿ potê¿nego kopa w dupê.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_Monk_55_03"); //O! To ju¿ mi siê podoba.
 
 	AI_StopProcessInfos (self);

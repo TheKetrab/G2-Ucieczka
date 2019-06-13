@@ -257,7 +257,8 @@ FUNC VOID DIA_NASZ_008_Miecz_zadanie_Info()
 	B_LogEntry (TOPIC_Miecz_ork, "Pirat ma problemy ze snem. Twierdzi, ¿e ktoœ podkrada siê w nocy do jego obozu. Poprosi³ mnie, abym stan¹³ na czatach i rozejrza³ siê w pobli¿u, gdy on bêdzie spa³. Œpi od dziewi¹tej do ósmej. Chyba nie wyœpiê siê tej nocy... ");
 
 
-		Wld_InsertNpc	(NASZ_Kurg_Kan,"NASZ_MIECZ_6");
+	// wstawia go w tot, jesli jest sie daleko i jest noc, to rutyna go przeteleportuje
+	Wld_InsertNpc	(NASZ_Kurg_Kan,"TOT");
 	
 
 };
@@ -277,7 +278,7 @@ INSTANCE DIA_NASZ_008_Miecz_koniec   (C_INFO)
 
 FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 {
-	if(npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie) && (Npc_IsDead(NASZ_Kurg_Kan) || KurgKanTanczy))
+	if (npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie) && (Npc_IsDead(NASZ_Kurg_Kan) || KurgKanTanczy))
 	{
 		return TRUE;
 	};
@@ -285,29 +286,37 @@ FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 
 FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 {		
-		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem. W nocy siedzia³ nad tob¹ ork i ciê obserwowa³. Dziwny ha³as, o którym mówi³eœ, to by³o ostrzenie jego broni.
-		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_01"); //Jasna cholera! Ork?! Dobrze, ¿e go zabi³eœ. Nie wiesz mo¿e, czemu tyle dni nade mn¹ siedzia³?
-		
-		if(KurgKanTanczy)
-		{
-				AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_02"); //Tak naprawdê, to go nie zabi³em. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o i chcia³ siê z tob¹ zaprzyjaŸniæ. Uzna³em, ¿e mu pomogê i od teraz ork mieszka w obozie ³owców.
-				AI_Output (self,other,"DIA_NASZ_008_Miecz_koniec_15_03"); //Co? Ha, ha, ha! Zaraz, ty tak na powa¿nie? 
-		}
-		else if(SaveKurgKan == -1)
-		{
-			AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_04"); // Tak naprawdê, nie chcia³ ci zrobiæ krzywdy. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. I dlatego te¿ go zabi³em. Trudno w tych czasach ufaæ orkowi.
-		};
-		
-		
-		if(SaveKurgKan != 0)
-		{
-			AI_Output (self,other,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
-		}
-		else
-		{
-			AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_06"); //Orkom nie powinno siê ufaæ. Dobrze zrobi³eœ. Przyjmij t¹ nagrodê ode mnie.  
-		};
-		AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_07"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
+	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_00"); //Rozwi¹za³em twój problem.
+	AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_01"); //W nocy siedzia³ nad tob¹ ork i ciê obserwowa³. Dziwny ha³as, o którym mówi³eœ, to by³o ostrzenie jego broni.
+	AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_02"); //Jasna cholera! Ork?! Dobrze, ¿e go zabi³eœ. Nie wiesz mo¿e, czemu tyle dni nade mn¹ siedzia³?
+	
+	// ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
+	// proba pomocy kurg kanowi
+	if (KurgKanTanczy)
+	{
+		AI_Output (other, self,"DIA_NASZ_008_Miecz_koniec_15_03"); //Tak naprawdê, to go nie zabi³em. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o i chcia³ siê z tob¹ zaprzyjaŸniæ. Uzna³em, ¿e mu pomogê i od teraz ork mieszka w obozie ³owców.
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_04"); //Co? Ha, ha, ha! Zaraz, ty tak na powa¿nie?
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_06"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
+	}
+	
+	// jesli zabilismy orka
+	else if (SaveKurgKan == -1)
+	{
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_07"); //Tak naprawdê, nie chcia³ ci zrobiæ krzywdy. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. I dlatego go zabi³em. Trudno w tych czasach ufaæ orkowi.
+		AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_08"); //Orkom nie powinno siê ufaæ. Dobrze zrobi³eœ. Przyjmij t¹ nagrodê ode mnie.
+	}
+	
+	// jesli probowalismy go ocalic, ale keroloth kazal go zabic
+	else if (KurgKanUratowany == -1)
+	{
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_09"); //Tak naprawdê, to go nie zabi³em. £owcy orków to zrobili.
+		AI_Output (other,self ,"DIA_NASZ_008_Miecz_koniec_15_10"); //To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o, a przynajmniej tak mówi³. Próbowa³em znaleŸæ mu azyl, a jedynie przyczyni³em siê do jego œmierci.
+		AI_Output (self,other ,"DIA_NASZ_008_Miecz_koniec_15_11"); //Orkom nie powinno siê w ogóle ufaæ, wiêc nie wiem co to w ogóle za pomys³. Mimo wszystko, dziêki twoim dzia³aniom, zielonoskóry jest martwy, wiêc masz tu nagrodê.
+	};
+	// ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- 
+	
+	
 	
 
 	Createinvitems (self, itmi_gold, 140);
@@ -524,6 +533,11 @@ FUNC INT DIA_NASZ_008_Miecz_mam_Condition()
 FUNC VOID DIA_NASZ_008_Miecz_mam_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_008_Miecz_mam_15_00"); //Mam wszystko, o co prosi³eœ.
+
+	B_GiveInvItems(other,self,ItNa_Butelka,1);
+	B_GiveInvItems(other,self,ItFo_Water,1);
+	B_GiveInvItems(other,self,ItAt_SharkSkin,10);
+	
 	AI_Output (self, other,"DIA_NASZ_008_Miecz_mam_55_01"); //Dobra. PrzyjdŸ jutro. I nie zapomnij o ginach!
 
 	MieczWywarDay = Wld_GetDay ();
@@ -582,7 +596,7 @@ FUNC VOID DIA_NASZ_008_Miecz_wywar_Info()
 		};
 	}
 	else {
-		AI_Output (self, other,"DIA_NASZ_008_Miecz_wywar_55_07"); //Do króæset! Przecie¿ mówi³em, ¿ebyœ poczeka³ chocia¿ jeden dzieñ!
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_wywar_55_07"); //Do kroæset! Przecie¿ mówi³em, ¿ebyœ poczeka³ chocia¿ jeden dzieñ!
 		AI_StopProcessInfos (self);
 	};
 };

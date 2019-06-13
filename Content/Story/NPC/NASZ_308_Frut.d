@@ -29,7 +29,7 @@ instance NASZ_308_Frut (Npc_Default)
 	
 	// ------ visuals ------					
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Whistler, BodyTex_N, ITNA_BAN_H);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Frut, BodyTex_N, ITNA_BAN_H);	
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

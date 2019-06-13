@@ -98,7 +98,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Quest_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_127_Jeremiasz_Quest_15_00"); //Potrzebujesz czegoœ?
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_01"); //Do mojej pracy potrzebna jest cierpliwoœæ, która powoli mi siê ju¿ koñczy.
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_02"); //Stanie ca³ymi dniami przy stole alchemicznym mo¿e siê w koñcu nudziæ. A i mój wiek mi doskwiera. Te stare nogi ju¿ d³ugo nie poci¹gn¹.
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_02"); //Stanie ca³ymi dniami przy stole alchemicznym mo¿e w koñcu siê nudziæ. A i mój wiek mi doskwiera. Te stare nogi ju¿ d³ugo nie poci¹gn¹...
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_03"); //Przynieœ mi coœ bardzo mocno odurzaj¹cego, tak na uspokojenie. Tylko uprzedzam: Bagienne ziele nie wystarczy. Ju¿ nie raz próbowa³em.
 
 	Log_CreateTopic (TOPIC_Jeremiasz_lek, LOG_MISSION);
@@ -136,7 +136,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_QuestDone_Info()
 	B_giveinvitems (other, self, ItNa_MiksturaUspokajajaca, 1);
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_QuestDone_55_01"); //Powinienem siê baæ?
 	AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_QuestDone_55_02"); //Nie wiem... Jakiœ alchemik uspokaja³ tym napojem ludzi podczas tortur.
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_QuestDone_55_03"); //Jeœli nie spróbujê, to siê nie przekonam. W takim razie do dna!
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_QuestDone_55_03"); //Je¿eli nie spróbujê, to siê nie przekonam. W takim razie do dna!
 
 	AI_StopProcessInfos(self);
 	B_UseItem(self,ItNa_MiksturaUspokajajaca);

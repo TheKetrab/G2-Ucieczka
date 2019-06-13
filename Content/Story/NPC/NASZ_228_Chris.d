@@ -6,15 +6,15 @@ instance NASZ_228_Chris (Npc_Default)
 	guild 		= GIL_OUT;
 	id 			= 228;
 	voice 		= 12;
-	flags       = 0;																	
+	flags       = 2;																	
 	npctype		= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
 
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 4);																	
-	attribute	[ATR_HITPOINTS_MAX]	=	2000;
-	attribute	[ATR_HITPOINTS]		=	2000;
+	attribute	[ATR_HITPOINTS_MAX]	=	6000;
+	attribute	[ATR_HITPOINTS]		=	6000;
 
 	
 	// ------ Kampf-Taktik ------

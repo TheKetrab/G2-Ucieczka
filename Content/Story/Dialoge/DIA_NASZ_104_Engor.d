@@ -111,11 +111,11 @@ FUNC VOID DIA_NASZ_104_Engor_IllTakeYou_Info()
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_00"); //A gdybym tak przyniós³ ci lutniê?
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_01"); //Zgodzi³byœ siê wtedy graæ wieczorami w karczmie?
 	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_02"); //Oczywiœcie. Jednak nie s¹dzê, byœ znalaz³ jak¹kolwiek lutniê w tej okolicy.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Zapewne wszystkie zosta³y podobne przedmioty zosta³y ju¿ dawno przerobione na groty be³tów albo tarcze, czy po prostu spalone, by podtrzymaæ ogieñ.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_03"); //Zapewne wszystkie podobne przedmioty zosta³y ju¿ dawno przerobione na groty be³tów albo tarcze, czy po prostu spalone, by podtrzymaæ ogieñ.
 	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_04"); //Poza tym w¹tpiê, aby takie rzeczy wala³y siê gdzieœ po pod³odze lub innych jaskiniach. Jedynym rozwi¹zaniem by³oby stworzyæ lutniê od nowa, jednak i z tym mo¿e byæ k³opot.
 	AI_Output (other, self,"DIA_NASZ_104_Engor_IllTakeYou_55_05"); //K³opoty to ju¿ dla mnie nie pierwszyzna, dam sobie radê. Powiedz mi tylko, co muszê zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_06"); //Dobrze wiêc. Kiedyœ do naszego obozu przyby³ pewien myœliwy, który po kilku g³êbszych wygada³ siê, ¿e dawniej by³ bardzo dobrym lutnikiem.
-	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_07"); //Niestety, nie pamiêtam jego imienia. Jednak jak popytasz w obozie myœliwych to na pewno ktoœ ci pomo¿e.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_IllTakeYou_55_07"); //Niestety, nie pamiêtam jego imienia. Jednak jak popytasz w obozie myœliwych, to na pewno ktoœ ci pomo¿e.
 	
 	Log_CreateTopic (TOPIC_Engor_lutnia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Engor_lutnia, LOG_RUNNING);
@@ -222,7 +222,7 @@ FUNC VOID DIA_NASZ_104_Engor_goth_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_104_Engor_goth_15_00"); //Wiesz coœ o tym, ¿e ³owcy okradli myœliwych?
 	AI_Output (self, other,"DIA_NASZ_104_Engor_goth_55_01"); //£owcy? Przecie¿ jesteœmy zgran¹ paczk¹...
-	AI_Output (self, other,"DIA_NASZ_104_Engor_goth_55_02"); //Chocia¿... Gladiatorzy z areny to banda cudaków. Mroczne towarzystwo. Myœlê, ¿e jeœli kogoœ podejrzewaæ, to w³aœnie któregoœ z nich.
+	AI_Output (self, other,"DIA_NASZ_104_Engor_goth_55_02"); //Chocia¿... Gladiatorzy to banda cudaków. Mroczne towarzystwo. Myœlê, ¿e jeœli kogoœ podejrzewaæ, to w³aœnie któregoœ z nich.
 
 	B_LogEntry (TOPIC_Goth_kradziez, "Zdaniem Engora to gladiatorzy maj¹ coœ wspólnego z t¹ kradzie¿¹.");
 

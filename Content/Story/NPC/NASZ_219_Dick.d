@@ -7,7 +7,7 @@ instance NASZ_219_Dick (Npc_Default)
 	guild 		= GIL_OUT;
 	id 			= 219;
 	voice 		= 5;
-	flags       = 0;																	//NPC_FLAG_IMMORTAL oder 0
+	flags       = 2; // niesmiertelny, bo potem jak jest misja ze siedzi przy orkach, to moze z nimi zaczac walczyc
 	npctype		= NPCTYPE_MAIN;
 
 	aivar[AIV_IgnoresArmor] 	= TRUE;

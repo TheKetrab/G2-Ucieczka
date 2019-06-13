@@ -245,7 +245,7 @@ INSTANCE DIA_NASZ_305_Rabon_koniecB   (C_INFO)
  	condition   = DIA_NASZ_305_Rabon_koniecB_Condition;
  	information = DIA_NASZ_305_Rabon_koniecB_Info;
  	permanent   = FALSE;
- 	description = "W twojej sakiewce by³o coœ strasznie dziwnego...";
+ 	description = "W twojej sakwie by³o coœ strasznie dziwnego...";
 };
 
 FUNC INT DIA_NASZ_305_Rabon_koniecB_Condition()
@@ -259,7 +259,7 @@ FUNC INT DIA_NASZ_305_Rabon_koniecB_Condition()
 
 FUNC VOID DIA_NASZ_305_Rabon_koniecB_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_305_Rabon_koniecB_15_00"); //W twojej sakiewce by³o coœ strasznie dziwnego...
+	AI_Output (other,self ,"DIA_NASZ_305_Rabon_koniecB_15_00"); //W twojej sakwie by³o coœ strasznie dziwnego...
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_koniecB_55_01"); //Mia³eœ w niej nie grzebaæ.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_koniecB_55_02"); //Oj, ju¿ ja ciê nauczê s³uchaæ silniejszych od siebie!
 
@@ -318,7 +318,7 @@ FUNC VOID DIA_NASZ_305_Rabon_win_ok()
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_06"); //W ka¿dym razie dogadaliœmy siê z nimi. Jak zapewne powiedzia³ ci Samuel, rudê któr¹ wykopiemy w Górniczej Dolinie, odsprzedamy królowi.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_07"); //Naszym problemem jest niewystarczaj¹ca iloœæ kopaczy, a ich problemem to, ¿e król nie kupi³by rudy od zaprzysiêg³ych sobie rycerzy, tylko pos¹dzi³ o zdradê i skaza³ na banicjê.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_08"); //Tak wiêc oni pomagaj¹ nam w wykopaliskach, a my zajmiemy siê sprzeda¿¹ kruszcu.
-	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_09"); //Zaraz, zaraz. Jeœli tak, to dlaczego ty mia³eœ tak¹ iloœæ rudy i dlaczego tak bardzo zale¿a³o ci na tym, by nikt siê o tym nie dowiedzia³?
+	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_09"); //Zaraz, zaraz. Jeœli tak, to dlaczego ty mia³eœ tak¹ iloœæ rudy i dlaczego tak bardzo zale¿a³o ci na tym, aby nikt siê o tym nie dowiedzia³?
 	AI_Output (other, self,"DIA_NASZ_305_Rabon_win_ok_15_10"); //Ukrad³eœ j¹ Nodowi? Czy mo¿e prowadzisz jakieœ lewe interesy z renegatami na w³asn¹ rêkê?
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_ok_55_11"); //Hej, tylko nie tak g³oœno! Mam z nimi dodatkowy uk³ad. Skoro ju¿ o tym wszystkim wiesz, to mo¿e zechcesz wejœæ ze mn¹ w spó³kê, zamiast paplaæ o tym wszystkim szefostwu?
 
@@ -368,8 +368,8 @@ FUNC VOID DIA_NASZ_305_Rabon_hmm_Info()
 	Createinvitems (self, itmi_gold, 100);
 	B_giveinvitems (self, other, itmi_gold, 100);
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_hmm_15_03"); //Dok¹d mam siê udaæ?
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_hmm_55_04"); //Pomiêdzy kopalni¹ Marcosa a zamkiem znajduje siê las. Trzymaj siê ska³ a po chwili œcie¿ka zacznie skrêcaæ pod górê.
-	AI_Output (self, other,"DIA_NASZ_305_Rabon_hmm_55_05"); //Przed bram¹ bêdzie stra¿nik. Jeœli spyta ciê o imiê, powiedz, ¿e nazywasz sie Herendez. To tyle. A, i nie musisz siê œpieszyæ, bo ruda raczej nie ucieknie.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_hmm_55_04"); //Pomiêdzy kopalni¹ Marcosa a zamkiem znajduje siê las. Trzymaj siê ska³, a po chwili œcie¿ka zacznie skrêcaæ pod górê.
+	AI_Output (self, other,"DIA_NASZ_305_Rabon_hmm_55_05"); //Przed bram¹ bêdzie stra¿nik. Jeœli spyta ciê o imiê, powiedz, ¿e nazywasz siê Herendez. To tyle. A, i nie musisz siê œpieszyæ, bo ruda raczej nie ucieknie.
 
 	WillCanTalkWithRenegat = TRUE;
 	

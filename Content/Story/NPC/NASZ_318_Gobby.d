@@ -23,7 +23,7 @@ instance NASZ_318_Gobby (Npc_Default)
 	CreateInvItems (self,ItPo_Health_03,2);
 	
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_L_Scatty, BodyTex_L, ITNA_BAN_M);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_Gobby, BodyTex_N, ITNA_BAN_M);	
 	Mdl_SetModelFatness	(self, 1.6);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 

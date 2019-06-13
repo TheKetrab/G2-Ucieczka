@@ -407,14 +407,14 @@ func void DIA_NASZ_316_Carry_MuchyFinish_Info ()
 {
 	AI_Output	(other, self, "DIA_NASZ_316_Carry_MuchyFinish_55_00"); //Mam te twoje sk³adniki.
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_01"); //Teraz bêdê móg³ przygotowaæ p³yn i wszystkie muchy st¹d odlec¹!
-	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_02"); //Chyba nie bêdê mia³ sobie za z³e, jeœli nagrodzê ciê t¹ ma³¹ sumk¹...
+	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_02"); //Chyba nie bêdê mia³ sobie za z³e, je¿eli nagrodzê ciê t¹ ma³¹ sumk¹...
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_03"); //Zas³u¿y³eœ.
 
 	Log_SetTopicStatus (TOPIC_Carry_plyn, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Carry_plyn, "Sk³adniki dostarczone. Ale¿ ta mieszanka musi byæ obrzydliwa!");
 	
 	B_GivePlayerXP(400);
-	DodajReputacje(5,REP_LOWCY);
+	DodajReputacje(5,REP_BANDYCI);
 	
 	CreateInvItems (self,ItMi_Gold,40);
 	B_giveinvitems (self, other, ItMi_Gold, 40);

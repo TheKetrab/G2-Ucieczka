@@ -118,7 +118,7 @@ instance PC_SleepTime_1h (C_INFO)
 	information		= PC_SleepTime_1h_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Odpoczywaj 1 godzinê";
+	description		= "Odpoczywaj godzinê";
 };
 
 FUNC INT PC_SleepTime_1h_Condition()

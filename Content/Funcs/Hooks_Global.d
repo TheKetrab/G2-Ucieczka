@@ -68,11 +68,24 @@ func void OpenSteal()
 
 func void HandleEvents_hook(/*int key*/)
 {
+	var int key; key = MEM_ReadInt(ESP+4);
+	if(key == KEY_1) 	{ QS_UseItem(1);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_2) 	{ QS_UseItem(2);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_3) 	{ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_4) 	{ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_5) 	{ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_6) 	{ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_7) 	{ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_8) 	{ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_9) 	{ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1); 	};
+	if(key == KEY_0) 	{ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};
+	
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
-		if(!NpcIsFighting(hero) && !C_NpcIsDown(hero) && HLP_Is_oCNpc(MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/)))
+		var int fcsss; fcsss = MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/);
+		if(!NpcIsFighting(hero) && !C_NpcIsDown(hero) && HLP_Is_oCNpc(fcsss))
 		{
-			var c_npc slf; slf = _^(MEM_READINT(MEM_READINT(_hero)+2476));
+			var c_npc slf; slf = _^(fcsss);
 			
 			if(Npc_IsInState(slf, ZS_Unconscious) || Npc_IsDead   	(slf))
 			{
@@ -190,6 +203,8 @@ func void HeroStatusFix()
 	{
 		MEM_WriteInt(oCZoneMusic__s_herostatus,2);
 	};
+	
+	MEM_SkyController.m_enuWeather = 1;
 };
 
 func void DisableFocusOfDeadNPCsWithEmptyInventory() {
@@ -487,7 +502,6 @@ func void oCNpcInventory_HandleEvent_hook()
 	if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); }; 
 	
 };
-
 
 func void Hooks_Global()
 {

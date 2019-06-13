@@ -140,7 +140,7 @@ func void TickTock_5s() {
 	if (OrkowyObozLasOC == FALSE) && (npc_isdead (OrcWarrior_Roam_ObozLasOC)) && (npc_isdead (OrcWarrior_Rest_ObozLasOC)) && (npc_isdead (OrcShaman_Sit_ObozLasOC)) {
 	OrkowyObozLasOC = TRUE;
 	PrintScreen	("Wyeliminowano orkowy obóz.", -1,-1, "font_old_20_white.tga",3);
-	B_LogEntry (TOPIC_Rethon_orkowie, "Obóz w lesie wyeliminowany.");
+	B_LogEntry (TOPIC_Rethon_orkowie, "Obóz w lesie miêdzy palisad¹ a zamkiem wyeliminowany.");
 	OrkoweObozyRozwalone = OrkoweObozyRozwalone + 1;
 	};
 	

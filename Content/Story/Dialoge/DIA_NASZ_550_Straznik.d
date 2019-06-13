@@ -30,7 +30,7 @@ INSTANCE DIA_NASZ_550_Straznik_siema   (C_INFO)
  	nr          = 1;
  	condition   = DIA_NASZ_550_Straznik_siema_Condition;
  	information = DIA_NASZ_550_Straznik_siema_Info;
- 	permanent   = TRUE;
+ 	permanent   = FALSE;
 	important   = TRUE;
 };
 
@@ -53,7 +53,17 @@ FUNC VOID DIA_NASZ_550_Straznik_siema_Info()
 	NASZ_550_Straznik.guild = GIL_UNDEADORC;
 	Npc_SetTrueGuild (NASZ_550_Straznik, GIL_UNDEADORC);
 	
+	WojownicyCieniaPrzyzwani = 0;
+	
 	AI_StopProcessInfos (self);	
 	B_Attack (NASZ_550_Straznik, hero, AR_KILL, 1);
+	
+	// zamyka kraty
+	Wld_SendTrigger ("MOVER_ORCCITY_30");
+	Wld_SendTrigger ("MOVER_ORCCITY_31");
+	Wld_SendTrigger ("MOVER_ORCCITY_32");
+	Wld_SendTrigger ("MOVER_ORCCITY_33");
+	Wld_SendTrigger ("MOVER_ORCCITY_34");
+	Wld_SendTrigger ("MOVER_ORCCITY_35");
 	
 };

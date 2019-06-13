@@ -42,7 +42,7 @@ instance NASZ_314_Bandzior (Npc_Default)
 
 FUNC VOID Rtn_Start_314 ()
 {	
-	TA_Sit_Chair	(06,00,07,00,"NASZ_BANDYCI_OBOZ_23");
-	TA_Sleep	(07,00,08,00,"NASZ_BANDYCI_OBOZ_23");
+	TA_Sit_Chair	(07,50,21,10,"NASZ_BANDYCI_OBOZ_23");
+	TA_Sleep		(21,10,07,50,"NASZ_BANDYCI_OBOZ_23");
 
 };

@@ -242,7 +242,7 @@ FUNC VOID DIA_NASZ_315_Bandzior_glowa_fu()
 
 	AI_Output (other,self ,"DIA_NASZ_315_Bandzior_glowa_fu_15_00"); //Nie, to twoj¹ g³owê zobaczy ork.
 	AI_Output (self, other,"DIA_NASZ_315_Bandzior_glowa_fu_55_01"); //Jesteœ pewien? Wydaje mi siê, ¿e twoj¹.
-	AI_Output (self, other,"DIA_NASZ_315_Bandzior_glowa_fu_55_02"); //Na œmieræ i ¿ycie walczmy jak nale¿y, z dala od innych. ChodŸ za mn¹.
+	AI_Output (self, other,"DIA_NASZ_315_Bandzior_glowa_fu_55_02"); //Na œmieræ i ¿ycie walczymy jak nale¿y, z dala od innych. ChodŸ za mn¹.
 
 	BANDZIOR_FIGHT = 1;
 	Npc_ExchangeRoutine (NASZ_315_Bandzior, "Fight");

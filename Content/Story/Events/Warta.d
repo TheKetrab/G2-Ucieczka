@@ -3,7 +3,7 @@
 
 func void WartaCz1Create()
 {
-	Print("WartaCz1Create");
+	//Print("WartaCz1Create");
 	Wld_InsertNpc(GroznyZebaczWarta1,"NASZ_ZEBACZE_WP_2");
 	Wld_InsertNpc(GroznyZebaczWarta2,"NASZ_ZEBACZE_WP_2");
 	Wld_InsertNpc(GroznyZebaczWarta3,"NASZ_ZEBACZE_WP_2");

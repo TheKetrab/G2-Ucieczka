@@ -180,7 +180,7 @@ FUNC VOID DIA_NASZ_124_Bron_NicNieMa_Info()
 
 	AI_Output (other, self,"DIA_NASZ_124_Bron_NicNieMa_55_08"); //Zobaczymy, czy w koñcu siê uda.
 
-	B_LogEntry (TOPIC_Bron_woda, "Bron zasugerowa³ mi, ¿ebym w³o¿y³ do jego skrzyni zupê grzybow¹, która swoim aromatem przyci¹gnie z³oczyñcê. Mogê kupiæ zupê u Engora.");
+	B_LogEntry (TOPIC_Bron_woda, "Bron zasugerowa³ mi, ¿ebym w³o¿y³ do jego skrzyni zupê grzybow¹, która swoim aromatem przyci¹gnie rabusia. Mogê kupiæ zupê u Engora.");
 	
 
 };

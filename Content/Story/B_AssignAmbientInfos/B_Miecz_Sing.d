@@ -27,7 +27,7 @@ func void B_Miecz_Sing (var int verse)
 	Pij bracie, pij na zdrowie! Jutro ci siê humor przyda. Spirytus ci nie zaszkodzi - sztorm idzie, wyrzygasz!
 	*/
 	
-	Print(ConcatStrings("Miecz sing, verse = ",IntToString(verse)));
+	//Print(ConcatStrings("Miecz sing, verse = ",IntToString(verse)));
 	
 	if (verse == 0)
 	{

@@ -73,7 +73,7 @@ INSTANCE DIA_NASZ_309_Straznik_siema   (C_INFO)
  	nr          = 1;
  	condition   = DIA_NASZ_309_Straznik_siema_Condition;
  	information = DIA_NASZ_309_Straznik_siema_Info;
- 	permanent   = FALSE;
+ 	permanent   = TRUE;
 	important   = TRUE;
 };
 
@@ -93,7 +93,7 @@ FUNC VOID DIA_NASZ_309_Straznik_siema_Info()
 		AI_Output (self, other,"DIA_NASZ_309_Straznik_siema_55_02"); //Poka¿.
 		B_giveinvitems (other, self, ItNa_ZezwolenieBandyci, 1);
 		B_UseFakeScroll();
-		AI_Output (self, other,"DIA_NASZ_309_Straznik_siema_55_03"); //No dobra, mo¿esz wejœæ. Tylko nie palnij czegoœ g³upiego. No, o ile chcesz jeszcze trochê po¿yæ.
+		AI_Output (self, other,"DIA_NASZ_309_Straznik_siema_55_03"); //Dobra, mo¿esz wejœæ. Tylko nie palnij czegoœ g³upiego. No, o ile chcesz jeszcze trochê po¿yæ.
 		B_LogEntry (TOPIC_Gestath_renegaci, "Teraz mogê porozmawiaæ z przywódc¹ bandytów.");
 
 		WCHODZENIE_SZEF=1;

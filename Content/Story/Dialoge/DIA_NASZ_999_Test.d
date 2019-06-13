@@ -32,25 +32,105 @@ FUNC VOID DIA_NASZ_999_Test_EXIT_Info()
 //*********************************************************************
 //	WalkaTarcza
 //*********************************************************************
-INSTANCE DIA_NASZ_999_Test_WalkaTarcza   (C_INFO)
+INSTANCE DIA_NASZ_999_Test_Teach   (C_INFO)
 {
 	npc         = NASZ_999_Test;
  	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_WalkaTarcza_Condition;
- 	information = DIA_NASZ_999_Test_WalkaTarcza_Info;
+ 	condition   = DIA_NASZ_999_Test_Teach_Condition;
+ 	information = DIA_NASZ_999_Test_Teach_Info;
  	permanent   = TRUE;
- 	description = "Naucz siê walki tarcz¹.";
+ 	description = "Naucz siê...";
 };
 
-FUNC INT DIA_NASZ_999_Test_WalkaTarcza_Condition()
+FUNC INT DIA_NASZ_999_Test_Teach_Condition()
 {
 	return TRUE;
 };
 
-FUNC VOID DIA_NASZ_999_Test_WalkaTarcza_Info()
+FUNC VOID DIA_NASZ_999_Test_Teach_Info()
 {
-	WalkaTarcza = TRUE;
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, DIALOG_BACK, DIA_NASZ_999_Test_Teach_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Regeneracja poz. 3", DIA_NASZ_999_Test_Teach_Regeneracja3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Regeneracja poz. 2", DIA_NASZ_999_Test_Teach_Regeneracja2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Regeneracja poz. 1", DIA_NASZ_999_Test_Teach_Regeneracja1);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Zielarstwo poz. 2", DIA_NASZ_999_Test_Teach_Zielarstwo2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Zielarstwo poz. 1", DIA_NASZ_999_Test_Teach_Zielarstwo1);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Szybka Nauka", DIA_NASZ_999_Test_Teach_QuickLearn);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Górnictwo +10", DIA_NASZ_999_Test_Teach_GornictwoAdd);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Walka tarcz¹", DIA_NASZ_999_Test_Teach_Shield);
+
 };
+
+func void DIA_NASZ_999_Test_Teach_BACK() {
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_Shield() {
+	PrintScreen ("Nauka: walka tarcz¹", -1, -1, FONT_Screen, 2);
+	WalkaTarcza = TRUE;
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_QuickLearn() {
+	SzybkaNaukaTaught = TRUE;
+	PrintScreen ("Nauka: szybka nauka", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_D, 1);
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_Zielarstwo1() {
+	PrintScreen ("Nauka: Zielarstwo", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_E, 1);
+	level_zielarstwa = 1;
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_Zielarstwo2() {
+	PrintScreen ("Nauka: Zielarstwo", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_E, 2);	
+	level_zielarstwa = 2;
+	PlantSkill_Factor = 2;
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_Regeneracja1() {
+	
+	FF_ApplyOnceExt (Regeneracja, 3000, -1);
+	
+	level_regeneracji = 1;
+	PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 1);
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_Regeneracja2() {
+			
+	FF_ApplyOnceExt (Regeneracja, 3000, -1);
+	
+	level_regeneracji = 2;
+	PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 2);
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+
+func void DIA_NASZ_999_Test_Teach_Regeneracja3() {
+	
+	FF_ApplyOnceExt (Regeneracja, 3000, -1);
+	
+	level_regeneracji = 3;
+	PrintScreen ("Nauka: regeneracja", -1, -1, FONT_Screen, 2);
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_REGENERATE, 3);
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
+func void DIA_NASZ_999_Test_Teach_GornictwoAdd() {
+	LevelMiner += 10;
+	Print(ConcatStrings("Gornictwo: ",ConcatStrings(IntToString(LevelMiner),"%")));
+	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
+};
+
 
 
 //*********************************************************************
@@ -292,6 +372,7 @@ FUNC VOID DIA_NASZ_999_Test_Kapitel_Final()
 	B_StartOtherRoutine (NASZ_402_Innos,"Final");
 	B_StartOtherRoutine (NASZ_403_Adanos,"Final");
 	B_StartOtherRoutine (NASZ_404_Beliar,"Final");
+	Cheat_Final = TRUE;
 
 	AI_StopProcessInfos	( self );
 };
@@ -442,205 +523,256 @@ FUNC VOID DIA_NASZ_999_Test_Kapitel_1()
 	AI_StopProcessInfos	( self );
 };
 
+
+
 //*********************************************************************
-//	RepMysliwi
+//	Reputation
 //*********************************************************************
-INSTANCE DIA_NASZ_999_Test_RepMysliwi   (C_INFO)
+INSTANCE DIA_NASZ_999_Test_Reputation   (C_INFO)
 {
 	npc         = NASZ_999_Test;
  	nr          = 5;
- 	condition   = DIA_NASZ_999_Test_RepMysliwi_Condition;
- 	information = DIA_NASZ_999_Test_RepMysliwi_Info;
+ 	condition   = DIA_NASZ_999_Test_Reputation_Condition;
+ 	information = DIA_NASZ_999_Test_Reputation_Info;
  	permanent   = TRUE;
- 	description = "Reputacja u myœliwych.";
+ 	description = "Zmieñ reputacjê.";
 };
 
-FUNC INT DIA_NASZ_999_Test_RepMysliwi_Condition()
+FUNC INT DIA_NASZ_999_Test_Reputation_Condition()
 {
 	return TRUE;
 };
 
-FUNC VOID DIA_NASZ_999_Test_RepMysliwi_Info()
+FUNC VOID DIA_NASZ_999_Test_Reputation_Info()
 {
-	Info_ClearChoices (DIA_NASZ_999_Test_RepMysliwi);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepMysliwi, DIALOG_BACK, DIA_NASZ_999_Test_RepMysliwi_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepMysliwi, "100", DIA_NASZ_999_Test_RepMysliwi_4);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepMysliwi, "50", DIA_NASZ_999_Test_RepMysliwi_3);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepMysliwi, "25", DIA_NASZ_999_Test_RepMysliwi_2);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepMysliwi, "10", DIA_NASZ_999_Test_RepMysliwi_1);
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, DIALOG_BACK, DIA_NASZ_999_Test_Reputation_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi +100", DIA_NASZ_999_Test_RepMysliwi_4);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi +50", DIA_NASZ_999_Test_RepMysliwi_3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi +25", DIA_NASZ_999_Test_RepMysliwi_2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi +10", DIA_NASZ_999_Test_RepMysliwi_1);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi +1", DIA_NASZ_999_Test_RepMysliwi_0);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Myœliwi =0", DIA_NASZ_999_Test_RepMysliwi_SetZero);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy +100", DIA_NASZ_999_Test_RepLowcy_4);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy +50", DIA_NASZ_999_Test_RepLowcy_3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy +25", DIA_NASZ_999_Test_RepLowcy_2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy +10", DIA_NASZ_999_Test_RepLowcy_1);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy +1", DIA_NASZ_999_Test_RepLowcy_0);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "£owcy =0", DIA_NASZ_999_Test_RepLowcy_SetZero);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci +100", DIA_NASZ_999_Test_RepBandyci_4);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci +50", DIA_NASZ_999_Test_RepBandyci_3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci +25", DIA_NASZ_999_Test_RepBandyci_2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci +10", DIA_NASZ_999_Test_RepBandyci_1);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci +1", DIA_NASZ_999_Test_RepBandyci_0);
+		Info_AddChoice	  (DIA_NASZ_999_Test_Reputation, "Bandyci =0", DIA_NASZ_999_Test_RepBandyci_SetZero);
 
 };
 
-FUNC VOID DIA_NASZ_999_Test_RepMysliwi_BACK()
+FUNC VOID DIA_NASZ_999_Test_Reputation_BACK()
 {
-	Info_ClearChoices (DIA_NASZ_999_Test_RepMysliwi);
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepMysliwi_4()
 {
 	DodajReputacje(100, 2);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepMysliwi_3()
 {
 	DodajReputacje(50, 2);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 
 FUNC VOID DIA_NASZ_999_Test_RepMysliwi_2()
 {
 	DodajReputacje(25, 2);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepMysliwi_1()
 {
 	DodajReputacje(10, 2);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
-//*********************************************************************
-//	RepLowcy
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_RepLowcy   (C_INFO)
+FUNC VOID DIA_NASZ_999_Test_RepMysliwi_0()
 {
-	npc         = NASZ_999_Test;
- 	nr          = 6;
- 	condition   = DIA_NASZ_999_Test_RepLowcy_Condition;
- 	information = DIA_NASZ_999_Test_RepLowcy_Info;
- 	permanent   = TRUE;
- 	description = "Reputacja u ³owców orków.";
+	DodajReputacje(1, 2);
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
-FUNC INT DIA_NASZ_999_Test_RepLowcy_Condition()
+FUNC VOID DIA_NASZ_999_Test_RepMysliwi_SetZero()
 {
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_RepLowcy_Info()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_RepLowcy);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepLowcy, DIALOG_BACK, DIA_NASZ_999_Test_RepLowcy_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepLowcy, "100", DIA_NASZ_999_Test_RepLowcy_4);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepLowcy, "50", DIA_NASZ_999_Test_RepLowcy_3);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepLowcy, "25", DIA_NASZ_999_Test_RepLowcy_2);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepLowcy, "10", DIA_NASZ_999_Test_RepLowcy_1);
-
-};
-
-FUNC VOID DIA_NASZ_999_Test_RepLowcy_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_RepLowcy);
+	rep_mysliwi_s = 0;
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepLowcy_4()
 {
 	DodajReputacje(100, 1);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepLowcy_3()
 {
 	DodajReputacje(50, 1);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
-
 
 FUNC VOID DIA_NASZ_999_Test_RepLowcy_2()
 {
 	DodajReputacje(25, 1);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepLowcy_1()
 {
 	DodajReputacje(10, 1);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
-//*********************************************************************
-//	RepBandcyi
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_RepBandyci   (C_INFO)
+FUNC VOID DIA_NASZ_999_Test_RepLowcy_0()
 {
-	npc         = NASZ_999_Test;
- 	nr          = 7;
- 	condition   = DIA_NASZ_999_Test_RepBandyci_Condition;
- 	information = DIA_NASZ_999_Test_RepBandyci_Info;
- 	permanent   = TRUE;
- 	description = "Reputacja u bandytów.";
+	DodajReputacje(1, 1);
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
-FUNC INT DIA_NASZ_999_Test_RepBandyci_Condition()
+FUNC VOID DIA_NASZ_999_Test_RepLowcy_SetZero()
 {
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_RepBandyci_Info()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_RepBandyci);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepBandyci, DIALOG_BACK, DIA_NASZ_999_Test_RepBandyci_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepBandyci, "100", DIA_NASZ_999_Test_RepBandyci_4);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepBandyci, "50", DIA_NASZ_999_Test_RepBandyci_3);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepBandyci, "25", DIA_NASZ_999_Test_RepBandyci_2);
-		Info_AddChoice	  (DIA_NASZ_999_Test_RepBandyci, "10", DIA_NASZ_999_Test_RepBandyci_1);
-
-};
-
-FUNC VOID DIA_NASZ_999_Test_RepBandyci_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_RepBandyci);
+	rep_lowcy_s = 0;
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepBandyci_4()
 {
 	DodajReputacje(100, 3);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepBandyci_3()
 {
 	DodajReputacje(50, 3);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 
 FUNC VOID DIA_NASZ_999_Test_RepBandyci_2()
 {
 	DodajReputacje(25, 3);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 FUNC VOID DIA_NASZ_999_Test_RepBandyci_1()
 {
 	DodajReputacje(10, 3);
-	AI_StopProcessInfos	( self );
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
+};
+
+
+FUNC VOID DIA_NASZ_999_Test_RepBandyci_0()
+{
+	DodajReputacje(1, 3);
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
+};
+
+FUNC VOID DIA_NASZ_999_Test_RepBandyci_SetZero()
+{
+	rep_bandyci_s = 0;
+	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
 //*********************************************************************
-//	OpenOrcGate
+//	OpenGate
 //*********************************************************************
-INSTANCE DIA_NASZ_999_Test_OpenOrcGate   (C_INFO)
+INSTANCE DIA_NASZ_999_Test_OpenGate   (C_INFO)
 {
 	npc         = NASZ_999_Test;
  	nr          = 8;
- 	condition   = DIA_NASZ_999_Test_OpenOrcGate_Condition;
- 	information = DIA_NASZ_999_Test_OpenOrcGate_Info;
+ 	condition   = DIA_NASZ_999_Test_OpenGate_Condition;
+ 	information = DIA_NASZ_999_Test_OpenGate_Info;
  	permanent   = TRUE;
  	description = "Otwórz bramê.";
 };
 
-FUNC INT DIA_NASZ_999_Test_OpenOrcGate_Condition()
+FUNC INT DIA_NASZ_999_Test_OpenGate_Condition()
 {
 	return TRUE;
 };
 
-FUNC VOID DIA_NASZ_999_Test_OpenOrcGate_Info()
+FUNC VOID DIA_NASZ_999_Test_OpenGate_Info()
+{
+
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, DIALOG_BACK, DIA_NASZ_999_Test_OpenGate_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Palisada", DIA_NASZ_999_Test_OpenGate_ZaPalisada);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Kopalnia Silvestro", DIA_NASZ_999_Test_OpenGate_SilvestroMiner);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "OrcCity - wiêzienie", DIA_NASZ_999_Test_OpenGate_OrcCityPrison);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Twierdza", DIA_NASZ_999_Test_OpenGate_Twierdza);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Mysliwi", DIA_NASZ_999_Test_OpenGate_Mysliwi);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "XardasOld", DIA_NASZ_999_Test_OpenGate_XardasOld);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Monastir - OrcTown", DIA_NASZ_999_Test_OpenGate_MonastirOrcTown);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Zamek", DIA_NASZ_999_Test_OpenGate_Castle);
+
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_ZaPalisada()
 {
 	Wld_SendTrigger ("ORCGATE1_SCRIPT");
 	Wld_SendTrigger ("ORCGATE2_SCRIPT");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_SilvestroMiner()
+{
+	Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_OrcCityPrison()
+{
+	Wld_SendTrigger ("MOVER_ORCCITY_06");
+	Wld_SendTrigger ("MOVER_ORCCITY_07");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_Twierdza()
+{
+	Wld_SendTrigger ("BRAMA_TWIERDZA_SKRYPT");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_Mysliwi()
+{
+	Wld_SendTrigger ("BRAMA_MYSLIWI");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_XardasOld()
+{
+	Wld_SendTrigger ("XARDAS_OLD_MOVER_KRATA_1_SCRIPT");
+	Wld_SendTrigger ("XARDAS_OLD_MOVER_KRATA_2_SCRIPT");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_MonastirOrcTown()
+{
+	B_OpenGateOrcTown();
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
+};
+
+FUNC VOID DIA_NASZ_999_Test_OpenGate_Castle()
+{
+	Wld_SendTrigger ("ZAMEK_BRAMA_1_SKRYPT");
+	Wld_SendTrigger ("ZAMEK_BRAMA_2_SKRYPT");
+	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
 };
 
 //*********************************************************************

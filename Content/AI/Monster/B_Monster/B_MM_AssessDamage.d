@@ -5,6 +5,14 @@
 func void B_MM_AssessDamage ()
 {
 	self.aivar[AIV_MM_PRIORITY] = PRIO_ATTACK;
+	
+	
+	// TODO bogu - ta funckja wywoluje sie kilkanaście razy na jeden atak (uderzenie) golema, przez co po jednym uderzeniu zeruje przeciwnikowi hp. czy da sie to obejsc? czy jest sens?
+	// Walka golem vs golem
+	if (self.guild == GIL_STONEGOLEM && other.guild == GIL_STONEGOLEM)
+	{
+		Npc_ChangeAttribute (self, ATR_HITPOINTS, -25);
+	};
 
 	
 	if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BestiaSwiatynna)) // jesli uderzysz bestie swiatynna

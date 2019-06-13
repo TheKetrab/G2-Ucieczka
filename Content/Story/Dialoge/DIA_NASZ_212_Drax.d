@@ -78,7 +78,7 @@ FUNC VOID DIA_NASZ_212_Drax_siema_Info()
 
 	Log_CreateTopic (TOPIC_Drax_ucieczka, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Drax_ucieczka, LOG_RUNNING);
-	B_LogEntry (TOPIC_Drax_ucieczka, "Z mojej winy, jeden z wiêŸniów z obozu myœliwych uciek³. Niestety, by³ bardzo szybki, wiêc nie da³em rady go dogoniæ. Zapytam siê Snafa, który na pewno bêdzie o nim coœ wiedzia³. W koñcu to on pokierowa³ mnie do wiêzienia!");
+	B_LogEntry (TOPIC_Drax_ucieczka, "Z mojej winy, jeden z wiêŸniów z obozu myœliwych uciek³. Niestety, by³ bardzo szybki, wiêc nie da³em rady go dogoniæ. Zapytam siê Snafa, który na pewno bêdzie coœ o nim wiedzia³. W koñcu to on pokierowa³ mnie do wiêzienia!");
 
 	Npc_ExchangeRoutine (self,"FLEE");
 	AI_StopProcessInfos (self);	

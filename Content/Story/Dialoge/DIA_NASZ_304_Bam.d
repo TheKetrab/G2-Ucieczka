@@ -135,7 +135,7 @@ FUNC VOID DIA_NASZ_304_Bam_quest_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_01"); //Jeœli chcesz siê na coœ przydaæ, to mo¿esz sprawdziæ co z paladynami i ich rud¹.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_02"); //Od pewnego czasu nie docieraj¹ od nich ¿adne wieœci i ani krzty towaru, który nam obiecali.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_03"); //Co prawda za rudê odpowiedzialni s¹ Frut, Gobby i Rabon, a ja sam nigdy nie widzia³em Marcosa, czyli szefa paladynów, ale zaczynam siê niecierpliwiæ.
-	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_04"); //Mo¿esz siê zaj¹æ t¹ spraw¹. Chce wiedzieæ, czy praca wre i czemu siê tak oci¹gaj¹ z dostaw¹.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_quest_55_04"); //Mo¿esz siê zaj¹æ t¹ spraw¹. Chcê wiedzieæ, czy praca wre i czemu siê tak oci¹gaj¹ z dostaw¹.
 	AI_Output (other, self,"DIA_NASZ_304_Bam_quest_55_05"); //Zajmê siê tym w takim razie.
 
 	Log_CreateTopic (TOPIC_Bam_kopalnia, LOG_MISSION);
@@ -266,7 +266,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestTRIA_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_01"); //Zbyt d³ugo nie dawaliœcie znaku ¿ycia. O ile pamiêtam, umawialiœmy siê na dziesiêæ bry³ek dziennie.
 	AI_ReadyMeleeWeapon(Bam);
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_02"); //Za takie opóŸnienia, zaczniemy wam naliczaæ prowizjê. Myœlisz, ¿e komu bardziej zale¿y na naszym uk³adzie? Nam czy wam?
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_03"); //Mamy jeszcze inne mniejsze kopalniê, wiêc mo¿emy prowadziæ wydobycie nawet bez waszego udzia³u, a wy nie dostaniecie nic.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_03"); //Mamy jeszcze inne mniejsze kopalnie, wiêc mo¿emy prowadziæ wydobycie nawet bez waszego udzia³u, a wy nie dostaniecie nic.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_04"); //To ma siê wiêcej nie powtarzaæ, zrozumiano?
 	AI_RemoveWeapon(Bam);
 	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestTRIA_55_05"); //A ja osobiœcie przyjdê odebraæ ustalon¹ iloœæ magicznej rudy.

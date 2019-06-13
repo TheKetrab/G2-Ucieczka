@@ -1,5 +1,3 @@
-// TODO Load1 -> zmienic load1oryginal, jest u mnie na kompie -> każdą kratę da się otworzyć i zabrać skrywane za nią skarby
-
 // ----- ----- ----- ----- -----
 //         RandomMenu
 // ----- ----- ----- ----- -----
@@ -12,7 +10,7 @@ Func void LoadTexRandom ()
     
     if (random == 1)
     {
-		//SetLoadTexName ("LOAD1X.tga"); // TODO
+		SetLoadTexName ("LOAD1X.tga");
     };
 	if (random == 2)
     {

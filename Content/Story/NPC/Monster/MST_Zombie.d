@@ -266,6 +266,8 @@ func void B_SetVisuals_Pal_Zombie04()
 
 INSTANCE Pal_Zombie01		(Mst_Default_Zombie)
 {
+	level = 25;
+
 	B_SetVisuals_Pal_Zombie01();
 	Npc_SetToFistMode(self);
 	
@@ -276,6 +278,8 @@ INSTANCE Pal_Zombie01		(Mst_Default_Zombie)
 
 INSTANCE Pal_Zombie02		(Mst_Default_Zombie)
 {
+	level = 25;
+
 	B_SetVisuals_Pal_Zombie02();
 	Npc_SetToFistMode(self);
 	
@@ -286,6 +290,8 @@ INSTANCE Pal_Zombie02		(Mst_Default_Zombie)
 
 INSTANCE Pal_Zombie03		(Mst_Default_Zombie)
 {
+	level = 25;
+
 	B_SetVisuals_Pal_Zombie03();
 	Npc_SetToFistMode(self);
 	
@@ -296,6 +302,8 @@ INSTANCE Pal_Zombie03		(Mst_Default_Zombie)
 
 INSTANCE Pal_Zombie04		(Mst_Default_Zombie)
 {
+	level = 25;
+
 	B_SetVisuals_Pal_Zombie04();
 	Npc_SetToFistMode(self);
 	

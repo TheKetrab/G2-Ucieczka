@@ -249,7 +249,7 @@ instance DIA_NASZ_320_Niewolnik_can		(C_INFO)
 	condition	 = 	DIA_NASZ_320_Niewolnik_can_Condition;
 	information	 = 	DIA_NASZ_320_Niewolnik_can_Info;
 	permanent	 = 	FALSE;
-	description	 =	"Mogê siê na coœ przydaæ?";
+	description	 =	"Mogê ci siê na coœ przydaæ?";
 };
 
 func int DIA_NASZ_320_Niewolnik_can_Condition ()
@@ -261,7 +261,7 @@ func int DIA_NASZ_320_Niewolnik_can_Condition ()
 };
 func void DIA_NASZ_320_Niewolnik_can_Info ()
 {
-	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_can_15_00"); //Mogê siê na coœ przydaæ?
+	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_can_15_00"); //Mogê ci siê na coœ przydaæ?
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_01"); //Pewnie. Potrzebujê roœlin leczniczych do opatrzenia ran sobie i moim kolegom.
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_can_03_02"); //Bam lubi nas biæ... Przynieœ mi osiem zió³ leczniczych.
 	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_can_15_03"); //Gdzie rosn¹ te roœliny?

@@ -76,7 +76,7 @@ FUNC VOID DIA_NASZ_223_Ratford_nauka_Info()
 	AI_Output (other,self ,"DIA_NASZ_223_Ratford_nauka_15_00"); //Chcê siê czegoœ nauczyæ.
 	AI_Output (other,self ,"DIA_NASZ_223_Ratford_nauka_15_01"); //Goth wskaza³ mi ciebie, jako osobê, która potencjalnie mog³aby mi coœ pokazaæ.
 	AI_PlayAni(self, "T_SEARCH");
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_nauka_55_02"); //Dobrze trafi³eœ. Jestem specialist¹ w sztuce z³odziejskiej.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_nauka_55_02"); //Dobrze trafi³eœ. Jestem specjalist¹ w sztuce z³odziejskiej.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_nauka_55_03"); //Takie umiejêtnoœci s¹ bezcenne. Nigdy nie brakuje ci z³ota, bo tak naprawdê sakiewki ludzi obok ciebie s¹ w zasadzie twoje.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_nauka_55_04"); //Ale pamiêtaj, ¿e swoj¹ wiedz¹ podzielê siê tylko wieczorem, gdy jestem przy ognisku.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_nauka_55_05"); //Gestath ca³y czas krzywo na mnie patrzy i pos¹dza o kradzie¿e. Ciekawe, co by by³o, gdyby dowiedzia³ siê, ¿e szkolê nowego z³odziejaszka.
@@ -439,7 +439,7 @@ FUNC VOID DIA_NASZ_223_Ratford_koniec_Info()
 	AI_Output (other,self ,"DIA_NASZ_223_Ratford_koniec_15_02"); //Znalaz³em tak¹ pi³ê.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_03"); //Oddaj mi j¹. Schowam j¹ przed Cappelem. Przyda mi siê, w razie gdyby drwal og³osi³, ¿e odda parê sztuk z³ota uczciwemu znalazcy.
 	B_giveinvitems (other, self, ItNa_ZapasowaPila, 1);
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_04"); //Nawet nie wiesz, jacy g³upi i œlepi s¹ ludzie. Ju¿ nie raz odwala³em takie akcje i nieŸle siê na tym wzbogaci³em.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_04"); //Nawet nie wiesz, jak g³upi i œlepi s¹ ludzie. Ju¿ nieraz odwala³em takie akcje i nieŸle siê na tym wzbogaci³em.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_koniec_55_05"); //NieŸle siê spisa³eœ. Masz tutaj parê z³otych monet.
 	
 	Createinvitems (self, itmi_gold, 50);
@@ -830,7 +830,7 @@ FUNC VOID DIA_NASZ_223_Ratford_RatfordChestsTakeMis_Info()
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_05"); //Skrêæ w lewo i przy ska³ach, w krzakach znajdziesz pierwsz¹ z nich. To chyba gdzieœ w okolicy miejsca wielkiej bitwy orków i ludzi.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_06"); //Druga skrzynia mo¿e byæ trudniejsza do znalezienia. Gdy w jej okolicy pojawi³ siê ten obrzydliwy smok, krajobraz znacznie siê zmieni³.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_07"); //Wiod³a tam œcie¿ka do ma³ej orkowej œwi¹tyni. Skrzyniê ukry³em na pagórku w pobli¿u. Wydaje mi siê, ¿e bêdzie da³o siê tam wleŸæ. 	
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_08"); //Ostatnia spoczywa gdzieœ na dnie jeziora przed Nowym Obozem.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_08"); //Ostatnia spoczywa na dnie jeziora przed Nowym Obozem.
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_09"); //Mam tam nurkowaæ? Przecie¿ tam jest cholernie zimno!
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_10"); //W takim razie ³yknij sobie coœ rozgrzewaj¹cego przed skokiem do wody.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsTakeMis_15_11"); //Masz.
@@ -879,8 +879,21 @@ FUNC INT DIA_NASZ_223_Ratford_RatfordChestsFinish_Condition()
 FUNC VOID DIA_NASZ_223_Ratford_RatfordChestsFinish_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_00"); //Mam wszystkie twoje rzeczy.
+	
+	B_GiveInvItems(other,self,ItNa_Ratford_Pierscien,1);
+	B_GiveInvItems(other,self,ItNa_Ratford_Naczynie,1);
+	B_GiveInvItems(other,self,ItNa_Ratford_Puchar,1);
+	B_GiveInvItems(other,self,ItNa_Ratford_Talerz,1);
+	B_GiveInvItems(other,self,ItNa_Ratford_Skrzyneczka,1);
+	
+	Npc_RemoveInvItems(self,ItNa_Ratford_Pierscien,1);
+	Npc_RemoveInvItems(self,ItNa_Ratford_Naczynie,1);
+	Npc_RemoveInvItems(self,ItNa_Ratford_Puchar,1);
+	Npc_RemoveInvItems(self,ItNa_Ratford_Talerz,1);
+	Npc_RemoveInvItems(self,ItNa_Ratford_Skrzyneczka,1);
+	
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_01"); //Dobra robota, s¹ wszystkie.
-	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_02"); //Cholera jasna! Widzisz, co sta³o siê ze skrzyneczk¹? Drewniana obudowa zaczê³a gniæ przez dzia³anie wody.
+	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_02"); //Cholera jasna! Widzisz, co siê sta³o ze skrzyneczk¹? Drewniana obudowa zaczê³a gniæ przez dzia³anie wody.
 	AI_Output (other, self,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_03"); //Mam nadziejê, ¿e wnêtrze nie uciepra³o? Ale to sprawdzisz ju¿ sam, póŸniej.	
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_04"); //Nie powinno, wewn¹trz jest tylko z³oto. Dlatego w³aœnie jest taka ciê¿ka. A teraz, zgodnie z umow¹, mo¿esz kupowaæ wytrychy du¿o taniej.
 	

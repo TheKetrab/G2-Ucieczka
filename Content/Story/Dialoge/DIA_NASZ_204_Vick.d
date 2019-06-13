@@ -138,7 +138,7 @@ FUNC VOID DIA_NASZ_204_Vick_zgoda_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_204_Vick_zgoda_15_00"); //Erak wyrazi³ zgodê.
 	AI_Output (self, other,"DIA_NASZ_204_Vick_zgoda_55_01"); //Wzi¹³em dwieœcie sztuk sma¿onego miêsa. Paczka trochê wa¿y, a bieg z pewnoœci¹ okropnie mnie zmêczy.
-	AI_Output (self, other,"DIA_NASZ_204_Vick_zgoda_55_02"); //Lepiej bêdzie, jak nie bêdziesz mnie wyprzedza³ i utrzymywa³ moje tempo.
+	AI_Output (self, other,"DIA_NASZ_204_Vick_zgoda_55_02"); //Lepiej bêdzie, jak nie bêdziesz mnie wyprzedza³ i utrzymasz moje tempo.
 
 	Npc_ExchangeRoutine (self, "GuideA");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;

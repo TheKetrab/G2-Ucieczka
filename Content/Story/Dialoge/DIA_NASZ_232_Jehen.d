@@ -712,10 +712,14 @@ FUNC VOID DIA_NASZ_232_Jehen_KorzenieDone_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_03"); //Robi³eœ to ju¿ wczeœniej? Wygl¹dasz na takiego, który zna siê nie tylko na sztuce ³owiectwa, ale i na roœlinach.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_04"); //Nauczy³em siê tej sztuki kiedy jeszcze ¿y³em w Monterze, niewielkim mieœcie w Myrtanie.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_05"); //Pewnego wieczoru przesiadywa³em w tamtejszej karczmie, pij¹c piwo po ciê¿kim i d³ugotrwa³ym polowaniu na wilki, gdy spostrzeg³em, jak do œrodka wchodzi facet w sukience.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_06"); //Dwóch goœci za nim, którzy dzier¿yli po dwa ostrza na plecach umocni³o mnie w tym, i¿ by³ to asasyn. Los chcia³, ¿e zaczêliœmy ze sob¹ rozmawiaæ, a po kilku g³êbszych zostaliœmy wrêcz kolegami.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_06"); //Dwóch goœci za nim, którzy dzier¿yli po dwa ostrza na plecach umocni³o mnie w tym, i¿ by³ to Asasyn. Los chcia³, ¿e zaczêliœmy ze sob¹ rozmawiaæ, a po kilku g³êbszych zostaliœmy wrêcz kolegami.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_07"); //W okresie, kiedy przebywa³ w mieœcie, nauczy³ mnie wielu sztuczek swojego ludu, jak w³aœnie ta z produkcj¹ strza³ zanurzonych w neurotoksynie pozyskanej z rzecznych pn¹czy.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_08"); //Nie s¹dzi³em, ¿e mia³eœ kontakty wœród ludów pustyni.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_09"); //Przez d³u¿szy czas polowa³em na zwierzynê specjalnie na ich zamówienia, gdy¿ wielu z nich chcia³o posiadaæ w swej kolekcji futra szablozêbów czy œnie¿nych wilków, a dla mnie ka¿da podró¿ do Nordmaru by³a przyjemnoœci¹.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_09"); //Przez d³u¿szy czas polowa³em na zwierzynê specjalnie na ich zamówienia, gdy¿ wielu z nich chcia³o posiadaæ w swej kolekcji futra szablozêbów czy œnie¿nych wilków.
+
+	// uwaga! kwestia 9 rozdzielona, temu to ma numer 15
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_15"); //A dla mnie ka¿da podró¿ do Nordmaru by³a przyjemnoœci¹!
+
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_10"); //Nawet nie wiesz, jak têskniê za tamtejszymi górami. Niestety wojna zmusi³a mnie do ucieczki na Khorinis, gdy¿ liczy³em, ¿e bêdê tutaj bezpieczny.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_11"); //A jak widzisz los zdecydowa³ siê pójœæ mi na przekór i wrzuci³ mnie w wojnê, przed któr¹ przecie¿ ucieka³em.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_12"); //No, strza³y gotowe. Mo¿emy iœæ dalej, tylko dok¹...

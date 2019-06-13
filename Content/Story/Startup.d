@@ -126,7 +126,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(NASZ_004_Bryson,"OW_MINE2_08");
 	Wld_InsertNpc	(NASZ_005_Ben,"OW_MINE2_STRF");
 	Wld_InsertNpc	(NASZ_006_Renegat,"OW_PATH_2_04");
-	Wld_InsertNpc	(NASZ_007_Draal,"OW_NEWMINE_06_B");
+	// draal pojawia sie w zadaniu z korthem
+	
 	Wld_InsertNpc	(NASZ_008_Miecz,"NASZ_MIECZ_4");
 	Wld_InsertNpc	(NASZ_009_Marcos,"NASZ_KOPALNIA_NOWY_02");
 	Wld_InsertNpc	(NASZ_011_Renegat,"NASZ_KOPALNIA_NOWY_03");
@@ -581,7 +582,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(UndeadOrcWarrior,"FP_ROAM_ORCCITY_35");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_36");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_37");
-	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_38");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCCITY_38");
 	Wld_InsertNpc	(OrcUltra_Rest,"FP_ROAM_ORCCITY_39");
 	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCCITY_40");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_ROAM_ORCCITY_41");

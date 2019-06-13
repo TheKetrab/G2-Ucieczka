@@ -1,4 +1,6 @@
 var int RepBandyci_OneTime;
+var int RepLowcy_OneTime;
+var int RepMysliwi_OneTime;
 
 // ----- REPUTACJA -----
 
@@ -24,6 +26,14 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   rep_tekst = ConcatStrings(rep_tekst,".");
   //PrintScreen (rep_tekst, -1, 50, FONT_ScreenSmall, 2);
   PrintS_Ext(rep_tekst, RGBA(255,255,255,0));
+  
+  if (rep_lowcy_s >= 100) && (RepLowcy_OneTime == FALSE)	{
+		RepLowcy_OneTime = TRUE;
+		Snd_Play ("LEVELUP");
+	//	PrintScreen ("Premia za maksimum reputacji: +5 PN", -1, 50, "font_old_20_white.tga", 3);
+		PrintS_Ext("Premia za maksimum reputacji: +5 PN", RGBA(255,255,255,0));
+		hero.lp = hero.lp + 5;
+	};
  }
  else if(ukogo==2){
   rep_tekst = "Reputacja u myœliwych: ";
@@ -36,6 +46,14 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   rep_tekst = ConcatStrings(rep_tekst,".");
   //PrintScreen (rep_tekst, -1, 50, FONT_ScreenSmall, 2);
   PrintS_Ext(rep_tekst, RGBA(255,255,255,0));
+  
+  if (rep_mysliwi_s >= 100) && (RepMysliwi_OneTime == FALSE)	{
+		RepMysliwi_OneTime = TRUE;
+		Snd_Play ("LEVELUP");
+	//	PrintScreen ("Premia za maksimum reputacji: +5 PN", -1, 50, "font_old_20_white.tga", 3);
+		PrintS_Ext("Premia za maksimum reputacji: +5 PN", RGBA(255,255,255,0));
+		hero.lp = hero.lp + 5;
+	};
  }
  else if(ukogo==3){
   rep_tekst = "Reputacja u bandytów: ";

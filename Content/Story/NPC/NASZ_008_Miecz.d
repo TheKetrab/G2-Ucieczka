@@ -29,7 +29,7 @@ instance NASZ_008_Miecz (Npc_Default)
 	CreateInvItems (self, ItFo_Apple,2);
 
 	// ------ visuals ------
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_NormalBart_Grim, BodyTex_N, ITAR_PIR_M_Addon);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_B_Miecz, BodyTex_B, ITAR_PIR_M_Addon);		
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	

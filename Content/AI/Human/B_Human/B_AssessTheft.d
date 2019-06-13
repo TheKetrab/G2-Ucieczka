@@ -1,4 +1,27 @@
+
+func int ThiefIgnore() {
+
+	if (Npc_GetDistToWP(hero,"NASZ_IGNORE_01") < 200)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_02") < 200)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_03") < 200)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_04") < 200)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_05") < 200)
+	{
+		return TRUE;
+	};
+
+	return FALSE;
+};
+
+
+
+
 func int C_HeroCanThiefSomething(var c_npc reactor) {
+
+	// jesli jest w jakichœ dziwnych miejscach, to mo¿e kraœæ
+	if (ThiefIgnore()) {
+		return true;
+	};
 
 	// jesli nie jest w zadnym terytorium obozowym do mozna
 	if !(C_IsInLowcyTerritory() || C_IsInMysliwiTerritory() || C_IsInBandyciTerritory())
@@ -14,8 +37,8 @@ func int C_HeroCanThiefSomething(var c_npc reactor) {
 
 	// schowek ³owców na kilofy i pi³y
 	if (npc_hasitems(hero,ItNa_Key_Keroloth)>=1)
-	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_1")<500)
-	&& (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_2")<500)
+	&& ((Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_1")<500)
+	 || (Npc_GetDistToWP(hero,"NASZ_LOWCY_MAGAZYN_2")<500))
 	{
 		return true;
 	};
@@ -71,6 +94,9 @@ func int C_IsNeedInPlot(var c_item itm)
 	if (Hlp_GetInstanceID(itm) == ItNa_RabonSakwa_MIS)
 	|| (Hlp_GetInstanceID(itm) == ItNa_KufelPiwa)
 	|| (Hlp_GetInstanceID(itm) == ItMi_OldCoin)
+	|| (Hlp_GetInstanceID(itm) == ItMi_Coal)
+	|| (Hlp_GetInstanceID(itm) == ItMi_GoldNugget_Addon)
+	|| (Hlp_GetInstanceID(itm) == ItNa_Krysztal)
 	|| (Hlp_GetInstanceID(itm) == ItMi_Gold)
 	|| (Hlp_GetInstanceID(itm) == ItMi_Flask)
 	|| (Hlp_GetInstanceID(itm) == ItNa_PaczkaZiela)

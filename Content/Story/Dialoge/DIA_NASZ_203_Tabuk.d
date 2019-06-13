@@ -47,7 +47,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_siema_Info()
 	AI_Output (other,self ,"DIA_NASZ_203_Tabuk_siema_15_00"); //Kim jesteœ?
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_siema_55_01"); //Nazywam siê Tabuk. Znam siê na oprawianiu twardszych sztuk. Mówiê tu o golemach, jaszczurach albo harpiach.
 	AI_Output (other, self,"DIA_NASZ_203_Tabuk_siema_55_02"); //Pewnie nie³atwo coœ takiego poskromiæ. Ile strza³ potrzeba, by zabiæ jaszczura?
-	AI_Output (self, other,"DIA_NASZ_203_Tabuk_siema_55_03"); //To zale¿y od tego, gdzie go trafisz. Codzienny trening ³uczniczy jest konieczny, by móc z du¿ej odleg³oœci trafiæ prosto w oko.
+	AI_Output (self, other,"DIA_NASZ_203_Tabuk_siema_55_03"); //To zale¿y od tego, gdzie trafisz. Codzienny trening ³uczniczy jest konieczny, by móc z du¿ej odleg³oœci trafiæ prosto w oko.
 };
 
 //*********************************************************************
@@ -99,8 +99,9 @@ INSTANCE DIA_NASZ_203_Tabuk_OfCourse   (C_INFO)
 
 FUNC INT DIA_NASZ_203_Tabuk_OfCourse_Condition()
 {
-	if(npc_knowsinfo(other,DIA_NASZ_203_Tabuk_train))
+	if (npc_knowsinfo(other,DIA_NASZ_203_Tabuk_train))
 	&& (Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") < 1500)
+	&& (Npc_HasEquippedRangedWeapon(hero)) // jesli hero ma ubrany luk
 	{
 		return TRUE;
 	};
@@ -256,7 +257,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone2_Info()
 		AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_15_02"); //Trzy trafienia z rzêdu nazywasz szczêœciem?
 	};
 	
-	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_55_03"); //Brak stresu na prawdziwym polowaniu przyjdzie wraz z doœwiadczeniem. Nieraz trzeba nawet siêgn¹æ po miecz, a czasem udaje siê powaliæ z dystanu gromadê œcierwojadów.
+	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_55_03"); //Brak stresu na prawdziwym polowaniu przyjdzie wraz z doœwiadczeniem. Nieraz trzeba nawet siêgn¹æ po miecz, a czasem udaje siê powaliæ z dystansu gromadê œcierwojadów.
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_55_04"); //Wszystko przed tob¹.
 
 	Tabuk_Tarcza2 = FALSE;

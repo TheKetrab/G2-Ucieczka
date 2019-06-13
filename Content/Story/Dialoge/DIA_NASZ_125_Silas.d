@@ -74,7 +74,7 @@ FUNC INT DIA_NASZ_125_Silas_work_Condition()
 FUNC VOID DIA_NASZ_125_Silas_work_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_125_Silas_work_15_00"); //Mogê na coœ siê przydaæ?
-	AI_Output (self, other,"DIA_NASZ_125_Silas_work_55_01"); //Takie chuchro mo¿e najwy¿ej zaj¹æ siê zmywaniem pustych kufli.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_work_55_01"); //Takie chuchro najwy¿ej mo¿e zaj¹æ siê zmywaniem pustych kufli.
 	AI_Output (other,self ,"DIA_NASZ_125_Silas_work_15_02"); //Nie jesteœ zbyt uprzejmy jak na karczmarza.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_work_55_03"); //A ty jesteœ bardzo wra¿liwy. Co, ju¿ miêkniesz?
 
@@ -163,7 +163,7 @@ FUNC VOID DIA_NASZ_125_Silas_End_Info()
 	}
 	else
 	{
-		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_05"); //Masz pewnoœæ, ¿e ju¿ tu nie wróci?
+		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_05"); //Masz pewnoœæ, ¿e ju¿ nie wróci?
 		AI_Output (other, self,"DIA_NASZ_125_Silas_End_55_06"); //Tak, to znaczy tak mi siê wydaje.
 		AI_Output (self, other,"DIA_NASZ_125_Silas_End_55_07"); //To zale¿y od tego, jak siê z nim upora³eœ. A w³aœciwie to co zrobi³eœ?
 	
@@ -305,7 +305,7 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenka_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_15_00"); //Hej, zaczekaj!
-	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_01"); //Jeszcze raz dziêkujê za pomoc, ale... czy móg³byœ mi pomóc z jeszcze jedn¹ spraw¹? Wiem, ¿e proszê o wiele, ale uwierz mi, dzia³am w imiê dobra ca³ego obozu!
+	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_01"); //Jeszcze raz ci dziêkujê za pomoc, ale... czy móg³byœ mi pomóc z jeszcze jedn¹ spraw¹? Wiem, ¿e proszê o wiele, ale uwierz mi, dzia³am w imiê dobra ca³ego obozu!
 	AI_Output (other, self,"DIA_NASZ_125_Silas_StaraPiosenka_55_02"); //Brzmi powa¿nie. Co siê sta³o?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_03"); //Od d³u¿szego czasu widzê, ¿e ch³opaki nie s¹ tacy jak wczeœniej. Wielu z nich wygl¹da na przygnêbionych, smutnych i za³amanych. Nie ma w nich ju¿ tej energii jak¹ mo¿na by³o dostrzec na pocz¹tku.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_StaraPiosenka_55_04"); //To wszystko wina tego przeklêtego miejsca. Unosz¹ca siê w atmosferze ci¹g³a groŸba zagro¿enia ze strony zielonoskórych doprowadzi ich na skraj za³amania. Musimy coœ zdzia³aæ!
@@ -414,6 +414,40 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenkaAfter_Info()
 	AI_StopProcessInfos(self);
 };
 
+//*********************************************************************
+//	Info KurgKanDance
+//*********************************************************************
+INSTANCE DIA_NASZ_125_Silas_KurgKanDance   (C_INFO)
+{
+	npc         = NASZ_125_Silas;
+ 	nr          = 7;
+ 	condition   = DIA_NASZ_125_Silas_KurgKanDance_Condition;
+ 	information = DIA_NASZ_125_Silas_KurgKanDance_Info;
+ 	permanent   = FALSE;
+	important	= TRUE;
+};
+
+FUNC INT DIA_NASZ_125_Silas_KurgKanDance_Condition()
+{
+	if (Npc_GetDistToWP(NASZ_120_Phill,"NASZ_LOWCY_KARCZMA_02") < 500)
+	&& (Npc_GetDistToWP(NASZ_Kurg_Kan,"NASZ_LOWCY_KARCZMA_02") < 500)
+	&& (Wld_IsTime(21,00,02,00))
+	&& (KurgKanTanczy)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_125_Silas_KurgKanDance_Info()
+{
+
+	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_15_00"); //Ha, ha! Patrz jakiego Phill sobie znalaz³ towarzysza do tañca.
+	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_01"); //Kazaliœcie mu tañczyæ? Nie jestem wam wstyd?
+	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_55_02"); //Kazaæ? O nie, ten ork po prostu przyszed³ w chwili wolnego i widz¹c tañcz¹cego Philla, zdecydowa³ siê do niego do³¹czyæ. Ubaw po pachy! 
+	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_03"); //Jeœli tak, to rzeczywiœcie.
+	
+};
+
 
 //*********************************************************************
 //	Info Gwozdzie
@@ -514,7 +548,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3_Info()
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_12"); //Musisz wyjœæ na piêtro w karczmie, do pracowni Jeremiasza. Tam, po prawej stronie, przy œcianie, le¿y beczka. Musisz podejœæ do niej od lewej strony i pomacaæ.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_13"); //Gdzieœ powinna byæ wnêka, a w œrodku prze³¹cznik. Beczka zadzia³a jak ko³owrót i poci¹gnie ³añcuchy, które wyci¹gn¹ do góry drewniany stó³ piêtro ni¿ej.
 	AI_Output (other, self,"DIA_NASZ_125_Silas_QuestKap3_55_14"); //Homer sprytnie to wymyœli³.
-	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_15"); //To prawda. Nikt nigdy siê tam nie w³ama³! Jesteœ czwartym, oprócz mnie, Jeremiasza i Homera, cz³owiekiem, który zna to sekretne miejsce.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_15"); //To prawda. Nikt nigdy tam siê nie w³ama³! Jesteœ czwartym, oprócz mnie, Jeremiasza i Homera, cz³owiekiem, który zna to sekretne miejsce.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_16"); //IdŸ wiêc i przynieœ o co proszê, a bêdziesz móg³ kolejny raz skosztowaæ ry¿ówki!
 	
 	HeroKnowAboutSilasSwitch = TRUE;
@@ -556,6 +590,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3Finish_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3Finish_15_00"); //Przynios³em beczki z ry¿ówk¹.
 	B_giveinvitems(other,self,ItNa_Beczulka,2);
+	Npc_RemoveInvItems(self,ItNa_Beczulka,2);
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Finish_55_01"); //O bogowie! Ju¿ czujê ten aromat. PrzyjdŸ za godzinê, to dostaniesz butelkê.
 	
 	Log_SetTopicStatus (TOPIC_Silas_ryzowka, LOG_SUCCESS);
@@ -699,7 +734,23 @@ FUNC INT DIA_NASZ_125_Silas_HowAreYou_Condition()
 FUNC VOID DIA_NASZ_125_Silas_HowAreYou_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_125_Silas_HowAreYou_15_00"); //Jak tam interesy?
-	AI_Output (self, other,"DIA_NASZ_125_Silas_HowAreYou_55_01"); //Dopóki Jeremiasz dla mnie pracuje, picia nikomu nie zabraknie!
+
+	var int rnd; rnd = Hlp_Random(2);
+
+	if (rnd == 0) {
+		if (KurgKanTanczy) {
+			AI_Output (self, other,"DIA_NASZ_125_Silas_HowAreYou_55_02"); //Dziêki pomocy orka mam du¿o wiêcej czasu dla siebie. Dobrze, ¿e go sprowadzi³eœ!
+			return;
+		};
+	};
+	
+	// --- jesli nie wyszedl z dialogu, czyli albo rnd==1 albo kurgkan jeszcze nie pracuje dla silasa
+	if (Jeremiasz_AlmostDead) {
+		AI_Output (self, other,"DIA_NASZ_125_Silas_HowAreYou_55_03"); //Sytuacja jest kiepskawa, bo Jeremiasz le¿y prawie martwy w ³ó¿ku.
+	}
+	else {
+		AI_Output (self, other,"DIA_NASZ_125_Silas_HowAreYou_55_01"); //Dopóki Jeremiasz dla mnie pracuje, picia nikomu nie zabraknie!
+	};
 
 };
 

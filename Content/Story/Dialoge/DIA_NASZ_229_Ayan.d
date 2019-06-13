@@ -470,7 +470,7 @@ func int DIA_NASZ_229_Ayan_LookPrzelaczniki_Condition ()
 
 func void DIA_NASZ_229_Ayan_LookPrzelaczniki_Info ()
 {
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_LookPrzelaczniki_03_00"); //Patrz! S¹ tu jakieœ kolumny. Zapewnê da siê je poruszyæ.
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_LookPrzelaczniki_03_00"); //Patrz! S¹ tu jakieœ kolumny. Zapewne da siê je poruszyæ.
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_LookPrzelaczniki_03_01"); //Zobaczymy.
 
 	B_LogEntry (TOPIC_Ayan_nieznane, "Jeœli przekrêcê prze³¹czniki, byæ mo¿e winda siê aktywuje.");
@@ -576,7 +576,7 @@ func void DIA_NASZ_229_Ayan_Dolina_Info ()
 	B_GivePlayerXP(300);
 
 	AI_Output (self, other, "DIA_NASZ_229_Ayan_Dolina_03_00"); //Ukryta dolina? Niemo¿liwe... Wygl¹da, jakby od stuleci nikt tutaj nie zagl¹da³.
-	AI_Output (self, other, "DIA_NASZ_229_Ayan_Dolina_03_01"); //Rozejrzyjmy siê tutaj.
+	AI_Output (self, other, "DIA_NASZ_229_Ayan_Dolina_03_01"); //Rozejrzymy siê tutaj.
 	
 	B_LogEntry (TOPIC_Ayan_nieznane, "Trafiliœmy do jakiejœ ukrytej doliny. Jakie skarby chowa? Jaka jest jej przesz³oœæ? Chyba teraz legenda Monastira nabiera sensu...");
 
@@ -747,10 +747,7 @@ FUNC VOID DIA_NASZ_229_Ayan_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };

@@ -510,6 +510,7 @@ INSTANCE Skeleton_Ghost_Immortal (Mst_Default_Skeleton)
 	guild							=	GIL_SKELETON;
 	aivar[AIV_MM_REAL_ID]			= 	ID_SKELETON;
 	level							=	40; 
+	// UWAGA - szkiele-duch Susan MA BYÆ nieœmiertelny!
 	flags = NPC_FLAG_GHOST | NPC_FLAG_IMMORTAL;
 	
 	//----- Attribute ----	
@@ -530,6 +531,6 @@ INSTANCE Skeleton_Ghost_Immortal (Mst_Default_Skeleton)
 	fight_tactic	=	FAI_HUMAN_MASTER;
 	B_SetVisuals_Skeleton();	
 	B_SetFightSkills (self, 100);
-	EquipItem (self, ItNa_MieczSusan); // specjalny miecz
+	EquipItem (self, ItNa_MieczSusan); // specjalny œwiec¹cy miecz
 
 };

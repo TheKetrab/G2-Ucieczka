@@ -35,8 +35,10 @@ STORY\NPC_Globals.d
 STORY\svm.d
 STORY\Text.d
 
-Funcs\GateMysliwi.d
+STORY\DIALOGE\NpcSay.d
 
+Funcs\GateMysliwi.d
+STORY\Events\B_OpenGateOrcTown.d
 
 STORY\B_Story\C_NpcIsInQuarter.d
 STORY\B_Story\C_DiegoTooFar.d
@@ -76,6 +78,7 @@ STORY\Log_Entries\B_Checklog.d
 STORY\B_Story\B_GivePlayerXP.d
 Funcs\Uroboros_Exp.d
 STORY\B_Content\B_SCUsesRake.d
+Funcs\PierscienieWiernosci.d
 
 
 STORY\B_Story\B_KillNpc.d
@@ -336,7 +339,6 @@ STORY\B_Story\B_KapitelWechsel.d
 
 STORY\B_Content\C_ADDON_KNOWS_SCHNAPS.d
 
-STORY\Events\HeroSay_Something.d
 STORY\DIALOGE\DIA*.d
 STORY\B_AssignAmbientInfos\B_*.d
 

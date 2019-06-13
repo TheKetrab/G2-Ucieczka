@@ -1,3 +1,5 @@
+
+
 // @Splash
 func int Npc_GetSpellItem(var c_npc slf)
 {

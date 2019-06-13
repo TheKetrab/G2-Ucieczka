@@ -65,6 +65,22 @@ func void B_SetVisuals_OrcShaman()
 	Mdl_SetVisualBody		(self,	"Orc_BodyShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
 };
 
+func void B_SetVisuals_NewOrcShaman()
+{
+	Mdl_SetVisual			(self,	"Orc.mds");
+	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
+	//Mdl_SetVisualBody		(self,	"Orc_BodyNewShaman",	DEFAULT,	DEFAULT,	"Orc_HeadNewShaman",	DEFAULT,  	DEFAULT,	-1);
+	Mdl_SetVisualBody		(self,	"Orc_BodyNewShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
+};
+
+func void B_SetVisuals_OrcShamanStone()
+{
+	Mdl_SetVisual			(self,	"Orc.mds");
+	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
+	//Mdl_SetVisualBody		(self,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShamanStone",	DEFAULT,  	DEFAULT,	-1);
+	Mdl_SetVisualBody		(self,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
+};
+
 
 //****************
 //	Orc Shaman    
@@ -74,6 +90,34 @@ INSTANCE OrcShaman_Sit (Mst_Default_OrcShaman)
 {
 	// ------ visuals ------
 	B_SetVisuals_OrcShaman();
+	
+	//-------- inventory --------
+	EquipItem (self, ItMw_2H_OrcAxe_01);
+	
+	//----- Daily Routine ----
+	start_aistate				= ZS_MM_AllScheduler;
+
+	aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
+};
+
+INSTANCE OrcNewShaman (Mst_Default_OrcShaman)
+{
+	// ------ visuals ------
+	B_SetVisuals_NewOrcShaman();
+	
+	//-------- inventory --------
+	EquipItem (self, ItMw_2H_OrcAxe_01);
+	
+	//----- Daily Routine ----
+	start_aistate				= ZS_MM_AllScheduler;
+
+	aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
+};
+
+INSTANCE OrcShamanStone (Mst_Default_OrcShaman)
+{
+	// ------ visuals ------
+	B_SetVisuals_OrcShamanStone();
 	
 	//-------- inventory --------
 	EquipItem (self, ItMw_2H_OrcAxe_01);

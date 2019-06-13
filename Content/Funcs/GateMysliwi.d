@@ -44,17 +44,7 @@ func void GateMysliwi_HeroIsComming() {
 		GateMysliwi_Open();
 	
 		// + hero wo³a
-		var int random; random = Hlp_Random (4);
-
-		if (random == 0 || random == 1) {
-			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_00"); //Otworzyæ bramê!
-		}
-		else if (random == 2) { // TODO zrobic, zeby ta kwestia byla tylko od strony ZEWNETRZNEJ obozu
-			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_02"); //Hej, to ja, nie ¿aden potwór!
-		}
-		else if (random == 3) {
-			AI_Output (hero ,hero,"DIA_Will_GateMysliwi_15_03"); //Otwórzcie mi!
-		};
+		HeroSay_OpenGate();
 	
 	};
 

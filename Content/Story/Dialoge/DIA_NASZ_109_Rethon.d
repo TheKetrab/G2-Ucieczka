@@ -55,7 +55,7 @@ FUNC VOID DIA_NASZ_109_Rethon_presiema_Info()
 		AI_Output (other, self,"DIA_NASZ_109_Rethon_presiema_55_02"); //Kiedy b³¹ka³em siê po lesie, znalaz³ mnie Korth i po krótkiej rozmowie przyprowadzi³ mnie tutaj.
 	};
 	
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_55_03"); //Zapewne zdajesz sobie sprawê z naszego beznadziejnego po³o¿enia w tym miejscu? Niech Beliar poch³onie tych przeklêtych orków, ci¹gle mamy z nimi k³opoty.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_55_03"); //Zapewne zdajesz sobie sprawê z naszego beznadziejnego po³o¿enia w tym miejscu? Niechaj Beliar poch³onie tych przeklêtych orków, ci¹gle mamy z nimi k³opoty.
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_55_04"); //Musimy byæ ca³y czas gotowi do odparcia ewentualnego ataku ze strony tych bestii, a co za tym idzie, ka¿dy z nas musi intensywnie trenowaæ.
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_presiema_55_05"); //Je¿eli chcesz prze¿yæ w tym miejscu, musisz dobrze w³adaæ orê¿em. Inaczej szybko staniesz siê przek¹sk¹ dla tutejszych zwierz¹t.
 
@@ -510,7 +510,7 @@ FUNC VOID DIA_NASZ_109_Rethon_OrkowieKoniec_Info()
 	
 	//ZAKOÑCZENIE
 	if (OrkowieObozyLicznik >= 5) {
-		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_10"); //Doskonale. Zwiedzi³eœ wzd³u¿ i wszesz c¹³¹ Górnicz¹ Dolinê.
+		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_10"); //Doskonale. Zwiedzi³eœ wzd³u¿ i wszerz ca³¹ Górnicz¹ Dolinê.
 		AI_Output (self, other,"DIA_NASZ_109_Rethon_OrkowieKoniec_55_11"); //Obozów patroluj¹cych ju¿ nie ma. Zas³u¿y³eœ na nagrodê, ch³opcze.
 
 		Createinvitems (self, ItFo_Booze, 2);
@@ -705,33 +705,41 @@ FUNC VOID DIA_Rethon_Teach_Info()
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
 	if (WalkaTarcza == FALSE) { Info_AddChoice		(DIA_Rethon_Teach, "Walka tarcz¹. (10 PN, 300 szt. z³ota)",DIA_Rethon_Teach_Shield); };
 
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_1h_5); };
 	};
-	if (other.HitChance[NPC_TALENT_2H] < 30) {
+	if (other.HitChance[NPC_TALENT_2H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_2H_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_2H_5); };
 	};
 	
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_1h_5b); };
 	};
 
-	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 25) {
+	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_2H_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_2H_5b); };
 	};	
 	
+	/*
 	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_Rethon_Teach_1h_1c); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_Rethon_Teach_1h_5c); };
 	};
+	*/
 
 	
 	};
 };
+
+func void RethonSay_CantTeachYou() {
+	AI_Output(self,other,"RethonSay_CantTeachYou_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
+	AI_Output(self,other,"RethonSay_CantTeachYou_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
+};
+
 
 FUNC VOID DIA_Rethon_Teach_Back ()
 {
@@ -775,11 +783,11 @@ FUNC VOID DIA_Rethon_Teach_1H_1 ()
 
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_1h_5); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_1h_5b); };
 	};
@@ -792,11 +800,11 @@ FUNC VOID DIA_Rethon_Teach_1H_5 ()
 
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_1h_5); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_1h_5b); };
 	};
@@ -809,11 +817,11 @@ FUNC VOID DIA_Rethon_Teach_2H_1 ()
 
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_2H] < 30) {
+	if (other.HitChance[NPC_TALENT_2H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_2H_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_2H_5); };
 	};
-	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 30) {
+	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_2H_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_2H_5b); };
 	};	
@@ -826,11 +834,11 @@ FUNC VOID DIA_Rethon_Teach_2H_5 ()
 
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_2H] < 30) {
+	if (other.HitChance[NPC_TALENT_2H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (1 PN, 5 szt. z³ota)",DIA_Rethon_Teach_2H_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (5 PN, 25 szt. z³ota)",DIA_Rethon_Teach_2H_5); };
 	};
-	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 30) {
+	if (other.HitChance[NPC_TALENT_2H] < 60) && (other.HitChance[NPC_TALENT_2H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_2H_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_2H_5b); };
 	};	
@@ -841,16 +849,24 @@ FUNC VOID DIA_Rethon_Teach_1H_1b ()
 	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
 	B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, 60);
 
+	if (other.HitChance[NPC_TALENT_1H] >= 60)
+	{
+		RethonSay_CantTeachYou();
+		Info_ClearChoices 	(DIA_Rethon_Teach);
+		return;
+	};
+	
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 30) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_1h_5b); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
+/*	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_Rethon_Teach_1h_1C); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_Rethon_Teach_1h_5C); };
 	};
+	*/
 };
 
 FUNC VOID DIA_Rethon_Teach_1H_5b ()
@@ -858,22 +874,27 @@ FUNC VOID DIA_Rethon_Teach_1H_5b ()
 	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 50); };
 	B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 5, 60);
 
+	
+	if (other.HitChance[NPC_TALENT_1H] >= 60)
+	{
+		RethonSay_CantTeachYou();
+		Info_ClearChoices 	(DIA_Rethon_Teach);
+		return;
+	};
+
 	Info_ClearChoices 	(DIA_Rethon_Teach);
 	Info_AddChoice 		(DIA_Rethon_Teach,	DIALOG_BACK		,DIA_Rethon_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 30) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_Rethon_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_Rethon_Teach_1h_5b); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
+/*	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_Rethon_Teach_1h_1C); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_Rethon_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_Rethon_Teach_1h_5C); };
 	};
+	*/
 };
 
-func void RethonSay_CantTeachYou() {
-	AI_Output(self,other,"RethonSay_CantTeachYou_04_00"); //Nie mogê ciê ju¿ niczego nauczyæ.
-	AI_Output(self,other,"RethonSay_CantTeachYou_04_01"); //Teraz potrzebujesz mistrza fechtunku. Udaj siê do Kerolotha.
-};
 
 FUNC VOID DIA_Rethon_Teach_2H_1b ()
 {
@@ -885,6 +906,7 @@ FUNC VOID DIA_Rethon_Teach_2H_1b ()
 	{
 		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
+		return;
 	}
 	else {
 	Info_ClearChoices 	(DIA_Rethon_Teach);
@@ -904,6 +926,7 @@ FUNC VOID DIA_Rethon_Teach_2H_5b ()
 	{
 		RethonSay_CantTeachYou();
 		Info_ClearChoices 	(DIA_Rethon_Teach);
+		return;
 	}
 	else {
 	Info_ClearChoices 	(DIA_Rethon_Teach);

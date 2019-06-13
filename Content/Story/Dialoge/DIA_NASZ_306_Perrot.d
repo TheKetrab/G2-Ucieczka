@@ -138,7 +138,7 @@ FUNC VOID DIA_NASZ_306_Perrot_not_Info()
 	AI_Output (other, self,"DIA_NASZ_306_Perrot_not_55_00"); //Nie rozumiem...
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_not_15_01"); //Nod kaza³ zabiæ wszystkie owce. Potrzeba nam miêsa.
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_not_15_02"); //A ja... Spêdzam tyle czasu z owcami... ZaprzyjaŸni³em siê z jedn¹.
-	AI_Output (self, other,"DIA_NASZ_306_Perrot_not_15_03"); //Chcesz chyba dostaæ siê do szefa? Jeœli mi pomo¿esz, powiem ci, jak zagadaæ do orka.
+	AI_Output (self, other,"DIA_NASZ_306_Perrot_not_15_03"); //Chcesz chyba dostaæ siê do szefa? Je¿eli mi pomo¿esz, powiem ci, jak zagadaæ do orka.
 };
 
 //*********************************************************************
@@ -186,7 +186,7 @@ FUNC VOID DIA_NASZ_306_Perrot_ok_place()
 
 	AI_Output (other,self ,"DIA_NASZ_306_Perrot_ok_place_15_00"); //Gdzie mam j¹ zaprowadziæ?
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_place_55_01"); //Hmm... Wychodz¹c z obozu skrêæ w lewo. IdŸ œcie¿k¹ wzd³u¿ sklepienia a¿ dojdziesz do jaskini.
-	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_place_55_02"); //To moje laboratorium. Tam przygotowujê mikstury dla reszty i czasem eksperymentujê. W³aœnie dlatego Nod zakaza³ mi robiæ to w obozie.
+	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_place_55_02"); //To moje laboratorium. Tam przygotowujê mikstury dla reszty i czasami eksperymentujê. W³aœnie dlatego Nod zakaza³ mi robiæ to w obozie.
 	AI_Output (other,self ,"DIA_NASZ_306_Perrot_ok_place_15_03"); //Bawisz siê w alchemika?
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_place_55_04"); //Czasami, ale nie pora na opowiastki. Masz tu klucz. Otworzysz nim drzwi do jaskini.
 
@@ -223,7 +223,7 @@ FUNC VOID DIA_NASZ_306_Perrot_ok_time()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_306_Perrot_ok_time_15_00"); //Ile mam czasu?
-	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_time_55_01"); //Nie wiem... Postaram siê przeci¹gaæ ubój owiec jak najd³u¿ej.
+	AI_Output (self, other,"DIA_NASZ_306_Perrot_ok_time_55_01"); //Nie wiem... Postaram siê przeci¹gn¹æ ubój owiec jak najd³u¿ej.
 
 	perrot_time=1;
 	
@@ -275,6 +275,7 @@ FUNC VOID DIA_NASZ_306_Perrot_done_Info()
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_05"); //Có¿, taki rozwój spraw z pewnoœci¹ zainteresowa³by orka... Ale co zrobisz, to ju¿ twoja sprawa.
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_06"); //Ja teraz zmykam z obozu. Muszê zaj¹æ siê moj¹ owieczk¹... W razie czego, wiesz gdzie mnie znaleŸæ.
 
+	// TODO nie dziala, nie zmienia mu sie imie
 	NASZ_315_Bandzior.name = "Donks";
 
 	B_giveinvitems (other, self, ItFo_Schafswurst, 5);

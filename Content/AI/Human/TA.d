@@ -6,6 +6,7 @@ func void TA_Announce_Herold	(var int start_h, var int start_m, var int stop_h, 
 func void TA_Cook_Cauldron		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Cook_Cauldron,			waypoint);};
 func void TA_Cook_Pan			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Cook_Pan,				waypoint);};
 func void TA_Dance				(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Dance,					waypoint);};
+func void TA_Orc_Sit			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Orc_Sit,					waypoint);};
 func void TA_Orc_Dance			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Orc_Dance,					waypoint);};
 func void TA_FleeToWp			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_FleeToWp,				waypoint);};
 func void TA_Follow_Player		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m, ZS_Follow_Player,			waypoint);};

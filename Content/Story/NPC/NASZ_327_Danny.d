@@ -24,7 +24,7 @@ instance NASZ_327_Danny (Npc_Default)
 		
 	// ------ visuals ------																			
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Thief", Face_N_NormalBart12, BodyTex_N, ITNA_BAN_M);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Danny, BodyTex_N, ITNA_BAN_M);		
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); 
 	

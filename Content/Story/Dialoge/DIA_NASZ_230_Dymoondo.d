@@ -95,7 +95,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_where_Info()
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_where_55_03"); //IdŸ wzd³u¿ niej, a gdy na swojej drodze napotkasz w¹wóz nie do sforsowania, udaj siê w górê.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_where_55_04"); //Wtedy nawet œlepy zobaczy³by to obozowisko.
 	AI_Output (other,self ,"DIA_NASZ_230_Dymoondo_where_15_05"); //Dziêki, bêdê o tym pamiêta³, gdy jakiœ wilk wy¿re mi oczy.
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_where_55_06"); //Wilki to naj³agodniejsze stworzenia, które mo¿esz spotkaæ w tym przeklêtym miejscu... 
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_where_55_06"); //Wilki to naj³agodniejsze stworzenia, które mo¿esz napotkaæ w tym przeklêtym miejscu... 
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_where_55_07"); //No dobra, chrz¹szcze!
 
 };
@@ -128,7 +128,7 @@ FUNC VOID DIA_NASZ_230_Dymoondo_place_Info()
 	AI_Output (other, self,"DIA_NASZ_230_Dymoondo_place_55_02"); //Wiêc dlaczego nie jesteœ razem z Erakiem?
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_place_55_03"); //Erak ma swoich ludzi. Bardzo lubi pomoc, ale wspó³pracownikowi, szczególnie myœliwemu, trzeba bezgranicznie ufaæ.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_place_55_04"); //Zdarza siê, ¿e jeden podchodzi do zwierzêcia od przodu, a w tym czasie drugi strzela do bestii z przeciwnej strony.
-	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_place_55_05"); //Gdyby ten pierwszy skupia³ siê na tym, ¿eby nie skoñczyæ ze strza³¹ w g³owie, skoñczy³by z k³ami w g³owie.
+	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_place_55_05"); //Gdyby ten pierwszy skupi³ siê na tym, ¿eby nie skoñczyæ ze strza³¹ w g³owie, skoñczy³by z k³ami w g³owie.
 	AI_Output (self, other,"DIA_NASZ_230_Dymoondo_place_55_06"); //Zreszt¹ to by³ pomys³ Gestatha. Mam siê uczyæ i zdobywaæ doœwiadczenie sam.
 };
 

@@ -333,7 +333,7 @@ INSTANCE DIA_NASZ_405_VanGan_RekaTrolla   (C_INFO)
  	condition   = DIA_NASZ_405_VanGan_RekaTrolla_Condition;
  	information = DIA_NASZ_405_VanGan_RekaTrolla_Info;
  	permanent   = FALSE;
- 	description = "Ten miecz ci siê przyda, weŸ go.";
+ 	description = "Ten topór ci siê przyda, weŸ go.";
 };
 
 FUNC INT DIA_NASZ_405_VanGan_RekaTrolla_Condition()
@@ -346,7 +346,7 @@ FUNC INT DIA_NASZ_405_VanGan_RekaTrolla_Condition()
 
 FUNC VOID DIA_NASZ_405_VanGan_RekaTrolla_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_405_VanGan_RekaTrolla_15_00"); //Ten miecz ci siê przyda, weŸ go.
+	AI_Output (other, self,"DIA_NASZ_405_VanGan_RekaTrolla_15_00"); //Ten topór ci siê przyda, weŸ go.
 	B_giveinvitems (other, self, ItNa_RekaTrolla, 1);
 	AI_Output (self, other,"DIA_NASZ_405_VanGan_RekaTrolla_55_01"); //Rêka Trolla... Ten topór zabiæ tyle morr, a teraz nale¿eæ do mnie... Dziêkujê, morra.
 

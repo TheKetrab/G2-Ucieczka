@@ -28,6 +28,7 @@ var int CrystalMob_27_NASZ; // inserted
 var int CrystalMob_28_NASZ; // inserted
 var int CrystalMob_29_NASZ; // inserted
 var int CrystalMob_30_NASZ; // inserted
+var int CrystalMob_31_NASZ; // inserted
 var int CrystalMob_bonus_percents;
 
 FUNC INT B_CrystalMob_Bestimmung()
@@ -181,6 +182,11 @@ FUNC INT B_CrystalMob_Bestimmung()
 	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CrystalMOB_30") && (4 > CrystalMob_30_NASZ)
 	{
 		CrystalMob_30_NASZ = (CrystalMob_30_NASZ +1);
+		return TRUE;
+	}
+	else if Hlp_StrCmp (Npc_GetNearestWP (self), "NASZ_CRYSTALMOB_31") && (4 > CrystalMob_31_NASZ)
+	{
+		CrystalMob_31_NASZ = (CrystalMob_31_NASZ +1);
 		return TRUE;
 	};
 

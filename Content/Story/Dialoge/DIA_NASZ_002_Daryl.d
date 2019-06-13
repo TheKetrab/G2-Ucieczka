@@ -257,11 +257,11 @@ FUNC VOID DIA_NASZ_002_Daryl_ZamieniamSie_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_ZamieniamSie_55_00"); //Zamieniam siê w s³uch.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_01"); //Jak dobrze wiesz, on jako jedyny z nas wszystkich sympatyzuje siê ze stra¿nikami i robi wszystko, aby siê im przypodobaæ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_01"); //Jak dobrze wiesz, on jako jedyny z nas wszystkich sympatyzuje siê ze stra¿nikami i robi wszystko, aby im siê przypodobaæ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_02"); //Nie wiem, co chce tym osi¹gn¹æ, jednak za chwilê nie bêdziemy musieli siê tym przejmowaæ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_03"); //Kojarzysz ten zamkniêty tunel obok Bena, w którym wstrzymano wydobycie, bo skoñczy³a siê tam ju¿ ruda?
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_04"); //Ostatnio odkry³em, ¿e zosta³a tam jedna bry³a, i nie by³oby w niej nic specjalnego, gdyby nie fakt, ¿e jest strasznie nadkruszona.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_05"); //Wystarczy jeden zamach kilofem ¿eby ca³y strop spad³ na ciebie. Ju¿ wiesz, jak zamierzam wykorzystaæ ten fakt?
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_05"); //Wystarczy jeden zamach kilofem, ¿eby ca³y strop spad³ na ciebie. Ju¿ wiesz, jak zamierzam wykorzystaæ ten fakt?
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_ZamieniamSie_55_06"); //Chyba tak, ale w mojej g³owie rodzi siê pewna w¹tpliwoœæ: Jak chcesz go przekonaæ do wydobycia rudy w tym tunelu?
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_ZamieniamSie_55_07"); //Przecie¿ on nie jest tak g³upi, aby œlepo zawierzy³ w to, co mówimy.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_ZamieniamSie_55_08"); //Tym te¿ siê ju¿ zaj¹³em. Upozorujemy sytuacjê, w której chwalisz mi siê, ¿e wydoby³eœ tam du¿y kawa³ o wiele czystszej rudy ni¿ ta tutaj.
@@ -460,7 +460,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines()
 	
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_15_00"); //Nie twój cholerny interes.
 	AI_Output (other,self ,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_15_01"); //Wracaj lepiej do roboty albo doniosê stra¿nikowi, ¿e siê obijasz.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_55_02"); //Nie tym tonem. Poka¿ mi ten kamieñ albo postaram siê ¿ebyœcie ty i twoi koledzy nie dostawali ¿arcia przez najbli¿szy tydzieñ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_55_02"); //Nie tym tonem. Poka¿ mi ten kamieñ albo postaram siê, ¿ebyœcie ty i twoi koledzy nie dostawali ¿arcia przez najbli¿szy tydzieñ.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonTRIA_notYourBusines_55_03"); //Wyrazi³em siê dostatecznie jasno?
 	B_giveinvitems (other, self, ItNa_WyszlifowanaRuda, 1);
 	// (hero mówi do siebie)
@@ -671,10 +671,12 @@ FUNC VOID DIA_NASZ_002_Daryl_Metody1_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_15_00"); //Jeszcze nigdy nie widzia³em takiego grymasu zamyœlenia na twarzy Sattara. Mam nadziejê, ¿e jego wysi³ek nie pójdzie na marne i uda mu siê stworzyæ ten zwój.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Metody1_55_01"); //Równie¿ mam tak¹ nadziejê. Martwiê siê jedynie tym, aby stra¿nicy nie zaczêli czegoœ podejrzewaæ.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_02"); //Dlatego nie powinniœmy daæ po sobie poznaæ, ¿e coœ knujemy. Ja pójdê do Bena pozmawiaæ z nim o dalszym planie.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_02"); //Dlatego nie powinniœmy daæ po sobie poznaæ, ¿e coœ knujemy. Ja pójdê do Bena porozmawiaæ z nim o dalszym planie.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Metody1_55_03"); //Ty zaœ powinieneœ siê nieco przespaæ, bo wygl¹dasz jak zombie.
 	
-	Npc_ExchangeRoutine (self, "GoToBen");
+	Npc_ExchangeRoutine (NASZ_002_Daryl, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_005_Ben, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_020_Sattar, "TriaMiner");
 
 };
 
@@ -704,13 +706,13 @@ FUNC VOID DIA_NASZ_002_Daryl_Taktyki1_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_00"); //Daryl, przysz³a pora, aby oderwaæ siê w koñcu od kopania tej rudy. Nadszed³ czas, abyœ zrobi³ nam miksturê. 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_01"); //D³ugo oczekiwa³em na tê chwilê i cierpliwoœæ siê op³aci³a. Najlepiej od razu zabiorê siê do pracy, ¿ebyœmy nie tracili czasu.
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_02"); //Jak chcesz uwarzyæ tutaj truciznê i z czego? Wiesz, ¿e nie mo¿emy zabiæ stra¿nika, ani mu bardzo zaszkodziæ?
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_02"); //Jak chcesz uwarzyæ tutaj truciznê i z czego? Wiesz, ¿e nie mo¿emy zabiæ stra¿nika, ani bardzo mu zaszkodziæ?
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_03"); //Ta mieszanka nie bêdzie przeznaczona dla naszego stra¿nika. Pozwól, ¿e wprowadzê ciê w szczegó³y.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_04"); //D³ugo myœla³em nad receptur¹ trucizny, która pozwoli nam osi¹gn¹æ obrany cel.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_05"); //Postanowi³em wykorzystaæ kopalniane grzyby rosn¹ce w tunelach pozbawionych du¿ych iloœci œwiat³a. Mo¿e wygl¹daj¹ niepozornie, jednak nie daj siê zwieœæ!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_06"); //W ich kapeluszach znajduje siê silna toksyna, która po odpowiednim przetworzeniu potrafi pozbawiæ kogoœ przytomnoœci na kilka godzin.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_07"); //Czêsto roœliny te wykorzystywali op³acani ³owcy g³ów, chc¹cy upozorowaæ swoj¹ œmieræ.
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_08"); //Przez kilka godzin po za¿yciu wygl¹dasz jak prawdziwy nieboszczyk, który nie ma nawet pulsu. Kiedy ju¿ j¹ przygotujê bêdziesz musia³ j¹ wypiæ.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_08"); //Przez kilka godzin po za¿yciu wygl¹dasz jak prawdziwy nieboszczyk, który nie ma nawet pulsu. Kiedy ju¿ j¹ przygotujê, bêdziesz musia³ j¹ wypiæ.
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_09"); //Zwariowaliœcie?! Nie wypijê czegoœ, co mo¿e mnie zabiæ! Zapomnijcie o tym pomyœle!
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_10"); //Nie zrobi³bym czegoœ, co mo¿e ci zaszkodziæ. Doskonale znam dzia³anie i sposoby tworzenia takich eliksirów.
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_11"); //To najpewniejsza droga do wolnoœci, wierz mi. Po wypiciu tej mikstury bêdziesz wygl¹da³ jak trup.
@@ -718,7 +720,7 @@ FUNC VOID DIA_NASZ_002_Daryl_Taktyki1_Info()
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_13"); //Ty jednak obudzisz siê w œrodku nocy i zwyczajnie uciekniesz. A kiedy siê obudz¹, ciebie ju¿ tutaj nie bêdzie. Czy¿ to nie proste? 
 	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_15_14"); //A co je¿eli siê nie obudzê? 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_15"); //Nie ma takiej mo¿liwoœci. Toksyny zawarte w grzybach s¹ zbyt s³abe, aby kogoœ zabiæ lub trzymaæ w stanie œmierci d³u¿ej ni¿ przez piêæ godzin. Wszystko zale¿y te¿ od mieszanki. 
-	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_55_16"); //Nie podoba mi siê ten plan, jednak jak rozumiem nie mamy wyjœcia. Mogê ci w czymœ pomóc? 
+	AI_Output (other, self,"DIA_NASZ_002_Daryl_Taktyki1_55_16"); //Nie podoba mi siê ten plan. Jednak, jak rozumiem, nie mamy wyjœcia. Mogê ci w czymœ pomóc? 
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki1_55_17"); //Owszem. Ja pójdê przyszykowaæ flakonik, jaki uda³o mi siê wykraœæ z obozu paladynów, ty zaœ przynieœ mi cztery grzyby. Tylko ich nie jedz! 
 	
 	Wld_InsertItem (ItNa_KopalnianyGrzyb, "FP_ITEM_KOPALNIANY_GRZYB_1");
@@ -798,7 +800,11 @@ FUNC VOID DIA_NASZ_002_Daryl_Taktyki3_Info()
 	AI_Output (self, other,"DIA_NASZ_002_Daryl_Taktyki3_55_01"); //Eliksir jest ju¿ gotowy, powinniœmy wróciæ do Bena. 
 	
 	AI_StopProcessInfos(self);
-	Npc_ExchangeRoutine (self, "GoToBen");
+	
+	Npc_ExchangeRoutine (NASZ_002_Daryl, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_005_Ben, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_020_Sattar, "TriaMiner");
+
 
 };
 

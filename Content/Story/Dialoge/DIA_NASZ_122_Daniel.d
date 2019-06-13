@@ -393,7 +393,7 @@ FUNC VOID DIA_NASZ_122_Daniel_Gornictwo_Info()
 	AI_Output (self, other, "DIA_NASZ_122_Daniel_Gornictwo_01_01"); //Jasne, ale wtedy bêdziesz mieæ wiêcej z³ota.
 	AI_Output (other, self, "DIA_NASZ_122_Daniel_Gornictwo_15_02"); //W³aœnie o to chodzi.
 	AI_Output (self, other, "DIA_NASZ_122_Daniel_Gornictwo_01_03"); //Dobra, ale powinieneœ oddaæ mi jak¹œ jego czêœæ.
-	AI_Output (other, self, "DIA_NASZ_122_Daniel_Gornictwo_15_04"); //Có¿....
+	AI_Output (other, self, "DIA_NASZ_122_Daniel_Gornictwo_15_04"); //Có¿...
 
 	Log_CreateTopic (TOPIC_LowcyTeacher,LOG_NOTE);
 	B_LogEntry (TOPIC_LowcyTeacher,"Daniel nauczy mnie górnictwa.");

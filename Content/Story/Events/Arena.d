@@ -129,7 +129,9 @@ func void ARENA ()
 		&& (Arena_Przegrana_Raz == FALSE)
 		{
 			Arena_Przegrana_Raz = TRUE;
-			CzasZakonczycWalkeZPowoduX = TRUE;
+			CzasZakonczycWalkeZPowoduXGODAR = TRUE;
+			CzasZakonczycWalkeZPowoduXHOKURN = TRUE;
+
 			Npc_ClearAIQueue(NASZ_113_Godar);
 			B_Attack (NASZ_113_Godar,hero, AR_NONE, 0);
 			Npc_ClearAIQueue(NASZ_114_Hokurn);
@@ -143,7 +145,9 @@ func void ARENA ()
 		&& (Arena_Przegrana_Raz == FALSE)
 		{
 			Arena_Przegrana_Raz = TRUE;
-			CzasZakonczycWalkeZPowoduX = TRUE;
+			CzasZakonczycWalkeZPowoduXGODAR = TRUE;
+			CzasZakonczycWalkeZPowoduXHOKURN = TRUE;
+
 			Npc_ClearAIQueue(NASZ_113_Godar);
 			B_Attack (NASZ_113_Godar,hero, AR_NONE, 0);
 			Npc_ClearAIQueue(NASZ_114_Hokurn);
@@ -157,7 +161,9 @@ func void ARENA ()
 		&& (Arena_Przegrana_Raz == FALSE)
 		{
 			Arena_Przegrana_Raz = TRUE;
-			CzasZakonczycWalkeZPowoduX = TRUE;
+			CzasZakonczycWalkeZPowoduXGODAR = TRUE;
+			CzasZakonczycWalkeZPowoduXHOKURN = TRUE;
+
 			Npc_ClearAIQueue(NASZ_113_Godar);
 			B_Attack (NASZ_113_Godar,hero, AR_NONE, 0);
 			Npc_ClearAIQueue(NASZ_114_Hokurn);
@@ -218,7 +224,7 @@ func void RethonKurganFight() {
 	// cond
 	if (RethonKurganBeginingOneTime == FALSE) {
 
-		Print("BeginingOneTime");
+		//Print("BeginingOneTime");
 		RethonKurganBeginingOneTime = TRUE;
 		
 		NASZ_115_Kurgan.attribute[ATR_STRENGTH] = 100;
@@ -229,7 +235,8 @@ func void RethonKurganFight() {
 		Npc_ClearAIQueue (NASZ_109_Rethon);
 		Npc_ExchangeRoutine (NASZ_109_Rethon, "Arena");
 		
-		Wld_SendTrigger("CAM_RETHON_KURGAN"); // TODO untrigger dopiero gdy skoncza walczyc plus kilka sekund, to chyba trzeba ustawic w spacerze, zeby nie robilo automatycznie untriggera
+		// UWAGA - kamere wy³¹czam, bo siê to pieprzy wszystko
+		//Wld_SendTrigger("CAM_RETHON_KURGAN"); // TODO mo¿e na kiedyœ: untrigger dopiero gdy skoncza walczyc plus kilka sekund, to chyba trzeba ustawic w spacerze, zeby nie robilo automatycznie untriggera
 	};
 	
 	if (Npc_GetDistToWP(NASZ_109_Rethon,"NASZ_LOWCY_ARENA_01") < 700)
@@ -244,7 +251,7 @@ func void RethonKurganFight() {
 		//Npc_ClearAIQueue (NASZ_109_Rethon);
 		//B_Attack(NASZ_109_Rethon, NASZ_115_Kurgan, AR_NONE, 1);
 
-		Print("RethonKurganAtakOneTime");
+		//Print("RethonKurganAtakOneTime");
 		RethonKurganAttackOneTime = TRUE;
 		
 	};
@@ -256,7 +263,7 @@ func void RethonKurganFight() {
 	&& (RethonKurganFightFinished == FALSE)
 	&& (RethonKurganFightIterator >= 10)
 	{		
-		Print("Who won?");
+		//Print("Who won?");
 
 		RethonKurganFightFinished = TRUE;
 		Npc_ExchangeRoutine (NASZ_115_Kurgan, "Start");
@@ -269,10 +276,10 @@ func void RethonKurganFight() {
 	};
 	
 	if (secRethonKurganFightFinished >= 3) {
-		Print("secAfter");
+		//Print("secAfter");
 		secRethonKurganFightFinished = 0;
 		RethonKurganFightIterator = 0;
-		Wld_SendUnTrigger("CAM_RETHON_KURGAN");
+		//Wld_SendUnTrigger("CAM_RETHON_KURGAN"); - wy³¹czenie kamery
 		ff_Remove(RethonKurganFight); // TODO ten remove chyba jest z³y!!!
 	};
 	

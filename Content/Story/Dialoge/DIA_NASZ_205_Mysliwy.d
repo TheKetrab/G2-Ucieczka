@@ -153,6 +153,8 @@ FUNC VOID DIA_NASZ_205_Mysliwy_what_Info()
 	AI_Output (other, self,"DIA_NASZ_205_Mysliwy_what_55_02"); //Chcia³eœ powiedzieæ: 'zabijesz'.
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_what_55_03"); //Tak. Tak, oczywiœcie.
 
+	MIS_PodleGadyRunning = TRUE;
+	
 	Log_CreateTopic (TOPIC_Mysliwy_Warta, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_RUNNING);
 	B_LogEntry (TOPIC_Mysliwy_Warta, "Co noc, do obozu wypadowego myœliwych, przychodz¹ zêbacze. Muszê stan¹æ na warcie wieczorem i pozabijaæ wszystkie gady.");
@@ -329,6 +331,7 @@ FUNC VOID DIA_NASZ_205_Mysliwy_QuestDone_Info()
 	Createinvitems (self, ItRw_Bow_H_03, 1);
 	B_GiveInvItems (self, other, ItRw_Bow_H_03, 1);
 
+	MIS_PodleGadyRunning = FALSE;
 	Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Mysliwy_Warta, "Teraz ju¿ ¿aden zêbacz nie zniszczy zapasów myœliwych.");
 

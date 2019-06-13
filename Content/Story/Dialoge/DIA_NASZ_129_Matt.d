@@ -45,7 +45,7 @@ FUNC VOID DIA_NASZ_129_Matt_hello_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_00"); //Stój! Kim jesteœ i czego tu szukasz?!
-	AI_Output (other, self,"DIA_NASZ_129_Matt_hello_15_01"); //Spokojnie. Przybywam do was w imieniu Udara, który chcia³, bym was odszuka³ i dowiedzia³ siê, dlaczego nie wróciliœcie jeszcze do obozu.
+	AI_Output (other, self,"DIA_NASZ_129_Matt_hello_15_01"); //Spokojnie. Przybywam do was w imieniu Udara, który chcia³, bym was odszuka³ i dowiedzia³ siê, dlaczego jeszcze nie wróciliœcie do obozu.
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_02"); //No i w³aœnie nas znalaz³eœ, a w zasadzie to jednego z nich. Reszta przebywa w zupe³nie nowym obozie, gdy¿ z tego musieliœmy uciekaæ.
 	AI_Output (other, self,"DIA_NASZ_129_Matt_hello_15_03"); //Co siê tutaj wydarzy³o?
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_15_04"); //Zesz³ej nocy mieliœmy zamiar przeprowadziæ ostatni zwiad. Kiedy mieliœmy ju¿ wyruszaæ, nasz przywódca, Jenkins, zwróci³ uwagê na dziwne krzyki obiegaj¹ce okolicê.
@@ -86,7 +86,7 @@ func void MattSay_GoWithMe() {
 FUNC VOID DIA_NASZ_129_Matt_hello_yep()
 {
 	AI_Output (other,self ,"DIA_NASZ_129_Matt_hello_yep_15_00"); //Czego mam szukaæ?
-	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_yep_55_01"); //Pozosta³ych dokumentów, jakiœ kartek, no wiesz czegoœ w tym guœcie. Rozejrzyj siê po tej stronie, ja poszukam po tej.
+	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_yep_55_01"); //Pozosta³ych dokumentów, jakichœ kartek, no wiesz czegoœ w tym guœcie. Rozejrzyj siê po tej stronie, ja poszukam po tej.
 	// TODO: [Zwiadowca chodzi do kilku miejsc i wykonuje animacjê przeszukiwania jak zbieracze w G1]
 
 	B_LogEntry (TOPIC_Udar_patrol,"Znalaz³em jednego ze zwiadowców, który mo¿e zaprowadziæ mnie do obozowiska reszty. Jednak najpierw muszê pomóc mu znaleŸæ jakiœ dokument.");

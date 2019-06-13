@@ -55,7 +55,7 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_08"); //Wiesz, jak j¹ otworzyæ?
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_09"); //Pewnie trzeba ich wywabiæ... Kiedyœ pods³ucha³em, jak mówili o jakimœ wodzu Ur-Shaku.
 	AI_Output			(self, other, "DIA_NASZ_003_Kopacz_hello_03_10"); //O ile siê nie mylê, to jego siedziba znajduje siê w fortecy górskiej.
-	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_11"); //Dziêki za informacje. Wracaj z ch³opcami do twierdzy. Ja wyruszam zg³adziæ Ur-Shaka.	
+	AI_Output			(other, self, "DIA_NASZ_003_Kopacz_hello_03_11"); //Dziêki za informacje. Wracaj z ch³opcami do twierdzy. Ja wyruszam zg³adziæ Ur-Shaka.
 	
 	WillGoToUrShack = TRUE;
 	Wld_SendTrigger("FORT_1_TRIGGER"); // CatSan otwiera krate

@@ -541,3 +541,82 @@ FUNC VOID DIA_NASZ_888_Film_FilmOutroCam6_Function()
 
 	Info_ClearChoices (DIA_NASZ_888_Film_FilmOutroCam6);
 };
+
+
+//*********************************************************************
+//	Trailer
+//*********************************************************************
+INSTANCE DIA_NASZ_888_Film_Trailer   (C_INFO)
+{
+	npc         = NASZ_888_Film;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_888_Film_Trailer_Condition;
+ 	information = DIA_NASZ_888_Film_Trailer_Info;
+ 	permanent   = TRUE;
+ 	description = "Trailer";
+};
+
+FUNC INT DIA_NASZ_888_Film_Trailer_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Info()
+{
+	Info_ClearChoices (DIA_NASZ_888_Film_Trailer);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, DIALOG_BACK, DIA_NASZ_888_Film_Trailer_BACK);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaLowcy", DIA_NASZ_888_Film_Trailer_Lowcy);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaBagno", DIA_NASZ_888_Film_Trailer_Bagno);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaMiecz", DIA_NASZ_888_Film_Trailer_Miecz);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaMysliwi", DIA_NASZ_888_Film_Trailer_Mysliwi);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaRitual", DIA_NASZ_888_Film_Trailer_Ritual);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaGD", DIA_NASZ_888_Film_Trailer_GD);
+		Info_AddChoice	  (DIA_NASZ_888_Film_Trailer, "ScenaOrc", DIA_NASZ_888_Film_Trailer_Orc);
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_888_Film_Trailer);
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Miecz()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERMIECZ");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Lowcy()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERLOWCY");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Mysliwi()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERMYSLIWI");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Bagno()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERBAGNO");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Ritual()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERRITUAL");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_GD()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERGD");
+};
+
+FUNC VOID DIA_NASZ_888_Film_Trailer_Orc()
+{
+	AI_StopProcessInfos	( self );
+	Wld_SendTrigger ("CAM_TRAILERORC");
+};

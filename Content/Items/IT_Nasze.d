@@ -285,7 +285,7 @@ func void TARCZASTRZELECKA_TRIGER ()
 var int WillBylZapalisada;
 func void TRIGGER_INORC ()
 {
-	AI_Output (hero ,hero,"DIA_Will_ZaPalisada_15_00"); //No proszê. Ciekawe, ilu orków tu przebywa.
+	Will_Zapalisada();
 	WillBylZapalisada = TRUE;
 };
 
@@ -318,10 +318,12 @@ func void XARDAS_TRIGER_2 ()
 
 func void FINISH ()
 {
-	//PrintScreen	("KONIEC GRY", -1,-1, "font_old_20_white.tga",2);
-	PlayVideo ("G2UCIECZKAOUTRO.BIK");	
-	ExitSession ();
-
+	if (HeroCanFinish) {
+		//PrintScreen	("KONIEC GRY", -1,-1, "font_old_20_white.tga",2);
+		PlayVideo ("G2UCIECZKAOUTRO.BIK");
+		PlayVideo ("G2UCIECZKACREDITS.BIK");
+		ExitSession ();
+	};
 };
 
 func void WILL_SAY_END ()
@@ -351,7 +353,7 @@ func void STRZAL_Z_LUKU_SCRIPT ()
 	if (WillZatruty < 1) {
 		WillZatruty = 1;
 		//PrintScreen	("zatruty 1", -1,-1, FONT_ScreenSmall,3);
-		PrintScreen	("Zosta³eœ zatruty!", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Zosta³eœ otruty!", -1,-1, "font_old_20_white.tga",2);
 		Snd_Play ("TRUCIZNA");
 	};
 };
@@ -361,7 +363,7 @@ func void TruciznaFunction2 ()
 	if (WillZatruty < 2) {
 		WillZatruty = 2;
 		//PrintScreen	("zatruty 2", -1,-1, FONT_ScreenSmall,3);
-		PrintScreen	("Zosta³eœ zatruty!", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Zosta³eœ otruty!", -1,-1, "font_old_20_white.tga",2);
 		Snd_Play ("TRUCIZNA");
 	};
 };
@@ -371,7 +373,7 @@ func void TruciznaFunction3 ()
 	if (WillZatruty < 3) {
 		WillZatruty = 2;
 		//PrintScreen	("zatruty 3", -1,-1, FONT_ScreenSmall,3);
-		PrintScreen	("Zosta³eœ zatruty!", -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	("Zosta³eœ otruty!", -1,-1, "font_old_20_white.tga",2);
 		Snd_Play ("TRUCIZNA");
 	};
 };*/
@@ -1132,6 +1134,7 @@ INSTANCE ItNa_Kostur_UrShaka (C_Item)
 	TEXT[5]				= NAME_Value;				COUNT[5]	= value;
 };
 
+// TODO przez quickslota nie dzia³a ta funkcja ! nie wywoluje sie on_equip
 FUNC VOID Equip_ItNa_UrShack()
 {
 	if Npc_IsPlayer (self)
@@ -2203,6 +2206,54 @@ INSTANCE ItNa_MlotOrkow (C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Ring_Wiernosc(C_Item) //Im Alten Lager
+{
+	name 					=	"Pierœcieñ wiernoœci";
+
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_RING;
+
+	value 					=	Value_Ri_ProtEdge02;
+
+	visual 					=	"ItRi_Prot_Edge_02.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_Ring_Wiernosc;
+	on_unequip				=	UnEquip_ItNa_Ring_Wiernosc;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description				= name;
+	
+	TEXT[0] = "Mój pierœcieñ wiernoœci.";
+	
+	TEXT[2]					= NAME_Prot_Edge;
+	COUNT[2]				= Ri_ProtEdge02;
+	
+	TEXT[5]					= NAME_Value;
+	COUNT[5]				= value;
+		
+	INV_ZBIAS				= INVCAM_ENTF_RING_STANDARD;
+	INV_ROTZ				= INVCAM_Z_RING_STANDARD;
+	INV_ROTX				= INVCAM_X_RING_STANDARD;
+	
+};
+
+FUNC VOID Equip_ItNa_Ring_Wiernosc()
+{
+	self.protection [PROT_EDGE] 		+=  Ri_ProtEdge02;
+	self.protection [PROT_BLUNT]		+=  Ri_ProtEdge02;
+};
+
+FUNC VOID UnEquip_ItNa_Ring_Wiernosc()
+{
+	self.protection [PROT_EDGE] 		-=  Ri_ProtEdge02;
+	self.protection [PROT_BLUNT]		-=  Ri_ProtEdge02;
+};
+	
 
 
 // **********************************************
@@ -4007,7 +4058,7 @@ FUNC VOID Use_HowToEscape()
 					Doc_PrintLines	( nDocID,  0, "Zamknêli mnie. Prowadz¹ jakieœ nielegalne wydobycie rudy...");
 					Doc_PrintLine	( nDocID,  0, ""		);
 					Doc_PrintLine	( nDocID,  0, "05.05"		);
-					Doc_PrintLines	( nDocID,  0, "Mo¿na otworzyæ bramê do lasu - potrzeba jednak jakiegoœ smaru... Wydaje mi siê, ¿e przez bramê w stronê Nowego Obozu mo¿na siê wydostaæ, u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
+					Doc_PrintLines	( nDocID,  0, "Mo¿na otworzyæ bramê do lasu - potrzeba jednak smaru... Wydaje mi siê, ¿e przez bramê w stronê Nowego Obozu mo¿na siê wydostaæ, u¿ywaj¹c przemiany w chrz¹szcza. Tylko sk¹d ja to do cholery wezmê?");
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLines	( nDocID,  0, "");
 
@@ -5035,7 +5086,12 @@ func void Use_Matt_Kartka ()
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
 					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, ".ezreifo w ano¿o³z a³atsoz akzceiwo azswreiP !aineimæaz agêtop saw an einy³ps hceiN");
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, ".ezreifo w ano¿o³z a³atsoz akzceiwo azswreiP");
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "!aineimæaz agêtop saw an einy³ps hceiN");
 					Doc_PrintLine	( nDocID,  0, ""						);
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
@@ -6357,7 +6413,8 @@ INSTANCE ItNa_Oswojenie(C_Item)
 	TEXT	[1]			=	NAME_Mana_needed;			
 	COUNT	[1]			=	SPL_Cost_Scroll;
 
-	TEXT	[3]			=	"Zaklêcie powoduje neutralne zachowanie zwierzêcia wzglêdem rzucaj¹cego.";
+	TEXT	[3]			=	"Zaklêcie powoduje neutralne zachowanie";
+	TEXT	[4]			=	"zwierzêcia wzglêdem rzucaj¹cego.";
 	
 	TEXT	[5]			=	NAME_Value;					
 	COUNT	[5]			=	value;
@@ -6801,6 +6858,50 @@ INSTANCE ITNA_OUT_S (C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_OUT_ULTRA (C_Item)
+{
+	name 					=	"Pancerz wielkiego ³owczego";
+
+	mainflag 				=	ITEM_KAT_ARMOR;
+	flags 					=	0;
+
+	protection [PROT_EDGE]	=	60;
+	protection [PROT_BLUNT]	= 	60;
+	protection [PROT_POINT] = 	60;
+	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_MAGIC] = 	20;
+
+	value 					=	1500;
+
+	wear 					=	WEAR_TORSO;
+
+	visual 					=	"ItAr_Djg_Crawler.3ds";
+	visual_change 			=	"Armor_OUT_ULTRA.asc";
+	visual_skin 			=	0;
+	material 				=	MAT_LEATHER;
+
+	description				=	name;
+	
+	TEXT[1]					=	NAME_Prot_Edge;			
+	COUNT[1]				= 	protection	[PROT_EDGE];
+	
+	TEXT[2]					=	NAME_Prot_Point;		
+	COUNT[2]				= 	protection	[PROT_POINT];
+	
+	TEXT[3] 				=	NAME_Prot_Fire;			
+	COUNT[3]				= 	protection	[PROT_FIRE];
+	
+	TEXT[4]					=	NAME_Prot_Magic;		
+	COUNT[4]				= 	protection	[PROT_MAGIC];
+	
+	TEXT[5]					=	NAME_Value;			
+	COUNT[5]				= 	value;
+};
+
+
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_BAN_M (C_Item)
 {
 	name 					=	"Pancerz bandyty";
@@ -6819,7 +6920,8 @@ INSTANCE ItNa_BAN_M (C_Item)
 	wear 					=	WEAR_TORSO;
 
 	visual 					=	"ItAr_Sld_M.3ds";
-	visual_change 			=	"Armor_Sld_M.asc";
+	//visual_change 			=	"Armor_Sld_M.asc";
+	visual_change = "ARMOR_BANNEW_M.asc";
 	visual_skin 			=	0;
 	material 				=	MAT_LEATHER;
 
@@ -6860,7 +6962,8 @@ INSTANCE ItNa_BAN_H (C_Item)
 	wear 					=	WEAR_TORSO;
 
 	visual 					=	"ItAr_Sld_H.3ds";
-	visual_change 			=	"Armor_Sld_H.asc";
+	//visual_change 			=	"Armor_Sld_H.asc";
+	visual_change = "ARMOR_BANNEW_H.asc";
 	visual_skin 			=	0;
 	material 				=	MAT_LEATHER;
 	
@@ -7043,6 +7146,49 @@ INSTANCE ITNA_DJG_S (C_Item)
 	TEXT[5]					=	NAME_Value;			
 	COUNT[5]				= 	value;
 };
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_DJG_ULTRA (C_Item)
+{
+	name 					=	"Zbroja z pancerza orka-elity";
+
+	mainflag 				=	ITEM_KAT_ARMOR;
+	flags 					=	0;
+
+	protection [PROT_EDGE]	=	60;
+	protection [PROT_BLUNT]	= 	60;
+	protection [PROT_POINT] = 	60;
+	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_MAGIC] = 	20;
+
+	value 					=	1500;
+
+	wear 					=	WEAR_TORSO;
+
+	visual 					=	"ItAr_Djg_M.3ds";
+	visual_change 			=	"PAL_ORC.asc";
+	visual_skin 			=	0;
+	material 				=	MAT_LEATHER;
+
+	description				=	name;
+	
+	TEXT[1]					=	NAME_Prot_Edge;		
+	COUNT[1]				= 	protection	[PROT_EDGE];
+	
+	TEXT[2]					=	NAME_Prot_Point;		
+	COUNT[2]				= 	protection	[PROT_POINT];
+	
+	TEXT[3] 				=	NAME_Prot_Fire;			
+	COUNT[3]				= 	protection	[PROT_FIRE];
+	
+	TEXT[4]					=	NAME_Prot_Magic;		
+	COUNT[4]				= 	protection	[PROT_MAGIC];
+	
+	TEXT[5]					=	NAME_Value;			
+	COUNT[5]				= 	value;
+};
+
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_ARMOR_ANCIENT (C_Item)
@@ -8030,7 +8176,8 @@ INSTANCE ItNa_OrkowaMikstura(C_Item)
 FUNC VOID UseOrkowaMikstura()
 { 
 	Wld_PlayEffect ("spellFX_Whirlwind_COLLIDE", hero, hero, 0, 0, 0, FALSE);
-	AI_StartState		(hero, ZS_Whirlwind, 0, "");
+	//AI_StartState		(hero, ZS_Whirlwind, 0, "");
+	// TODO bogu - hero.hp = hero.hp / 2
 	//B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau für einen Lurker.
 	Wld_SendTrigger ("MOVER_ORCCITY_20");
 	Wld_SendTrigger ("MOVER_ORCCITY_21");
@@ -10473,6 +10620,38 @@ FUNC VOID Use_AllHelmets ()
 	CreateInvItems (hero,ITNA_HelmSniacego, 1);		// na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
 	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);
 	CreateInvItems (hero,ITNA_Maska, 1);
+	CreateInvItems (hero,ITNA_DJG_ULTRA_HELMET, 1);
+};
+
+
+
+INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
+{
+	name = "He³m z pancerza orka-elity";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	protection[PROT_EDGE] = 16;
+	protection[PROT_BLUNT] = 16;
+	protection[PROT_POINT] = 8;
+	protection[PROT_FIRE] = 14;
+	protection[PROT_MAGIC] = 10;
+	value = 1500;
+	wear = WEAR_HEAD;
+	visual = "PAL_ORC_HELM03.3ds"; 
+	visual_skin = 0;
+	material = MAT_LEATHER;
+	description = name;
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;
+	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;
+	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;
+	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;
+	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;
+	count[5] = value;
 };
 
 INSTANCE ITNA_KolczugaRycerza (C_Item)

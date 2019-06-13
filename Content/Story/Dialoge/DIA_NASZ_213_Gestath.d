@@ -151,7 +151,7 @@ INSTANCE DIA_NASZ_213_Gestath_siema2   (C_INFO)
 FUNC INT DIA_NASZ_213_Gestath_siema2_Condition()
 {
 	if (Npc_IsInState(self, ZS_TALK)
-	&& npc_knowsinfo (other, DIA_NASZ_213_Gestath_hello)) && (Gestath_Stopowanie == TRUE)
+	&& npc_knowsinfo (other, DIA_NASZ_213_Gestath_hello)) && (Gestath_Stopowanie == FALSE)
 	{
 		return TRUE;
 	};
@@ -259,7 +259,7 @@ FUNC INT DIA_NASZ_213_Gestath_WhereWolf_Condition()
 FUNC VOID DIA_NASZ_213_Gestath_WhereWolf_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_WhereWolf_55_00"); //Gdzie znajdê te wilki?
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_WhereWolf_15_01"); //Zwyk³e znajdziesz w lasach. Czarne szukaj pod wulkanem, a lodowe oczywiœcie w okolicach Nowego Obozu.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_WhereWolf_15_01"); //Zwyk³e znajdziesz w lasach. Czarnych szukaj pod wulkanem, a lodowych oczywiœcie w okolicach Nowego Obozu.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_WhereWolf_55_02"); //Tylko, ¿e te ostatnie wystêpuj¹ w du¿ych watahach. Nie daj siê zjeœæ.
 
 	B_LogEntry (TOPIC_Gestath_wilki, "Zwyk³e wilki mogê spotkaæ w lasach, czarne pod wulkanem, a lodowe w okolicach Nowego Obozu.");
@@ -322,7 +322,7 @@ INSTANCE DIA_NASZ_213_Gestath_ready   (C_INFO)
  	condition   = DIA_NASZ_213_Gestath_ready_condition;
  	information = DIA_NASZ_213_Gestath_ready_Info;
  	permanent   = TRUE;
-	description = "Czy jestem ju¿ gotowy, by do was do³¹czyæ?";
+	description = "Czy jestem ju¿ gotów, by do was do³¹czyæ?";
 };
 
 FUNC INT DIA_NASZ_213_Gestath_ready_condition()
@@ -337,7 +337,7 @@ FUNC INT DIA_NASZ_213_Gestath_ready_condition()
 
 FUNC VOID DIA_NASZ_213_Gestath_ready_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_ready_55_00"); //Czy jestem ju¿ gotowy, by do was do³¹czyæ?
+	AI_Output (other, self,"DIA_NASZ_213_Gestath_ready_55_00"); //Czy jestem ju¿ gotów, by do was do³¹czyæ?
 	if (RepEnough(25,REP_MYSLIWI)) && (npc_knowsinfo (other, DIA_NASZ_213_Gestath_FurForYou)) {
 	
 		if (npc_knowsinfo (other, DIA_NASZ_201_Erak_PreHello)) {
@@ -352,6 +352,10 @@ FUNC VOID DIA_NASZ_213_Gestath_ready_Info()
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_ready_15_05"); //Uwa¿am, ¿e powinniœcie zamieniæ ze sob¹ kilka s³ów. To moja prawa rêka.
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_ready_15_06"); //Erak przebywa w obozie wypadowym. IdŸ wzd³u¿ palisady na pó³noc, a na jej koñcu skrêæ w prawo. Tam go znajdziesz.
 		};
+	}
+	else if (RepEnough(25,REP_MYSLIWI)) && (!npc_knowsinfo (other, DIA_NASZ_213_Gestath_FurForYou))
+	{
+		AI_Output (self, other,"DIA_NASZ_213_Gestath_ready_55_11"); //Nadal czekam na skóry, które mia³eœ mi przynieœæ.
 	}
 	else if (RepEnough(10,REP_MYSLIWI)) {
 		PrintMissingRep(25,REP_MYSLIWI);
@@ -664,7 +668,7 @@ func void GestathSay_Becareful() {
 
 func void GestathSay_AboutBandits() {
 
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_00"); //Pos³uchaj: Kilka dni temu, jeden ze zwiadowców, zauwa¿y³ coœ dziwnego.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_00"); //Pos³uchaj: Kilka dni temu, jeden ze zwiadowców zauwa¿y³ coœ dziwnego.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_01"); //Dwóch ludzi w Opuszczonej Kopalni. Nie wiadomo kim s¹, ani tym bardziej czego chc¹. Wybierzesz siê tam i sprawdzisz, o co chodzi.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_02"); //Mam ich zabiæ?
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_03"); //Jeœli twoim zdaniem stanowi¹ zagro¿enie, to tak.
@@ -821,6 +825,20 @@ FUNC INT DIA_NASZ_213_Gestath_RenegaciInfo_Condition()
 	};
 };
 
+func int Hero_IsInBanditArmor() {
+
+	var c_item armor; armor = Npc_GetEquippedArmor (hero);
+
+	if (Hlp_IsItem (armor, ItNa_BAN_L)
+	 || Hlp_IsItem (armor, ItNa_BAN_M)
+	 || Hlp_IsItem (armor, ItNa_BAN_H))
+	{
+		return TRUE;
+	};
+	
+	return FALSE;
+};
+
 FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_00"); //Powiem ci, czego siê dowiedzia³em.
@@ -858,7 +876,9 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_11"); //No dobra... W takim razie przed tob¹ kolejne zadanie.
 			AI_Output (other, self,"DIA_NASZ_213_Gestath_RenegaciInfo_55_12"); //Niech zgadnê. Mam przenikn¹æ do ich obozu i dowiedzieæ siê, czego tu szukaj¹?
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_13"); //Wymagasz od siebie wiêcej, ni¿ bym ciê poprosi³. Ale niech tak bêdzie!
-			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_14"); //Jeœli chcesz prze¿yæ w ich towarzystwie, to lepiej za³atw sobie taki pancerz, jaki nosz¹.
+			if (!Hero_IsInBanditArmor()) { // jesli nie ma pancerza bandyty
+				AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_14"); //Jeœli chcesz prze¿yæ w ich towarzystwie, to lepiej za³atw sobie taki pancerz, jaki nosz¹.
+			};
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_15"); //Dowiedz siê od nich tyle, ile dasz radê. Powodzenia.
 			
 			B_LogEntry (TOPIC_Gestath_Renegaci, "Muszê przenikn¹æ do obozu tamtych ludzi i dowiedzieæ siê, po co przybyli do Górniczej Doliny. Szef myœliwych zasugerowa³ mi, ¿ebym za³atwi³ sobie taki sam pancerz, jaki mieli tamci ludzie.");
@@ -1342,10 +1362,7 @@ FUNC VOID DIA_NASZ_213_Gestath_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };

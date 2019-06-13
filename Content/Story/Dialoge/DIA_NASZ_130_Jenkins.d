@@ -92,7 +92,7 @@ FUNC VOID DIA_NASZ_130_Jenkins_hello_Info()
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_00"); //Przysy³a mnie Udar. Mam sprawdziæ, co z wami siê sta³o.
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_01"); //Jednak ju¿ sam widok tego wszystkiego nie napawa mnie optymizmem.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_02"); //Aktualnie nie mo¿emy wróciæ do obozu, gdy¿ jak widzisz kilku z nas jest ciê¿ko rannych, a zostawienie ich na pastwê losu nie wchodzi w grê.
-	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_03"); //Co gorsza nie s¹ to takie zwyk³e rany, jakich mo¿na siê nabawiæ po ciosie od miecza czy topora... To coœ bardziej powa¿nego.
+	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_03"); //Co gorsza, nie s¹ to takie zwyk³e rany, jakich mo¿na siê nabawiæ po ciosie od miecza czy topora... To coœ bardziej powa¿nego.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_04"); //Ostatniej nocy s³yszeliœmy krzyki orków wydobywaj¹ce siê z zamku, tak jakby dyskutowali o czymœ wa¿nym i istotnym. Co ciekawe, by³o to o wiele wa¿niejsze ni¿ my i przygotowania do wojny.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_05"); //Zapewne wiesz ju¿ od Matta, o czym rozmawiali, tak wiêc nie bêdê zanudza³ ciê szczegó³ami. Istotne jest to, ¿e kiedy go nie by³o, zdo³a³em rozszyfrowaæ jedn¹ z inkantacji orkowego szamana, która zapad³a mi w pamiêci.
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_06"); //Szamani orków czêsto wypowiadaj¹ przedziwne frazy. Czemu ta by³a na tyle wyj¹tkowa, ¿e zapad³a ci w pamiêci?
@@ -106,14 +106,14 @@ FUNC VOID DIA_NASZ_130_Jenkins_hello_Info()
 };
 
 func void DIA_NASZ_130_Jenkins_hello_yep() {
-	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_00"); //'Niech spowije ciê sen nieprzespany, albowiem tyœ jest tym, kto s³u¿y dawno przebudzonemu demonowi. Na mocy tych s³ów, JA, zmuszam tw¹ duszê do z³o¿enia mi pok³onu albowiem wielka jest moc ¿ycia, które sprawuje w³adze nad œmierci¹!'
+	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_00"); //'Niech spowije ciê sen nieprzespany, albowiem tyœ jest tym, kto s³u¿y dawno przebudzonemu demonowi. Na mocy tych s³ów, JA, zmuszam tw¹ duszê do z³o¿enia mi pok³onu, albowiem wielka jest moc ¿ycia, które sprawuje w³adze nad œmierci¹!'
 
 	Snd_Play ("Mystery_09");
 	Wld_PlayEffect("FX_EARTHQUAKE",  self, self, 0, 0, 0, FALSE );
 	
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_yep_15_01"); //Cholera! Te¿ to poczu³eœ?
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_02"); //Nienaturalne zimno przeszywaj¹ce twoj¹ duszê tak, jakby ktoœ wykopa³ ci grób?
-	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_03"); //Tak, te¿ to poczu³em. I na pewno nie jest to coœ co chcia³bym powtórzyæ za tego, jak i przysz³ego ¿ycia.
+	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_03"); //Tak, te¿ to poczu³em. I na pewno nie jest to coœ, co chcia³bym powtórzyæ za tego jak i przysz³ego ¿ycia.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_yep_15_04"); //Powinienem czym prêdzej poinformowaæ o tym Udara...
 	
 	AI_StopProcessInfos(self);

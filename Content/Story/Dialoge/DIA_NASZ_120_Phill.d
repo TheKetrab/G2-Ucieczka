@@ -322,7 +322,7 @@ FUNC VOID DIA_NASZ_120_Phill_lagi_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_120_Phill_lagi_15_00"); //Oto twoje lagi.
 		B_GiveInvItems (other, self, ItMw_1h_Bau_Mace, 6);
-	AI_Output (self, other,"DIA_NASZ_120_Phill_lagi_55_01"); //Œwietnie, bêdzie z czego zrobiæ nogi do krzese³.
+	AI_Output (self, other,"DIA_NASZ_120_Phill_lagi_55_01"); //Œwietnie, bêdê z czego mia³ zrobiæ nogi do krzese³.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_lagi_55_02"); //Masz tu trochê z³ota w podziêce.
 
 	Createinvitems (self, itmi_gold, 40);
@@ -364,7 +364,7 @@ FUNC VOID DIA_NASZ_120_Phill_Gwozdzie_Info()
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Gwozdzie_55_01"); //Tak, mam tu tak¹. Znalaz³em j¹ kilka dni temu w karczmie.
 	AI_Output (other,self ,"DIA_NASZ_120_Phill_Gwozdzie_15_02"); //Daj mi j¹.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Gwozdzie_55_03"); //Nie! Znalezisko nale¿y do mnie. Poza tym potrzebujê tych gwoŸdzi. Co jakiœ czas w heblarce stosuje siê metalowe uchwyty.
-	AI_Output (other,self ,"DIA_NASZ_120_Phill_Gwozdzie_15_04"); //Tak siê sk³ada, ¿e ja równie¿ ich potrzebuje. Nale¿a³y do robotnika, a teraz muszê nimi naprawiæ podpory podtrzymuj¹ce budynek.
+	AI_Output (other,self ,"DIA_NASZ_120_Phill_Gwozdzie_15_04"); //Tak siê sk³ada, ¿e ja równie¿ ich potrzebujê. Nale¿a³y do robotnika, a teraz muszê nimi naprawiæ podpory podtrzymuj¹ce budynek.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Gwozdzie_55_05"); //Có¿... W takim razie potrzebujemy ich obaj. S³uchaj, te gwoŸdzie s¹ jakieœ du¿e. Przynieœ mi paczkê ma³ych gwoŸdzi. Zapytaj kowala, czy zrobi je dla ciebie.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Gwozdzie_55_06"); //Wtedy siê wymienimy. Co ty na to?
 

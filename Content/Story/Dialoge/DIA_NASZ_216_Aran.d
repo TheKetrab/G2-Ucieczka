@@ -44,7 +44,7 @@ FUNC VOID DIA_NASZ_216_Aran_siema_Info()
 	AI_Output (other,self ,"DIA_NASZ_216_Aran_siema_15_00"); //Co tu robisz?
 	AI_Output (self, other,"DIA_NASZ_216_Aran_siema_55_01"); //Dogl¹dam orków. W razie, gdybym zobaczy³, ¿e przegrupowuj¹ si³y albo buduj¹ maszyny oblê¿nicze, mam podnieœæ alarm.
 	AI_Output (other,self ,"DIA_NASZ_216_Aran_siema_15_02"); //Orkowie wiedz¹, ¿e za t¹ gór¹ macie swój obóz?
-	AI_Output (self, other,"DIA_NASZ_216_Aran_siema_55_03"); //Nie s¹dzê. Te bezmyœlne istoty chyba nie zorientowa³y siê, ¿e ten ogieñ w górze, to nie ¿adne pochodnie, tylko ogniska przy których reszta spêdza czas.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_siema_55_03"); //Nie s¹dzê. Te bezmyœlne istoty chyba nie zorientowa³y siê, ¿e ten ogieñ w górze, to nie ¿adne pochodnie, tylko ogniska, przy których reszta spêdza czas.
 	
 };
 
@@ -73,7 +73,7 @@ FUNC VOID DIA_NASZ_216_Aran_armor_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_216_Aran_armor_15_00"); //Niez³a zbroja.
 	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_01"); //To prawda. Chroni przed k³ami wilków, a nawet odbija niektóre strza³y. Do tego jest bardzo lekka, wiêc w razie zagro¿enia mo¿na braæ nogi za pas.
-	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_02"); //Jej jedyny minus to brak twardych czêœci na kolanach i w ³okciach. Hunt mówi³, ¿e jest na to rada, ale myœliwi przynosz¹ mu zbyt ma³o skór trolli, ¿eby móg³ z³o¿yæ wystarczaj¹co gruby i rozci¹gliwy materia³.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_02"); //Jej jedyny minus to brak twardych czêœci na kolanach i ³okciach. Hunt mówi, ¿e jest na to rada, ale myœliwi przynosz¹ mu zbyt ma³o skór trolli, ¿eby móg³ z³o¿yæ wystarczaj¹co gruby i rozci¹gliwy materia³.
 };
 
 //*********************************************************************
@@ -136,7 +136,7 @@ FUNC INT DIA_NASZ_216_Aran_Zadowolony_Condition()
 FUNC VOID DIA_NASZ_216_Aran_Zadowolony_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_216_Aran_Zadowolony_15_00"); //Zadowolony z nowego towarzysza?
-	AI_Output (self, other,"DIA_NASZ_216_Aran_Zadowolony_55_01"); //Pewnie! Wolê, ¿eby ktoœ opowiada³ o samych pierdo³ach, ni¿ siedzieæ tu sam jak ko³ek.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_Zadowolony_55_01"); //Pewnie! Wolê, ¿eby ktoœ opowiada³ o samych pierdo³ach, ni¿ siedzieæ sam jak ko³ek.
 	AI_Output (self, other,"DIA_NASZ_216_Aran_Zadowolony_55_02"); //Pozwól, ¿e oka¿ê ci swoj¹ wdziêcznoœæ. Snaf nie przynosi mi swoich obiadów, wiêc gotujê sam. Mam specjalny swój przepis.
 	AI_Output (self, other,"DIA_NASZ_216_Aran_Zadowolony_55_03"); //WeŸ go sobie, ugotuj to i zjedz prawdziwe jad³o.
 
@@ -412,10 +412,7 @@ FUNC VOID DIA_NASZ_216_Aran_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };

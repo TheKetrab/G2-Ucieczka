@@ -64,6 +64,14 @@ func void B_SetVisuals_OrcElite()
 	Mdl_SetVisualBody	(self,	"Orc_BodyElite",	DEFAULT,	DEFAULT,	"Orc_HeadWarrior",	DEFAULT,  	DEFAULT,	-1);
 };
 
+func void B_SetVisuals_OrcNewHeavy()
+{
+	Mdl_SetVisual		(self,	"Orc.mds");
+	//							Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
+	//Mdl_SetVisualBody	(self,	"Orc_BodyNewHeavy",	DEFAULT,	DEFAULT,	"Orc_HeadNewHeavy",	DEFAULT,  	DEFAULT,	-1);
+	Mdl_SetVisualBody	(self,	"Orc_BodyNewHeavy",	DEFAULT,	DEFAULT,	"Orc_HeadWarrior",	DEFAULT,  	DEFAULT,	-1);
+};
+
 
 //*************************
 //	Orc Elite      														
@@ -117,7 +125,19 @@ INSTANCE KuroK (Mst_Default_OrcElite)
 };
 
 
+INSTANCE OrcNewHeavy (Mst_Default_OrcElite)
+{
+	// ------ visuals ------
+	B_SetVisuals_OrcNewHeavy();
 
+	//-------- inventory --------
+	EquipItem (self, ItMw_2H_OrcSword_02);
+	
+	//----- Daily Routine ----
+	start_aistate				= ZS_MM_AllScheduler;
+
+	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
+};
 
 
 
@@ -332,19 +352,19 @@ INSTANCE OrcHerszt_Sit (Mst_Default_OrcElite)
 	B_SetVisuals_OrcElite();
 
 //----- Attribute -----	
-	attribute	[ATR_STRENGTH]		=	150; //+100 Waffe //MIN 120!
-	attribute	[ATR_DEXTERITY]		=	250; 
-	attribute	[ATR_HITPOINTS_MAX]	=	475;
-	attribute	[ATR_HITPOINTS]		=	475;
+	attribute	[ATR_STRENGTH]		=	100; //+100 Waffe //MIN 120!
+	attribute	[ATR_DEXTERITY]		=	100; 
+	attribute	[ATR_HITPOINTS_MAX]	=	400;
+	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	160;
-	protection	[PROT_EDGE]			=	160;
-	protection	[PROT_POINT]		=	160;
-	protection	[PROT_FIRE]			=	160;
-	protection	[PROT_FLY]			=	160;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	120;
+	protection	[PROT_FIRE]			=	120;
+	protection	[PROT_FLY]			=	120;
 	protection	[PROT_MAGIC]		=	100;
 	
 
@@ -369,19 +389,19 @@ INSTANCE OrcHerszt_Roam (Mst_Default_OrcElite)
 	B_SetVisuals_OrcElite();
 
 //----- Attribute -----	
-	attribute	[ATR_STRENGTH]		=	150; //+100 Waffe //MIN 120!
-	attribute	[ATR_DEXTERITY]		=	250; 
-	attribute	[ATR_HITPOINTS_MAX]	=	475;
-	attribute	[ATR_HITPOINTS]		=	475;
+	attribute	[ATR_STRENGTH]		=	100; //+100 Waffe //MIN 120!
+	attribute	[ATR_DEXTERITY]		=	100; 
+	attribute	[ATR_HITPOINTS_MAX]	=	400;
+	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	160;
-	protection	[PROT_EDGE]			=	160;
-	protection	[PROT_POINT]		=	160;
-	protection	[PROT_FIRE]			=	160;
-	protection	[PROT_FLY]			=	160;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	120;
+	protection	[PROT_FIRE]			=	120;
+	protection	[PROT_FLY]			=	120;
 	protection	[PROT_MAGIC]		=	100;
 	
 
@@ -406,19 +426,19 @@ INSTANCE OrcHerszt_Rest (Mst_Default_OrcElite)
 	B_SetVisuals_OrcElite();
 
 //----- Attribute -----	
-	attribute	[ATR_STRENGTH]		=	150; //+100 Waffe //MIN 120!
-	attribute	[ATR_DEXTERITY]		=	250; 
-	attribute	[ATR_HITPOINTS_MAX]	=	475;
-	attribute	[ATR_HITPOINTS]		=	475;
+	attribute	[ATR_STRENGTH]		=	100; //+100 Waffe //MIN 120!
+	attribute	[ATR_DEXTERITY]		=	100; 
+	attribute	[ATR_HITPOINTS_MAX]	=	400;
+	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	160;
-	protection	[PROT_EDGE]			=	160;
-	protection	[PROT_POINT]		=	160;
-	protection	[PROT_FIRE]			=	160;
-	protection	[PROT_FLY]			=	160;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	120;
+	protection	[PROT_FIRE]			=	120;
+	protection	[PROT_FLY]			=	120;
 	protection	[PROT_MAGIC]		=	100;
 	
 

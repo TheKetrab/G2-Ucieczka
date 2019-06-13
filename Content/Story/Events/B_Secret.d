@@ -107,7 +107,7 @@ func int Open_Chest_Przelecz()
 		return TRUE;
 	}
 	else {
-	AI_Output (hero, hero,"DIA_NASZ_FunkcjaPrzelecz_55_00"); //Jakaœ magiczna aura blokuje dostêp do skrzyni...
+		HeroSay_FunkcjaPrzelecz();
 	};
 };
 
@@ -585,7 +585,7 @@ func int OPEN_KRATA_SMAR()
 	{
 		if (WillOtworzylPrzelacznikSmar == FALSE)
 		{
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaTrolls_55_00"); //Mechanizm siê zaci¹³...
+			HeroSay_FunkcjaTrolls();
 		};
 	
 		if (FuncOpenKrataSmarOneTime == FALSE)
@@ -611,8 +611,8 @@ func void ORCCITYSKRZYNIA_S1 ()
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_05");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_06");
 		
-		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_16");
-		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_17");
+		//Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_16"); tu nie, bo przeszkadza
+		//Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_17"); tu nie, bo przeszkadza
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_18");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_26");
 		Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCCITY_14");

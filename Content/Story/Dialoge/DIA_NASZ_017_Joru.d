@@ -107,7 +107,10 @@ FUNC VOID DIA_NASZ_017_Joru_Lojalnosc_Info()
 	Log_CreateTopic (TOPIC_Joru_lutnia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Joru_lutnia, LOG_RUNNING);
 	B_LogEntry (TOPIC_Joru_lutnia, "Joru chcia³by, abym zagra³ mu na lutni. Nie jestem w tym mo¿e najlepszy, ale czego nie robi siê dla umêczonego ducha, by ten zazna³ spokoju.");
-	
+
+	if (npc_hasitems(other,ItMi_Lute) == 0) {
+		B_LogEntry (TOPIC_Joru_lutnia, "Wydaje mi siê, ¿e widzia³em lutniê na stole w sali tronowej w zamku. Cholera, trzeba by³o j¹ wtedy zabraæ.");
+	};
 };
 
 //*********************************************************************

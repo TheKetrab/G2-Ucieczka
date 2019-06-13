@@ -46,7 +46,7 @@ FUNC VOID DIA_NASZ_225_Wrzod_siema_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_siema_15_00"); //Hej, kolego! Chyba siê jeszcze nie widzieliœmy.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_siema_55_01"); //Przyszed³eœ mnie st¹d zabraæ? To bardzo mi³o z twojej strony.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_siema_55_03"); //Nieczêsto spotykam takich mi³ych ludzi. Wszyscy zawsze patrz¹ na mnie z góry i wytykaj¹ palcami.
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_siema_55_03"); //Nieczêsto spotykam takich mi³ych ludzi jak ty. Wszyscy zawsze patrz¹ na mnie z góry i wytykaj¹ palcami.
 	AI_Output (other,self ,"DIA_NASZ_225_Wrzod_siema_15_04"); //Zamknij siê!
 	AI_Output (other,self ,"DIA_NASZ_225_Wrzod_siema_15_05"); //Masz iœæ do Arana. Jest w jaskini za obozem.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_siema_55_06"); //Heeej! Dlaczego jesteœ taki niemi³y? Wszyscy jesteœcie jacyœ niepowa¿ni... Ale znam Arana.
@@ -128,7 +128,7 @@ FUNC VOID DIA_NASZ_225_Wrzod_wypij_Info()
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_wypij_15_00"); //Wypij to.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_wypij_55_01"); //A có¿ to takiego?
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_wypij_15_02"); //Wywar, dziêki któremu wrócisz do snów o swoich dzikich zwierzêtach.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_wypij_15_03"); //Ale fajnie, dawaj!
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_wypij_15_03"); //Ale fajne, dawaj!
 	B_GiveInvItems (other, self, ItNa_Wrzod_Lekarstwo, 1);
 	B_UseItem (self, ItNa_Wrzod_Lekarstwo);
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_wypij_15_04"); //I co, pomog³o?
@@ -167,9 +167,9 @@ FUNC VOID DIA_NASZ_225_Wrzod_CanIHelp_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_03"); //Zrobi³byœ to dla mnie?! To wspaniale.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_04"); //Mój przyjaciel, Ghorim, mia³ przed upadkiem bariery niedu¿¹ gorzelniê w jaskini, w lesie, w pobli¿u Obozu na Bagnie.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_05"); //Tamto miejsce wydaje mi siê idealne do spe³nienia moich zabaw.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_06"); //Dodatkowo chcia³bym, by by³ tam jakiœ œcierwojad, kretoszczur i krwiopijca.
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_06"); //Dodatkowo chcia³bym, ¿eby by³ tam jakiœ œcierwojad, kretoszczur i krwiopijca.
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_CanIHelp_15_07"); //Zobaczê, co da siê zrobiæ.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_08"); //Na sam¹ myœl, a¿ œlinka mi cieknie!
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_08"); //Na sam¹ myœl a¿ œlinka mi cieknie!
 
 	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Ten psychopata wymyœli³ sobie nawet miejsce do swoich zabaw. W lesie obok Obozu na Bagnie jest jaskinia, w której niegdyœ by³a gorzelnia. Muszê oswoiæ œcierwojada, kretoszczura i krwiopijcê, a potem przyprowadziæ je tam. Przynajmniej za jakiœ czas w obozie myœliwych bêdzie cicho.");
 

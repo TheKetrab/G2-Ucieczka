@@ -25,6 +25,7 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 		CreateInvItems (slf,ItFo_Water , 5);
 		CreateInvItems (slf,ItFo_Bread , 3);
 		CreateInvItems (slf,ItFo_Cheese, 2); 
+		CreateInvItems (slf,ItFo_Bacon, 2); 
 		CreateInvItems (slf,ItAm_Hp_01, 1);
 		CreateInvItems (slf,ItNa_Butelka, 12);
 		CreateInvItems (slf,ItNa_Chmiel, 23);
@@ -40,6 +41,7 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 	&& Engor_ItemsGiven_Chapter_2 == FALSE)
 	{
 		CreateInvItems (slf, ItMi_Gold, 100); 
+		CreateInvItems (slf,ItFo_Water , 5);
 		CreateInvItems (slf,ItPo_Health_01	,2);
 		CreateInvItems (slf,ItNa_Odtrutka	,6);
 		CreateInvItems (slf,ItNa_ZupaGrzybowa	,3);
@@ -60,7 +62,8 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 	&& (Engor_ItemsGiven_Chapter_3 == FALSE))
 	{
 		CreateInvItems (slf, ItMi_Gold, 120); 
-		CreateInvItems (slf,ItPo_Mana_01 ,2); 
+		CreateInvItems (slf,ItPo_Mana_01 ,2);
+		CreateInvItems (slf,ItFo_Water , 5);
 		CreateInvItems (slf,ItPo_Health_01,1);
 		CreateInvItems (slf, ItPo_Speed, 1); 
 		CreateInvItems (slf,ItNa_Odtrutka	,5);
@@ -90,6 +93,8 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 		CreateInvItems (slf,ItPo_Health_01	,3);
 		CreateInvItems (slf,ItPo_Health_02	, 2); 
 		CreateInvItems (slf, ItPo_Speed, 1); 
+		CreateInvItems (slf,ItFo_Water , 5);
+		
 		// ------ Engor ------
 		CreateInvItems (slf,ItFo_Wine, 4); 
 		CreateInvItems (slf,ItFo_Milk , 6); 

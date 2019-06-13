@@ -67,7 +67,7 @@ FUNC VOID Rtn_Start_106 ()
 	TA_Smith_Anvil		(19,00,19,30,"NASZ_LOWCY_KUZNIA_KOWADLO");
 	TA_Smith_Cool		(19,30,20,00,"NASZ_LOWCY_KUZNIA_WIADRO");
 
-	TA_Roast_Scavenger		(20,00,03,20,"PATH_OC_NC_13");
+	TA_Roast_Scavenger		(20,00,03,20,"NASZ_LOWCY_DOL_28");
 	TA_Sleep		(03,20,08,00,"NASZ_LOWCY_DOM_04");
 };
 

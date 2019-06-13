@@ -36,7 +36,14 @@ func int ZS_Practice_Sword_Loop()
 		self.aivar[AIV_TAPOSITION] = ISINPOS;
 	};
         
-    AI_PlayAni		(self,"T_1HSFREE");
+	if (self.guild == GIL_ORC || self.guild == GIL_FRIENDLY_ORC) {
+		AI_PlayAni		(self,"T_2HATTACKL");
+		AI_PlayAni		(self,"T_2HATTACKR");
+		AI_PlayAni		(self,"T_2HPARADE_0");
+	}
+	else {
+		AI_PlayAni		(self,"T_1HSFREE");
+	};
 	AI_GotoWP		(self, self.wp);
 	AI_AlignToWP    (self);
 	

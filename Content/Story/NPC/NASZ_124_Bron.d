@@ -23,7 +23,7 @@ instance NASZ_124_Bron (Npc_Default)
 	B_CreateAmbientInv (self); 
 	
 	// ------ visuals ------																		
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Cavalorn, BodyTex_B, ITNA_DJG_L);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Bron, BodyTex_B, ITNA_DJG_L);	
 	Mdl_SetModelFatness	(self, -1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 

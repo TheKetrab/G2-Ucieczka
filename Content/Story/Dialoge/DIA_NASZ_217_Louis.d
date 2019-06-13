@@ -71,7 +71,7 @@ FUNC VOID DIA_NASZ_217_Louis_lad_Info()
 	AI_Output (other,self ,"DIA_NASZ_217_Louis_lad_15_00"); //Jesteœ wilkiem morskim?
 	AI_Output (self, other,"DIA_NASZ_217_Louis_lad_55_01"); //Ano. Niegdyœ by³em kapitanem. Ale to stare dzieje.
 	AI_Output (self, other,"DIA_NASZ_217_Louis_lad_55_02"); //Nieszczêsne wiatry sprawi³y, ¿e mój statek rozbi³ siê u wybrze¿y Khorinis, a wtedy ci nêdzarze ze stra¿y stwierdzili, ¿e celowo uderzy³em w ska³y, by zabiæ za³ogê.
-	AI_Output (self, other,"DIA_NASZ_217_Louis_lad_55_03"); //Idioci! Wyobra¿asz sobie cz³owieka, który ledwo ¿ywy dop³ywa do brzegu, a zamiast pomocy zostaje pojmany przez stra¿? Zosta³em zes³any do koloni i do teraz tu gnijê.
+	AI_Output (self, other,"DIA_NASZ_217_Louis_lad_55_03"); //Idioci! Wyobra¿asz sobie cz³owieka, który ledwo ¿ywy dop³ywa do brzegu, a zamiast pomocy zostaje pojmany przez stra¿? Zosta³em zes³any do kolonii i do teraz tu gnijê.
 	AI_Output (self, other,"DIA_NASZ_217_Louis_lad_55_04"); //Ale co mi tam. Przywyk³em do ¿ycia tutaj, jest dobra zabawa! A ja jestem m³ody i tego od ¿ycia wymagam.
 };
 
@@ -218,6 +218,7 @@ func void LouisSay_YouArePro() {
 	LouisCantTeach = TRUE;
 };
 
+
 //*********************************************************************
 //	         Teach
 //*********************************************************************
@@ -253,21 +254,21 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_Info()
 
 	Info_AddChoice 		(DIA_NASZ_217_Louis_Teach,	DIALOG_BACK		,DIA_NASZ_217_Louis_Teach_Back);
 
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5); };
 	};
 	
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5b); };
 	};
-
+/*
 	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1c); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5c); };
 	};
-
+*/
 };
 
 FUNC VOID DIA_NASZ_217_Louis_Teach_Back ()
@@ -282,11 +283,11 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_1 ()
 
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 	Info_AddChoice 		(DIA_NASZ_217_Louis_Teach,	DIALOG_BACK		,DIA_NASZ_217_Louis_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5b); };
 	};
@@ -299,11 +300,11 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_5 ()
 
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 	Info_AddChoice 		(DIA_NASZ_217_Louis_Teach,	DIALOG_BACK		,DIA_NASZ_217_Louis_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1); };
 		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 30) && (other.HitChance[NPC_TALENT_1H] >= 10) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 50) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5b); };
 	};
@@ -316,14 +317,15 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_1b ()
 
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 	Info_AddChoice 		(DIA_NASZ_217_Louis_Teach,	DIALOG_BACK		,DIA_NASZ_217_Louis_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 30) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5b); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
+/*	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1C); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5C); };
 	};
+*/
 };
 
 FUNC VOID DIA_NASZ_217_Louis_Teach_1H_5b ()
@@ -333,14 +335,14 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_5b ()
 
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
 	Info_AddChoice 		(DIA_NASZ_217_Louis_Teach,	DIALOG_BACK		,DIA_NASZ_217_Louis_Teach_Back);
-	if (other.HitChance[NPC_TALENT_1H] < 30) {
+	if (other.HitChance[NPC_TALENT_1H] < 60) {
 		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1b); };
 		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5b); };
 	};
-	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
+/*	if (other.HitChance[NPC_TALENT_1H] < 60) && (other.HitChance[NPC_TALENT_1H] >= 30) {
 		if (npc_hasitems (other, ItMi_Gold) >= 15) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 1. (3 PN, 15 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_1C); };
 		if (npc_hasitems (other, ItMi_Gold) >= 75) { Info_AddChoice		(DIA_NASZ_217_Louis_Teach, "Broñ jednorêczna + 5. (15 PN, 75 szt. z³ota)",DIA_NASZ_217_Louis_Teach_1h_5C); };
-	};
+	};*/
 };
 
 FUNC VOID DIA_NASZ_217_Louis_Teach_1H_1c ()
@@ -351,10 +353,7 @@ FUNC VOID DIA_NASZ_217_Louis_Teach_1H_1c ()
 	
 	if (other.HitChance[NPC_TALENT_1H] >= 60)
 	{
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_1c_04_00"); //Opanowa³eœ ju¿ w pe³ni pirackie mistrzostwo walki szablami.
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_1c_04_01"); //Teraz musisz po prostu walczyæ, ¿eby twoje d³onie nie zapomnia³y jak trzyma siê broñ!
-		AI_Output(self,other,"DIA_NASZ_217_Louis_Teach_1H_1c_04_02"); //Jeœli chcia³byœ siê jeszcze podszkoliæ, to pogadaj z Kerolothem.
-		Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);
+		// 
 	}
 	else {
 	Info_ClearChoices 	(DIA_NASZ_217_Louis_Teach);

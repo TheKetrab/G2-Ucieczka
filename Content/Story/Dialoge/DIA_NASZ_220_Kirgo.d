@@ -166,7 +166,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_oszust_Info()
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_oszust_15_00"); //Oszuka³eœ mnie!
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_oszust_55_01"); //Co? Niemo¿liwe. Wszystko by³o wyliczone i przygotowane wczeœniej.
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_oszust_15_02"); //Nie udawaj idioty. Udar uprzedzi³ mnie, ¿e jesteœ krêtaczem. Mia³ racjê.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_oszust_55_03"); //Nie doceni³em ciê... Wiesz co? Postaram ci siê to wynagrodziæ. Masz tu brakuj¹ce mikstury i jedn¹ w bonusie, tak na zgodê.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_oszust_55_03"); //Nie doceni³em ciê... Wiesz co? Postaram siê ci to wynagrodziæ. Masz tu brakuj¹ce mikstury i jedn¹ w bonusie, tak na zgodê.
 
 	CreateInvItems (self,ItPo_Health_01, 6);
 	CreateInvItems (self,ItPo_Health_02, 3);
@@ -248,7 +248,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_done_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_done_15_00"); //Dziesiêæ menzurek, proszê.
 	B_giveinvitems (other, self, ItMi_Flask, 10);
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_done_55_01"); //Menzurki! Wspaniale. Po co maj¹ walaæ siê po obozie, poniewieraæ i brudziæ, skoro mo¿na nape³niæ te ma³e buteleczki jakimiœ miksturami.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_done_55_01"); //Menzurki! Wspaniale. Po co maj¹ siê walaæ po obozie, poniewieraæ i brudziæ, skoro mo¿na nape³niæ te ma³e buteleczki jakimiœ miksturami.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_done_55_02"); //Dziêki tobie mogê przygotowaæ kolejne mikstury. W nagrodê weŸ te trzy esencje lecznicze.
 
 	Createinvitems (self, ItPo_Health_01, 3);
@@ -372,7 +372,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_FerrosSny_Info()
 	AI_Output (other, self,"DIA_NASZ_220_Kirgo_FerrosSny_55_03"); //Jak tak dalej pójdzie to w koñcu zwariuje. Pomo¿esz nam?
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_FerrosSny_55_04"); //Znam Ferosa, to dobry wojownik. Postaram siê wam pomóc.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_FerrosSny_55_05"); //Widzia³em gdzieœ w którejœ z moich ksi¹g podobny przypadek.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_FerrosSny_55_06"); //PrzyjdŸ jutro, a do tego czasu zbiorê odpowiednie sk³adniki i uwarzê lekarstwo.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_FerrosSny_55_06"); //PrzyjdŸ jutro, a do tego czasu zbiorê odpowiednie sk³adniki i utworzê lekarstwo.
 
 	KirgoFerrosSnyDay = Wld_GetDay();
 	B_LogEntry (TOPIC_Ferros_sny, "Kirgo zgodzi³ siê pomóc. Mam przyjœæ do niego jutro i odebraæ lekarstwo.");
@@ -512,7 +512,7 @@ FUNC INT DIA_NASZ_220_Kirgo_jeremiasz_Condition()
 FUNC VOID DIA_NASZ_220_Kirgo_jeremiasz_Info()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_jeremiasz_15_00"); //Potrafisz przygotowywaæ lekarstwa uspokajaj¹ce?
+	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_jeremiasz_15_00"); //Potrafisz przygotowaæ lekarstwa uspokajaj¹ce?
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_jeremiasz_55_01"); //Uspokajaj¹ce? Bagienne ziele powinno...
 	AI_Output (other, self,"DIA_NASZ_220_Kirgo_jeremiasz_55_02"); //Nie, nie. Potrzebujê naprawdê silnej mikstury.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_jeremiasz_55_03"); //W takim razie nie jestem w stanie ci pomóc, przykro mi.
@@ -654,10 +654,10 @@ FUNC VOID DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_Info()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_15_00"); //Mam wszystkie sk³adniki.
-	B_GiveInvItems (self, other, ItPl_Mushroom_01, 5);
-	B_GiveInvItems (self, other, ItFo_Addon_Rum, 1);
-	B_GiveInvItems (self, other, ItPl_Temp_Herb, 2);
-	B_GiveInvItems (self, other, ItMi_Nugget, 1);
+	B_GiveInvItems (other, self, ItPl_Mushroom_01, 5);
+	B_GiveInvItems (other, self, ItFo_Addon_Rum, 1);
+	B_GiveInvItems (other, self, ItPl_Temp_Herb, 2);
+	B_GiveInvItems (other, self, ItMi_Nugget, 1);
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_55_01"); //Dobra, mikstura zaraz bêdzie gotowa.
 	Kirgo_Make_Potion();
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_MamSkladnikiWrzod_55_02"); //Proszê. Zobaczymy, mo¿e siê uda.
@@ -694,7 +694,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_WrzodNieDziala_Info()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_WrzodNieDziala_15_00"); //Lekarstwo nic nie da³o.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_WrzodNieDziala_55_01"); //Wygl¹da na to, ¿e Wrzód jest tak napalony, ¿e nic ju¿ mu nie pomo¿e.
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_WrzodNieDziala_55_01"); //Wygl¹da na to, ¿e Wrzód jest tak napalony, ¿e ju¿ nic mu nie pomo¿e.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_WrzodNieDziala_55_02"); //Chyba ¿e spe³nienie jego marzeñ... Ale¿ to obrzydliwe!
 
 };
@@ -709,7 +709,7 @@ instance DIA_NASZ_220_Kirgo_TEACH_MANA		(C_INFO)
 	condition	 = 	DIA_NASZ_220_Kirgo_TEACH_MANA_Condition;
 	information	 = 	DIA_NASZ_220_Kirgo_TEACH_MANA_Info;
 	permanent	 = 	TRUE;
-	description	 = 	"Chcê zwiêkszyæ moj¹ magiczn¹ moc.";
+	description	 = 	"Chcê zwiêkszyæ moj¹ moc magiczn¹.";
 };
 func int DIA_NASZ_220_Kirgo_TEACH_MANA_Condition ()
 {	
@@ -721,7 +721,7 @@ func int DIA_NASZ_220_Kirgo_TEACH_MANA_Condition ()
 
 func void DIA_NASZ_220_Kirgo_TEACH_MANA_Info ()
 {
-		AI_Output (other, self, "DIA_NASZ_220_Kirgo_TEACH_MANA_15_00"); //Chcê zwiêkszyæ moj¹ magiczn¹ moc.
+		AI_Output (other, self, "DIA_NASZ_220_Kirgo_TEACH_MANA_15_00"); //Chcê zwiêkszyæ moj¹ moc magiczn¹.
 		
 		Info_ClearChoices   (DIA_NASZ_220_Kirgo_TEACH_MANA);	
 		Info_AddChoice 		(DIA_NASZ_220_Kirgo_TEACH_MANA,DIALOG_BACK,DIA_NASZ_220_Kirgo_TEACH_MANA_BACK);		

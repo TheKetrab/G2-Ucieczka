@@ -197,7 +197,7 @@ FUNC VOID DIA_NASZ_010_Monastir_summoned_Info()
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_00"); //Bogowie zostali przyzwani.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_summoned_55_01"); //Przyzwani?! Ale jak to?
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_02"); //Razem z pewnym myœliwym znaleŸliœmy komnatê, w której zabiliœmy o¿ywieñca. Wtedy poleci³ mi rozejrzeæ siê na górze.
-	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_03"); //Kiedy szuka³em tam zwoju, us³ysza³em jakiœ okropny odg³os. Wnioskujê, ¿e znalaz³ go pierwszy i u¿y³, poniewa¿ zamieni³ siê w o¿ywieñca.
+	AI_Output (other, self,"DIA_NASZ_010_Monastir_summoned_15_03"); //Kiedy szuka³em zwoju, us³ysza³em jakiœ okropny odg³os. Wnioskujê, ¿e znalaz³ go pierwszy i u¿y³, poniewa¿ zamieni³ siê w o¿ywieñca.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_summoned_55_04"); //Tak, z pewnoœci¹ to zrobi³...
 	B_GivePlayerXP (1000);
 	
@@ -288,6 +288,8 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_HelpMe_55_01"); //Co teraz?
 
 	Info_ClearChoices (DIA_NASZ_010_Monastir_HelpMe);
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, DIALOG_BACK, DIA_NASZ_010_Monastir_HelpMe_END);
+
 	if (!MONASTIR_POTION) {
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Potrzebujê mikstur.", DIA_NASZ_010_Monastir_HelpMe_potions);
 	};
@@ -306,7 +308,6 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_Info()
 	};		
 	
 	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Pob³ogos³aw mnie!", DIA_NASZ_010_Monastir_HelpMe_blessme);
-	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Koniec.", DIA_NASZ_010_Monastir_HelpMe_END);
 	
 
 };
@@ -339,7 +340,7 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_weapon()
 		
 		MONASTIR_WEAPON = TRUE;
 		Info_ClearChoices(DIA_NASZ_010_Monastir_HelpMe);
-		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³yby mi siê trochê z³ota.", DIA_NASZ_010_Monastir_HelpMe_money);
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³oby mi siê trochê z³ota.", DIA_NASZ_010_Monastir_HelpMe_weaponmoney);
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Nie, dziêki.", DIA_NASZ_010_Monastir_HelpMe_money_END);
 	}
 	else 
@@ -353,8 +354,31 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_weapon()
 FUNC void DIA_NASZ_010_Monastir_HelpMe_money_END()
 {
 	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_END_15_00"); //Nie, dziêki. Mo¿e innym razem.
+
+	// ponowiony clearchoice, bo wczesniej jest inny, a nie g³ówny
+	Info_ClearChoices (DIA_NASZ_010_Monastir_HelpMe);
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, DIALOG_BACK, DIA_NASZ_010_Monastir_HelpMe_END);
+
+	if (!MONASTIR_POTION) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Potrzebujê mikstur.", DIA_NASZ_010_Monastir_HelpMe_potions);
+	};
+	if (ZabilesDlaBeliara == TRUE && (!MONASTIR_B_DONE)) {	
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Zabi³em niewinn¹ istotê.", DIA_NASZ_010_Monastir_HelpMe_beliar);
+	};
+	if (!MONASTIR_MAGIC) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³yby mi siê jakieœ magiczne zwoje.", DIA_NASZ_010_Monastir_HelpMe_magic);
+	};	
+	if (!MONASTIR_MONEY) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³oby mi siê trochê z³ota.", DIA_NASZ_010_Monastir_HelpMe_money);
+	};		
 	
-	Info_ClearChoices(DIA_NASZ_010_Monastir_HelpMe);
+	if (!MONASTIR_WEAPON) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³aby mi siê lepsza broñ...", DIA_NASZ_010_Monastir_HelpMe_weapon);
+	};		
+	
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Pob³ogos³aw mnie!", DIA_NASZ_010_Monastir_HelpMe_blessme);
+	
+	
 };
 
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_beliar()
@@ -395,11 +419,46 @@ FUNC VOID DIA_NASZ_010_Monastir_HelpMe_magic()
 
 	MONASTIR_MAGIC = TRUE;
 };
+
+
+func void HeroMonastir_INeedGold_DIA() {
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_00"); //Przyda³oby mi siê trochê z³ota.
+	AI_Output (self,other ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety. To wszystko, co mam.
+};
+
+func void DIA_NASZ_010_Monastir_HelpMe_weaponmoney() {
+
+	HeroMonastir_INeedGold_DIA();
+	
+	// ponowiony clearchoice, bo wczesniej jest inny, a nie g³ówny
+	Info_ClearChoices (DIA_NASZ_010_Monastir_HelpMe);
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, DIALOG_BACK, DIA_NASZ_010_Monastir_HelpMe_END);
+
+	if (!MONASTIR_POTION) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Potrzebujê mikstur.", DIA_NASZ_010_Monastir_HelpMe_potions);
+	};
+	if (ZabilesDlaBeliara == TRUE && (!MONASTIR_B_DONE)) {	
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Zabi³em niewinn¹ istotê.", DIA_NASZ_010_Monastir_HelpMe_beliar);
+	};
+	if (!MONASTIR_MAGIC) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³yby mi siê jakieœ magiczne zwoje.", DIA_NASZ_010_Monastir_HelpMe_magic);
+	};	
+	if (!MONASTIR_MONEY) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³oby mi siê trochê z³ota.", DIA_NASZ_010_Monastir_HelpMe_money);
+	};		
+	
+	if (!MONASTIR_WEAPON) {
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Przyda³aby mi siê lepsza broñ...", DIA_NASZ_010_Monastir_HelpMe_weapon);
+	};		
+	
+	Info_AddChoice	  (DIA_NASZ_010_Monastir_HelpMe, "Pob³ogos³aw mnie!", DIA_NASZ_010_Monastir_HelpMe_blessme);
+	
+
+};
+
 FUNC VOID DIA_NASZ_010_Monastir_HelpMe_money()
 {
-
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_HelpMe_money_15_00"); //Przyda³yby mi siê trochê z³ota.
-	AI_Output (self,other ,"DIA_NASZ_010_Monastir_HelpMe_money_55_01"); //Proszê, weŸ te monety. To wszystko, co mam.
+	HeroMonastir_INeedGold_DIA();
 	
 	Createinvitems (self, ITMI_GOLD, 100);
 	B_giveinvitems (self, other, ITMI_GOLD, 100);
@@ -515,6 +574,7 @@ INSTANCE DIA_NASZ_010_Monastir_MamSkladniki   (C_INFO)
 
 FUNC INT DIA_NASZ_010_Monastir_MamSkladniki_Condition()	
 {
+
 	if (npc_knowsinfo (other, DIA_NASZ_010_Monastir_NearGate))
 		&& (npc_hasitems (other, ItPl_Sagitta_Herb_MIS) >=5)
 	{
@@ -569,9 +629,10 @@ FUNC VOID DIA_NASZ_010_Monastir_AfterOpen_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_AfterOpen_15_00"); //Uda³o mi siê.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_AfterOpen_55_01"); //ChodŸ, zobaczymy co kryje to miejsce.
 
+	B_StartOtherRoutine(self, "GoToFinal");
+
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_010_Monastir,1);
-	Npc_ExchangeRoutine (self, "GoToFinal");
 	AI_StopProcessInfos (self);
 };
 
@@ -668,7 +729,8 @@ FUNC INT DIA_NASZ_010_Monastir_GodReady_Condition()
 	&& (Npc_GetDistToWP	(NASZ_403_Adanos, "NASZ_DYMOONDO_K") < 500)
 	&& (Npc_GetDistToWP	(NASZ_404_Beliar, "NASZ_DYMOONDO_L") < 500)
 	&& (Npc_GetDistToWP	(self, "NASZ_MONASTIR_FINAL") < 500)
-	&& (WillMusiSprowadzicPozostalychBogow == TRUE)
+	&& ((WillMusiSprowadzicPozostalychBogow == TRUE)
+	 || (Cheat_Final == TRUE))
 	{
 		return TRUE;
 	};

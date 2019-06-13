@@ -91,4 +91,6 @@ func void B_UseFakeBookDziennik ()
 		AI_Wait				(self,	2);
 		AI_UseItemToState	(self,	ItNa_Uroboros1,	-1);
 	};
+	
+	Npc_RemoveInvItems(self,ItNa_Uroboros1,1);
 };

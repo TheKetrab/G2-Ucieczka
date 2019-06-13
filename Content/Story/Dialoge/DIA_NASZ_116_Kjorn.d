@@ -379,7 +379,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Map_Info()
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_04"); //Zanim zdecydowa³em siê zaci¹gn¹æ jako ³owca smoków, sporo czyta³em o Górniczej Dolinie.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_05"); //Ponoæ przed utworzeniem kolonii karnej, na tych terenach zamieszkiwa³o dzikie plemiê. Prymitywna kultura dzikusów.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_06"); //Mieszkali w jaskiniach w po³udniowo-wschodniej czêœci Górniczej Doliny.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_07"); //Stare ksiêgi wspominaj¹ równie¿ o jakimœ rytuale, w którym z³o¿ono ofiarê z piêciu braci. Ta sama krew w piêciu ró¿nych miejscach. Jakieœ bzdury.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_07"); //Stare ksiêgi przypominaj¹ równie¿ o jakimœ rytuale, w którym z³o¿ono ofiarê z piêciu braci. Ta sama krew w piêciu ró¿nych miejscach. Jakieœ bzdury.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_08"); //Jednak¿e, jeœli ta mapa rzeczywiœce wskazuje po³o¿enia szkieletów ofiarowanych braci, to mo¿na zaryzykowaæ rozwik³anie tej tajemnicy.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Map_55_09"); //Co ty na to?
 
@@ -477,7 +477,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_HaveBones_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_HaveBones_15_00"); //Znalaz³em tylko koœci ka¿dego z braci.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_HaveBones_55_01"); //Zawsze coœ... Zastanówmy siê, czy mo¿e byæ w to zamieszana jakaœ magia?
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_HaveBones_55_02"); //Zerknij na mapê, o ile dobrze pamiêtam, to gwiazda, która narysowana jest na mapie, œrodek ma na niewielkim jeziorku pod wodospadem. Spróbuj tam siê udaæ.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_HaveBones_55_02"); //Zerknij na mapê, o ile pamiêtam, to gwiazda, która jest narysowana na mapie, œrodek ma na niewielkim jeziorku pod wodospadem. Spróbuj tam siê udaæ.
 
 	Wld_InsertItem (ItNa_AmuletZRudy,"NASZ_ITEM_BRACIA_6");
 	
@@ -510,7 +510,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_15_00"); //By³em nad jeziorem.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_01"); //I jak? Znalaz³eœ tam coœ? Mów szybko!
-	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Finito_55_02"); //Mo¿na by powiedzieæ, ¿e spotka³em siê z piêcioma braæmi. Ale ju¿ nie tylko z ich koœcmi, a ca³ymi szkieletami.
+	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Finito_55_02"); //Mo¿na by powiedzieæ, ¿e spotka³em siê z piêcioma braæmi. Ale ju¿ nie tylko z ich koœæmi, a ca³ymi szkieletami.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_03"); //Strzegli jakiegoœ artefaktu?
 	AI_Output (other, self,"DIA_NASZ_116_Kjorn_Finito_55_04"); //Tak, mieli przy sobie amulet z rudy. Mam go tutaj ze sob¹.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_55_05"); //To by³oby spe³nienie moich marzeñ! Ile za niego chcesz?
@@ -595,7 +595,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing()
 FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing2()
 {
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_00"); //I tak myœlê, ¿e mi bardziej siê przyda.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_01"); //A niech ciê... Ten egoizm odwróci siê przeciwko tobie.
+	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_01"); //A niech ciê... Twój egoizm odwróci siê przeciwko tobie.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
 
 	FinishQuestKjorn(2);

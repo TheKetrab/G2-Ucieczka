@@ -171,10 +171,10 @@ FUNC VOID DIA_NASZ_226_Snaf_PieczysteDone_Info()
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_55_00"); //Dobrze, ¿e jesteœ. W³aœnie skoñczy³em przygotowywaæ twoj¹ potrawê. Proszê, oto dwa soczyste kawa³ki pieczystego.
 	B_GiveInvItems(self,other,ItNa_PieczenDlaGotha,1);
 	B_GiveInvItems(self,other,ItNa_PieczenSnafa,1);
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_01"); //Dwa kawa³ki? Nie podejrzewa³bym, i¿ Goth jest a¿ tak wielkim ¿ar³okiem.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_01"); //Dwa kawa³ki? Nie podejrzewa³bym, i¿ Goth jest tak wielkim ¿ar³okiem.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_02"); //To prawda, potrafi zjeœæ najwiêcej ze wszystkich. Jednak tym razem druga porcja nie jest dla niego, a dla ciebie.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_03"); //Nale¿y ci siê nagroda za fatygê. Ponadto strasznie zmarnia³eœ od naszego ostatniego spotkania, wiêc uzna³em, ¿e zechcia³byœ wrzuciæ coœ dobrego na z¹b.
-	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_04"); //Dziêki Snaf, mi³o wspominam twoj¹ kuchnie. Wybacz, ale teraz muszê ju¿ iœæ, bo stra¿nik bramy zaraz padnie z g³odu. Do zobaczenia.
+	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_04"); //Dziêki Snaf, mi³o wspominam twoj¹ kuchniê. Wybacz, ale teraz muszê ju¿ iœæ, bo stra¿nik bramy zaraz padnie z g³odu. Do zobaczenia.
 		
 	Npc_ExchangeRoutine (self, "Start");
 	Log_SetTopicStatus (TOPIC_Snaf_pieczen, LOG_SUCCESS);
@@ -853,7 +853,7 @@ FUNC VOID DIA_NASZ_226_Snaf_how_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_how_15_00"); //Jak siê tu znalaz³eœ?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_01"); //Dawno temu by³em kucharzem w Starym Obozie.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_02"); //Gdy Bariera upada³a... Wszystko dzia³o siê tak szybko. Do³¹czy³em do Bandytów i razem zajêliœmy bagna w krainie Jarkendar.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_02"); //Gdy Bariera upad³a... Wszystko dzia³o siê tak szybko. Do³¹czy³em do Bandytów i razem zajêliœmy bagna w krainie Jarkendar.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_03"); //G³upi ja! Mog³em tam pozostaæ i mieszkaæ sobie z dobytkiem, jaki uda³o nam siê wspólnie z dawnymi skazañcami stworzyæ.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_04"); //Ale chcia³em odzyskaæ wszystkie moje przepisy i raz jeszcze skosztowaæ piekielnika rosn¹cego tutaj, w Górniczej Dolinie. Zdecydowa³em, ¿e powrócê.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_how_55_05"); //Akurat, gdy siê tutaj dosta³em, sta³o siê to wszystko z paladynami.
@@ -1002,11 +1002,15 @@ INSTANCE DIA_NASZ_226_Snaf_jedzenie   (C_INFO)
  	condition   = DIA_NASZ_226_Snaf_jedzenie_Condition;
  	information = DIA_NASZ_226_Snaf_jedzenie_Info;
  	permanent   = FALSE;
- 	description = "Chcia³bym zjeœæ coœ porz¹dnego.";
+ 	description = "Chcia³bym zjeœæ coœ porz¹dnego. (10 szt. z³ota)";
 };
 
 FUNC INT DIA_NASZ_226_Snaf_jedzenie_Condition()
 {
+	if (hero.guild == GIL_OUT) {
+		DIA_NASZ_226_Snaf_jedzenie.description = "Chcia³bym zjeœæ coœ porz¹dnego.";
+	};
+
 	if (npc_knowsinfo(other,DIA_NASZ_226_Snaf_what))
 	{
 		return TRUE;
@@ -1141,7 +1145,7 @@ FUNC VOID DIA_NASZ_226_Snaf_infos_aran()
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_infos_aran_55_02"); //Znam tylko jednego kandydata... Jest zamkniêty na szczycie wielkiego domu.
 	AI_Output (other,self ,"DIA_NASZ_226_Snaf_infos_aran_15_03"); //Kto i dlaczego tam jest?
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_infos_aran_55_04"); //Przekonasz siê sam, gdy ju¿ tam wejdziesz.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_infos_aran_55_05"); //Ratford ma klucz. Chocia¿ na pewno nie odda ci go za darmo... Wypuszczenie tego cz³owieka mo¿e okazaæ siê wielk¹ katastrof¹!
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_infos_aran_55_05"); //Ratford ma klucz. Chocia¿ na pewno nie da ci go za darmo... Wypuszczenie tego cz³owieka mo¿e okazaæ siê wielk¹ katastrof¹!
 
 	Snaf_Aran = TRUE;
 	WRZOD_KLUCZ = TRUE;

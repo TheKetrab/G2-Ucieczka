@@ -36,7 +36,9 @@ INSTANCE DIA_NASZ_211_Hunt_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_211_Hunt_siema_Condition()
 {
+	// TODO czy ten dialog sie odpala?
 	if (Npc_IsInState(self, ZS_TALK))
+	&& (Npc_IsInState(other, ZS_TALK))
 	{
 		return TRUE;
 	};
@@ -45,7 +47,7 @@ FUNC INT DIA_NASZ_211_Hunt_siema_Condition()
 FUNC VOID DIA_NASZ_211_Hunt_siema_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_211_Hunt_siema_15_00"); //Kim jesteœ?
-	AI_Output (self, other,"DIA_NASZ_211_Hunt_siema_55_01"); //Nazywam siê Hunt. Wszystko, co produkuje nasz kowal znajdziesz u mnie. Oczywiœcie inne towary te¿ u mnie znajdziesz.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_siema_55_01"); //Nazywam siê Hunt. Wszystko, co produkuje nasz kowal, znajdziesz u mnie. Oczywiœcie inne towary te¿ u mnie znajdziesz.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_siema_55_02"); //A, no i skupujê te¿ skóry od naszych ludzi. Jeœli bêdziesz mia³ jakieœ w dobrym stanie, to zapraszam do mnie. Lepiej nigdzie nie sprzedasz.
 	AI_Output (other,self ,"DIA_NASZ_211_Hunt_siema_15_03"); //Co robisz póŸniej z tymi skórami?
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_siema_55_04"); //Suszê, czyszczê i wyszywam stroje. Poza tym robimy z nich ³ó¿ka, a nawet barykady.
@@ -116,7 +118,7 @@ FUNC VOID DIA_NASZ_211_Hunt_koniec_Info()
 	B_giveinvitems (other, self, ItNa_HuntAmulet, 1);
 	Npc_RemoveInvItems   (self, ItNa_HuntAmulet, 1);
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_koniec_55_01"); //D³ugo czeka³em, by mieæ coœ takiego. Dziêki!
-	AI_Output (self, other,"DIA_NASZ_211_Hunt_koniec_55_02"); //Ale o nagrodzie zapomnij. To ty siê masz przypodobaæ mi, nie ja tobie.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_koniec_55_02"); //Ale o nagrodzie zapomnij. To ty masz siê przypodobaæ mi, nie ja tobie.
 
 	B_LogEntry (TOPIC_Hunt_amulet, "Hunt nie okaza³ siê szczególnie hojny i nie dosta³em ¿adnej nagrody. Tak czy owak, mam nadziejê, ¿e moja reputacja w obozie myœliwych siê poprawi.");
 	Log_SetTopicStatus (TOPIC_Hunt_amulet, LOG_SUCCESS);
@@ -278,6 +280,134 @@ FUNC VOID DIA_NASZ_211_Hunt_WzmocnionaZbroja_Info()
 	};
 };
 
+
+
+//*********************************************************************
+//	        UltraArmor
+//*********************************************************************
+INSTANCE DIA_NASZ_211_Hunt_UltraArmor   (C_INFO)
+{
+	npc         = NASZ_211_Hunt;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_211_Hunt_UltraArmor_Condition;
+ 	information = DIA_NASZ_211_Hunt_UltraArmor_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_211_Hunt_UltraArmor_Condition()	
+{
+	if (KAPITEL >=4 && RepEnough(90,REP_MYSLIWI))
+	&& (hero.guild == GIL_OUT)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_211_Hunt_UltraArmor_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmor_55_00"); //Hej, zaczekaj!
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmor_55_01"); //Razem z Dobarem zamierzamy stworzyæ nowy pancerz dla ciebie.
+	AI_Output (other, self,"DIA_NASZ_211_Hunt_UltraArmor_55_02"); //Bardzo mi mi³o.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmor_55_03"); //Oczywiœcie bêdziesz musia³ nam zap³aciæ i dostarczyæ odpowiednich trofeów.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmor_55_04"); //Po pierwsze: po tysi¹c sztuk z³ota na g³owê. Po drugie: skórê trolla, 5 p³yt pancerza pe³zacza i dwa rogi cieniostwora.
+	AI_Output (other, self,"DIA_NASZ_211_Hunt_UltraArmor_55_05"); //Przemyœlê wasz¹ propozycjê.
+
+	Log_CreateTopic (TOPIC_Hunt_zbroja, LOG_MISSION);
+	Log_SetTopicStatus (TOPIC_Hunt_zbroja, LOG_RUNNING);
+	B_LogEntry (TOPIC_Hunt_zbroja, "Hunt zaproponowa³ mi, ¿e razem z Dobarem zrobi¹ dla mnie nowy pancerz. Warunkiem jest dostarczenie im trofeów: skórê trolla, 5 p³yt pancerza pe³zacza i dwa rogi cieniostwora. Zbrojê wykonaj¹ za 2 tysi¹ce sztuk z³ota. Du¿o pieniêdzy!");
+
+};
+
+//*********************************************************************
+//	        UltraArmorSkladniki
+//*********************************************************************
+INSTANCE DIA_NASZ_211_Hunt_UltraArmorSkladniki   (C_INFO)
+{
+	npc         = NASZ_211_Hunt;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_211_Hunt_UltraArmorSkladniki_Condition;
+ 	information = DIA_NASZ_211_Hunt_UltraArmorSkladniki_Info;
+ 	permanent   = FALSE;
+ 	description = "Mam wszystkie trofea na zbrojê.";
+};
+
+FUNC INT DIA_NASZ_211_Hunt_UltraArmorSkladniki_Condition()	
+{
+	if (npc_knowsinfo(other,DIA_NASZ_211_Hunt_UltraArmor))
+	&& (npc_hasitems(other,ItAt_TrollFur) >= 1)
+	&& (npc_hasitems(other,ItAt_CrawlerPlate) >= 5)
+	&& (npc_hasitems(other,ItAt_ShadowHorn) >= 2)
+	{
+		return TRUE;
+	};
+};
+
+var int UltraZbrojaOut_Day;
+FUNC VOID DIA_NASZ_211_Hunt_UltraArmorSkladniki_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmorSkladniki_55_00"); //Mam wszystkie trofea na zbrojê.
+	B_GiveInvItems(other,self,ItAt_TrollFur,1);
+	B_GiveInvItems(other,self,ItAt_CrawlerPlate,5);
+	B_GiveInvItems(other,self,ItAt_ShadowHorn,2);
+	
+	UltraZbrojaOut_Day = Wld_GetDay();
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmorSkladniki_55_01"); //Œwietnie! Zapraszam po odbiór jutro.
+
+	B_LogEntry (TOPIC_Hunt_zbroja, "Przynios³em Huntowi trofea. Mogê kupiæ pancerz jutro.");
+
+};
+
+
+
+var int UltraZbrojaMysliwegoKupiona;
+//*********************************************************************
+//	Info UltraZbroja
+//*********************************************************************
+INSTANCE DIA_NASZ_211_Hunt_UltraZbroja   (C_INFO)
+{
+	npc         = NASZ_211_Hunt;
+ 	nr          = 5;
+ 	condition   = DIA_NASZ_211_Hunt_UltraZbroja_Condition;
+ 	information = DIA_NASZ_211_Hunt_UltraZbroja_Info;
+ 	permanent   = TRUE;
+	description = "Sprzedaj mi zbrojê. (Ultra zbroja myœliwego: 2000 szt. z³ota)";
+};
+
+FUNC INT DIA_NASZ_211_Hunt_UltraZbroja_Condition()	
+{
+	if TimeIsUp(3,-1,FerrosLekarstwoDay,-1)
+	&& (npc_knowsinfo (other, DIA_NASZ_211_Hunt_UltraArmorSkladniki))
+	&& (UltraZbrojaMysliwegoKupiona == FALSE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_211_Hunt_UltraZbroja_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_211_Hunt_UltraZbroja_15_00"); //Sprzedaj mi zbrojê.
+	if (npc_hasitems (other, ItMi_Gold) >= 2000) {
+		
+		B_GiveInvItems (other, self, ItMi_Gold, 2000);
+		Npc_RemoveInvItems   (self, ItMi_Gold, 2000);
+		HuntSay_ForYou();
+		Createinvitems (self, ITNA_OUT_S, 1);
+		B_Giveinvitems (self, other, ITNA_OUT_S, 1);
+		AI_EquipBestArmor (other);
+		UltraZbrojaMysliwegoKupiona = TRUE;
+		
+		Log_SetTopicStatus (TOPIC_Hunt_zbroja, LOG_SUCCESS);
+		B_LogEntry (TOPIC_Hunt_zbroja, "Kupi³em zbrojê.");
+
+	}
+
+	else {
+		HuntSay_NoMoney();
+	};
+};
+
+
 //*********************************************************************
 //	        Drax
 //*********************************************************************
@@ -341,7 +471,7 @@ FUNC VOID DIA_NASZ_211_Hunt_SellIce_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce_15_00"); //Hej, ty! Rozmawia³eœ z Gestathem.
 	AI_Output (other, self,"DIA_NASZ_211_Hunt_SellIce_55_01"); //Tak. Czy to dziwne?
-	AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce_15_02"); //Nie, dlatego doskonale wiem, o co ciê poprosi³. Masz mu przynieœæ skóry wszystkich wilków.
+	AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce_15_02"); //Nie, dlatego doskonale wiem, o co ciê prosi³. Masz mu przynieœæ skóry wszystkich wilków.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce_55_03"); //A chcia³bym ciê uœwiadomiæ, ¿e LODOWY WILK to twarda sztuka. Rozszarpie ciê na strzêpy.
 	AI_Output (other, self,"DIA_NASZ_211_Hunt_SellIce_55_04"); //Do czego zmierzasz?
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_SellIce_55_05"); //Mogê odsprzedaæ ci jedn¹ ze skór.

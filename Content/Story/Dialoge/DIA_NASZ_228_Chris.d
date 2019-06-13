@@ -73,7 +73,7 @@ func void DIA_NASZ_228_Chris_Who_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_228_Chris_Who_15_00"); //Kim jesteœ?
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_01"); //Mam na imiê Chris. Jestem myœliwym i przewodniczê ka¿demu masowemu polowaniu.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_02"); //Niech by to szlag trafi³! Tym razem Erak, we w³asnej osobie, uda³ siê do obozu wypadowego i owczywiœcie przewodniczy grupie.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_Who_03_02"); //Niech by to szlag trafi³! Tym razem Erak, we w³asnej osobie, uda³ siê do obozu wypadowego i oczywiœcie przewodniczy grupie.
 };
 
 var int CHRIS_DONT_BEER;
@@ -110,7 +110,7 @@ FUNC VOID DIA_NASZ_228_Chris_guide_Info()
 		AI_Output (other, self,"DIA_NASZ_228_Chris_guide_55_02"); //Nie.
 		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_03"); //W takim razie nie obraŸ siê, ale to nie ma najmniejszego sensu...
 		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_04"); //By³byœ dla mnie tylko balastem do ochraniania.
-		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_05"); //Naucz siê chocia¿ podstaw myœliwstwa, a dopiero wtedy udamy sie na polowanie. 
+		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_05"); //Naucz siê chocia¿ podstaw myœliwstwa, a dopiero wtedy udamy siê na polowanie. 
 		}
 	else {
 		AI_Output (other, self,"DIA_NASZ_228_Chris_guide_55_06"); //Tak.
@@ -234,6 +234,8 @@ FUNC VOID DIA_NASZ_228_Chris_go_Info()
 	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_H");
 	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_I");
 	
+	self.flags = 2;
+	
 	Npc_ExchangeRoutine (NASZ_228_Chris, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_228_Chris,1);
@@ -256,7 +258,7 @@ INSTANCE DIA_NASZ_228_Chris_MightDymoondo   (C_INFO)
 FUNC INT DIA_NASZ_228_Chris_MightDymoondo_Condition()	
 {
 	if (npc_knowsinfo(other,DIA_NASZ_228_Chris_go))
-	&& (Npc_GetDistToWp(self,"OW_PATH_100"))
+	&& (Npc_GetDistToWp(self,"OW_PATH_100") < 800)
 	{
 		return TRUE;
 	};
@@ -299,6 +301,8 @@ FUNC VOID DIA_NASZ_228_Chris_bye_Info()
 	AI_Output (other,self ,"DIA_NASZ_228_Chris_bye_15_01"); //W pojedynkê nie mia³bym szans.
 	AI_Output (self, other,"DIA_NASZ_228_Chris_bye_55_02"); //Dlatego to my, myœliwi, trzymamy siê razem!
 	AI_Output (self, other,"DIA_NASZ_228_Chris_bye_55_03"); //Zbieraj skóry i wracaj. Do zobaczenia w obozie.
+
+	self.flags = 0;
 
 	Log_SetTopicStatus (TOPIC_Chris_polowanie, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Chris_polowanie, "Polowanie zakoñczone pomyœlnie! Teraz mogê sprzedaæ skóry i inne trofea.");

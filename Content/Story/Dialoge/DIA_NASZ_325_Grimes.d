@@ -114,7 +114,7 @@ FUNC INT DIA_NASZ_325_Grimes_cave_Condition()
 
 FUNC VOID DIA_NASZ_325_Grimes_cave_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_325_Grimes_cave_15_00"); //No dobra. Mo¿e wreszcie mi o wszystkim powiesz?
+	AI_Output (self, other,"DIA_NASZ_325_Grimes_cave_15_00"); //No dobra. Mo¿e mi wreszcie o wszystkim powiesz?
 
 	Info_ClearChoices (DIA_NASZ_325_Grimes_cave);
 

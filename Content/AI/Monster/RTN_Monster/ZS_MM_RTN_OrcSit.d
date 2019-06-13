@@ -2,6 +2,21 @@
 // ZS_MM_Rtn_OrcSit
 // ****************
 
+
+func void ZS_Orc_Sit() // dla orkow z ktorymi mozna porozmawiac
+{
+	Perception_Set_Normal();
+
+	AI_SetWalkmode 	(self, NPC_WALK);
+	B_MM_DeSynchronize();
+	if (Hlp_StrCmp(Npc_GetNearestWP(self),self.wp)==FALSE)  //damit die Monster beim Inserten nicht immer erst zum WP rennen, sondern nur, wenn sie der Heimat zu fern sind
+	{
+		AI_GotoWP (self, self.WP);
+	};
+		
+	self.aivar[AIV_TAPOSITION] = NOTINPOS;
+};
+
 func void ZS_MM_Rtn_OrcSit() 
 {
 	Perception_Set_Monster_Rtn();

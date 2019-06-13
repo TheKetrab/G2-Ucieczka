@@ -71,9 +71,9 @@ FUNC VOID DIA_NASZ_107_Brutus_jak_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_00"); //Jak siê tu znalaz³eœ?
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_01"); //Uciek³em z zamku przed tymi kud³atymi bestiami, potê¿nej postury i wzrostu. By³y ich tam ca³e stada, atakowa³y mnie!
-	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_02"); //O jakich bestiach mówisz? Co takiego groŸnego mog³o siê kryæ na zamku?
+	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_02"); //O jakich bestiach mówisz? Co takiego groŸnego mog³o kryæ siê na zamku?
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_03"); //Przed chrz¹szczami, fuj! Nienawidzê tych stworzeñ. Widzia³eœ, jakie s¹ ogromne i w³ochate?
-	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_04"); //Oj Brutusie, przecie¿ one s¹ takie ma³e, a ty taki du¿y, nie oœmieszaj siê! Mo¿esz je spokojnie rozgnieœæ swoj¹ stop¹.
+	AI_Output (other,self ,"DIA_NASZ_107_Brutus_jak_15_04"); //Przecie¿ one s¹ takie ma³e, a ty taki du¿y, nie oœmieszaj siê! Mo¿esz je spokojnie rozgnieœæ stop¹.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_05"); //Gdybyœ tylko widzia³, jak one na mnie patrzy³y, by³em pewien, ¿e chcia³y mnie zjeœæ. Nie mia³em innego wyjœcia.
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_06"); //Mog³em zostaæ z moj¹ star¹, to by³ jej przysmak. Nigdy w okresie naszego ma³¿eñstwa nie znalaz³em chrz¹szcza pod ³ó¿kiem...
 	AI_Output (self, other,"DIA_NASZ_107_Brutus_jak_55_07"); //Ale wracaj¹c do tego, jak tutaj dotar³em. W póŸniejszym okresie ukry³em siê w okolicznej jaskini.

@@ -48,6 +48,6 @@ FUNC VOID Rtn_Start_223 ()
     TA_Sit_Campfire				(10,30,13,05,"NASZ_MYSLIWI_GORA_17");
 	TA_Stand_ArmsCrossed		(13,05,16,45,"NASZ_MYSLIWI_BALKON_04");
     TA_Stand_ArmsCrossed		(16,45,18,50,"NASZ_MYSLIWI_GORA_01");	
-	TA_Sit_Campfire				(18,50,20,30,"NASZ_MYSLIWI_BALKON_05"); 
+	TA_Sit_Campfire				(18,50,20,30,"NASZ_MYSLIWI_BALKON_07"); 
 	TA_Sleep					(20,30,07,45,"NASZ_MYSLIWI_GORA_16");
 };

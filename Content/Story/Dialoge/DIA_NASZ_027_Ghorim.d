@@ -93,13 +93,13 @@ func void DIA_NASZ_027_Ghorim_Lojalnosc_Info ()
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_07"); //Oczywiœcie, duchu. Czego potrzebujesz?
 	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_08"); //Wiesz, ¿ycie w tym miejscu jest naprawdê smutne i pozbawione radoœci z ¿ycia, a naprawdê chcia³bym siê trochê rozerwaæ.
 	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_09"); //Mo¿e móg³byœ przynieœæ mi jak¹œ ksi¹¿kê do poczytania? S³owo pisane od zawsze potrafi³o mnie rozweseliæ.
-	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_10"); //Szczególnie interesuje mnie ksi¹¿ka Baala Lukora. By³ to jeden z najwierniejszych wyznawców naszego mistrza, ¦ni¹cego.
-	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_11"); //Gdzie mogê znale¼æ rzeczy Baala Lukora?
+	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_10"); //Szczególnie interesuje mnie ksi¹¿ka Baala Lukora. By³ to jeden z najwierniejszych wyznawców naszego mistrza, Œni¹cego.
+	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_11"); //Gdzie mogê znaleŸæ rzeczy Baala Lukora?
 	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_12"); //Ju¿ kilkukrotnie przeszukiwa³em jego chatê. Lukor musia³ wzi¹æ tê ksiêgê ze sob¹, gdy wybra³ siê na cmentarzysko orków. Jestem przekonany, ¿e to w³aœnie w niej zapisa³ coœ o swoich objawieniach. 
 	
 	Log_CreateTopic (TOPIC_Ghorim_ksiega, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ghorim_ksiega, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ghorim_ksiega, "Duch Ghorim chcia³by poznaæ sekretne zapiski Baala Lukora, który by³ najbli¿ej ze wszystkich Guru ze ¦ni¹cym. Muszê odnale¼æ jego ksiêgê, któr¹ zabra³ ze sob¹ na cmentarzysko orków.");
+	B_LogEntry (TOPIC_Ghorim_ksiega, "Duch Ghorim chcia³by poznaæ sekretne zapiski Baala Lukora, który by³ najbli¿ej ze wszystkich Guru ze Œni¹cym. Muszê odnaleŸæ jego ksiêgê, któr¹ zabra³ ze sob¹ na cmentarzysko orków.");
 	//HookEngineF(oCNpc__CloseDeadNpc,5,LukorBook);
 	
 
@@ -134,7 +134,7 @@ func void DIA_NASZ_027_Ghorim_Ksiazka_Info ()
 	B_GiveInvItems(other,self,ItNa_KsiegaLukora,1);
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Ksiazka_15_01"); //Liczê, ¿e umili ci czas przez kilka najbli¿szych godzin.
 	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Ksiazka_027_02"); //Naprawdê mi j¹ przynios³eœ? Mo¿e œmiertelnicy nie s¹ tacy bezduszni na jakich ich siê kreuje. Proszê, przyjmij ode mnie w nagrodê mój pierœcieñ.
-	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Ksiazka_027_03"); //Mi siê ju¿ nie przyda, a tobie z pewnoœci¹ pomo¿e podczas dalszych wêdrówek. Powinieneœ znale¼æ go w mojej chacie, o ile ta jeszcze istnieje. Je¿eli go tam nie bêdzie, poszukaj w okolicy.
+	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Ksiazka_027_03"); //Mi siê ju¿ nie przyda, a tobie z pewnoœci¹ pomo¿e podczas dalszych wêdrówek. Powinieneœ znaleŸæ go w mojej chacie, o ile ta jeszcze istnieje. Je¿eli go tam nie bêdzie, poszukaj w okolicy.
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Ksiazka_15_04"); //Dziêkujê Ghorimie, na pewno mi siê przyda. ¯egnaj i mam nadziejê, ¿e wkrótce zaznasz spokoju.
 
 	Wld_InsertItem (ItNa_Pierscien_Zarazy,"FP_NASZ_PIERSCIEN_GHORIM");

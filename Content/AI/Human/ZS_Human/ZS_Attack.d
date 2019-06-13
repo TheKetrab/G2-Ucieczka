@@ -119,7 +119,38 @@ func int ZS_Attack_Loop ()
 		self.aivar[AIV_PursuitEnd] = TRUE;
 		return LOOP_END;
 	};
+	
+	
+
+	// GODAR
+	if (CzasZakonczycWalkeZPowoduXGODAR == TRUE)
+	&& (WalkaTrwa == TRUE)
+	&& (self.id == 113)
+	{
+		B_ClearPerceptions (self);
+		Npc_ClearAIQueue(self);
+		AI_StandUpQuick(self);
 		
+		CzasZakonczycWalkeZPowoduXGODAR = FALSE;
+		
+		return LOOP_END;
+	};
+	
+	// HOKURN
+	if (CzasZakonczycWalkeZPowoduXHOKURN == TRUE)
+	&& (WalkaTrwa == TRUE)
+	&& (self.id == 113)
+	{
+		B_ClearPerceptions (self);
+		Npc_ClearAIQueue(self);
+		AI_StandUpQuick(self);
+		
+		CzasZakonczycWalkeZPowoduXHOKURN = FALSE;
+		
+		return LOOP_END;
+	};
+	
+	
 	if (CzasZakonczycWalkeZPowoduX == TRUE) && (WalkaTrwa == TRUE)
 	&& ((self.id == 117) || (self.id == 116) || (self.id == 118) || (self.id == 113) || (self.id == 114) || (self.id == 115) || (self.id == 304))
 	{

@@ -1,8 +1,4 @@
 
-func void HeroSay_OrcSeenMe() {
-	AI_Output (self, other,"DIA_HeroSay_OrcSeenMe_15_00"); //Nie dam rady, jest ich zbyt dużo!
-};
-
 func void WillCantKillOrcs_SetTrue() {
 	WillCantKillOrcsVar = TRUE;
 };
@@ -13,6 +9,7 @@ func void OrcSawYou() {
 	OrcSawYou_Activated = TRUE;
 	HeroSay_OrcSeenMe();
 	Fade_Status = 1;
+	// TODO bogu - miało być disable + czy możliwość zapisywania się włączy po następnym wczytaniu? tzn potem trzeba 'wyłączyć' brak możliwości zapisu
 	ff_applyonce(OrcSawYou_Active); // in MyLegoFuncs.d
 	//Print("Start");
 

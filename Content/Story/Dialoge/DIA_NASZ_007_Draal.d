@@ -1,3 +1,5 @@
+// TODO patch - niech jest z nim jakis dialog w listopadzie, ze wow, przyjeli go do obozu albo cos (skoro ma zbroje)
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -43,7 +45,7 @@ FUNC INT DIA_NASZ_007_Draal_siema_Condition()
 FUNC VOID DIA_NASZ_007_Draal_siema_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_00"); //Na Innosa! Czy¿bym by³ uratowany?
-	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Nie wygl¹dasz na bandytê. A nawet jeœli to uprzedzam: Nie mam nic, co mog³oby ci siê przydaæ, a zabijaj¹c mnie te¿ niczego nie zyskasz!
+	AI_Output (self, other,"DIA_NASZ_007_Draal_siema_55_01"); //Nie wygl¹dasz na bandytê. A nawet jeœli, to uprzedzam: Nie mam nic, co mog³oby ci siê przydaæ, a zabijaj¹c mnie te¿ niczego nie zyskasz!
 
 	Log_CreateTopic (TOPIC_draal, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_draal, LOG_RUNNING);
@@ -274,6 +276,7 @@ FUNC VOID DIA_NASZ_007_Draal_done_Info()
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_03"); //Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, chwyæ go jedn¹ rêk¹, a drug¹ machaj i odwracaj uwagê ofiary. To zawsze pomaga, mo¿esz mi wierzyæ.
 
 	B_RaiseAttribute(other, ATR_DEXTERITY, 2);
+	DraalUratowany = TRUE;
 	
 	Npc_ExchangeRoutine (self, "In");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;

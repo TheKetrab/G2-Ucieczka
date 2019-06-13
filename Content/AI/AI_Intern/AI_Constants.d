@@ -546,7 +546,7 @@ const int DEFAULT 			= 0; //wird in Monster-Instanzen (SetVisual) verwendet
 
 const int LP_PER_LEVEL				= 10;	// Lernpunkte pro Spieler-Stufe
 // nasz zmieniony
-const int HP_PER_LEVEL				= 5;	// Lebenspunkte pro Spieler-Stufe
+const int HP_PER_LEVEL				= 8;	// Lebenspunkte pro Spieler-Stufe
 
 const int XP_PER_VICTORY			= 10;	// Erfahrungspunkte pro Level des Gegners
 
@@ -818,3 +818,14 @@ const int Face_N_Orun		=   170;
 const int Face_N_Shrat		=   171;
 const int Face_N_Joru		=   172;
 const int Face_N_Ghorim		=   173;
+const int Face_N_Nod		=   174;
+const int Face_N_Gobby		=   175;
+const int Face_N_Monk		=   176;
+const int Face_N_Frut		=   177;
+const int Face_N_Danny		=   178;
+const int Face_B_Benito		=   179;
+const int Face_B_Miecz		=   180;
+const int Face_B_Bron		=   181;
+const int Face_N_Monastir	=   182;
+const int Face_N_Kivo		=   183;
+const int Face_N_Rabon		=   184;

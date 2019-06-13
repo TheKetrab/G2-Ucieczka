@@ -247,6 +247,7 @@ FUNC VOID DIA_NASZ_218_Ammann_done_Info()
 
 	}
 	else {
+		// jesli sie jest lowca i misja nie jest kontynuowana
 		AI_Output (self ,other,"DIA_NASZ_218_Ammann_done_55_03"); //Oddam je Gestathowi. Ciekawe, czy faktycznie bêdziemy dziêki nim silniejsi?
 		B_LogEntry (TOPIC_Ammann_wiernosc, "Znalaz³em pierœcienie i odda³em Ammannowi.");
 		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);

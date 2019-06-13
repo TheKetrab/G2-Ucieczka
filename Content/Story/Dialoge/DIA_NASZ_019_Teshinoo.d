@@ -31,6 +31,8 @@ FUNC VOID DIA_NASZ_019_Teshinoo_EXIT_Info()
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_05"); //Syn Ducha mieæ cichy g³os, elita byæ silny i nie wyæ. Ale orki kuszka wyæ!
 		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_06"); //Dobrze, zapamiêtam radê. Mo¿e uda mi siê przemkn¹æ niepostrze¿enie.
 
+		ff_applyonceext(OrcCityFog,5000,-1);
+		
 		TeshinooEndFirstTime = TRUE;
 		B_LogEntry (TOPIC_OrcCity_In, "Ork w wiêzieniu uprzedzi³ mnie, ¿ebym nie walczy³ z ¿adnym orkiem-wojownikiem ani kusznikiem na widoku, bo zleci siê ich masa z miasta w g³êbi. A wiêc muszê uciekaæ, gdy któryœ z nich rzuci siê za mn¹ w pogoñ.");
 	};
@@ -317,7 +319,8 @@ FUNC VOID DIA_NASZ_019_Teshinoo_JestesWolny_Info()
 
 	Info_ClearChoices (DIA_NASZ_019_Teshinoo_JestesWolny);
 		Info_AddChoice	  (DIA_NASZ_019_Teshinoo_JestesWolny, "W takim razie chyba tu zostaniesz.", DIA_NASZ_019_Teshinoo_JestesWolny_yes);
-		Info_AddChoice	  (DIA_NASZ_019_Teshinoo_JestesWolny, "Mo¿esz udaæ siê ze mn¹.", DIA_NASZ_019_Teshinoo_JestesWolny_no);
+		// TODO -> listopad, teraz jest to zbyt problematyczne
+		// Info_AddChoice	  (DIA_NASZ_019_Teshinoo_JestesWolny, "Mo¿esz udaæ siê ze mn¹.", DIA_NASZ_019_Teshinoo_JestesWolny_no);
 
 };
 

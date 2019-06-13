@@ -3,6 +3,7 @@
 //#######################################################
 func void ZS_Orc_Dance()
 {
+	Perception_Set_Normal();
 	PrintDebugNpc( PD_ZS_FRAME, "ZS_Orc_Dance" );
 	
 	//	Zum angegebenen Wegpunkt gehen
@@ -14,6 +15,8 @@ func void ZS_Orc_Dance()
 	};
 
 	Npc_PercEnable		(self, PERC_ASSESSDAMAGE		,	B_MM_AssessDamage);
+	Npc_PercEnable	(self, 	PERC_ASSESSTALK			,	B_AssessTalk);
+	
 	/*Npc_PercEnable( self, PERC_OBSERVEINTRUDER,		B_OrcSlave_Quicklook		);	
 	Npc_PercEnable( self, PERC_DRAWWEAPON,			B_OrcSlave_Quicklook		);
 	Npc_PercEnable( self, PERC_ASSESSSURPRISE,		B_OrcSlave_Quicklook		);*/

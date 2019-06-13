@@ -81,7 +81,7 @@ FUNC VOID DIA_NASZ_101_Korth_wiecej_Info()
 	AI_Output (other, self,"DIA_NASZ_101_Korth_wiecej_15_02"); //Od kilku miesiêcy nieustannie kopa³em rudê w kopalni. Nie mia³em dostêpu do informacji o tym, co siê dzieje w Dolinie.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_03"); //No dobrze... Kilka tygodni temu kapitan Garond zrezygnowa³ ze swojej misji w Kolonii. Stwierdzi³, ¿e nie ma ona sensu.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_04"); //Wszyscy paladyni, knechci i inni jego ludzie wyruszyli na prze³êcz Khorinis. Niestety, mimo ¿e obok zamku nie by³o du¿o orków, zwêszyli nas.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_05"); //Wys³ali za nami poœcig. Horda wyszkolonych orkowych wojowników kontra trzydziestu g³odnych i zmêczonych ludzi. Nie mieliœmy szans w otwartej walce. Ruszyliœmy biegiem w stronê prze³êczy.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_05"); //Wys³ali za nami poœcig. Horda wyszkolonych orkowych wojowników kontra trzydziestu g³odnych i zmêczonych ludzi. Nie mieliœmy szans w otwartej walce.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_06"); //Na prze³êczy Garond zrozumia³, ¿e nie ma szans na ucieczkê, wiêc rozkaza³ zabiæ tylu orków, ilu damy radê.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_15_07"); //Walczyliœmy patrz¹c, jak orkowie morduj¹ najbardziej oddanych rycerzy. Nagle us³yszeliœmy dŸwiêk spadaj¹cych ska³...
 	AI_Output (self, other,"DIA_NASZ_101_Korth_wiecej_55_09"); //Jak siê póŸniej dowiedzieliœmy, orkowie na prze³êczy równie¿ mieli swój oddzia³. Magowie Ognia wywo³ali trzêsienia ziemi, by odci¹æ orkom drogê do Khorinis.
@@ -123,7 +123,7 @@ FUNC VOID DIA_NASZ_101_Korth_WillWantToKillRenegats_Info()
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_04"); //Miesi¹c temu pojawi³ siê na zamku i og³osi³, ¿e objawi³ siê mu demon. Garond chcia³ wtr¹ciæ go do wiêzienia, ale Marcos wyteleportowa³ siê z zamku.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_05"); //Nic wiêcej nie wiem. Nie myœla³em jednak, ¿e wróci do sprawowania pieczy nad kopalni¹...
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_06"); //No có¿... Ten problem nas nie dotyczy. Na g³owie mamy teraz orków.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jesli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bedziesz trzymaæ.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jesli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bêdziesz trzymaæ.
 	
 	B_LogEntry (TOPIC_Korth_kopalnia, "Marcos nie tylko jest okrutnym tyranem, ale i upad³ym paladynem, który zaprzeda³ duszê Beliarowi. Skazañcy z jego kopalni s¹ w niebezpieczeñstwie... Trzeba ich uwolniæ, a w tym mog¹ mi pomóc ludzie z powsta³ych obozów.");
 	
@@ -323,7 +323,7 @@ FUNC VOID DIA_NASZ_101_Korth_prowadzenie_koniec_Info()
 	AI_Output (self, other,"DIA_NASZ_101_Korth_prowadzenie_koniec_55_00"); //Jesteœmy.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_prowadzenie_koniec_55_01"); //Ja wrócê teraz nad rzekê, by szukaæ nastêpnych wa³êsaj¹cych siê po okolicy.	
 	AI_Output (self, other,"DIA_NASZ_101_Korth_prowadzenie_koniec_55_02"); //IdŸ prosto do Kerolotha i porozmawiaj z nim.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_prowadzenie_koniec_55_03"); //Wrêcz mu te¿ ten raport. Niech wie, co dzieje siê w okolicy zamku.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_prowadzenie_koniec_55_03"); //Wrêcz mu te¿ ten raport. Niech wie, co siê dzieje w okolicy zamku.
 
 	Createinvitems (self, ItNa_KorthRaport, 1);
 	B_giveinvitems (self, other, ItNa_KorthRaport, 1);
@@ -364,7 +364,7 @@ FUNC INT DIA_NASZ_101_Korth_help_Condition()
 FUNC VOID DIA_NASZ_101_Korth_help_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_101_Korth_help_15_00"); //Mogê ci w czymœ pomóc?
-	AI_Output (self, other,"DIA_NASZ_101_Korth_help_55_01"); //Có¿, jest takie miejsce, w które trzeba by siê by³o wybraæ. Podejrzewam, ¿e mo¿e siê tam znajdowaæ jakiœ skazaniec.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_help_55_01"); //Có¿, jest takie miejsce, w które trzeba by by³o siê wybraæ. Podejrzewam, ¿e mo¿e siê tam znajdowaæ jakiœ skazaniec.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_help_55_02"); //Jeœli to prawda, muszê go przecie¿ znaleŸæ. Problem w tym, ¿e tamtejsza okolica nie wygl¹da zbyt zachêcaj¹co.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_help_55_03"); //Mo¿e poszed³byœ ze mn¹? W dwóch zawsze bezpieczniej.
 
@@ -512,6 +512,8 @@ FUNC VOID DIA_NASZ_101_Korth_mine_Info()
 
 	KorthIsInMine = TRUE;
 
+	Wld_InsertNpc	(NASZ_007_Draal,"OW_NEWMINE_06_B");
+	
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self, "MineB");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;

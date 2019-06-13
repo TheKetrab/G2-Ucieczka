@@ -112,7 +112,7 @@ FUNC VOID DIA_NASZ_005_Ben_HaveYouGotAnIdea_Info()
 	AI_Output (other,self ,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_15_00"); //Masz jakiœ pomys³?
 	AI_PlayAni (self,"R_SCRATCHHEAD");
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_01"); //Mam pewien plan, jednak musisz sam wyraziæ zgodê, albowiem jesteœ jego najwa¿niejszym elementem.
-	AI_Output (other, self,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_02"); //Je¿eli dziêki temu planowi bêdê móg³ porz¹dnie zjeœæ, to uwierz mi, ¿e to zrobiê.
+	AI_Output (other, self,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_02"); //Je¿eli dziêki temu planowi bêdê móg³ porz¹dnie zjeœæ, uwierz mi, ¿e to zrobiê.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_03"); //Determinacja, to w tobie lubiê. S³uchaj, jak dobrze pamiêtam, to ty wraz z Grimesem pokaza³eœ Marcosowi drogê do tej kopalni, zgadza siê?
 	AI_Output (other, self,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_04"); //Tak, aczkolwiek teraz ¿a³ujê, i¿ nie da³em nogi przy pierwszej lepszej okazji.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_HaveYouGotAnIdea_55_05"); //Ka¿dy pope³nia b³êdy przyjacielu, ale do rzeczy. Ty, jako jedyny z nas wszystkich, mo¿esz przemówiæ tym rycerzykom do g³owy.
@@ -162,7 +162,7 @@ FUNC VOID DIA_NASZ_005_Ben_Ben1_Finish_Info()
 		B_GivePlayerXP(10);
 	}
 	else {
-		AI_Output (other, self,"DIA_NASZ_005_Ben_Ben1_Finish_55_04"); //Myœla³em, ¿e mi siê nie uda. Jednak pod naporem moich argumentów, ten baran a¿ zaniemówi³ i zgodzi³ siê porozmawiaæ z Marcosem.
+		AI_Output (other, self,"DIA_NASZ_005_Ben_Ben1_Finish_55_04"); //Pocz¹tkowo myœla³em, i¿ mi siê nie uda. Jednak pod naporem moich argumentów, ten baran a¿ zaniemówi³ i zgodzi³ siê porozmawiaæ z Marcosem.
 		AI_Output (self, other,"DIA_NASZ_005_Ben_Ben1_Finish_55_05"); //To wspania³e wieœci! Ch³opcy i ja jesteœmy ci wdziêczni za pomoc! Mo¿e w koñcu zjemy coœ wiêcej ni¿ chleb i wodê...
 
 		B_GivePlayerXP(50);
@@ -197,7 +197,7 @@ FUNC VOID DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_15_00"); //Co teraz zrobimy?
 	AI_Output (other,self ,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_15_01"); //Nie mo¿emy przecie¿ staæ z za³o¿onymi rêkoma, bo wkrótce wszyscy tu pomrzemy.
-	AI_Output (self, other,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_55_02"); //W zaistnia³ej sytuacji musimy przyspieszyæ realizacjê naszego planu, zdobycie dodatkowych racji ¿ywnoœciowych mia³o nam daæ wystarczaj¹c¹ du¿o czasy do przygotowañ, lecz...
+	AI_Output (self, other,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_55_02"); //W zaistnia³ej sytuacji musimy przyspieszyæ realizacjê naszego planu. Zdobycie dodatkowych racji ¿ywnoœciowych mia³o nam daæ wystarczaj¹co du¿o czasu do przygotowañ, lecz...
 	AI_Output (self, other,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_55_03"); //Teraz musimy zmieniæ swoj¹ strategiê, bêdzie ciê¿ej ni¿ przypuszcza³em.
 	AI_Output (other, self,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_55_04"); //Jakiego planu?
 	AI_Output (self, other,"DIA_NASZ_005_Ben_BenIfYouNotSuccessed1_55_05"); //Chcemy uciec, przyjacielu.
@@ -294,7 +294,7 @@ FUNC VOID DIA_NASZ_005_Ben_Ben3Szkodnik_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_00"); //W czym mogê wam pomóc?
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_01"); //Zanim siê zgodzisz, to najpierw mnie wys³uchaj: Nim zaczniemy przygotowywaæ siê do dalszych dzia³añ, musimy oczyœciæ kopalniê ze szkodnika, który mo¿e nam zaszkodziæ.
-	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_02"); //Do tej pory nie robiliœmy nic co zwróci³oby jego uwagê, lecz jak tylko zaczniemy, to na pewno to zauwa¿y.
+	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_02"); //Do tej pory nie robiliœmy nic, co zwróci³oby jego uwagê, lecz jak tylko zaczniemy, to na pewno to zauwa¿y.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_03"); //Chodzi o Brysona, obserwowaliœmy go od d³u¿szego czasu i niestety okaza³ siê byæ fa³szywym, dwulicowym cz³owiekiem.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_04"); //Za dodatkowe porcje jedzenia donosi stra¿nikom o wszystkich efektach naszej pracy.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_Ben3Szkodnik_15_05"); //Musimy siê go pozbyæ.
@@ -372,7 +372,7 @@ FUNC VOID DIA_NASZ_005_Ben_WhatAreUTalkingAbout_Info()
 
 	AI_Output (other, self,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_00"); //Masz ju¿ jakiœ pomys³ na zorganizowanie ucieczki?
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_01"); //Owszem. Nie myœl, ¿e przez ten ca³y czas pró¿nowaliœmy i nic nie robiliœmy.
-	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_02"); //Nie bêdê ciê ju¿ d³u¿ej trzyma³ w niepewnoœci. Wraz z ch³opakami obmyœliliœmy dwa plany ucieczki. Teraz pozostaje nam wybraæ jeden z nich. 
+	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_02"); //Nie bêdê ciê ju¿ d³u¿ej trzyma³ w niepewnoœci. Wraz z ch³opakami opracowaliœmy dwa plany ucieczki. Teraz pozostaje nam wybraæ jeden z nich. 
 	AI_Output (other, self,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_03"); //Przedstawisz mi pokrótce ka¿d¹ z opcji?
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_04"); //Oczywiœcie. Pierwszy – i moim zdaniem najlepszy wariant – zak³ada stworzenie zwoju z zaklêciem snu, uœpienie wartownika i opuszczenie szybów w trakcie nocy, gdy reszta paladynów bêdzie ju¿ spaæ.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_WhatAreUTalkingAbout_55_05"); //Drugi – bardziej ryzykowny – opiera siê na uwarzeniu trucizny i podaniu jej stra¿nikowi, który pilnuje naszego tunelu. Od razu uprzedzê twe pytanie: Mieszanka ta nie ma na celu jego zabicia.
@@ -395,7 +395,7 @@ FUNC VOID DIA_NASZ_005_Ben_WhatAreUTalkingAbout_trucizna()
 	
 	Log_CreateTopic (TOPIC_Ben_taktyki, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ben_taktyki, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ben_taktyki, "Po d³u¿szym namyœle zasugerowa³em, abyœmy stworzyli truciznê. Wprawdzie jest to niebezpieczny ruch, jednak nie mamy ju¿ czasu na zwlekanie i u¿ywanie pó³ œrodków. Pytanie, od kiedy Daryl potrafi tworzyæ trucizny?");
+	B_LogEntry (TOPIC_Ben_taktyki, "Po d³u¿szym namyœle zasugerowa³em, abyœmy stworzyli truciznê. Wprawdzie jest to niebezpieczny ruch, jednak nie mamy ju¿ czasu na zwlekanie i u¿ywanie pó³œrodków. Pytanie, od kiedy Daryl potrafi tworzyæ trucizny?");
 
 
 	Info_ClearChoices (DIA_NASZ_005_Ben_WhatAreUTalkingAbout);
@@ -446,6 +446,7 @@ FUNC INT DIA_NASZ_005_Ben_TaktykiEnd_Condition()
 	if (npc_knowsinfo (other, DIA_NASZ_002_Daryl_Taktyki3))
 		&& (Npc_IsInState(self, ZS_TALK))
 		&& (Npc_GetDistToWP	(NASZ_002_Daryl, "OW_MINE2_04") <=750)
+		&& (Npc_GetDistToWP	(NASZ_020_Sattar, "OW_MINE2_04") <=750)
 	{
 		return TRUE;
 	};
@@ -454,8 +455,10 @@ FUNC INT DIA_NASZ_005_Ben_TaktykiEnd_Condition()
 FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 {
 	var C_NPC Ben; Ben = Hlp_GetNpc (NASZ_005_Ben);
+	var C_NPC Daryl; Daryl = Hlp_GetNpc (NASZ_002_Daryl);
 	var C_NPC Sattar; Sattar = Hlp_GetNpc (NASZ_020_Sattar);
 	TRIA_Invite(Ben);
+	TRIA_Invite(Daryl);
 	TRIA_Invite(Sattar);
     TRIA_Start();
  
@@ -488,7 +491,7 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_09"); //Po prostu nie zapomnij o swoich przyjacio³ach i towarzyszach niedoli.  
 	AI_Output (other, self,"DIA_NASZ_005_Ben_TaktykiEnd_55_10"); //Obiecujê, ¿e wrócê tutaj z pomoc¹ i wsparciem. Teraz jednak nie powinniœmy traciæ czasu, zaczynajmy. 
 	
-	TRIA_Next(Sattar);
+	TRIA_Next(Daryl);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_11"); //Masz racjê, nim jednak wyruszysz, zabierz nasze wyposa¿enie. Znajdziesz je w dziurze w tunelu, tobie przyda siê zdecydowanie bardziej.
@@ -501,7 +504,6 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	TRIA_Finish();
 	
 	
-	WillMaRzucicZaklecieNaStraznika = TRUE;
 	LogEntryThrowAway();
 	WillWieOSkrytceKopaczy = TRUE;
 	AI_StopProcessInfos(self);
@@ -535,8 +537,10 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 {
 	var C_NPC Ben; Ben = Hlp_GetNpc (NASZ_005_Ben);
 	var C_NPC Daryl; Daryl = Hlp_GetNpc (NASZ_002_Daryl);
+	var C_NPC Sattar; Sattar = Hlp_GetNpc (NASZ_020_Sattar);
 	TRIA_Invite(Ben);
 	TRIA_Invite(Daryl);
+	TRIA_Invite(Sattar);
     TRIA_Start();
  
 	TRIA_Next(Ben);
@@ -571,7 +575,7 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_12"); //Po prostu nie zapomnij o swoich przyjacio³ach i towarzyszach niedoli. 
 	AI_Output (other, self,"DIA_NASZ_005_Ben_MetodyEnd_55_13"); //Nie zawiodê was, obiecujê. Nie traæmy czasu, powinniœmy ju¿ zaczynaæ. 
 	
-	TRIA_Next(Daryl);
+	TRIA_Next(Sattar);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_14"); //Zgadzam siê. Zanim jednak wyruszysz w podró¿, udaj siê do tunelu i wykop z dziury nasze zaopatrzenie. Tobie przyda siê bardziej.
@@ -583,6 +587,7 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	TRIA_Next(Ben);
 	TRIA_Finish();
 	
+	WillMaRzucicZaklecieNaStraznika = TRUE;
 	LogEntryThrowAway();
 	WillWieOSkrytceKopaczy = TRUE;
 	AI_StopProcessInfos(self);

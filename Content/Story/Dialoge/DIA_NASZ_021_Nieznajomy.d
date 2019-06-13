@@ -111,7 +111,7 @@ FUNC VOID DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_Info()
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_04"); //Jak widzisz, nadal s³u¿ê swojemu mistrzowi. Wczeœniej odwróci³em siê od jego s³ów, tak jak wielu innych moich braci, lecz oni zap³acili za to srogo.
 	AI_Output (other, self,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_05"); //Próbujesz zm¹ciæ me myœli magu, ale nie uda ci siê. Cokolwiek planujesz, powstrzymam ciê!
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_06"); //To nie czas i miejsce na nasz¹ walkê. Twoje przeznaczenie musi siê jeszcze dope³niæ, byœ móg³ rzuciæ mi wyzwanie.
-	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_07"); //Nasza walka i tak nie przyniesie ¿adnej korzyœci, gdy¿ pierwsza ofiara zosta³a ju¿ z³o¿ona ku potêdze mego pana. Nikt ani nic nie powstrzyma Zaæmienia.
+	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_07"); //Nasza walka i tak nie przyniesie ci ¿adnej korzyœci, gdy¿ pierwsza ofiara zosta³a ju¿ z³o¿ona ku potêdze mego pana. Nikt ani nic nie powstrzyma Zaæmienia.
 	AI_Output (other, self,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_08"); //Co to za Zaæmienie?
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_09"); //Ha, ha, ha! Rozczarowujesz mnie teraz. Nie masz pojêcia, z czym siê mierzysz, a i tak rzucasz wyzwanie temu czemuœ? Jedynie œmiertelnicy potrafi¹ byæ tak lekkomyœlni.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieDJG_55_10"); //Mo¿e powinieneœ porozmawiaæ o tym ze swoimi paladynami czy magami? W koñcu tak wiernie im s³u¿ysz i wykonujesz ka¿de z ich poleceñ.

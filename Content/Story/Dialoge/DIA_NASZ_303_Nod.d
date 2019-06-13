@@ -309,12 +309,15 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_Info()
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_01"); //I? Rozumiesz coœ z tego?
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_15_02"); //Nie do koñca...
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_03"); //Pewnie! Dlatego to ja jestem tutaj od myœlenia.
-	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_04"); //S³uchaj uwa¿nie: Gdy tutaj przybyliœmy, Bam znalaz³ dziwnie wygl¹daj¹cy zwój.	Oczywiœcie, zjad³a go ciekawoœæ i ani siê obejrzeliœmy, a przywo³a³ jakiegoœ maga.
+	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_04"); //S³uchaj uwa¿nie: Gdy tutaj przybyliœmy, Bam znalaz³ dziwnie wygl¹daj¹cy zwój. Oczywiœcie, zjad³a go ciekawoœæ i ani siê obejrzeliœmy, a przywo³a³ jakiegoœ maga.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_05"); //Ten z kolei, mia³ przy sobie w³aœnie to pismo. Poza tym, przy wejœciu na klif naprzeciw naszego obozu pojawi³a siê magiczna pieczêæ.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_06"); //Jeœli dobrze siê przyjrzysz, zobaczysz miejsce na artefakt, który powinien odblokowaæ przejœcie.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_55_07"); //Jestem jednak przekonany, ¿e zosta³ on podzielony. Pytanie tylko, ile jest tych czêœci i gdzie ich szukaæ...
 
 	Wld_InsertNpc	(NASZ_408_Straznik,"OW_SAWHUT_MOLERAT_SPAWN01");
+
+	Wld_InsertNpc	(NASZ_301_Bandzior,"OW_MINE3_LEICHE_05");
+	Wld_InsertNpc	(NASZ_302_Bandzior,"OW_MINE3_OUT");
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "Nod chce, bym przyniós³ mu wszystkie czêœci artefaktu, który usunie magiczn¹ pieczêæ. Twierdzi, ¿e czêœci powinny znajdowaæ siê w kryptach podobnych do tej, w której on sam przebywa.");
 	
@@ -324,7 +327,7 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_Info()
 	Info_ClearChoices (DIA_NASZ_303_Nod_pismo);
 		Info_AddChoice	  (DIA_NASZ_303_Nod_pismo, "Czêœci artefaktu mog¹ byæ dobrze bronione...", DIA_NASZ_303_Nod_pismo_fight);
 		Info_AddChoice	  (DIA_NASZ_303_Nod_pismo, "Du¿o biegania przede mn¹.", DIA_NASZ_303_Nod_pismo_bieganie);
-		Info_AddChoice	  (DIA_NASZ_303_Nod_pismo, "A ty, jak myslisz, gdzie ich szukaæ?", DIA_NASZ_303_Nod_pismo_gdzie);
+		Info_AddChoice	  (DIA_NASZ_303_Nod_pismo, "A ty, jak myœlisz, gdzie ich szukaæ?", DIA_NASZ_303_Nod_pismo_gdzie);
 
 };
 
@@ -351,7 +354,7 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_bieganie()
 FUNC VOID DIA_NASZ_303_Nod_pismo_gdzie()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_gdzie_15_00"); //A ty, jak myslisz, gdzie ich szukaæ?
+	AI_Output (other,self ,"DIA_NASZ_303_Nod_pismo_gdzie_15_00"); //A ty, jak myœlisz, gdzie ich szukaæ?
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_gdzie_55_01"); //Wydaje mi siê, ¿e bêd¹ ukryte w kryptach podobnych do tej.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_pismo_gdzie_55_02"); //Je¿eli rzeczywiœcie znasz okolicê tak dobrze, jak twierdzisz, to nie powinieneœ mieæ problemu ze znalezieniem takich miejsc.
 
@@ -657,10 +660,10 @@ FUNC VOID DIA_NASZ_303_Nod_OkoSwiata_Info()
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_OkoSwiata_55_03"); //Co teraz zro...
 	AI_ReadyMeleeWeapon		(self);
 	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_04"); //A teraz pos³uchaj, gnido.
-	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_05"); //Tutaj koñczy siê twoja przygoda. Przejrza³em ciê i pos³a³em goñca za tob¹. Widzia³, jak donosisz na nas obcym ludziom. Krótko mówi¹c: Nie jesteœ bandyt¹.
+	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_05"); //Tutaj koñczy siê twoja przygoda. Przejrza³em ciê i pos³a³em goñca za tob¹. Widzia³, jak donosisz na nas obcym ludziom. Mówi¹c krótko: Nie jesteœ bandyt¹.
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_OkoSwiata_55_06"); //I pomyœla³eœ, ¿e wyprujesz mi flaki? Dobrze to sobie wymyœli³eœ. Ale nie u³atwiê ci tego.
 	AI_ReadyMeleeWeapon		(other);
-	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_07"); //Nie jesteœ ju¿ mi potrzebny i wierz mi: Nikt za tob¹ nie zatêskni.
+	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_07"); //Nie jesteœ mi ju¿ potrzebny i wierz mi: Nikt za tob¹ nie zatêskni.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_08"); //Zaraz...
 	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_09"); //Co to by³o?
 	AI_Output (self, other,"DIA_NASZ_303_Nod_OkoSwiata_55_10"); //Monk, Bam - biegiem do obozu! SprawdŸcie, sk¹d ten ha³as.

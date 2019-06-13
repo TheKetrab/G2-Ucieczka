@@ -475,7 +475,7 @@ INSTANCE DIA_NASZ_119_Udar_GraveMissionIfMoreGraves   (C_INFO)
  	condition   = DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_Condition;
  	information = DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_Info;
  	permanent   = FALSE;
-	description = "Co jeœli znajdê grób, którego nie ma na tej mapie?";
+	description = "Co jeœli znajdê grób, którego nie ma na mapie?";
 };
 
 FUNC INT DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_Condition()	
@@ -489,7 +489,7 @@ FUNC INT DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_Condition()
 
 FUNC VOID DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_15_00"); //Co jeœli znajdê grób, którego nie ma na tej mapie?
+	AI_Output (other, self,"DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_15_00"); //Co jeœli znajdê grób, którego nie ma na mapie?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_GraveMissionIfMoreGraves_55_01"); //Poœwiêæ go równie¿. Za ka¿dy nastêpny grób wielkiego wojownika dostaniesz 60 sztuk z³ota.
 
 	B_LogEntry (TOPIC_Udar_Grave, "Za ka¿dy poœwiêcony grób spoza mapy dostanê 60 sztuk z³ota.");
@@ -981,7 +981,7 @@ INSTANCE DIA_NASZ_119_Udar_PalisadaOtwarta   (C_INFO)
  	condition   = DIA_NASZ_119_Udar_PalisadaOtwarta_Condition;
  	information = DIA_NASZ_119_Udar_PalisadaOtwarta_Info;
  	permanent   = FALSE;
-	description = "Orkowie otwarli bramê na swoje tereny.";
+	description = "Orkowie otworzyli bramê na swoje tereny.";
 };
 
 FUNC INT DIA_NASZ_119_Udar_PalisadaOtwarta_Condition()	
@@ -995,12 +995,12 @@ FUNC INT DIA_NASZ_119_Udar_PalisadaOtwarta_Condition()
 FUNC VOID DIA_NASZ_119_Udar_PalisadaOtwarta_Info()
 {
 
-	AI_Output (other, self,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_00"); //Orkowie otwarli bramê na swoje tereny.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_00"); //Orkowie otworzyli bramê na swoje tereny.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_01"); //Mówisz powa¿nie? Ta wiadomoœæ nape³ni³a mnie now¹ nadziej¹ na odszukanie patrolu, który zagin¹³ spory kawa³ czasu temu.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_02"); //Ludzie za palisad¹?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_03"); //Paladyni przybyli do Górniczej Doliny na chwilê przed ca³kowitym zabudowaniem palisady. Garond za wszelk¹ cenê chcia³ wiedzieæ, co znajduje siê po drugiej stronie.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_04"); //Wys³a³ trzech rycerzy, aby przedarli siê na wybrze¿e i sprawdzili, co dzieje siê w tamtejszych terenach. Niestety, nigdy ju¿ nie wrócili.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_05"); //Jeœli znajdziesz w sobie doœæ si³, aby przekroczyæ progi ziem orków, to mo¿esz ich poszukaæ. ¯ywych lub martwych.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_04"); //Wys³a³ trzech rycerzy, aby przedarli siê na wybrze¿e i sprawdzili, co dzieje siê na tamtejszych terenach. Niestety, nigdy ju¿ nie wrócili.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_PalisadaOtwarta_55_05"); //Je¿eli znajdziesz w sobie doœæ si³, aby przekroczyæ próg ziem orków, to mo¿esz ich poszukaæ. ¯ywych lub martwych.
 
 	Log_CreateTopic (TOPIC_Udar_oddzial, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);

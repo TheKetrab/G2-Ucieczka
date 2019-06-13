@@ -49,7 +49,7 @@ func int WillCanRepair()
 		return TRUE;
 	}
 	else {
-	AI_Output (hero, hero,"DIA_NASZ_Deski_55_00"); //Potrzebuje gwozdzi.
+		HeroSay_PotrzebujeGwozdzi();
 	};
 	
 	};

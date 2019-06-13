@@ -127,7 +127,7 @@ FUNC INT DIA_NASZ_221_Benito_quest_Condition()
 FUNC VOID DIA_NASZ_221_Benito_quest_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_quest_15_00"); //Czego dowiedzia³eœ siê na przeszpiegach?
-	AI_Output (self, other,"DIA_NASZ_221_Benito_quest_55_01"); //Dowództwo nad jaszczuroludŸmi przejê³y dwa bardziej ros³e osobniki: Kamashi i Ugosh. Obserwuj¹c ich ustali³em, ¿e wiêkszoœæ z nich schowana jest w ogromnej lodowej pieczarze.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_quest_55_01"); //Dowództwo nad jaszczuroludŸmi przejê³y dwa bardziej ros³e osobniki: Kamashi i Ugosh. Obserwuj¹c ich, ustali³em, ¿e wiêkszoœæ z nich schowana jest w ogromnej lodowej pieczarze.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_quest_55_02"); //Ale nie zdo³a³em ustaliæ najwa¿niejszego, czyli jakie relacje ¿ywi¹ wobec orków.
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_quest_15_03"); //A gdyby mi siê uda³o?
 	if (hero.guild == GIL_OUT)
@@ -174,9 +174,9 @@ FUNC VOID DIA_NASZ_221_Benito_help_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_help_15_00"); //Czego mam szukaæ?
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_01"); //Mo¿e znajdziesz gdzieœ jakiœ dokument, który potwierdzi ich przyjacielskie albo wrogie relacje.
-	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_02"); //Chocia¿ to bardzo w¹tpliwe. To dzikusy, wiêc raczej szukaj czegoœ, co mo¿emy uznaæ za zawarcie paktu.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_02"); //Chocia¿ to bardzo w¹tpliwe. To dzikusy, wiêc raczej szukaj czegoœ, co mo¿na uznaæ za zawarcie paktu.
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_help_15_03"); //Czyli szukaj ig³y w stogu siana, gdy nawet nie masz pewnoœci, ¿e tam jest...
-	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêtrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ to tylko i wy³¹cznie albo w jaskini albo na zboczach gór.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêtrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ, to tylko i wy³¹cznie albo w jaskini albo na zboczach gór.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_05"); //Chocia¿ na twoim miejscu spróbowa³bym od gór. Mo¿e jest gdzieœ jaskinia albo wnêka miêdzy ska³ami.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_06"); //Jaszczuroludzie raczej ukryliby taki symbol, jeœli w ogóle istnieje, a nie trzymali w miejscu ³atwo dostêpnym dla wszystkich.
 
@@ -261,7 +261,7 @@ FUNC VOID DIA_NASZ_221_Benito_names_Info()
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_names_15_00"); //Co chcesz zrobiæ?
 	AI_Output (self, other,"DIA_NASZ_221_Benito_names_55_01"); //Najlepsz¹ obron¹ jest atak. Musimy œci¹æ g³owy dwóm najwiêkszym jaszczurkom.	
 	AI_Output (self, other,"DIA_NASZ_221_Benito_names_55_02"); //Kamashi to jaszczurzy wódz. Potê¿ny i silny. Widzia³em go raz i mówiê ci: Nie chcia³byœ siê z nim zmierzyæ w pojedynku jeden na jeden.
-	AI_Output (self, other,"DIA_NASZ_221_Benito_names_55_03"); //Ugosh to jego prawa rêka. Go spotyka³em chyba najczêœciej. Czêsto siê przemieszcza miêdzy dawn¹ chat¹ Ry¿owego Ksiêcia, a w³aœciwym Nowym Obozem.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_names_55_03"); //Ugosh to jego prawa rêka. Go spotyka³em chyba najczêœciej. Czêsto siê przemieszcza miêdzy dawn¹ chat¹ Ry¿owego Ksiêcia a w³aœciwym Nowym Obozem.
 
 	Wld_InsertNpc	(Ugosh,"OW_ICEREGION_34");
 	Wld_InsertNpc	(Kamashi,"OW_ICEDRAGON_01");
@@ -560,10 +560,7 @@ FUNC VOID DIA_NASZ_221_Benito_AmmannQuest_Info()
 	AmmannQuestLiczba = AmmannQuestLiczba + 1;
 	if (AmmannQuestLiczba >= 7)
 	{
-		B_LogEntry (TOPIC_Ammann_wiernosc, "Rozda³em wszystkie pierœcienie.");
-		Log_SetTopicStatus (TOPIC_Ammann_wiernosc, LOG_SUCCESS);
-		B_GivePlayerXP (700);
-		DodajReputacje(4,REP_MYSLIWI);
+		PierscienieWiernosciFinish();
 	};
 
 };
@@ -595,7 +592,7 @@ FUNC VOID DIA_NASZ_221_Benito_FajkaStart_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_00"); //Nie wiesz, gdzie mogê znaleŸæ fajkê?
-	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_01"); //Nie mam ¿adnej na stanie. Mo¿e le¿y tu gdzieœ jako pozosta³oœæ z czasów Bariery?
+	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_01"); //Nie mam ¿adnej na stanie. Mo¿e le¿y tu gdzieœ jak¹œ pozosta³oœæ z czasów Bariery?
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_02"); //Bractwo Œni¹cego uprawia³o bagienne ziele, by tworzyæ rozmaite skrêty...
 	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_03"); //No tak, ale mówi³eœ, ¿e chodzi ci o fajkê. Czy wytwórcy ziela mieli jak¹œ konkurencjê?
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_04"); //W³aœnie sobie przypomnia³em, ¿e w pobli¿u Nowego Obozu kilku szkodników wytwarza³o skrêty na w³asn¹ rêkê.

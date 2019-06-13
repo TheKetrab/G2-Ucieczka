@@ -975,9 +975,9 @@ INSTANCE DIA_NASZ_115_Kurgan_arena   (C_INFO)
 
 FUNC INT DIA_NASZ_115_Kurgan_arena_Condition()
 {
-	if ((Kurgan_walka==5)
-		&& Hlp_StrCmp(Npc_GetNearestWP(self),"NASZ_LOWCY_ARENA_01")
-		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE))
+	if (Kurgan_walka==5)
+	&& (Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 500)
+	&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE)
 	{
 		return TRUE;
 	};
@@ -1041,8 +1041,8 @@ INSTANCE DIA_NASZ_115_Kurgan_DuchPrzyzwany   (C_INFO)
 FUNC INT DIA_NASZ_115_Kurgan_DuchPrzyzwany_Condition()
 {
 	if ((Kurgan_walka==5)
-		&& Hlp_StrCmp(Npc_GetNearestWP(self),"NASZ_LOWCY_Arena_01")
-		&& (KurganMozeStop == TRUE))
+	&& (Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 500)
+	&& (KurganMozeStop == TRUE))
 	{
 		return TRUE;
 	};
@@ -1070,8 +1070,18 @@ FUNC VOID DIA_NASZ_115_Kurgan_DuchPrzyzwany_end()
 
 
 func void KurganSay_YouArePro() {
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_00"); //Jako ¿e jesteœ nowym mistrzem, dostaniesz równie¿ wspania³e ostrze.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_01"); //Zg³oœ siê po nie u Jana.
+
+	if (hero.guild == GIL_DJG) {
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_00"); //Jako, ¿e jesteœ nowym mistrzem, dostaniesz równie¿ wspania³e ostrze.
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_01"); //Zg³oœ siê po nie u Jana.
+		Hero_CanGoToJanArena = TRUE;
+	}
+	
+	else {
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_YouArePro_55_02"); //Jako ¿e jesteœ nowym mistrzem, przyjmij równie¿ te eliksiry.
+		Createinvitems(self,ItPo_Perm_DEX,2);
+		B_GiveInvItems(self,other,ItPo_Perm_DEX,2);
+	};
 };
 
 
@@ -1212,7 +1222,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_rethon_Info()
 	AI_Output (other,self ,"DIA_NASZ_115_Kurgan_rethon_15_00"); //Rethon chcia³by z tob¹ walczyæ.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon_55_01"); //A niby dlaczego mia³bym stoczyæ z nim pojedynek?
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon_55_02"); //Myœli, ¿e skoro szkoli pocz¹tkuj¹cych w walce mieczem, to dorównuje mi umiejêtnoœciami? W takim razie jest w b³êdzie.
-	AI_Output (other,self ,"DIA_NASZ_115_Kurgan_rethon_55_03"); //Nie ma jakiegoœ sposobu, by ciê przekonaæ?
+	AI_Output (other,self ,"DIA_NASZ_115_Kurgan_rethon_55_03"); //Nie ma jakiegoœ sposobu, aby ciê przekonaæ?
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon_55_04"); //Có¿...
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon_55_05"); //Gdybyœ przyniós³ mi ko³o zêbate, móg³bym siê zgodziæ. Potrzebujê go do dokoñczenia katapulty.
 	AI_Output (other, self,"DIA_NASZ_115_Kurgan_rethon_55_06"); //Gdzie niby mam znaleŸæ ko³o zêbate?
@@ -1252,6 +1262,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_rethon2_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_115_Kurgan_rethon2_15_00"); //Mam ko³o zêbate.
 	B_Giveinvitems (other, self, ItNa_KoloZebate, 1);
+	Npc_RemoveInvItems(self,ItNa_KoloZebate,1);
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon2_55_01"); //Nareszcie! Teraz bêdê móg³ wznowiæ prace przy mojej maszynie.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_rethon2_55_02"); //Bêdê walczy³ z Rethonem. Powiedz mu, ¿eby przyszed³ na arenê.
 
@@ -1462,6 +1473,8 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_SzturmNaZamek_15_02"); //ODBIJEMY ZAMEK, ROZGNIECIEMY SI£Y ORKÓW! ZOSTAWCIE SWOJE TROSKI I OBAWY TUTAJ. ODWAGA TO DRUGIE IMIÊ £OWCÓW ORKÓW!
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_SzturmNaZamek_55_03"); //Jesteœmy gotowi, prowadŸ.
 
+	AI_StopProcessInfos(self);
+	
 	// Pojawia sie kopacz, niewolnik orkow
 	Wld_InsertNpc	(NASZ_003_Kopacz,"NASZ_ZAMEK_OBOZ_01");
 	

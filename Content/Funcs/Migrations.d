@@ -102,24 +102,31 @@ func void Migration_FollowZamek() {
 
 	Npc_ExchangeRoutine (NASZ_109_Rethon, "FollowZamek");
 	Druzyna (NASZ_109_Rethon,1);
+	NASZ_109_Rethon.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_110_Keroloth, "FollowZamek");
 	Druzyna (NASZ_110_Keroloth,1);
+	NASZ_110_Keroloth.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "FollowZamek");
 	Druzyna (NASZ_115_Kurgan,1);
+	NASZ_115_Kurgan.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_215_Kivo, "FollowZamek");
 	Druzyna (NASZ_215_Kivo,1);
+	NASZ_215_Kivo.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_218_Ammann, "FollowZamek");
 	Druzyna (NASZ_218_Ammann,1);
+	NASZ_218_Ammann.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_227_Vachut, "FollowZamek");
 	Druzyna (NASZ_227_Vachut,1);
+	NASZ_227_Vachut.flags = 2;
 
 	Npc_ExchangeRoutine (NASZ_229_Ayan, "FollowZamek");
 	Druzyna (NASZ_229_Ayan,1);
+	NASZ_229_Ayan.flags = 2;
 
 };
 

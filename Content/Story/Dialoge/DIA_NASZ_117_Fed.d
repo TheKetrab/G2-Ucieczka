@@ -133,7 +133,7 @@ INSTANCE DIA_NASZ_117_Fed_GoToRenegaci   (C_INFO)
  	condition   = DIA_NASZ_117_Fed_GoToRenegaci_Condition;
  	information = DIA_NASZ_117_Fed_GoToRenegaci_Info;
  	permanent   = FALSE;
-	description = "Keroloth wyda³ rozkaz ataku na renegatów w kopalni.";
+	description = "Keroloth wyda³ rozkaz do ataku na renegatów w kopalni.";
 };
 
 FUNC INT DIA_NASZ_117_Fed_GoToRenegaci_Condition()	
@@ -146,7 +146,7 @@ FUNC INT DIA_NASZ_117_Fed_GoToRenegaci_Condition()
 
 FUNC VOID DIA_NASZ_117_Fed_GoToRenegaci_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_117_Fed_GoToRenegaci_15_00"); //Keroloth wyda³ rozkaz ataku na renegatów w kopalni.
+	AI_Output (other, self,"DIA_NASZ_117_Fed_GoToRenegaci_15_00"); //Keroloth wyda³ rozkaz do ataku na renegatów w kopalni.
 	AI_Output (self, other,"DIA_NASZ_117_Fed_GoToRenegaci_55_01"); //Myœla³em, ¿e nie obchodzi go nic innego ni¿ orkowie. Jeœli pójdziemy, to obóz zostanie os³abiony.
 	AI_Output (other, self,"DIA_NASZ_117_Fed_GoToRenegaci_55_02"); //Powiedzia³, ¿e wszystkim przyda siê inny rodzaj treningu ni¿ walka na arenie.
 	AI_Output (self, other,"DIA_NASZ_117_Fed_GoToRenegaci_55_03"); //W takim razie ruszam razem z tob¹.
@@ -189,7 +189,7 @@ FUNC VOID DIA_NASZ_117_Fed_goth_Info()
 	B_GiveInvItems (self, other, ItNa_Mapa_Lens, 1);
 
 	AI_StopProcessInfos (self);
-	B_LogEntry (TOPIC_Goth_kradziez, "Wojownik Fed da³ mi mapê. Tylko có¿ mo¿e chowaæ siê pod znakiem 'X' ?");
+	B_LogEntry (TOPIC_Goth_kradziez, "Wojownik Fed da³ mi mapê. Tylko có¿ mo¿e chowaæ siê pod znakiem 'X'?");
 
 };
 
@@ -275,7 +275,7 @@ INSTANCE DIA_NASZ_117_Fed_KurgKanDead   (C_INFO)
 
 FUNC INT DIA_NASZ_117_Fed_KurgKanDead_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_KurgKan_TrustMe) && !KurgKanUratowany)
+	if (FedFerrosKillKurgKan && !KurgKanUratowany)
 	{
 		return TRUE;
 	};
@@ -283,12 +283,13 @@ FUNC INT DIA_NASZ_117_Fed_KurgKanDead_Condition()
 
 FUNC VOID DIA_NASZ_117_Fed_KurgKanDead_Info()
 {
-	AI_Output (self,other,"DIA_NASZ_117_Fed_KurgKanDead_55_00"); //I kolejny orkowy zadek skopany! Nawet nie by³ wielkim wyzwaniem.
+	AI_Output (self, other,"DIA_NASZ_117_Fed_KurgKanDead_55_00"); //I kolejny orkowy zadek skopany! Nawet nie by³ wielkim wyzwaniem.
 	AI_Output (other, self,"DIA_NASZ_117_Fed_KurgKanDead_15_01"); //Gratulujê, Fed. Zabi³eœ by³ego orka-niewolnika, który nie by³ gotowy na walkê.
-	AI_Output (self,other,"DIA_NASZ_117_Fed_KurgKanDead_55_02"); //Eeee… co?
+	AI_Output (self, other,"DIA_NASZ_117_Fed_KurgKanDead_55_02"); //Eeee... co?
 	AI_Output (other, self,"DIA_NASZ_117_Fed_KurgKanDead_15_03"); //Niewa¿ne. ¯egnaj.
 	KurgKanUratowany = -1;
 	Log_SetTopicStatus (Topic_OrcInATrap, LOG_FAILED);
+	B_LogEntry(Topic_OrcInATrap, "Niestety Kurg-Kan zosta³ zabity. Mam nadziejê, ¿e gdziekolwiek jego dusza nie pójdzie, bêdzie mia³ siê tam dobrze.");
 	
 	AI_StopProcessInfos(self);
 	

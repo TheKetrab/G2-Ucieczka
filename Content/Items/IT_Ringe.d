@@ -551,13 +551,13 @@ const int Value_Ri_DexStrg 			= 800;	const int Ri_DexStrg_Dex	=  4;
 
 	FUNC VOID Equip_ItRi_Dex_01()
 	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ Ri_Dex );
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,+Ri_Dex );
 	};
 
 
 	FUNC VOID UnEquip_ItRi_Dex_01()
 	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,- Ri_Dex );
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,-Ri_Dex );
 	};
 	
 /******************************************************************************************/
@@ -596,13 +596,13 @@ const int Value_Ri_DexStrg 			= 800;	const int Ri_DexStrg_Dex	=  4;
 
 	FUNC VOID Equip_ItRi_Dex_02()
 	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ Ri_Dex02 );
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,+Ri_Dex02 );
 	};
 
 
 	FUNC VOID UnEquip_ItRi_Dex_02()
 	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,- Ri_Dex02 );
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,-Ri_Dex02 );
 	};
 
 
@@ -748,12 +748,12 @@ const int Value_Ri_DexStrg 			= 800;	const int Ri_DexStrg_Dex	=  4;
 
 	FUNC VOID Equip_ItRi_Str_01()
 	{
-		Npc_ChangeAttribute(self,ATR_STRENGTH,+ Ri_Strg );
+		Npc_ChangeAttribute(self,ATR_STRENGTH,+Ri_Strg );
 	};
 
 	FUNC VOID UnEquip_ItRi_Str_01()
 	{
-		Npc_ChangeAttribute(self,ATR_STRENGTH,- Ri_Strg );
+		Npc_ChangeAttribute(self,ATR_STRENGTH,-Ri_Strg );
 	};
 	
 /******************************************************************************************/
@@ -1026,7 +1026,7 @@ INSTANCE ItRi_Mana_02(C_Item)
 
 	FUNC VOID UnEquip_ItRi_Dex_Strg_01()
 	{
-		Npc_ChangeAttribute(self,ATR_STRENGTH,- Ri_DexStrg_Strg);
-		Npc_ChangeAttribute(self,ATR_DEXTERITY, - Ri_DexStrg_Dex);
+		Npc_ChangeAttribute(self,ATR_STRENGTH,-Ri_DexStrg_Strg);
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,-Ri_DexStrg_Dex);
 	};
 		

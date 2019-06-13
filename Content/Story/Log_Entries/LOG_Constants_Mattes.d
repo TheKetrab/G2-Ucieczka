@@ -40,7 +40,7 @@ const string	TOPIC_Rethon_kurgan			=	"Starcie mistrzów";				//+2L									| +300
 const string	TOPIC_Rethon_szkolenie		=	"Szkolenie";					//+4L									| +300						| ---
 const string	TOPIC_Silas_piosenka		=	"Karczma i stara piosenka";		//+3L									| +300						| 50 szt. z³ota
 const string	TOPIC_Engor_lutnia			=	"Lutnia i stare spory";			//+2L									| +300						| 150 szt. z³ota lub pas stalowej rêki lub 5 ekstraktów leczniczych
-
+const string	Topic_OrcInATrap	= "Ork w potrzasku";
 
 //reputacja za inne rzeczy: kilof dla Daniela +1L, raport dla Kerolotha od Kortha +1L
 
@@ -169,6 +169,7 @@ const string	TOPIC_Wrzod_zwierzeta		=	"Farma zboczeñca";				//+4M									| +500
 const string	TOPIC_Ayan_nieznane			=	"Podró¿ w nieznane";			// ---									| +300+300+300+300			| ---
 const string	TOPIC_Ted_trolls			=	"Nowe sposoby myœliwskie";		//+4M									| +500+500=1000				| 60 ognistych strza³
 const string	TOPIC_Goth_plaskowyz		=	"P³askowy¿ olbrzymów";			//+2+2=4M								| +500+300=800				| 350 szt. z³ota
+const string	TOPIC_Hunt_zbroja			=	"Nowa zbroja";					//
 
 
 //---------- Bractwo ----------

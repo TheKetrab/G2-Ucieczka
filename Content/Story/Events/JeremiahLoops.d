@@ -43,5 +43,6 @@ func void JeremiahAlmostDead_TickTock1s() {
 	if (HeroKnowsAboutJeremiahsIllness == 4) {
 		Npc_ExchangeRoutine(NASZ_127_Jeremiasz,"Start");
 		ff_remove(JeremiahAlmostDead_TickTock1s);
+		Jeremiasz_AlmostDead = FALSE;
 	};
 };

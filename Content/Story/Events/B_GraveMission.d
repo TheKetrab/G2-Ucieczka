@@ -14,7 +14,7 @@ func int GraveMission_Grave1_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -51,7 +51,7 @@ func int GraveMission_Grave2_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -88,7 +88,7 @@ func int GraveMission_Grave3_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -125,7 +125,7 @@ func int GraveMission_Grave4_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -162,7 +162,7 @@ func int GraveMission_Grave5_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -200,7 +200,7 @@ func int GraveMission_Grave6_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -237,7 +237,7 @@ func int GraveMission_Grave7_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -274,7 +274,7 @@ func int GraveMission_Grave8_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -311,7 +311,7 @@ func int GraveMission_Grave9_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -348,7 +348,7 @@ func int GraveMission_Grave10_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -385,7 +385,7 @@ func int GraveMission_Grave11_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -422,7 +422,7 @@ func int GraveMission_Grave12_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -459,7 +459,7 @@ func int GraveMission_Grave13_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -496,7 +496,7 @@ func int GraveMission_Grave14_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -533,7 +533,7 @@ func int GraveMission_Grave15_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -570,7 +570,7 @@ func int GraveMission_Grave16_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -607,7 +607,7 @@ func int GraveMission_Grave17_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -644,7 +644,7 @@ func int GraveMission_Grave18_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -681,7 +681,7 @@ func int GraveMission_Grave19_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}
@@ -718,7 +718,7 @@ func int GraveMission_Grave20_Condition ()
 		}
 		
 		else {
-			AI_Output (hero, hero,"DIA_NASZ_FunkcjaGrave_55_00"); //Nie mam wody œwiêconej.
+			HeroSay_NoHolyWater();
 		};
 
 	}

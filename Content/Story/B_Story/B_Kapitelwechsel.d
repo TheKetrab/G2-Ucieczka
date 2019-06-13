@@ -31,9 +31,6 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		// NPC
 
-		Wld_InsertNpc	(NASZ_301_Bandzior,"OW_MINE3_LEICHE_05");
-		Wld_InsertNpc	(NASZ_302_Bandzior,"OW_MINE3_OUT");
-
 		Wld_InsertNpc	(NASZ_409_Nieznany,"NASZ_BANDYCI_ARTEFAT_2");
 		Wld_InsertNpc	(NASZ_350_Knecht,"NASZ_ARTEFAKT_MOC_1");
 		Wld_InsertNpc	(NASZ_351_Knecht,"NASZ_ARTEFAKT_MOC_2");
@@ -183,13 +180,25 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 	{	
 		if (Kap3OneTime == FALSE) {
 
-		
+		// ta funkcja jednak juz od w rozdzialu!
 		FF_ApplyOnceExt (Kap4Event, 3000, -1); //raz na 3s
 		
-		B_StartOtherRoutine(NASZ_Kurg_Kan,"Kap3");
+		if (KurgKanTanczy) {
+			KurgKanKap3();
+		};
+		
+		if (DraalUratowany) {
+			CreateInvItems(NASZ_007_Draal,ItNa_OUT_L,1);
+			CreateInvItems(NASZ_007_Draal,ItMw_1H_Sword_L_03,1);
+			CreateInvItems(NASZ_007_Draal,ItRw_Sld_Bow,1);
+			
+			AI_EquipBestRangedWeapon(NASZ_007_Draal);
+			AI_EquipBestMeleeWeapon(NASZ_007_Draal);
+			AI_EquipBestArmor (NASZ_007_Draal);
+		};
 		// Funkcje
 		
-		 // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO, dziala?
+		 // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO bogu - to NIE DZIALA
 		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, (-1) * Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia));
 		
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
@@ -388,6 +397,10 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		// Funkcje
 		Migration_Kap4();
+		
+		if (MIS_PodleGadyRunning == TRUE) {
+			Log_SetTopicStatus(TOPIC_Mysliwy_warta,LOG_OBSOLETE);
+		};
 
 		Wld_SendTrigger ("MOVER_GESTATH_GRAVE");
 		B_StartOtherRoutine (NASZ_213_Gestath,"TOT");

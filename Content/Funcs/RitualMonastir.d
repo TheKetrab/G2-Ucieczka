@@ -61,7 +61,8 @@ func void RitualMonastir_End() {
 	RitualMonastir_OpenGateOrcTown();
 	RitualMonastir_InsertOrcs();
 	
-	WillMozePrzejscPrzezBariere = TRUE;
+	WillMozePrzejscPrzezBariere = TRUE; // dzieki temu nie zabije nas trigger
+	MonastirOpenGateOneTime = TRUE; // dzieki temu kontynuujemy dialog z monastirem po rytuale
 	
 	Wld_VobEffect_Vob("SPELLFX_incovation_blue",RitualMonastir_Vob1);
 	Wld_VobEffect_Vob("SPELLFX_lightstar_white",RitualMonastir_Vob1);

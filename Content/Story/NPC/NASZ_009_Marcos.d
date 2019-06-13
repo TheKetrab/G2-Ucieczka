@@ -12,7 +12,11 @@ instance NASZ_009_Marcos  (Npc_Default)
 	aivar[AIV_IgnoresArmor] 	= TRUE;
 	
 	// ------ Attribute ------
-	B_SetAttributesToChapter (self, 3);													
+	B_SetAttributesToChapter (self, 3);	
+	
+	self.attribute[ATR_HITPOINTS_MAX] = 230;
+	self.attribute[ATR_HITPOINTS] = 230;
+	
 		
 	// ------ Kampf-Taktik ------
 	fight_tactic = FAI_HUMAN_MASTER;	

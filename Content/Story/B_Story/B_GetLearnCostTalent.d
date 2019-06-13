@@ -28,11 +28,17 @@ func int B_GetLearnCostTalent (var C_NPC oth, var int talent, var int skill)
 	// ------ Kosten für Einhand % ------
 	if (talent == NPC_TALENT_1H)
 	{	
+		/*
 		if (oth.aivar[REAL_TALENT_1H] >= 120)		{	kosten = (4);	}
 		else if (oth.aivar[REAL_TALENT_1H] >= 60)	{	kosten = (4);	}
 		else if (oth.aivar[REAL_TALENT_1H] >= 30)	{	kosten = (3);	}
 		else if (oth.aivar[REAL_TALENT_1H] >= 10)	{	kosten = (2);	}
 		else 										{	kosten = (1);	};
+		*/
+		
+		if (oth.aivar[REAL_TALENT_1H] >= 50)		{	kosten = (2);	}
+		else 										{	kosten = (1);	};
+		
 		
 		kosten = (kosten * skill);
 	};
@@ -40,11 +46,17 @@ func int B_GetLearnCostTalent (var C_NPC oth, var int talent, var int skill)
 	// ------ Kosten für Zweihand % ------
 	if (talent == NPC_TALENT_2H)
 	{	
+		/*
 		if (oth.aivar[REAL_TALENT_2H] >= 120)		{	kosten = (3);	}
 		else if (oth.aivar[REAL_TALENT_2H] >= 75)	{	kosten = (3);	}
 		else if (oth.aivar[REAL_TALENT_2H] >= 60)	{	kosten = (3);	}
 		else if (oth.aivar[REAL_TALENT_2H] >= 30)	{	kosten = (2);	}
 		else 										{	kosten = (1);	};
+		*/
+
+		if (oth.aivar[REAL_TALENT_2H] >= 50)		{	kosten = (2);	}
+		else 										{	kosten = (1);	};
+
 		
 		kosten = (kosten * skill);
 	};
@@ -52,23 +64,34 @@ func int B_GetLearnCostTalent (var C_NPC oth, var int talent, var int skill)
 		// ------ Kosten für Bogen % ------
 	if (talent == NPC_TALENT_BOW)
 	{	
+
+		/*
 		if (oth.aivar[REAL_TALENT_BOW] >= 120)		{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_BOW] >= 75)	{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_BOW] >= 50)	{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_BOW] >= 25)	{	kosten = (1);	}
 		else 										{	kosten = (1);	};
+		*/
 		
+		if (oth.aivar[REAL_TALENT_BOW] >= 50)		{	kosten = (2);	}
+		else 										{	kosten = (1);	};
+
 		kosten = (kosten * skill);
 	};
 	
 	// ------ Kosten für Crossbow % ------
 	if (talent == NPC_TALENT_CROSSBOW)
 	{	
+		/*
 		if (oth.aivar[REAL_TALENT_CROSSBOW] >= 120)		{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_CROSSBOW] >= 75)	{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_CROSSBOW] >= 50)	{	kosten = (2);	}
 		else if (oth.aivar[REAL_TALENT_CROSSBOW] >= 25)	{	kosten = (1);	}
 		else 											{	kosten = (1);	};
+		*/
+		if (oth.aivar[REAL_TALENT_CROSSBOW] >= 50)		{	kosten = (2);	}
+		else 											{	kosten = (1);	};
+		
 		
 		kosten = (kosten * skill);
 	};

@@ -56,3 +56,10 @@ FUNC VOID Rtn_Lowcy_5 ()
 	TA_Pick_FP	 (23,00,08,00,"NASZ_LOWCY_GORA_17");
  
 };
+
+FUNC VOID Rtn_TriaMiner_5 ()
+{	
+	TA_RunToWP	 (08,00,23,00,"NASZ_KOPALNIA_TRIA_BEN");
+	TA_RunToWP	 (23,00,08,00,"NASZ_KOPALNIA_TRIA_BEN");
+};
+

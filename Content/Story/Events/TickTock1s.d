@@ -1343,7 +1343,7 @@ func void _TickTock_1s()
 	
 	if (Npc_GetDistToWP	(hero,"NASZ_DYMOONDO_D") < 1500) && (WillKnowAboutWayToOrc == FALSE) {
 		WillKnowAboutWayToOrc = TRUE;
-		AI_Output (hero ,hero,"DIA_Will_Dymoondo_15_00"); //A wiêc da siê tutaj dostaæ...
+		HeroSay_Dymoondo();
 
 	};
 	
@@ -1373,25 +1373,27 @@ func void _TickTock_1s()
 	
 	if (Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) && (WillKnowAboutTwierdza == FALSE) {
 		WillKnowAboutTwierdza = TRUE;
-		AI_Output (hero ,hero,"DIA_Will_Twierdza_15_00"); //A có¿ to za twierdza? Potê¿na budowla...
+		HeroSay_Twierdza();
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutDemonPosag == FALSE) && (WillSayDemonOneTime == FALSE) {
 		WillKnowAboutDemonPosag = TRUE;
 		WillSayDemonOneTime = TRUE;
-		AI_Output (hero ,hero,"DIA_Will_DemonPosag_15_00"); //Ten pos¹g wydaje siê byæ przepe³niony czarn¹ magi¹.
+		HeroSay_DemonPosag();
 	};
 	
 	if (Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) && (KAPITEL == 1) {
-		AI_Output (hero ,hero,"DIA_Will_Wodospad_15_00"); //To z³y pomys³. Tam mo¿e byæ niebezpiecznie.
+		HeroSay_Wodospad();
 		AI_TurnAway (hero, hero);
 		AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
+		Npc_ClearAIQueue(hero);
 	};
 
 	if (Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800) && (KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) {
-		AI_Output (hero ,hero,"DIA_Will_Zapalsada_15_00"); //Lepiej za³atwiê jeszcze kilka spraw, zanim udam siê za palisadê.
+		HeroSay_BeforeZapalisada();
 		AI_TurnAway (hero, hero);
 		AI_GotoWP (hero, "OW_ORCBARRIER_17");
+		Npc_ClearAIQueue(hero);
 	};
 
 	/* juz nieaktualne bo CatSan otwiera brame
@@ -1403,7 +1405,7 @@ func void _TickTock_1s()
 	*/
 	
 	if (Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) && (WillUciekaZKopalniOneTime == FALSE) {
-		AI_Output (hero ,hero,"DIA_Will_KopalniaUcieka_15_00"); //Rzeczywiscie, uda³o siê wspi¹æ na ska³y. Teraz na dó³!
+		HeroSay_NaSkaly();
 		WillUciekaZKopalniOneTime = TRUE;
 	};
 	
@@ -1462,9 +1464,10 @@ func void _TickTock_1s()
 	
 
 	if (Npc_GetDistToWP	(hero, "OW_ICEREGION_05") <=200) && (WillGoToIceregion == FALSE) {
-		AI_Output (hero ,hero,"DIA_Will_Iceregion_15_00"); //Na tym terenie jest zbyt niebezpiecznie.
+		HeroSay_IceRegion();
 		AI_TurnAway (hero,hero);
 		AI_GotoWP (hero, "OW_ICEREGION_ENTRANCE");
+		Npc_ClearAIQueue(hero);
 	};
 	
 	
@@ -1486,25 +1489,25 @@ func void _TickTock_1s()
 
 	if (Npc_GetDistToWP	(hero, "OW_ICEREGION_37") <=500) && (Jaszczuroludzie_1 == FALSE) && (Jaszczuroludzie_1 == FALSE) {
 	Jaszczuroludzie_1 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_00"); //Cholera, zamkniête. Bêdê musia³ jakoœ obejœæ tê bramê.
+	HeroSay_DraconianClosed();
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Natrafi³em na zamkniêt¹ bramê. Muszê jakoœ j¹ obejœæ.");
 	};
 
 	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_96") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_97") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_98") <=500)) && (Jaszczuroludzie_2 == FALSE) {
 	Jaszczuroludzie_2 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_01"); //Przedosta³em siê do œrodka. Co dalej?
+	HeroSay_DraconianInside();
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jestem w œrodku. Teraz pozostaj¹ poszukiwania. Benito radzi³ mi iœæ wzd³u¿ gór.");
 	};
 		
 	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_53") <=1200) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_61") <=1200)) && (Jaszczuroludzie_3 == FALSE) {
 	Jaszczuroludzie_3 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_02"); //Tam, u Ÿród³a wodospadu jest jakaœ jaskinia. Ciekawe...
+	HeroSay_DraconianCave();
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Dostrzeg³em jak¹œ jaskiniê na górze wodospadu. Muszê spróbowaæ siê tam dostaæ.");
 	};
 	
 	if ((Npc_GetDistToWP	(hero, "NASZ_PROOF_ORC") <=1200) && (Jaszczuroludzie_4 == FALSE)) {
 	Jaszczuroludzie_4 = TRUE;
-	AI_Output (hero ,hero,"DIA_Will_Jaszczuroludzie_15_03"); //Skrzy¿owane miecze!
+	HeroSay_CrossedWeapons();
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Znalaz³em skrzy¿owane miecze jaszczuroludzi i orków. To chyba wystarczaj¹cy dowód na to, ¿e zawarli sojusz... Pora powiedzieæ o tym Benito.");
 	WillFoundSwordsOrcAndDraconian = TRUE;
 	B_GivePlayerXP(300);
@@ -1637,6 +1640,15 @@ func void SludzyBeliara()
 
 };
 
+func void OrcCityFog() {
+
+	if (Npc_GetDistToWP(hero,"NASZ_ORCCITY_SECOND_CENTER") < 700)
+	{
+		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] - 15;
+		Wld_PlayEffect("spellFX_BreathOfDeath_Target",  hero, hero, 0, 0, 0, FALSE );
+		
+	};
+};
 
 
 func void Regeneracja()
@@ -1698,7 +1710,6 @@ func void Regeneracja()
 };
 
 
-var int MonastirOpenGateOneTime;
 var int MonastirGateFirst;
 var int LastRitualCounter;
 var int Jeremiasz_AlmostDead_OneTime;
@@ -1781,13 +1792,20 @@ func void summon()
 
 func void Function15s()
 {
-	if (!(npc_isdead (NASZ_550_Straznik)) && Npc_GetDistToNpc (hero, NASZ_550_Straznik) < 750) && (Npc_GetDistToWP (hero, "NASZ_ORCCITY_PORTAL_17") < 2000) && (FinalBattleStarted == TRUE) {
+	if (!npc_isdead(NASZ_550_Straznik))
+	&& (Npc_GetDistToNpc (hero, NASZ_550_Straznik) < 750)
+	&& (Npc_GetDistToWP (hero, "NASZ_ORCCITY_PORTAL_17") < 2000)
+	&& (FinalBattleStarted == TRUE)
+	&& (WojownicyCieniaPrzyzwani <= 2) // jak jest 3 to nie przyzywaj kolejnych
+	{
 		AI_PlayAni(NASZ_550_Straznik, "T_WARN");
 		Wld_InsertNpc	(Skeleton_Lord,"FP_PORTAL_WARRIOR");
 	 	Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Skeleton_Lord  , Skeleton_Lord	, 0, 0, 0, FALSE );
 		Wld_InsertNpc	(Skeleton_Lord,"FP_PORTAL_WARRIOR2");
 	 	Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Skeleton_Lord  , Skeleton_Lord	, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_DESTROYUNDEAD_CAST");
+		
+		WojownicyCieniaPrzyzwani+=2;
 
 	}; 
 	

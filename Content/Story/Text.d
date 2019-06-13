@@ -1226,4 +1226,4 @@ const string G2U_normal_arrow = "zwyk³e strza³y";
 const string G2U_sharp_bolt = "ostre be³ty";
 const string G2U_normal_bolt = "zwyk³e be³ty";
 const string G2U_error_attack = "B³¹d z npc podczas ataku! Skontaktuj siê z twórcami moda.";
-const string G2U_poisson = "Zosta³eœ zatruty!";
+const string G2U_poisson = "Zosta³eœ otruty!";

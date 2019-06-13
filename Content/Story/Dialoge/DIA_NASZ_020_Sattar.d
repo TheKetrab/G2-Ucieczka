@@ -55,7 +55,7 @@ FUNC VOID DIA_NASZ_020_Sattar_HaveYouFinished_Info()
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_HaveYouFinished_55_04"); //Wiedzia³em, ¿e potrafisz pos³ugiwaæ siê magi¹, bo by³eœ kiedyœ nowicjuszem, ale nie podejrzewa³em, ¿e potrafisz obrabiaæ kamienie. Gdzie siê tego nauczy³eœ?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_05"); //W czasach mojej m³odoœci du¿o czasu spêdza³em w towarzystwie ojca, który by³ bardzo cenionym jubilerem.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_06"); //To w³aœnie wtedy nauczy³em siê kilku przydatnych sztuczek, które jak widaæ przyda³y mi siê w najmniej spodziewanym miejscu.
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_07"); //Kto by pomyœla³, ¿e bêdê obrabia³ kamienie w kopalni bêd¹c niewolnikiem.
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_07"); //Kto by pomyœla³, ¿e bêdê obrabia³ kamienie w kopalni, bêd¹c niewolnikiem.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_HaveYouFinished_55_08"); //Nie traæ czasu i idŸ do Daryla, bo ju¿ siê pewnie niecierpliwi.
 	
 	Createinvitems (self, ItNa_WyszlifowanaRuda, 1);
@@ -208,7 +208,9 @@ INSTANCE DIA_NASZ_020_Sattar_Metody4   (C_INFO)
 
 FUNC INT DIA_NASZ_020_Sattar_Metody4_Condition()	
 {
+
 	if (npc_knowsinfo (other, DIA_NASZ_020_Sattar_Metody3))
+	&& (Npc_IsInState (self, ZS_Talk))
 	&& ((Wld_IsTime(23,00,00,00)) || (Wld_IsTime(00,00,02,30)))
 	&& (KopalniaWillSiePrzespal == TRUE)
 	{
@@ -221,8 +223,10 @@ FUNC VOID DIA_NASZ_020_Sattar_Metody4_Info()
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody4_15_00"); //Nie przypuszcza³em, ¿e to bêdzie tak trudne, ale ostatecznie uda³o mi siê. Zwój jest gotowy do u¿ycia.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody4_55_01"); //Powinniœmy wróciæ do reszty i powiedzieæ im, ¿e przygotowania dobieg³y koñca.
 	
-	B_StartOtherRoutine (NASZ_002_Daryl, "GoToBen");
-	Npc_ExchangeRoutine (self, "GoToBen");
+	Npc_ExchangeRoutine (NASZ_002_Daryl, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_005_Ben, "TriaMiner");
+	Npc_ExchangeRoutine (NASZ_020_Sattar, "TriaMiner");
+
 	
 	
 };

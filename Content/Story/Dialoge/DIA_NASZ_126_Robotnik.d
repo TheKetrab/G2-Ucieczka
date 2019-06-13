@@ -176,7 +176,7 @@ FUNC INT DIA_NASZ_126_Robotnik_OnceMoreForget_Condition()
 };
 FUNC VOID DIA_NASZ_126_Robotnik_OnceMoreForget_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_126_Robotnik_OnceMoreForget_15_00"); //Czekaj! Zapomnia³em o jeszcze jednej rzeczy.
+	AI_Output (self, other,"DIA_NASZ_126_Robotnik_OnceMoreForget_15_00"); //Czekaj! Zapomnia³em jeszcze o jednej rzeczy.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_OnceMoreForget_15_01"); //Prowadz¹c w okolicy wykopaliska pod fundamenty na budynki, znalaz³em kilka starych monet. Bardzo mnie zainteresowa³y!
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_OnceMoreForget_15_02"); //Gdyby ci siê uda³o takie znaleŸæ, przynieœ mi je. Zap³acê ci za ka¿d¹ jedn¹ sztukê z³ota.
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_OnceMoreForget_15_03"); //Tak zrobiê.

@@ -77,7 +77,7 @@ FUNC VOID DIA_NASZ_111_Gerold_nuda_Info()
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_02"); //To dopiero nudne, prawda?
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_nuda_15_03"); //Wiêc czemu nie strze¿esz którejœ z bram?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_04"); //Có¿, Keroloth jest naszym przywódc¹, a tak siê jakoœ z³o¿y³o, ¿e ten cz³owiek nigdy mnie nie lubi³.
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_05"); //Teraz nie chce, bym ja pilnowa³ bram. W sumie siê mu trochê nie dziwiê. Jeszcze w zamku dosz³o do 'incydentu', umówi³em siê z pewnym goœciem, by przekaza³ mi trochê ¿arcia w kaplicy.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_05"); //Teraz nie chce, bym ja pilnowa³ bram. W sumie mu siê trochê nie dziwiê. Jeszcze w zamku dosz³o do 'incydentu': Umówi³em siê z pewnym goœciem, by przekaza³ mi trochê ¿arcia w kaplicy.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_06"); //Opuœci³em w nocy swoje stanowisko i w³aœnie w tamtym momencie do wiêzienia wgramoli³y siê olbrzymie szczury. WiêŸniowie wrzeszczeli, a Keroloth pobieg³ tam, by zrobiæ porz¹dek z gryzoniami.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_nuda_55_07"); //Srogo mnie ochrzani³, ale przyrzek³em, ¿e ju¿ nigdy nie odejdê od miejsca, którego pilnujê.
 };
@@ -138,7 +138,7 @@ FUNC VOID DIA_NASZ_111_Gerold_keroloth_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_keroloth_15_00"); //Porozmawiam o tym z Kerolothem.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_keroloth_55_01"); //Jesteœ pierwsz¹ osob¹, która uda siê do niego w moim imieniu.
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_keroloth_55_02"); //Cieszê siê, ¿e chcesz mi pomóc. Jednak w¹tpie, ¿e coœ z tego bêdzie. Keroloth naprawdê ¿ywi do mnie uraz.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_keroloth_55_02"); //Cieszê siê, ¿e chcesz mi pomóc. Jednak w¹tpiê, ¿e coœ z tego bêdzie. Keroloth naprawdê ¿ywi do mnie uraz.
 
 	MIS_GEROLD_READY = TRUE;
 
@@ -181,7 +181,7 @@ FUNC VOID DIA_NASZ_111_Gerold_500szt_Info()
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_500szt_15_04"); //A wiêc przyznajesz, ¿e masz jeszcze jakieœ oszczêdnoœci. S³uchaj: Wolisz siê nudziæ, czy robiæ coœ po¿ytecznego?
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_500szt_15_05"); //Mimo moich szczerych chêci, nie jestem w stanie ci pomóc, bo nie jestem obrzydliwie bogaty jak król. Jeœli masz gdzieœ jeszcze pieni¹dze, to powinieneœ siêgn¹æ do kieszeni i je wykorzystaæ.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_06"); //Nie mam ich przy sobie, ju¿ mówi³em. Ukry³em trochê z³ota w dwóch miejscach w okolicy obozu. Mam nadziejê, ¿e nikt tam jeszcze nie zagl¹da³...
-	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_07"); //Jedna sakiewka jest zakopana za aren¹ miêdzy dwoma drzewami. Z drug¹ te¿ nie powinieneœ mieæ problemu.
+	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_07"); //Jedna sakiewka jest zakopana za aren¹ miêdzy drzewami. Z drug¹ te¿ nie powinieneœ mieæ problemu.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_08"); //WejdŸ na cmentarz przez karczmê i szukaj skrzy¿owanych patyków po prawej stronie od grobu Garonda.
 	AI_Output (other,self ,"DIA_NASZ_111_Gerold_500szt_15_09"); //Czemu sam siê nie pofatygujesz i nie pójdziesz tego wykopaæ?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_500szt_55_10"); //Eee... Powiedzmy, ¿e mam pewne sprawy do za³atwienia.	

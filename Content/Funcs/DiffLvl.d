@@ -233,7 +233,7 @@ func void Update_Character_Menu() {
 		if (rep_bandyci_s) >= 75 { StatusReputacji = "Przyjaciel"; };
 		if (rep_bandyci_s) >= 90 { StatusReputacji = "Brat"; };
 		
-		Update_Menu_Item(" MENU_ITEM_REPUTATION_3_TITLE", "U bandytów:");
+		Update_Menu_Item("MENU_ITEM_REPUTATION_3_TITLE", "U bandytów:");
 		Update_Menu_Item("MENU_ITEM_REPUTATION_3_RANGE", StatusReputacji);
 		Update_Menu_Item("MENU_ITEM_REPUTATION_3_VAL", IntToString(rep_bandyci_s));
 	} else {

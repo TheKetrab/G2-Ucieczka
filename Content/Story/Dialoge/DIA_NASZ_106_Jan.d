@@ -1318,6 +1318,7 @@ INSTANCE DIA_NASZ_106_Jan_arena   (C_INFO)
 FUNC INT DIA_NASZ_106_Jan_arena_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_115_Kurgan_kurganwon))
+	&& (Hero_CanGoToJanArena == TRUE)
 	{
 		return TRUE;
 	};
@@ -1474,6 +1475,16 @@ FUNC VOID DIA_NASZ_106_Jan_TarczaReady_Info()
 	B_LogEntry (TOPIC_Jan_lowca, "Mam ju¿ kuszê. Jan chce mnie zobaczyæ z za³o¿onym mieczem, tarcz¹ i kusz¹.");
 };
 
+
+
+var int JanSaidAboutUltraArmor;
+func void JanSay_AboutUltraArmor() {
+
+	AI_Output (self, other,"DIA_NASZ_106_Jan_AboutUltraArmor_55_00"); //Z pancerzy elitarnych wojowników uda³o mi siê zrobiæ nie lada zbrojê. Jest trochê ciê¿ka, ale krzepy ci raczej nie brakuje, prawda?
+	AI_Output (self, other,"DIA_NASZ_106_Jan_AboutUltraArmor_55_01"); //Mogê ci j¹ sprzedaæ, jeœli chcesz.
+	JanSaidAboutUltraArmor = TRUE;
+};
+
 //*********************************************************************
 //	KompletReady
 //*********************************************************************
@@ -1504,11 +1515,93 @@ FUNC VOID DIA_NASZ_106_Jan_KompletReady_Info()
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KompletReady_55_01"); //Zabieram siê za tworzenie kolejnych kompletów.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KompletReady_55_02"); //W nagrodê za pomoc mo¿esz zatrzymaæ te rzeczy zupe³nie za darmo.
 
+	if (KAPITEL >= 4 && RepEnough(90,REP_LOWCY)) {
+		AI_Output (self, other,"DIA_NASZ_106_Jan_KompletReady_55_03"); //Ale to nie wszystko!
+		JanSay_AboutUltraArmor();
+	};
+	
 	DodajReputacje(4,REP_LOWCY);
 	B_GivePlayerXP (1000);
 	Log_SetTopicStatus (TOPIC_Jan_lowca, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Jan_lowca, "Jan by³ zachwycony moim wygl¹dem. Zacznie teraz tworzyæ nowe zestawy wyposa¿enia dla wojowników.");
 };
+
+
+//*********************************************************************
+//	AboutArmorKap4
+//*********************************************************************
+INSTANCE DIA_NASZ_106_Jan_AboutArmorKap4   (C_INFO)
+{
+	npc         = NASZ_106_Jan;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_106_Jan_AboutArmorKap4_Condition;
+ 	information = DIA_NASZ_106_Jan_AboutArmorKap4_Info;
+ 	permanent   = FALSE;
+ 	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_106_Jan_AboutArmorKap4_Condition()
+{
+	if (KAPITEL >= 4 && JanSaidAboutUltraArmor == FALSE)
+	&& (npc_knowsinfo(other,DIA_NASZ_106_Jan_KompletReady))
+	&& (RepEnough(90,REP_LOWCY))
+	&& (hero.guild == GIL_DJG)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_106_Jan_AboutArmorKap4_Info()
+{
+	JanSay_AboutUltraArmor();
+	
+};
+
+var int Jan_UltraDJG_Bought;
+//*********************************************************************
+//	BuyUltraArmor
+//*********************************************************************
+INSTANCE DIA_NASZ_106_Jan_BuyUltraArmor   (C_INFO)
+{
+	npc         = NASZ_106_Jan;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_106_Jan_BuyUltraArmor_Condition;
+ 	information = DIA_NASZ_106_Jan_BuyUltraArmor_Info;
+ 	permanent   = TRUE;
+ 	description = "Sprzedaj mi zbrojê (3000 szt. z³ota)";
+};
+
+FUNC INT DIA_NASZ_106_Jan_BuyUltraArmor_Condition()
+{
+	if (JanSaidAboutUltraArmor == TRUE)
+	&& (Jan_UltraDJG_Bought == FALSE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_106_Jan_BuyUltraArmor_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_BuyUltraArmor_15_00"); //Sprzedaj mi zbrojê.
+	
+	if (npc_hasitems(other,ItMi_Gold) < 3000) {
+		AI_Output (self, other,"DIA_NASZ_106_Jan_BuyUltraArmor_55_01"); //Nie ma z³ota, nie ma zbroi.
+		return;
+	};
+	
+	B_GiveInvItems(other,self,ItMi_Gold,3000);
+	AI_Output (self, other,"DIA_NASZ_106_Jan_BuyUltraArmor_55_02"); //Proszê. Masz tu te¿ he³m do kompletu.
+
+	Jan_UltraDJG_Bought = TRUE;
+	
+	CreateInvItems(self,ITNA_DJG_ULTRA,1);
+	B_GiveInvItems(self,other,ITNA_DJG_ULTRA,1);
+
+	CreateInvItems(self,ITNA_DJG_ULTRA_HELMET,1);
+	B_GiveInvItems(self,other,ITNA_DJG_ULTRA_HELMET,1);
+	
+};
+
 
 
 //*********************************************************************
@@ -1588,7 +1681,7 @@ FUNC VOID DIA_NASZ_106_Jan_finish1_Info()
 	};
 	
 	B_GivePlayerXP(100);
-	B_LogEntry (TOPIC_Jan_zloto, "Przynios³em i ci¹gle ma³o! Mam siê udaæ do Daniela i za³atwiæ kolejne bry³ki.");
+	B_LogEntry (TOPIC_Jan_zloto, "Przynios³em i ci¹gle ma³o! Mam siê udaæ do Daniela i za³atwiæ kolejne bry³ki. Kopacz przebywa w pobli¿u opuszczonej kopalni obok du¿ej wie¿y na po³udniu.");
 	
 };
 
@@ -1842,7 +1935,7 @@ func void DIA_NASZ_106_Jan_Kap3QuestFinish_Info ()
 	B_GiveInvItems(other,self,ItNa_KolczugaRycerza,5);
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_01"); //Doskonale, od razu zabieram siê do pracy. Mam nadziejê, ¿e œci¹ganie he³mów z pognitych g³ów nie by³o zbyt obrzydliwe?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_02"); //Te he³my cuchn¹ niczym przypalone mleko kretoszczura...
-	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_03"); //Jakoœ da³em sobie radê, chocia¿ móg³yœ jakoœ mi to zrekompensowaæ. Nie s¹dzisz?
+	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_03"); //Jakoœ da³em sobie radê, chocia¿ móg³byœ jakoœ mi to zrekompensowaæ. Nie s¹dzisz?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3QuestFinish_15_04"); //No tak, oczywiœcie! Przyjmij ten magiczny pierœcieñ. Wzmocni ciê.
 	
 	CreateInvItems(self,ItRi_Hp_02,1);
@@ -2275,11 +2368,11 @@ FUNC VOID DIA_NASZ_106_Jan_KurgKan_Info()
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_03"); //Szczerze? Bardzo i w momencie, kiedy przerabia³em te blachy, co chwilê wraca³a do mnie wyobra¿enie Kerolotha, który mnie publicznie linczuje za pomys³.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_04"); //Ale pomyœl: Zbroja paladyna dopasowana do orka. Nikt na to wczeœniej nie wpad³, bo nie mia³ jak, a tu nadarzy³a siê taka okazja. Nie spróbowa³byœ na moim miejscu?
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_05"); //Rozumiem. Obudzi³a siê w tobie dusza artysty. Ale broni to mu nie chcia³eœ zrobiæ.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_06"); //Bo nie mia³em pomys³u, ale z t¹ zbroj¹… Jedna myœl i ju¿ mia³em ca³y projekt gotowy.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_06"); //Bo nie mia³em pomys³u, ale z t¹ zbroj¹... Jedna myœl i ju¿ mia³em ca³y projekt gotowy.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_07"); //No dobrze, ale jak zareagowa³ Keroloth?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_08"); //Kiedy wrêczy³em zbrojê orkowi, wszyscy siê zebrali wokó³ niego i podziwiali moje dzie³o. Nie trzeba by³o czekaæ d³ugo na reakcjê Kerolotha, który wyszed³, popatrzy³ na niego i poszed³.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_09"); //To wszystko?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_10"); //A gdzie tam! Po parunastu minutach znowu wyszed³, stan¹³ przed orkiem i… zasalutowa³ mu, jak paladyn paladynowi.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_10"); //A gdzie tam! Po parunastu minutach znowu wyszed³, stan¹³ przed orkiem i... zasalutowa³ mu, jak paladyn paladynowi.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_11"); //¯artujesz?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_12"); //Nie. Powiedzia³ mu wtedy, ¿e jest bardziej godny noszenia tej zbroi, ni¿ poprzedni w³aœciciele i ma nadziejê, ¿e Krug-Kan udowodni, ¿e jest prawdziwym obroñc¹ ludzkoœci i wiary w Innosa.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_13"); //I co na to Krug-Kan?

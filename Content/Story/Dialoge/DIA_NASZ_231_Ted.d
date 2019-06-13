@@ -56,8 +56,8 @@ FUNC VOID DIA_NASZ_231_Ted_siema_Info()
 	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_03"); //Nazywam siê Ted. Polujê w tym lesie od czasów, których nawet ty sam nie pamiêtasz.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_04"); //Uciekasz z kopalni, co?
 	AI_Output (other, self,"DIA_NASZ_231_Ted_siema_55_05"); //Tak, Marcos trzyma³ nas tam jako niewolników. To cud, ¿e uda³o mi siê czmychn¹æ.
-	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_06"); //Nie mam pojêcia, dlaczego kopalnia jest zamkniêta. Dawno mnie nie by³o w tej czêsci lasu.	
-	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_07"); //Tak, czy owak teraz jesteœ tu sam. Na wolnoœci nie prze¿yjesz zbyt d³ugo. A twoje ³achy to jakieœ badziewie!
+	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_06"); //Nie mam pojêcia, dlaczego kopalnia jest zamkniêta. Dawno nie by³o mnie w tej czêsci lasu.
+	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_07"); //Tak czy owak teraz jesteœ tu sam. Na wolnoœci nie prze¿yjesz zbyt d³ugo. A twoje ³achy to jakieœ badziewie!
 	AI_Output (self, other,"DIA_NASZ_231_Ted_siema_55_08"); //Mam w zanadrzu skórzany pancerz. Jeœli chcesz, odsprzedam ci go za 250 sztuk z³ota.
 
 	B_GivePlayerXP (100);	

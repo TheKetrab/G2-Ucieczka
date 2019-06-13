@@ -97,12 +97,50 @@ FUNC VOID DIA_NASZ_006_Renegat_siema2_Info()
 };
 
 //*********************************************************************
+//	Info Weapon
+//*********************************************************************
+INSTANCE DIA_NASZ_006_Renegat_weapon   (C_INFO)
+{
+	npc         = NASZ_006_Renegat;
+ 	nr          = 3;
+ 	condition   = DIA_NASZ_006_Renegat_weapon_Condition;
+ 	information = DIA_NASZ_006_Renegat_weapon_Info;
+ 	permanent   = TRUE;
+	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_006_Renegat_weapon_Condition()
+{
+	if (Renegat06BiegnieOneTime == TRUE) && (KAPITEL == 1)
+	&& (UcieklesZKopalni == FALSE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_006_Renegat_weapon_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_00"); //Czekaj! Sk¹d masz t¹ pa³kê?
+	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_01"); //Oddawaj!
+	
+	var C_Item bron; bron = Npc_GetEquippedMeleeWeapon(hero);
+	B_GiveInvItems (other, self, ItMw_1h_Bau_Mace, 1);
+
+	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_02"); //A teraz zje¿d¿aj!
+	
+	Renegat06BiegnieOneTime = FALSE;
+	//AI_GotoWP (hero, "OW_MINE2_03");
+	AI_StopProcessInfos (self);
+};
+
+
+//*********************************************************************
 //	Info Hello3
 //*********************************************************************
 INSTANCE DIA_NASZ_006_Renegat_siema3   (C_INFO)
 {
 	npc         = NASZ_006_Renegat;
- 	nr          = 3;
+ 	nr          = 4;
  	condition   = DIA_NASZ_006_Renegat_siema3_Condition;
  	information = DIA_NASZ_006_Renegat_siema3_Info;
  	permanent   = FALSE;
@@ -140,7 +178,7 @@ FUNC VOID DIA_NASZ_006_Renegat_siema3_c()
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_c_55_05"); //A co jest z tym nie tak? Nie zauwa¿y³em ¿adnych k³opotów.
 	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_06"); //Górnicy opadaj¹ ju¿ z si³, dajecie nam zbyt ma³o wytchnienia i po¿ywienia. Jak myœlisz, ile jeszcze damy radê tak pracowaæ?
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_c_55_07"); //Jeszcze jedno s³owo i...
-	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_08"); //Pobijesz mnie? Proszê bardzo, jednak pomyœl co zrobi Marcos kiedy dowie siê, ¿e przez twoj¹ niekompetencjê wszyscy górnicy pomarli z g³odu.
+	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_08"); //Pobijesz mnie? Proszê bardzo, jednak pomyœl, co zrobi Marcos, kiedy dowie siê, ¿e przez twoj¹ niekompetencjê wszyscy górnicy pomarli z g³odu.
 	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_09"); //Wiesz, ¿e bez nas nie wydobêdziecie nawet jednej zawszonej bry³ki rudy.
 	AI_Output (other,self ,"DIA_NASZ_006_Renegat_siema3_c_15_10"); //Ponadto, s³ysza³em twoj¹ rozmowê z Marcosem. Z jego polecenia to ty nadzorujesz kopalniê, jak i nasz¹ pracê. Chyba nie chcesz go wkurzyæ, co?
 	AI_Output (self, other,"DIA_NASZ_006_Renegat_siema3_c_55_11"); //Niech ciê szlag, porozmawiam z Marcosem, a teraz wyjazd do kopalni zanim stracê cierpliwoœæ!
@@ -195,7 +233,7 @@ FUNC VOID DIA_NASZ_006_Renegat_siema3_end()
 INSTANCE DIA_NASZ_006_Renegat_kill   (C_INFO)
 {
 	npc         = NASZ_006_Renegat;
- 	nr          = 4;
+ 	nr          = 5;
  	condition   = DIA_NASZ_006_Renegat_kill_Condition;
  	information = DIA_NASZ_006_Renegat_kill_Info;
  	permanent   = FALSE;
@@ -226,39 +264,3 @@ FUNC VOID DIA_NASZ_006_Renegat_kill_Info()
 };
 
 
-//*********************************************************************
-//	Info Weapon
-//*********************************************************************
-INSTANCE DIA_NASZ_006_Renegat_weapon   (C_INFO)
-{
-	npc         = NASZ_006_Renegat;
- 	nr          = 5;
- 	condition   = DIA_NASZ_006_Renegat_weapon_Condition;
- 	information = DIA_NASZ_006_Renegat_weapon_Info;
- 	permanent   = TRUE;
-	important   = TRUE;
-};
-
-FUNC INT DIA_NASZ_006_Renegat_weapon_Condition()
-{
-	if (Renegat06BiegnieOneTime == TRUE) && (KAPITEL == 1)
-	&& (UcieklesZKopalni == FALSE)
-	{
-		return TRUE;
-	};
-};
-
-FUNC VOID DIA_NASZ_006_Renegat_weapon_Info()
-{
-	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_00"); //Czekaj! Sk¹d masz t¹ pa³kê?
-	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_01"); //Oddawaj!
-	
-	var C_Item bron; bron = Npc_GetEquippedMeleeWeapon(hero);
-	B_GiveInvItems (other, self, ItMw_1h_Bau_Mace, 1);
-
-	AI_Output (self, other,"DIA_NASZ_006_Renegat_weapon_15_02"); //A teraz zje¿d¿aj!
-	
-	Renegat06BiegnieOneTime = FALSE;
-	//AI_GotoWP (hero, "OW_MINE2_03");
-	AI_StopProcessInfos (self);
-};

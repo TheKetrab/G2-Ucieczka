@@ -16,6 +16,10 @@ instance NASZ_120_Phill (Npc_Default)
 	attribute[ATR_HITPOINTS_MAX] = 900;
 	attribute[ATR_HITPOINTS] = 900;
 	
+	self.protection [PROT_EDGE]  = 80;
+	self.protection [PROT_BLUNT] = 80;
+
+	
 	// ------ Kampf-Taktik ------
 	fight_tactic		= FAI_HUMAN_STRONG;	// MASTER / STRONG / COWARD
 	
@@ -46,7 +50,7 @@ FUNC VOID Rtn_Start_120 ()
 	TA_SmallTalk (09,20,13,40,"NASZ_LOWCY_DOL_18");
 	TA_Saw		(13,40,20,10,"NASZ_LOWCY_GORA_21");	
 	TA_Dance	(20,10,02,45,"NASZ_LOWCY_KARCZMA_02");
-	TA_Sleep	(02,45,07,30,"NASZ_LOWCY_KARCZMA_28");
+	TA_Sleep	(02,45,07,30,"NASZ_LOWCY_KARCZMA_32");
 };
 
 FUNC VOID Rtn_Guide_120 ()

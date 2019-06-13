@@ -14,6 +14,10 @@ FUNC VOID ZS_Repair_Hut ()
     {
 		AI_GotoWP	(self, self.wp);
 	};
+	if (Npc_HasItems (self,ItMi_Hammer) == 0)
+	{
+		CreateInvItem (self,ItMi_Hammer);				
+	};
 };
 
 FUNC int ZS_Repair_Hut_Loop ()

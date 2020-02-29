@@ -1,4 +1,3 @@
-var int WillZniszczylDemonaOneTime;
 var int Kopalnia_Trucizna_Teleported;
 
 func void Kopalnia_Trucizna()
@@ -163,9 +162,9 @@ func void KillDemonPosag()
 {
 	if(WillIsGoingToKillDemonPosag == 1 && WillZniszczylDemonaOneTime == FALSE )
 	{
-		var c_item itm; itm = Npc_GetEquippedMeleeWeapon(hero);
 		if (C_BodyStateContains(hero,BS_HIT) && Npc_GetDistToWP	(hero, "NASZ_DEMON_WP") < 150  && Npc_HasReadiedMeleeWeapon(hero))
 		{
+			var c_item itm; itm = Npc_GetReadiedWeapon(hero);
 			if (bIsHammer(itm))
 			{
 				B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zosta³a zniszczona, a wraz z ni¹ zagro¿enie jakie depta³o nam po piêtach. Czym prêdzej wrócê do maga i opowiem mu o tym, co siê tutaj sta³o. Poza tym dziwiê siê, ¿e nie zaatakowa³ mnie ¿aden demon. Czy¿by mag siê myli³?");

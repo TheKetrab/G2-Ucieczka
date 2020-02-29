@@ -1500,8 +1500,7 @@ INSTANCE DIA_NASZ_106_Jan_KompletReady   (C_INFO)
 
 FUNC INT DIA_NASZ_106_Jan_KompletReady_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_106_Jan_KompletReady))
-	&& (OstrzeLowcyUbrane == TRUE)
+	if (OstrzeLowcyUbrane == TRUE)
 	&& (TarczaLowcyUbrana == TRUE)
 	&& (KuszaLowcyUbrana == TRUE)
 	{

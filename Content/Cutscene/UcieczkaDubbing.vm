@@ -1,0 +1,9 @@
+[BEGINVDF]
+Comment=
+BaseDir=C:\Gry\Gothic II Zlota Edycja
+VDFName=C:\Gry\Gothic II Zlota Edycja\Data\UcieczkaDubbing.vdf
+[FILES]
+[EXCLUDE]
+[INCLUDE]
+_Work\data\Sound\Speech\* -r
+[ENDVDF]

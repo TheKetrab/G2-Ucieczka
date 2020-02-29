@@ -21,6 +21,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	EquipItem	(self, ItMw_ShortSword4);
 	EquipItem	(self, ItRw_Sld_Bow); 
 	EquipItem	(self, ItNa_KapturMysliwego);
+	//AI_EquipArmor(self,ItNa_KapturMysliwego);
 	
 	// ------ Inwentarz ------
 	B_CreateAmbientInv (self);
@@ -28,6 +29,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FatBald", Face_N_NormalBart_Dexter, BodyTex_N, ITNA_OUT_M );		
+
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

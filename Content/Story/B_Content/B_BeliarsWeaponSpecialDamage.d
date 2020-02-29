@@ -1,7 +1,7 @@
 
 func void B_BeliarsWeaponSpecialDamage (var C_NPC oth, var C_NPC slf) //other ist angreifer, slf ist victim
 {
-	if (Hlp_GetInstanceID(oth) == Hlp_GetInstanceID(hero))
+	/*Bogu: to chyba nie potrzebne if (Hlp_GetInstanceID(oth) == Hlp_GetInstanceID(hero))
 	{
 		var int DamageRandy;
 		DamageRandy = Hlp_Random (100);
@@ -30,7 +30,7 @@ func void B_BeliarsWeaponSpecialDamage (var C_NPC oth, var C_NPC slf) //other is
 				Wld_PlayEffect("spellFX_BELIARSRAGE_COLLIDE", hero, hero, 0, 0, 0, FALSE );
 		};
 	};
-
+	*/
 	//Miecz Runiczny
 	if (Hlp_GetInstanceID(oth) == Hlp_GetInstanceID(hero))
 	{

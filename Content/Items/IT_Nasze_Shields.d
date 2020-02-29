@@ -217,6 +217,7 @@ INSTANCE ItNa_Shield_Rose (C_Item)
 	TEXT[5]	=	NAME_Value;			COUNT[5]	=	value;
 };
 
+
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Shield_Poludnie (C_Item) 
 {

@@ -6,7 +6,7 @@ instance NASZ_107_Brutus (Npc_Default)
 	guild 		= GIL_DJG;
 	id 			= 107;
 	voice 		= 6;
-	flags       = 0;							//NPC_FLAG_IMMORTAL oder 0
+	flags       = 2;							//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_OCMAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
@@ -27,7 +27,7 @@ instance NASZ_107_Brutus (Npc_Default)
 	
 	// ------ Inventory ------
 	B_CreateAmbientInv 	(self);
-	
+	Createinvitems (self, ItNa_PaczkaJana, 3);
 		
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	

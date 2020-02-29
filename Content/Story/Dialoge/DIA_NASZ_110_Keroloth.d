@@ -2121,9 +2121,18 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 	
 };
 
+func void PreKapFF()
+{
+	if(InfoManager_HasFinished())
+	{
+		PreKap();
+		ff_Remove(PreKapFF);
+	};
+};
+
 func void DIA_NASZ_110_Keroloth_PreKap4_end() {
 	AI_StopProcessInfos(self);
-	PreKap();
+	ff_applyonce(PreKapFF);
 };
 
 /* ----- ----- -----
@@ -2203,11 +2212,11 @@ INSTANCE DIA_NASZ_110_Keroloth_Kap4   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_Kap4_Condition()	
 {
-	if (pre == 2)
-	|| (Cheat_SkipToKap4 == TRUE)
-	{
+	//if (pre == 2)
+	//|| (Cheat_SkipToKap4 == TRUE)
+	//{
 		return TRUE;
-	};
+	//};
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
@@ -2244,6 +2253,12 @@ func void InsertUndeadsNearOUTCamp() {
 
 };
 
+func void DIA_NASZ_110_Keroloth_Kap4_end() {
+	//B_Kapitelwechsel (4, NEWWORLD_ZEN );
+	AI_StopProcessInfos(self);
+	//InsertUndeadsNearOUTCamp();
+};
+
 FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 {
 
@@ -2261,20 +2276,15 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 	Log_CreateTopic (TOPIC_Sprawy,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Sprawy, LOG_RUNNING);
 	B_LogEntry (TOPIC_Sprawy,"Szturm zakoñczy³ siê sukcesem, jednak to wcale nie oznacza, ¿e ju¿ wygraliœmy. Keroloth podejrzewa, i¿ orkowie bêd¹ chcieli przeprowadziæ kontruderzenie i odbiæ zamek si³¹. Dlatego te¿ wys³a³ mnie do obozu ³owców, bym sprowadzi³ do zamku kilku wojowników. Poza tym, mam odwiedziæ myœliwych i sprawdziæ, czy czegoœ potrzebuj¹ i czy s¹ bezpieczni.");
-	//AI_StopProcessInfos (self);
 	
-	InsertUndeadsNearOUTCamp();
-
-	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
-	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
-
-	
-};
-
-func void DIA_NASZ_110_Keroloth_Kap4_end() {
-	B_Kapitelwechsel (4, NEWWORLD_ZEN );
 	AI_StopProcessInfos(self);
+	InsertUndeadsNearOUTCamp();
+	//Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
+	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
+
+	
 };
+
 
 
 //*********************************************************************
@@ -2536,19 +2546,20 @@ FUNC VOID DIA_NASZ_110_Keroloth_OrkowyPrzepis_Info()
 
 
 
-
+//WillBylZapalisada
 //*********************************************************************
 //	Info IWasBehindTheWall
 //*********************************************************************
 var int InformationPalisadaOneTime;
 var int HeroSaidZaPalisadaSaLudzie;
+var int HeroSaid;
 INSTANCE DIA_NASZ_110_Keroloth_IWasBehindTheWall   (C_INFO)
 {
 	npc         = NASZ_110_Keroloth;
  	nr          = 44;
  	condition   = DIA_NASZ_110_Keroloth_IWasBehindTheWall_Condition;
  	information = DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info;
- 	permanent   = FALSE;
+ 	permanent   = true;
 	description = "Przynoszê dla ciebie informacje zza palisady.";
 };
 
@@ -2556,7 +2567,7 @@ FUNC INT DIA_NASZ_110_Keroloth_IWasBehindTheWall_Condition()
 {
 	if (WillBylZapalisada == TRUE)
 	&& (KAPITEL >= 4)
-	&& (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_InfoKonsekwencje))
+	&& (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_InfoKonsekwencje) && HeroSaid != 4)
 	{
 		return TRUE;
 	};
@@ -2572,6 +2583,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_55_01"); //By³eœ tam? Dobrze, ¿e ci¹gle jesteœ w jednym kawa³ku.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_55_02"); //Jak tam jest? Ilu orków tam przebywa? Co znalaz³eœ?
 		InformationPalisadaOneTime = TRUE;
+		
 	}
 	else
 	{
@@ -2581,15 +2593,19 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
 	if (WillBylZapalisada) {
 	Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
+	HeroSaid+=1;
 	};
 	if (wszyscy_orkowie_nie_zyja) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Zlikwidowa³em orkowe obozowisko.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc);
+		HeroSaid+=1;
 	};
 	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_siema)) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Za palisad¹ s¹ ludzie.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie);
+		HeroSaid+=1;
 	};
 	if (npc_isdead(NASZ_028_Kazmin)) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Sprawy na bagnach zosta³y wyjaœnione.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp);
+		HeroSaid+=1;
 	};
 };
 
@@ -2926,15 +2942,25 @@ var int KurgKanUratowany;
 var string rut1;
 var string rut2;
 const int oCNpc_States__GetRutinename = 7790976;
-func string GetRutineName(var c_npc slf)
-{
-// TODO funkcja wyrzuca access violation
-//	CALL_RetValIszString();
-//	var int ptr; ptr = MEM_ReadInt(_@(slf)+1416);
-//	if(!ptr) {return "START";};
-//	CALL__thiscall(ptr,oCNpc_States__GetRutinename);
-//	return CALL_RetValAszString();
-	return "";
+func string GetRutineName(var c_npc npc){
+	var oCNpc _oCNpc; _oCNpc = Hlp_GetNpc(npc);
+
+	var int npcID; npcID = MEM_ReadInt(_@(_oCNpc)+608);
+	var zCPar_symbol symb; symb = _^(MEM_GetSymbolByIndex(npcID));
+
+	var string rtnIdentifierName; rtnIdentifierName = symb.name;
+	var int underscore; underscore = STR_IndexOf(rtnIdentifierName, "_");
+	var int len; len = STR_Len (rtnIdentifierName);
+
+	if (underscore != -1){
+		rtnIdentifierName = STR_SubStr(rtnIdentifierName, underscore+1, len-underscore-1);
+	};
+
+	underscore = STR_IndexOf(rtnIdentifierName, "_");
+	if (underscore != -1){
+		rtnIdentifierName = STR_SubStr(rtnIdentifierName, 0, underscore);
+	};
+	return rtnIdentifierName;
 };
 
 

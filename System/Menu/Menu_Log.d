@@ -14,6 +14,9 @@ instance MENU_LOG(C_MENU_DEF)
 	items[10] = "MENU_ITEM_LIST_MISSIONS_OLD";
 	items[11] = "MENU_ITEM_LIST_LOG";
 	items[12] = "MENU_ITEM_CONTENT_VIEWER";
+	items[13] = "MENU_ITEM_SEL_OSIAGNIECIA";
+	items[14] = "MENU_ITEM_LIST_OSIAGNIECIA";
+
 	alpha = 255;
 	posx = 0;
 	posy = 0;
@@ -201,5 +204,38 @@ instance MENU_ITEM_TIME(C_MENU_ITEM_DEF)
 	posy = 6300;
 	fontname = LOG_FONT_DATETIME;
 	flags = flags & ~IT_SELECTABLE;
+};
+
+// UCIECZKA
+
+instance MENU_ITEM_SEL_OSIAGNIECIA(C_MENU_ITEM_DEF)
+{
+	text[0] = "Osi¹gniêcia";
+	posx = LOG_ITEM_X1;
+	posy = 5500;
+	dimx = LOG_ITEM_DX1;
+	dimy = 1000;
+	fontname = LOG_FONT_DEFAULT;
+	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_SELECTABLE | IT_MULTILINE | IT_TXT_CENTER;
+	onselaction[0] = SEL_ACTION_EXECCOMMANDS;
+	onselaction_s[0] = "EFFECTS MENU_ITEM_LIST_OSIAGNIECIA";
+};
+
+
+instance MENU_ITEM_LIST_OSIAGNIECIA(C_MENU_ITEM_DEF)
+{
+	type = MENU_ITEM_LISTBOX;
+	text[0] = "ACHIEVEMENTS";
+	posx = LOG_ITEM_LIST_X;
+	posy = LOG_ITEM_LIST_Y;
+	dimx = LOG_ITEM_LIST_WIDTH;
+	dimy = LOG_ITEM_LIST_HEIGHT;
+	fontname = LOG_FONT_DEFAULT;
+	flags = flags | IT_CHROMAKEYED | IT_TRANSPARENT | IT_EFFECTS_NEXT;
+	flags = flags & ~IT_SELECTABLE;
+	flags = flags & ~IT_TXT_CENTER;
+	userstring[0] = "X";
+	framesizex = 250;
+	framesizey = 0;
 };
 

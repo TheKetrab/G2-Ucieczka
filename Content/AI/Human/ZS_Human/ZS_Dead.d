@@ -22,6 +22,20 @@ var int Psikusy_SheepKiller_Counter;
 
 func void ZS_Dead ()
 {	
+	if(Npc_IsPlayer(self))
+	{
+		QS_RemoveDeadWeapon();
+	};
+	
+	if Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NASZ_028_Kazmin)
+	{
+	//	if(Npc_HasItems(hero,ItNa_Pas_Smierci)) {oCNpc_UnequipItem(hero, _@(ItNa_Pas_Smierci)); Npc_RemoveInvItems(hero,ItNa_Pas_Smierci,1);};
+		//if(Npc_HasItems(hero,ItNa_Pierscien_Glod)) {Npc_RemoveInvItems(hero,ItNa_Pierscien_Glod,1);};
+		//if(Npc_HasItems(hero,ItNa_Pierscien_Zaraz)) {Npc_RemoveInvItems(hero,ItNa_Pierscien_Zaraz,1);};
+		//if(Npc_HasItems(hero,ItNa_Amulet_Wojny)) {Npc_RemoveInvItems(hero,ItNa_Amulet_Wojny,1);};
+	};
+  
+  
 	if (MissionPlaskowyzRunning == TRUE
 	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Troll_Black_Plaskowyz)
 	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BlackGobboGigant1)

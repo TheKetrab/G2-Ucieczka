@@ -177,33 +177,130 @@ func void Update_Menu_Item(var string name, var string val)
         return;
     };
         
-    //void __thiscall zCMenuItem::SetText(val = val, line = 0, drawNow = true)
-    const int SetText = 5114800;
+    //void zCMenuItem::SetText(val = val, line = 0, drawNow = true)
+    const int SetText = 5125360; // 0x004E34F0
         
     CALL_IntParam(true);
     CALL_IntParam(false);
     CALL_zStringPtrParam(val);
     CALL__thiscall(itPtr, SetText);
+
 };
-    
+
+func void qpt()
+{
+	Print("ha");
+};
+ 
 const int oCMenu_Status__SetLearnPoints = 4707920;
 const int oCMenu_Status__SetLearnPoints_Len = 6;
+
+const int zCMenu__HandleEnterItem = 5103824;
+const int zCMenu__HandleEnterItem_Len = 5;
+
+const int zCMenuItemList__DrawFront = 5137744; // 0x004E6550
+const int zCMenuItemList__DrawFront_Len = 6;
+
+const int zCMenuItemList__InsertEnd = 5136144; // 0x004E5F10
+const int zCMenuItemList__InsertEnd_Len = 7;
+
+
 func void Install_Character_Menu_Hook() 
 {
+
 	const int done = false;
 	if(!done) 
 	{
 	   HookEngineF(oCMenu_Status__SetLearnPoints, oCMenu_Status__SetLearnPoints_Len, Update_Character_Menu);
+//	   HookEngineF(zCMenuItemList__DrawFront, zCMenuItemList__DrawFront_Len, U_OnEnter);
+	   //HookEngineF(7547197, 5,qpt);
 	   
 	   //poziom trudnoœci
-	   HookEngineF(cGameManager__ApplySomeSettings_rtn, 6, GetDiffLvl);
+	   //HookEngineF(cGameManager__ApplySomeSettings_rtn, 6, GetDiffLvl);
 	   done = true;
 	};
+
+};
+
+
+
+
+
+
+
+
+const int zTMenuItemListElement__zTMenuItemListElement = 5140928; // 0x004E71C0
+func int CreateMenuItemListElementPtr( var string title, var string content, var int counterVieverPtr )
+{
+  var int ptr; ptr = MEM_Alloc(44);
+  MEM_WriteString (ptr, title);
+  MEM_WriteString (ptr + 20, content);
+  MEM_WriteInt (ptr + 40, counterVieverPtr);
+  return ptr;
+};
+
+
+
+func void U_OnEnter() {
+
+	// ecx - 'this' w funkcji DrawFront 
+	var int ptrECX; ptrECX = ECX;
+	var zCMenuItem list; list = _^(ptrECX);
+
+//	if (Hlp_StrCmp(list.m_parText,"ACHIEVEMENTS") == 0) {
+	if (Hlp_StrCmp(list.m_parText,"Bie¿¹ce misje") == 0) {
+		return;
+	};
+	
+	/*
+	// void zCMenuItemList::InsertEnd(zTMenuItemListElement & element)
+	struct zTMenuItemListElement {
+		zSTRING		title;	
+		zSTRING		content;		
+		zCMenuItem*	contentViewer;
+		zTMenuItemListElement() { contentViewer=0; };	
+	}
+	*/
+
+	// dodaj zawartosc do listy
+	const int InsertEnd = 5136144; // 0x004E5F10
+	var int ptr; ptr = CreateMenuItemListElementPtr("x","y",0);
+	
+	var int alpha; alpha = MEM_GetSymbolIndex("m_list");
+	
+	var int mParTextAddr; mParTextAddr = MEM_GetStringAddress(list.m_parText);
+
+//	Print(ConcatStrings("offset = ",IntToString(alpha)));
+//	Print(MEM_ReadString(ptrECX));
+	//MEM_Error ("tu jestem 1");
+//	CALL_IntParam(ptr);
+//    CALL__thiscall(list, InsertEnd);
+//	MEM_Error ("tu jestem 2");
+
 };
 
 func void Update_Character_Menu() {
 
-    var string StatusReputacji;
+
+	if (LevelMiner>=20 && LevelMiner<25) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 1); }
+	else if (LevelMiner>=25 && LevelMiner<30) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 2); }
+	else if (LevelMiner>=30 && LevelMiner<35) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 3); }
+	else if (LevelMiner>=35 && LevelMiner<40) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 4); }
+	else if (LevelMiner>=40 && LevelMiner<45) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 5); }
+	else if (LevelMiner>=45 && LevelMiner<50) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 6); }
+	else if (LevelMiner>=50 && LevelMiner<55) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 7); }
+	else if (LevelMiner>=55 && LevelMiner<60) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 8); }
+	else if (LevelMiner>=60 && LevelMiner<65) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 9); }
+	else if (LevelMiner>=65 && LevelMiner<70) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 10); }
+	else if (LevelMiner>=70 && LevelMiner<75) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 11); }
+	else if (LevelMiner>=75 && LevelMiner<80) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 12); }
+	else if (LevelMiner>=80 && LevelMiner<85) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 13); }
+	else if (LevelMiner>=85 && LevelMiner<90) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 14); }
+	else if (LevelMiner>=90 && LevelMiner<95) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 15); }
+	else if (LevelMiner>=95 && LevelMiner<100) { Npc_SetTalentSkill (hero, NPC_TALENT_C, 16); }
+	else if (LevelMiner>=100) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 17);  };   
+
+   var string StatusReputacji;
 	if (rep_lowcy_s) >= 0  { StatusReputacji = "Nikt"; };
 	if (rep_lowcy_s) >= 10 { StatusReputacji = "Pomocnik"; };
 	if (rep_lowcy_s) >= 25 { StatusReputacji = "Kompan"; };
@@ -213,6 +310,7 @@ func void Update_Character_Menu() {
 
 	Update_Menu_Item("MENU_ITEM_REPUTATION_1_RANGE", StatusReputacji);
 	Update_Menu_Item("MENU_ITEM_REPUTATION_1_VAL", IntToString(rep_lowcy_s));
+
 	
 	if (rep_mysliwi_s) >= 0  { StatusReputacji = "Nikt"; };
 	if (rep_mysliwi_s) >= 10 { StatusReputacji = "Pomocnik"; };
@@ -223,7 +321,7 @@ func void Update_Character_Menu() {
 
     Update_Menu_Item("MENU_ITEM_REPUTATION_2_RANGE", StatusReputacji);
 	Update_Menu_Item("MENU_ITEM_REPUTATION_2_VAL", IntToString(rep_mysliwi_s));
-	
+
 	if (WillKnowBanditReputation == TRUE)
 	{
 		if (rep_bandyci_s) >= 0  { StatusReputacji = "Nikt"; };

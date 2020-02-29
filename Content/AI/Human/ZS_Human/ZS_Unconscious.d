@@ -3,12 +3,15 @@
 // --------------
 // wird auch vom Spieler ausgeführt
 // ********************************
-
 func void ZS_Unconscious ()
 {	
 	Npc_PercEnable  	(self,	PERC_ASSESSMAGIC		,	B_AssessMagic				);
 		
 	// EXIT IF...
+	if(Npc_IsPlayer(self))
+	{
+		QS_RemoveDeadWeapon();
+	};
 	
 	if (C_BodyStateContains(self, BS_SWIM))
 	|| (C_BodyStateContains(self, BS_DIVE))
@@ -19,7 +22,7 @@ func void ZS_Unconscious ()
 		return;
 	};
 
-	
+
 	// FUNC
 	
 	// ------ Guardpassage resetten ------

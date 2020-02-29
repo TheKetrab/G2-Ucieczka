@@ -1,6 +1,6 @@
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// OSIAGNIECIA
+// OSIAGNIECIA STARE
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 // 1. Zabij 1000 stworzeñ.
 // 2. Stañ siê guru kopaczy.
@@ -12,6 +12,85 @@
 // 8. Przejmij obóz na pla¿y za palisad¹.
 // 9. Pokonaj wszystkie bossy.
 // 10. Oczyœæ p³askowy¿ gigantów.
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+// OSIAGNIECIA NOWE
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+const string Acv1Title   = "Zabójca";
+const string Acv1Content = "Zabi³eœ 1000 stworzeñ";
+
+const string Acv2Title   = "Guru kopaczy";
+const string Acv2Content = "Wykopa³eœ niemal wszystko w Górniczej Dolinie";
+
+const string Acv3Title   = "Alchemik";
+const string Acv3Content = "Pozna³eœ wszystkie sekrety Gildii Alchemików";
+
+const string Acv4Title   = "Z³odziej";
+const string Acv4Content = "Nauczy³eœ siê wszystkich sztuczek z³odziejskich";
+
+const string Acv5Title   = "Mistrz areny";
+const string Acv5Content = "Pokona³eœ wszystkich gladiatorów";
+
+const string Acv6Title   = "Mœciciel";
+const string Acv6Content = "Wyzwoli³eœ kopalniê Marcosa";
+
+const string Acv7Title   = "Przywo³ywacz duchów";
+const string Acv7Content = "Poœwiêci³eœ wszystkie groby";
+
+const string Acv8Title   = "Okrobójca";
+const string Acv8Content = "Rozgromi³eœ obóz orków na pla¿y";
+
+const string Acv9Title   = "Achilles";
+const string Acv9Content = "Pokona³eœ wszystkich bossów";
+
+const string Acv10Title   = "Chwa³a i odwaga";
+const string Acv10Content = "Oczyœci³eœ p³askowy¿ gigantów";
+
+const string Acv11Title   = "";
+const string Acv11Content = "";
+
+const string Acv12Title   = "";
+const string Acv12Content = "";
+
+
+// 1. Zabij 1000 stworzeñ.
+// 2. Stañ siê guru kopaczy.
+// 3. Poznaj przepisy Gildii Alchemików.
+// 4. Naucz siê wszystkich sztuczek z³odzejskich.
+// 5. Zostañ mistrzem areny.
+// 6. Wyzwól kopalniê Marcosa.
+// 7. Uœwiêæ wszystkie groby.
+// 8. Przejmij obóz na pla¿y za palisad¹.
+// 9. Pokonaj wszystkie bossy.
+// 10. Oczyœæ p³askowy¿ gigantów.
+
+
+
+// Zbieracz - zebra³eœ 100 zardzewia³ych mieczy
+//Oszczêdzacz punktów nauki - miej 50 niewykorzystanych punktów nauki
+// Mistrz nad mistrzami - 100% czegolwiek
+// Otwórz 100 skrzyñ
+// £amacz wytrychów 
+// Szczêœciarz - otwórz 5 skrzyñ bez ³amania wytrycha
+// Magik - u¿yj 10 ró¿nych czarów
+// Zjedz wszystkie zio³a
+// Nurek - spêdŸ 5 minut (w sumie) pod woda
+// RzeŸnik - zbierz 500 miês (mo¿esz je zjadaæ , nie musza byæ w ekwipunku (jeœli podnosisz a iten nie ma flagi item dropped)
+// Miej 1hp na koncie
+// Miej na koncie skute (czyli ze ktoœ tobie) 50k hp
+// Wypij odtrutkê
+// Kup 100 butelek alkoholu 
+// Przeœpij 100 godzin 
+// Spl¹druj domy kerolotga i gestatha
+// Módl siê do innosa przez 3 dni
+// Wypij 30 butelek alkoholu
+// ZnajdŸ listy magnatów (rozrzucone po zamku)
+// Mistrz myœlistwa - naucz siê wszystkich trofeów
+// Strzel 100razy z ³uku lub kuszy
+// PrzejdŸ ilestam kilometrów
+
+
+
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 
 func void Use_ItNa_KsiegaOsiagniec ()

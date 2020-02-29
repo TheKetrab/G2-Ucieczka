@@ -197,9 +197,20 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 			AI_EquipBestArmor (NASZ_007_Draal);
 		};
 		// Funkcje
-		
-		 // usuwa paczki z bronia, bo je niewolnicy wykorzystali,  TODO bogu - to NIE DZIALA
-		Mob_CreateItems ("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia, (-1) * Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia));
+		//virtual oCItem * __thiscall oCMobContainer::Remove(class oCItem * int) 	0x00726080
+		var int chest; chest = MEM_SearchVobByName("BAN_NIEWOLNICY_CHEST");
+		if(chest && amount)
+		{
+			var int amount; amount = Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia);
+			if(amount)
+			{
+				const int oCMobContainer__Remove = 7495808;
+				var int pItem; pItem = Itm_GetPtr(ItNa_PaczkaZBronia);
+				CALL_IntParam(amount);
+				CALL_PtrParam(pItem);
+				CALL__thiscall(chest, oCMobContainer__Remove);
+			};
+		};
 		
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
 		B_StartOtherRoutine (NASZ_205_Mysliwy, "Kap3");
@@ -446,10 +457,10 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		PLAYER_TALENT_ALCHEMY[CHARGE_Innoseye] 	= TRUE;	//Joly: zur Sicherheit.
 		// ------ Tagebucheintrag ------
 		
-		if (!FF_Active (Function15s))
+		/*if (!FF_Active (Function15s))
 		{
 			FF_ApplyOnceExt (Function15s, 15000, -1); //raz na 15s
-		};
+		};*/
 		
 		// ------ Bild einblenden ------
 		IntroduceChapter (KapWechsel_5,KapWechsel_5_Text,"U_KAP5.tga","chapter_01.wav", 6000);

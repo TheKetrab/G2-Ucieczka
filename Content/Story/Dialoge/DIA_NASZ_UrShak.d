@@ -31,22 +31,20 @@ var int UrShakRegeneracja;
 var int UrShakBattleIterator;
 var int UrShakBattleRandom;
 var int UrShakBattleRandomOrc;
+
 //TODO: skamienia³y wygl¹d przy 30%hp
-
-
-// TODO bogu - te dwie funkcje sa do zmienienia wygladu urshaka na kamienny i z powrotem na zwykly
 func void B_SetVisuals_OrcShaman_URSHAK()
 {
-	Mdl_SetVisual			(OrcShaman_Ur_Shak,	"Orc.mds");
+	//Mdl_SetVisual			(OrcShaman_Ur_Shak,	"Orc.mds");
 	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
-	Mdl_SetVisualBody		(OrcShaman_Ur_Shak,	"Orc_BodyShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
+	//Mdl_SetVisualBody		(OrcShaman_Ur_Shak,	"Orc_BodyShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
 };
 
 func void B_SetVisuals_OrcShamanStone_URSHAK()
 {
-	Mdl_SetVisual			(OrcShaman_Ur_Shak,	"Orc.mds");
+	//Mdl_SetVisual			(OrcShaman_Ur_Shak,	"Orc.mds");
 	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
-	Mdl_SetVisualBody		(OrcShaman_Ur_Shak,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShamanStone",	DEFAULT,  	DEFAULT,	-1);
+	//Mdl_SetVisualBody		(OrcShaman_Ur_Shak,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShamanStone",	DEFAULT,  	DEFAULT,	-1);
 };
 
 
@@ -65,8 +63,21 @@ func int CalcProc(var int liczba, var int proc)
 	return (liczba*proc)/100;
 };
 
+func void UrshakWait()
+{
+	if (UrShakBattleIterator != 60)
+	{
+		
+	}
+	else
+	{
+		ff_remove(UrshakWait);
+	};
+};
+
 func void UrshakBattle()
 {
+	if(D3D11_enabled) {Print("WY£¥CZ DX11 PODCZAS TEJ WALKI!!!!");};
 	// po zabiciu urshaka
 	if(Npc_IsDead(OrcShaman_Ur_Shak)) { DoForSphere(ZabijOrkow); ff_remove(UrshakBattle); };
 	
@@ -78,18 +89,17 @@ func void UrshakBattle()
 		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
 		OrcShaman_Ur_Shak.attribute[0] = OrcShaman_Ur_Shak.attribute[1];
 		UrShakRegeneracja = true;
-		Print("regeneracja");
+
 	};
 	
 	// 40% hp
 	if(UrShakRegeneracja && OrcShaman_Ur_Shak.attribute[0] <=  160  && !UrShakBattleIterator)
 	{
 		UrShakBattleIterator += 1;
-		AI_WAITMS(OrcShaman_Ur_Shak,60000);
-		Print("iterator");
+		//to nie ma sensu AI_WAITMS(OrcShaman_Ur_Shak,60000);
+		
 	};
-	
-	Printi(UrShakBattleIterator);
+
 	if(UrShakBattleIterator)
 	{
 		if(UrShakBattleIterator != 61)

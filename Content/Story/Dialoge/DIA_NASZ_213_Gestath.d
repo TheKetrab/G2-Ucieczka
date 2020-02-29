@@ -672,6 +672,8 @@ func void GestathSay_AboutBandits() {
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_01"); //Dwóch ludzi w Opuszczonej Kopalni. Nie wiadomo kim s¹, ani tym bardziej czego chc¹. Wybierzesz siê tam i sprawdzisz, o co chodzi.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_02"); //Mam ich zabiæ?
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_GestathSay_AboutBandits_55_03"); //Jeœli twoim zdaniem stanowi¹ zagro¿enie, to tak.
+	Wld_InsertNpc	(NASZ_301_Bandzior,"OW_MINE3_LEICHE_05");
+	Wld_InsertNpc	(NASZ_302_Bandzior,"OW_MINE3_OUT");
 };
 
 //*********************************************************************

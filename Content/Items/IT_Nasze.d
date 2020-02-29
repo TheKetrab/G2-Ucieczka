@@ -119,7 +119,7 @@ FUNC void QuickLoot (var C_NPC slf, var C_NPC oth){
 				slotNr += 1;
 				MEM_StackPos.position = inLoop;
 			};
-			
+			MEM_CAllByString("B_AssessTheft");
 			//slf.aivar[AIV_QuickLoot] = false;
 			txt = ConcatStrings("Spl¹drowa³eœ: ",slf.name);
 			
@@ -465,7 +465,7 @@ INSTANCE ItNa_Wiernosc (C_Item)
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI|ITEM_RING;
 
-	value 				=	Value_SilverRing;
+	value 				=	0;
 
 	visual 				=	"ItMi_SilverRing.3DS";
 	material 			=	MAT_METAL;
@@ -513,7 +513,7 @@ INSTANCE ItNa_Pierscien_Glodu(C_Item)
 	mainflag 				=	ITEM_KAT_MAGIC;
 	flags 					=	ITEM_RING;
 
-	value 					=	Value_Ri_ProtFire02;
+	value 					=	0;
 
 	visual 					=	"ItRi_Prot_Fire_02.3ds";
 
@@ -548,7 +548,7 @@ INSTANCE ItNa_Pierscien_Zarazy(C_Item)
 	mainflag 				=	ITEM_KAT_MAGIC;
 	flags 					=	ITEM_RING;
 
-	value 					=	Value_Ri_ProtFire02;
+	value 					=	0;
 
 	visual 					=	"ItRi_Prot_Fire_02.3ds";
 
@@ -584,7 +584,7 @@ INSTANCE  ItNa_Amulet_Wojny(C_Item)
 	mainflag 				=	ITEM_KAT_MAGIC;
 	flags 					=	ITEM_AMULET;
 
-	value 					=	Value_Am_ProtFire;
+	value 					=	0;
 
 	visual 					=	"ItAm_Prot_Fire_01.3ds";
 
@@ -617,7 +617,7 @@ INSTANCE  ItNa_Pas_Smierci (C_Item)
 	mainflag 			=	ITEM_KAT_MAGIC;
 	flags 				=	ITEM_BELT|ITEM_MULTI;
 
-	value 				=	Value_ItBE_Addon_Leather_01;
+	value 				=	0;
 
 	visual 				=	"ItMi_Belt_10.3ds";
 
@@ -1134,22 +1134,22 @@ INSTANCE ItNa_Kostur_UrShaka (C_Item)
 	TEXT[5]				= NAME_Value;				COUNT[5]	= value;
 };
 
-// TODO przez quickslota nie dzia³a ta funkcja ! nie wywoluje sie on_equip
+
 FUNC VOID Equip_ItNa_UrShack()
 {
-	if Npc_IsPlayer (self)
+	/*if Npc_IsPlayer (self)
 	{
 		WillHasEquippedKostur = TRUE;
 		ff_applyonceext(ZamekFunc,1000,-1);
-	};			
+	};	*/		
 };
 FUNC VOID UnEquip_ItNa_UrShack()
 {
-	if Npc_IsPlayer (self)
+	/*if Npc_IsPlayer (self)
 	{
 		WillHasEquippedKostur = FALSE;
 		ff_remove(ZamekFunc);
-	};			
+	};	*/		
 };
 
 
@@ -7950,7 +7950,9 @@ INSTANCE ItNa_Ryzowka (C_Item)
 func void UseRyzowka()
 {
 	if (RyzowkaOneTime == FALSE) {
-		// TODO hero lp += 1, print na ekran: +1 PN
+		
+		hero.lp+=1;
+		PrintS_Ext("Punkty nauki +1", RGBA(255,255,255,0));
 		RyzowkaOneTime = TRUE;
 	};
 };
@@ -8177,7 +8179,7 @@ FUNC VOID UseOrkowaMikstura()
 { 
 	Wld_PlayEffect ("spellFX_Whirlwind_COLLIDE", hero, hero, 0, 0, 0, FALSE);
 	//AI_StartState		(hero, ZS_Whirlwind, 0, "");
-	// TODO bogu - hero.hp = hero.hp / 2
+	hero.attribute[0] = hero.attribute[0]/2;
 	//B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau für einen Lurker.
 	Wld_SendTrigger ("MOVER_ORCCITY_20");
 	Wld_SendTrigger ("MOVER_ORCCITY_21");
@@ -9224,7 +9226,7 @@ INSTANCE ItNa_SpeedRing(C_ITEM)
    INV_ROTZ   =   INVCAM_Z_RING_STANDARD;
    INV_ROTX   =   INVCAM_X_RING_STANDARD;
 };
-
+var int SpeedView;
 FUNC VOID Speed1()
 {
 	WillMaUbranySpeedRing = 1;
@@ -9245,7 +9247,8 @@ FUNC VOID Speed1()
 		};
 		
 		// TODO bogu, napis w lewym górnym rogu ekranu
-		PrintScreen	(str, -1,-1, "font_old_20_white.tga",2);
+		PrintScreen	(str,-1,-1, "font_old_20_white.tga",2);
+
 	}
 	else
 	{
@@ -10622,9 +10625,6 @@ FUNC VOID Use_AllHelmets ()
 	CreateInvItems (hero,ITNA_Maska, 1);
 	CreateInvItems (hero,ITNA_DJG_ULTRA_HELMET, 1);
 };
-
-
-
 INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
 {
 	name = "He³m z pancerza orka-elity";
@@ -10861,4 +10861,3 @@ INSTANCE ITNA_Maska (C_Item)
 	text[5] = NAME_Value;
 	count[5] = value;
 };
-

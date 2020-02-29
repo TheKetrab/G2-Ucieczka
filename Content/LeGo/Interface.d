@@ -357,8 +357,14 @@ var int gCPrintS_Act;
 var int gCPrintS_COff;
 
 func void gCPrintS_Delete(var gCPrintS this) {
-    Anim8_Delete(this.a8_Movement);
-    Print_DeleteText(this.tv_Text);
+    //if(Hlp_IsValidHandle(this.a8_Movement))
+	//{
+		Anim8_Delete(this.a8_Movement);
+	//};
+	//if(Hlp_IsValidHandle(this.tv_Text))
+	//{
+		Print_DeleteText(this.tv_Text);
+	//};
 };
 
 func void gCPrintS_Alpha(var int h, var int value) {

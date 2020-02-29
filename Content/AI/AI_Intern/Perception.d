@@ -2,8 +2,10 @@
 // NSC - Wahrnehmungsreichweiten
 // *************************************
 
+
 FUNC VOID InitPerceptions()
 {
+
 	// Die Reichweite der aktiven Wahrnehmungen
 	// PERC_ASSESSPLAYER	// Spieler wird wahrgenommen
 	// PERC_ASSESSENEMY		// der nächste NSC, zu dem ich Att_Hostile habe, wird wahrgenommen! (wenn Temp_Att != Gil_Att, wird Temp_att genommen)

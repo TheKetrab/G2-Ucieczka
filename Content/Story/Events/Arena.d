@@ -244,10 +244,17 @@ func void RethonKurganFight() {
 	&& (RethonKurganAttackOneTime == FALSE)
 	&& (RethonKurganFightIterator >= 7) // 7 sekund
 	{	
-	// TODO bogu spory problem!!! nie atakuja sie wgl... czemu?
-		//Npc_ClearAIQueue (NASZ_115_Kurgan);
-		B_Attack(NASZ_115_Kurgan, NASZ_109_Rethon, AR_NONE, 1);
-		
+		//powinno dzia³¹æ, trzeba podejœæ trochê bli¿ej
+		Npc_ClearAIQueue (NASZ_115_Kurgan);
+		Npc_ClearAIQueue (NASZ_109_Rethon);
+		if(Hlp_Random(2))
+		{
+			B_Attack(NASZ_115_Kurgan, NASZ_109_Rethon, AR_NONE, 1);
+		}
+		else
+		{
+			B_Attack(NASZ_109_Rethon, NASZ_115_Kurgan, AR_NONE, 1);
+		};
 		//Npc_ClearAIQueue (NASZ_109_Rethon);
 		//B_Attack(NASZ_109_Rethon, NASZ_115_Kurgan, AR_NONE, 1);
 
@@ -280,7 +287,7 @@ func void RethonKurganFight() {
 		secRethonKurganFightFinished = 0;
 		RethonKurganFightIterator = 0;
 		//Wld_SendUnTrigger("CAM_RETHON_KURGAN"); - wy³¹czenie kamery
-		ff_Remove(RethonKurganFight); // TODO ten remove chyba jest z³y!!!
+		ff_Remove(RethonKurganFight); //  bogu: to chyba jest dobre // ten remove chyba jest z³y!!!
 	};
 	
 };

@@ -3,13 +3,13 @@
 // ************************************************************************************************
 
 
-const int	Value_HpEssenz			=	25;			const int	HP_Essenz		=	50;
-const int	Value_HpExtrakt			=	35;			const int	HP_Extrakt		=	70;
-const int	Value_HpElixier			=	50;			const int	HP_Elixier		=	100;
+const int	Value_HpEssenz			=	25;			const int	HP_Essenz		=	25;
+const int	Value_HpExtrakt			=	35;			const int	HP_Extrakt		=	50;
+const int	Value_HpElixier			=	50;			const int	HP_Elixier		=	75;
 
-const int	Value_ManaEssenz		=	25;			const int	Mana_Essenz		=	50;
-const int	Value_ManaExtrakt		=	40;			const int	Mana_Extrakt	=	75;
-const int	Value_ManaElixier		=	60;			const int	Mana_Elixier	=	100;
+const int	Value_ManaEssenz		=	25;			const int	Mana_Essenz		=	25;
+const int	Value_ManaExtrakt		=	40;			const int	Mana_Extrakt	=	50;
+const int	Value_ManaElixier		=	60;			const int	Mana_Elixier	=	75;
 
 
 const int	Value_StrElixier		=	1000;		const int	STR_Elixier		=	3;
@@ -58,7 +58,7 @@ INSTANCE ItPo_Mana_01(C_Item)
 	FUNC VOID UseItPo_Mana_01()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_MANA, Mana_Essenz);
+		Npc_ChangeAttribute	(self,	ATR_MANA, ((self.attribute[1]*Mana_Essenz)/100));
 	};
 
 /******************************************************************************************/
@@ -92,7 +92,7 @@ INSTANCE ItPo_Mana_02(C_Item)
 	FUNC VOID UseItPo_Mana_02()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_MANA,	Mana_Extrakt);
+		Npc_ChangeAttribute	(self,	ATR_MANA,	((self.attribute[1]*Mana_Extrakt)/100)); 
 	};
 
 /******************************************************************************************/
@@ -125,7 +125,7 @@ INSTANCE ItPo_Mana_03(C_Item)
 	FUNC VOID UseItPo_Mana_03()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_MANA,	Mana_Elixier);
+		Npc_ChangeAttribute	(self,	ATR_MANA,	((self.attribute[1]*Mana_Elixier)/100)); 
 	};
 /******************************************************************************************/
 //	HEILTRÄNKE																			//
@@ -159,7 +159,7 @@ INSTANCE ItPo_Health_01(C_Item)
 	FUNC VOID UseItPo_Health_01()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Essenz);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	((self.attribute[1]*HP_Essenz)/100)); 
 	};
 
 /******************************************************************************************/	
@@ -192,7 +192,7 @@ INSTANCE ItPo_Health_02(C_Item)
 	FUNC VOID UseItPo_Health_02()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Extrakt);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	 ((self.attribute[1]*HP_Extrakt)/100));
 	};
 
 /******************************************************************************************/	
@@ -225,7 +225,7 @@ INSTANCE ItPo_Health_03(C_Item)
 	FUNC VOID UseItPo_Health_03()
 	{
 		
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Elixier);
+		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	((self.attribute[1]*HP_Elixier)/100));  
 	};
 /******************************************************************************************/
 // TRÄNKE FÜR PERMANENTE ATTRIBUT-ÄNDERUNGEN!

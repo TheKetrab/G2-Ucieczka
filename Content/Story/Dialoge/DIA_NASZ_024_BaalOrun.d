@@ -275,6 +275,7 @@ func void DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_Info ()
 	OrunDay = Wld_GetDay();
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_00"); //Znalaz³em ksi¹¿kê. 
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_01"); //Musia³em siê trochê natrudziæ, by j¹ znaleŸæ wiêc liczê, ¿e oka¿e siê po¿yteczna w naszych dzia³aniach.
+	B_GiveInvItems (other,self,ItNa_CorKalom_Book,1);
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_02"); //Doskonale! Miejmy nadziejê, ¿e dziêki temu odkryjemy sposób na to, jak wygnaæ z³o. Niestety, bêdziemy potrzebowali trochê czasu, by zg³êbiæ wiedzê jaka drzemi¹ w zwoju i ksi¹¿ce, które nam dostarczy³eœ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_03"); //Wróæ do nas nastêpnego dnia, a na pewno bêdziemy mieli dla ciebie jakieœ informacje.
 	OrunBadaKsiazke = 1;

@@ -256,7 +256,7 @@ FUNC INT PC_Crystalhacken_Addon_Hour_Condition ()
 
 FUNC VOID PC_Crystalhacken_Addon_Hour_Info()
 {
-	
+
 	if (B_CrystalMob_Bestimmung() == TRUE)
 	{
 		// WYKOPANIE
@@ -265,30 +265,35 @@ FUNC VOID PC_Crystalhacken_Addon_Hour_Info()
 			CreateInvItems (hero, ItNa_Krysztal, 5);	
 			PrintScreen ("Odpad³o 5 kryszta³ów!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (100);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItNa_Krysztal))));
 		}
 		else if(LevelMiner >= 90)
 		{
 			CreateInvItems (hero, ItNa_Krysztal, 4);	
 			PrintScreen ("Odpad³y 4 kryszta³y!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (75);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItNa_Krysztal))));
 		}
 		else if(LevelMiner >= 65)
 		{
 			CreateInvItems (hero, ItNa_Krysztal, 3);	
 			PrintScreen ("Odpad³y 3 kryszta³y!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (50);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItNa_Krysztal))));
 		}
 		else if(LevelMiner >=40)
 		{
 			CreateInvItems (hero, ItNa_Krysztal, 2);	
 			PrintScreen ("Odpad³y 2 kryszta³y!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (25);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItNa_Krysztal))));
 		}
 		else //if(LevelMiner >=20) 20 juz posiadasz na starcie gry
 		{
 			CreateInvItems (hero, ItNa_Krysztal, 1);	
 			PrintScreen ("Odpad³ 1 kryszta³!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (10);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItNa_Krysztal))));
 		};
 		
 		
@@ -363,4 +368,5 @@ FUNC VOID PC_Crystalhacken_Addon_Hour_Info()
 			PrintScreen ("Nic nie zosta³o.", -1, -1, FONT_ScreenSmall, 2);	
 			B_ENDPRODUCTIONDIALOG ();
 	};
+	
 };

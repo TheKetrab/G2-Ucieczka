@@ -101,8 +101,6 @@ func void InsertSkeletonJenkins()
 
 func void SneakHuntingBoost()
 {
-	if(!ECX) {return;};
-	
 	var c_npc slf; slf = _^(ECX);
 		
 	if (slf.guild == GIL_TROLL)
@@ -144,8 +142,6 @@ func void SneakHuntingBoost()
 };*/
 func void UratujFunc() 
 {
-	if(!ECX) {return;};
-	
 	var c_npc slf; slf = _^(ECX);
 	
 	//Uratuj ³owców podczas szturmu
@@ -355,7 +351,6 @@ func void ZamekFunc()
 {
 
 	if (WillGoToCastle == TRUE) && (Zamek_OneTime == FALSE) && (WillHasEquippedKostur == TRUE) && (Npc_GetDistToWP	(hero, "NASZ_ZAMEK_PASSAGE") <=500) {
-
 
 		Wld_SendTrigger ("ZAMEK_BRAMA_1_SKRYPT");
 		Wld_SendTrigger ("ZAMEK_BRAMA_2_SKRYPT");
@@ -1097,16 +1092,11 @@ func void Film()
 	if (FilmIdzie == 1) {
 
 		secFilm = secFilm + 1;
-
-		if (secFilm == 1) {
-		Npc_ExchangeRoutine (NASZ_110_Keroloth, "Zamek");
-		};
 		
-		
-		if (secFilm == 5) {
-		Wld_SendTrigger ("KAM_FILM");
-		secFilm = 0;
-		FilmIdzie = 0;
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU1");
+			secFilm = 0;
+			FilmIdzie = 0;
 		};
 		
 		
@@ -1117,19 +1107,48 @@ func void Film()
 	
 		secFilm = secFilm + 1;
 
-		if (secFilm == 10) {
-			Wld_SendTrigger ("KAM2_FILM");
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU2");
+			B_StartOtherRoutine(NASZ_110_Keroloth,"Zamek");
+			B_StartOtherRoutine(NASZ_115_Kurgan,"InCastle");
+			B_StartOtherRoutine(NASZ_109_Rethon,"Zamek");
+			B_StartOtherRoutine(NASZ_118_Ferros,"InCastle");
+
+		};
+		
+		if (secFilm == 18) {
+			B_StartOtherRoutine(NASZ_110_Keroloth,"Zamek");
+			B_StartOtherRoutine(NASZ_115_Kurgan,"InCastle");
+			B_StartOtherRoutine(NASZ_109_Rethon,"Zamek");
+			B_StartOtherRoutine(NASZ_118_Ferros,"InCastle");
 			secFilm = 0;
 			FilmIdzie = 0;
 		};
+
 	};
+	
+	if (FilmIdzie == 9) {
+	
+		secFilm = secFilm + 1;
+
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU2");
+		};
+		
+		if (secFilm == 18) {
+			secFilm = 0;
+			FilmIdzie = 0;
+		};
+
+	};
+
 	
 	if (FilmIdzie == 3) {
 	
 		secFilm = secFilm + 1;
 
 		if (secFilm == 3) {
-			Wld_SendTrigger ("KAM3_FILM");
+			Wld_SendTrigger ("CAMU3");
 			secFilm = 0;
 			FilmIdzie = 0;
 		};
@@ -1140,27 +1159,11 @@ func void Film()
 	
 		secFilm = secFilm + 1;
 
-		if (secFilm == 10) {
-			Wld_SendTrigger ("CAMERA_SCENA3");
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU4");
+			secFilm = 0;
+			FilmIdzie = 0;
 		};
-		
-		if (secFilm == 11) {
-			OneTimeFunctionNodKlif = TRUE;
-			Nod_Stopowanie = TRUE;
-
-			Npc_ExchangeRoutine (NASZ_303_Nod, "Przelacznik");
-			Wld_InsertNpc	(DemonLordNASZ,"FP_ROAM_OW_PATH_092_02"); 
-
-			Wld_PlayEffect("SPELLFX_massdeath",  DemonLordNASZ, DemonLordNASZ, 0, 0, 0, FALSE );
-			Wld_PlayEffect("SPELLFX_incovation_blue",  DemonLordNASZ, DemonLordNASZ, 0, 0, 0, FALSE );
-			Wld_PlayEffect("SPELLFX_lightstar_white",  DemonLordNASZ, DemonLordNASZ, 0, 0, 0, FALSE );
-
-			Wld_SendTrigger ("KAMIEN");
-
-			Wld_InsertNpc	(Skeleton,"FP_ARTEFAKT_SKE_A"); 
-			Wld_InsertNpc	(Skeleton,"FP_ARTEFAKT_SKE_B"); 
-			Wld_InsertNpc	(Skeleton,"FP_ROAM_OW_PATH_092_01"); 
-		};	
 
 	};		
 		
@@ -1168,14 +1171,10 @@ func void Film()
 	
 		secFilm = secFilm + 1;
 
-		if (secFilm == 18) {
-			Wld_SendTrigger ("CAMERA_SCENA4");
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU5");
 			secFilm = 0;
-		};
-		
-		if (secFilm == 1) {
-			Npc_ExchangeRoutine (NASZ_221_Benito, "Film2");
-			
+			FilmIdzie = 0;
 		};
 
 
@@ -1185,13 +1184,35 @@ func void Film()
 	
 		secFilm = secFilm + 1;
 
-		if (secFilm == 4) {
-			Wld_SendTrigger ("CAMERA_SCENA5");
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU6");
 			secFilm = 0;
-			ff_remove(Film);
+			FilmIdzie = 0;
 		};
-		
 
+	};
+	
+	if (FilmIdzie == 7) {
+	
+		secFilm = secFilm + 1;
+
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU7");
+			secFilm = 0;
+			FilmIdzie = 0;
+		};
+
+	};
+	
+	if (FilmIdzie == 8) {
+	
+		secFilm = secFilm + 1;
+
+		if (secFilm == 3) {
+			Wld_SendTrigger ("CAMU8");
+			secFilm = 0;
+			FilmIdzie = 0;
+		};
 
 	};
 	
@@ -1241,7 +1262,7 @@ func void WrzodQuestInserting()
 
 };
 
-
+var int ObozOrkowoInfoOneTime;
 
  
 func void _TickTock_1s()
@@ -1261,24 +1282,13 @@ func void _TickTock_1s()
 	if (!SavingDisabled) { 
 		TryToTakeHelmetFromKnight();
 	};
-	// ----- ----- -----
-	/*if !((NpcIsFighting(hero)) && (CountNpcsInFightMode(hero) > 1)) { 
-		TryToTakeHelmetFromKnight();
-	};
-	
-	
-	if (STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))) {
-		JusticeModeTickTock();
-	};*/
-	
-	
 
 
-	if ((Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) && (PhillGraPlaying==FALSE) && (Npc_IsInState(NASZ_104_Engor, ZS_Talk)==FALSE)) {
+	if (PhillGraPlaying==FALSE && ((Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) && (Npc_IsInState(NASZ_104_Engor, ZS_Talk)==FALSE))) {
 		B_PhillGraStartMusic();
 	}
 	
-	if ((!(Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) || (Npc_IsInState(NASZ_104_Engor, ZS_Talk))) && (PhillGraPlaying==TRUE)) {
+	if (PhillGraPlaying==TRUE && (!(Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) || (Npc_IsInState(NASZ_104_Engor, ZS_Talk)))) {
 		B_PhillGraStopMusic();
 	}
 	
@@ -1312,7 +1322,7 @@ func void _TickTock_1s()
 		
 		var c_item renegat6weapon; renegat6weapon = Npc_GetEquippedMeleeWeapon(hero);
 		if (Npc_HasEquippedMeleeWeapon(hero))
-		&& (Hlp_GetInstanceID(renegat6weapon) != ItMw_2H_Axe_L_01) // jesli bron ktora masz zalozona to nie kilof
+		&& (Hlp_GetInstanceID(renegat6weapon) != Hlp_GetInstanceID(ItMw_2H_Axe_L_01)) // jesli bron ktora masz zalozona to nie kilof
 		&& (Renegat06BiegnieOneTime == FALSE)
 		&& (UcieklesZKopalni == FALSE)
 		&& (Npc_GetDistToNpc(NASZ_006_Renegat, hero) < 1500)
@@ -1323,7 +1333,7 @@ func void _TickTock_1s()
 	};	
 	
 	
-	if (!npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=300) 
+	if (BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && !npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=300) 
 	{
 		B_LogEntry (TOPIC_Keroloth_Wojna, "Dowódca zamku zamkn¹³ siê... Jak wybijemy wszystkich orków, to z pewnoœci¹ stanie sam do walki!");
 		Wld_SendTrigger ("MOVER_GATE_SZEF_ZAMEK");
@@ -1332,7 +1342,7 @@ func void _TickTock_1s()
 
 	};
 	
-	if (BramaDoOrka == TRUE) && (BramaDoOrkaTickTock2OneTime == FALSE) && (npc_isdead (OrcScoutHerszt)) && (npc_isdead (OrcShamanHerszt))
+	if (BramaDoOrka == TRUE && (BramaDoOrkaTickTock2OneTime == FALSE) && (npc_isdead (OrcScoutHerszt)) && (npc_isdead (OrcShamanHerszt)))
 	{
 		Wld_SendTrigger ("MOVER_GATE_SZEF_ZAMEK");
 		BramaDoOrka = FALSE;
@@ -1341,13 +1351,13 @@ func void _TickTock_1s()
 	};
 	
 	
-	if (Npc_GetDistToWP	(hero,"NASZ_DYMOONDO_D") < 1500) && (WillKnowAboutWayToOrc == FALSE) {
+	if (WillKnowAboutWayToOrc == FALSE && Npc_GetDistToWP	(hero,"NASZ_DYMOONDO_D") < 1500)  {
 		WillKnowAboutWayToOrc = TRUE;
 		HeroSay_Dymoondo();
 
 	};
 	
-	if (Npc_GetDistToWP (hero,"LOCATION_15_IN_2") < 1000) && (UdarQuestPatrolNaDoleOneTime == FALSE) && (UdarQuestPatrolStart == TRUE) {
+	if ((UdarQuestPatrolNaDoleOneTime == FALSE) && (UdarQuestPatrolStart == TRUE) && Npc_GetDistToWP (hero,"LOCATION_15_IN_2") < 1000) {
 		UdarQuestPatrolNaDoleOneTime = TRUE;
 		B_LogEntry(TOPIC_Udar_patrol,"Jaskinia jest pusta, brakuje te¿ œladów walki tak wiêc na pewno nie zostali zaatakowani. Mo¿e kryj¹ siê na p³askowy¿u nad t¹ jaskini¹?");
 		Wld_InsertNpc(NASZ_129_Matt,"OW_HOSHPAK_03");
@@ -1371,25 +1381,25 @@ func void _TickTock_1s()
 	};
 	
 	
-	if (Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) && (WillKnowAboutTwierdza == FALSE) {
+	if (WillKnowAboutTwierdza == FALSE && Npc_GetDistToWP	(hero, "OW_PATH_186") <=3000) {
 		WillKnowAboutTwierdza = TRUE;
 		HeroSay_Twierdza();
 	};
 	
-	if (Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750) && (WillKnowAboutDemonPosag == FALSE) && (WillSayDemonOneTime == FALSE) {
+	if ((WillKnowAboutDemonPosag == FALSE) && (WillSayDemonOneTime == FALSE) && Npc_GetDistToWP	(hero, "NASZ_ZAZAMKIEM_3") <=1750)  {
 		WillKnowAboutDemonPosag = TRUE;
 		WillSayDemonOneTime = TRUE;
 		HeroSay_DemonPosag();
 	};
 	
-	if (Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) && (KAPITEL == 1) {
+	if (KAPITEL == 1 && Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) {
 		HeroSay_Wodospad();
 		AI_TurnAway (hero, hero);
 		AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
 		Npc_ClearAIQueue(hero);
 	};
 
-	if (Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800) && (KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) {
+	if ((KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) && Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800)  {
 		HeroSay_BeforeZapalisada();
 		AI_TurnAway (hero, hero);
 		AI_GotoWP (hero, "OW_ORCBARRIER_17");
@@ -1404,12 +1414,12 @@ func void _TickTock_1s()
 	};
 	*/
 	
-	if (Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) && (WillUciekaZKopalniOneTime == FALSE) {
+	if (WillUciekaZKopalniOneTime == FALSE && Hlp_StrCmp(Npc_GetNearestWP(hero),"NASZ_KOPALNIA_NOWY_08")) {
 		HeroSay_NaSkaly();
 		WillUciekaZKopalniOneTime = TRUE;
 	};
 	
-	if (npc_hasitems(hero,ItNa_RytualneOstrze)>=1) && (npc_hasitems(hero,ItNa_Matt_Kartka)>=1) && (NieznajomySiePojawiaMattOneTime == FALSE) {
+	if ((NieznajomySiePojawiaMattOneTime == FALSE) && (npc_hasitems(hero,ItNa_RytualneOstrze)>=1) && (npc_hasitems(hero,ItNa_Matt_Kartka)>=1)) {
 		NieznajomySiePojawiaMattOneTime = TRUE;
 		AI_Teleport(NASZ_021_Nieznajomy,"NASZ_MATT_DEAD_2");
 		B_StartOtherRoutine(NASZ_021_Nieznajomy,"Matt");
@@ -1482,35 +1492,46 @@ func void _TickTock_1s()
 
 	};	
 
+	if(KAPITEL >= 4 && !ObozOrkowoInfoOneTime)
+	{
+		if( Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_7") <=50)
+		{
+			B_LogEntry (TOPIC_Keroloth_zapalisada, "Cholera, orkowie rozbili swój obóz na pla¿y. Bêdê musia³ poinformowaæ o tym Kerolotha.");
+			WillBylZapalisada = true;
+			ObozOrkowoInfoOneTime = true;
+		};
+	};
 	
 	//*******************
 	//	Jaszczuroludzie
 	//*******************
+	if(MIS_Benito_jaszczuroludzie == LOG_RUNNING)
+	{
+		if (Jaszczuroludzie_1 == FALSE) && (Npc_GetDistToWP	(hero, "OW_ICEREGION_37") <=500)  {
+			Jaszczuroludzie_1 = TRUE;
+			HeroSay_DraconianClosed();
+			B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Natrafi³em na zamkniêt¹ bramê. Muszê jakoœ j¹ obejœæ.");
+		};
 
-	if (Npc_GetDistToWP	(hero, "OW_ICEREGION_37") <=500) && (Jaszczuroludzie_1 == FALSE) && (Jaszczuroludzie_1 == FALSE) {
-	Jaszczuroludzie_1 = TRUE;
-	HeroSay_DraconianClosed();
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Natrafi³em na zamkniêt¹ bramê. Muszê jakoœ j¹ obejœæ.");
-	};
-
-	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_96") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_97") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_98") <=500)) && (Jaszczuroludzie_2 == FALSE) {
-	Jaszczuroludzie_2 = TRUE;
-	HeroSay_DraconianInside();
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jestem w œrodku. Teraz pozostaj¹ poszukiwania. Benito radzi³ mi iœæ wzd³u¿ gór.");
-	};
+		if ((Jaszczuroludzie_2 == FALSE) && ((Npc_GetDistToWP	(hero, "OW_ICEREGION_96") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_97") <=800) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_98") <=500))) {
+			Jaszczuroludzie_2 = TRUE;
+			HeroSay_DraconianInside();
+			B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Jestem w œrodku. Teraz pozostaj¹ poszukiwania. Benito radzi³ mi iœæ wzd³u¿ gór.");
+		};
+			
+		if ((Jaszczuroludzie_3 == FALSE) && ((Npc_GetDistToWP	(hero, "OW_ICEREGION_53") <=1200) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_61") <=1200))) {
+			Jaszczuroludzie_3 = TRUE;
+			HeroSay_DraconianCave();
+			B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Dostrzeg³em jak¹œ jaskiniê na górze wodospadu. Muszê spróbowaæ siê tam dostaæ.");
+		};
 		
-	if ((Npc_GetDistToWP	(hero, "OW_ICEREGION_53") <=1200) || (Npc_GetDistToWP	(hero, "OW_ICEREGION_61") <=1200)) && (Jaszczuroludzie_3 == FALSE) {
-	Jaszczuroludzie_3 = TRUE;
-	HeroSay_DraconianCave();
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Dostrzeg³em jak¹œ jaskiniê na górze wodospadu. Muszê spróbowaæ siê tam dostaæ.");
-	};
-	
-	if ((Npc_GetDistToWP	(hero, "NASZ_PROOF_ORC") <=1200) && (Jaszczuroludzie_4 == FALSE)) {
-	Jaszczuroludzie_4 = TRUE;
-	HeroSay_CrossedWeapons();
-	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Znalaz³em skrzy¿owane miecze jaszczuroludzi i orków. To chyba wystarczaj¹cy dowód na to, ¿e zawarli sojusz... Pora powiedzieæ o tym Benito.");
-	WillFoundSwordsOrcAndDraconian = TRUE;
-	B_GivePlayerXP(300);
+		if ((Jaszczuroludzie_4 == FALSE) && (Npc_GetDistToWP	(hero, "NASZ_PROOF_ORC") <=1200)) {
+			Jaszczuroludzie_4 = TRUE;
+			HeroSay_CrossedWeapons();
+			B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Znalaz³em skrzy¿owane miecze jaszczuroludzi i orków. To chyba wystarczaj¹cy dowód na to, ¿e zawarli sojusz... Pora powiedzieæ o tym Benito.");
+			WillFoundSwordsOrcAndDraconian = TRUE;
+			B_GivePlayerXP(300);
+		};
 	};
 	
 	
@@ -1592,9 +1613,9 @@ func void _TickTock_1s()
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 // LevelMiner
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****	
-	if(!_LevelMiner)
+	/*if(!_LevelMiner)
 	{
-		if(LevelMiner==20) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 1); }
+		if(LevelMiner==20) 		{ Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 1); }
 		else if(LevelMiner==25) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 2); }
 		else if(LevelMiner==30) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 3); }
 		else if(LevelMiner==40) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 4); }
@@ -1608,7 +1629,7 @@ func void _TickTock_1s()
 		else if(LevelMiner==90) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 12); }
 		else if(LevelMiner==95) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 13); }
 		else if(LevelMiner==100) { Npc_SetTalentSkill 	(hero, NPC_TALENT_C, 14); _LevelMiner = true; };
-	};
+	};*/
 
 };
  
@@ -1635,7 +1656,7 @@ func void SludzyBeliara()
 	
 	if(npc_isdead (NASZ_415_SlugaBeliara) && npc_isdead (NASZ_416_SlugaBeliara) && npc_isdead (NASZ_417_SlugaBeliara))
 	{
-	ff_remove(SludzyBeliara);
+		ff_remove(SludzyBeliara);
 	};
 
 };
@@ -1673,7 +1694,7 @@ func void Regeneracja()
 			};
 		};
 	};
-*/	if(MEM_Game.pause_screen)
+*/	if(MEM_Game.pause_screen || !MEM_Game.timeStep)
 	{
 		return;
 	};
@@ -1760,9 +1781,7 @@ func void Function30s()
 		Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_LURKER_NC_LAKE_03");
 	};
 	
-	if (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour)) // 3h
-	&& (npc_knowsinfo(other,DIA_NASZ_127_Jeremiasz_AfterQuest))
-	&& (Jeremiasz_AlmostDead_OneTime == FALSE)
+	if ((Jeremiasz_AlmostDead_OneTime == FALSE) && (npc_knowsinfo(other,DIA_NASZ_127_Jeremiasz_AfterQuest)) && (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour))) // 3h
 	{
 		//Print("TimeIsUp -> Jeremiasz_AlmostDead = TRUE");
 		B_StartOtherRoutine(NASZ_127_Jeremiasz,"AlmostDead");

@@ -145,11 +145,11 @@ func void LeGo_InitAlways(var int f) {
         };
 
         if(f & LeGo_Buttons) {
-            FF_Apply(Buttons_Do);
+            //nasze, nie potrzebne to FF_Apply(Buttons_Do);
         };
 
         if(f & LeGo_Bloodsplats) {
-            FF_Apply(_Bloodsplats_Loop);
+            //nasze, nie potrzebne to FF_Apply(_Bloodsplats_Loop);
         };
 
         if(f & LeGo_Anim8) {

@@ -1825,3 +1825,4 @@ var int MonastirOpenGateOneTime;
 var int Cheat_Final;
 var int HeroCanFinish;
 var int WojownicyCieniaPrzyzwani;
+var int WillZniszczylDemonaOneTime;

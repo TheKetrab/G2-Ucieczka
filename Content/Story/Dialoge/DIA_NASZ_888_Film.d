@@ -22,6 +22,112 @@ FUNC VOID DIA_NASZ_888_Film_EXIT_Info()
 	AI_StopProcessInfos (self);
 };
 
+
+
+//*********************************************************************
+//	CamU11
+//*********************************************************************
+INSTANCE DIA_NASZ_888_Film_CamU11   (C_INFO)
+{
+	npc         = NASZ_888_Film;
+ 	nr          = 1;
+ 	condition   = DIA_NASZ_888_Film_CamU11_Condition;
+ 	information = DIA_NASZ_888_Film_CamU11_Info;
+ 	permanent   = TRUE;
+ 	description = "Kamera Ucieczka 1.1";
+};
+
+FUNC INT DIA_NASZ_888_Film_CamU11_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Info()
+{
+	Info_ClearChoices (DIA_NASZ_888_Film_CamU11);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, DIALOG_BACK, DIA_NASZ_888_Film_CamU11_BACK);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam1", DIA_NASZ_888_Film_CamU11_Cam1);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam2", DIA_NASZ_888_Film_CamU11_Cam2);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam3", DIA_NASZ_888_Film_CamU11_Cam3);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam4", DIA_NASZ_888_Film_CamU11_Cam4);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam5", DIA_NASZ_888_Film_CamU11_Cam5);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam6", DIA_NASZ_888_Film_CamU11_Cam6);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam7", DIA_NASZ_888_Film_CamU11_Cam7);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam8", DIA_NASZ_888_Film_CamU11_Cam8);
+		Info_AddChoice	  (DIA_NASZ_888_Film_CamU11, "Cam9", DIA_NASZ_888_Film_CamU11_Cam9);
+
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_888_Film_CamU11);
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam1()
+{
+	FilmIdzie = 1;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam2()
+{
+	FilmIdzie = 2;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam3()
+{
+	FilmIdzie = 3;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam4()
+{
+	FilmIdzie = 4;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam5()
+{
+	FilmIdzie = 5;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam6()
+{
+	FilmIdzie = 6;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam7()
+{
+	FilmIdzie = 7;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam8()
+{
+	FilmIdzie = 8;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_888_Film_CamU11_Cam9()
+{
+	FilmIdzie = 9;
+	ff_applyonceExt(Film,1000,-1);
+	AI_StopProcessInfos	( self );
+};
+
+
+
 //*********************************************************************
 //	Cam1
 //*********************************************************************

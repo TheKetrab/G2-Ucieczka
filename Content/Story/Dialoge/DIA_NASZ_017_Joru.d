@@ -17,20 +17,31 @@ FUNC INT DIA_NASZ_017_Joru_EXIT_Condition()
 {
 	return TRUE;
 };
+func void DeleteJoru()
+{
 
+	if(InfoManager_HasFinished())
+	{
+		//AI_Teleport (NASZ_017_Joru, "TOT"); 
+		B_StartOtherRoutine (NASZ_017_Joru,"JoruTot");
+		DeleteNpc(NASZ_017_Joru);
+		ff_remove(DeleteJoru);
+	};
+};
 FUNC VOID DIA_NASZ_017_Joru_EXIT_Info()
 {
 	if (JoruRediToTelepport == TRUE)
 	{
-		//Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
-		//Snd_Play ("MFX_TELEPORT_CAST");
+		Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
+		Snd_Play ("MFX_TELEPORT_CAST");
 		//Npc_ClearAIQueue(self);
 		
 		//Npc_ExchangeRoutine  (NASZ_017_Joru,"JoruTot");
-		//AI_Teleport (self, "TOT"); 
-		B_StartOtherRoutine (self,"JoruTot");
+		//sprawdziæ
 		AI_StopProcessInfos (self);
-		}
+		ff_applyonceext(DeleteJoru,1000,-1);
+		hero.aivar[AIV_INVINCIBLE] = 0;
+	}
 	
 	else
 	

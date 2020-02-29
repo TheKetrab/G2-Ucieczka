@@ -275,8 +275,10 @@ FUNC VOID DIA_NASZ_306_Perrot_done_Info()
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_05"); //Có¿, taki rozwój spraw z pewnoœci¹ zainteresowa³by orka... Ale co zrobisz, to ju¿ twoja sprawa.
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_06"); //Ja teraz zmykam z obozu. Muszê zaj¹æ siê moj¹ owieczk¹... W razie czego, wiesz gdzie mnie znaleŸæ.
 
-	// TODO nie dziala, nie zmienia mu sie imie
-	NASZ_315_Bandzior.name = "Donks";
+
+	SetName(NASZ_306_Perrot, "Donks");
+	ShowName(NASZ_306_Perrot);
+
 
 	B_giveinvitems (other, self, ItFo_Schafswurst, 5);
 	Npc_RemoveInvItems (self, ItFo_Schafswurst, 5) ;

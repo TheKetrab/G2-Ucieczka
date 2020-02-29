@@ -463,7 +463,7 @@ CONST INT LOG_NOTE										= 1						;
 const int TIME_INFINITE									= -1000000 / 1000		;
 const int NPC_VOICE_VARIATION_MAX						= 10					;
 
-const float		TRADE_VALUE_MULTIPLIER					= 0.15;			// DEFAULT = 0.3			Faktor auf den Wert eines Items, den ein Haendler bezahlt
+const float		TRADE_VALUE_MULTIPLIER					= 0.08;			// DEFAULT = 0.3			Faktor auf den Wert eines Items, den ein Haendler bezahlt
 const string	TRADE_CURRENCY_INSTANCE					= "ITMI_GOLD";	// DEFAULT = "ITMI_GOLD"	Name der Instanz des Waehrungs-Items
 
 

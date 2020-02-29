@@ -102,6 +102,7 @@ func void _B_HeroDamage() {
 //========================================
 func void _Bloodsplats_Loop() {
     // PC_Hero is empty on level change, use hero instead
-    Npc_PercEnable(hero, PERC_ASSESSDAMAGE, _B_HeroDamage); //Deaktiviert sich manchmal grundlos, deshalb lieber reinkloppen
+
+	Npc_PercEnable(hero, PERC_ASSESSDAMAGE, _B_HeroDamage); //Deaktiviert sich manchmal grundlos, deshalb lieber reinkloppen
     Hero_LastHP = hero.attribute[ATR_Hitpoints];
 };

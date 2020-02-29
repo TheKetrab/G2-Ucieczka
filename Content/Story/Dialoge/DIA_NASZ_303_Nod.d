@@ -316,8 +316,9 @@ FUNC VOID DIA_NASZ_303_Nod_pismo_Info()
 
 	Wld_InsertNpc	(NASZ_408_Straznik,"OW_SAWHUT_MOLERAT_SPAWN01");
 
+	/*yyy to chyba jest Ÿle
 	Wld_InsertNpc	(NASZ_301_Bandzior,"OW_MINE3_LEICHE_05");
-	Wld_InsertNpc	(NASZ_302_Bandzior,"OW_MINE3_OUT");
+	Wld_InsertNpc	(NASZ_302_Bandzior,"OW_MINE3_OUT");*/
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "Nod chce, bym przyniós³ mu wszystkie czêœci artefaktu, który usunie magiczn¹ pieczêæ. Twierdzi, ¿e czêœci powinny znajdowaæ siê w kryptach podobnych do tej, w której on sam przebywa.");
 	

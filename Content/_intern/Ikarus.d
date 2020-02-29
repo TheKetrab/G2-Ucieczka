@@ -2891,7 +2891,7 @@ func void MEM_CallByString (var string fnc) {
     /* Mikrooptimierung: Wird zweimal hintereinander die selbe Funktion
      * mit CallByString aufgerufen, nicht nochmal neu suchen. */
     var int symbID;
-    var string cacheFunc; var int cacheSymbID;
+    const string cacheFunc = ""; const int cacheSymbID = 0;
 
     if (Hlp_StrCmp (cacheFunc, fnc)) {
         symbID = cacheSymbID;
@@ -2965,6 +2965,11 @@ func int MEM_GetFuncIDByOffset(var int offset) {
     if (offset < 0 || offset >= MEM_Parser.stack_stacksize) {
         MEM_Error("MEM_GetFuncIDByOffset: Offset is not in valid bounds (0 <= offset < ParserStackSize).");
         return -1;
+    };
+
+    /* Handle overwritten functions correctly that immediately jump into another function, e.g. MEM_ReadInt */
+    if (MEM_ReadByte(offset + currParserStackAddress) == zPAR_TOK_JUMP) {
+        offset = MEM_ReadInt(offset + currParserStackAddress + 1);
     };
     
     var zCArray array; array = _^(funcStartsArray);
@@ -3749,7 +3754,11 @@ func void MEM_InitGlobalInst() {
     MEM_Waynet = _^(MEM_World.wayNet);
 
     //Camera
-    MEM_Camera = _^(MEM_Game._zCSession_camera);
+    if (MEM_Game._zCSession_camera) {
+        MEM_Camera = _^(MEM_Game._zCSession_camera);
+    } else {
+        MEM_AssignInstNull (MEM_Camera);
+    };
 
     //SkyController:
     if (MEM_World.skyControlerOutdoor) {
@@ -3799,6 +3808,7 @@ func int Hlp_Is_oCMob(var int ptr) {
     return (vtbl == oCMob_vtbl)
         |  (vtbl == oCMobInter_vtbl)
         |  (vtbl == oCMobContainer_vtbl)
+        |  (vtbl == oCMobFire_vtbl)
         |  (vtbl == oCMobDoor_vtbl);
 };
 
@@ -3810,6 +3820,7 @@ func int Hlp_Is_oCMobInter(var int ptr) {
 
     return (vtbl == oCMobInter_vtbl)
          | (vtbl == oCMobContainer_vtbl)
+         | (vtbl == oCMobFire_vtbl)
          | (vtbl == oCMobDoor_vtbl);
 };
 
@@ -3838,11 +3849,6 @@ func int Hlp_Is_oCMobDoor(var int ptr) {
 func int Hlp_Is_oCNpc (var int ptr) {
     if (!ptr) { return 0; };
     return (MEM_ReadInt (ptr) == oCNpc_vtbl);
-};
-const int oCItemContainer_vtbl = 8635564;
-func int Hlp_Is_oCItemContainer (var int ptr) {
-    if (!ptr) { return 0; };
-    return (MEM_ReadInt (ptr) == oCItemContainer_vtbl);
 };
 
 func int Hlp_Is_oCItem (var int ptr) {
@@ -5465,3 +5471,4 @@ func void PrintCS2_(var string str, var string str2, var string str3)
 {
 	Print(ConcatStrings(ConcatStrings(str,str2),str3));
 };
+

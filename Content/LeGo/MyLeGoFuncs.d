@@ -92,11 +92,6 @@ func void PrintMunitionType()
 				if(!Hlp_IsValidHandle(MunitionName))
 				{
 					MunitionName = View_Create(0, 0, 8000, 8000);
-					View_Open(MunitionName);
-				};
-	
-				if(Hlp_IsValidHandle(MunitionName))
-				{
 					var string str; str = G2U_you_use;
 					if(RangedWeapon.flags & ITEM_BOW)
 					{
@@ -145,7 +140,9 @@ func void PrintMunitionType()
 							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
 						};
 					};
+					View_Open(MunitionName);
 				};
+
 			};
 
 		};
@@ -169,9 +166,11 @@ func void RemovePrintedMunitionType()
 	{
 		if(Hlp_IsValidHandle(MunitionName))
 		{
+			View_DeleteText(MunitionName);
 			View_Close(MunitionName);
 			View_Delete(MunitionName);
 			MunitionName = 0; //NULL
+			
 		};
 	};
 };
@@ -195,7 +194,7 @@ func int GetItemSlot (var C_NPC slf, var string slotName)
 
 func void TakeFocusVob_hook()
 {
-	if(!ECX || ECX != MEM_ReadInt(_hero) || !Hlp_Is_oCItem(MEM_ReadInt(ESP+4))) { return; };
+	if(ECX != MEM_ReadInt(_hero) || !Hlp_Is_oCItem(MEM_ReadInt(ESP+4))) { return; };
 	
 	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
 	
@@ -251,7 +250,7 @@ func void TakeItemsDuringDiving()
 
 func int HasShield(var c_npc slf)
 {
-	if(!slf) {return 0;};
+	if(!Hlp_ISValidNpc(slf)) {return 0;};
 
 	/*if(GetItemSlot (slf, "ZS_SHIELD"))
 	{
@@ -632,16 +631,15 @@ func void StaryFlyDamage (var c_npc slf, var int speed, var int x, var int y, va
  
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
 	    
-	if(!victimPtr) { dmg = 0; return dmg;}; 
+	if(!victimPtr || !attackerPtr) { return dmg;}; 
 	
 	Var c_npc slf; slf = _^(attackerPtr);
 	var c_npc oth; oth = _^(victimPtr);
 	
 	if(!slf || !oth) {Print(G2U_error_attack);};
-	
+
 	var C_ITEM ReadiedWeapon; ReadiedWeapon = Npc_GetReadiedWeapon(slf);
 
-		
 		if(oth.flags == 2 || oth.flags ==6) {dmg = 0; return dmg;};
 		if (oth.aivar[AIV_TARCZA]  == TRUE)
 		{
@@ -651,7 +649,6 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				return dmg;
 			};
 	};
-	
 	if(Npc_IsPlayer(slf))
 	{
 		var int FightSkill; FightSkill = Hlp_Random(99);
@@ -892,11 +889,13 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				};	
 		};
 	};
-	
-	if(_@(slf) == _@(OrcShaman_Ur_shak))
+	var c_npc ur; ur = Hlp_GetNpc(OrcShaman_Ur_shak);
+	if(attackerPtr == _@(ur))
 	{
 		dmg*=2;
 		StaryFlyDamage (oth, 5, 10, 5, 10);
+		dmg = DiffCalcDmgAll(dmg,slf);
+		return dmg;
 	};
 	
 	if(oth.guild == GIL_STONEGOLEM)
@@ -1008,7 +1007,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		{
 			if (Npc_UseFireSpell(slf))
 			{
-				//if(_@(slf) == MEM_ReadInt(_hero))
+				//if(attackerPtr == MEM_ReadInt(_hero))
 				//{
 					dmg = ((dmg - ((slf.attribute[ATR_MANA_MAX])/2))*2) + ((slf.attribute[ATR_MANA_MAX])/2);
 				//}
@@ -1054,7 +1053,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			}
 			else if (slf.guild == GIL_ZOMBIE && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
 			{
-				if (_@(slf) == _@(Ozywieniec))
+				if (attackerPtr == _@(Ozywieniec))
 				{
 					StaryFlyDamage (oth, 5, 10, 5, 10);
 					dmg = DiffCalcDmgAll(dmg,slf);
@@ -1074,7 +1073,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					};
 			
 			}
-			//else if (_@(slf) == _@(Ozywieniec))
+			//else if (attackerPtr == _@(Ozywieniec))
 			//{
 				//if(Npc_IsInFightMode (oth, FMODE_NONE) && Npc_GetBodyState (oth) < 13)
 				//{
@@ -1147,7 +1146,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			
 		dmg = DiffCalcDmgAll(dmg,slf);
 		
-		if(_@(slf) == _@(OrcBiterWsciekly01) ||  _@(slf) ==_@(SwampratWsciekly01) ||  _@(slf ) ==_@(BloodflyWsciekly01) || _@(slf ) == _@(MinecrawlerWarriorWsciekly1)  || _@(slf ) == _@(WaranWsciekly01))
+		if(attackerPtr == _@(OrcBiterWsciekly01) ||  attackerPtr ==_@(SwampratWsciekly01) || attackerPtr ==_@(BloodflyWsciekly01) ||attackerPtr == _@(MinecrawlerWarriorWsciekly1)  ||attackerPtr == _@(WaranWsciekly01))
 		{
 			
 			
@@ -1161,7 +1160,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			};
 		};
 
-		if(_@(slf) == _@(Giant_Rat_Huge01) ||  _@(slf) ==_@(SwampDroneWsciekly01) ||  _@(slf ) ==_@(Topielec_Wsciekly_A) || _@(slf ) == _@(TrollWsciekly01)  || _@(slf ) == _@(WscieklyWilk1))
+		if(attackerPtr == _@(Giant_Rat_Huge01) ||  attackerPtr ==_@(SwampDroneWsciekly01) || attackerPtr ==_@(Topielec_Wsciekly_A) ||attackerPtr == _@(TrollWsciekly01)  ||attackerPtr == _@(WscieklyWilk1))
 		{
 			
 			
@@ -1175,7 +1174,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		};
 		
-		if(_@(slf) == _@(WildBloodfly01) ||  _@(slf) ==_@(GroznyJaszczurWsciekly01))
+		if(attackerPtr == _@(WildBloodfly01) ||  attackerPtr ==_@(GroznyJaszczurWsciekly01))
 		{			
 			
 			
@@ -1189,7 +1188,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		
 		};
 		
-		if(_@(slf) == _@(Wisp_Boss))
+		if(attackerPtr == _@(Wisp_Boss))
 		{
 			
 			if (hero.attribute[ATR_HITPOINTS] < HeroPreviousHP)
@@ -1205,17 +1204,14 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	};
 
 
-	//Print(IntToString(dmg));
 	return dmg;
 };
 
 	
 func void _DMG_OnDmg() {
 
-	//if(EBP &&MEM_ReadInt(MEM_ReadInt(ESP+644)+8))
-	//{
-		EDI = DMG_OnDmg(EBP, MEM_ReadInt(MEM_ReadInt(ESP+644)+8), EDI);
-	//};
+	EDI = DMG_OnDmg(EBP, MEM_ReadInt(MEM_ReadInt(ESP+644)+8), EDI);
+
 };
 func void InitDamage() {
 	const int dmg = 0;
@@ -1262,7 +1258,7 @@ func void Sleep(var int ms) {
     adr = GetProcAddress (LoadLibrary ("KERNEL32.DLL"), "Sleep");
     
     CALL_IntParam(ms);
-    CALL__stdcall(adr); //0x007B47E6
+    CALL__stdcall(adr); 
 };
 //-
 
@@ -1321,6 +1317,7 @@ func void BlackScreen(var int i)
 		
 		if (bll500 == 10) {
 			PlayVideo ("G2UCIECZKAAFTERKAP3.BIK");
+			return;
 		};
 	
 		if (bll500 == 15) {
@@ -1519,7 +1516,7 @@ func void OrcSawYou_Active()
 			};
 			
 			FadeScreen_Start(1);
-			DisableSave();
+
 		}
 		
 		else if (Fade_Status == 2) // pause
@@ -1538,7 +1535,6 @@ func void OrcSawYou_Active()
 			
 			if (Fade_Pause_Counter == 200) {
 				Snd_Play ("ORC_HAPPY");
-				AllowSaving();
 				ff_remove(OrcSawYou_Active);
 			};
 		};

@@ -77,7 +77,7 @@ func void TickTock_5s() {
 	// jesli jest dzien, to ma byc otwarta
 	else {
 	
-		if (GateMysliwi_OpenedFirstTime() == TRUE) // jesli brame otwarl ci Goth
+		if (GateMysliwi_OpenedFirstTime() == TRUE) // jesli brame otworzyl ci Goth
 		&& (GateMysliwi_KapitelToCloseForDay() == FALSE) { // i jeszcze nie jest kap4
 			GateMysliwi_Open();
 		};
@@ -105,7 +105,7 @@ func void TickTock_5s() {
 	
 	if (npc_hasitems (hero, ItNa_FragmentZwoju) >=1)
 	&& (PierwszyFragmentZwojuOneTime == FALSE) 
-	&& (npc_knowsinfo(other,DIA_NASZ_024_BaalOrun_Droga)) 
+	&& (npc_knowsinfo(hero,DIA_NASZ_024_BaalOrun_Droga)) 
 	{
 		B_LogEntry (TOPIC_Droga, "Znalaz³em na bagnach jakiœ kawa³ek papieru. Wygl¹da na fragment zwoju z magicznym zaklêciem. Skoro ten nale¿a³ kiedyœ do któregoœ z Baalów i znalaz³em go w takim miejscu, to wydaje mi siê, ¿e mo¿e wszyscy pochowali to w swoich chatach?");
 		PierwszyFragmentZwojuOneTime = TRUE;
@@ -113,7 +113,7 @@ func void TickTock_5s() {
 
 	if (npc_hasitems (hero, ItNa_FragmentZwoju) >=8)
 	&& (Wszystkie8FragmentowOneTime == FALSE)
-	&& (npc_knowsinfo(other,DIA_NASZ_024_BaalOrun_Droga)) {
+	&& (npc_knowsinfo(hero,DIA_NASZ_024_BaalOrun_Droga)) {
 		
 		B_LogEntry (TOPIC_Droga, "Uda³o mi siê skompletowaæ wszystkie kawa³ki.");
 		Wszystkie8FragmentowOneTime = TRUE;

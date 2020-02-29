@@ -99,8 +99,7 @@ INSTANCE DIA_NASZ_103_Johny_goth   (C_INFO)
 
 FUNC INT DIA_NASZ_103_Johny_goth_Condition()	
 {
-	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_zadanie)
-		&& (!KNOW_THIEF))
+	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_zadanie))
 	{
 		return TRUE;
 	};

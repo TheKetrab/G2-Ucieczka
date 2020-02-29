@@ -16,7 +16,6 @@ Funcs\Reputation.d
 Funcs\BanditKilled.d
 Funcs\JusticeMode.d
 Funcs\Teach.d
-
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
 STORY\Story_Globals.d
@@ -103,7 +102,6 @@ STORY\B_Content\B_BeliarsWeaponSpecialDamage.d
 
 AI\MONSTER\B_Monster\B_MM_WispDetect.d
 AI\MONSTER\B_Monster\B_MM_DeSynchronize.d
-
 STORY\Events\GetMunitionAmmount.d
 
 AI\HUMAN\C_Human\C_NpcIsGateGuard.d
@@ -237,12 +235,11 @@ AI\MAGIC\C_CanNpcCollideWithSpell.d
 AI\MAGIC\Spells\Spell_*.d
 Funcs\DiffLvl.d
 LeGo\MyLeGoFuncs.d
-
+funcs\QuickSlot\Quickslot.src
 AI\MAGIC\Spell_ProcessMana.d
 AI\MAGIC\Spell_ProcessMana_Release.d
 
 AI\MAGIC\ZS_Magic\ZS_*.d
-AI\MAGIC\ZS_Magic\ZS_Uciekanie
 
 
 STORY\B_Story\B_GiveDeathInv.d
@@ -362,7 +359,6 @@ AI\MONSTER\ZS_Monster\ZS_MM_*.d
 
 STORY\Events\*.d
 AI\Test_Skripts\*.d
-funcs\QuickSlot\Quickslot.src
 Funcs\Hooks_Global.d
 STORY\Startup.d
 

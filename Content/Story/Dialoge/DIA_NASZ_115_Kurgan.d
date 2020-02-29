@@ -950,7 +950,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurgan_ok()
 {
 	HeroSayToKurgan_Keep();
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurgan_ok_55_01"); //Dobra, czas udaæ siê na arenê.
-
+	NASZ_115_Kurgan.flags = 0;
 	B_GiveInvItems (other, self, ItMI_gold, 1000);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 1000);
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "Arena");

@@ -1,4 +1,36 @@
-
+const int oCSpawnManager__DeleteNpc = 7837328;
+func void DeleteNpc(var c_npc slf)
+{
+	var int ptr; ptr = _@(slf);
+	CALL_PtrParam(ptr);
+	CALL__thiscall(MEM_GAME.spawnman, oCSpawnManager__DeleteNpc );
+};
+func void QS_RemoveDeadWeapon()
+{
+	var int s[2];
+	var int arg; arg = 1;
+	arg;
+	MEM_CallByString("QS_GetSlotItem");
+	s[0] = MEM_PopIntResult();
+	arg = 2; 
+	arg;
+	MEM_CallByString("QS_GetSlotItem");
+	s[1] = MEM_PopIntResult();
+	if(s[0])
+	{
+		oCNpc_UnequipItem(hero,s[0]);
+		arg = 1;
+		arg;
+		MEM_CallByString("QS_RemoveSlot");
+	}
+	if(s[1])
+	{
+		oCNpc_UnequipItem(hero,s[1]);
+		arg = 2;
+		arg;
+		MEM_CallByString("QS_RemoveSlot");
+	};
+};
 
 // @Splash
 func int Npc_GetSpellItem(var c_npc slf)
@@ -10,7 +42,7 @@ func int Npc_GetSpellItem(var c_npc slf)
     CALL__thiscall(npc.mag_book, Npc__GetSpellItem);
     return CALL_RetValAsPtr();
 };
-// @bogu W sumie nie potrzebne, bo jest GFA_GetActiveSpellInst(npc)
+// bogu: W sumie nie potrzebne, bo jest GFA_GetActiveSpellInst(npc)
 /*func int Npc_GetSelectedSpell(var c_npc slf)
 {
     const int Npc__GetSelectedSpell =	4683648;
@@ -118,7 +150,7 @@ func int C_IsPlantSkill_FactorItem()
 func void PercentHealSelf(var int proc, var int attrb)
 {
 	var int atrb; atrb = MEM_ReadStatArr(self.attribute,attrb+1);
-	var int procent; procent = (atrb*proc)/100;
+	var int procent; procent = proc;//(atrb*proc)/100;
 	
 	if(!procent)
 	{

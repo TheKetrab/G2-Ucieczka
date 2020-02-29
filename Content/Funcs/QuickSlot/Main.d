@@ -1,28 +1,6 @@
 func int QS_anx(var int x) { return ViewPtr_anx(getPtr(QS_BackgroundView), x); };
 func int QS_any(var int y) { return ViewPtr_any(getPtr(QS_BackgroundView), y); };
 
-func int QS_GetSlotItem(var int nr)
-{
-	var int slotPtr; slotPtr = MEM_ReadStatArr(QS_Data, nr); 
-	if(!slotPtr) {
-		return 0;
-	};
-	var CSlot slot; slot = get (slotPtr);
-	return slot.itemPtr;
-};
-
-func int QS_GetSlotByItem(var int iPtr)
-{
-	repeat(i, 10); var int i;
-		var int itemPtr; itemPtr = QS_GetSlotItem(i);
-		if(itemPtr == iPtr)	{
-			return i;
-		};
-	end;
-	return -1;
-};
-
-
 func void QS_AI_EquipWeapon	(var int itemPtr)
 {
 	var int flags; flags = MEM_ReadInt(itemPtr+oCItem__Flags_Offset);
@@ -30,26 +8,19 @@ func void QS_AI_EquipWeapon	(var int itemPtr)
 	var c_item itm; 
 	var int ptr; 
 	 
-	 if(i.mainflag == ITEM_KAT_NF)
+	if(i.mainflag == ITEM_KAT_NF)
 	{
 		itm =  Npc_GetEquippedMeleeWeapon(hero);
-		ptr = _@(itm);
-		if( ptr != itemPtr)
-		{
-			oCNpc_UnequipItem(hero, ptr);
-			itm.flags = itm.flags & ~ ITEM_ACTIVE;
-		};
 	}
 	else
 	{
 		itm =  Npc_GetEquippedRangedWeapon(hero);
-		ptr = _@(itm);
-		if( ptr != itemPtr)
-		{
-			oCNpc_UnequipItem(hero, ptr);
-			itm.flags = itm.flags & ~ ITEM_ACTIVE;
-		};
 	};
+	ptr = _@(itm);
+	if( ptr != itemPtr)
+	{
+		oCNpc_UnequipItem(hero, ptr);
+	};	
 	
 	AI_Function_I(hero, QS_EquipWeapon, itemPtr);
 };
@@ -89,11 +60,11 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	MEM_WriteStatArr	(QS_Data, 		nr, slotHndl);
 	MEM_Info("QS_CreateSlot #8");
 	pView = 0;
-	
-	if(it.mainflag == ITEM_KAT_NF || it.mainflag == ITEM_KAT_FF)
+	/*
+	if(Npc_HasEquippedWeapon(hero) && (it.mainflag == ITEM_KAT_NF || it.mainflag == ITEM_KAT_FF))
 	{
 		QS_AI_EquipWeapon(itemPtr);
-	};
+	};*/
 };
 
 func void QS_RemoveSlot(var int nr)
@@ -113,12 +84,7 @@ func void QS_RemoveSlot(var int nr)
 	
 	var int itm; itm = QS_GetSlotItem(nr);
 	var c_item i; i = _^(itm);
-	if(i.mainflag == ITEM_KAT_NF || i.mainflag == ITEM_KAT_FF) //QS_AI_EquipWeapon	(var int itemPtr)QS_GetSlotItem
-	{
-		//QS_UnEquipWeapon(itemPtr);
-		var int itemPtr; itemPtr = QS_GetSlotItem(nr);
-		oCNpc_UnEquipItem(hero,itemPtr);
-	};
+
 	
 	MEM_Info("QS_RemoveSlot #4");
 	if(Hlp_IsValidHandle(pView)){
@@ -152,18 +118,50 @@ func int QS_GetFirstSpell(var oCNpc her)
 	return -1;
 };
 
+func int IsHelmet(var c_item itm)
+{
+	var int instID; instID = Hlp_GetInstanceID(itm);
+	if(instID == Hlp_GetInstanceID(ITNA_KolczugaRycerza))
+	||(instID == Hlp_GetInstanceID(ITNA_HelmBarda))
+	||(instID == Hlp_GetInstanceID(ITNA_RogatyHelm))
+	||(instID == Hlp_GetInstanceID(ITNA_HelmSniacego))
+	||(instID == Hlp_GetInstanceID(ITNA_TwardyHelmWojownika))
+	||(instID == Hlp_GetInstanceID(ITNA_Maska))
+	||(instID == Hlp_GetInstanceID(ITNA_DJG_ULTRA_HELMET))
+	||(instID == Hlp_GetInstanceID(ITNA_KapturMysliwego))
+	{
+		return true;
+	};
+	return false;
+	//if()
+};
 func int QS_CanPutInSlot(var int itemPtr)
 {
 	
 	var c_item it; it  = _^(itemPtr);
 	
-	if(((it.mainflag == ITEM_KAT_NF) && !(it.flags & ITEM_SHIELD))			// Walka wrêcz
+	if((!IsHelmet(it) && ((it.mainflag == ITEM_KAT_NF) ))			// Walka wrêcz
 	|| (it.flags & (ITEM_BOW | ITEM_CROSSBOW)) 		// Broñ dystansowa
-	|| ((it.flags & ITEM_SHIELD) && WalkaTarcza)		// Tarcze
 	|| (it.mainflag == ITEM_KAT_RUNE)				// Magia
-	|| (STR_Len(it.scemeName)))						// Przedmioty u¿ytkowe
+	|| (STR_Len(it.scemeName))						// Przedmioty u¿ytkowe
+	|| (it.flags & ITEM_TORCH))						// Przedmioty u¿ytkowe
 	{
 		return true;
+	};
+	
+	if(it.flags & ITEM_SHIELD)
+	{
+		if(!WalkaTarcza)
+		{
+			PrintScreen("Brak odpowiedniej umiejêtnoœci.",-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+			AI_PlayAni(hero,"T_DONTKNOW");
+			hero.aivar[AIV_TARCZA] = false;
+			return false;
+		}
+		else
+		{
+			return true;
+		};
 	};
 	
 	return false;
@@ -198,6 +196,38 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 		};	
 		QS_CreateSlot(nr, itemPtr);
 	};
+	
+	var c_item it; it = _^(itemptr);
+	var c_item pIt; var int slot; var int pItem; 
+	if(it.mainflag == ITEM_KAT_NF)
+	{
+		 pIt = Npc_GetEquippedMeleeWeapon(hero);
+	}
+	else
+	{
+		 pIt = Npc_GetEquippedRangedWeapon(hero);
+	}; 
+	if(it.mainflag == ITEM_KAT_NF&& it.flags &~ ITEM_SHIELD){slot = 1; pItem = QS_GetSlotItem(1);}
+	else{slot = 2; pItem = QS_GetSlotItem(2);};
+	
+	var int pWeap; pWeap = _@(pIt);
+	if(pWeap == itemPtr && nr!=slot)
+	{
+		QS_RemoveSlot(slot);
+		oCNpc_UnEquipItem(hero,pWeap);
+	};
+		//if(!pItem && Npc_HasEquippedMeleeWeapon(hero))
+			//{
+				/*var int ii; repeat(ii,10);
+					var int ptr; ptr = QS_GetSlotItem(ii);
+					if(pWeap == ptr)
+					{
+						var int s; s = QS_GetSlotByItem(ptr);
+						QS_RemoveSlot(s);
+						QS_CreateSlot(slot,pWeap);
+					};
+				end;*/
+			//};
 };
 
 
@@ -268,77 +298,6 @@ func void QS_UseMagic(var oCNpc her, var int itemPtr)
 	};
 };
 
-func void QS_UseWeapon(var int itemPtr, var int bIsRanged)
-{
-	var oCNpc her; 	her = Hlp_GetNpc(hero);
-	var C_ITEM it; 	it 	= _^(itemPtr);
-	var C_ITEM hlp;
-	if(!bIsRanged)
-	{
-		//CALL__thiscall(_@(hero),oCNpc__ClearEM);
-		if(Npc_HasReadiedWeapon(hero) || her.fmode == FMODE_MAGIC || her.fmode == FMODE_FIST)
-		{
-			hlp = Npc_GetReadiedWeapon(hero);
-			QS_HideWeapon(her);			
-			if(_@(hlp) != itemPtr)
-			{
-				if(!(it.flags & ITEM_ACTIVE))	{
-					QS_AI_EquipWeapon(itemPtr);
-				};			
-				QS_DrawWeapon(FMODE_MELEE);
-			};
-		}
-		else if(Npc_HasEquippedMeleeWeapon(hero))
-		{
-			hlp = Npc_GetEquippedMeleeWeapon(hero);
-			
-			if(_@(hlp) == itemPtr)	{	
-				QS_DrawWeapon(FMODE_MELEE);
-			} else if(_@(hlp) != itemPtr) {
-				QS_AI_EquipWeapon(itemPtr);
-				QS_DrawWeapon(FMODE_MELEE);
-			};		
-		}
-		else
-		{	
-			QS_AI_EquipWeapon	(itemPtr);
-			QS_DrawWeapon		(FMODE_MELEE);		
-		};
-	}	
-	else
-	{
-		if(Npc_HasReadiedWeapon(hero) || her.fmode == FMODE_MAGIC || her.fmode == FMODE_FIST)
-		{
-			hlp = Npc_GetReadiedWeapon(hero);	
-			QS_HideWeapon(her);
-			
-			if(_@(hlp) != itemPtr)
-			{
-				if(!(it.flags & ITEM_ACTIVE))	{
-					QS_AI_EquipWeapon(itemPtr);
-				};
-				
-				QS_DrawWeapon_Far(itemPtr);
-			};
-		}
-		else if(Npc_HasEquippedRangedWeapon(hero))
-		{
-			hlp = Npc_GetEquippedRangedWeapon(hero);	
-			if(_@(hlp) == itemPtr)	{		
-				QS_DrawWeapon_Far(itemPtr);
-			} else if(_@(hlp) != itemPtr) {
-				
-				QS_AI_EquipWeapon(itemPtr);	
-				QS_DrawWeapon_Far(itemPtr);
-			};		
-		}
-		else
-		{
-			QS_AI_EquipWeapon	(itemPtr);
-			QS_DrawWeapon_Far	(itemPtr);		
-		};
-	};
-};
 
 func void QS_AI_CreateItem	(var int inst)
 {
@@ -384,6 +343,112 @@ func void QS_UseTorch(var int itemPtr)
 	CALL_PtrParam	(itemPtr);
 	CALL__thiscall	(_@(hero), oCNpc__UseItem);
 };
+func void QS_EquipWeaponn(var oCItem it)
+{
+	if (it.mainflag == ITEM_KAT_NF) {
+			EquipWeapon(hero, Hlp_GetInstanceID(it));
+		}
+		else {
+			CALL_PtrParam(_@(it));
+			CALL__thiscall(_@(hero), oCNpc__EquipFarWeapon);
+		};
+};
+func void QS_UseWeapon(var oCItem it, var int i)
+{
+	var c_item pIt; var int slot; var int pItem; 
+	if(it.mainflag == ITEM_KAT_NF)
+	{
+		 pIt = Npc_GetEquippedMeleeWeapon(hero);
+	}
+	else
+	{
+		 pIt = Npc_GetEquippedRangedWeapon(hero);
+	};
+	
+	if(it.mainflag == ITEM_KAT_NF&& it.flags &~ ITEM_SHIELD){slot = 1; pItem = QS_GetSlotItem(1);}
+	else{slot = 2; pItem = QS_GetSlotItem(2);};
+	
+	if(Hlp_GetInstanceID(pIt)!=Hlp_GetInstanceID(it) && !Npc_HasReadiedWeapon(hero) && !hero.weapon)
+		{
+			var int itemPtr; itemPtr = _@(it);
+			if(it.flags & ITEM_SHIELD)
+			{
+				var c_item ite; ite = Npc_GetEquippedMeleeWeapon(hero);
+				if(ite.flags & (ITEM_SWD | ITEM_AXE))
+				{
+					AI_Function_I(hero, QS_EquipWeapon, itemPtr);
+				}
+				else
+				{
+					PrintS("Za³ó¿ broñ jednorêczn¹ przed u¿yciem tarczy!");
+				};
+				return;
+			};
+			if(pItem )
+			{
+				QS_RemoveSlot(i);
+				oCNpc_UnEquipItem(hero,pItem);
+				QS_CreateSlot(i,pItem);
+				QS_CreateSlot(slot,itemPtr);
+			}
+			else
+			{
+				//oCNpc_UnEquipItem(hero,pItem);
+				QS_RemoveSlot(i);
+				QS_CreateSlot(slot,itemPtr);
+			};
+			//QS_EquipWeapon(it);
+			QS_AI_EquipWeapon(itemPtr);
+		};
+			
+		
+};
+
+
+//int __thiscall oCMobInter::HasUseWithItem(oCNpc *) 	0x0071DB60 	
+const int oCMobInter__StartInteraction = 7476608;
+const int oCItem__MainFlag_Offset						= 340;
+func void QS_MobInteractionFix()
+{
+	var int pNpc; pNpc = MEM_ReadInt(ESP+4);
+	var int pHero; pHero = MEM_ReadInt(_hero);
+	if(pNpc!= pHero)
+	{
+		return;
+	};
+	var string useWithItem; useWithItem = MEM_ReadString(ECX+420);
+	if(STR_LEN(useWithItem))
+	{
+		var int i; i = 0; repeat(i,10);
+			var int pItem; pItem = QS_GetSlotItem(i);
+			if(pItem)
+			{
+				var string instanceName; instanceName = MEM_ReadString(pItem + 16);
+				if(Hlp_StrCmp(instanceName,useWithItem))
+				{
+					QS_RemoveSlot(i);
+					var string name; name = MEM_ReadString(pItem+292);
+					PrintS(ConcatStrings(name," jest potrzebny do interakcji."));
+					PrintS("Zosta³ usuniêty z QS.");
+					var int mainflags; mainflags = MEM_ReadInt(pItem+oCItem__MainFlag_Offset);
+					if(mainflags &  (ITEM_KAT_NF |  ITEM_KAT_FF))
+					{
+						/*var c_item itm; itm = Npc_GetEquippedMeleeWeapon(hero);
+						if (!Hlp_IsValidItem(itm))
+						{
+							itm = Npc_GetEquippedRangedWeapon(hero);
+						};
+						if(Hlp_IsValidItem(itm))
+						{
+							var int pItm; pItm = _@(itm);
+							oCNpc_UnEquipItem(hero,pItm);
+						};*/
+					};
+				};
+			};
+		end;
+	};
+};
 
 func void QS_UseItem(var int i)
 {	
@@ -397,35 +462,33 @@ func void QS_UseItem(var int i)
 	
 	if(!itemPtr)
 	{
+		
 		if(!Npc_HasEquippedMeleeWeapon(hero)){
 			QS_DrawFist();
 		};
 		return;
 	};
 	var oCItem it; it 	= _^(itemPtr);
-		
 	if(!Npc_HasItems(hero, it.instanz))
 	{
 		return;
 	};
 	var int bCanDraw; bCanDraw = QS_CanDrawWeapon();
 	if(!bCanDraw) { return; }; 
-	CALL__thiscall(_@(hero),oCNpc__ClearEM);
+	
+	
 	if(STR_Len(it.scemeName))
 	{
 		QS_UseMisc(her, it);
 	}
 	else if(it.mainflag == ITEM_KAT_NF)
 	{
-		AI_StandUpQuick		(hero);
-		QS_UseWeapon(itemPtr, false);
-		QS_LastWeaponSlot = i;
+		QS_UseWeapon(it,i);
 
 	} 
-	else if (it.flags & (ITEM_BOW | ITEM_CROSSBOW))
+	else if (it.mainflag == ITEM_KAT_FF)
 	{
-		QS_UseWeapon(itemPtr, true);
-		QS_LastWeaponSlot = i;
+		QS_UseWeapon(it,i);
 	}
 	else if(it.flags & ITEM_TORCH)
 	{
@@ -436,7 +499,6 @@ func void QS_UseItem(var int i)
 	else if(it.mainflag == ITEM_KAT_RUNE)
 	{
 		QS_UseMagic	(her, itemPtr);
-		QS_LastWeaponSlot = i;
 	};
 };
 
@@ -506,7 +568,10 @@ func void QS_RenderSlot(var int idx)
 	ViewPtr_Render		(pView);
 	
 	// Draw numbers
-	QS_AddText(pViewText, idx, it.amount, it.instanz);	
+	if(it.mainflag != ITEM_KAT_FF && it.mainflag != ITEM_KAT_NF )
+	{
+		QS_AddText(pViewText, idx, it.amount, it.instanz);	
+	};
 	
 	ViewPtr_RemoveItem	(getPtr(QS_BackgroundView), pView);
 };
@@ -533,6 +598,39 @@ func void QS_RenderHook()
 	QS_RenderSlot(4);	QS_RenderSlot(5);	QS_RenderSlot(6);	
 	QS_RenderSlot(7);	QS_RenderSlot(8);	QS_RenderSlot(9);	
 	QS_RenderSlot(0);
+	
+	var int pIt;
+	if(Npc_HasEquippedMeleeWeapon(hero) || Npc_HasEquippedRangedWeapon(hero))
+	{
+		var int slot; slot = 1;
+		pIt = QS_GetSlotItem(slot);
+		var c_item itm; itm = Npc_GetEquippedMeleeWeapon(hero);
+		if(!Hlp_IsValidItem(itm)) {slot = 2; itm = Npc_GetEquippedRangedWeapon(hero); pIt = QS_GetSlotItem(slot); };
+		if(Hlp_IsValidItem(itm)) {
+			if(!pIt )
+			{
+				var int ptr; ptr = _@(itm);
+				QS_RemoveSlot(slot);
+				QS_CreateSlot(slot,ptr);
+			};
+		};
+	}
+	else
+	{
+		if(!Npc_HasReadiedWeapon(hero))
+		{
+			pIt = QS_GetSlotItem(1);
+			if(pIt)
+			{
+				QS_RemoveSlot(1);
+			};
+			pIt = QS_GetSlotItem(2);
+			if(pIt)
+			{
+				QS_RemoveSlot(2);
+			};
+		};
+	};
 	
 	ViewPtr_RemoveItem	(MEM_ReadInt(screen), getPtr(QS_BackgroundView));	
 };
@@ -566,26 +664,6 @@ func void QS_DrawNumbersInInv()
 	};	
 };
 
-
-func void QS_KeyWeapon_Hook()
-{
-	var int pressed; pressed = MEM_ReadInt(ESP + 4);
-	if(!pressed) { return; };
-		
-	if(hero.guild < GIL_SEPERATOR_HUM)
-	{
-		MEM_WriteInt(ESP + 4, false);	
-		var oCNpc her; her = Hlp_GetNpc(hero);
-		if(!QS_CanUseItem(her)) { return; };
-		
-		if(QS_LastWeaponSlot != -1)	{
-			QS_UseItem(QS_LastWeaponSlot);
-		} else {
-			QS_DrawFist();
-		};
-	};
-};
-
 func void QS_SwitchHeroFix()
 {
 	if(!Hlp_IsValidHandle(QS_BackgroundView))	{
@@ -614,8 +692,8 @@ func void QS_SwitchHeroFix()
 		if(it.flags & (ITEM_BOW | ITEM_CROSSBOW))	{
 			slot = 2;
 		};
-		
-		QS_PutSlot(slf, slot, _@(it));
+		var int itemPtr; itemPtr = _@(it);
+		QS_PutSlot(slf, slot, itemPtr);
 	};
 };
 
@@ -626,9 +704,8 @@ func void QSEquipWeaponFirstTimeFix()
 	if(Hlp_IsValidNpc(hero) && !Npc_HasEquippedMeleeWeapon(hero)) {ff_Remove(QSEquipWeaponFirstTimeFix); return;};
 	
 	var c_item w; w = Npc_GetEquippedMeleeWeapon(hero);
-	var int ptr; ptr = _@(w);
 	
-	if(Hlp_IsValidNpc(hero) && !Sneak_Speed_Default_Startup)
+	if(!Sneak_Speed_Default_Startup)
 	{
 		Set_AniSpeed(hero, STR_UPPER("s_sneakl"),Sneak_Anim_Speed);
 		Set_AniSpeed(hero, STR_UPPER("s_sneakbl"),Sneak_Anim_Speed);
@@ -642,8 +719,9 @@ func void QSEquipWeaponFirstTimeFix()
 		Sneak_Speed_Default_Startup = 1;
 	};
 	
-	if(ptr && Hlp_IsValidHandle(QS_BackgroundView))
+	if(Hlp_IsValidItem(w) && Hlp_IsValidHandle(QS_BackgroundView))
 	{
+		var int ptr; ptr = _@(w);
 		QS_PutSlot(hero, 1, ptr);
 		ff_Remove(QSEquipWeaponFirstTimeFix);
 		QS_FirstTime = true;
@@ -686,7 +764,9 @@ func void QS_FixUseLastSpell()
 func void QS_OpenInventory()
 {
 	var oCNpc her; her = Hlp_GetNpc(hero);
+
 	QS_ClearMagBook(her.mag_book);
+
 };
 
 func void QS_UpdateResolution()

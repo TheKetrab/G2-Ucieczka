@@ -160,6 +160,40 @@ FUNC VOID DIA_NASZ_999_Test_Gold_Info()
 	Wld_PlayEffect("Spellfx_Paldestroyevil",  NASZ_999_Test, NASZ_999_Test, 0, 0, 0, FALSE );
 	
 };
+INSTANCE DIA_NASZ_999_Test_Posag   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 4;
+ 	condition   = DIA_NASZ_999_Test_Posag_Condition;
+ 	information = DIA_NASZ_999_Test_Posag_Info;
+ 	permanent   = TRUE;
+ 	description = "Pos¹g, rytua³";
+};
+
+FUNC INT DIA_NASZ_999_Test_Posag_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_Posag_Info()
+{
+
+	
+	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zosta³a zniszczona, a wraz z ni¹ zagro¿enie jakie depta³o nam po piêtach. Czym prêdzej wrócê do maga i opowiem mu o tym, co siê tutaj sta³o. Poza tym dziwiê siê, ¿e nie zaatakowa³ mnie ¿aden demon. Czy¿by mag siê myli³?");
+	Migration_LowcyToZamek(); // migracja do zamku lowcow
+
+	Wld_PlayEffect("spellFX_Fear",  hero, hero, 0, 0, 0, FALSE );
+	Snd_Play ("LASTDOOREVENT");
+	Wld_SendTrigger ("DEMONPOSAG_MOVER_SCRIPT");
+	WillZniszczylDemonaOneTime = TRUE;
+	WillIsGoingToKillDemonPosag = 2;
+				//Print("dziala");
+	if(FF_Active(KillDemonPosag))
+	{
+		ff_remove(KillDemonPosag);
+	};
+	
+};
 
 //*********************************************************************
 //	LiftRdy

@@ -71,7 +71,7 @@ func void B_SetVisuals_OrcSlave()
 
 func void B_SetVisuals_OrcPal(var c_npc slf)
 {
-	Mdl_SetVisual			(slf,	"Orc.mds");
+	//Mdl_SetVisual			(slf,	"Orc.mds");
 	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
 	Mdl_SetVisualBody		(slf,	"ORC_BODYPAL",	DEFAULT,	DEFAULT,	"Orc_HeadPal",	DEFAULT,  	DEFAULT,	-1);
 };
@@ -105,11 +105,10 @@ INSTANCE NASZ_Kurg_Kan (Mst_Default_OrcSlave)
 	id 			=		61000;	
 	level		= 		5;
 	voice 		=		18;
-	
+	attribute[4] = 100;
 	Npctype 	=		NPCTYPE_MAIN;
 	//-------- visual --------
 	B_SetVisuals_OrcSlave();
-	
 	//-------- inventory --------
 	EquipItem (self, ItMw_2H_OrcAxe_02);
 	

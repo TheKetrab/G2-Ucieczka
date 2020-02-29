@@ -1,0 +1,30 @@
+The performance benefits are big. The code in Union is dependent on our processor, and in ikarus, even if you have a computer with nasa and use a pair of cyclic loops or framfunction, performance drops drastically, because they work on many parser symbols and other functions, such as MEM_InstToPtr, which also occupy huge time in relation to the c ++ code.
+Here you can see the time of calling some functions:
+- Funktionsaufruf (hin und zurückspringen): 30ns
+- Elementare Rechnung (z.B: i = i + 1): 130ns
+- Wld_IsTime: 200ns
+- MEM_ReadInt, MEM_WriteInt: 350ns
+- Hlp_StrCmp ("Hello", "Hello"): 500ns
+- MEM_InstToPtr: 1400ns
+- (wenig) Speicher allozieren und freigeben: 9700ns
+- CALL__stdcall (in leere Funktion): 29000ns
+- MEM_GetParserSymb: 280000ns
+
+- Iteration der Benchmark-Funktion: 300ns
+
+In c ++ you can operate on a large number of loops without such a significant decrease in fps, because everything is called up much faster.
+
+As you can also see, calling methods also takes a lot of time in ikarus, which in Union is the basis.
+
+With the rest, see for themselves how much they occupy the most important functions of ikarusa / lego.
+There was a MEM_BenchmarkMS function for this, or simply count the number of functions called above.
+
+Loa from what I saw did not have the best optimization and the big responsibility for it was ikarus.
+
+In ikarus also the permmem is poorly made. It can clog a stack.
+
+In Union, data archiving looks the same as in the source code - using the zCArchiver class.
+
+In addition, union is called when loading vdf, so it allows more. For example, you rewrite main menu or you can implement multithreading.
+
+Using multiple loops, I had fps down to 30 in the entire game. Only after limiting them and limiting the framefunction and other functions that have been evoked for a long time, I had

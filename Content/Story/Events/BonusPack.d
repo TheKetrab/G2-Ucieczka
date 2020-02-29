@@ -36,7 +36,14 @@ FUNC VOID check_all_wiarolomca()
 	if ((Wiarolomca_OneTime==FALSE) && all_wiarolomca_equipped())
 	{
 		AI_PlayAni (hero, "S_SUCKENERGY_VICTIM"); 
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	10);
+		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	10);
+		hero.attribute[0]-=20;
+		hero.attribute[1]-=20;
+		hero.attribute[2]-=5;
+		hero.attribute[3]-=5;
+		hero.attribute[4]-=5;
+		hero.attribute[5]-=5;
+		PrintS_Ext("Moc artefaktów ochorni³a ciê przed œmierci¹, jednak¿e zosta³eœ os³abiony!", RGBA(255,255,255,0));	
 		B_GivePlayerXP(500);
 	};
 };

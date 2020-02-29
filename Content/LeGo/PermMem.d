@@ -409,7 +409,9 @@ func void setPtr(var int h, var int ptr) {
 // Scripte auf eigene Gefahr :0
 //========================================
 func void _deleteAll(var int key, var int val) {
+
 	delete(key);
+
 };
 
 func void _PM_Reset() {

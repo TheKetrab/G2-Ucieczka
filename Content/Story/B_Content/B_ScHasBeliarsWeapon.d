@@ -1,17 +1,18 @@
 //NASZE
 func int C_IsItemMieczRuniczny(var C_Item Weap)
 {
-	if(Hlp_IsItem(Weap,ItNa_MieczRunicznyA) == TRUE)
+	var int instID; instID = Hlp_GetInstanceID(weap); 
+	if(instID ==  Hlp_GetInstanceID(ItNa_MieczRunicznyA))
 	{
 		MieczRunicznyUbrany = 1;
 		return TRUE;
 	};
-	if(Hlp_IsItem(Weap,ItNa_MieczRunicznyB) == TRUE)
+	if(instID ==  Hlp_GetInstanceID(ItNa_MieczRunicznyB))
 	{
 		MieczRunicznyUbrany = 2;
 		return TRUE;
 	};
-	if(Hlp_IsItem(Weap,ItNa_MieczRunicznyC) == TRUE)
+	if(instID ==  Hlp_GetInstanceID(ItNa_MieczRunicznyC))
 	{
 		MieczRunicznyUbrany = 3;
 		return TRUE;

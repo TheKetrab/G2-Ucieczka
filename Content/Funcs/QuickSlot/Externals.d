@@ -148,6 +148,8 @@ func int QS_GetSpellItem	(var int magBook)
 // Clear mag_book
 func void QS_ClearMagBook(var int magBook)
 {
+	if(hero.guild>16) {return;};
+	
 	var int arrPtr; 	arrPtr 	= MEM_ReadInt(magBook + oCMagBook__items_offset + zCArray__array_offset);  
 	var int arrSize; 	arrSize = MEM_ReadInt(magBook + oCMagBook__items_offset + zCArray__numInArray_offset);
 	
@@ -183,3 +185,23 @@ func void QS_RegisterRune(var int magBook, var int itemPtr)
 };
 
 
+func int QS_GetSlotItem(var int nr)
+{
+	var int slotPtr; slotPtr = MEM_ReadStatArr(QS_Data, nr); 
+	if(!slotPtr) {
+		return 0;
+	};
+	var CSlot slot; slot = get (slotPtr);
+	return slot.itemPtr;
+};
+
+func int QS_GetSlotByItem(var int iPtr)
+{
+	repeat(i, 10); var int i;
+		var int itemPtr; itemPtr = QS_GetSlotItem(i);
+		if(itemPtr == iPtr)	{
+			return i;
+		};
+	end;
+	return -1;
+};

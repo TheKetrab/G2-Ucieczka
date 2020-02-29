@@ -13,7 +13,8 @@ func void STARTUP_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor STARTUP_<LevelName>)
 	Game_InitGerman();	
-};
+}; 
+
 
 
 func void INIT_GLOBAL()
@@ -22,32 +23,22 @@ func void INIT_GLOBAL()
 	Game_InitGerman();
 	//reinit kursora
 	Cursor_Hndl = 0;
-	LeGo_Init (LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Bloodsplats | LeGo_Saves | LeGo_PermMem | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS);
+	LeGo_Init (LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Saves  | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS);
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
-	//GFA_Init(GFA_ALL);
-	
-	if (!FF_Active (TickTock_1s)) {
-		FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
-	};
-
-	if (!FF_Active (TickTock_5s)) {
-		FF_ApplyOnceExt (TickTock_5s, 5000, -1); //raz na 5s
-	};	
-	if (!FF_Active (Function30s)) {
-		FF_ApplyOnceExt (Function30s, 30000, -1); //raz na 30s
-	};
-
-	
+	//GFA_Init(GFA_ALL); 
+	FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
+	FF_ApplyOnceExt (TickTock_5s, 5000, -1); //raz na 5s
+	FF_ApplyOnceExt (Function30s, 30000, -1); //raz na 30s
+	//ff_applyonce(loop);
 	// random combination
 	if (STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))) {
 		List_ForFS(MEM_World.voblist, SetRandomCombination);
 	};
-	
 	Hooks_Global();
 	
 	CheckDx11();
-	QuickSlot_Init();
+	//QuickSlot_Init();
 	B_AddFightSkill(hero,0,0);
 };
 
@@ -151,9 +142,10 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(NASZ_027_Ghorim,"NASZ_ZAPALISADA_OB_29");
 	Wld_InsertNpc	(NASZ_028_Kazmin,"NASZ_ZAPALISADA_OB_37");
 	Wld_InsertNpc	(NASZ_029_Lukor,"NASZ_OZYWIENIEC_15"); B_KillNpc(NASZ_029_Lukor);
+	Wld_InsertNpc	(NASZ_030_Dusty,"NASZ_ZAPALISADA_OB_44");
 	
 	
-	
+	// lowcy
 	Wld_InsertNpc	(NASZ_101_Korth,"OW_PATH_1_1_WASH");
 	Wld_InsertNpc	(NASZ_102_Lens,"LOCATION_16_IN");
 	Wld_InsertNpc	(NASZ_103_Johny,"NASZ_LOWCY_KUZNIA_01");

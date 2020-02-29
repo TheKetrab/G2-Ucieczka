@@ -6,6 +6,7 @@
 
 Func void LoadTexRandom ()
 {
+	
 	var int random; random = Hlp_Random (20); random += 1;
     
     if (random == 1)

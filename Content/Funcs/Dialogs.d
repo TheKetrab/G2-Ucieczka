@@ -22,7 +22,7 @@ func void CheckDx11()
 func void ResizeDialogBox()
 {	
 	if(!MEM_StackPos){
-	MEM_InitGlobalInst();
+		MEM_InitGlobalInst();
 	};
 	
 	if(!InfoManager_HasFinished())

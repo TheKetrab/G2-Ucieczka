@@ -106,6 +106,7 @@ FUNC VOID DIA_NASZ_221_Benito_jaszczuroludzie_Info()
 //*********************************************************************
 //	         Quest
 //*********************************************************************
+var int MIS_Benito_jaszczuroludzie;
 INSTANCE DIA_NASZ_221_Benito_quest   (C_INFO)
 {
 	npc         = NASZ_221_Benito;
@@ -143,6 +144,7 @@ FUNC VOID DIA_NASZ_221_Benito_quest_Info()
 	
 	Log_CreateTopic (TOPIC_Benito_jaszczuroludzie, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Benito_jaszczuroludzie, LOG_RUNNING);
+	MIS_Benito_jaszczuroludzie = LOG_RUNNING;
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Lodow¹ krainê zamieszkuj¹ tajemniczy jaszczuroludzie. Nikt nie zna ich zamiarów i zadanie ich poznania przypad³o mnie.");
 	//Wld_InsertItem (ItNa_List_Jaszczuroludzie,"NASZ_JASZCZUROLUDZIE_A");
 	WillGoToIceregion = TRUE;
@@ -363,6 +365,7 @@ FUNC VOID DIA_NASZ_221_Benito_KillDone_Info()
 	BENITO_QUEST_DONE = TRUE;
 	B_LogEntry (TOPIC_Benito_jaszczuroludzie, "Wszyscy wodzowie zostali zg³adzeni.");	
 	Log_SetTopicStatus (TOPIC_Benito_jaszczuroludzie, LOG_SUCCESS);
+	MIS_Benito_jaszczuroludzie = LOG_SUCCESS;
 	B_GivePlayerXP (700);
 	DodajReputacje (4, REP_MYSLIWI);
 

@@ -1,14 +1,16 @@
-	
+/*class Siemekk
+{
+	var int Rower[100];
+};
+*/
 //////////////////////////////////////	
 // 	Class - Definitions					
 //	Global Instances					
 //	Phoenix V0.76						
-//////////////////////////////////////	
-
+//////////////////////////////////////		
 CONST INT MAX_CHAPTER	 = 5;
 CONST INT MAX_MISSIONS   = 5;
 const int MAX_HITCHANCE  = 5;
-
 CLASS C_NPC 
 {
 	VAR INT     id								;		//	absolute ID des NPCs
@@ -65,8 +67,7 @@ CLASS C_NPC
 	VAR INT		bodyStateInterruptableOverride				;		
 	// if "noFocus" is set to TRUE, the focus name and health bar will not be drawn of this nsc (hi, stefan!)
 	var int     noFocus;							
-};															
-															
+};																	
 CLASS C_Mission												
 {															
 	VAR STRING	name							;		//	Name des Auftrages

@@ -467,7 +467,8 @@ const float RANGED_CHANCE_MAXDIST		= 4500; // Ab RANGED_CHANCE_MINDIST bis RANGE
 /********************************************************************
 **					Zeit-Konstanten									*
 ********************************************************************/
-CONST INT NPC_ANGRY_TIME 				= 120;	// MUSS SO HEISSEN, ist vom Programm ausgelagert - Spielsekunden, die die Temp_Att aufrechterhalten wird, bevor sie wieder auf Perm_Att gesetzt wird (gilt für alle At, nicht nur für angry)
+//CONST INT NPC_ANGRY_TIME 				= 120;	// MUSS SO HEISSEN, ist vom Programm ausgelagert - Spielsekunden, die die Temp_Att aufrechterhalten wird, bevor sie wieder auf Perm_Att gesetzt wird (gilt für alle At, nicht nur für angry)
+func INT NPC_ANGRY_TIME() {return 120;};	// MUSS SO HEISSEN, ist vom Programm ausgelagert - Spielsekunden, die die Temp_Att aufrechterhalten wird, bevor sie wieder auf Perm_Att gesetzt wird (gilt für alle At, nicht nur für angry)
 // -------------------------------------------
 const int HAI_TIME_UNCONSCIOUS			= 20;	// MUSS SO HEISSEN, ist vom Programm ausgelagert (Default = 20) - Zeit in Sekunden, die der SC und NSCs bewußtlos bleiben
 // -------------------------------------------

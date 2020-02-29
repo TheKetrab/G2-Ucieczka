@@ -23,11 +23,7 @@ func void QS_InitHooks()
 	HookEngineF(oCNpc__SetAsPlayer,
 				oCNpc__SetAsPlayer_Len,
 				QS_SwitchHeroFix);				
-	
-	HookEngineF(oCAIHuman__PC_WeaponMove,
-				oCAIHuman__PC_WeaponMove_Len,
-				QS_KeyWeapon_Hook);
-					
+		
 	HookEngineF(oCNpc__OpenInventory,
 				oCNpc__OpenInventory_Len,
 				QS_OpenInventory);	
@@ -51,7 +47,10 @@ func void QS_InitHooks()
 					
 	HookEngineF(oCItemContainer_Draw_FF_posX, 
 				oCItemContainer_Draw_FF_posX_Len, 
-				QS_RemoveInvNumber_FF);	
+				QS_RemoveInvNumber_FF);		
+	HookEngineF(oCMobInter__StartInteraction, 
+				6, 
+				QS_MobInteractionFix);	
 	
 	// Fix keyWeapon in using oCItemContainer
 	HookEngineF(6914805 /*006982F5*/, 8, Hook_ReturnFalse); 						

@@ -18,6 +18,7 @@ func int ThiefIgnore() {
 
 func int C_HeroCanThiefSomething(var c_npc reactor) {
 
+	
 	// jesli jest w jakichœ dziwnych miejscach, to mo¿e kraœæ
 	if (ThiefIgnore()) {
 		return true;
@@ -44,11 +45,15 @@ func int C_HeroCanThiefSomething(var c_npc reactor) {
 	};
 	
 	if (C_BodyStateContains(hero, BS_SNEAK))
-	&& (((Wld_IsTime(21,00,23,59) || Wld_IsTime(00,00,04,00))
-	  && (Npc_GetDistToNpc(reactor,hero) >= 300)) // jest noc i 3 metry
-	 || ((Wld_IsTime(04,00,21,00)) && (Npc_GetDistToNpc(reactor,hero) >= 700))) // jest dzien i 7 metrow
 	{
-		return true;
+		if((Wld_IsTime(05,00,22,00)) && (Npc_GetDistToNpc(reactor,hero) >= 700)) // jest dzien i 7 metrow
+		{
+			return true;
+		}
+		else if (Wld_IsTime(22,01,04,59)) && !Npc_CanSeeNpc(reactor,hero) // jest noc i nas nie widz¹
+		{
+			return true;
+		};
 	};
 	
 	return false;
@@ -147,12 +152,14 @@ func int C_IsNeedInPlot(var c_item itm)
 func void B_AssessTheft ()
 {
 	// EXIT IF...
-	
 	// ------ other ist NICHT der Spieler ------
 	if (!Npc_IsPlayer (other)) 
 	{
 		return;
 	};
+	if(self.guild >16) {return;};
+	
+	if(item.flags & ITEM_DROPPED) {return;};
 	
 	/*
 	// ------- Player im Haus und NSC in anderem Stockwerk ------
@@ -206,6 +213,7 @@ func void B_AssessTheft ()
 	{
 		return;
 	};
+
 	
 	/*
 	// ------ NSC kann Taeter NICHT sehen ------

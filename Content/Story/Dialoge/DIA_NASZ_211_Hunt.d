@@ -38,7 +38,6 @@ FUNC INT DIA_NASZ_211_Hunt_siema_Condition()
 {
 	// TODO czy ten dialog sie odpala?
 	if (Npc_IsInState(self, ZS_TALK))
-	&& (Npc_IsInState(other, ZS_TALK))
 	{
 		return TRUE;
 	};

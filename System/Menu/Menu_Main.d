@@ -169,7 +169,7 @@ func int showintro()
 
 func int showcredits()
 {
-	PlayVideo("credits.bik");
+	PlayVideo("G2UcieczkaCredits.bik");
 	return 1;
 };
 

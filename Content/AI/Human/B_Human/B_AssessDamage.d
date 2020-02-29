@@ -283,11 +283,12 @@ func void B_Hero_AssessDamage()
 
 
 
-
 func void B_AssessDamage ()
 {
-
-	B_BeliarsWeaponSpecialDamage (other, self);
+	if( C_ScHasReadiedMieczRuniczny())
+	{
+		B_BeliarsWeaponSpecialDamage (other, self);
+	};
 	
 	
 	if (Npc_IsPlayer (other)) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NASZ_119_Udar)) && (Npc_HasReadiedRangedWeapon(hero) == TRUE) && (KuszaLowcyUbrana == TRUE)
@@ -296,8 +297,6 @@ func void B_AssessDamage ()
 		WillStrzelilWUdara = TRUE;
 		return;
 	};
-	
-	
 	
 	
 	

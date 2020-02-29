@@ -22,12 +22,13 @@ const int oCNpc__EV_AttackForward  = 7664640;
 
 func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 {
-	if(!ECX/*this*/ || !(ESP+4)/*touchvob*/) { return; };
-	
-	var c_npc sleeper; sleeper =  _^(MEM_READINT(ESP+4));
-	if(Hlp_GetInstanceID(sleeper) == Hlp_GetInstanceID(MeatBug) && MEM_READINT(ESP+4) != ECX)
+	if( !(ESP+4)/*touchvob*/) { return; };
+	var int ptr; ptr  = MEM_READINT(ESP+4);
+	if(!ptr) {return;};
+	var c_npc sleeper; sleeper =  _^(ptr);
+	if(Hlp_GetInstanceID(sleeper) == Hlp_GetInstanceID(MeatBug) && ptr != ECX)
 	{
-		B_KillNpc(sleeper);
+		sleeper.attribute[0]  = 0;
 		if(ECX == MEM_READINT(_hero)/*pointer to player*/)
 		{
 			B_GivePlayerXP(sleeper.level*10);
@@ -66,20 +67,43 @@ func void OpenSteal()
 	CALL__thiscall(MEM_READINT(_hero),oCNpc__OpenSteal);
 };
 
+func int QS_IsClickedKey(var int key)
+{
+	var int i; i = 0; var int keyy; keyy =  KEY_1; 
+	repeat(i,10);
+		if(key!=keyy)
+		{
+			if(MEM_KeyPressed(keyy))
+			{
+				keyy+=1;
+				return true;
+			};
+		};
+		keyy+=1;
+	end;
+	return 0;
+};
+func int EQ_IsOpen()
+{
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	CALL__thiscall(_@(her.inventory2_vtbl), oCItemContainer__IsOpen);
+	return CALL_RetValAsInt();
+	
+};
 func void HandleEvents_hook(/*int key*/)
 {
 	var int key; key = MEM_ReadInt(ESP+4);
-	if(key == KEY_1) 	{ QS_UseItem(1);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_2) 	{ QS_UseItem(2);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_3) 	{ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_4) 	{ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_5) 	{ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_6) 	{ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_7) 	{ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_8) 	{ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_9) 	{ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1); 	};
-	if(key == KEY_0) 	{ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};
-	
+	if(key == KEY_1) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_2) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_3) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_4) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_5) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_6) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_7) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1);	};};
+	if(key == KEY_8) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(key == KEY_9) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1);	};};
+	if(key == KEY_0) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};};
+
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
 		var int fcsss; fcsss = MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/);
@@ -100,31 +124,38 @@ func void HandleEvents_hook(/*int key*/)
 //var int v;
 func void Inv_Draw_Hook()
 {
-    var c_item itm; itm = _^ (MEM_ReadInt (ESP+324+4));
-	var int iptr; iptr = MEM_ReadInt (ESP+324+4);
+   var int iptr; iptr = MEM_ReadInt (ESP+324+4);
+   var c_item itm; itm = _^ (iptr);
     var int InstID; InstID = Hlp_GetInstanceID(itm);
-    if(itm.mainflag ==    ITEM_KAT_FOOD /*|| itm.mainflag     ==    ITEM_KAT_POTIONS*/)
+    if(/*itm.mainflag ==    ITEM_KAT_FOOD*/ itm.mainflag     ==    ITEM_KAT_POTIONS)
     {
-        var int txtPtr;  txtPtr = _@s(itm.text);
-        if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_HP))
-        {
-            itm.text[1] = "Premia % punktów trafieñ:";
-        }
-        else if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_Mana))
-        {
-            itm.text[1] = "Premia % punktów many:";
-        };
-        if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,2),  NAME_Bonus_Mana))
-        {
-            if(InstID == Hlp_GetInstanceID(ItFo_Beer) || InstID == Hlp_GetInstanceID(ItFo_Booze) || InstID == Hlp_GetInstanceID(ItFo_Wine) || InstID == Hlp_GetInstanceID(ItFo_Milk) || InstID == Hlp_GetInstanceID(ItNa_FriedMushroom_01) || InstID == Hlp_GetInstanceID(ItPl_BluePlant))
-            {
-                itm.text[2] = "Premia % punktów many:";
-            };
-        };
-		MEM_Free(txtPtr);
+        if((InstID == Hlp_GetInstanceID(ItPo_Health_01)) || (InstID ==  Hlp_GetInstanceID(ItPo_Health_02)) || (InstID == Hlp_GetInstanceID(ItPo_Health_03)))
+		{
+			//var int txtPtr;  txtPtr = _@s(itm.text);
+			//if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_HP))
+			//{
+				itm.text[1] = "Premia % punktów trafieñ:";
+			//}
+			//else if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_Mana))
+			//{
+				//itm.text[1] = "Premia % punktów many:";
+			//};
+			/*if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,2),  NAME_Bonus_Mana))
+			{
+				if(InstID == Hlp_GetInstanceID(ItFo_Beer) || InstID == Hlp_GetInstanceID(ItFo_Booze) || InstID == Hlp_GetInstanceID(ItFo_Wine) || InstID == Hlp_GetInstanceID(ItFo_Milk) || InstID == Hlp_GetInstanceID(ItNa_FriedMushroom_01) || InstID == Hlp_GetInstanceID(ItPl_BluePlant))
+				{
+					itm.text[2] = "Premia % punktów many:";
+				};
+			};*/
+			//MEM_Free(txtPtr);
+		}
+		else if ((InstID == Hlp_GetInstanceID(ItPo_Mana_01)) || (InstID ==  Hlp_GetInstanceID(ItPo_Mana_02)) || (InstID == Hlp_GetInstanceID(ItPo_Mana_03)))
+		{
+			itm.text[1] = "Premia % punktów many:";
+		};
     };
 };
-
+//raczej siê nie przyda
 func void RemoveChestKeyOnExit()
 {
 	if(MEM_ReadInt(ESP+4) != MEM_ReadInt(_hero) || !Hlp_Is_oCMobContainer(ECX) || !Hlp_Is_oCMobDoor(ECX)){
@@ -149,7 +180,6 @@ func void RemoveChestKeyOnExit()
 			Npc_RemoveInvItems(hero,key,Npc_HasItems(hero,key));
 			PrintS_Ext(ConcatStrings("Usuniêto: ", m.keyInstance), RGBA(255,255,255,0));
 			//m.keyInstance = "";
-			Release(key);
 		};
 	};
 };
@@ -171,23 +201,46 @@ func void SaveEnb()
 	};
 };
 
+func int Game_GetHeroStatus()
+{
+	var int ogame; ogame = MEM_ReadInt(MEMINT_oGame_Pointer_Address);
+	CALL__thiscall(ogame,oCGame__GetHeroStatus);
+	return CALL_RetValAsInt();
+};
+
+const int oCZoneMusic__GetHerostatus = 6562848;
+func int HeroStatusFix()
+{
+	
+	return MEM_ReadInt(oCZoneMusic__s_herostatus); 
+
+	
+	/*var int ret; ret = Game_GetHeroStatus(); Printi(ret);
+	if(ret == 1) {EAX = 2; return 2;};
+	EAX = ret; 
+	return ret;*/
+};
+
 func void DynamicSaveSystem()
 {
-
+	MEM_SkyController.m_enuWeather = 1;
 	if(STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice")))
 	{
-		if (MEM_ReadInt(oCZoneMusic__s_herostatus) >= 2) //&& (Npc_GetDistToNpc(slf,hero) < 500))/* || Npc_IsInState	(hero, ZS_Unconscious)*/
+		if (HeroStatusFix()) //&& (Npc_GetDistToNpc(slf,hero) < 500))/* || Npc_IsInState	(hero, ZS_Unconscious)*/
 		{
 			SaveDis();
 		}
 		else
 		{
-			SaveEnb();
+			if(!OrcSawYou_Activated)
+			{
+				SaveEnb();
+			};
 		};
 	}
 	else
 	{
-		if(SavingDisabled)
+		if(SavingDisabled && !OrcSawYou_Activated)
 		{
 			PrintS_Ext("W³¹czono mo¿liwoœæ zapisywania!", rgba(46, 204, 113, 1));
 			AllowSaving();
@@ -197,15 +250,6 @@ func void DynamicSaveSystem()
 
 };
 
-func void HeroStatusFix()
-{
-	if (MEM_ReadInt(oCZoneMusic__s_herostatus) == 1)
-	{
-		MEM_WriteInt(oCZoneMusic__s_herostatus,2);
-	};
-	
-	MEM_SkyController.m_enuWeather = 1;
-};
 
 func void DisableFocusOfDeadNPCsWithEmptyInventory() {
     const int once = 0;
@@ -267,7 +311,8 @@ func void VobSetVisual(var int vobPtr, var string str)
 
 func void SHIELD_EQUIP()
 {
-	if(!ECX || !MEM_ReadInt(ESP+4)) {return;};
+	var int ptr; ptr = MEM_ReadInt(ESP+4);
+	if(!MEM_ReadInt(ptr)) {return;};
 	
 	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
 	if(itm.flags & ITEM_SHIELD)
@@ -283,7 +328,6 @@ func void SHIELD_EQUIP()
 				return;
 			};
 		};
-		var int ptr; ptr = MEM_ReadInt(ESP+4);
 		VobSetVisual(ptr,itm.visual);	
 	};
 };
@@ -352,19 +396,76 @@ func int GetItemSlot_(var int slfPtr, var string slotName)
     return CALL_RetValAsPtr();
 };
 
+/*
+func int oCNpc_GetModel(var c_npc npc)
+{
+	const int oCNpc__GetModel = 7571232;
+	CALL__thiscall(MEM_InstToPtr(npc), oCNpc__GetModel);
+    return CALL_RetValAsPtr();
+};*/
+const int zCModel__SearchNode = 5758960;   //0x0057DFF0
+const int zCModel__SetNodeVisual = 5739168;
+func int zCVisual_LoadVisual(var string vis) 
+{
+	const int zCVisual__LoadVisual = 6318800; //0x00606AD0
+	CALL_zStringPtrParam(STR_Upper(vis));
+	CALL__cdecl(zCVisual__LoadVisual);
+	
+	return CALL_RetValAsPtr();
+};
+
+func int zCModel_SearchNode(var int model, var string node)
+{
+	CALL_zStringPtrParam(Str_Upper(node));
+	CALL__thiscall(model, zCModel__SearchNode);
+    return CALL_RetValAsInt();
+};
+
+func void SetNodeVisual(var c_npc pnpc, var string node, var string visual)   
+{
+	var int model; model = oCNpc_GetModel(pnpc);
+	var int vis; vis = zCVisual_LoadVisual(visual);
+	var int nde; nde = zCModel_SearchNode(model,node);
+	CALL_IntParam(0);	
+	CALL_PtrParam(vis);	
+	CALL_PtrParam(nde); 
+	CALL__thiscall(model, zCModel__SetNodeVisual);
+};
+const int oCNpc__EquipArmor = 7578768;
+func void hNpc_EquipArmor()
+{
+	var int ptr; ptr = MEM_ReadInt(ESP+4);
+	var oCItem itm; itm = _^(ptr);
+	if(itm.wear == WEAR_HEAD)
+	{
+		var int pHero; pHero = MEM_ReadInt(hero);
+		if(ECX != pHero)
+		{
+			itm.mainflag = ITEM_KAT_NF;
+		}
+		else
+		{
+			itm.mainflag = ITEM_KAT_ARMOR;
+		};
+
+	};
+	
+};
+
 const int oCNpc__UpdateSlots = 7645648;
 func void UpdateStaffSlot()
 {
-	if(!ECX) {return;};
-	
 	//var c_npc slf; slf = _^(ECX);
 	var int slotvob; slotvob =  GetItemSlot_(ECX,"ZS_STAFF");
+	//var int helmet; helmet = GetItemSlot_(ECX,"ZS_HELMET");
 	
+
 	if(!slotvob) {return;};
 	
 	oCNpc_SetToSlotPosition_(ECX, slotvob, "ZS_CROSSBOW");
 };
-
+var int HelmetEquipped;
+const int RuneIterator = 3;
 const int oCNpcInventory__HandleEvent = 7397440;
 func void oCNpcInventory_HandleEvent_hook()
 {
@@ -381,23 +482,22 @@ func void oCNpcInventory_HandleEvent_hook()
 	if(!ptr) {
 		return;
 	};
+	var c_item itm; 
 	if(key == keyAction_1 || key == keyAction_2)
 	{
-		if(!ptr) {return;};
-		
-		var c_item itm; itm = _^(ptr);	
+		itm = _^(ptr);
 		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(Itna_kostur_urshaka))
 		{	
 			var c_npc slf; slf = _^(nptr);
 			MEM_WriteInt(ESP+4,-1);
-			EAX = -1;
 			if(!itm.hp)
 			{
 				if (!oCNpc_GetInvSlot_(nptr, "ZS_STAFF"))
 				{
 					oCNpc_CreateInvSlot_(nptr, "ZS_STAFF");
 				};
-				
+				WillHasEquippedKostur = TRUE;
+				ff_applyonceext(ZamekFunc,1000,-1);
 				Wld_InsertItem(Hlp_GetInstanceID(itm),MEM_GetAnyWP());
 				var zCTree newTreeNode; newTreeNode = _^(MEM_World.globalVobTree_firstChild);
 				var int itmPtr; itmPtr = newTreeNode.data;
@@ -411,6 +511,8 @@ func void oCNpcInventory_HandleEvent_hook()
 				oCNpc_RemoveFromSlot(slf, "ZS_STAFF", itmPtr, true);
 				itm.flags = itm.flags & ~ ITEM_ACTIVE;
 				itm.hp = 0;
+				WillHasEquippedKostur = FALSE;
+				ff_remove(ZamekFunc);
 			};
 			
 		};	
@@ -428,81 +530,219 @@ func void oCNpcInventory_HandleEvent_hook()
 	if(key == MOUSE_BUTTONLEFT
 	|| key == keyAction_1
 	|| key == keyAction_2
-	|| key ==  KEY_LCONTROL)	
+	|| key ==  KEY_LCONTROL 
+	|| key == KEY_1 
+	||  key == KEY_2)	
 	{
-		var c_item it; it = _^(ptr);
-		var c_item i; 
-	
 		
-		if(it.mainflag == ITEM_KAT_NF
-		|| it.flags & ITEM_SHIELD)
+		itm = _^(ptr);
+		if(itm.flags & ITEM_SHIELD)
 		{
-			if(it.flags & ITEM_ACTIVE)
-			{
-				i = Npc_GetEquippedMeleeWeapon(hero);
-				//QS_RemoveSlot(QS_GetSlotByItem(_@(i)));
-				oCNpc_UnequipItem(hero,_@(i));
-				//i.flags = it.flags &~ ITEM_ACTIVE;
-				return;
-			};
-			
-			i = Npc_GetEquippedMeleeWeapon(hero);
-			if(QS_GetSlotItem(1))	{
-				QS_RemoveSlot(1);
-				oCNpc_UnequipItem(hero,_@(i));
-			};
-			//oCNpc_UnequipItem(hero,_@(i));
-			if(!(it.flags & ITEM_ACTIVE))
-			{
-				oCNpc_UnequipItem(hero,_@(i));
-				QS_PutSlot(hero, 1, ptr);
-				//it.flags = it.flags | ITEM_ACTIVE;
-			};
-			MEM_WriteInt(ESP+4,-1);
-		}
-		else if(it.flags & (ITEM_BOW | ITEM_CROSSBOW))
-		{
-			if(it.flags & ITEM_ACTIVE)
-			{
-				i = Npc_GetEquippedMeleeWeapon(hero);
-				//QS_RemoveSlot(QS_GetSlotByItem(_@(i)));
-				oCNpc_UnequipItem(hero,_@(i));
-				//i.flags = it.flags &~ ITEM_ACTIVE;
-				return;
-			};
-			
-			i = Npc_GetEquippedRangedWeapon(hero);
-			if(QS_GetSlotItem(2))	{
-				QS_RemoveSlot(2);
-				 oCNpc_UnequipItem(hero,_@(i));
-			};
-		 	if(!(it.flags & ITEM_ACTIVE))
-			{
-				 oCNpc_UnequipItem(hero,_@(i));
-				QS_PutSlot(hero, 2, ptr);
-				//i.flags = it.flags | ITEM_ACTIVE;
-			};
-			MEM_WriteInt(ESP+4,-1);
-			
+			MEM_WriteInt(ESP+4,-1);  return;
 		};
-		return;
-	};
+		if(itm.mainflag == ITEM_KAT_NF && itm.flags)
+		{
+		   QS_PutSlot(hero, 1, ptr);  MEM_WriteInt(ESP+4,-1);
+		   ptr;
+		   MEM_CallByString("QS_AI_EquipWeapon");
+	
+		}
+		else if(itm.mainflag == ITEM_KAT_FF)
+		{
+			QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
+			ptr;
+			MEM_CallByString("QS_AI_EquipWeapon");
+		};
+		
+			
+			//MEM_WriteInt(ESP+4,-1);
+	
+
+		};
+		/*if(itm.mainflag == ITEM_KAT_RUNE)
+		{
+			if(key!= KEY_1 && key != KEY_2)
+			{
+				var int i; ptr; MEM_CALLByString("QS_GetSlotByItem");
+				i = MEM_PopIntResult();
+				
+				if(itm.flags &~ ITEM_ACTIVE)
+				{
+					QS_PutSlot(hero, RuneIterator, ptr); MEM_WriteInt(ESP+4,-1);
+					RuneIterator+=1;
+					itm.flags & ITEM_ACTIVE;
+				}
+				else
+				{
+					if(i)
+					{
+						i;
+						MEM_CALLByString("QS_RemoveSlot");
+						RuneIterator-=1;
+						itm.flags = itm.flags   &~ ITEM_ACTIVE;
+					};
+				};
+			};
+		};*/
+		
+
 
 	
 	
-	if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); }; 
-	if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); }; 
-	if(key == KEY_3) { QS_PutSlot(hero, 3, ptr); }; 
-	if(key == KEY_4) { QS_PutSlot(hero, 4, ptr); }; 
-	if(key == KEY_5) { QS_PutSlot(hero, 5, ptr); }; 
-	if(key == KEY_6) { QS_PutSlot(hero, 6, ptr); }; 
-	if(key == KEY_7) { QS_PutSlot(hero, 7, ptr); }; 
-	if(key == KEY_8) { QS_PutSlot(hero, 8, ptr); }; 
-	if(key == KEY_9) { QS_PutSlot(hero, 9, ptr); }; 
-	if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); }; 
+	//if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	//if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_3) { QS_PutSlot(hero, 3, ptr); MEM_WriteInt(ESP+4,-1);  }; 
+	if(key == KEY_4) { QS_PutSlot(hero, 4, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_5) { QS_PutSlot(hero, 5, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_6) { QS_PutSlot(hero, 6, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_7) { QS_PutSlot(hero, 7, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_8) { QS_PutSlot(hero, 8, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_9) { QS_PutSlot(hero, 9, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); MEM_WriteInt(ESP+4,-1); }; 
 	
 };
+//void __thiscall oCNpc::EquipItem(class oCItem *) 	0x007323C0 	0 	7
 
+func c_item AssignItem(var c_item itm)
+{
+    MEM_PushInstParam(itm);
+};
+
+func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
+{	
+	var int bIsPlayer; bIsPlayer = Npc_IsPlayer(slf);
+	var int slfMagCircle; slfMagCircle = Npc_GetTalentSkill(slf, NPC_TALENT_MAGE);
+	
+
+	if (itm.mag_circle > 0 && slfMagCircle < itm.mag_circle)
+	{	
+		G_CanNotCast(bIsPlayer, itm.mag_circle, slfMagCircle);
+		EAX = 0;
+		
+		return;
+	};
+	
+	//var int i; repeat(i, 3);	
+
+		var int itmAtr; itmAtr = MEM_ReadStatArr(itm.cond_atr, 0);
+		var int itmValue; itmValue = MEM_ReadStatArr(itm.cond_value, 0);
+		var int slfAtrValue;
+		
+		if (itmAtr > 0 && itmValue > 0)
+		{
+			slfAtrValue = MEM_ReadStatArr(slf.attribute, itmAtr);
+			
+			if (slfAtrValue < itmValue)
+			{		
+				G_CanNotUse(bIsPlayer, itmAtr, itmValue);
+				EAX = 0;
+				
+				return;
+			};
+		};		
+		itmAtr = MEM_ReadStatArr(itm.cond_atr, 1);
+		itmValue = MEM_ReadStatArr(itm.cond_value,1);
+		
+		if (itmAtr > 0 && itmValue > 0)
+		{
+			slfAtrValue = MEM_ReadStatArr(slf.attribute, itmAtr);
+			
+			if (slfAtrValue < itmValue)
+			{		
+				G_CanNotUse(bIsPlayer, itmAtr, itmValue);
+				EAX = 0;
+				
+				return;
+			};
+		};
+		itmAtr = MEM_ReadStatArr(itm.cond_atr, 2);
+		itmValue = MEM_ReadStatArr(itm.cond_value,2);
+		
+		if (itmAtr > 0 && itmValue > 0)
+		{
+			slfAtrValue = MEM_ReadStatArr(slf.attribute, itmAtr);
+			
+			if (slfAtrValue < itmValue)
+			{		
+				G_CanNotUse(bIsPlayer, itmAtr, itmValue);
+				EAX = 0;
+				
+				return;
+			};
+		};
+	
+	if(bIsPlayer)
+	{
+		if(itm.wear == WEAR_HEAD)
+		{
+			
+			var int pHelm; pHelm = GetItemSlot(hero,"ZS_HELMET");
+			//var int pWeap; pWeap = QS_GetSlotItem(1);
+			if(!HelmetEquipped && pHelm)
+			{
+				HelmetEquipped = pHelm;
+			};
+			
+			if(itm.flags & ITEM_ACTIVE)
+			{
+
+				if(HelmetEquipped)
+				{
+					HelmetEquipped = false;
+					EAX = 1;
+				}
+				else
+				{
+					HelmetEquipped = ptr;
+					EAX = 1;
+				};
+			}
+			else
+			{
+				if(HelmetEquipped)
+				{
+					EAX = 0;
+					return;
+				}
+				else
+				{
+					HelmetEquipped = ptr;
+					EAX = 1;
+				};
+			};
+			
+		};
+	};
+	
+	EAX = 1;
+};
+
+func void Hook_CheckItemConditions()
+{
+	var C_Npc slf; slf = _^(ECX);
+	var int ptr; ptr = MEM_ReadInt(ESP + 4);
+	if(!ptr){return;};
+	var C_Item itm; itm = _^(ptr);
+	self = Hlp_GetNpc(slf);
+	item = _^(ptr);
+	G_CheckItemConditions(slf, item,ptr);
+};
+//const int oCNpc__CanUse = 7543216;
+func void CheckItemConditions_Init()
+{
+	const int initalized = false;
+	
+	if (!initalized)
+	{
+		ReplaceEngineFuncF(oCNpc__CanUse, 1, Hook_CheckItemConditions);
+		
+		initalized = true;
+	};
+};
+
+
+const int INV_MAX_ITEMS_addr = 8635508;
+const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
 func void Hooks_Global()
 {
 	InitDamage();
@@ -511,9 +751,13 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
-		DisableFocusOfDeadNPCsWithEmptyInventory();
 		
+		HookEngineF(oCNpc__CopyTransformSpellInvariantValuesTo,5,Transform);
+		
+		
+		DisableFocusOfDeadNPCsWithEmptyInventory();
 		HookEngineF(oCNpc__UpdateSlots,6,UpdateStaffSlot);
+		CheckItemConditions_Init();
 		HookEngineF(oCNpcInventory__HandleEvent,6,oCNpcInventory_HandleEvent_hook);
 		HookEngineF(oCNpc__EquipItem,        7, SHIELD_EQUIP);
 		HookEngineF(oCNpc__ProcessNpc,6,SneakHuntingBoost); 
@@ -523,27 +767,9 @@ func void Hooks_Global()
 		HookEngineF(oCNpc__CloseDeadNpc,5,CloseDeadNpc);
 		HookEngineF(oCNpc__OpenDeadNpc,6,OpenDeadNpc);
 		HookEngineF(oCGame__GetHeroStatus,5,DynamicSaveSystem);
-		//HookEngineF(6908240,6,DynamicSaveSystem);
-		//HookEngineF(6927088,6,sneak);
+
 		HookEngineF(oCNpc__fighting,7,HeroStatusFix);
-		HookEngineF(oCNpc__FindNextFightAction,7,HeroStatusFix);
-		HookEngineF(oCNpc__CheckRunningFightAnis,5,HeroStatusFix);
-	    HookEngineF (oCNpc__EV_AttackLeft, 6, HeroStatusFix); //left
-		HookEngineF (oCNpc__EV_AttackRight, 7, HeroStatusFix); //right
-		HookEngineF (oCNpc__EV_AttackRun, 7, HeroStatusFix); //run
-		HookEngineF (oCNpc__EV_AttackForward, 6, HeroStatusFix); //combo
-		//HookEngineF(7385232,6,sneak); //steal handleevents
-		//HookEngineF(7384544,7,sneak);
 		
-		//HookEngineF(7742512,7,sneak);
-		//nie, mo¿e do aoe
-		//HookEngineF(7013824,7,sneak);
-		
-		//HookEngineF(7011824,5,sneak);
-		//HookEngineF(6562848,6,test);
-		//HookEngineF(6908240,6,test);
-		//const int oCMobContainer__EndInteraction = 7477584;
-		//HookEngineF(oCMobContainer__EndInteraction,6,RemoveChestKeyOnExit);
 		
 		HookEngineF(oCNpc__EV_DrawWeapon,6,PrintMunitionType); 
 		HookEngineF(oCNpc__EV_DrawWeapon1,5,PrintMunitionType);

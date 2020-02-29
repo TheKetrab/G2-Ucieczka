@@ -611,7 +611,7 @@ CONST STRING TXT_TALENTS_SKILLS	[NPC_TALENT_MAX] =
 	"-|Uczony",													//NPC_TALENT_TAKEANIMALTROPHY	= 16;
 	"-|Uczony",													//NPC_TALENT_FOREIGNLANGUAGE	= 17;	//ADDON
 	"-|Uczony",													//NPC_TALENT_WISPDETECTOR		= 18;
-	"-|Kiepski * *20%|Kiepski * *25%|Kiepski * *30%|Kopacz * *40%|Kopacz * *45%|Kopacz * *50%|Kopacz * *55%|Znawca * *65%|Znawca * *70%|Znawca * *75%|Znawca * *80%|Mistrz * * *90%|Mistrz * * *95%|Guru * * * *100%",													//NPC_TALENT_C					= 19;
+	"-|Kiepski * *20%|Kiepski * *25%|Kiepski * *30%|Kiepski * *35%|Kopacz * *40%|Kopacz * *45%|Kopacz * *50%|Kopacz * *55%|Kopacz * *60%|Znawca * *65%|Znawca * *70%|Znawca * *75%|Znawca * *80%|Znawca * *85%|Mistrz * * *90%|Mistrz * * *95%|Guru * * * *100%", //NPC_TALENT_C = 19;
 	"-|Uczony",													//NPC_TALENT_D					= 20;
 	"-|Adept|Znawca"											//NPC_TALENT_E					= 21;
 };

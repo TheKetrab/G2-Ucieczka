@@ -135,6 +135,7 @@ FUNC VOID Nuggethacken_S1 ()
 	
 	if  (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))
 	{	
+		AI_UnequipWeapons(hero);
 		self.aivar[AIV_INVINCIBLE]=TRUE;
 		PLAYER_MOBSI_PRODUCTION	=	MOBSI_NuggetHACKEN;
 		Ai_ProcessInfos (her);
@@ -165,7 +166,6 @@ FUNC INT PC_Nuggethacken_End_Condition ()
 FUNC VOID PC_Nuggethacken_End_Info()
 {
 	Truemmer_Count = 0;
-	
 	B_ENDPRODUCTIONDIALOG ();
 };
 //*******************************************************
@@ -199,30 +199,35 @@ FUNC VOID PC_Nuggethacken_Addon_Hour_Info()
 			CreateInvItems (hero, ItMi_Nugget, 3);	
 			PrintScreen ("Odpad³y 3 bry³ki rudy!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (250);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Nugget))));
 		}
 		else if(LevelMiner >= 90)
 		{
 			CreateInvItems (hero, ItMi_Nugget, 2);	
 			PrintScreen ("Odpad³y 2 bry³ki rudy!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (200);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Nugget))));
 		}
 		else if(LevelMiner >= 65)
 		{
 			CreateInvItems (hero, ItMi_Nugget, 2);	
 			PrintScreen ("Odpad³y 2 bry³ki rudy!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (150);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Nugget))));
 		}
 		else if(LevelMiner >=40)
 		{
 			CreateInvItems (hero, ItMi_Nugget, 1);	
 			PrintScreen ("Odpad³a 1 bry³ka rudy!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (100);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Nugget))));
 		}
 		else //if(LevelMiner >=20) 20 juz posiadasz na starcie gry
 		{
 			CreateInvItems (hero, ItMi_Nugget, 1);	
 			PrintScreen ("Odpad³a 1 bry³ka rudy!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (50);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Nugget))));
 		};
 		
 		

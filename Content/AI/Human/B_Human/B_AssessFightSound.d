@@ -60,11 +60,11 @@ func void B_AssessFightSound ()
 	};
 	
 	// ------ im KLOSTER: wenn Höhenunterschied zu groß -------
-	if (Npc_GetHeightToNpc (self, other) > 500)
+	/*if (Npc_GetHeightToNpc (self, other) > 500)
 	&& (Npc_GetDistToWP (self, "NW_MONASTERY_PLACE_04") <= 3000)
 	{
 		return;
-	};
+	};*/
 	
 	// ------ FightSound wird NUR bei anderen NSCs (nicht self) berücksichtigt ------
 	if (Hlp_GetInstanceID(victim) == Hlp_GetInstanceID(self))

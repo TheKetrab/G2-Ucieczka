@@ -1021,6 +1021,7 @@ FUNC INT DIA_NASZ_115_Kurgan_ArenaZamek_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_ArenaZamek_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaZamek_55_00"); //Gotuj broñ. Powodzenia.
+	
 	AI_StopProcessInfos (self);
 	B_Attack(self, other, AR_NONE, 1);
 
@@ -1057,6 +1058,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_DuchPrzyzwany_Info()
 	AI_Output (other, self,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_15_01"); //Na Inosa! Có¿ to? Mówi³eœ, ¿e nie mo¿na u¿ywaæ magii.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_55_02"); //Ale ja u¿y³em jej przed rozpoczêciem walki. To mój duch. Walczysz wiêc ze mn¹, ale w dwóch postaciach.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_55_03"); //Powodzenia, mistrzu!
+	KURGAN_WALCZY = TRUE;
 	KurganAtakuje = TRUE;
 
 	Info_ClearChoices (DIA_NASZ_115_Kurgan_DuchPrzyzwany);
@@ -1148,6 +1150,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_SUCCESS);
 	KurganArenaQuest = 2;
 	Npc_ExchangeRoutine(NASZ_115_Kurgan, "START");
+	KURGAN_WALCZY = FALSE;
 	Kurgan_walka=0;
 	WalkaTrwa = FALSE;
 };
@@ -1197,6 +1200,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganlost_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_02"); //Ale spodziewam siê, ¿e wyzwiesz mnie jeszcze raz.
 	Npc_ExchangeRoutine(NASZ_115_Kurgan, "START");
+	KURGAN_WALCZY = FALSE;
 	Kurgan_walka=0;
 	WalkaTrwa = FALSE;
 };

@@ -160,6 +160,9 @@ FUNC INT DIA_NASZ_203_Tabuk_Zaliczone1_Condition()
 FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone1_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone1_15_00"); //Uda³o ci siê!
+	B_RaiseFightTalent(hero,NPC_TALENT_CROSSBOW,1);
+	B_RaiseFightTalent(hero,NPC_TALENT_BOW,1);
+	PrintScreen("£uki i kusze: +1",-1,-1,FONT_Screen,2);
 	
 	if (Tabuk_Tarcza1_Trafiono == 2) {
 		AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone1_15_01"); //Jedno pud³o to ca³kiem niez³y wynik.
@@ -254,6 +257,9 @@ FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone2_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_15_00"); //Nie postawi³ bym nawet dziesiêciu sztuk z³ota, ¿e trafisz. To twoje pierwsze oddane strza³y na tê tarczê.
 	AI_Output (other, self,"DIA_NASZ_203_Tabuk_Zaliczone2_15_01"); //Mia³em szczêœcie. Poza tym nie wiem, jakbym zachowa³ siê w obliczu potencjalnego pogryzienia przez wilki czy, co gorsza, jaszczury.
+	B_RaiseFightTalent(hero,NPC_TALENT_CROSSBOW,1);
+	B_RaiseFightTalent(hero,NPC_TALENT_BOW,1);
+	PrintScreen("£uki i kusze: +1",-1,-1,FONT_Screen,2);
 	
 	if (Tabuk_Tarcza2_Trafiono == 3) {
 		AI_Output (self, other,"DIA_NASZ_203_Tabuk_Zaliczone2_15_02"); //Trzy trafienia z rzêdu nazywasz szczêœciem?

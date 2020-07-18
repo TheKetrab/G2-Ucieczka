@@ -1638,7 +1638,7 @@ var int FED_WALCZY;
 var int KJORN_WALCZY;
 var int FERROS_WALCZY;
 var int GODARHOKURN_WALCZY;
-var int KURGAN_WALCZY; // TODO ta zmienna jest chyba nie zainicjowana nigdy... 
+var int KURGAN_WALCZY;
 var int BAM_WALCZY;
 var int SzybkaNaukaTaught;
 var int PotworZabity;

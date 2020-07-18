@@ -764,7 +764,6 @@ func void CheckItemConditions_Init()
 
 
 
-
 const int INV_MAX_ITEMS_addr = 8635508;
 const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
 func void Hooks_Global()

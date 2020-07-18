@@ -1,14 +1,12 @@
-func void TARCZA_OBOZ_WYPADOWY() {
 
-	// TODO: jesli trafisz w tarczę, to +1 do łuków i kusz (czyli razem max +6)
-/*
-	Print("Trafiony");
+// SPACER: numCanBeActivated=int:-1
+func void TARCZA_OBOZ_WYPADOWY() {
 	
 	if (Tabuk_Tarcza1 == TRUE)
 	&& (Tabuk_Tarcza1_Wystrzelono <= 3)
 	&& (Npc_GetDistToWP(hero,"NASZ_MYSLIWI_GRUPA_TARCZA1") < 300)
 	{
-		Print("Trafiony TARCZA1");
+		Print("Trafiony!");
 		Tabuk_Tarcza1_Trafiono += 1;	
 	};
 
@@ -16,8 +14,8 @@ func void TARCZA_OBOZ_WYPADOWY() {
 	&& (Tabuk_Tarcza2_Wystrzelono <= 3)
 	&& (Npc_GetDistToWP(hero,"ROCKCAMP") < 300)
 	{
-		Print("Trafiony TARCZA2");
+		Print("Trafiony!");
 		Tabuk_Tarcza2_Trafiono += 1;
 	};
-	*/
+
 };

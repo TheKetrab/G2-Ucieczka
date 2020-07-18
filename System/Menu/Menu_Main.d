@@ -31,8 +31,8 @@ instance MENUITEM_MAIN_NEWGAME(C_MENU_ITEM_DEF)
 	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 0);
 	dimx = 8100;
 	dimy = 750;
-	onselaction[0] = SEL_ACTION_CLOSE;
-	onselaction_s[0] = "NEW_GAME";
+	onselaction[0] = SEL_ACTION_STARTMENU;
+	onselaction_s[0] = "MENU_PLAY_SELECT";
 	flags = flags | IT_TXT_CENTER;
 };
 
@@ -109,8 +109,8 @@ instance MENUITEM_MAIN_INTRO(C_MENU_ITEM_DEF)
 instance MENUITEM_MAIN_CREDITS(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
-	text[0] = "Twórcy gry";
-	text[1] = "Lista twórców gry";
+	text[0] = "Twórcy";
+	text[1] = "Lista twórców Ucieczki";
 	posx = 0;
 	posy = MENU_MAIN_Y + (MENU_MAIN_DY * 6);
 	dimx = 8100;

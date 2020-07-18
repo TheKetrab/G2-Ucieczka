@@ -862,8 +862,11 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnLost_Info()
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_01"); //Ale nie wygra³eœ, zatem nie mo¿esz szczyciæ siê tytu³em mistrza areny.
 		KurganSay_YoudBetterKillOrc();
 		
-		B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez dwóch wojowników. Niestety, okaza³o siê to dla mnie za du¿o.");
-		Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		//B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez dwóch wojowników. Niestety, okaza³o siê to dla mnie za du¿o.");
+		//Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		
+		FailQuest(TOPIC_Kurgan_arena,"");
+		
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
 		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
 		Kurgan_walka=0;
@@ -1181,8 +1184,11 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganlost_Info()
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurganlost_55_01"); //W sumie nie dziwiê siê, m³odzieñcze.
 		KurganSay_YoudBetterKillOrc();
 		
-		B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez Kurgana.");
-		Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		//B_LogEntry(TOPIC_Kurgan_arena,"Zosta³em pokonany przez Kurgana.");
+		//Log_SetTopicStatus(TOPIC_Kurgan_arena,LOG_FAILED);
+		
+		FailQuest(TOPIC_Kurgan_arena,"");
+		
 		Npc_ExchangeRoutine(self, "InCastle");
 		Kurgan_walka=0;
 	
@@ -1518,7 +1524,7 @@ FUNC INT DIA_NASZ_115_Kurgan_AfterSzturmNaZamek_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_003_Kopacz_hello))
 	&& (Npc_GetDistToWP(hero,"NASZ_ZAMEK_OBOZ_01") < 3000) // 30 metrow
-	&& (!npc_isdead(OrcShaman_Ur_Shak))
+	&& (!npc_isdead(NASZ_453_UrShak))
 	{
 		return TRUE;
 	};

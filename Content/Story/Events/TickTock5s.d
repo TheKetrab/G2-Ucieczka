@@ -23,7 +23,7 @@ func void SikaDalej()
 //*****************************
 func void TworzenieBroniGladiatorom()
 {
-	if  (npc_knowsinfo (other, DIA_NASZ_213_Gestath_keroloth))
+	if  (npc_knowsinfo (hero, DIA_NASZ_213_Gestath_keroloth))
 	{
 
 		Createinvitems (NASZ_109_Rethon, ItNa_Djg_Weapon_H, 1);
@@ -85,7 +85,7 @@ func void TickTock_5s() {
 	};
 	// ***** ***** ***** ***** ***** ***** *****
 	
-	if (npc_hasitems (other, ItNa_MieczRuniczny) >=1) && (MieczRunicznyLogOneTime == FALSE) {
+	if (npc_hasitems (hero, ItNa_MieczRuniczny) >=1) && (MieczRunicznyLogOneTime == FALSE) {
 		Log_CreateTopic (TOPIC_MieczRuniczny, LOG_MISSION);
 		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_RUNNING);
 		B_LogEntry (TOPIC_MieczRuniczny, "Na bagnach znalaz³em dziwny orê¿. Na klindze widaæ kryszta³, który jest ukruszony. Keroloth powinien rzuciæ na to okiem. W koñcu przebywa³ wœród paladynów... Mo¿e bêdzie wiedzia³ coœ o tym mieczu.");

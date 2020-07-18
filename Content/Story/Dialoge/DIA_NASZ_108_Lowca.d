@@ -341,8 +341,10 @@ func void DIA_NASZ_108_Lowca_WalkaPrzegrales_Info ()
 
 	LOWCA_SIKA_STOP_GADANIE = FALSE;
 	LOWCA_SIKA_WALKA_ONETIME = TRUE;
-	Log_SetTopicStatus (TOPIC_Silas_lanie, LOG_FAILED);
-	B_LogEntry (TOPIC_Silas_lanie, "Nie da³em rady... Nie przegoniê niechlujnego ³owcy.");
+	
+	FailQuest(TOPIC_Silas_lanie,"Nie da³em rady... Nie przegoniê niechlujnego ³owcy.");
+	//Log_SetTopicStatus (TOPIC_Silas_lanie, LOG_FAILED);
+	//B_LogEntry (TOPIC_Silas_lanie, "Nie da³em rady... Nie przegoniê niechlujnego ³owcy.");
 
 
 };

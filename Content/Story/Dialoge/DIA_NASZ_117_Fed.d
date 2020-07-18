@@ -288,8 +288,12 @@ FUNC VOID DIA_NASZ_117_Fed_KurgKanDead_Info()
 	AI_Output (self, other,"DIA_NASZ_117_Fed_KurgKanDead_55_02"); //Eeee... co?
 	AI_Output (other, self,"DIA_NASZ_117_Fed_KurgKanDead_15_03"); //Niewa¿ne. ¯egnaj.
 	KurgKanUratowany = -1;
-	Log_SetTopicStatus (Topic_OrcInATrap, LOG_FAILED);
-	B_LogEntry(Topic_OrcInATrap, "Niestety Kurg-Kan zosta³ zabity. Mam nadziejê, ¿e gdziekolwiek jego dusza nie pójdzie, bêdzie mia³ siê tam dobrze.");
+	
+	//Log_SetTopicStatus (Topic_OrcInATrap, LOG_FAILED);
+	//B_LogEntry(Topic_OrcInATrap, "Niestety Kurg-Kan zosta³ zabity. Mam nadziejê, ¿e gdziekolwiek jego dusza nie pójdzie, bêdzie mia³ siê tam dobrze.");
+	
+	FailQuest(Topic_OrcInATrap,"");
+
 	
 	AI_StopProcessInfos(self);
 	

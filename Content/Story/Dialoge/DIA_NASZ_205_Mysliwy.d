@@ -268,7 +268,6 @@ FUNC VOID DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_Info()
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_55_00"); //Patrz no, jakie cholery. Nawet wyspaæ siê nie mogê.
 	AI_Output (other, self,"DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_55_01"); //Ju¿ jest ich trochê mniej. Radzê sobie. IdŸ spaæ.
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_55_02"); //Czekaj! Patrz!
-	// TODO: pokazuje rêk¹
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_55_03"); //Tu jest jeszcze jeden. IdŸ za nim, mo¿e doprowadzi ciê do reszty stada.
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_ZabiteDwieGrupy_55_04"); //Ja stanê na warcie. No ju¿, idŸ, bo ci ucieknie.
 

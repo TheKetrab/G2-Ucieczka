@@ -263,8 +263,10 @@ FUNC VOID DIA_NASZ_318_Gobby_TryToDrink_Info()
 		AI_Output (other,self ,"DIA_NASZ_318_Gobby_TryToDrink_15_06"); //Co to by³o?
 		AI_Output (self, other,"DIA_NASZ_318_Gobby_TryToDrink_55_07"); //Mówi³em, ¿e nie dasz rady. Wracaj do obozu, miêczaku.
 	
-		Log_SetTopicStatus (TOPIC_Gobby_gin, LOG_FAILED);
-		B_LogEntry (TOPIC_Gobby_gin, "To by³o zbyt mocne jak na moj¹ g³owê... Jestem zbyt s³aby.");
+		//Log_SetTopicStatus (TOPIC_Gobby_gin, LOG_FAILED);
+		//B_LogEntry (TOPIC_Gobby_gin, "To by³o zbyt mocne jak na moj¹ g³owê... Jestem zbyt s³aby.");
+		FailQuest(TOPIC_Gobby_gin,"");
+
 	};
 	
 };

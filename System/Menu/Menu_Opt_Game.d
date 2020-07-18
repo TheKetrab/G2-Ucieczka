@@ -294,7 +294,7 @@ instance MENUITEM_OPT_JUSTICE(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "Tryb sprawiedliwoœci";
-	text[1] = "Brak zapisywania podczas walki, brak MARVINa, losowe zamki w kufrach";
+	text[1] = "Brak zap. pod. walki, brak MARVINa, losowe zam. w kufrach";
 	posx = 700;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 8);
 	dimx = 4600;
@@ -326,7 +326,7 @@ instance MENUITEM_OPT_LEVEL(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "Poziom trudnoœci";
-	text[1] = "Brak zapisywania podczas walki, brak MARVINa, losowe zamki w kufrach";
+	text[1] = "Poziom trudnoœci mo¿esz równie¿ zmieniæ podczas gry";
 	posx = 700;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 9);
 	dimx = 4600;
@@ -339,7 +339,7 @@ instance MENUITEM_OPT_LEVEL_CHOICE(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_CHOICE_BACK_PIC;
 	type = MENU_ITEM_CHOICEBOX;
-	text[0] = "£atwy|Œredni|Trudny|Bardzo Trudny|Legendarny";
+	text[0] = "£atwy|Œredni|Trudny|Bardzo trudny|Legendarny";
 	fontname = MENU_FONT_SMALL;
 	posx = 5400;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 9) + MENU_CHOICE_YPLUS;

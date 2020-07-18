@@ -169,6 +169,7 @@ func int QS_CanPutInSlot(var int itemPtr)
 
 func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 {
+	MEM_Info("QS_PutSlot #1");
 	if(!QS_CanPutInSlot(itemPtr)){
 		return;
 	};
@@ -181,8 +182,10 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 	var int removeSlot_idx; removeSlot_idx 	= QS_GetSlotByItem(itemPtr);
 	
 	// Safe - remove slot nr
+	MEM_Info("QS_PutSlot #2");
 	QS_RemoveSlot(nr);
 	
+	MEM_Info("QS_PutSlot #3");
 	if(slotItem) {		
 		if(slotItem != itemPtr) {		
 			if(removeSlot_idx != -1)  {
@@ -197,6 +200,7 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 		QS_CreateSlot(nr, itemPtr);
 	};
 	
+	MEM_Info("QS_PutSlot #4");
 	var c_item it; it = _^(itemptr);
 	var c_item pIt; var int slot; var int pItem; 
 	if(it.mainflag == ITEM_KAT_NF)
@@ -210,6 +214,7 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 	if(it.mainflag == ITEM_KAT_NF&& it.flags &~ ITEM_SHIELD){slot = 1; pItem = QS_GetSlotItem(1);}
 	else{slot = 2; pItem = QS_GetSlotItem(2);};
 	
+	MEM_Info("QS_PutSlot #5");
 	var int pWeap; pWeap = _@(pIt);
 	if(pWeap == itemPtr && nr!=slot)
 	{
@@ -228,6 +233,9 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 					};
 				end;*/
 			//};
+	
+	MEM_Info("QS_PutSlot #6");
+
 };
 
 

@@ -285,6 +285,8 @@ func void TARCZASTRZELECKA_TRIGER ()
 var int WillBylZapalisada;
 func void TRIGGER_INORC ()
 {
+	// UWAGA: ten trigger Spacerowy chyba nie dzia³a,
+	// taka sama funkcja jest wywo³ywana w ticktocku 1s
 	Will_Zapalisada();
 	WillBylZapalisada = TRUE;
 };
@@ -2340,6 +2342,11 @@ func void Use_Projekt_ChlopskiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Wykuæ gor¹cy prêt na oko³o 30 centymetrów. Z reszty prêta uformowaæ poprzeczkê i stopiæ razem w ogniu. Na koñcu ostrze uformowaæ w szpic.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 7");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 14");
+				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2385,6 +2392,11 @@ func void Use_Projekt_DobryMiecz ()
 				
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugi szpiczasty koniec. Klingê ubiæ na p³asko i raczej szeroko. Rêkojeœæ drewniana.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 30");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2434,6 +2446,13 @@ func void Use_Projekt_DobryDlugiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Ogromn¹ ró¿nicê mo¿e wyczuæ posiadacz, jeœli rêkojeœæ owiniemy cieñkim skórzanym paskiem. Ostrze powinno mieæ przynajmniej pó³ metra, by dobrze s³u¿yæ ka¿demu stra¿nikowi.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 35");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 45");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2485,6 +2504,12 @@ func void Use_Projekt_RubinoweOstrze ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Si³a klejnotu dodaje charyzmy posiadaczowi. Aby dobrze go wykonaæ, nale¿y rozdrobniæ wêgiel w drobny maczek, wetrzeæ proch w per³ê i rudê, a nastêpnie wrzuciæ to razem do ognia. Wêgiel siê wypali a klejnoty stopi¹. Klinga powinna byæ lekko pofa³dowana.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 50");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +7");
+				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2533,6 +2558,12 @@ func void Use_Projekt_ElBastardo ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Stalowy prêt prze³amaæ na pó³ i uformowaæ w kolce, które stopiæ przy rêkojeœci razem z kling¹. Ca³oœæ pokryæ magiczn¹ rud¹, a we wnêtrzu rêkojeœci zamocowaæ akwamaryn.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 65");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 65");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +8");
+				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2580,6 +2611,11 @@ func void Use_Projekt_Oskard ()
 				
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Kij owin¹æ dobrze nat³uszczon¹ skór¹ dzika, by przyleg³a i sklei³a siê z drewnem. Stal rozgrzaæ i uformowaæ dwie p³aszczyzny, które nastêpnie nale¿y na³o¿yæ na siebie i uformowaæ w maczugê.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 25");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2631,6 +2667,11 @@ func void Use_Projekt_Inkwizytor ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Wyj¹tkowo przyjemna w dotyku skóra cieniostwora powinna znaleŸæ siê na kiju. Na jego koñcu przypominaj¹ca jajo g³owica z pofa³dowaniami. Ca³oœæ zakoñczona szpicem z pazura.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
+				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2680,6 +2721,11 @@ func void Use_Projekt_RunaMocy ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugie ostrze z kilkoma kolcami u spodu. Do drewnianej rêkojeœci nale¿y w³o¿yæ ska³ê krystaliczn¹, ostrze pokryæ magiczn¹ rud¹.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz dwurêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 60");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
+				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2726,6 +2772,11 @@ func void Use_Projekt_MieczBojowy ()
 				
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Rêkojeœæ tej broni sk³ada siê z kilku kawa³ków drewna, które w przekroju przypominaj¹ piêciok¹t. Dziêki temu uchwyt jest bardzo wygodny dla posiadacza. Do œrodka w³o¿one jest ostrze, formowane na p³ask¹ i d³ug¹ liniê.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 24");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 26");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -2774,6 +2825,12 @@ func void Use_Projekt_MieczWojenny ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "K³y zwierz¹t nie tylko s¹ dobrym materia³em do wyrobu przedmiotów codziennego u¿ytku. Mog¹ sprawdziæ siê równie¿, gdy chcemy, by koñce rêkojeœci by³y zabójcze. Wystarczy umocowaæ je na kiju i œci¹æ nadmiar drewna.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 28");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 34");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2821,6 +2878,12 @@ func void Use_Projekt_MieczSedziego ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "W¹ska klinga œciêta na górze. Z czym innym nie wypada pokazaæ siê arystokracie. Mo¿na wzmocniæ ostrze, przetapiaj¹c go kilkukrotnie.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 15");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 22");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2869,6 +2932,12 @@ func void Use_Projekt_MieczSwiatla ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Stal rozgrzewamy w ogniu i stapiamy z kwarcem. Ska³ê krystaliczn¹ nale¿y uformowaæ w pó³kole i zbiæ z bry³k¹ magicznej rudy tak, by odbija³y œwiat³o, gdy patrzymy w kryszta³ na rêkojeœci.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 72");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 66");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2917,6 +2986,12 @@ func void Use_Projekt_Zmija ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Rozgrzewamy stal i jedn¹ bry³kê z³ota, stapiamy prêty na jednym koñcu. Pozosta³e koñce skrêcamy w spiralê i ca³oœæ montujemy w rêkojeœæ wykonan¹ z twardego drewna. Poz³acamy j¹ i montujemy per³ê. UWAGA - per³a nie ma tylko charakteru ozdobnego. Niesie za sob¹ duszê tej broni...");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 53");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -2965,6 +3040,13 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 				Doc_PrintLines	( nDocID,  0, "Tutaj tego nie sprzedam, ale mo¿e uda siê pohandlowaæ ze Szkodznikami z Nowego Obozu...");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Darrion");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 11");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 25");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -3015,6 +3097,14 @@ func void Use_Projekt_MieczNienawisci ()
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Piwo ju¿ jest moje! Trochê wypijê, a resztê wymieniê na parê bry³ek.");
 				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +9");
+				Doc_PrintLine	( nDocID,  0, "");
+
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
 				Doc_Show		( nDocID );
@@ -3401,6 +3491,58 @@ FUNC VOID Use_ItNa_KsiegaBosow()
 
 				Doc_Show		( nDocID );
 };
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_KsiegaZmiennych (C_ITEM)
+{
+	name 					=	"Ksiêga statystyk V";
+
+	mainflag 				=	ITEM_KAT_DOCS;
+	flags 					=	0;
+
+	visual 					=	"ItWr_Book_02_04.3ds";  					
+	material 				=	MAT_LEATHER;
+
+	scemeName				=	"MAP";
+	description				= 	name;
+	
+	TEXT[2] 				=  "Ksi¹¿ka pokazuj¹ca stan ró¿nych";
+	TEXT[3] 				=  "zmiennych.";
+
+	on_state[0]				=	Use_ItNa_KsiegaZmiennych;
+};
+
+FUNC VOID Use_ItNa_KsiegaZmiennych()
+{		
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								
+				Doc_SetPages	( nDocID,  2 );                        
+				Doc_SetPage 	( nDocID,  0, "Book_Red_L.tga"  , 0 	); 
+				Doc_SetPage 	( nDocID,  1, "Book_Red_R.tga" , 0	); 
+
+				Doc_SetMargins	( nDocID,  0,  275, 20, 30, 20, 1   		);  //  0 -> margins are in pixels
+				Doc_SetFont 	( nDocID,  0, FONT_BookHeadline	   			); 	// -1 -> all pages
+				Doc_PrintLine	( nDocID,  0, ""					);
+				Doc_PrintLines	( nDocID,  0, ""	);
+				Doc_SetFont 	( nDocID,  0, FONT_Book	   			); 	// -1 -> all pages
+				Doc_PrintLine	( nDocID,  0, ""					);
+
+				var string run; run = "Przebieg³eœ: ";
+				run = ConcatStrings(run,IntToString(VST_Kilometers));
+				run = ConcatStrings(run," km, ");
+				run = ConcatStrings(run,IntToString(VST_Meters));
+				run = ConcatStrings(run," m");
+				
+				Doc_PrintLines   ( nDocID,  0, run);
+				Doc_PrintLine   ( nDocID,  0, "");
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Czas pod wod¹: ",IntToString(DivingTime)));
+
+
+				Doc_Show		( nDocID );
+};
+
+
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 
@@ -4635,10 +4777,7 @@ var int OpenAdanosMapaOneTime;
 			B_LogEntry (TOPIC_bogowie_work, "Hmm... na mapie z wie¿y mgie³ jest zaznaczony plac wymian. Co tam znajdê?");
 		};
 
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Adanos);
-		};
+
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -4722,7 +4861,7 @@ instance ItNa_Mapa_ObozWypadowy (C_Item)
 					Doc_SetPages		(Document, 1);
 					Doc_SetPage 		(Document, 0, "MAP_GESTATH.tga", TRUE);  // TRUE = scale to fullscreen
 					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
+					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
 					Doc_Show			(Document);
 	};
 
@@ -4751,10 +4890,7 @@ instance ItNa_Mapa_Morska (C_Item)
 
 	func void Use_Mapa_Morska()
 	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Morska);
-		};
+
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -4790,10 +4926,6 @@ instance ItNa_Mapa_Lens (C_Item)
 
 	func void Use_Mapa_Lens()
 	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Lens);
-		};
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -4829,10 +4961,7 @@ instance ItNa_Mapa_NowyOboz (C_Item)
 
 	func void Use_NowyOboz()
 	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_NowyOboz);
-		};
+
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -4868,10 +4997,7 @@ instance ItNa_Mapa_ObozNaBagnie (C_Item)
 
 	func void Use_ObozNaBagnie()
 	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_ObozNaBagnie);
-		};
+
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -4907,10 +5033,7 @@ instance ItNa_Mapa_Bracia (C_Item)
 
 	func void Use_Mapa_Bracia()
 	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Bracia);
-		};
+
 
 		var int Document;
 		Document =	Doc_CreateMap		();
@@ -8044,6 +8167,10 @@ INSTANCE ItNa_Odtrutka(C_Item)
 
 FUNC VOID UseOdtrutka()
 { 
+
+	OdtrutkaEverUsed = TRUE;
+
+
 	AI_PlayAni  (self,"T_MAGRUN_2_FEASHOOT");
 	if(buff_has(self,Poison10HP))	{
 		Buff_RemoveAll(self,Poison10HP);
@@ -10637,7 +10764,7 @@ INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
 	protection[PROT_MAGIC] = 10;
 	value = 1500;
 	wear = WEAR_HEAD;
-	visual = "PAL_ORC_HELM03.3ds"; 
+	visual = "PAL_ORC_HELM_NEW.3ds"; 
 	visual_skin = 0;
 	material = MAT_LEATHER;
 	description = name;

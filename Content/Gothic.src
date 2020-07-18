@@ -16,6 +16,7 @@ Funcs\Reputation.d
 Funcs\BanditKilled.d
 Funcs\JusticeMode.d
 Funcs\Teach.d
+Funcs\Achievements.d
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
 STORY\Story_Globals.d
@@ -115,6 +116,7 @@ AI\HUMAN\B_RefreshArmor.d
 
 STORY\Events\Territory.d
 AI\HUMAN\C_Human\C_BodyStateContains.d
+Funcs\VST.d
 AI\HUMAN\C_HUMAN\C_NpcIsBotheredByPlayerRoomGuild.d
 AI\HUMAN\C_HUMAN\C_IsUsedMobMyPossession.d
 AI\HUMAN\C_Human\C_IsTakenItemMyPossession.d
@@ -268,6 +270,8 @@ STORY\Npc_Scripts\B_SetAttributesToChapter.d
 STORY\Npc_Scripts\B_SetNpcVisual.d
 STORY\Npc_Scripts\Npc_Default.d
 
+STORY\NPC\Orc\MST_OrcSlave.d
+STORY\NPC\Orc\MST_OrcShaman.d
 STORY\NPC\*.d
 STORY\NPC\Monster\*.d
 STORY\NPC\Orc\*.d

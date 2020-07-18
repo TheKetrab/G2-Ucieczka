@@ -276,8 +276,8 @@ INSTANCE DIA_NASZ_412_CatSan_UrShackKilled   (C_INFO)
 
 FUNC INT DIA_NASZ_412_CatSan_UrShackKilled_Condition()
 {
-	// TODO czy to dziala?
-	if (npc_isdead (OrcShaman_Ur_Shak))
+	if (npc_isdead (NASZ_453_UrShak))
+	&& (npc_hasitems(hero,ItNa_Kostur_UrShaka) >= 1)
 	{
 		return TRUE;
 	};

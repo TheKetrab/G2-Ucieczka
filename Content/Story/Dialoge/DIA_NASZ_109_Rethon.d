@@ -182,7 +182,7 @@ FUNC VOID DIA_NASZ_109_Rethon_FightWithAll_Info()
 	
 	B_GivePlayerXP(300);
 	Log_SetTopicStatus (TOPIC_Rethon_szkolenie, LOG_SUCCESS);
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	
 };
 

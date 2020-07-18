@@ -29,13 +29,16 @@ FUNC VOID DIA_NASZ_999_Test_EXIT_Info()
 	AI_StopProcessInfos (self);
 };
 
+
+
+
 //*********************************************************************
-//	WalkaTarcza
+//	Teach
 //*********************************************************************
 INSTANCE DIA_NASZ_999_Test_Teach   (C_INFO)
 {
 	npc         = NASZ_999_Test;
- 	nr          = 4;
+ 	nr          = 1;
  	condition   = DIA_NASZ_999_Test_Teach_Condition;
  	information = DIA_NASZ_999_Test_Teach_Info;
  	permanent   = TRUE;
@@ -80,14 +83,14 @@ func void DIA_NASZ_999_Test_Teach_QuickLearn() {
 };
 
 func void DIA_NASZ_999_Test_Teach_Zielarstwo1() {
-	PrintScreen ("Nauka: Zielarstwo", -1, -1, FONT_Screen, 2);
+	PrintScreen ("Nauka: zielarstwo", -1, -1, FONT_Screen, 2);
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_E, 1);
 	level_zielarstwa = 1;
 	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
 };
 
 func void DIA_NASZ_999_Test_Teach_Zielarstwo2() {
-	PrintScreen ("Nauka: Zielarstwo", -1, -1, FONT_Screen, 2);
+	PrintScreen ("Nauka: zielarstwo", -1, -1, FONT_Screen, 2);
 	Npc_SetTalentSkill 	(hero, NPC_TALENT_E, 2);	
 	level_zielarstwa = 2;
 	PlantSkill_Factor = 2;
@@ -127,227 +130,8 @@ func void DIA_NASZ_999_Test_Teach_Regeneracja3() {
 
 func void DIA_NASZ_999_Test_Teach_GornictwoAdd() {
 	LevelMiner += 10;
-	Print(ConcatStrings("Gornictwo: ",ConcatStrings(IntToString(LevelMiner),"%")));
+	Print(ConcatStrings("Górnictwo: ",ConcatStrings(IntToString(LevelMiner),"%")));
 	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
-};
-
-
-
-//*********************************************************************
-//	Gold
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_Gold   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_Gold_Condition;
- 	information = DIA_NASZ_999_Test_Gold_Info;
- 	permanent   = TRUE;
- 	description = "10 tys szt. z³ota.";
-};
-
-FUNC INT DIA_NASZ_999_Test_Gold_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_Gold_Info()
-{
-
-	Createinvitems (self, ItMi_Gold, 10000);
-	B_giveinvitems (self, other, ItMi_Gold, 10000);
-	
-	Wld_PlayEffect("Spellfx_Paldestroyevil",  NASZ_999_Test, NASZ_999_Test, 0, 0, 0, FALSE );
-	
-};
-INSTANCE DIA_NASZ_999_Test_Posag   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_Posag_Condition;
- 	information = DIA_NASZ_999_Test_Posag_Info;
- 	permanent   = TRUE;
- 	description = "Pos¹g, rytua³";
-};
-
-FUNC INT DIA_NASZ_999_Test_Posag_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_Posag_Info()
-{
-
-	
-	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zosta³a zniszczona, a wraz z ni¹ zagro¿enie jakie depta³o nam po piêtach. Czym prêdzej wrócê do maga i opowiem mu o tym, co siê tutaj sta³o. Poza tym dziwiê siê, ¿e nie zaatakowa³ mnie ¿aden demon. Czy¿by mag siê myli³?");
-	Migration_LowcyToZamek(); // migracja do zamku lowcow
-
-	Wld_PlayEffect("spellFX_Fear",  hero, hero, 0, 0, 0, FALSE );
-	Snd_Play ("LASTDOOREVENT");
-	Wld_SendTrigger ("DEMONPOSAG_MOVER_SCRIPT");
-	WillZniszczylDemonaOneTime = TRUE;
-	WillIsGoingToKillDemonPosag = 2;
-				//Print("dziala");
-	if(FF_Active(KillDemonPosag))
-	{
-		ff_remove(KillDemonPosag);
-	};
-	
-};
-
-//*********************************************************************
-//	LiftRdy
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_LiftRdy   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_LiftRdy_Condition;
- 	information = DIA_NASZ_999_Test_LiftRdy_Info;
- 	permanent   = TRUE;
- 	description = "LiftReady";
-};
-
-FUNC INT DIA_NASZ_999_Test_LiftRdy_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_LiftRdy_Info()
-{
-	WillAndAyanLift = TRUE;
-	ff_applyonceExt(LiftReady,1000,-1);
-};
-
-//*********************************************************************
-//	WarWithOrc
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_WarWithOrc   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_WarWithOrc_Condition;
- 	information = DIA_NASZ_999_Test_WarWithOrc_Info;
- 	permanent   = TRUE;
- 	description = "WarWithOrc";
-};
-
-FUNC INT DIA_NASZ_999_Test_WarWithOrc_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_WarWithOrc_Info()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_WarWithOrc);
-		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, DIALOG_BACK, DIA_NASZ_999_Test_WarWithOrc_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, "WarWithOrc_End", DIA_NASZ_999_Test_WarWithOrc_End);
-		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, "WarWithOrc_Start", DIA_NASZ_999_Test_WarWithOrc_Start);
-};
-
-FUNC VOID DIA_NASZ_999_Test_WarWithOrc_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_WarWithOrc);
-};
-
-FUNC VOID DIA_NASZ_999_Test_WarWithOrc_End()
-{	
-	AI_StopProcessInfos	(self);
-	WarWithOrc_End(self);
-};
-
-FUNC VOID DIA_NASZ_999_Test_WarWithOrc_Start()
-{
-	AI_StopProcessInfos	(self);
-	//self.aivar[AIV_INVINCIBLE] = false;
-	hero.aivar[AIV_INVINCIBLE] = false;
-	WarWithOrc_Start(self);
-};
-
-//*********************************************************************
-//	EffectTest
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_EffectTest   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_EffectTest_Condition;
- 	information = DIA_NASZ_999_Test_EffectTest_Info;
- 	permanent   = TRUE;
- 	description = "Oducz zwierzyny.";
-};
-
-FUNC INT DIA_NASZ_999_Test_EffectTest_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_EffectTest_Info()
-{
-	//Wld_PlayEffect("SLEEP_BLEND",  self, self, 0, 0, 0, FALSE );
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ReptileSkin] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] = FALSE;
-	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = FALSE;
-};
-
-//*********************************************************************
-//	IloscDruzyna
-//*********************************************************************
-INSTANCE DIA_NASZ_999_Test_IloscDruzyna   (C_INFO)
-{
-	npc         = NASZ_999_Test;
- 	nr          = 4;
- 	condition   = DIA_NASZ_999_Test_IloscDruzyna_Condition;
- 	information = DIA_NASZ_999_Test_IloscDruzyna_Info;
- 	permanent   = TRUE;
- 	description = "Ustaw stan dru¿yny";
-};
-
-FUNC INT DIA_NASZ_999_Test_IloscDruzyna_Condition()
-{
-	return TRUE;
-};
-
-FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_Info()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_IloscDruzyna);
-		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, DIALOG_BACK, DIA_NASZ_999_Test_IloscDruzyna_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "3 (dwóch pomocników)", DIA_NASZ_999_Test_IloscDruzyna_3);
-		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "2 (jeden pomocnik)", DIA_NASZ_999_Test_IloscDruzyna_2);
-		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "1 (sam bohater)", DIA_NASZ_999_Test_IloscDruzyna_1);
-
-};
-
-FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_IloscDruzyna);
-};
-
-FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_3()
-{	
-	StanDruzyny = 3;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_2()
-{
-	StanDruzyny = 2;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_1()
-{
-	StanDruzyny = 1;
-	AI_StopProcessInfos	( self );
 };
 
 
@@ -357,7 +141,7 @@ FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_1()
 INSTANCE DIA_NASZ_999_Test_Kapitel   (C_INFO)
 {
 	npc         = NASZ_999_Test;
- 	nr          = 5;
+ 	nr          = 2;
  	condition   = DIA_NASZ_999_Test_Kapitel_Condition;
  	information = DIA_NASZ_999_Test_Kapitel_Info;
  	permanent   = TRUE;
@@ -565,7 +349,7 @@ FUNC VOID DIA_NASZ_999_Test_Kapitel_1()
 INSTANCE DIA_NASZ_999_Test_Reputation   (C_INFO)
 {
 	npc         = NASZ_999_Test;
- 	nr          = 5;
+ 	nr          = 3;
  	condition   = DIA_NASZ_999_Test_Reputation_Condition;
  	information = DIA_NASZ_999_Test_Reputation_Info;
  	permanent   = TRUE;
@@ -718,13 +502,183 @@ FUNC VOID DIA_NASZ_999_Test_RepBandyci_SetZero()
 	Info_ClearChoices (DIA_NASZ_999_Test_Reputation);
 };
 
+
+
+//*********************************************************************
+//	IloscDruzyna
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_IloscDruzyna   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 4;
+ 	condition   = DIA_NASZ_999_Test_IloscDruzyna_Condition;
+ 	information = DIA_NASZ_999_Test_IloscDruzyna_Info;
+ 	permanent   = TRUE;
+ 	description = "Ustaw stan dru¿yny";
+};
+
+FUNC INT DIA_NASZ_999_Test_IloscDruzyna_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_Info()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_IloscDruzyna);
+		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, DIALOG_BACK, DIA_NASZ_999_Test_IloscDruzyna_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "3 (dwóch pomocników)", DIA_NASZ_999_Test_IloscDruzyna_3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "2 (jeden pomocnik)", DIA_NASZ_999_Test_IloscDruzyna_2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_IloscDruzyna, "1 (sam bohater)", DIA_NASZ_999_Test_IloscDruzyna_1);
+
+};
+
+FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_IloscDruzyna);
+};
+
+FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_3()
+{	
+	StanDruzyny = 3;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_2()
+{
+	StanDruzyny = 2;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_IloscDruzyna_1()
+{
+	StanDruzyny = 1;
+	AI_StopProcessInfos	( self );
+};
+
+
+//*********************************************************************
+//	LevelMiner
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_LevelMiner   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 5;
+ 	condition   = DIA_NASZ_999_Test_LevelMiner_Condition;
+ 	information = DIA_NASZ_999_Test_LevelMiner_Info;
+ 	permanent   = TRUE;
+ 	description = "Górnictwo.";
+};
+
+FUNC INT DIA_NASZ_999_Test_LevelMiner_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_Info()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_LevelMiner);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, DIALOG_BACK, DIA_NASZ_999_Test_LevelMiner_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "100", DIA_NASZ_999_Test_LevelMiner_8);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "90", DIA_NASZ_999_Test_LevelMiner_7);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "80", DIA_NASZ_999_Test_LevelMiner_6);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "65", DIA_NASZ_999_Test_LevelMiner_5);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "55", DIA_NASZ_999_Test_LevelMiner_4);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "40", DIA_NASZ_999_Test_LevelMiner_3);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "30", DIA_NASZ_999_Test_LevelMiner_2);
+		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "20", DIA_NASZ_999_Test_LevelMiner_1);	
+
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_LevelMiner);
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_8()
+{
+	LevelMiner = 100;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_7()
+{
+	LevelMiner = 90;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_6()
+{
+	LevelMiner = 80;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_5()
+{
+	LevelMiner = 65;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_4()
+{
+	LevelMiner = 55;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_3()
+{
+	LevelMiner = 40;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_2()
+{
+	LevelMiner = 30;
+	AI_StopProcessInfos	( self );
+};
+
+FUNC VOID DIA_NASZ_999_Test_LevelMiner_1()
+{
+	LevelMiner = 20;
+	AI_StopProcessInfos	( self );
+};
+
+
+//*********************************************************************
+//	Gold
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_Gold   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_999_Test_Gold_Condition;
+ 	information = DIA_NASZ_999_Test_Gold_Info;
+ 	permanent   = TRUE;
+ 	description = "10 tys szt. z³ota.";
+};
+
+FUNC INT DIA_NASZ_999_Test_Gold_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_Gold_Info()
+{
+
+	Createinvitems (self, ItMi_Gold, 10000);
+	B_giveinvitems (self, other, ItMi_Gold, 10000);
+	
+	Wld_PlayEffect("Spellfx_Paldestroyevil",  NASZ_999_Test, NASZ_999_Test, 0, 0, 0, FALSE );
+	
+};
+
+
 //*********************************************************************
 //	OpenGate
 //*********************************************************************
 INSTANCE DIA_NASZ_999_Test_OpenGate   (C_INFO)
 {
 	npc         = NASZ_999_Test;
- 	nr          = 8;
+ 	nr          = 7;
  	condition   = DIA_NASZ_999_Test_OpenGate_Condition;
  	information = DIA_NASZ_999_Test_OpenGate_Info;
  	permanent   = TRUE;
@@ -809,90 +763,177 @@ FUNC VOID DIA_NASZ_999_Test_OpenGate_Castle()
 	Info_ClearChoices (DIA_NASZ_999_Test_OpenGate);
 };
 
+
+
+
+
+
+
 //*********************************************************************
-//	LevelMiner
+//	ResetBandits
 //*********************************************************************
-INSTANCE DIA_NASZ_999_Test_LevelMiner   (C_INFO)
+INSTANCE DIA_NASZ_999_Test_ResetBandits   (C_INFO)
 {
 	npc         = NASZ_999_Test;
- 	nr          = 9;
- 	condition   = DIA_NASZ_999_Test_LevelMiner_Condition;
- 	information = DIA_NASZ_999_Test_LevelMiner_Info;
+ 	nr          = 8;
+ 	condition   = DIA_NASZ_999_Test_ResetBandits_Condition;
+ 	information = DIA_NASZ_999_Test_ResetBandits_Info;
  	permanent   = TRUE;
- 	description = "LevelMiner";
+ 	description = "Resetuj nastawienie bandytów";
 };
 
-FUNC INT DIA_NASZ_999_Test_LevelMiner_Condition()
+FUNC INT DIA_NASZ_999_Test_ResetBandits_Condition()
 {
 	return TRUE;
 };
 
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_Info()
+FUNC VOID DIA_NASZ_999_Test_ResetBandits_Info()
 {
-	Info_ClearChoices (DIA_NASZ_999_Test_LevelMiner);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, DIALOG_BACK, DIA_NASZ_999_Test_LevelMiner_BACK);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "100", DIA_NASZ_999_Test_LevelMiner_8);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "90", DIA_NASZ_999_Test_LevelMiner_7);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "80", DIA_NASZ_999_Test_LevelMiner_6);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "65", DIA_NASZ_999_Test_LevelMiner_5);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "55", DIA_NASZ_999_Test_LevelMiner_4);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "40", DIA_NASZ_999_Test_LevelMiner_3);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "30", DIA_NASZ_999_Test_LevelMiner_2);
-		Info_AddChoice	  (DIA_NASZ_999_Test_LevelMiner, "20", DIA_NASZ_999_Test_LevelMiner_1);	
-
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_999_Test_LevelMiner);
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_8()
-{
-	LevelMiner = 100;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_7()
-{
-	LevelMiner = 90;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_6()
-{
-	LevelMiner = 80;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_5()
-{
-	LevelMiner = 65;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_4()
-{
-	LevelMiner = 55;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_3()
-{
-	LevelMiner = 40;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_2()
-{
-	LevelMiner = 30;
-	AI_StopProcessInfos	( self );
-};
-
-FUNC VOID DIA_NASZ_999_Test_LevelMiner_1()
-{
-	LevelMiner = 20;
-	AI_StopProcessInfos	( self );
+	ResetBanditsAttitude();
+	Print("Zresetowano nastawienie bandytów");
 };
 
 
+
+
+//*********************************************************************
+//	Pos¹g, rytua³
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_Posag   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 9;
+ 	condition   = DIA_NASZ_999_Test_Posag_Condition;
+ 	information = DIA_NASZ_999_Test_Posag_Info;
+ 	permanent   = TRUE;
+ 	description = "Pos¹g, rytua³";
+};
+
+FUNC INT DIA_NASZ_999_Test_Posag_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_Posag_Info()
+{
+
+	
+	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Kapliczka zosta³a zniszczona, a wraz z ni¹ zagro¿enie jakie depta³o nam po piêtach. Czym prêdzej wrócê do maga i opowiem mu o tym, co siê tutaj sta³o. Poza tym dziwiê siê, ¿e nie zaatakowa³ mnie ¿aden demon. Czy¿by mag siê myli³?");
+	Migration_LowcyToZamek(); // migracja do zamku lowcow
+
+	Wld_PlayEffect("spellFX_Fear",  hero, hero, 0, 0, 0, FALSE );
+	Snd_Play ("LASTDOOREVENT");
+	Wld_SendTrigger ("DEMONPOSAG_MOVER_SCRIPT");
+	WillZniszczylDemonaOneTime = TRUE;
+	WillIsGoingToKillDemonPosag = 2;
+				//Print("dziala");
+	if(FF_Active(KillDemonPosag))
+	{
+		ff_remove(KillDemonPosag);
+	};
+	
+};
+
+//*********************************************************************
+//	LiftRdy
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_LiftRdy   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 10;
+ 	condition   = DIA_NASZ_999_Test_LiftRdy_Condition;
+ 	information = DIA_NASZ_999_Test_LiftRdy_Info;
+ 	permanent   = TRUE;
+ 	description = "LiftReady";
+};
+
+FUNC INT DIA_NASZ_999_Test_LiftRdy_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_LiftRdy_Info()
+{
+	WillAndAyanLift = TRUE;
+	ff_applyonceExt(LiftReady,1000,-1);
+};
+
+//*********************************************************************
+//	WarWithOrc
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_WarWithOrc   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 11;
+ 	condition   = DIA_NASZ_999_Test_WarWithOrc_Condition;
+ 	information = DIA_NASZ_999_Test_WarWithOrc_Info;
+ 	permanent   = TRUE;
+ 	description = "WarWithOrc";
+};
+
+FUNC INT DIA_NASZ_999_Test_WarWithOrc_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_WarWithOrc_Info()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_WarWithOrc);
+		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, DIALOG_BACK, DIA_NASZ_999_Test_WarWithOrc_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, "WarWithOrc_End", DIA_NASZ_999_Test_WarWithOrc_End);
+		Info_AddChoice	  (DIA_NASZ_999_Test_WarWithOrc, "WarWithOrc_Start", DIA_NASZ_999_Test_WarWithOrc_Start);
+};
+
+FUNC VOID DIA_NASZ_999_Test_WarWithOrc_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_WarWithOrc);
+};
+
+FUNC VOID DIA_NASZ_999_Test_WarWithOrc_End()
+{	
+	AI_StopProcessInfos	(self);
+	WarWithOrc_End(self);
+};
+
+FUNC VOID DIA_NASZ_999_Test_WarWithOrc_Start()
+{
+	AI_StopProcessInfos	(self);
+	//self.aivar[AIV_INVINCIBLE] = false;
+	hero.aivar[AIV_INVINCIBLE] = false;
+	WarWithOrc_Start(self);
+};
+
+//*********************************************************************
+//	EffectTest
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_EffectTest   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 12;
+ 	condition   = DIA_NASZ_999_Test_EffectTest_Condition;
+ 	information = DIA_NASZ_999_Test_EffectTest_Info;
+ 	permanent   = TRUE;
+ 	description = "Oducz zwierzyny.";
+};
+
+FUNC INT DIA_NASZ_999_Test_EffectTest_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_EffectTest_Info()
+{
+	//Wld_PlayEffect("SLEEP_BLEND",  self, self, 0, 0, 0, FALSE );
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ReptileSkin] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Heart] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_ShadowHorn] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Mandibles] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] = FALSE;
+	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = FALSE;
+};

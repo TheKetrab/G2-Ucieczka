@@ -88,6 +88,10 @@ func int ZS_Attack_Loop ()
 	
 	// EXIT LOOP IF...
 	
+	// reset bandit attitude?
+	var int banditsVar; banditsVar = CheckBanditsVar(self);
+	if (banditsVar == TRUE) { return LOOP_END; };
+	
 	if(self.flags == 6 && C_NpcIsUndead(other)) {
 	
 		self.aivar[AIV_PursuitEnd] = true;

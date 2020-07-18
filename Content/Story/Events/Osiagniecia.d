@@ -1,95 +1,4 @@
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// OSIAGNIECIA STARE
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// 1. Zabij 1000 stworzeñ.
-// 2. Stañ siê guru kopaczy.
-// 3. Poznaj przepisy Gildii Alchemików.
-// 4. Naucz siê wszystkich sztuczek z³odzejskich.
-// 5. Zostañ mistrzem areny.
-// 6. Wyzwól kopalniê Marcosa.
-// 7. Uœwiêæ wszystkie groby.
-// 8. Przejmij obóz na pla¿y za palisad¹.
-// 9. Pokonaj wszystkie bossy.
-// 10. Oczyœæ p³askowy¿ gigantów.
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// OSIAGNIECIA NOWE
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-const string Acv1Title   = "Zabójca";
-const string Acv1Content = "Zabi³eœ 1000 stworzeñ";
-
-const string Acv2Title   = "Guru kopaczy";
-const string Acv2Content = "Wykopa³eœ niemal wszystko w Górniczej Dolinie";
-
-const string Acv3Title   = "Alchemik";
-const string Acv3Content = "Pozna³eœ wszystkie sekrety Gildii Alchemików";
-
-const string Acv4Title   = "Z³odziej";
-const string Acv4Content = "Nauczy³eœ siê wszystkich sztuczek z³odziejskich";
-
-const string Acv5Title   = "Mistrz areny";
-const string Acv5Content = "Pokona³eœ wszystkich gladiatorów";
-
-const string Acv6Title   = "Mœciciel";
-const string Acv6Content = "Wyzwoli³eœ kopalniê Marcosa";
-
-const string Acv7Title   = "Przywo³ywacz duchów";
-const string Acv7Content = "Poœwiêci³eœ wszystkie groby";
-
-const string Acv8Title   = "Okrobójca";
-const string Acv8Content = "Rozgromi³eœ obóz orków na pla¿y";
-
-const string Acv9Title   = "Achilles";
-const string Acv9Content = "Pokona³eœ wszystkich bossów";
-
-const string Acv10Title   = "Chwa³a i odwaga";
-const string Acv10Content = "Oczyœci³eœ p³askowy¿ gigantów";
-
-const string Acv11Title   = "";
-const string Acv11Content = "";
-
-const string Acv12Title   = "";
-const string Acv12Content = "";
-
-
-// 1. Zabij 1000 stworzeñ.
-// 2. Stañ siê guru kopaczy.
-// 3. Poznaj przepisy Gildii Alchemików.
-// 4. Naucz siê wszystkich sztuczek z³odzejskich.
-// 5. Zostañ mistrzem areny.
-// 6. Wyzwól kopalniê Marcosa.
-// 7. Uœwiêæ wszystkie groby.
-// 8. Przejmij obóz na pla¿y za palisad¹.
-// 9. Pokonaj wszystkie bossy.
-// 10. Oczyœæ p³askowy¿ gigantów.
-
-
-
-// Zbieracz - zebra³eœ 100 zardzewia³ych mieczy
-//Oszczêdzacz punktów nauki - miej 50 niewykorzystanych punktów nauki
-// Mistrz nad mistrzami - 100% czegolwiek
-// Otwórz 100 skrzyñ
-// £amacz wytrychów 
-// Szczêœciarz - otwórz 5 skrzyñ bez ³amania wytrycha
-// Magik - u¿yj 10 ró¿nych czarów
-// Zjedz wszystkie zio³a
-// Nurek - spêdŸ 5 minut (w sumie) pod woda
-// RzeŸnik - zbierz 500 miês (mo¿esz je zjadaæ , nie musza byæ w ekwipunku (jeœli podnosisz a iten nie ma flagi item dropped)
-// Miej 1hp na koncie
-// Miej na koncie skute (czyli ze ktoœ tobie) 50k hp
-// Wypij odtrutkê
-// Kup 100 butelek alkoholu 
-// Przeœpij 100 godzin 
-// Spl¹druj domy kerolotga i gestatha
-// Módl siê do innosa przez 3 dni
-// Wypij 30 butelek alkoholu
-// ZnajdŸ listy magnatów (rozrzucone po zamku)
-// Mistrz myœlistwa - naucz siê wszystkich trofeów
-// Strzel 100razy z ³uku lub kuszy
-// PrzejdŸ ilestam kilometrów
-
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 
@@ -218,18 +127,9 @@ func void Use_ItNa_KsiegaOsiagniec ()
 	Doc_PrintLine    ( nDocID,  1, "");
 
 
-
-
 	Doc_PrintLines	( nDocID,  1, " "					);
-
-
 	Doc_Show		( nDocID );
-
-	
-	
-		Doc_PrintLines	( nDocID,  1, " "					);
-
-
+	Doc_PrintLines	( nDocID,  1, " "					);
 	Doc_Show		( nDocID );
 };
 
@@ -247,134 +147,75 @@ var int Osiagniecie7OneTime;
 var int Osiagniecie8OneTime;
 var int Osiagniecie9OneTime;
 var int Osiagniecie10OneTime;
+var int Osiagniecie11OneTime;
+var int Osiagniecie12OneTime;
+var int Osiagniecie13OneTime;
+var int Osiagniecie14OneTime;
+var int Osiagniecie15OneTime;
+var int Osiagniecie16OneTime;
+var int Osiagniecie17OneTime;
+var int Osiagniecie18OneTime;
+var int Osiagniecie19OneTime;
+var int Osiagniecie20OneTime;
+var int Osiagniecie21OneTime;
+var int Osiagniecie22OneTime;
+var int Osiagniecie23OneTime;
+var int Osiagniecie24OneTime;
+var int Osiagniecie25OneTime;
+var int Osiagniecie26OneTime;
+var int Osiagniecie27OneTime;
+var int Osiagniecie28OneTime;
+var int Osiagniecie29OneTime;
+var int Osiagniecie30OneTime;
 
 
 func void Check_OSIAGNIECIA() {
 
-	//1
-	if (PokonaneWszystkie_Liczba >= 1000)
-	  && (Osiagniecie1OneTime == FALSE)
-	{
-		Osiagniecie1OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Zabi³eœ 1000 stworzeñ!", -1,52, FONT_ScreenSmall,5);
+	if (Osiagniecie1OneTime == FALSE && PokonaneWszystkie_Liczba >= 1000)		{ Osiagniecie1OneTime = TRUE; AddAchievement(Acv1Title,Acv1Content); };		// 1
+	if (Osiagniecie2OneTime == FALSE && LevelMiner >= 100)						{ Osiagniecie2OneTime = TRUE; AddAchievement(Acv2Title,Acv2Content); };		// 2
+	if (Osiagniecie3OneTime == FALSE && PoznaneSekrety_Liczba >= 5)				{ Osiagniecie3OneTime = TRUE; AddAchievement(Acv3Title,Acv3Content);		// 3
+																				  Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_SUCCESS);
+																				  B_LogEntry (TOPIC_Gildia_Alchemikow,"Znam ju¿ wszystkie przepisy Gildii Alchemików. Wykorzystam ich sekrety. Z pewnoœci¹!"); };
+	if (Osiagniecie4OneTime == FALSE && NauczoneZlodziejskie >= 4) 				{ Osiagniecie4OneTime = TRUE; AddAchievement(Acv4Title,Acv4Content); };		// 4
+	if (Osiagniecie5OneTime == FALSE && JestesMistrzemAreny == TRUE)			{ Osiagniecie5OneTime = TRUE; AddAchievement(Acv5Title,Acv5Content); };		// 5
+	if (Osiagniecie6OneTime == FALSE && npc_isdead(NASZ_009_Marcos)
+									 && npc_isdead(NASZ_006_Renegat)
+									 && npc_isdead(NASZ_011_Renegat)
+									 && npc_isdead(NASZ_013_Renegat)
+									 && npc_isdead(NASZ_014_Renegat))			{ Osiagniecie6OneTime = TRUE; AddAchievement(Acv6Title,Acv6Content); };		// 6
+	  
 
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};
+	if (Osiagniecie7OneTime == FALSE && WszystkieGrobyAchievement >= 20)		{ Osiagniecie7OneTime = TRUE; AddAchievement(Acv7Title,Acv7Content); };		// 7
+	if (Osiagniecie8OneTime == FALSE && wszyscy_orkowie_nie_zyja == TRUE)		{ Osiagniecie8OneTime = TRUE; AddAchievement(Acv8Title,Acv8Content); };		// 8
+	if (Osiagniecie9OneTime == FALSE && ZabiteBossy >= 10)						{ Osiagniecie9OneTime = TRUE; AddAchievement(Acv9Title,Acv9Content); };		// 9
+	if (Osiagniecie10OneTime == FALSE && ZabiteGiganty >= 7)					{ Osiagniecie10OneTime = TRUE; AddAchievement(Acv10Title,Acv10Content); };	// 10
+
+
+	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(Acv11Title,Acv11Content); };	// 11 // TODO hook na funkcje podnoszenia
+	if (Osiagniecie12OneTime == FALSE && hero.lp >= 50)							{ Osiagniecie12OneTime = TRUE; AddAchievement(Acv12Title,Acv12Content); };	// 12
+	if (Osiagniecie13OneTime == FALSE)											{ Osiagniecie13OneTime = TRUE; AddAchievement(Acv13Title,Acv13Content); };	// 13 // TODO
+	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14 // TODO hook na funkcje ze sie lamie wytrych
+	if (Osiagniecie15OneTime == FALSE)											{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15 // TODO
+	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
+	if (Osiagniecie17OneTime == FALSE)											{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 // TODO
+	if (Osiagniecie18OneTime == FALSE)											{ Osiagniecie18OneTime = TRUE; AddAchievement(Acv18Title,Acv18Content); };	// 18
+	if (Osiagniecie19OneTime == FALSE && OdtrutkaEverUsed == TRUE)				{ Osiagniecie19OneTime = TRUE; AddAchievement(Acv19Title,Acv19Content); };	// 19
+	if (Osiagniecie20OneTime == FALSE)											{ Osiagniecie20OneTime = TRUE; AddAchievement(Acv20Title,Acv20Content); };	// 20 TODO
+	if (Osiagniecie21OneTime == FALSE)											{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21 TODO
+	if (Osiagniecie22OneTime == FALSE)											{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22 TODO
+	if (Osiagniecie23OneTime == FALSE)											{ Osiagniecie23OneTime = TRUE; AddAchievement(Acv23Title,Acv23Content); };	// 23 TODO
+	if (Osiagniecie24OneTime == FALSE)											{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24 // TODO
+	if (Osiagniecie25OneTime == FALSE && HeroMovedDistance >= 100000)			{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 TODO -> v=s/t -> s = vt , ticktock co 250ms i zalezy czy sprint, chodzenie czy bieg czy skradanie. jesli teraz i za poprzendim razem byles w tym stanie to dolicz
+	if (Osiagniecie26OneTime == FALSE)											{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26 // TODO
+	if (Osiagniecie27OneTime == FALSE)											{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27 // TODO
+	if (Osiagniecie28OneTime == FALSE)											{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28 // TODO
+	if (Osiagniecie29OneTime == FALSE)											{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29 // TODO 
+	if (Osiagniecie30OneTime == FALSE)											{ Osiagniecie30OneTime = TRUE; AddAchievement(Acv30Title,Acv30Content); };	// 30 // TODO
+
 	
-	//2
-	if (LevelMiner >= 100)
-	  && (Osiagniecie2OneTime == FALSE)
-	{
-		Osiagniecie2OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Sta³eœ siê guru kopaczy", -1,52, FONT_ScreenSmall,5);
 
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};
-	
-	//3
-	if (PoznaneSekrety_Liczba >= 5)
-	  && (Osiagniecie3OneTime == FALSE)
-	{
-		Osiagniecie3OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Pozna³eœ wszystkie sekrety gildii alchemików!", -1,52, FONT_ScreenSmall,5);
-		
-		Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_SUCCESS);
-		B_LogEntry (TOPIC_Gildia_Alchemikow,"Znam ju¿ wszystkie przepisy Gildii Alchemików. Wykorzystam ich sekrety. Z pewnoœci¹!"); 
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};	
-	
-	//4
-	if (NauczoneZlodziejskie >= 4)
-	  && (Osiagniecie4OneTime == FALSE)
-	{
-		Osiagniecie4OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Nauczy³eœ siê wszystkich umiejêtnoœci z³odziejskich!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};		
-	
-	//5
-	if (JestesMistrzemAreny == TRUE)
-	  && (Osiagniecie5OneTime == FALSE)
-	{
-		Osiagniecie5OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Zosta³eœ mistrzem areny!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};		
-	
-	//6
-	if ((npc_isdead (NASZ_009_Marcos)) && (npc_isdead (NASZ_006_Renegat)) && (npc_isdead (NASZ_011_Renegat)) && (npc_isdead (NASZ_013_Renegat)) && (npc_isdead (NASZ_014_Renegat)))
-	  && (Osiagniecie6OneTime == FALSE)
-	{
-		Osiagniecie6OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Wyzwoli³eœ kopalniê Marcosa!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};
-
-	//7
-	if (WszystkieGrobyAchievement >= 20)
-	  && (Osiagniecie7OneTime == FALSE)
-	{
-		Osiagniecie7OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Uœwiêci³eœ wszystkie groby!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};
-	
-	//8
-	if (wszyscy_orkowie_nie_zyja == TRUE)
-	  && (Osiagniecie8OneTime == FALSE)
-	{
-		Osiagniecie8OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Przej¹³eœ obóz na pla¿y za palisad¹!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};	
-
-	//9
-	if (ZabiteBossy >= 10)
-	  && (Osiagniecie9OneTime == FALSE)
-	{
-		Osiagniecie9OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Pokona³eœ wszystkich bossów!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};	
-
-	//10
-	if (ZabiteGiganty >= 7)
-	  && (Osiagniecie10OneTime == FALSE)
-	{
-		Osiagniecie10OneTime = TRUE;
-		PrintScreen	("PN + 2", -1,-1, "font_old_20_white.tga",5);
-		PrintScreen	("Oczyœci³eœ p³askowy¿ gigantów!", -1,52, FONT_ScreenSmall,5);
-
-		Snd_Play ("SFX_INNOSEYE");
-		hero.lp = hero.lp + 2;
-	};	
-	
-	if(Osiagniecie1OneTime && Osiagniecie2OneTime && Osiagniecie3OneTime && Osiagniecie4OneTime && Osiagniecie5OneTime && Osiagniecie6OneTime && Osiagniecie7OneTime && Osiagniecie8OneTime && Osiagniecie9OneTime && Osiagniecie10OneTime)
+	// STOP INVOKING FUNCTION
+	if (AchievementsCnt >= 30)
 	{
 		ff_remove(Check_OSIAGNIECIA);
 	};

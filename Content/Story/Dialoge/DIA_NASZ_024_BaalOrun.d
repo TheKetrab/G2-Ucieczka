@@ -195,7 +195,7 @@ func void DIA_NASZ_024_BaalOrun_DrogaDone_Info ()
 	B_LogEntry (TOPIC_Droga, "Nabiega³em siê po okolicy, ale ostatecznie skompletowa³em kawa³ki zwoju. Odda³em je Orunowi, który po³¹czy³ je i stworzy³ magiczny zwój. Póki co, musimy kontynuowaæ przygotowania do rytua³u.");
 	Log_SetTopicStatus (TOPIC_Droga, LOG_SUCCESS);
 
-
+	B_GivePlayerXP(1000);
 };
 ///////////////////////////////////////////////////////////////////////
 //	Info BadaniaCorCaloma
@@ -279,6 +279,9 @@ func void DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_02"); //Doskonale! Miejmy nadziejê, ¿e dziêki temu odkryjemy sposób na to, jak wygnaæ z³o. Niestety, bêdziemy potrzebowali trochê czasu, by zg³êbiæ wiedzê jaka drzemi¹ w zwoju i ksi¹¿ce, które nam dostarczy³eœ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_03"); //Wróæ do nas nastêpnego dnia, a na pewno bêdziemy mieli dla ciebie jakieœ informacje.
 	OrunBadaKsiazke = 1;
+	
+	B_LogEntry (TOPIC_BadaniaCaloma, "Mam wróciæ do Oruna nastêpnego dnia.");
+
 
 };
 
@@ -292,7 +295,7 @@ instance DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace		(C_INFO)
 	condition	 = 	DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_Condition;
 	information	 = 	DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_Info;
 	important	 = 	TRUE;
-	description	 =	"Znalaz³em ksi¹¿kê.";
+	description	 =	"Jak przebiegaj¹ prace, odkryliœcie ju¿ coœ?";
 	permanent	 =	FALSE;
 };
 
@@ -315,8 +318,11 @@ func void DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_Info ()
 	AI_Output (self, other, "DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_024_05"); //Podczas jego przeprowadzania bêdziemy zupe³nie bezbronni, dlatego te¿ bêdziesz zmuszony daæ z siebie wiêcej ni¿ podczas ca³ej swojej podró¿y.
 	AI_Output (other, self, "DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_15_06"); //Pokona³em ju¿ tyle trudnoœci, ¿e nic mnie nie zatrzyma. Zaczynajmy, nie ma na co czekaæ.
 	
+	B_LogEntry (TOPIC_BadaniaCaloma, "Baal rozpracowa³ ksiêgê i teraz mo¿emy udaæ siê na plac œwi¹tynny, by odprawiæ rytua³.");
 	Log_SetTopicStatus (TOPIC_BadaniaCaloma, LOG_SUCCESS);
 	OrunBadaKsiazke = 2;
+	
+	B_GivePlayerXP(500);
 	
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Rytual");
@@ -405,9 +411,7 @@ func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 	
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_RytualCD_024_05"); //A teraz ruszaj, nim bêdzie za póŸno.
 	
-	Log_CreateTopic (TOPIC_Zlo,LOG_MISSION);
-	Log_SetTopicStatus (TOPIC_Zlo, LOG_RUNNING);
-	B_LogEntry (TOPIC_Zlo, "Bariera, blokuj¹ca wejœcie do œwi¹tyni, zosta³a z³amana. Baal wrêczy³ mi zaklêcie, które powsta³o w wyniku po³¹czenia wszystkich kawa³ków pergaminu. Aby staæ siê pe³noprawnym cz³onkiem Bractwa i przejœæ przez magiczne pole w wejœciu do œwi¹tyni, mam u¿yæ zwoju z za³o¿onymi wszystkimi czterema artefaktami, które otrzyma³em od duchów.");
+	B_LogEntry (TOPIC_zacmienie, "Bariera, blokuj¹ca wejœcie do œwi¹tyni, zosta³a z³amana. Baal wrêczy³ mi zaklêcie, które powsta³o w wyniku po³¹czenia wszystkich kawa³ków pergaminu. Aby staæ siê pe³noprawnym cz³onkiem Bractwa i przejœæ przez magiczne pole w wejœciu do œwi¹tyni, mam u¿yæ zwoju z za³o¿onymi wszystkimi czterema artefaktami, które otrzyma³em od duchów.");
 
 	OrunRediToTelepport = TRUE;
 };

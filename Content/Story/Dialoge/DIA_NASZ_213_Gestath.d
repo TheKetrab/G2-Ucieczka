@@ -883,6 +883,7 @@ FUNC VOID DIA_NASZ_213_Gestath_RenegaciInfo_Info()
 			};
 			AI_Output (self, other,"DIA_NASZ_213_Gestath_RenegaciInfo_55_15"); //Dowiedz siê od nich tyle, ile dasz radê. Powodzenia.
 			
+			ResetBanditsAttitude();
 			B_LogEntry (TOPIC_Gestath_Renegaci, "Muszê przenikn¹æ do obozu tamtych ludzi i dowiedzieæ siê, po co przybyli do Górniczej Doliny. Szef myœliwych zasugerowa³ mi, ¿ebym za³atwi³ sobie taki sam pancerz, jaki mieli tamci ludzie.");
 		};
 };

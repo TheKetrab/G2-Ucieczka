@@ -18,6 +18,7 @@ FUNC INT DIA_NASZ_103_Johny_EXIT_Condition()
 
 FUNC VOID DIA_NASZ_103_Johny_EXIT_Info()
 {
+	AddAchievement(Acv1Title,Acv1Content);
 	AI_StopProcessInfos (self);
 };
 
@@ -330,9 +331,16 @@ INSTANCE DIA_NASZ_103_Johny_PICKPOCKET (C_INFO)
 	description = Pickpocket_20; // 20|40|60|80|100|120
 };                       
 
+var int JohnyThiefFail;
 FUNC INT DIA_NASZ_103_Johny_PICKPOCKET_Condition()
 {
-	C_Beklauen (16);
+	// da sie sprobowac okrasc, tylko jesli nie kupiles amuletu i aktywowales misje z amuletem
+	// (bo dopiero wtedy johny tworzy sobie w ekwipunku amulet)
+	if (Npc_HasItems(self,ItNa_HuntAmulet) >= 1)
+	&& (JohnyThiefFail == FALSE)
+	{
+		C_Beklauen (16);
+	};
 };
  
 FUNC VOID DIA_NASZ_103_Johny_PICKPOCKET_Info()
@@ -344,12 +352,17 @@ FUNC VOID DIA_NASZ_103_Johny_PICKPOCKET_Info()
 
 func void DIA_NASZ_103_Johny_PICKPOCKET_DoIt()
 {
-	// TODO przetestowac czy dziala dobrze
+	
 	B_BeklauenThings (ItNa_HuntAmulet, 1);
 	
 	if (other.attribute[ATR_DEXTERITY] < 16) {
-		Log_SetTopicStatus (TOPIC_Hunt_amulet, LOG_FAILED);
-		B_LogEntry (TOPIC_Hunt_amulet, "Johny nakry³ mnie na kradzie¿y.");
+		B_LogEntry (TOPIC_Hunt_amulet, "Johny nakry³ mnie na kradzie¿y. Chyba bêdê musia³ uczciwie kupiæ amulet.");
+		JohnyThiefFail = TRUE;
+	}
+	
+	else {
+		HuntAmuletMIS = 2; // ukradzione
+		Npc_RemoveInvItems(self,ItNa_HuntAmulet,1); // zeby juz nie dalo sie go kupic
 	};
 	
 	Info_ClearChoices (DIA_NASZ_103_Johny_PICKPOCKET);

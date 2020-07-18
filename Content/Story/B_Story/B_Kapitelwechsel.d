@@ -37,8 +37,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 
 
 		// Funkcje
-		//CreateInvItems(NASZ_Kurg_Kan,ItMw_2H_OrcAxe_02),1);
-		EquipItem (self, ItMw_2H_OrcAxe_02);
+		//CreateInvItems(NASZ_452_KurgKan,ItMw_2H_OrcAxe_02),1);
+		EquipItem (NASZ_452_KurgKan, ItMw_2H_OrcAxe_02);
 		B_KillNpc(NASZ_350_Knecht);
 		B_KillNpc(NASZ_351_Knecht);
 		B_StartOtherRoutine (NASZ_111_Gerold, "Cmentarz");

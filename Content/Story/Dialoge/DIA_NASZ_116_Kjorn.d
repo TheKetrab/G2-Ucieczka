@@ -524,6 +524,8 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_Info()
 
 func void FinishQuestKjorn(var int mode) {
 
+	DodajReputacje(REP_LOWCY,3);
+
 	if (mode == 1) { // zloto
 		Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Kjorn_bracia, "Odsprzeda³em Kjornowi amulet. Niech mu s³u¿y. Z³oto przyda mi siê bardziej.");

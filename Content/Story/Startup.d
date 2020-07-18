@@ -27,6 +27,9 @@ func void INIT_GLOBAL()
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL); 
+	
+	
+	FF_ApplyOnceExt (DistanceMeasurement, 250, -1); //raz na 250ms
 	FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
 	FF_ApplyOnceExt (TickTock_5s, 5000, -1); //raz na 5s
 	FF_ApplyOnceExt (Function30s, 30000, -1); //raz na 30s
@@ -38,7 +41,7 @@ func void INIT_GLOBAL()
 	Hooks_Global();
 	
 	CheckDx11();
-	//QuickSlot_Init();
+	QuickSlot_Init();
 	B_AddFightSkill(hero,0,0);
 };
 
@@ -1982,7 +1985,7 @@ func void STARTUP_SURFACE ()
 	Wld_InsertNpc		(OrcWarrior_FortF,"OW_ROCKDRAGON_08");
 	Wld_InsertNpc		(OrcWarrior_FortG,"OW_ROCKDRAGON_08");
 	Wld_InsertNpc		(OrcShaman_FortC,"OW_ROCKDRAGON_09");
-	Wld_InsertNpc		(OrcShaman_Ur_Shak,"OW_ROCKDRAGON_11");
+	Wld_InsertNpc		(NASZ_453_UrShak,"OW_ROCKDRAGON_11");
 	
 
 	//-------------------------PLAC WYMIAN------------------------

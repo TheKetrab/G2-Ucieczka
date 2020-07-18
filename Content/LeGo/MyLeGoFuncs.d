@@ -95,10 +95,12 @@ func void PrintMunitionType()
 					var string str; str = G2U_you_use;
 					if(RangedWeapon.flags & ITEM_BOW)
 					{
-						if(BowMunition != RangedWeapon.Munition)
-						{
-							BowMunition = RangedWeapon.Munition;
-						};
+						// wykomentowane, bo to tylko ewentualnie do magicznego luku,
+						// ale to psulo reszte i i tak nie ma magicznego luku w ucieczce
+						//if(BowMunition != RangedWeapon.Munition)
+						//{
+						//	BowMunition = RangedWeapon.Munition;
+						//};
 						
 						if (BowMunition == FireArrow)
 						{
@@ -123,10 +125,12 @@ func void PrintMunitionType()
 					}
 					else
 					{
-						if(CBowMunition != RangedWeapon.Munition)
-						{
-							CBowMunition = RangedWeapon.Munition;
-						};
+						// wykomentowane, bo to tylko ewentualnie do magicznej kuszy
+						// ale to psulo reszte i i tak nie ma magicznej kuszy w ucieczce
+						//if(CBowMunition != RangedWeapon.Munition)
+						//{
+						//	CBowMunition = RangedWeapon.Munition;
+						//};
 						
 						
 						if (CBowMunition == SharpBolt)
@@ -207,7 +211,7 @@ func void TakeFocusVob_hook()
 		B_LogEntry (TOPIC_Rethon_kurgan, "Znalaz³em ko³o zêbate. Mogê wracaæ do Kurgana.");
 	};	
 	
-	PrintS_Ext(ConcatStrings(G2U_you_take,itm.name/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
+	PrintS_Ext(ConcatStrings(G2U_you_take,itm.description/*MEM_ReadString(focus+312)*/), RGBA(255,255,255,0));
 	
 };
 
@@ -889,7 +893,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				};	
 		};
 	};
-	var c_npc ur; ur = Hlp_GetNpc(OrcShaman_Ur_shak);
+	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
 	if(attackerPtr == _@(ur))
 	{
 		dmg*=2;

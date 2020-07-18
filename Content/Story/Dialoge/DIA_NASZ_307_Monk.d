@@ -409,8 +409,11 @@ FUNC VOID DIA_NASZ_307_Monk_koniec_Info()
 		AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_15_04"); //Tak, jak siê spodziewa³em, z wiêkszoœci¹ musia³em poradziæ sobie sam.
 		AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_15_05"); //W sumie to nie wiem, po co w ogóle ciê ze sob¹ zabiera³em. Wracam na stra¿.	
 		
-		B_LogEntry (TOPIC_Monk_wataha, "Nie uda³o mi siê zabiæ wystarczaj¹co du¿o wilków.");
-		Log_SetTopicStatus (TOPIC_Monk_wataha, LOG_FAILED);
+		//B_LogEntry (TOPIC_Monk_wataha, "Nie uda³o mi siê zabiæ wystarczaj¹co du¿o wilków.");
+		//Log_SetTopicStatus (TOPIC_Monk_wataha, LOG_FAILED);
+		
+		FailQuest(TOPIC_Monk_wataha,"");
+
 	};
 
 	AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_55_06"); //Do zobaczenia przy bramie.
@@ -525,8 +528,10 @@ FUNC VOID DIA_NASZ_307_Monk_lose_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_307_Monk_lose_15_00"); //Jesteœ ¿a³osny.
 	
-	B_LogEntry (TOPIC_Monk_Frut, "Monk mnie spra³... Ahh...");
-	Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_FAILED);
+	//B_LogEntry (TOPIC_Monk_Frut, "Monk mnie spra³... Ahh...");
+	//Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_FAILED);
+	
+	FailQuest(TOPIC_Monk_Frut,"");
 	
 	MONK_WON = TRUE;
 };

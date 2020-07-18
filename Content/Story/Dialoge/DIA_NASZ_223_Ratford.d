@@ -371,9 +371,10 @@ FUNC VOID DIA_NASZ_223_Ratford_ZadanieFail_Info()
 
 	Kara1kZaNauke = TRUE;
 
-	Log_SetTopicStatus (TOPIC_Ratford_zlodziejaszek, LOG_FAILED);
-	B_LogEntry (TOPIC_Ratford_zlodziejaszek, "Nie zd¹¿y³em okraœæ Cappela i teraz muszê zap³aciæ Ratfordowi sporo pieniêdzy, ¿eby mnie czegoœ nauczy³. A niech to!");
-	
+	//Log_SetTopicStatus (TOPIC_Ratford_zlodziejaszek, LOG_FAILED);
+	//B_LogEntry (TOPIC_Ratford_zlodziejaszek, "Nie zd¹¿y³em okraœæ Cappela i teraz muszê zap³aciæ Ratfordowi sporo pieniêdzy, ¿eby mnie czegoœ nauczy³. A niech to!");
+	FailQuest(TOPIC_Ratford_zlodziejaszek,"");
+
 };
 
 //*********************************************************************

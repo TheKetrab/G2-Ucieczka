@@ -36,7 +36,6 @@ INSTANCE DIA_NASZ_211_Hunt_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_211_Hunt_siema_Condition()
 {
-	// TODO czy ten dialog sie odpala?
 	if (Npc_IsInState(self, ZS_TALK))
 	{
 		return TRUE;
@@ -80,6 +79,15 @@ FUNC VOID DIA_NASZ_211_Hunt_robota_Info()
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_02"); //Jesteœ tu nowy i nikt ciê nie zna.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_03"); //Handlarz ³owców orków imieniem Johny ma na sprzeda¿ pewien amulet. Chcê go mieæ.
 	AI_Output (self, other,"DIA_NASZ_211_Hunt_robota_55_04"); //Kup go albo ukradnij. Jeœli jesteœ doœæ cwany, nie powinieneœ mieæ problemów.
+	
+	// HuntAmuletMIS
+	// 0 - nieaktywne
+	// 1 - aktywowane
+	// 2 - ukradzione
+	// kupione <=> Npc_HasItems(NASZ_103_Johny,ItNa_HuntAmulet) == 0 && HuntAmuletMIS == 1
+	
+	HuntAmuletMIS = 1;
+	CreateInvItems (NASZ_103_Johny, ItNa_HuntAmulet, 1); 
 	
 	Log_CreateTopic (TOPIC_Hunt_amulet, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Hunt_amulet, LOG_RUNNING);
@@ -391,11 +399,12 @@ FUNC VOID DIA_NASZ_211_Hunt_UltraZbroja_Info()
 		B_GiveInvItems (other, self, ItMi_Gold, 2000);
 		Npc_RemoveInvItems   (self, ItMi_Gold, 2000);
 		HuntSay_ForYou();
-		Createinvitems (self, ITNA_OUT_S, 1);
-		B_Giveinvitems (self, other, ITNA_OUT_S, 1);
+		Createinvitems (self, ITNA_OUT_Ultra, 1);
+		B_Giveinvitems (self, other, ITNA_OUT_Ultra, 1);
 		AI_EquipBestArmor (other);
 		UltraZbrojaMysliwegoKupiona = TRUE;
 		
+		B_GivePlayerXP(1000);
 		Log_SetTopicStatus (TOPIC_Hunt_zbroja, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Hunt_zbroja, "Kupi³em zbrojê.");
 

@@ -622,7 +622,7 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaJarzynowaZJagodami ()
 	if(npc_hasitems(other, ItPl_Health_Herb_02) >= 2)
 	&&(npc_hasitems(other, ItPl_Mana_Herb_01) >= 2)
 	&&(npc_hasitems(other, ItPl_Beet) >= 1)
-	&&(npc_hasitems(other, ItPl_Forestberry) >= 2) // TODO: nie wiem która jagoda (mo¿e ta z bg? :Thinking:), wiêc dam leœn¹ i poln¹
+	&&(npc_hasitems(other, ItPl_Forestberry) >= 2)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 2)
 	{
 		B_GiveInvItems (other, self, ItPl_Health_Herb_02, 2);

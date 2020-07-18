@@ -2260,6 +2260,7 @@ FUNC INT DIA_NASZ_106_Jan_dobar_Condition()
 FUNC VOID DIA_NASZ_106_Jan_dobar_Info()
 {
 	Npc_ClearAIQueue(NASZ_107_Brutus);
+	
 	B_StartOtherRoutine (NASZ_107_Brutus,"Die");
 	AI_Teleport(NASZ_107_Brutus,"NASZ_BRUTUS_A");
 	B_KillNpc(NASZ_107_Brutus);
@@ -2353,7 +2354,7 @@ INSTANCE DIA_NASZ_106_Jan_KurgKan   (C_INFO)
 
 FUNC INT DIA_NASZ_106_Jan_KurgKan_Condition()
 {
-	if(KAPITEL >=3 && Npc_KnowsInfo(other,DIA_ORC_NASZ_Kurg_Kan_Zbroja))
+	if(KAPITEL >=3 && Npc_KnowsInfo(other,DIA_NASZ_452_KurgKan_Zbroja))
 	{
 		return TRUE;
 	};

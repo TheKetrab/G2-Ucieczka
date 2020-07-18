@@ -970,6 +970,9 @@ FUNC VOID DIA_NASZ_010_Monastir_Kap5Start_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_Kap5Start_55_02"); //Jeœli bogowie tak zakoñczyli rytua³, to na pewno jest w tym jakiœ sens.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_Kap5Start_55_03"); //Otworzy³y siê wrota do jakiejœ pieczary. Mo¿liwe, ¿e bogowie tak to sobie wymyœlili.
 
+	Log_SetTopicStatus (TOPIC_Monastir_pomoc, LOG_SUCCESS);
+	B_LogEntry (TOPIC_Monastir_pomoc, "Nie wiem co to ma znaczyæ... Bogowie odprawili rytua³, ale portalu nigdzie nie widaæ.");
+	
 	Log_CreateTopic (TOPIC_OrcCity_In, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_OrcCity_In, LOG_RUNNING);
 	B_LogEntry (TOPIC_OrcCity_In, "Szlag by to trafi³. Myœla³em, ¿e to ju¿ koniec i wydostaniemy siê z tej doliny, której ja sam mam ju¿ powoli doœæ. Bogowie odprawili rytua³ i zniknêli. £adna mi pomoc! Ale Monastir uwa¿a, ¿e nie zrobili tego bez powodu. ¯e 'panuj¹cy nad tym œwiatem' maj¹ w tym jakiœ cel. Monastir dostrzeg³, ¿e odsun¹³ siê jakiœ g³az... Szykuje siê kolejna niebezpieczna podró¿...");

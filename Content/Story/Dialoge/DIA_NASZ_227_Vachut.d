@@ -44,7 +44,7 @@ FUNC VOID DIA_NASZ_227_Vachut_siema_Info()
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_siema_15_00"); //Hej, ty!
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_siema_55_01"); //Nie widzia³em ciê jeszcze. Wygl¹dasz bardzo kiepsko. Pracowa³eœ w kopalni, prawda?
 	AI_Output (other,self ,"DIA_NASZ_227_Vachut_siema_15_02"); //Tak, nazywam siê Will.
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_siema_55_03"); //Witaj zatem. Dobrze, ¿e twój koszmar siê ju¿ skoñczy³. Przed tob¹ kolejny: Górnicza Dolina.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_siema_55_03"); //Witaj zatem. Dobrze, ¿e twój koszmar ju¿ siê skoñczy³, ale przed tob¹ kolejny: Górnicza Dolina.
 
 };
 
@@ -267,7 +267,7 @@ FUNC INT DIA_NASZ_227_Vachut_bye_Condition()
 
 FUNC VOID DIA_NASZ_227_Vachut_bye_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_227_Vachut_bye_55_00"); //IdŸ jeszcze kawa³ek do góry i skrêæ w lewo, we wnêkê. Ja muszê ju¿ wracaæ, bo jeszcze jakieœ topielce zrobi¹ ba³agan w moim obozowisku.
+	AI_Output (self, other,"DIA_NASZ_227_Vachut_bye_55_00"); //IdŸ jeszcze kawa³ek do góry i skrêæ w lewo, we wnêkê. Ja ju¿ muszê wracaæ, bo jeszcze jakieœ topielce zrobi¹ ba³agan w moim obozowisku.
 	AI_Output (other,self ,"DIA_NASZ_227_Vachut_bye_15_01"); //Dziêki za pomoc.
 	AI_Output (self, other,"DIA_NASZ_227_Vachut_bye_55_02"); //Zajrzyj jeszcze kiedyœ do mnie. Mi³o siê z tob¹ gawêdzi.
 

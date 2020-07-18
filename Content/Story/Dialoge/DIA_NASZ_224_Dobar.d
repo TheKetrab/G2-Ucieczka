@@ -189,6 +189,7 @@ FUNC VOID DIA_NASZ_224_Dobar_zadanie_paczka()
 	JAN_PACZKI = TRUE;
 	Wld_InsertNpc	(Warg,"FP_ROAM_ORC_07");
 	B_StartOtherRoutine (NASZ_107_Brutus,"BeforeDie");
+	NASZ_107_Brutus.flags = 0;
 	
 	Createinvitems (NASZ_107_Brutus, ItNa_PaczkaJana, 3);
 
@@ -262,8 +263,8 @@ FUNC VOID DIA_NASZ_224_Dobar_zadanieKap2_Info()
 			Wld_InsertNpc	(Warg,"FP_ROAM_ORC_07");
 			B_StartOtherRoutine (NASZ_107_Brutus,"BeforeDie");
 			NASZ_107_Brutus.flags = 0;
-			B_KillNpc(NASZ_107_Brutus);
-			//Createinvitems (NASZ_107_Brutus, ItNa_PaczkaJana, 3);
+			
+			Createinvitems (NASZ_107_Brutus, ItNa_PaczkaJana, 3);
 
 			Log_CreateTopic (TOPIC_Dobar_paczka, LOG_MISSION);
 			Log_SetTopicStatus (TOPIC_Dobar_paczka, LOG_RUNNING);

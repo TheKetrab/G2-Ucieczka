@@ -251,6 +251,28 @@ func void DynamicSaveSystem()
 };
 
 
+// WYLACZENIE REAGOWANIA NA KRADZIEZ PO KODZIE 'INSERT' PRZEZ 30s
+// void __cdecl Game_CreateInstance(class zSTRING &,class zSTRING &) 0x006CB7C0 = 7124928
+const int cdecl__Game_CreateInstance = 7124928;
+const int cdecl__Game_CreateInstance_Len = 6;
+
+var int AssessTheftDisabled;
+func void DisableAssessTheft() {
+	AssessTheftDisabled = TRUE;
+	ff_applyonceext(DisableAssessTheft_Timer,5000,-1);
+};
+
+var int DisableAssessTheft_i;
+func void DisableAssessTheft_Timer() {
+	DisableAssessTheft_i += 1;
+	if (DisableAssessTheft_i >= 6) { // 6*5 = 30s
+		AssessTheftDisabled = FALSE;
+		DisableAssessTheft_i = 0;
+		ff_remove(DisableAssessTheft_Timer);
+	};
+};
+
+
 func void DisableFocusOfDeadNPCsWithEmptyInventory() {
     const int once = 0;
     if (once) {
@@ -486,7 +508,7 @@ func void oCNpcInventory_HandleEvent_hook()
 	if(key == keyAction_1 || key == keyAction_2)
 	{
 		itm = _^(ptr);
-		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(Itna_kostur_urshaka))
+		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_Kostur_UrShaka))
 		{	
 			var c_npc slf; slf = _^(nptr);
 			MEM_WriteInt(ESP+4,-1);
@@ -741,6 +763,8 @@ func void CheckItemConditions_Init()
 };
 
 
+
+
 const int INV_MAX_ITEMS_addr = 8635508;
 const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
 func void Hooks_Global()
@@ -751,6 +775,8 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
+		
+		HookEngineF(cdecl__Game_CreateInstance,cdecl__Game_CreateInstance_Len,DisableAssessTheft);
 		
 		HookEngineF(oCNpc__CopyTransformSpellInvariantValuesTo,5,Transform);
 		

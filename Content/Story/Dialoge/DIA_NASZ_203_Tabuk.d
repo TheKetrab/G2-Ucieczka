@@ -219,8 +219,10 @@ FUNC VOID DIA_NASZ_203_Tabuk_Nieudane1_Info()
 
 	Tabuk_Tarcza1 = FALSE;
 	ff_remove(TabukStrzelanie);
-	Log_SetTopicStatus (TOPIC_Tabuk_tarcza, LOG_FAILED);
-	B_LogEntry (TOPIC_Tabuk_tarcza, "Nietrafienie w tarczê ani razu z odleg³oœci dziesiêciu metrów, to trochê wstyd. Wiele nauki przede mn¹.");
+	//Log_SetTopicStatus (TOPIC_Tabuk_tarcza, LOG_FAILED);
+	//B_LogEntry (TOPIC_Tabuk_tarcza, "Nietrafienie w tarczê ani razu z odleg³oœci dziesiêciu metrów, to trochê wstyd. Wiele nauki przede mn¹.");
+	FailQuest(TOPIC_Tabuk_tarcza,"");
+	
 };
 
 //*********************************************************************

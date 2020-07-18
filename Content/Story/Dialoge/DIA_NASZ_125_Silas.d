@@ -368,7 +368,7 @@ FUNC VOID DIA_NASZ_125_Silas_StaraPiosenkaDone_Info()
 		
 	EngorRoutinePlayLute = TRUE;
 	
-	DodajReputacje(3,REP_LOWCY);
+	DodajReputacje(1,REP_LOWCY);
 	B_GivePlayerXP(300);
 	
 	B_StartOtherRoutine (NASZ_104_Engor,"Lute");
@@ -430,7 +430,7 @@ INSTANCE DIA_NASZ_125_Silas_KurgKanDance   (C_INFO)
 FUNC INT DIA_NASZ_125_Silas_KurgKanDance_Condition()
 {
 	if (Npc_GetDistToWP(NASZ_120_Phill,"NASZ_LOWCY_KARCZMA_02") < 500)
-	&& (Npc_GetDistToWP(NASZ_Kurg_Kan,"NASZ_LOWCY_KARCZMA_02") < 500)
+	&& (Npc_GetDistToWP(NASZ_452_KurgKan,"NASZ_LOWCY_KARCZMA_02") < 500)
 	&& (Wld_IsTime(21,00,02,00))
 	&& (KurgKanTanczy)
 	{
@@ -441,7 +441,7 @@ FUNC INT DIA_NASZ_125_Silas_KurgKanDance_Condition()
 FUNC VOID DIA_NASZ_125_Silas_KurgKanDance_Info()
 {
 
-	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_15_00"); //Ha, ha! Patrz jakiego Phill sobie znalaz³ towarzysza do tañca.
+	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_15_00"); //Ha, ha! Patrz jakiego Phill znalaz³ sobie towarzysza do tañca.
 	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_01"); //Kazaliœcie mu tañczyæ? Nie jestem wam wstyd?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_55_02"); //Kazaæ? O nie, ten ork po prostu przyszed³ w chwili wolnego i widz¹c tañcz¹cego Philla, zdecydowa³ siê do niego do³¹czyæ. Ubaw po pachy! 
 	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_03"); //Jeœli tak, to rzeczywiœcie.
@@ -596,7 +596,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3Finish_Info()
 	Log_SetTopicStatus (TOPIC_Silas_ryzowka, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Silas_ryzowka, "Odda³em karczmarzowi beczki. Ucieszy³ siê i zaprosi³ mnie na gratisow¹ butelkê. Mogê przyjœæ za godzinê.");
 	DodajReputacje(REP_LOWCY,2);
-	B_GivePlayerXP(500);
+	B_GivePlayerXP(700);
 	
 	SilasRyzowkaDay = Wld_GetDay();
 	SilasRyzowkaHour = Wld_GetTimeHour();

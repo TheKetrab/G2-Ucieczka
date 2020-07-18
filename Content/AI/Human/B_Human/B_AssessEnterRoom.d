@@ -9,10 +9,8 @@
 func int B_AssessEnterRoom ()
 {
     var int portalguild;    	portalguild 		= Wld_GetPlayerPortalGuild();
- 
   
   	// AIVARS resetten
-  	
   	if (Npc_IsPlayer(other))
   	&& (Player_LeftRoomComment == TRUE)
   	&& (portalguild > GIL_NONE)
@@ -29,7 +27,7 @@ func int B_AssessEnterRoom ()
 	{
 		return FALSE;
 	};
-	
+
 	// ------ nur im selben Raum oder von DRAUSSEN aus reagieren -------
 	// ------ also NICHT aus ANDEREM "Gilden-Portalraum" heraus ------
 	if (!Npc_IsInPlayersRoom (self))
@@ -56,18 +54,31 @@ func int B_AssessEnterRoom ()
 		return FALSE;
 	};
 
+	// jesli to ktorys z nich, to nie reaguja, jak spia, bo spia na polu
+	//     RATFORD          LOUIS              DICK             SNAF               DOBAR              VICK
+	if (self.id == 223 || self.id == 217 || self.id == 219 || self.id == 226 || self.id == 224 || self.id == 204)
+	&& (Npc_IsInState (self, ZS_Sleep))
+	{
+		return FALSE;
+	};
+	
+	/*
+	// MIMO ZE PRZYJAZNIE NASTAWIENI, TO I TAK REAGUJA
 	// ------ NPCTYPE_FRIEND duldet dich in seinem Raum ------
 	if (self.npctype == NPCTYPE_FRIEND)
 	//&& (Npc_IsPlayer(other)) - hier auf jeden Fall (s.o.)
 	{
+	
 		return FALSE;
 	};
 	
 	// ------ Freunde ignorieren ------
 	if (Npc_GetAttitude(self,other) == ATT_FRIENDLY)
 	{
+	
 		return FALSE;
 	};
+	*/
 	
 	// ------ wenn Spieler schleicht (falls ich ihn sehen kann, kommt Sneak-Reaktion) ------
 	if (C_BodyStateContains(other,BS_SNEAK))
@@ -97,8 +108,8 @@ func int B_AssessEnterRoom ()
 	// FUNC 
 
 	// ------- Spieler befindet sich in öffentlichem Raum ------
-	if (portalguild == GIL_PUBLIC)
-	&& (Npc_IsInPlayersRoom (self))					//beide im selben Raum
+	//if (portalguild == GIL_PUBLIC)
+	if (Npc_IsInPlayersRoom (self))					//beide im selben Raum
 	{
 		if (Npc_IsInState (self, ZS_ObservePlayer))
 		{
@@ -114,14 +125,14 @@ func int B_AssessEnterRoom ()
 		if (Npc_IsInState (self, ZS_Potion_Alchemy))
 		|| (Npc_IsInState (self, ZS_Read_Bookstand))
 		|| (Npc_IsInState (self, ZS_Sit_Bench))
-		|| (Npc_IsInState (self, ZS_Sit_Campfire))
+		//|| (Npc_IsInState (self, ZS_Sit_Campfire))
 		|| (Npc_IsInState (self, ZS_Sit_Chair))
 		|| (Npc_IsInState (self, ZS_Sit_Throne))
 		|| (Npc_IsInState (self, ZS_Sleep))
-		|| (Npc_IsInState (self, ZS_Smalltalk))
-		|| (Npc_IsInState (self, ZS_Smoke_Joint))
+		//|| (Npc_IsInState (self, ZS_Smalltalk))
+		//|| (Npc_IsInState (self, ZS_Smoke_Joint))
 		|| (Npc_IsInState (self, ZS_Stand_ArmsCrossed))
-		|| (Npc_IsInState (self, ZS_Stand_Drinking))
+		//|| (Npc_IsInState (self, ZS_Stand_Drinking))
 		|| (Npc_IsInState (self, ZS_Stand_Eating))
 		|| (Npc_IsInState (self, ZS_Stand_Guarding))
 		|| (Npc_IsInState (self, ZS_Stand_WP))
@@ -152,7 +163,6 @@ func int B_AssessEnterRoom ()
 		AI_StartState		(self,	ZS_ClearRoom, 1, ""); //vor allem wegen im Bett aufstehen
 		return TRUE;
 	};
-	
 	return FALSE;
 };
 

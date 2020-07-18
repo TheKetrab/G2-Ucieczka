@@ -8,7 +8,13 @@
 
 func void B_AssessTalk ()
 {
+	
 	// EXIT IF...
+	
+	if (Jeremiasz_AlmostDead == TRUE) && (self.id == 127) {
+		// jesli jeremiasz wypil lek to sie go nie da zagadac
+		return;
+	};
 	
 	// ------- FORBIDDEN: Levelinspektor oder Rockefeller wird ignoriert ------
 	var C_NPC PCL; PCL = Hlp_GetNpc(PC_Levelinspektor);

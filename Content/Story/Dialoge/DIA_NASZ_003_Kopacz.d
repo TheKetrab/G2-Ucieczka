@@ -85,7 +85,7 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	Druzyna (NASZ_117_Fed,0);
 	Druzyna (NASZ_118_Ferros,0);
 
-	B_LogEntry (TOPIC_Keroloth_Wojna, "Cholerni orkowie! Zamknêli siê w zamku, tchórze pieprzone. Jednak jeden z niewolników wyjawi³ mi, ¿e jest pewien sposób, by wywabiæ ich z zamku. Muszê zg³adziæ orkowego wodza Ur-Shaka. Genera³ przebywa gdzieœ w fortecy górskiej.");
+	B_LogEntry (TOPIC_Keroloth_Wojna, "Cholerni orkowie! Zamknêli siê w zamku, tchórze pieprzone. Jednak niewolnik, którego uratowaliœmy, wyjawi³ mi, ¿e jest pewien sposób, by wywabiæ ich z zamku. Muszê zg³adziæ orkowego wodza Ur-Shaka. Genera³ przebywa gdzieœ w fortecy górskiej.");
 
 	B_GivePlayerXP(200);
 	DodajReputacje(2,REP_LOWCY);

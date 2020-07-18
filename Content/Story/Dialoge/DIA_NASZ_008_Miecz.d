@@ -258,7 +258,7 @@ FUNC VOID DIA_NASZ_008_Miecz_zadanie_Info()
 
 
 	// wstawia go w tot, jesli jest sie daleko i jest noc, to rutyna go przeteleportuje
-	Wld_InsertNpc	(NASZ_Kurg_Kan,"TOT");
+	Wld_InsertNpc	(NASZ_452_KurgKan,"TOT");
 	
 
 };
@@ -278,7 +278,7 @@ INSTANCE DIA_NASZ_008_Miecz_koniec   (C_INFO)
 
 FUNC INT DIA_NASZ_008_Miecz_koniec_Condition()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie) && (Npc_IsDead(NASZ_Kurg_Kan) || KurgKanTanczy))
+	if (npc_knowsinfo (other, DIA_NASZ_008_Miecz_zadanie) && (Npc_IsDead(NASZ_452_KurgKan) || KurgKanTanczy))
 	{
 		return TRUE;
 	};
@@ -295,7 +295,7 @@ FUNC VOID DIA_NASZ_008_Miecz_koniec_Info()
 	if (KurgKanTanczy)
 	{
 		AI_Output (other, self,"DIA_NASZ_008_Miecz_koniec_15_03"); //Tak naprawdê, to go nie zabi³em. To by³y ork-niewolnik z kopalni, który zosta³ odrzucony przez swoich braci. Pilnowa³ ciê w nocy, ¿eby nic ci siê nie sta³o i chcia³ siê z tob¹ zaprzyjaŸniæ. Uzna³em, ¿e mu pomogê i od teraz ork mieszka w obozie ³owców.
-		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_04"); //Co? Ha, ha, ha! Zaraz, ty tak na powa¿nie?
+		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_04"); //Co? Ha, ha! Zaraz, ty tak na powa¿nie?
 		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_05"); //Orkom nie powinno siê ufaæ, a ty mu za³atwiasz azyl. W sumie to nie moja sprawa.
 		AI_Output (self, other,"DIA_NASZ_008_Miecz_koniec_15_06"); //Mimo wszystko, dziêki twoim dzia³aniom, mam spokój, wiêc masz tu nagrodê.
 	}

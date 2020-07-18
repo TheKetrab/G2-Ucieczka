@@ -334,8 +334,10 @@ FUNC VOID DIA_NASZ_305_Rabon_win_no()
 	AI_Output (other,self ,"DIA_NASZ_305_Rabon_win_no_15_00"); //Zapomnij.
 	AI_Output (self, other,"DIA_NASZ_305_Rabon_win_no_55_01"); //W takim razie ty zapomnij o jakichkolwiek informacjach.
 	
-	B_LogEntry (TOPIC_Rabon_sakwa, "Rabon nic wiêcej mi nie powie, tak wiêc zaprzepaœci³em sprawê. To, ¿e mia³ rudê w sakiewce to marny dowód na to, ¿e prowadzi interesy z paladynami. Nikt mi nie uwierzy, a Rabon przecie¿ siê wyprze i jeszcze mi siê za wszystko dostanie.");
-	Log_SetTopicStatus (TOPIC_Rabon_sakwa, LOG_FAILED);
+	//B_LogEntry (TOPIC_Rabon_sakwa, "Rabon nic wiêcej mi nie powie, tak wiêc zaprzepaœci³em sprawê. To, ¿e mia³ rudê w sakiewce to marny dowód na to, ¿e prowadzi interesy z paladynami. Nikt mi nie uwierzy, a Rabon przecie¿ siê wyprze i jeszcze mi siê za wszystko dostanie.");
+	//Log_SetTopicStatus (TOPIC_Rabon_sakwa, LOG_FAILED);
+	FailQuest(TOPIC_Rabon_sakwa,"");
+	
 	Info_ClearChoices (DIA_NASZ_305_Rabon_win);
 };
 

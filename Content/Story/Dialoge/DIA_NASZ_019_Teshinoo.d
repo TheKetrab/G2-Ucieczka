@@ -27,7 +27,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_EXIT_Info()
 		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_01"); //O co ci chodzi, wielkoludzie?
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_02"); //Ty nie biæ siê z orki. Nas za du¿o. Gdy ork wojownik boli, g³oœno wyæ.
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_03"); //To obudziæ inne orki, z miasta. Ty nie daæ im rady.
-		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_04"); //Co z innymi orkami ni¿ wojownicy?
+		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_04"); //Co z orkami innymi ni¿ wojownicy?
 		AI_Output (self, other,"DIA_NASZ_019_Teshinoo_exit_15_05"); //Syn Ducha mieæ cichy g³os, elita byæ silny i nie wyæ. Ale orki kuszka wyæ!
 		AI_Output (other, self,"DIA_NASZ_019_Teshinoo_exit_15_06"); //Dobrze, zapamiêtam radê. Mo¿e uda mi siê przemkn¹æ niepostrze¿enie.
 
@@ -39,6 +39,11 @@ FUNC VOID DIA_NASZ_019_Teshinoo_EXIT_Info()
 
 	AI_StopProcessInfos (self);
 };
+
+func void TeshinooSayYes() {
+	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_SayYes_15_00"); //Tak.
+};
+
 
 //*********************************************************************
 //	Info Hello
@@ -91,7 +96,6 @@ FUNC VOID DIA_NASZ_019_Teshinoo_IDK_Info()
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_IDK_55_01"); //W du¿e miasto. Orki miasto. Tutaj wiêzienie.
 	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_IDK_55_02"); //Sk¹d znasz jêzyk ludzki?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_IDK_55_03"); //Orki chcieæ byæ szaman. Musieæ uczyæ siê jêzyk cz³owiek.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_IDK_55_04"); //Ja krótko siê uczyæ. Ma³o znaæ.
 
 };
 
@@ -181,7 +185,7 @@ FUNC INT DIA_NASZ_019_Teshinoo_WherePortal_Condition()
 FUNC VOID DIA_NASZ_019_Teshinoo_WherePortal_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_WherePortal_15_00"); //Gdzie jest ten portal?
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WherePortal_55_01"); //Ukryty. Przy mury wejœcie na dó³. Tam byæ portal zamkniêty na du¿o kraty.
+	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WherePortal_55_01"); //Ukryty. Mury... wejœcie na dó³. Tam byæ portal zamkniêty na du¿o kraty.
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WherePortal_55_02"); //Nikt nie móc iœæ do portal. Portal nie dzia³aæ. Niebezpiecznie.
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WherePortal_55_03"); //Syn Ducha naprawiaæ portal. Chcieæ spokój.
 	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_WherePortal_15_04"); //Jak mogê otworzyæ te kraty?
@@ -217,7 +221,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_WidzialesJak_Info()
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_01"); //Byæ potrz¹s ska³. Kuro'K przynieœæ martwy cz³owiek tutaj.
 	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_02"); //Nie wiesz, gdzie mog¹ byæ moje rzeczy?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_03"); //Mo¿e w dom Kuro'K?
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_04"); //Kuro'K byæ ork-stra¿nik. Mieæ dom blisko tutaj. Wyjœæ st¹d i skrêciæ w prawo. Tam byæ takie ska³y jak to tutaj. Tam byæ Kuro'K.
+	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_04"); //Kuro'K byæ ork-stra¿nik. Mieæ dom blisko tutaj. Wyjœæ st¹d i skrêciæ w prawo.
 
 };
 
@@ -319,7 +323,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_JestesWolny_Info()
 
 	Info_ClearChoices (DIA_NASZ_019_Teshinoo_JestesWolny);
 		Info_AddChoice	  (DIA_NASZ_019_Teshinoo_JestesWolny, "W takim razie chyba tu zostaniesz.", DIA_NASZ_019_Teshinoo_JestesWolny_yes);
-		// TODO -> listopad, teraz jest to zbyt problematyczne
+		// UWAGA - w ostatecznej wersji gry chodzenie z Teshinoo zostalo usuniete, bo bylo zbyt problematyczne (rzucal sie na orkow)
 		// Info_AddChoice	  (DIA_NASZ_019_Teshinoo_JestesWolny, "Mo¿esz udaæ siê ze mn¹.", DIA_NASZ_019_Teshinoo_JestesWolny_no);
 
 };
@@ -401,7 +405,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_prison()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_prison_15_00"); //...wiêzienia.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_prison_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -414,7 +418,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_school()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_no_15_00"); //...szko³y szamanów.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_no_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -427,7 +431,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_shaman()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_shaman_15_00"); //...kamiennego szamana.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_shaman_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -440,7 +444,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_portal()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_portal_15_00"); //...portalu.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_portal_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -453,7 +457,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_boss()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_boss_15_00"); //...waszych wodzów.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_boss_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -466,7 +470,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_GuideMe_main()
 {
 
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_GuideMe_main_15_00"); //...bramy g³ównej.
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_GuideMe_main_15_01"); //Tak.
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = TRUE;
 	
@@ -499,7 +503,7 @@ FUNC INT DIA_NASZ_019_Teshinoo_FollowMe_Condition()
 FUNC VOID DIA_NASZ_019_Teshinoo_FollowMe_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_FollowMe_15_00"); //Za mn¹!
-	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_FollowMe_15_01"); //Tak!	
+	TeshinooSayYes();
 
 	TeshinooProwadziCieGdzies = FALSE;
 

@@ -45,6 +45,7 @@ func int C_HeroCanThiefSomething(var c_npc reactor) {
 	};
 	
 	if (C_BodyStateContains(hero, BS_SNEAK))
+	&& (!Npc_IsInState (reactor, ZS_ObservePlayer))
 	{
 		if((Wld_IsTime(05,00,22,00)) && (Npc_GetDistToNpc(reactor,hero) >= 700)) // jest dzien i 7 metrow
 		{
@@ -161,14 +162,18 @@ func void B_AssessTheft ()
 	
 	if(item.flags & ITEM_DROPPED) {return;};
 	
-	/*
+	if (AssessTheftDisabled) { return; }; // item wstawiony przez insert (30s)
+	
 	// ------- Player im Haus und NSC in anderem Stockwerk ------
 	if (Wld_GetPlayerPortalGuild() >= GIL_NONE) //also NICHT Draussen (== -1)
 	&& (Npc_GetHeightToNpc(self, other) > PERC_DIST_INDOOR_HEIGHT)
+	&& (!Npc_IsInState (self, ZS_ObservePlayer))
+	&& (!Npc_CanSeeNpc(self,hero))
 	{
+		MEM_Info(ConcatStrings(self.name," > TheftCancel: Portal and Height"));
 		return;
 	};
-	*/
+	
 	/*
 	// ------ ignorieren, wenn NSC-Gilde freundlich zu Taeter-Gilde ------
 	if (Wld_GetGuildAttitude(self.guild,other.guild) == ATT_FRIENDLY)
@@ -190,46 +195,53 @@ func void B_AssessTheft ()
 	if(Hlp_Is_oCNpc(her.focus_vob)) {
 		var c_npc oth; oth = MEM_PtrToInst(her.focus_vob);
 		if(oth.guild > GIL_SEPERATOR_HUM) {
+			MEM_Info(ConcatStrings(self.name," > TheftCancel: Focus"));
 			return;
 		};
 	};
 	
 	if (C_HeroCanThiefSomething(self))
 	{
+		MEM_Info(ConcatStrings(self.name," > TheftCancel: CanThief"));
 		return;
 	};
 		
 	if (!C_IsTakenItemMyPossession (self, other, item))
 	{
+		MEM_Info(ConcatStrings(self.name," > TheftCancel: NotMyPossession"));
 		return;
 	};
 	
 	if (C_IsPlant(item))
 	{
+		MEM_Info(ConcatStrings(self.name," > TheftCancel: Plant"));
 		return;
 	};
 	
 	if (C_IsNeedInPlot(item))
 	{
+		MEM_Info(ConcatStrings(self.name," > TheftCancel: NeedInPlot"));
 		return;
 	};
 
 	
-	/*
+	
 	// ------ NSC kann Taeter NICHT sehen ------
-	if (!Npc_CanSeeNpc (self, other))
+	if (!Npc_CanSeeNpc (self, other)) // nie widzi gracza
 	{
-		if (Npc_IsInPlayersRoom (self))
-		&& ( (Npc_IsInState(self, ZS_ObservePlayer)) || (Npc_IsInState(self, ZS_ClearRoom)) )
+		
+	
+		if (Npc_IsInPlayersRoom (self)) // jest w tym samym pokoju -> atakuje
 		{
 			//troztdem gesehen!
 		}
-		else
+		else // w innym pokoju -> nie atakuje
 		{
+			MEM_Info(ConcatStrings(self.name," > TheftCancel: Cannot see NPC"));
 			return;
 		};
 	};
-	*/
+	
 
 	/*
 	// ------ ignore THEFT ------

@@ -384,6 +384,8 @@ FUNC VOID DIA_NASZ_215_Kivo_OrkowaZguba_Info()
 
 	KIVO_HELP = TRUE;
 	
+	B_GivePlayerXP(700);
+	DodajReputacje(REP_MYSLIWI,2);
 	Log_SetTopicStatus (TOPIC_Kivo_zemsta, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Kivo_zemsta, "Odda³em miecz Kivo.");
 

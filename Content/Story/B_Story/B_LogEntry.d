@@ -23,3 +23,16 @@ func void B_LogEntry (var string topic, var string entry)
 	//PrintScreen		(PRINT_NewLogEntry, -1, YPOS_LOGENTRY, FONT_ScreenSmall, 2);
 	Snd_Play 		("LogEntry");
 };
+
+func void FailQuest(var string topic, var string entry)
+{
+	Log_AddEntry	(topic, entry);
+	
+	PrintS_Ext(ConcatStrings("Misja nieudana: ",topic), RGBA(255,255,255,0));
+	PrintS_Ext(" ", RGBA(255,255,255,0));
+	
+	//PrintScreen		(PRINT_NewLogEntry, -1, YPOS_LOGENTRY, FONT_ScreenSmall, 2);
+	Snd_Play 		("LogEntry");
+	
+	Log_SetTopicStatus(topic,LOG_OBSOLETE);
+};

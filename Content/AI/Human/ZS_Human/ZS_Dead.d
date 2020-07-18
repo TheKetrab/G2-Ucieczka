@@ -599,7 +599,10 @@ func void ZS_Dead ()
 
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_028_Kazmin))
 	{
-		Log_SetTopicStatus (TOPIC_Zlo, LOG_SUCCESS);
+		B_LogEntry (TOPIC_zacmienie, "Pokrzy¿owa³em plany tego przebrzyd³ego demona Kazmina!");
+		Log_SetTopicStatus (TOPIC_zacmienie, LOG_SUCCESS);
+	
+		B_GivePlayerXP(1000);
 	
 		Log_SetTopicStatus (TOPIC_Erak_plagaciemnosci, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Erak_plagaciemnosci, "Uœmierci³em demona. Teraz nieumarli nie powinni ju¿ straszyæ w Górniczej Dolinie.");
@@ -615,7 +618,7 @@ func void ZS_Dead ()
 	};
 	
 	
-	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcShaman_Ur_Shak))
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_453_UrShak))
 	{
 		AI_Teleport	(NASZ_412_CatSan, "OW_ROCKDRAGON_06");
 		B_StartOtherRoutine (NASZ_412_CatSan,"UrShack");

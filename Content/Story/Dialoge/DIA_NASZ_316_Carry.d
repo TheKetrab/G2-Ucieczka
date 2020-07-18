@@ -450,8 +450,9 @@ func void DIA_NASZ_316_Carry_MuchyFail_Info ()
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFail_55_00"); //Myœla³em, ¿e ju¿ siê nie poka¿esz.
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFail_03_01"); //Zreszt¹... To bez znaczenia. Za³atwi³em sobie ju¿ p³yn przeciw owadom i nie potrzebujê niczego od ciebie.
 
-	Log_SetTopicStatus (TOPIC_Carry_plyn, LOG_FAILED);
-	B_LogEntry (TOPIC_Carry_plyn, "SpóŸni³em siê i Carry sam sobie poradzi³.");
+	//Log_SetTopicStatus (TOPIC_Carry_plyn, LOG_FAILED);
+	//B_LogEntry (TOPIC_Carry_plyn, "SpóŸni³em siê i Carry sam sobie poradzi³.");
+	FailQuest(TOPIC_Carry_plyn,"");
 
 
 };

@@ -55,8 +55,8 @@ func void DIA_NASZ_023_DuchSekciarza_Rekonesans_Info ()
 	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_12"); //Pomoc naszym duszom mo¿e sprowadziæ na ciebie jedynie ból, nieszczêœcie i cierpienie trwaj¹ce przez wiecznoœæ.
 	AI_Output			(self, other, "DIA_NASZ_023_DuchSekciarza_Rekonesans_023_13"); //ZnajdŸ Baal Oruna! Ale do mnie ju¿ wiêcej siê nie zbli¿aj...
 	
-	B_LogEntry (TOPIC_Keroloth_zapalisada, "Na bagnach spotka³em ducha, który przestrzeg³ mnie przed Zaæmieniem. Mam znaleŸæ Baal Oruna i z nim porozmawiaæ.");
-	
+	B_LogEntry (TOPIC_zacmienie, "Na bagnach spotka³em ducha, który przestrzeg³ mnie przed Zaæmieniem. Mam znaleŸæ Baal Oruna i z nim porozmawiaæ.");
+
 	AI_StopProcessInfos (self);
 
 };

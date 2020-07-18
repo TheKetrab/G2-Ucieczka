@@ -5,6 +5,7 @@ var int Johny_ItemsGiven_Chapter_4;
 
 FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 {
+
 	if ((Kapitel >= 1)
 	&& (Johny_ItemsGiven_Chapter_1 == FALSE))
 	{
@@ -42,7 +43,8 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		// ------ Ringe / Amulette ------
 		CreateInvItems (slf, ItBE_Addon_Leather_01, 1); 
 		CreateInvItems (slf, ItNa_PasStalowejReki		, 1); 
-		CreateInvItems (slf, ItNa_HuntAmulet		, 1); 
+		
+		
 		
 		
 		Johny_ItemsGiven_Chapter_1 = TRUE;

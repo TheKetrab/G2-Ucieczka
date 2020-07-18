@@ -1,3 +1,5 @@
+// ork ze starego questa z Mieczem
+// -> nieuzywany
 
 instance NASZ_451_OrkMiecz (Npc_Default)
 {

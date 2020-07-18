@@ -198,7 +198,7 @@ func void KrysztalAdanosa()
 };
 
 func void TeleportOzywieniec()
-{ // TODO -> skoro juz zbiiera pod woda, to mozna  to wywalic
+{ // TODO -> skoro juz zbiiera pod woda, to mozna to wywalic
 	if (npc_knowsinfo (other, DIA_NASZ_229_Ayan_chodzmy)) {
 		
 		if(Npc_GetDistToItem (hero, ItNa_TeleportOzywieniec) < 75)

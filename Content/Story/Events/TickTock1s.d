@@ -38,7 +38,7 @@ var int SkeletonJenkinsOneTime;
 var int WillUderzylBestieSwiatynnaTeleportOneTime;
 var int BestiaSwiatynnaSec;
 var int NieznajomySiePojawiaMattOneTime;
-
+var int WillWodospadTimerNiebezpiecznie;
 //var int StylWalki;
 //var int UbranaTrojka;
 var int _LevelMiner;
@@ -644,8 +644,10 @@ func void Warta()
 		
 		if (Npc_GetDistToWP	(hero, "OW_DJG_ROCKCAMP_02") > 1500) {
 			PrintScreen	("Opuœci³eœ miejsce warty.", -1,-1, FONT_ScreenSmall,2);
-			Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_FAILED);
-			B_LogEntry (TOPIC_Mysliwy_Warta, "Mimo przyjêtego zadania, poniecha³em patrolowanie terenu obozu wypadowego.");
+			//Log_SetTopicStatus (TOPIC_Mysliwy_Warta, LOG_FAILED);
+			//B_LogEntry (TOPIC_Mysliwy_Warta, "Mimo przyjêtego zadania, poniecha³em patrolowanie terenu obozu wypadowego.");
+			FailQuest(TOPIC_Mysliwy_Warta,"");
+
 			WillStajeNaWarcie = FALSE;
 			ff_remove(WartaScaleTime);
 			ff_remove(Warta);
@@ -1275,6 +1277,7 @@ func void _TickTock_1s()
 	
 	// ticktocki w innych plikach
 	
+	if (C_BodyStateContains(hero, BS_DIVE)) { DivingTime += 1; Print(ConcatStrings("Diving time = ",IntToString(DivingTime))); };
 	
 	ARENA();
 	Check_OSIAGNIECIA();
@@ -1333,7 +1336,7 @@ func void _TickTock_1s()
 	};	
 	
 	
-	if (BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && !npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=300) 
+	if (BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && !npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=1000) 
 	{
 		B_LogEntry (TOPIC_Keroloth_Wojna, "Dowódca zamku zamkn¹³ siê... Jak wybijemy wszystkich orków, to z pewnoœci¹ stanie sam do walki!");
 		Wld_SendTrigger ("MOVER_GATE_SZEF_ZAMEK");
@@ -1392,19 +1395,39 @@ func void _TickTock_1s()
 		HeroSay_DemonPosag();
 	};
 	
-	if (KAPITEL == 1 && Npc_GetDistToWP	(hero, "NASZ_BANDYCI_WODOSPAD_09") <=150) {
-		HeroSay_Wodospad();
-		AI_TurnAway (hero, hero);
-		AI_GotoWP (hero, "NASZ_BANDYCI_WODOSPAD_10");
-		Npc_ClearAIQueue(hero);
+	if (KAPITEL == 1)
+	 && (Npc_GetDistToWP (hero, "NASZ_BANDYCI_WODOSPAD_01") <= 750
+	  || Npc_GetDistToWP (hero, "NASZ_BANDYCI_WODOSPAD_02") <= 750
+	  || Npc_GetDistToWP (hero, "NASZ_BANDYCI_WODOSPAD_09") <= 750
+	  || Npc_GetDistToWP (hero, "NASZ_BANDYCI_WODOSPAD_10") <= 750)
+	{
+		
+		if (WillWodospadTimerNiebezpiecznie == 6) { 
+			WillWodospadTimerNiebezpiecznie = 0; 
+		};
+
+		if (WillWodospadTimerNiebezpiecznie == 0) {
+			HeroSay_Wodospad();
+		};
+		
+		WillWodospadTimerNiebezpiecznie += 1;
+		
 	};
 
-	if ((KAPITEL == 4) && (WillIdzieZaPalisade == FALSE) && Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <=800)  {
-		HeroSay_BeforeZapalisada();
-		AI_TurnAway (hero, hero);
-		AI_GotoWP (hero, "OW_ORCBARRIER_17");
-		Npc_ClearAIQueue(hero);
+	if ((KAPITEL == 4) && Npc_GetDistToWP(hero, "NASZ_ZAPALISADA_SCIEZKA_5") <= 800) {
+		if (WillIdzieZaPalisade == FALSE) {
+			HeroSay_BeforeZapalisada();
+			AI_TurnAway (hero, hero);
+			AI_GotoWP (hero, "OW_ORCBARRIER_17");
+		} else if (WillBylZapalisada == FALSE) {
+			Will_Zapalisada();
+			WillBylZapalisada = TRUE;
+		};
 	};
+	
+	
+
+	
 
 	/* juz nieaktualne bo CatSan otwiera brame
 	if (Npc_GetDistToWP	(hero, "NASZ_FORTECA_BLOKADA") <=200) && (WillGoToUrShack == FALSE) {
@@ -1473,11 +1496,10 @@ func void _TickTock_1s()
 	};
 	
 
-	if (Npc_GetDistToWP	(hero, "OW_ICEREGION_05") <=200) && (WillGoToIceregion == FALSE) {
+	if (Npc_GetDistToWP(hero, "OW_ICEREGION_02") <= 750) && (WillGoToIceregion == FALSE) {
 		HeroSay_IceRegion();
 		AI_TurnAway (hero,hero);
 		AI_GotoWP (hero, "OW_ICEREGION_ENTRANCE");
-		Npc_ClearAIQueue(hero);
 	};
 	
 	
@@ -1494,9 +1516,8 @@ func void _TickTock_1s()
 
 	if(KAPITEL >= 4 && !ObozOrkowoInfoOneTime)
 	{
-		if( Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_7") <=50)
+		if( Npc_GetDistToWP	(hero, "NASZ_ZAPALISADA_SCIEZKA_7") <=1000)
 		{
-			B_LogEntry (TOPIC_Keroloth_zapalisada, "Cholera, orkowie rozbili swój obóz na pla¿y. Bêdê musia³ poinformowaæ o tym Kerolotha.");
 			WillBylZapalisada = true;
 			ObozOrkowoInfoOneTime = true;
 		};
@@ -1781,7 +1802,9 @@ func void Function30s()
 		Wld_InsertNpc	(Gobbo_Skeleton,"FP_ROAM_OW_LURKER_NC_LAKE_03");
 	};
 	
-	if ((Jeremiasz_AlmostDead_OneTime == FALSE) && (npc_knowsinfo(other,DIA_NASZ_127_Jeremiasz_AfterQuest)) && (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour))) // 3h
+	if ((Jeremiasz_AlmostDead_OneTime == FALSE)
+	 && (npc_knowsinfo(hero,DIA_NASZ_127_Jeremiasz_AfterQuest))
+	 && (TimeIsUp(-1,3,JeremiaszAlmostDeadDay,JeremiaszAlmostDeadHour))) // 3h
 	{
 		//Print("TimeIsUp -> Jeremiasz_AlmostDead = TRUE");
 		B_StartOtherRoutine(NASZ_127_Jeremiasz,"AlmostDead");

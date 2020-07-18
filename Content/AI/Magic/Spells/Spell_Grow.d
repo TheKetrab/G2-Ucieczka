@@ -41,7 +41,7 @@ func void Spell_Cast_Grow()
 	if (all_wiarolomca_equipped()) {
 	
 		if (GrowUzyteOneTime == FALSE) {
-			B_LogEntry (TOPIC_Zlo, "Teraz pozostaje mi jedynie siê do niej udaæ i pokonaæ tego, który znajduje siê wewn¹trz. Miejmy nadziejê, ¿e amulet i reszta artefaktów pomo¿e mi w walce.");
+			B_LogEntry (TOPIC_zacmienie, "Teraz pozostaje mi jedynie siê do niej udaæ i pokonaæ tego, który znajduje siê wewn¹trz. Miejmy nadziejê, ¿e amulet i reszta artefaktów pomo¿e mi w walce.");
 			GrowUzyteOneTime = TRUE;
 		};
 	

@@ -179,8 +179,10 @@ INSTANCE DIA_NASZ_130_Jenkins_EndOfMatt   (C_INFO)
 
 FUNC INT DIA_NASZ_130_Jenkins_EndOfMatt_Condition()
 {
-	if (npc_knowsinfo(other,DIA_NASZ_021_Nieznajomy_Matt))
-	&& (npc_hasitems(hero,ItNa_RytualneOstrze)>=1)
+	// UWAGA - ten dialog nastepuje, ale nieznajomy czasem sie nie pojawia
+	// i zeby uniknac bugow to nie sprawdzamy tego warunku
+	//if (npc_knowsinfo(other,DIA_NASZ_021_Nieznajomy_Matt))
+	if (npc_hasitems(hero,ItNa_RytualneOstrze)>=1)
 	&& (npc_hasitems(hero,ItNa_Matt_Kartka)>=1)
 	{
 		return TRUE;
@@ -198,12 +200,14 @@ FUNC VOID DIA_NASZ_130_Jenkins_EndOfMatt_Info()
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_05"); //Niepokoj¹ce ostrze, jeszcze nigdy nie widzia³em tego typu orê¿a. Zakrzywione, poszarpane ostrze i delikatny metal...
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_06"); //Broñ godna mistrzowskiego kunsztu kowalskiego.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_07"); //Zanim zapytasz, to na pewno nie jest robota ¿adnego kowala z kolonii. Ch³opaki znaj¹ siê na swoim fachu, lecz to... To wymaga znacznie wiêkszych umiejêtnoœci.
-	// UWAGA -> DUBBING: Jenkins wzdycha po s³owach 'To by³ dobry ³owca orków.'
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_08"); //Zaœ co do Matta... To by³ dobry ³owca orków. Nale¿¹ ci siê podziêkowania za pomoc.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_09"); //Powinieneœ wróciæ do Udara, przeka¿ mu nasz raport i powiedz, ¿e potrzebujemy kilku ludzi do pomocy, bo inaczej nie wrócimy do obozu.
 	CreateInvItems(self,ItNa_JenkinsRaport,1);
 	B_GiveInvItems(self,other,ItNa_JenkinsRaport,1);
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_EndOfMatt_15_10"); //Tak zrobiê.
+	
+	B_GivePlayerXP(700);
+	DodajReputacje(REP_LOWCY,2);
 	
 	Log_CreateTopic (TOPIC_Jenkins_bestia,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jenkins_bestia, LOG_SUCCESS);

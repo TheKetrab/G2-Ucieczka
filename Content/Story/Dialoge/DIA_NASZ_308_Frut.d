@@ -441,8 +441,11 @@ FUNC VOID DIA_NASZ_308_Frut_monklose_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_308_Frut_monklose_55_00"); //Coœ jeszcze mia³eœ mi przekazaæ?
 	
-	B_LogEntry (TOPIC_Monk_Frut, "Zawali³em. Jestem zbyt s³aby i oberwa³em od Fruta.");
-	Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_FAILED);
+	//B_LogEntry (TOPIC_Monk_Frut, "Zawali³em. Jestem zbyt s³aby i oberwa³em od Fruta.");
+	//Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_FAILED);
+	
+	FailQuest(TOPIC_Monk_Frut,"");
+	
 	
 	Frut_Won = TRUE;
 

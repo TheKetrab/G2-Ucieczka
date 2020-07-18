@@ -318,9 +318,11 @@ FUNC VOID DIA_NASZ_126_Robotnik_WorkFail_Info()
 	AI_Output (other, self,"DIA_NASZ_126_Robotnik_WorkFail_15_02"); //Nie mogê pomagaæ wszystkim. Po prostu zabrak³o mi czasu.
 
 	MIS_ROBOTNIK_READY = FALSE;
-	Log_SetTopicStatus (TOPIC_Robotnik_deski, LOG_FAILED);
-	B_LogEntry (TOPIC_Robotnik_deski, "Nie zd¹¿y³em siê tym zaj¹æ i sam Keroloth wzi¹³ m³otek i poszed³ przybijaæ gwoŸdzie.");
-
+	
+	//Log_SetTopicStatus (TOPIC_Robotnik_deski, LOG_FAILED);
+	//B_LogEntry (TOPIC_Robotnik_deski, "Nie zd¹¿y³em siê tym zaj¹æ i sam Keroloth wzi¹³ m³otek i poszed³ przybijaæ gwoŸdzie.");
+	FailQuest(TOPIC_Robotnik_deski,"");
+	
 };
 
 // ************************************************************

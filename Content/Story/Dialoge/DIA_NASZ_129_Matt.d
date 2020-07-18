@@ -87,8 +87,9 @@ FUNC VOID DIA_NASZ_129_Matt_hello_yep()
 {
 	AI_Output (other,self ,"DIA_NASZ_129_Matt_hello_yep_15_00"); //Czego mam szukaæ?
 	AI_Output (self, other,"DIA_NASZ_129_Matt_hello_yep_55_01"); //Pozosta³ych dokumentów, jakichœ kartek, no wiesz czegoœ w tym guœcie. Rozejrzyj siê po tej stronie, ja poszukam po tej.
-	// TODO: [Zwiadowca chodzi do kilku miejsc i wykonuje animacjê przeszukiwania jak zbieracze w G1]
 
+	Npc_ExchangeRoutine(self,"Szukanie");
+	
 	B_LogEntry (TOPIC_Udar_patrol,"Znalaz³em jednego ze zwiadowców, który mo¿e zaprowadziæ mnie do obozowiska reszty. Jednak najpierw muszê pomóc mu znaleŸæ jakiœ dokument.");
 	
 	PoszukiwanieListuMatta = TRUE;

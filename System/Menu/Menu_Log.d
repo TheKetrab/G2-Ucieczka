@@ -14,8 +14,8 @@ instance MENU_LOG(C_MENU_DEF)
 	items[10] = "MENU_ITEM_LIST_MISSIONS_OLD";
 	items[11] = "MENU_ITEM_LIST_LOG";
 	items[12] = "MENU_ITEM_CONTENT_VIEWER";
-	items[13] = "MENU_ITEM_SEL_OSIAGNIECIA";
-	items[14] = "MENU_ITEM_LIST_OSIAGNIECIA";
+	//items[13] = "MENU_ITEM_SEL_OSIAGNIECIA";
+	//items[14] = "MENU_ITEM_LIST_OSIAGNIECIA";
 
 	alpha = 255;
 	posx = 0;
@@ -62,9 +62,9 @@ instance MENU_ITEM_SEL_MISSIONS_OLD(C_MENU_ITEM_DEF)
 
 instance MENU_ITEM_SEL_MISSIONS_FAILED(C_MENU_ITEM_DEF)
 {
-	text[0] = "Popsute\nzadania";
+	text[0] = "Osi¹gniêcia";
 	posx = LOG_ITEM_X1;
-	posy = 3500;
+	posy = 3650;
 	dimx = LOG_ITEM_DX1;
 	dimy = 1000;
 	fontname = LOG_FONT_DEFAULT;
@@ -106,7 +106,7 @@ instance MENU_ITEM_LIST_MISSIONS_ACT(C_MENU_ITEM_DEF)
 instance MENU_ITEM_LIST_MISSIONS_FAILED(C_MENU_ITEM_DEF)
 {
 	type = MENU_ITEM_LISTBOX;
-	text[0] = "Niezaliczone misje";
+	text[0] = "Zdobyte osi¹gniêcia";
 	posx = LOG_ITEM_LIST_X;
 	posy = LOG_ITEM_LIST_Y;
 	dimx = LOG_ITEM_LIST_WIDTH;

@@ -530,8 +530,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_ReadyDone_Info()
 		
 		KerolothSay_YouCanStart();
 		
-		B_LogEntry (TOPIC_Keroloth_orkowie, "Keroloth jakimœ cudem dowiedzia³ siê, ¿e nie pokona³em orków sam. No có¿, wykona³em zadanie i mogê do³¹czyæ do ³owców orków, ale czujê, ¿e Keroloth patrzy na mnie z politowaniem.");
-		Log_SetTopicStatus (TOPIC_Keroloth_orkowie, LOG_FAILED);
+		//B_LogEntry (TOPIC_Keroloth_orkowie, "Keroloth jakimœ cudem dowiedzia³ siê, ¿e nie pokona³em orków sam. No có¿, wykona³em zadanie i mogê do³¹czyæ do ³owców orków, ale czujê, ¿e Keroloth patrzy na mnie z politowaniem.");
+		//Log_SetTopicStatus (TOPIC_Keroloth_orkowie, LOG_FAILED);
+		FailQuest(TOPIC_Keroloth_orkowie,"Keroloth jakimœ cudem dowiedzia³ siê, ¿e nie pokona³em orków sam. No có¿, wykona³em zadanie i mogê do³¹czyæ do ³owców orków, ale czujê, ¿e Keroloth patrzy na mnie z politowaniem.");
+
 	};
 };
 
@@ -797,8 +799,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyesend_Info()
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_03"); //Jaja sobie ze mnie robisz?
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_04"); //Ch³opcy odwalili za ciebie robotê. Wstyd.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_questyesend_55_05"); //Poszukaj sobie innego zajêcia. Do wojaczki, póki co, siê nie nadajesz.
-		B_LogEntry (TOPIC_Keroloth_gobliny, "Keroloth wyœmia³ mnie, bo nie zabi³em tych goblinów sam.");
-		Log_SetTopicStatus (TOPIC_Keroloth_gobliny, LOG_FAILED);
+		//B_LogEntry (TOPIC_Keroloth_gobliny, "Keroloth wyœmia³ mnie, bo nie zabi³em tych goblinów sam.");
+		//Log_SetTopicStatus (TOPIC_Keroloth_gobliny, LOG_FAILED);
+		FailQuest(TOPIC_Keroloth_gobliny,"Keroloth wyœmia³ mnie, bo nie zabi³em tych goblinów sam.");
+
 	};
 };
 
@@ -1016,7 +1020,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_work1_Info()
 
 };
 
-// TODO: przetestowac misje
+
 //*********************************************************************
 //	Info Work1Done
 //*********************************************************************
@@ -2212,11 +2216,11 @@ INSTANCE DIA_NASZ_110_Keroloth_Kap4   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_Kap4_Condition()	
 {
-	//if (pre == 2)
-	//|| (Cheat_SkipToKap4 == TRUE)
-	//{
+	if (pre == 2)
+	|| (Cheat_SkipToKap4 == TRUE)
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
@@ -2254,9 +2258,9 @@ func void InsertUndeadsNearOUTCamp() {
 };
 
 func void DIA_NASZ_110_Keroloth_Kap4_end() {
-	//B_Kapitelwechsel (4, NEWWORLD_ZEN );
+	
 	AI_StopProcessInfos(self);
-	//InsertUndeadsNearOUTCamp();
+
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
@@ -2272,15 +2276,16 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Kap4_what_55_07"); //Nie mam pojêcia, ale lepiej nie czekaæ na ich kolejny ruch, je¿eli stoj¹ i za tym.
 	
 	
-	
 	Log_CreateTopic (TOPIC_Sprawy,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Sprawy, LOG_RUNNING);
 	B_LogEntry (TOPIC_Sprawy,"Szturm zakoñczy³ siê sukcesem, jednak to wcale nie oznacza, ¿e ju¿ wygraliœmy. Keroloth podejrzewa, i¿ orkowie bêd¹ chcieli przeprowadziæ kontruderzenie i odbiæ zamek si³¹. Dlatego te¿ wys³a³ mnie do obozu ³owców, bym sprowadzi³ do zamku kilku wojowników. Poza tym, mam odwiedziæ myœliwych i sprawdziæ, czy czegoœ potrzebuj¹ i czy s¹ bezpieczni.");
 	
 	AI_StopProcessInfos(self);
+	B_Kapitelwechsel (4, NEWWORLD_ZEN );
 	InsertUndeadsNearOUTCamp();
-	//Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
-	//Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
+	
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
 
 	
 };
@@ -2464,10 +2469,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 
 	TRIA_Finish();
 	
-	Log_CreateTopic (TOPIC_Keroloth_zapalisada, LOG_MISSION);
-	Log_SetTopicStatus (TOPIC_Keroloth_zapalisada, LOG_RUNNING);
-	B_LogEntry (TOPIC_Keroloth_zapalisada, "Najwy¿sza pora wybraæ siê za orkow¹ palisadê. Nie mam pojêcia, czego siê spodziewaæ... O wszystkim, co tam znajdê powinienem informowaæ Kerolotha.");
-	WillIdzieZaPalisade = TRUE;	
+	WillIdzieZaPalisade = TRUE;
 	
 	if 		(npc_knowsinfo(other,DIA_NASZ_010_Monastir_StandInFinal)) 	{ 	Npc_ExchangeRoutine(NASZ_010_Monastir,"Final"); }
 	else if (npc_knowsinfo(other,DIA_NASZ_010_Monastir_IKnowPlace)) 	{ 	Npc_ExchangeRoutine(NASZ_010_Monastir,"Gate"); }
@@ -2552,7 +2554,14 @@ FUNC VOID DIA_NASZ_110_Keroloth_OrkowyPrzepis_Info()
 //*********************************************************************
 var int InformationPalisadaOneTime;
 var int HeroSaidZaPalisadaSaLudzie;
-var int HeroSaid;
+var int HeroSaidKerolothInfo;
+
+var int HeroSaidKerolothInfoBeachOneTime;
+var int HeroSaidKerolothInfoOrcsDoneOneTime;
+var int HeroSaidKerolothInfoPeopleOneTime;
+var int HeroSaidKerolothInfoSwampOneTime;
+
+
 INSTANCE DIA_NASZ_110_Keroloth_IWasBehindTheWall   (C_INFO)
 {
 	npc         = NASZ_110_Keroloth;
@@ -2567,7 +2576,8 @@ FUNC INT DIA_NASZ_110_Keroloth_IWasBehindTheWall_Condition()
 {
 	if (WillBylZapalisada == TRUE)
 	&& (KAPITEL >= 4)
-	&& (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_InfoKonsekwencje) && HeroSaid != 4)
+	&& (npc_knowsinfo(other,DIA_NASZ_110_Keroloth_InfoKonsekwencje))
+	&& (HeroSaidKerolothInfo < 4)
 	{
 		return TRUE;
 	};
@@ -2591,59 +2601,71 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 	};
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
-	if (WillBylZapalisada) {
-	Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
-	HeroSaid+=1;
+	
+	if (WillBylZapalisada && !HeroSaidKerolothInfoBeachOneTime) {
+		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
 	};
-	if (wszyscy_orkowie_nie_zyja) {
+
+	if (wszyscy_orkowie_nie_zyja && !HeroSaidKerolothInfoOrcsDoneOneTime) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Zlikwidowa³em orkowe obozowisko.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc);
-		HeroSaid+=1;
 	};
-	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_siema)) {
+	
+	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_siema) && !HeroSaidKerolothInfoPeopleOneTime) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Za palisad¹ s¹ ludzie.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie);
-		HeroSaid+=1;
 	};
-	if (npc_isdead(NASZ_028_Kazmin)) {
+	
+	if (npc_isdead(NASZ_028_Kazmin) && !HeroSaidKerolothInfoSwampOneTime) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Sprawy na bagnach zosta³y wyjaœnione.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp);
-		HeroSaid+=1;
 	};
 };
 
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
 {
+	HeroSaidKerolothInfoSwampOneTime = TRUE;
+	HeroSaidKerolothInfo += 1;
+
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_15_00"); //Sprawy na bagnach zosta³y wyjaœnione.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_01"); //¯aden demon nie pojawi siê ju¿ znik¹d?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caina i demona Kazmina.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wiadomoœci. Teraz jedyne, czego siê obawiam to kontratak orków.
-	B_GivePlayerXP(100);
+	B_GivePlayerXP(500);
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc()
 {
+	HeroSaidKerolothInfoBeachOneTime = TRUE;
+	HeroSaidKerolothInfo += 1;
+
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_15_00"); //Orkowie rozbili obóz na pla¿y.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_01"); //Ilu ich jest?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_02"); //Na l¹dzie oko³o piêædziesiêciu. Ale na morzu zacumowane s¹ dwa statki.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_03"); //Nie chce mi siê w to wierzyæ. Albo wiêkszoœæ pop³ynê³a na kontynent, albo krêc¹ siê gdzieœ dalej.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc_55_04"); //Poradzisz sobie z t¹ garstk¹, co? Haha!
-	B_GivePlayerXP(100);
+	B_GivePlayerXP(500);
 
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc()
 {
+	HeroSaidKerolothInfoOrcsDoneOneTime = TRUE;
+	HeroSaidKerolothInfo += 1;
+
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_15_00"); //Zlikwidowa³em orkowe obozowisko.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_01"); //Co? Jaja sobie chyba ze mnie robisz.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_02"); //Zachêcam ciê ¿ebyœ poszed³ tam sam i sprawdzi³.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_03"); //Wiesz co... Nie bez powodu wszyscy mówi¹, ¿e jesteœ najlepszy.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_04"); //Masz talent, ch³opcze.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_killorc_55_05"); //Ale nie myœl, ¿e teraz zbudujemy ³ódŸ i odp³yniemy st¹d. Na morzu na pewno pe³no jest orkowych statków. Odbicie od l¹du to samobójstwo.
-	B_GivePlayerXP(100);
+	B_GivePlayerXP(500);
 
 };
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 {
+	HeroSaidKerolothInfoPeopleOneTime = TRUE;
+	HeroSaidKerolothInfo += 1;
+	
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_15_00"); //Za palisad¹ s¹ ludzie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_01"); //A sk¹d siê tam wziêli?!
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_02"); //Jeden z nich to dawny wyznawca Œni¹cego. Drugi to twój znajomy, utkn¹³ za palisad¹ po tym, jak Garond wys³a³ go za palisadê. Mówiê o paladynie Rudolfie.
@@ -2651,31 +2673,12 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_04"); //Nie wydajesz siê zbyt zachwycony t¹ wiadomoœci¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_05"); //Ci¹gle rywalizowaliœmy o wzglêdy Garonda. Ale jak widaæ to jego Garond wys³a³ na pewn¹ œmieræ, podczas gdy ja szkoli³em wojowników na zamku.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_06"); //Niewa¿ne. W ka¿dym razie Udar z pewnoœci¹ ucieszy siê, gdy go zobaczy.
-	B_GivePlayerXP(100);
+	B_GivePlayerXP(500);
 
 	HeroSaidZaPalisadaSaLudzie = TRUE;
 	B_LogEntry (TOPIC_Udar_oddzial, "Powiem równie¿ Udarowi, ¿e znalaz³em ludzi, o których mi mówi³.");
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3029,7 +3032,7 @@ func void Keroloth_KillKurgKan() {
 	rut2 = GetRutineName(NASZ_118_Ferros);
 	Npc_ExchangeRoutine(NASZ_117_Fed,"Kurgkan");
 	Npc_ExchangeRoutine(NASZ_118_Ferros,"Kurgkan");
-	B_KILLNPC(NASZ_Kurg_Kan);
+	B_KILLNPC(NASZ_452_KurgKan);
 		
 	FedFerrosKillKurgKan = TRUE;
 	Npc_ExchangeRoutine(self,"Start");
@@ -3099,7 +3102,7 @@ FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 {	
 	var C_NPC Keroloth; Keroloth = Hlp_GetNpc (NASZ_110_Keroloth);
-	var C_NPC KurgKan; KurgKan = Hlp_GetNpc (NASZ_Kurg_Kan);
+	var C_NPC KurgKan; KurgKan = Hlp_GetNpc (NASZ_452_KurgKan);
 	TRIA_Invite(Keroloth);
 	TRIA_Invite(KurgKan);
     TRIA_Start();
@@ -3138,13 +3141,13 @@ FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 
 	DodajReputacje((-2), REP_LOWCY);
 	AI_StopProcessInfos (self);
-	Npc_ExchangeRoutine(NASZ_Kurg_Kan, "Karczma");
+	Npc_ExchangeRoutine(NASZ_452_KurgKan, "Karczma");
 	Npc_ExchangeRoutine(self,"Start");
 	
 	KurgKanTanczyDay = Wld_GetDay();
 	ff_applyonceext(KurgKanRoutine_TickTock30s,30000,-1);
 	
-	KurgKanTanczy = 1;
+	KurgKanTanczy = 1; // oznacza, ze ork przyjety do obozu
 	KurgKanFollowPC = 0;
 };
 //*********************************************************************

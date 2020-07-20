@@ -205,3 +205,24 @@ func int QS_GetSlotByItem(var int iPtr)
 	end;
 	return -1;
 };
+
+// KETRAB
+func int QS_GetFreeSlotNr(var c_item itm)
+{
+	// item already in QS
+	var int idx; idx = QS_GetSlotByItem(_@(itm));
+	if (idx != -1) { return idx; };
+
+	// item not in QS -> find free slot
+	var int itemPtr;
+	itemPtr = QS_GetSlotItem(3); if (!itemPtr) { return 3; };
+	itemPtr = QS_GetSlotItem(4); if (!itemPtr) { return 4; };
+	itemPtr = QS_GetSlotItem(5); if (!itemPtr) { return 5; };
+	itemPtr = QS_GetSlotItem(6); if (!itemPtr) { return 6; };
+	itemPtr = QS_GetSlotItem(7); if (!itemPtr) { return 7; };
+	itemPtr = QS_GetSlotItem(8); if (!itemPtr) { return 8; };
+	itemPtr = QS_GetSlotItem(9); if (!itemPtr) { return 9; };
+	itemPtr = QS_GetSlotItem(0); if (!itemPtr) { return 0; };
+
+	return -1;
+};

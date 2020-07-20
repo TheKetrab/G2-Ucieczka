@@ -436,8 +436,7 @@ func void QS_MobInteractionFix()
 				{
 					QS_RemoveSlot(i);
 					var string name; name = MEM_ReadString(pItem+292);
-					PrintS(ConcatStrings(name," jest potrzebny do interakcji."));
-					PrintS("Zosta³ usuniêty z QS.");
+					MEM_Info(ConcatStrings(name," jest potrzebny do interakcji. Zosta³ usuniêty z QS."));
 					var int mainflags; mainflags = MEM_ReadInt(pItem+oCItem__MainFlag_Offset);
 					if(mainflags &  (ITEM_KAT_NF |  ITEM_KAT_FF))
 					{

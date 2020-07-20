@@ -558,6 +558,7 @@ func void oCNpcInventory_HandleEvent_hook()
 	||  key == KEY_2)	
 	{
 		
+		
 		itm = _^(ptr);
 		if(itm.flags & ITEM_SHIELD)
 		{
@@ -575,13 +576,23 @@ func void oCNpcInventory_HandleEvent_hook()
 			QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
 			ptr;
 			MEM_CallByString("QS_AI_EquipWeapon");
-		};
+		}
 		
 			
 			//MEM_WriteInt(ESP+4,-1);
 	
-
+		// KETRAB
+		else if (itm.mainflag == ITEM_KAT_RUNE)
+		{
+			// jesli ten item byl juz gdzies w qs, to zostanie zwrocony
+			// jego index zatem putslot zdejmie go z qs
+			var int freeslot; freeslot = QS_GetFreeSlotNr(itm);
+			if (freeslot != -1) {
+				QS_PutSlot(hero, freeslot, ptr);  MEM_WriteInt(ESP+4,-1);
+			};
 		};
+
+	};
 		/*if(itm.mainflag == ITEM_KAT_RUNE)
 		{
 			if(key!= KEY_1 && key != KEY_2)

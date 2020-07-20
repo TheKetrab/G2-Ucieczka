@@ -4,6 +4,7 @@
 
 const int SPL_Cost_Concussionbolt	= 40;
 const int SPL_Damage_Concussionbolt	= 200;
+var int ConcussionBoltUsed;
 
 INSTANCE Spell_Concussionbolt (C_Spell_Proto)
 {
@@ -29,6 +30,12 @@ func int Spell_Logic_Concussionbolt (var int manaInvested)
 
 func void Spell_Cast_Concussionbolt()
 {
+	if (Npc_IsPlayer(self) && !ConcussionBoltUsed) {
+		ConcussionBoltUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

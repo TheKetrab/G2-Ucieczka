@@ -6,7 +6,7 @@ const int SPL_Cost_LightningFlash 		= 30;
 const int SPL_Damage_LightningFlash 	= 150; 
 const int SPL_ZAPPED_DAMAGE_PER_SEC 	= 2;	
 const int SPL_TIME_SHORTZAPPED			= 2;
-
+var int LightningFlashUsed;
 
 INSTANCE Spell_LightningFlash (C_Spell_Proto)
 {							
@@ -33,6 +33,11 @@ func int Spell_Logic_LightningFlash (var int manaInvested) //Parameter wird hier
 
 func void Spell_Cast_LightningFlash()
 {
+	if (Npc_IsPlayer(self) && !LightningFlashUsed) {
+		LightningFlashUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

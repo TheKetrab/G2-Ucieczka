@@ -5,6 +5,7 @@
 const int SPL_Cost_ChargeFireball		= 160; //4*40
 const int STEP_ChargeFireball			= 40;
 const int SPL_Damage_ChargeFireball 	= 75;
+var int ChargeFireballUsed;
 
 INSTANCE Spell_ChargeFireball (C_Spell_Proto)
 {
@@ -76,6 +77,11 @@ func void Spell_Cast_ChargeFireball(var int spellLevel)
 {
 	self.attribute[ATR_MANA] = (self.attribute[ATR_MANA] - STEP_ChargeFireball);
 	
+	if (Npc_IsPlayer(self) && !ChargeFireballUsed) {
+		ChargeFireballUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (self.attribute[ATR_MANA]<0) 
 	{
 		self.attribute[ATR_MANA]=0;

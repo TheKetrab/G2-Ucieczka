@@ -5,6 +5,7 @@
 const int SPL_Cost_WindFist				= 80; //4*20
 const int STEP_WindFist					= 20;
 const int SPL_Damage_WindFist			= 50;
+var int WindFistUsed;
 
 INSTANCE Spell_WindFist (C_Spell_Proto)
 {
@@ -81,6 +82,11 @@ func int Spell_Logic_WindFist (var int manaInvested)
 
 func void Spell_Cast_WindFist(var int spellLevel)
 {
+	if (Npc_IsPlayer(self) && !WindFistUsed) {
+		WindFistUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	self.attribute[ATR_MANA] = (self.attribute[ATR_MANA] - STEP_WindFist);
 	
 	if (self.attribute[ATR_MANA]<0) 

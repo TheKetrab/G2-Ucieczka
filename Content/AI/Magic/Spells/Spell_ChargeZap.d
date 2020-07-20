@@ -5,6 +5,7 @@
 const int SPL_Cost_ChargeZap		= 40; //4*10
 const int STEP_ChargeZap			= 10;
 const int SPL_Damage_ChargeZap 		= 30;
+var int ChargeZapUsed;
 
 INSTANCE Spell_ChargeZap (C_Spell_Proto)
 {
@@ -77,6 +78,12 @@ func int Spell_Logic_ChargeZap (var int manaInvested)
 func void Spell_Cast_ChargeZap(var int spellLevel)
 {
 	self.attribute[ATR_MANA] = (self.attribute[ATR_MANA] - STEP_ChargeZap);
+	
+	if (Npc_IsPlayer(self) && !ChargeZapUsed) {
+		ChargeZapUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	
 	if (self.attribute[ATR_MANA]<0) 
 	{

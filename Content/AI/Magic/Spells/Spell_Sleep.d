@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Sleep				= 30;	
 const int SPL_TIME_Sleep				= 30;	// in ZS_MagicSleep
-
+var int SleepUsed;
 
 instance Spell_Sleep (C_Spell_Proto)
 {
@@ -65,6 +65,10 @@ func int Spell_Logic_Sleep (var int manaInvested) //Parameter manaInvested wird 
 
 func void Spell_Cast_Sleep()
 {
+	if (Npc_IsPlayer(self) && !SleepUsed) {
+		SleepUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
 	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Sleep;			// nicht drin, wegen Kommentar oben
 	
 	self.aivar[AIV_SelectSpell] += 1;

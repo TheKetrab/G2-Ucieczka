@@ -4,6 +4,7 @@
 
 const int SPL_Cost_IceBolt		= 10;
 const int SPL_Damage_IceBolt 	= 50;
+var int IceBoltUsed;
 
 
 
@@ -31,6 +32,11 @@ func int Spell_Logic_IceBolt (var int manaInvested)
 
 func void Spell_Cast_IceBolt()
 {
+	if (Npc_IsPlayer(self) && !IceBoltUsed) {
+		IceBoltUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

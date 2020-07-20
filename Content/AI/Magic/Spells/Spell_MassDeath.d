@@ -4,7 +4,7 @@
 
 const int SPL_Cost_MassDeath		= 150;
 const int SPL_Damage_MassDeath 		= 500;
-
+var int MassDeathUsed;
 
 INSTANCE Spell_MassDeath (C_Spell_Proto)
 {
@@ -32,6 +32,12 @@ func int Spell_Logic_Massdeath (var int manaInvested)
 
 func void Spell_Cast_Massdeath()
 {
+
+	if (Npc_IsPlayer(self) && !MassDeathUsed) {
+		MassDeathUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

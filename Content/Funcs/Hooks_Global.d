@@ -20,6 +20,7 @@ const int oCNpc__EV_AttackRun  = 7673808;
 const int oCNpc__EV_AttackForward  = 7664640;
 
 
+
 func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 {
 	if( !(ESP+4)/*touchvob*/) { return; };
@@ -779,7 +780,7 @@ func void Hooks_Global()
 		
 		HookEngineF(oCNpc__CopyTransformSpellInvariantValuesTo,5,Transform);
 		
-		
+				
 		DisableFocusOfDeadNPCsWithEmptyInventory();
 		HookEngineF(oCNpc__UpdateSlots,6,UpdateStaffSlot);
 		CheckItemConditions_Init();

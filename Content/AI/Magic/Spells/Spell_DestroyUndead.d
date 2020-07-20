@@ -4,6 +4,7 @@
 
 const int	SPL_Cost_DESTROYUNDEAD		=	100;
 const int 	SPL_Damage_DESTROYUNDEAD 	= 	1000; //soll halt wirklich killen!
+var int DestroyUndeadUsed;
 
 INSTANCE Spell_DestroyUndead(C_Spell_Proto)
 {
@@ -31,6 +32,12 @@ func int Spell_Logic_DestroyUndead	(var int manaInvested)
 
 func void Spell_Cast_DestroyUndead()
 {
+	if (Npc_IsPlayer(self) && !DestroyUndeadUsed) {
+		DestroyUndeadUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

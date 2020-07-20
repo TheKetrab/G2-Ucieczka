@@ -4,7 +4,7 @@
 
 const int SPL_Cost_FireRain			= 150;
 const int SPL_Damage_FireRain 		= 500;
-
+var int FireRainUsed;
 
 INSTANCE Spell_FireRain (C_Spell_Proto)
 {
@@ -32,6 +32,11 @@ func int Spell_Logic_Firerain	(var int manaInvested)
 
 func void Spell_Cast_Firerain()
 {
+	if (Npc_IsPlayer(self) && !FireRainUsed) {
+		FireRainUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

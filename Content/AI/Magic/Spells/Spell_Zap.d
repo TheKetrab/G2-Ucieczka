@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Zap		= 15;
 const int SPL_Damage_Zap 	= 30;
-
+var int ZapUsed;
 
 INSTANCE Spell_Zap (C_Spell_Proto)
 {
@@ -32,6 +32,11 @@ func int Spell_Logic_Zap (var int manaInvested)
 
 func void Spell_Cast_Zap(var int spellLevel)
 {
+	if (Npc_IsPlayer(self) && !ZapUsed) {
+		ZapUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

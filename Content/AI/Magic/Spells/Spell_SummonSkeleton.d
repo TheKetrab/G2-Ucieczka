@@ -3,7 +3,7 @@
 // ******************
 
 const int SPL_Cost_SummonSkeleton			= 60;
-
+var int SumSkelUsed;
 
 INSTANCE Spell_SummonSkeleton (C_Spell_Proto)	//ehem. Spell_Skeleton
 {
@@ -29,6 +29,11 @@ func int Spell_Logic_SummonSkeleton(var int manaInvested)
 
 func void Spell_Cast_SummonSkeleton()
 {
+	if (Npc_IsPlayer(self) && !SumSkelUsed) {
+		SumSkelUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

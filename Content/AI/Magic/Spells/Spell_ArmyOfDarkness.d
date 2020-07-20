@@ -3,7 +3,7 @@
 // ******************
 
 const int SPL_Cost_ArmyOfDarkness	= 150;
-
+var int ArmyOfDarknessUsed;
 
 INSTANCE Spell_ArmyOfDarkness (C_Spell_Proto)
 {
@@ -50,6 +50,11 @@ func void Spell_Cast_ArmyOfDarkness(var int spellLevel)
 	
 	if (Npc_IsPlayer(self))
 	{
+		if (!ArmyOfDarknessUsed) {
+			ArmyOfDarknessUsed = TRUE;
+			WillUzyteZaklecia += 1;
+		};
+		
 	    Wld_SpawnNpcRange	(self,	Summoned_Skeleton,			6,	800);
 
 	}

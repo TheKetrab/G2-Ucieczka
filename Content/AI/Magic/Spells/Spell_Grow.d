@@ -3,6 +3,7 @@
 // **********
 
 var int GrowUzyteOneTime;
+var int GrowUsed;
 
 instance Spell_Grow (C_Spell_Proto)
 {
@@ -29,6 +30,11 @@ func int Spell_Logic_Grow	(var int manaInvested) 	//Parameter manaInvested wird 
 
 func void Spell_Cast_Grow()
 {
+	if (Npc_IsPlayer(self) && !GrowUsed) {
+		Grow = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

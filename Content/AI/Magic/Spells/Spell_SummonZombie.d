@@ -3,7 +3,7 @@
 // ******************
 
 const int SPL_Cost_SummonZombie			= 80;
-
+var int SumZombieUsed;
 
 INSTANCE Spell_SummonZombie (C_Spell_Proto)	
 {
@@ -30,6 +30,11 @@ func int Spell_Logic_SummonZombie(var int manaInvested)
 
 func void Spell_Cast_SummonZombie()
 {
+	if (Npc_IsPlayer(self) && !SumZombieUsed) {
+		SumZombieUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

@@ -3,7 +3,7 @@
 // **************
 
 const int SPL_Cost_SummonWolf			= 40;
-
+var int SumWolfUsed;
 
 INSTANCE Spell_SummonWolf (C_Spell_Proto)
 {
@@ -30,6 +30,11 @@ func int Spell_Logic_SummonWolf (var int manaInvested)
 
 func void Spell_Cast_SummonWolf()
 {
+	if (Npc_IsPlayer(self) && !SumWolfUsed) {
+		SumWolfUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

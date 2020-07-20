@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Skull	= 250; 
 const int SPL_Damage_Skull 	= 666; 
-
+var int SkullUsed;
 
 INSTANCE Spell_Skull	(C_Spell_Proto)
 {
@@ -32,6 +32,11 @@ func int Spell_Logic_Skull (var int manaInvested)
 
 func void Spell_Cast_Skull()
 {
+	if (Npc_IsPlayer(self) && !SkullUsed) {
+		SkullUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

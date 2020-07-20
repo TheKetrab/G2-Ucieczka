@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Waterfist	= 25;
 const int SPL_Damage_Waterfist	= 125;
-
+var int WaterfistUsed;
 
 INSTANCE Spell_Waterfist	(C_Spell_Proto)
 {
@@ -31,6 +31,11 @@ func int Spell_Logic_Waterfist	(var int manaInvested)
 
 func void Spell_Cast_Waterfist()
 {
+	if (Npc_IsPlayer(self) && !WaterfistUsed) {
+		WaterfistUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

@@ -4,7 +4,7 @@
 
 const int SPL_Cost_MasterOfDisaster		= 60;
 const int SPL_Damage_MasterOfDisaster	= 300;
-
+var int MasterOfDisasterUsed;
 
 INSTANCE Spell_MasterOfDisaster	(C_Spell_Proto)
 {
@@ -31,6 +31,12 @@ func int Spell_Logic_MasterOfDisaster	(var int manaInvested)
 
 func void Spell_Cast_MasterOfDisaster()
 {
+
+	if (Npc_IsPlayer(self) && !MasterOfDisasterUsed) {
+		MasterOfDisasterUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

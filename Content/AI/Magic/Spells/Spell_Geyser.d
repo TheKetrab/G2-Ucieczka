@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Geyser 				= 75;
 const int SPL_Damage_Geyser 			= 150; 
-
+var int GeyserUsed;
 
 INSTANCE Spell_Geyser	(C_Spell_Proto)
 {							
@@ -31,6 +31,11 @@ func int Spell_Logic_Geyser (var int manaInvested) //Parameter wird hier nicht g
 
 func void Spell_Cast_Geyser()
 {
+	if (Npc_IsPlayer(self) && !GeyserUsed) {
+		GeyserUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

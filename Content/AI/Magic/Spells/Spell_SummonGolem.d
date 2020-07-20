@@ -3,7 +3,7 @@
 // ***************
 
 const int SPL_Cost_SummonGolem		= 80;
-
+var int SumGolemUsed;
 
 INSTANCE Spell_SummonGolem (C_Spell_Proto)	//ehem. Spell_Golem
 {
@@ -31,6 +31,11 @@ func int Spell_Logic_SummonGolem (var int manaInvested)
 
 func void Spell_Cast_SummonGolem()
 {
+	if (Npc_IsPlayer(self) && !SumGolemUsed) {
+		SumGolemUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

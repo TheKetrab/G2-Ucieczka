@@ -4,7 +4,7 @@
 
 const int	SPL_Cost_IceWave			=	120;
 //SPL_FREEZE_DAMAGE	und SPL_TIME_FREEZE	siehe SPL_IceCube
-
+var int IceWaveUsed;
 
 INSTANCE Spell_IceWave (C_Spell_Proto)
 {
@@ -31,6 +31,11 @@ func int Spell_Logic_IceWave(var int manaInvested) //Parameter wird hier nicht g
 
 func void Spell_Cast_IceWave()
 {
+	if (Npc_IsPlayer(self) && !IceWaveUsed) {
+		IceWaveUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

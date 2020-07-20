@@ -191,11 +191,11 @@ func void Check_OSIAGNIECIA() {
 	if (Osiagniecie10OneTime == FALSE && ZabiteGiganty >= 7)					{ Osiagniecie10OneTime = TRUE; AddAchievement(Acv10Title,Acv10Content); };	// 10
 
 
-	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(Acv11Title,Acv11Content); };	// 11 // TODO hook na funkcje podnoszenia
+	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(Acv11Title,Acv11Content); };	// 11
 	if (Osiagniecie12OneTime == FALSE && hero.lp >= 50)							{ Osiagniecie12OneTime = TRUE; AddAchievement(Acv12Title,Acv12Content); };	// 12
 	if (Osiagniecie13OneTime == FALSE)											{ Osiagniecie13OneTime = TRUE; AddAchievement(Acv13Title,Acv13Content); };	// 13 // TODO
-	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14 // TODO hook na funkcje ze sie lamie wytrych
-	if (Osiagniecie15OneTime == FALSE)											{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15 // TODO
+	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14
+	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15
 	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
 	if (Osiagniecie17OneTime == FALSE)											{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 // TODO
 	if (Osiagniecie18OneTime == FALSE)											{ Osiagniecie18OneTime = TRUE; AddAchievement(Acv18Title,Acv18Content); };	// 18

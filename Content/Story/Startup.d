@@ -101,7 +101,7 @@ func void STARTUP_OLDCAMP ()
 
 
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_1");
-	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_2"); // TODO: nie dziala wstawienie tutaj menzutrki
+	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_2");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_3");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_4");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_5");
@@ -109,7 +109,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_7");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_8");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_9");
-	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_10");	
+	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_10");
 	
 	//NASZE
 

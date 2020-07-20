@@ -3,7 +3,7 @@
 // ******************
 
 const int SPL_Cost_SummonGuardian			= 60;
-
+var int SumGuardianUsed;
 
 INSTANCE Spell_SummonGuardian (C_Spell_Proto)	
 {
@@ -29,6 +29,11 @@ func int Spell_Logic_SummonGuardian(var int manaInvested)
 
 func void Spell_Cast_SummonGuardian()
 {
+	if (Npc_IsPlayer(self) && !SumGuardianUsed) {
+		SumGuardianUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

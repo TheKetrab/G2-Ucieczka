@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Thunderstorm 	= 100;
 const int SPL_Damage_Thunderstorm 	= 250;
-
+var int ThunderstormUsed;
 
 INSTANCE Spell_Thunderstorm  (C_Spell_Proto)
 {
@@ -32,6 +32,11 @@ func int Spell_Logic_Thunderstorm	(var int manaInvested)
 
 func void Spell_Cast_Thunderstorm()
 {
+	if (Npc_IsPlayer(self) && !ThunderstormUsed) {
+		ThunderstormUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

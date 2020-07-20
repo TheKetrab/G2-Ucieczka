@@ -3,7 +3,7 @@
 // ************************
 
 const int SPL_Cost_SummonGoblinSkeleton		= 20;
-
+var int SumGobSkelUsed;
 
 INSTANCE Spell_SummonGoblinSkeleton (C_Spell_Proto)	//ehem. Spell_Skeleton
 {
@@ -29,6 +29,11 @@ func int Spell_Logic_SummonGoblinSkeleton (var int manaInvested)
 
 func void Spell_Cast_SummonGoblinSkeleton()
 {
+	if (Npc_IsPlayer(self) && !SumGobSkelUsed) {
+		SumGobSkelUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

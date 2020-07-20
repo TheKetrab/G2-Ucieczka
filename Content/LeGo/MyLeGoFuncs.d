@@ -196,11 +196,30 @@ func int GetItemSlot (var C_NPC slf, var string slotName)
     return CALL_RetValAsPtr ();
 };
 
+func int IsItemRusted(c_item itm) {
+
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_MISC_Sword)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_Misc_Axe)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_Sword_M_01)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_01)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_02)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_03)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_04)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcSword_01)) return 1;
+	
+	return 0;
+
+};
+
 func void TakeFocusVob_hook()
 {
 	if(ECX != MEM_ReadInt(_hero) || !Hlp_Is_oCItem(MEM_ReadInt(ESP+4))) { return; };
 	
 	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
+	
+	if (IsItemRusted(itm)) {
+		ZardzewialeMieczePodniesione += 1;
+	};
 	
 	if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_FragmentZwoju))
 	{

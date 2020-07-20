@@ -5,6 +5,7 @@
 const int	SPL_Cost_IceCube			=	40;
 const int   SPL_FREEZE_DAMAGE		 	=	2;		// IceCube, IceWave
 const int	SPL_TIME_FREEZE				=	19;		// IceCube, IceWave
+var int IceCubeUsed;
 
 //Achtung: wenn bei FREEZE (19) die Werte ge‰ndert werden, muﬂ auch die Lebensdauer der PFX angepasst werden
 
@@ -50,6 +51,11 @@ func int Spell_Logic_IceCube (var int manaInvested) //Parameter wird hier nicht 
 
 func void Spell_Cast_IceCube()
 {
+	if (Npc_IsPlayer(self) && !IceCubeUsed) {
+		IceCubeUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
     if (Npc_GetActiveSpellIsScroll(self))
     {
         if(!Hero_UseGolemHeart)

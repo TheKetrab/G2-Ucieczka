@@ -4,7 +4,7 @@
 
 const int SPL_Cost_InstantFireball			= 15;
 const int SPL_Damage_InstantFireball 		= 75;
-
+var int InstantFireballUsed;
 
 INSTANCE Spell_InstantFireball (C_Spell_Proto)
 {
@@ -32,6 +32,11 @@ func int Spell_Logic_InstantFireball (var int manaInvested)
 
 func void Spell_Cast_InstantFireball()
 {
+	if (Npc_IsPlayer(self) && !InstantFireballUsed) {
+		InstantFireballUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

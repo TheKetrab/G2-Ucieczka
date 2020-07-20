@@ -5,6 +5,7 @@
 const int SPL_Cost_FireStorm		= 200; //4*50
 const int STEP_Firestorm			= 50;
 const int SPL_Damage_FireStorm 		= 75;
+var int PyrokinesisUsed;
 
 	// obsolete:
 	const int SPL_PYRO_DAMAGE_PER_SEC = 20;	// wird in ZS_Pyro (Pyrokinese-Opfer) benutzt, dort KEIN Rüstungsschutz!
@@ -80,6 +81,11 @@ func int Spell_Logic_Pyrokinesis (var int manaInvested)
 
 func void Spell_Cast_Pyrokinesis(var int spellLevel)
 {	
+	if (Npc_IsPlayer(self) && !PyrokinesisUsed) {
+		PyrokinesisUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	self.attribute[ATR_MANA] = (self.attribute[ATR_MANA] - STEP_Firestorm);
 
 	if (self.attribute[ATR_MANA]<0) 

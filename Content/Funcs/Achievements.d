@@ -49,7 +49,8 @@ const string Acv14Content = "Z³ama³eœ 50 wytrychów.";
 var int ZlamaneWytrychy;
 
 const string Acv15Title   = "Magik";
-const string Acv15Content = "U¿y³eœ 10 ró¿nych zaklêæ."; // bez teleportacji!
+const string Acv15Content = "U¿y³eœ 30 ró¿nych zaklêæ."; // bez teleportacji!
+var int WillUzyteZaklecia;
 
 const string Acv16Title   = "Nurek";
 const string Acv16Content = "Spêdzi³eœ pod wod¹ ponad 5 minut!"; // (w sumie) czasu rzeczywistego

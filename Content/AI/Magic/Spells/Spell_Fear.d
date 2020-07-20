@@ -4,6 +4,7 @@
 
 const int SPL_Cost_Fear			= 50;
 const int SPL_TIME_Fear			= 5;
+var int FearUsed;
 
 INSTANCE Spell_Fear (C_Spell_Proto)
 {
@@ -31,6 +32,13 @@ func int Spell_Logic_Fear (var int manaInvested)
 
 func void Spell_Cast_Fear()
 {
+	if (Npc_IsPlayer(self) && !FearUsed) {
+		FearUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
+
 	if (other.guild != GIL_DRAGON)
 	&& (other.aivar[AIV_MM_REAL_ID]	!= ID_GIGANT) //nie jest gigantem
 	{

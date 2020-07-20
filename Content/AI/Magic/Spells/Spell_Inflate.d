@@ -5,7 +5,7 @@
 const int SPL_Cost_Inflate				= 10;	
 const int SPL_Inflate_Damage			= 5;	
 const int SPL_TIME_Inflate				= 19;	
-
+var int InflateUsed;
 
 instance Spell_Inflate (C_Spell_Proto)
 {
@@ -52,6 +52,10 @@ func int Spell_Logic_Inflate (var int manaInvested) //Parameter manaInvested wir
 
 func void Spell_Cast_Inflate()
 {
+	if (Npc_IsPlayer(self) && !InflateUsed) {
+		InflateUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
 	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Sleep;			// nicht drin, wegen Kommentar oben
 	
 	self.aivar[AIV_SelectSpell] += 1;

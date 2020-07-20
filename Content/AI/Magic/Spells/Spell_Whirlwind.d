@@ -5,6 +5,7 @@
 const int	SPL_Cost_Whirlwind			=	30;
 const int   SPL_Whirlwind_DAMAGE		=	0;	
 const int	SPL_TIME_WHIRLWIND			=	10;	
+var int WhirlWindUsed;
 
 INSTANCE Spell_Whirlwind (C_Spell_Proto)
 {
@@ -31,6 +32,11 @@ func int Spell_Logic_Whirlwind (var int manaInvested) //Parameter wird hier nich
 
 func void Spell_Cast_Whirlwind()
 {
+	if (Npc_IsPlayer(self) && !WhirlWindUsed) {
+		WhirlWindUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

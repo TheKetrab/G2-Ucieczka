@@ -25,7 +25,7 @@ func void G_PickLock (var int bSuccess, var int bBrokenOpen)
 	{
 		if (bBrokenOpen)
 		{
-
+			ZlamaneWytrychy += 1;
 			Snd_Play3D 	(self, "PICKLOCK_BROKEN");
 			Print (PRINT_PICKLOCK_BROKEN);
 			

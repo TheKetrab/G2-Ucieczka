@@ -17,6 +17,10 @@ const int SPL_Heal_LightHeal		= 200;
 const int SPL_Heal_MediumHeal		= 400;
 const int SPL_Heal_FullHeal			= 800;
 
+var int HealLightUSed;
+var int HealMediumUsed;
+var int HealFullUsed;
+var int HealGroupUsed;
 
 // ------ Instanz für alle normalen Heal-Sprüche ------
 instance Spell_Heal (C_Spell_Proto)
@@ -44,6 +48,8 @@ instance Spell_PalHeal (C_Spell_Proto)
 
 func int Spell_Logic_GroupHeal (var int manaInvested)
 {
+
+
 	if (Npc_GetActiveSpellIsScroll(self) && (self.attribute[ATR_MANA] >= SPL_Cost_Scroll))
 	{
 		return SPL_SENDCAST;
@@ -59,6 +65,11 @@ func int Spell_Logic_GroupHeal (var int manaInvested)
 
 func void Spell_Cast_GroupHeal()
 {
+	if (Npc_IsPlayer(self) && !HealGroupUsed) {
+		HealGroupUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+	
 	if ( Npc_GetActiveSpell(self) == SPL_GroupHeal		)	
 	{	
 		if (Npc_GetActiveSpellIsScroll(self))
@@ -195,6 +206,11 @@ func void Spell_Cast_Heal()
 	
 	if ( Npc_GetActiveSpell(self) == SPL_LightHeal		)	
 	{	
+		if (Npc_IsPlayer(self) && !HealLightUSed) {
+			HealLightUSed = TRUE;
+			WillUzyteZaklecia += 1;
+		};
+	
 		if (Npc_GetActiveSpellIsScroll(self))
 		{
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;
@@ -209,6 +225,12 @@ func void Spell_Cast_Heal()
 	
 	if ( Npc_GetActiveSpell(self) == SPL_MediumHeal		)	
 	{	
+	
+		if (Npc_IsPlayer(self) && !HealMediumUsed) {
+			HealMediumUsed = TRUE;
+			WillUzyteZaklecia += 1;
+		};
+		
 		if (Npc_GetActiveSpellIsScroll(self))
 		{
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;
@@ -223,6 +245,11 @@ func void Spell_Cast_Heal()
 	
 	if ( Npc_GetActiveSpell(self) == SPL_FullHeal		)	
 	{	
+		if (Npc_IsPlayer(self) && !HealFullUsed) {
+			HealFullUsed = TRUE;
+			WillUzyteZaklecia += 1;
+		};
+	
 		if (Npc_GetActiveSpellIsScroll(self))
 		{
 			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

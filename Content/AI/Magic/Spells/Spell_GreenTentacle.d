@@ -4,6 +4,7 @@
 
 const int SPL_Cost_Greententacle	= 50;
 const int SPL_TIME_Greententacle	= 20;
+var int GreenTentacleUsed;
 
 INSTANCE Spell_Greententacle (C_Spell_Proto)
 {
@@ -33,6 +34,11 @@ func int Spell_Logic_Greententacle (var int manaInvested)
 
 func void Spell_Cast_Greententacle()
 {
+	if (Npc_IsPlayer(self) && !GreenTentacleUsed) {
+		GreenTentacleUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

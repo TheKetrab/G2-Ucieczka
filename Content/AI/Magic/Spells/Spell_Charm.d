@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Charm		= 50;
 const int SPL_Damage_Charm 		= 0;
-
+var int CharmUsed;
 
 INSTANCE Spell_Charm(C_Spell_Proto)
 {
@@ -51,6 +51,12 @@ func int Spell_Logic_Charm(var int manaInvested)
 
 func void Spell_Cast_Charm()
 {
+	if (Npc_IsPlayer(self) && !CharmUsed) {
+		CharmUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

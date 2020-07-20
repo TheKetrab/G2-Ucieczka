@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Deathball	= 35;
 const int SPL_Damage_Deathball	= 165;
-
+var int DeathBallUsed;
 
 INSTANCE Spell_Deathball (C_Spell_Proto)
 {
@@ -30,6 +30,12 @@ func int Spell_Logic_Deathball (var int manaInvested)
 
 func void Spell_Cast_Deathball ()
 {
+	if (Npc_IsPlayer(self) && !DeathBallUsed) {
+		DeathBallUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

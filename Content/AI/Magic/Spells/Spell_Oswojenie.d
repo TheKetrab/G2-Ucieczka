@@ -4,7 +4,7 @@
 
 const int SPL_Cost_Oswojenie		= 50;
 const int SPL_Damage_Oswojenie 		= 0;
-
+var int OswojenieUsed;
 
 INSTANCE Spell_Oswojenie(C_Spell_Proto)
 {
@@ -40,6 +40,11 @@ func int Spell_Logic_Oswojenie(var int manaInvested)
 
 func void Spell_Cast_Oswojenie()
 {
+	if (Npc_IsPlayer(self) && !OswojenieUsed) {
+		OswojenieUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

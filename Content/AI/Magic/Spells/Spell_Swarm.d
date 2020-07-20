@@ -5,7 +5,7 @@
 const int SPL_Cost_Swarm			= 20;	
 const int SPL_Swarm_Damage			= 80;	
 const int SPL_TIME_Swarm			= 6;	
-
+var int SwarmUsed;
 
 instance Spell_Swarm (C_Spell_Proto)
 {
@@ -31,6 +31,11 @@ func int Spell_Logic_Swarm (var int manaInvested) //Parameter manaInvested wird 
 func void Spell_Cast_Swarm()
 {
 	//self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Sleep;			// nicht drin, wegen Kommentar oben
+	
+	if (Npc_IsPlayer(self) && !SwarmUsed) {
+		SwarmUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
 	
 	self.aivar[AIV_SelectSpell] += 1;
 };

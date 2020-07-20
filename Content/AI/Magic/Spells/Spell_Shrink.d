@@ -3,6 +3,7 @@
 // **********
 
 const int SPL_Cost_Shrink			= 300;
+var int ShrinkUsed;
 
 INSTANCE Spell_Shrink (C_Spell_Proto)
 {
@@ -30,6 +31,11 @@ func int Spell_Logic_Shrink	(var int manaInvested) 	//Parameter manaInvested wir
 
 func void Spell_Cast_Shrink()
 {
+	if (Npc_IsPlayer(self) && !ShrinkUsed) {
+		ShrinkUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

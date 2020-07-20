@@ -4,6 +4,7 @@
 
 const int SPL_Cost_EnergyBall 		= 100;
 const int SPL_Damage_EnergyBall 	= 200;
+var int EnergyBallUsed;
 
 INSTANCE Spell_EnergyBall (C_Spell_Proto)
 {							
@@ -30,6 +31,12 @@ func int Spell_Logic_EnergyBall (var int manaInvested) //Parameter wird hier nic
 
 func void Spell_Cast_Energyball()
 {
+	if (Npc_IsPlayer(self) && !EnergyBallUsed) {
+		EnergyBallUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+
+
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

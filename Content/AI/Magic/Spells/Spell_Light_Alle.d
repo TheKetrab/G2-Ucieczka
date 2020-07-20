@@ -8,6 +8,8 @@ const int SPL_Cost_LIGHT			= 10;
 const int SPL_Duration_PalLIGHT		= 5;	//fester Wert wird nur für die IT_Runenverwendet (Zeit in Minuten)
 const int SPL_Duration_LIGHT		= 5;	//fester Wert wird nur für die IT_Runenverwendet (Zeit in Minuten)	
 
+var int LightUsed;
+var int PalLightUsed;
 
 INSTANCE Spell_Light (C_Spell_Proto)
 {
@@ -51,6 +53,12 @@ func int Spell_Logic_PalLight(var int manaInvested)
 
 func void Spell_Cast_PalLight()
 {
+
+	if (Npc_IsPlayer(self) && !PalLightUsed) {
+		PalLightUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+		
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;
@@ -82,6 +90,11 @@ func int Spell_Logic_Light(var int manaInvested)
 
 func void Spell_Cast_Light()
 {
+	if (Npc_IsPlayer(self) && !LightUsed) {
+		LightUsed = TRUE;
+		WillUzyteZaklecia += 1;
+	};
+		
 	if (Npc_GetActiveSpellIsScroll(self))
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Scroll;

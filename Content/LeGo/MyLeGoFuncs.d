@@ -196,16 +196,16 @@ func int GetItemSlot (var C_NPC slf, var string slotName)
     return CALL_RetValAsPtr ();
 };
 
-func int IsItemRusted(c_item itm) {
+func int IsItemRusted(var c_item itm) {
 
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_MISC_Sword)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_Misc_Axe)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_Sword_M_01)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_01)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_02)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_03)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_04)) return 1;
-	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcSword_01)) return 1;
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_MISC_Sword))	{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1h_Misc_Axe))		{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_Sword_M_01))	{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_01))		{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_02))		{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_03))		{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcAxe_04))		{ return 1; };
+	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_2H_OrcSword_01))	{ return 1; };
 	
 	return 0;
 

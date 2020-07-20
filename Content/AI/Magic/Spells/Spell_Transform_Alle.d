@@ -20,7 +20,7 @@ var int TrfSheepUsed;
 var int TrfScavengerUsed;
 var int TrfGiantRatUsed;
 var int TrfGiantBugUsed;
-var int TrfWolfUsed
+var int TrfWolfUsed;
 var int TrfWaranUsed;
 var int TrfSnapperUsed;
 var int TrfWargUsed;

@@ -85,7 +85,6 @@ const string Acv24Content = "Nauczy³eœ siê wszystkich trofeów.";
 
 const string Acv25Title   = "Biegacz";
 const string Acv25Content = "Przebieg³eœ 100 kilometrów.";
-var int HeroMovedDistance;
 
 const string Acv26Title   = "Strzelec";
 const string Acv26Content = "Strzeli³eœ 500 razy z broni dystansowej.";

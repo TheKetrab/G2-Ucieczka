@@ -31,7 +31,7 @@ func int Spell_Logic_Grow	(var int manaInvested) 	//Parameter manaInvested wird 
 func void Spell_Cast_Grow()
 {
 	if (Npc_IsPlayer(self) && !GrowUsed) {
-		Grow = TRUE;
+		GrowUsed = TRUE;
 		WillUzyteZaklecia += 1;
 	};
 

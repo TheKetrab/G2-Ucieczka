@@ -205,7 +205,7 @@ func void Check_OSIAGNIECIA() {
 	if (Osiagniecie22OneTime == FALSE)											{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22 TODO
 	if (Osiagniecie23OneTime == FALSE)											{ Osiagniecie23OneTime = TRUE; AddAchievement(Acv23Title,Acv23Content); };	// 23 TODO
 	if (Osiagniecie24OneTime == FALSE)											{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24 // TODO
-	if (Osiagniecie25OneTime == FALSE && HeroMovedDistance >= 100000)			{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 TODO -> v=s/t -> s = vt , ticktock co 250ms i zalezy czy sprint, chodzenie czy bieg czy skradanie. jesli teraz i za poprzendim razem byles w tym stanie to dolicz
+	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 
 	if (Osiagniecie26OneTime == FALSE)											{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26 // TODO
 	if (Osiagniecie27OneTime == FALSE)											{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27 // TODO
 	if (Osiagniecie28OneTime == FALSE)											{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28 // TODO

@@ -3537,6 +3537,9 @@ FUNC VOID Use_ItNa_KsiegaZmiennych()
 				Doc_PrintLines   ( nDocID,  0, run);
 				Doc_PrintLine   ( nDocID,  0, "");
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Czas pod wod¹: ",IntToString(DivingTime)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Podniesione zardzewia³e miecze: ",IntToString(ZardzewialeMieczePodniesione)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Z³amane wytrychy: ",IntToString(ZlamaneWytrychy)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("U¿yte ró¿ne zaklêcia: ",IntToString(WillUzyteZaklecia)));
 
 
 				Doc_Show		( nDocID );

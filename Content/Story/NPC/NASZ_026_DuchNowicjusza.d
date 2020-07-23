@@ -23,7 +23,7 @@ instance NASZ_026_DuchNowicjusza (Npc_Default)
 	B_CreateAmbientInv 	(self);
 		
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic", 44, 1, ITAR_LESTER);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic", Face_P_Tough_Rodriguez, BodyTex_P, ITAR_LESTER);		
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 

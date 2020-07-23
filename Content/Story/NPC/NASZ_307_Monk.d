@@ -29,7 +29,7 @@ instance NASZ_307_Monk (Npc_Default)
 	CreateInvItems (self, ItRw_Bolt,25);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Monk, BodyTex_N, ITNA_BAN_H);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_P_Monk, BodyTex_P, ITNA_BAN_H);	
 	Mdl_SetModelFatness	(self,0.5);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 	

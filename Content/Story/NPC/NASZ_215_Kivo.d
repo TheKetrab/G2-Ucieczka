@@ -26,7 +26,7 @@ instance NASZ_215_Kivo (Npc_Default)
 	CreateInvItems (self, ItRw_Arrow,25);
 	
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FatBald", Face_N_Kivo, BodyTex_N, ITNA_OUT_H );		
+	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FatBald", Face_L_Kivo, BodyTex_L, ITNA_OUT_H );		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

@@ -352,11 +352,11 @@ const int    TRUCIZNA_1               = 1;
 const int    TRUCIZNA_2               = 2;
 const int    TRUCIZNA_3               = 3;
 
-const int AIV_TARCZA						= 91;
+const int AIV_TARCZA					= 91;
 const int AIV_COMBO						= 92;
 const int AIV_UBRANATROJKA				= 93; //Do combo
-const int AIV_RandomDmg				= 94; //Do walki
-
+const int AIV_RandomDmg					= 94; //Do walki
+const int AIV_HELMET					= 95; // zalozony helm lub zbroja z helmem
 const int AIV_WAR_WITH_ORC				= 96; 
 
 // ***************************************************

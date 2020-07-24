@@ -7233,6 +7233,47 @@ INSTANCE ITNA_DJG_H (C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_DJG_S_Will (C_Item)
+{
+	name 					=	"Ciê¿ka zbroja ³owcy orków";
+
+	mainflag 				=	ITEM_KAT_ARMOR;
+	flags 					=	0;
+
+	protection [PROT_EDGE]	=	60;
+	protection [PROT_BLUNT]	= 	60;
+	protection [PROT_POINT] = 	60;
+	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_MAGIC] = 	20;
+
+	value 					=	1500;
+
+	wear 					=	WEAR_TORSO;
+
+	visual 					=	"ItAr_Djg_M.3ds";
+	visual_change 			=	"DJG_H_NOHELMET.asc";
+	visual_skin 			=	0;
+	material 				=	MAT_LEATHER;
+
+	description				=	name;
+	
+	TEXT[1]					=	NAME_Prot_Edge;		
+	COUNT[1]				= 	protection	[PROT_EDGE];
+	
+	TEXT[2]					=	NAME_Prot_Point;		
+	COUNT[2]				= 	protection	[PROT_POINT];
+	
+	TEXT[3] 				=	NAME_Prot_Fire;			
+	COUNT[3]				= 	protection	[PROT_FIRE];
+	
+	TEXT[4]					=	NAME_Prot_Magic;		
+	COUNT[4]				= 	protection	[PROT_MAGIC];
+	
+	TEXT[5]					=	NAME_Value;			
+	COUNT[5]				= 	value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_DJG_S (C_Item)
 {
 	name 					=	"Ciê¿ka zbroja ³owcy orków";
@@ -10747,6 +10788,7 @@ FUNC VOID Use_AllHelmets ()
 	CreateInvItems (hero,ITNA_Maska, 1);				// Kap2			~5		300		u nieznanego na pó³ce
 	CreateInvItems (hero,ITNA_HelmSniacego, 1);			// Kap5 bonus	~6		500		na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
 	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);		// Kap3			~9		500		do zebrania w misji 'helmy rycerzy'
+	CreateInvItems (hero,ITNA_DjgHelmet, 1);			// Kap3			~9		500		kupuje siê razem ze zbroj¹ ³owcy orków
 	CreateInvItems (hero,ITNA_RogatyHelm, 1);			// Kap3			~11		650		na prawo od CatSana - na pó³ce
 	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);	// Kap4			~13		800		na orkowej stra¿nicy obok tartaku za palisad¹
 	CreateInvItems (hero,ITNA_HelmBarda, 1);			// Kap3			~14		900		na najwy¿szej wie¿y w NO
@@ -10856,6 +10898,34 @@ INSTANCE ITNA_KolczugaRycerza (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
 };
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_DjgHelmet (C_Item)
+{
+	name = "He³m ³owcy orków";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "DJG_H_HELMET.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 500;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 9;
+	protection[PROT_BLUNT] = 9;
+	protection[PROT_POINT] = 7;
+	protection[PROT_FIRE] = 6;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_RogatyHelm (C_Item)

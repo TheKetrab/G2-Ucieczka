@@ -129,6 +129,7 @@ func int IsHelmet(var c_item itm)
 	||(instID == Hlp_GetInstanceID(ITNA_Maska))
 	||(instID == Hlp_GetInstanceID(ITNA_DJG_ULTRA_HELMET))
 	||(instID == Hlp_GetInstanceID(ITNA_KapturMysliwego))
+	||(instID == Hlp_GetInstanceID(ITNA_DjgHelmet))
 	{
 		return true;
 	};

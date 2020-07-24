@@ -190,6 +190,7 @@ instance NASZ_999_Test (Npc_Default)
 	CreateInvItems (self, ITNA_DJG_M,1);
 	CreateInvItems (self, ITNA_DJG_H,1);
 	CreateInvItems (self, ITNA_DJG_S,1);
+	CreateInvItems (self, ITNA_DJG_S_WILL,1);
 	CreateInvItems (self, ITNA_ARMOR_ANCIENT,1);
 	CreateInvItems (self, ItNa_UkrytaZbroja,1);
 	CreateInvItems (self, ItNa_PancerzKrolewski,1);

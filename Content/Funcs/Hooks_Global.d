@@ -707,6 +707,7 @@ func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
 	
 	if(bIsPlayer)
 	{
+
 		if(itm.wear == WEAR_HEAD)
 		{
 			

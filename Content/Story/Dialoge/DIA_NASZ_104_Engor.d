@@ -308,8 +308,10 @@ FUNC VOID DIA_NASZ_104_Engor_CiezkaZbroja_Info()
 			B_GiveInvItems (other, self, ItMi_Gold, 1500);
 			Npc_RemoveInvItems   (self, ItMi_Gold, 1500);
 			AI_Output (self, other,"DIA_NASZ_104_Engor_CiezkaZbroja_55_01"); //Proszê bardzo!
-			Createinvitems (self, ITNA_DJG_S, 1);
-			B_Giveinvitems (self, other, ITNA_DJG_S, 1);
+			Createinvitems (self, ITNA_DJG_S_WILL, 1);
+			B_Giveinvitems (self, other, ITNA_DJG_S_WILL, 1);
+			Createinvitems (self, ITNA_DJGHelmet, 1);
+			B_Giveinvitems (self, other, ITNA_DJGHelmet, 1);
 			AI_EquipBestArmor (other);
 			AI_Output (self, other,"DIA_NASZ_104_Engor_CiezkaZbroja_55_02"); //Doskonale!
 			CiezkaZbrojaLowcyKupiona = TRUE;

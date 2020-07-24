@@ -31,7 +31,7 @@ instance NASZ_008_Miecz (Npc_Default)
 	// ------ visuals ------
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_B_Miecz, BodyTex_B, ITAR_PIR_M_Addon);		
 	Mdl_SetModelFatness	(self, 1);
-	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
+	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

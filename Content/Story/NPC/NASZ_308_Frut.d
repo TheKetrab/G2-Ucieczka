@@ -31,7 +31,7 @@ instance NASZ_308_Frut (Npc_Default)
 	
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Frut, BodyTex_N, ITNA_BAN_H);	
 	Mdl_SetModelFatness	(self, 1);
-	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
+	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

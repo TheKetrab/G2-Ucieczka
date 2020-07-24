@@ -29,7 +29,7 @@ instance NASZ_227_Vachut (Npc_Default)
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Fighter", Face_B_Normal_Kharim, BodyTex_B, ITNA_OUT_H);		
 	Mdl_SetModelFatness	(self, 2);
-	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
+	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

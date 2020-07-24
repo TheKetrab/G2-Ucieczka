@@ -31,7 +31,7 @@ instance NASZ_307_Monk (Npc_Default)
 	// ------ visuals ------																			
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_P_Monk, BodyTex_P, ITNA_BAN_H);	
 	Mdl_SetModelFatness	(self,0.5);
-	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
+	Mdl_ApplyOverlayMds	(self, "Humans_Arrogance.mds"); 
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

@@ -25,7 +25,7 @@ instance NASZ_318_Gobby (Npc_Default)
 	// ------ visuals ------																			
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_Gobby, BodyTex_N, ITNA_BAN_M);	
 	Mdl_SetModelFatness	(self, 1.6);
-	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
+	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); 
 
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

@@ -27,7 +27,7 @@ instance NASZ_104_Engor (Npc_Default)
 	
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_L_Jackal, BodyTex_L, ITAR_MIL_M);	
 	Mdl_SetModelFatness	(self, 1);
-	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); 
+	Mdl_ApplyOverlayMds	(self, "Humans_Arrogance.mds"); 
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

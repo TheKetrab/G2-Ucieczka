@@ -29,7 +29,7 @@ instance NASZ_303_Nod (Npc_Default)
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Thief", Face_P_Nod, BodyTex_P, ITNA_BAN_H);	
 	Mdl_SetModelFatness    (self, 2);
 	//by FC	);
-	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
+	Mdl_ApplyOverlayMds	(self, "Humans_Arrogance.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	
 	// ------ NSC-relevante Talente vergeben ------
 	B_GiveNpcTalents (self);

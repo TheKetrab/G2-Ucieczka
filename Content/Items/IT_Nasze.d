@@ -6997,7 +6997,7 @@ INSTANCE ITNA_OUT_ULTRA (C_Item)
 	protection [PROT_FIRE] 	= 	40;
 	protection [PROT_MAGIC] = 	20;
 
-	value 					=	1500;
+	value 					=	2000;
 
 	wear 					=	WEAR_TORSO;
 
@@ -7288,7 +7288,7 @@ INSTANCE ITNA_DJG_ULTRA (C_Item)
 	protection [PROT_FIRE] 	= 	40;
 	protection [PROT_MAGIC] = 	20;
 
-	value 					=	1500;
+	value 					=	2000;
 
 	wear 					=	WEAR_TORSO;
 
@@ -10719,9 +10719,6 @@ FUNC VOID Use_G1Swords ()
 };
 
 
-
-
-
 // **********************************************
 // . . . . . . . . . . He³my . . . . . . . . . .
 // **********************************************
@@ -10746,100 +10743,14 @@ INSTANCE Helmet (C_Item)
 
 FUNC VOID Use_AllHelmets ()
 {
-	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);	// do zebrania w misji
-	CreateInvItems (hero,ITNA_HelmBarda, 1);		// na wie¿y w NO
-	CreateInvItems (hero,ITNA_KapturMysliwego, 1);	// sprzedaje hunt jesli jestes mysliwym
-	CreateInvItems (hero,ITNA_RogatyHelm, 1);
-	CreateInvItems (hero,ITNA_HelmSniacego, 1);		// na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
-	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);
-	CreateInvItems (hero,ITNA_Maska, 1);
-	CreateInvItems (hero,ITNA_DJG_ULTRA_HELMET, 1);
-};
-INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
-{
-	name = "He³m z pancerza orka-elity";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 16;
-	protection[PROT_BLUNT] = 16;
-	protection[PROT_POINT] = 8;
-	protection[PROT_FIRE] = 14;
-	protection[PROT_MAGIC] = 10;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "PAL_ORC_HELM_NEW.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-
-INSTANCE ITNA_KolczugaRycerza (C_Item)
-{
-	name = "Kolczuga rycerza";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "HelmRycerza.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-
-INSTANCE ITNA_HelmBarda (C_Item)
-{
-	name = "He³m barda";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "HelmBarda.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
+	CreateInvItems (hero,ITNA_KapturMysliwego, 1);		// Kap2			~4		200		sprzedaje hunt jesli jestes mysliwym
+	CreateInvItems (hero,ITNA_Maska, 1);				// Kap2			~5		300		u nieznanego na pó³ce
+	CreateInvItems (hero,ITNA_HelmSniacego, 1);			// Kap5 bonus	~6		500		na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
+	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);		// Kap3			~9		500		do zebrania w misji 'helmy rycerzy'
+	CreateInvItems (hero,ITNA_RogatyHelm, 1);			// Kap3			~11		650		na prawo od CatSana - na pó³ce
+	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);	// Kap4			~13		800		na orkowej stra¿nicy obok tartaku za palisad¹
+	CreateInvItems (hero,ITNA_HelmBarda, 1);			// Kap3			~14		900		na najwy¿szej wie¿y w NO
+	CreateInvItems (hero,ITNA_DJG_ULTRA_HELMET, 1);		// Kap4			~16		1000	mozna kupic od Jana po misji ze zbroja
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -10848,118 +10759,22 @@ INSTANCE ITNA_KapturMysliwego (C_Item)
 	name = "Kaptur myœliwego";
 	mainflag = ITEM_KAT_NF;
 	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
+	description = name;
+	
+	visual = "KapturMysliwego.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
 	value = 200;
-	wear = WEAR_HEAD;
-	visual = "KapturMysliwego.3ds"; 
-	visual_skin = 0;
 	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
-};
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_RogatyHelm (C_Item)
-{
-	name = "Rogaty He³m";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "RogatyHelm.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
-};
+	protection[PROT_EDGE] = 4;
+	protection[PROT_BLUNT] = 4;
+	protection[PROT_POINT] = 2;
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_HelmSniacego (C_Item)
-{
-	name = "He³m Œni¹cego";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "HelmSniacego.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
 	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_TwardyHelmWojownika (C_Item)
-{
-	name = "Twardy he³m wojownika";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "TwardyHelmWojownika.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
-	description = name;
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[5] = NAME_Value;		count[5] = value;
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -10968,26 +10783,186 @@ INSTANCE ITNA_Maska (C_Item)
 	name = "Maska";
 	mainflag = ITEM_KAT_NF;
 	flags = 0;
-	protection[PROT_EDGE] = 15;
-	protection[PROT_BLUNT] = 15;
-	protection[PROT_POINT] = 15;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 5;
-	value = 1500;
-	wear = WEAR_HEAD;
-	visual = "Maska.3ds"; 
-	visual_skin = 0;
-	material = MAT_LEATHER;
 	description = name;
+	
+	visual = "Maska.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 300;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 5;
+	protection[PROT_BLUNT] = 5;
+	protection[PROT_POINT] = 4;
+	protection[PROT_FIRE] = 4;
+
 	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;
-	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;
-	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;
-	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;
-	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;
-	count[5] = value;
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_HelmSniacego (C_Item)
+{
+	name = "He³m Œni¹cego";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "HelmSniacego.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 500;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 6;
+	protection[PROT_BLUNT] = 6;
+	protection[PROT_POINT] = 5;
+	protection[PROT_FIRE] = 7;
+	protection[PROT_MAGIC] = 8;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_KolczugaRycerza (C_Item)
+{
+	name = "Kolczuga rycerza";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "HelmRycerza.3ds"; 
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 500;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 9;
+	protection[PROT_BLUNT] = 9;
+	protection[PROT_POINT] = 7;
+	protection[PROT_FIRE] = 6;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_RogatyHelm (C_Item)
+{
+	name = "Rogaty He³m";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "RogatyHelm.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 650;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 11;
+	protection[PROT_BLUNT] = 11;
+	protection[PROT_POINT] = 9;
+	protection[PROT_FIRE] = 7;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_TwardyHelmWojownika (C_Item)
+{
+	name = "Twardy he³m wojownika";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "TwardyHelmWojownika.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 800;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 13;
+	protection[PROT_BLUNT] = 13;
+	protection[PROT_POINT] = 9;
+	protection[PROT_FIRE] = 8;
+	protection[PROT_MAGIC] = 3;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_HelmBarda (C_Item)
+{
+	name = "He³m barda";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "HelmBarda.3ds";
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 900;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 14;
+	protection[PROT_BLUNT] = 14;
+	protection[PROT_POINT] = 10;
+	protection[PROT_FIRE] = 10;
+	protection[PROT_MAGIC] = 6;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;		count[5] = value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
+{
+	name = "He³m z pancerza orka-elity";
+	mainflag = ITEM_KAT_NF;
+	flags = 0;
+	description = name;
+	
+	visual = "PAL_ORC_HELM_NEW.3ds"; 
+	visual_skin = 0;
+	wear = WEAR_HEAD;
+	value = 1000;
+	material = MAT_METAL;
+
+	protection[PROT_EDGE] = 16;
+	protection[PROT_BLUNT] = 16;
+	protection[PROT_POINT] = 12;
+	protection[PROT_FIRE] = 12;
+	protection[PROT_MAGIC] = 10;
+
+	text[0] = ""; 
+	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
+	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
+	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
+	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
+	text[5] = NAME_Value;		count[5] = value;
 };

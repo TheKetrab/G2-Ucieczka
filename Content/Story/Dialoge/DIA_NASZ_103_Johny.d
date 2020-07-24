@@ -18,7 +18,6 @@ FUNC INT DIA_NASZ_103_Johny_EXIT_Condition()
 
 FUNC VOID DIA_NASZ_103_Johny_EXIT_Info()
 {
-	AddAchievement(Acv1Title,Acv1Content);
 	AI_StopProcessInfos (self);
 };
 

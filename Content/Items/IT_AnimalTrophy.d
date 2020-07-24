@@ -29,7 +29,7 @@ const int	Value_TrollTooth			=	100;
 const int	Value_TrollBlackFur			=	200;
 
 const int	Value_GoblinBone			=	5;
-const int	Value_SkeletonBone			=	50;
+const int	Value_SkeletonBone			=	10;
 const int	Value_DemonHeart			=	200;
 const int	Value_StoneGolemHeart		=	200;
 const int	Value_FireGolemHeart		=	200;

@@ -1972,7 +1972,7 @@ func void TryToTakeHelmetFromKnight() {
 			AI_PlayAni (hero, "T_PLUNDER");
 			Taken_Rethon_Fajka = TRUE;
 			CreateInvItems(hero,ItNa_Fajka,1);
-			B_LogEntry (TOPIC_Rethon_fajka, "Uda³o siê! Znalaz³em fajkê pod œniegiem!");
+			B_LogEntry (TOPIC_Rethon_fajka, "Uda³o siê! Znalaz³em fajkê w ziemi!");
 		};
 
 	

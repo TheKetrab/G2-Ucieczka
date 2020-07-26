@@ -228,7 +228,7 @@ FUNC VOID DIA_NASZ_119_Udar_koniec_Info()
 
 		B_LogEntry (TOPIC_Udar_mikstury, "Przynios³em Udarowi mikstury. Nie wydawa³ siê jednak zachwycony, bo da³em siê oszukaæ...");
 		Log_SetTopicStatus (TOPIC_Udar_mikstury, LOG_SUCCESS);
-		DodajReputacje (2, REP_LOWCY);
+		DodajReputacje (1, REP_LOWCY);
 		B_GivePlayerXP (200);
 
 	}
@@ -248,7 +248,7 @@ FUNC VOID DIA_NASZ_119_Udar_koniec_Info()
 		B_giveinvitems (self, other, itmi_gold, 100);
 		B_LogEntry (TOPIC_Udar_mikstury, "Przynios³em Udarowi mikstury. By³ pod wra¿eniem, ¿e nie da³em siê oszukaæ.");
 		Log_SetTopicStatus (TOPIC_Udar_mikstury, LOG_SUCCESS);
-		DodajReputacje (3, REP_LOWCY);
+		DodajReputacje (2, REP_LOWCY);
 		B_GivePlayerXP (300);
 	};
 };
@@ -532,7 +532,7 @@ FUNC VOID DIA_NASZ_119_Udar_WszystkieGroby_Info()
 	B_LogEntry (TOPIC_Udar_Grave, "Wszystkie groby z mapy zaliczone. Ciekawe, ile znajdê jeszcze grobów wielkich wojowników.");
 
 	B_GivePlayerXP(500);
-	DodajReputacje(5,REP_LOWCY);
+	DodajReputacje(3,REP_LOWCY);
 	
 	Info_ClearChoices (DIA_NASZ_119_Udar_WszystkieGroby);
 	Info_AddChoice	  (DIA_NASZ_119_Udar_WszystkieGroby, "Daj mi te mikstury.", DIA_NASZ_119_Udar_WszystkieGroby_potions);

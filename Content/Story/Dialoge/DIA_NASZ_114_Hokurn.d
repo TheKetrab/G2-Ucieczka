@@ -221,7 +221,7 @@ FUNC VOID DIA_NASZ_114_Hokurn_MapyDone_Info()
 	MIS_HOKURN_READY = FALSE;
 	Log_SetTopicStatus (TOPIC_Hokurn_mapy, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Hokurn_mapy, "Odda³em mapy Hokurnowi. W moich oczach s¹ bezu¿yteczne, ale mo¿e on zrobi z nich jakiœ po¿ytek.");
-	DodajReputacje (3, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	B_GivePlayerXP (500);
 };
 

@@ -202,7 +202,7 @@ FUNC INT DIA_NASZ_225_Wrzod_MonstersReady_Condition()
 FUNC VOID DIA_NASZ_225_Wrzod_MonstersReady_Info()
 {
 	B_GivePlayerXP(1000);
-	DodajReputacje(4,REP_MYSLIWI);
+	DodajReputacje(3,REP_MYSLIWI);
 
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_MonstersReady_15_00"); //Zwierzêta ju¿ na ciebie czekaj¹.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_01"); //Powa¿nie?!

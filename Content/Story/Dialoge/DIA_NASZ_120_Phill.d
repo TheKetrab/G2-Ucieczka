@@ -631,7 +631,7 @@ FUNC VOID DIA_NASZ_120_Phill_Kap4QuestDone_Info()
 	Log_SetTopicStatus (TOPIC_Phill_drzewo, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Phill_drzewo, "Da³em radê... Kto by pomyœla³!");
 	B_GivePlayerXP (1000);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(1,REP_LOWCY);
 };
 
 //*********************************************************************

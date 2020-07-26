@@ -182,7 +182,7 @@ FUNC VOID DIA_NASZ_109_Rethon_FightWithAll_Info()
 	
 	B_GivePlayerXP(300);
 	Log_SetTopicStatus (TOPIC_Rethon_szkolenie, LOG_SUCCESS);
-	DodajReputacje (2, REP_LOWCY);
+	DodajReputacje (1, REP_LOWCY);
 	
 };
 
@@ -524,7 +524,7 @@ FUNC VOID DIA_NASZ_109_Rethon_OrkowieKoniec_Info()
 		Log_SetTopicStatus (TOPIC_Rethon_orkowie, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Rethon_orkowie, "Orkowe obozy to ju¿ przesz³oœæ.");
 		B_GivePlayerXP (1000);
-		DodajReputacje (6, REP_LOWCY);
+		DodajReputacje (3, REP_LOWCY);
 		
 		OrkoweObozyUkonczone = TRUE;
 

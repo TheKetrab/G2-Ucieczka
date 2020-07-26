@@ -88,7 +88,7 @@ func void DIA_NASZ_003_Kopacz_hello_Info ()
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Cholerni orkowie! Zamknêli siê w zamku, tchórze pieprzone. Jednak niewolnik, którego uratowaliœmy, wyjawi³ mi, ¿e jest pewien sposób, by wywabiæ ich z zamku. Muszê zg³adziæ orkowego wodza Ur-Shaka. Genera³ przebywa gdzieœ w fortecy górskiej.");
 
 	B_GivePlayerXP(200);
-	DodajReputacje(2,REP_LOWCY);
+	DodajReputacje(1,REP_LOWCY);
 	
 	Log_CreateTopic (TOPIC_Fabula, LOG_NOTE);
 	B_LogEntry (TOPIC_Fabula, "Orkowie siedz¹ zamkniêci w zamku. Muszê zg³adziæ orkowego genera³a - Ur-Shaka - i stan¹æ przed bram¹ zamku z za³o¿onym kosturem szamana.");

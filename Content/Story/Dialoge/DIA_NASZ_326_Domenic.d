@@ -184,7 +184,7 @@ func void DIA_NASZ_326_Domenic_helpdone_Info ()
 	B_LogEntry (TOPIC_Domenic_kusza, "Odda³em kuszê Domenicowi.");
 	Log_SetTopicStatus (TOPIC_Domenic_kusza, LOG_SUCCESS);
 	B_GivePlayerXP (400);
-	DodajReputacje (10, REP_BANDYCI);
+	DodajReputacje (5, REP_BANDYCI);
 
 };
 

@@ -147,8 +147,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_siema_Info()
 				AI_Output (self, other,"DIA_NASZ_110_Keroloth_siema_55_03"); //Proszê, proszê... Korth zazwyczaj osobiœcie przekazuje mi raporty, a nie pisze do mnie listy.
 				AI_Output (self, other,"DIA_NASZ_110_Keroloth_siema_55_04"); //Ciekawe, dlaczego nie przyszed³ do obozu? Albo bardzo siê œpieszy³, albo nie chcia³ na kogoœ trafiæ.
 				AI_Output (self, other,"DIA_NASZ_110_Keroloth_siema_55_05"); //Dobrze, ¿e przynosisz raport. Ocena aktualnej sytuacji znacznie u³atwi planowanie ataku.
-				DodajReputacje (1, REP_LOWCY);
-				B_GivePlayerXP (50);
+				B_GivePlayerXP (100);
 			};
 
 	gerold_wybor=0;
@@ -577,7 +576,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_BeALowca_Info()
 	Snd_Play ("LEVELUP");
 
 	B_GivePlayerXP (1000);		
-	DodajReputacje(10,REP_LOWCY);
+	DodajReputacje(5,REP_LOWCY);
 	B_LogEntry (TOPIC_gildia, "Do³¹czy³em do ³owców orków.");
 	Log_SetTopicStatus (TOPIC_gildia, LOG_SUCCESS);
 	
@@ -747,7 +746,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questnoend_Info()
 	B_GivePlayerXP (300);
 	Createinvitems (self, itmi_gold, 70);
 	B_giveinvitems (self, other, itmi_gold, 70);
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (3, REP_LOWCY);
 };
 
 
@@ -792,7 +791,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questyesend_Info()
 		Log_SetTopicStatus (TOPIC_Keroloth_gobliny, LOG_SUCCESS);
 		
 		B_GivePlayerXP (300);
-		DodajReputacje (4, REP_LOWCY);
+		DodajReputacje (3, REP_LOWCY);
 	}
 	
 	else {	
@@ -1128,7 +1127,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_mine()
 	CreateInvItems (self, ItMi_Gold, 120);									
 	B_GiveInvItems (self, other, ItMi_Gold, 120);
 
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(3,REP_LOWCY);
 	B_GivePlayerXP(500);
 	
 	B_LogEntry (TOPIC_Keroloth_golem, "Ok³ama³em Kerolotha i zatrzyma³em zwój dla siebie.");
@@ -1147,7 +1146,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_your()
 	CreateInvItems (self, ItMi_Gold, 120);									
 	B_GiveInvItems (self, other, ItMi_Gold, 120);
 
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(3,REP_LOWCY);
 	B_GivePlayerXP(500);
 	
 	B_LogEntry (TOPIC_Keroloth_golem, "Odda³em zwój Kerolothowi.");
@@ -1303,7 +1302,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_done_Info()
 	B_LogEntry (TOPIC_Keroloth_duchy, "Sprawa za³atwiona. Keroloth da³ mi kawa³ek pierœcienia.");
 	Log_SetTopicStatus (TOPIC_Keroloth_duchy, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Niedostepny_Klif, "W koñcu mam kawa³ek artefaktu z krypty obok chaty Cavalorna.");
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (3, REP_LOWCY);
 	B_GivePlayerXP (500);
 };
 
@@ -1850,7 +1849,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MainForces_Info()
 	B_giveinvitems (self, other, ItSe_GoldPocket100, 2);
 
 	B_GivePlayerXP(700);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 	
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MainForces_15_02"); //Mam trochê wolnego?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MainForces_15_03"); //W ¿adnym wypadku. Poprowadzisz pierwszy oddzia³ uderzeniowy.
@@ -1975,7 +1974,7 @@ FUNC INT DIA_NASZ_110_Keroloth_AfterSzturmOrkow_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_AfterSzturmOrkow_Info()
 {
 	B_GivePlayerXP(300);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(1,REP_LOWCY);
 
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_AfterSzturmOrkow_15_00"); //Pomœciliœmy Gestatha.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_AfterSzturmOrkow_55_01"); //Nie by³o ich a¿ tak du¿o. Musimy pójœæ za ciosem i uderzyæ na zamek.
@@ -2059,7 +2058,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MlotyPily_Info()
 	Log_SetTopicStatus (TOPIC_Keroloth_narzedzia, LOG_SUCCESS);
 
 	B_GivePlayerXP (500);
-	DodajReputacje (2, REP_LOWCY);
+	DodajReputacje (1, REP_LOWCY);
 };
 
 //*********************************************************************
@@ -2105,7 +2104,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_PreKap4_Info()
 	Druzyna (NASZ_110_Keroloth,0);
 	
 	B_GivePlayerXP(1000);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 
 	
 	//WillGoToCastle = FALSE;
@@ -3061,6 +3060,8 @@ func void DIA_NASZ_110_Keroloth_KurgKan_TrustMe() {
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_15"); //Myœlê, ¿e nie bêdzie mu to przeszkadzaæ.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_TrustMe_15_16"); //NIE MO¯E mu to przeszkadzaæ. No, idŸ ju¿ po niego.
 	
+		B_LogEntry (Topic_OrcInATrap,"Uda³o mi siê przekonaæ Kerolotha! Teraz mogê przyprowadziæ orka do obozu."); 
+
 		KurgKanUratowany = true;
 	}
 	else
@@ -3139,7 +3140,6 @@ FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 	B_giveinvitems (hero, NASZ_110_Keroloth, ItMw_2H_OrcAxe_02,1);
 	TRIA_Finish();
 
-	DodajReputacje((-2), REP_LOWCY);
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine(NASZ_452_KurgKan, "Karczma");
 	Npc_ExchangeRoutine(self,"Start");

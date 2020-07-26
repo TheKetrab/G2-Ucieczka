@@ -1406,7 +1406,6 @@ FUNC INT DIA_NASZ_106_Jan_HaveSurowce_Condition()
 FUNC VOID DIA_NASZ_106_Jan_HaveSurowce_Info()
 {
 	B_GivePlayerXP(500);
-	DodajReputacje(2,REP_LOWCY);
 	
 	B_GiveInvItems (other, self, ItAt_SharkTeeth, 1);
 	B_GiveInvItems (other, self, ItAt_TrollTooth, 2);
@@ -1519,7 +1518,7 @@ FUNC VOID DIA_NASZ_106_Jan_KompletReady_Info()
 		JanSay_AboutUltraArmor();
 	};
 	
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(3,REP_LOWCY);
 	B_GivePlayerXP (1000);
 	Log_SetTopicStatus (TOPIC_Jan_lowca, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Jan_lowca, "Jan by³ zachwycony moim wygl¹dem. Zacznie teraz tworzyæ nowe zestawy wyposa¿enia dla wojowników.");
@@ -1694,7 +1693,7 @@ func void Jan_finishSamorodki_DIA() {
 	
 	Jan_DaySztylet = Wld_GetDay ();
 
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (3, REP_LOWCY);
 	B_LogEntry (TOPIC_Jan_zloto, "Przynios³em Janowi z³oto. Mam zg³osiæ siê jutro do niego po moj¹ nagrodê.");
 	B_GivePlayerXP (200);
 };
@@ -1941,7 +1940,7 @@ func void DIA_NASZ_106_Jan_Kap3QuestFinish_Info ()
 	B_GiveInvItems(self,other,ItRi_Hp_02,1);
 	
 	B_GivePlayerXP(700);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 	
 	Log_SetTopicStatus (TOPIC_Jan_helmy, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Jan_helmy, "Przynios³em Janowi he³my.");

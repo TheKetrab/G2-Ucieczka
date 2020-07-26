@@ -137,8 +137,7 @@ FUNC VOID DIA_NASZ_122_Daniel_kilof_Info()
 	AI_Output (self, other,"DIA_NASZ_122_Daniel_kilof_55_01"); //Wielkie dziêki. To narzêdzie to ca³e moje ¿ycie.
 	DANIEL_KILOF_OK = TRUE;
 
-	B_GivePlayerXP (50);
-	DodajReputacje (1, REP_LOWCY);
+	B_GivePlayerXP (200);
 };
 
 //*********************************************************************
@@ -352,7 +351,7 @@ FUNC VOID DIA_NASZ_122_Daniel_MineDone_Info()
 	Npc_ExchangeRoutine (self, "InMine");
 	
 	B_GivePlayerXP(700);
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 	
 	if (hero.guild == GIL_OUT) {
 		Createinvitems (self, ItPo_Perm_Dex, 1);

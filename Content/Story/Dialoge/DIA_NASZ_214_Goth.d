@@ -647,7 +647,7 @@ FUNC VOID DIA_NASZ_214_Goth_KilledGigant_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_214_Goth_KilledGigant_55_00"); //Zabi³em wszystkie bestie na p³askowy¿u.
-	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_mayme)) {
+	if (npc_knowsinfo (other, DIA_NASZ_214_Goth_SellFur)) {
 		AI_Output (self, other,"DIA_NASZ_214_Goth_KilledGigant_15_01"); //Wszystkie? Naprawdê jesteœ wielkim wojownikiem.
 	}
 	else {
@@ -655,7 +655,7 @@ FUNC VOID DIA_NASZ_214_Goth_KilledGigant_Info()
 	};
 
 	B_GivePlayerXP (300);
-	DodajReputacje (2, REP_MYSLIWI);
+	DodajReputacje (1, REP_MYSLIWI);
 };
 
 // ************************************************************

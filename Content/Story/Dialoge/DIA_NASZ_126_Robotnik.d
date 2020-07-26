@@ -284,7 +284,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_WorkDone_Info()
 	B_giveinvitems (self, other, ItFo_Addon_Grog, 10);
 	
 	MIS_ROBOTNIK_READY = FALSE;
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (3, REP_LOWCY);
 	B_GivePlayerXP (500);
 	Log_SetTopicStatus (TOPIC_Robotnik_deski, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Robotnik_deski, "W wyznaczonym czasie wzmocni³em podpory.");

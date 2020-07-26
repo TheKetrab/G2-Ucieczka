@@ -502,7 +502,7 @@ func void Gerold_SayMagicRing() {
 	B_GiveInvItems(self,other,ItNa_Przepis_UdziecZDzikaPoLowiecku,1);
 	
 	B_GivePlayerXP(500);
-	DodajReputacje(3,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 	
 	Log_SetTopicStatus (TOPIC_Gerold_glod, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Gerold_glod, "Nakarmi³em g³odomora!");

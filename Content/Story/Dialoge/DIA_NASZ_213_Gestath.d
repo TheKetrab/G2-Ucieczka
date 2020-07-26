@@ -408,7 +408,7 @@ FUNC VOID DIA_NASZ_213_Gestath_BeAMysliwy_Info()
 	AI_EquipBestArmor (other);
 
 	B_GivePlayerXP (1000);		
-	DodajReputacje(10,REP_MYSLIWI);
+	DodajReputacje(5,REP_MYSLIWI);
 	B_LogEntry (TOPIC_gildia, "Do³¹czy³em do myœliwych.");
 	Log_SetTopicStatus (TOPIC_gildia, LOG_SUCCESS);
 	

@@ -156,7 +156,7 @@ FUNC VOID DIA_NASZ_118_Ferros_NeedEnd_Info()
 	Createinvitems (self, ItPo_Health_01, 2);
 	B_giveinvitems (self, other, ItPo_Health_01, 2);
 	
-	DodajReputacje(4,REP_LOWCY);
+	DodajReputacje(1,REP_LOWCY);
 	B_GivePlayerXP (500);
 	Log_SetTopicStatus (TOPIC_Ferros_plomien, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Ferros_plomien, "Przynios³em Ferosowi zaklêcie.");
@@ -318,7 +318,7 @@ FUNC VOID DIA_NASZ_118_Ferros_MamNalewke_Info()
 		AI_Output (self, other,"DIA_NASZ_118_Ferros_MamNalewke_55_04"); //Powiem Kerolothowi o twojej pomocy, je¿eli chcesz do nas do³¹czyæ, to przyda ci siê ka¿dy g³os.
 	};
 
-	DodajReputacje(3,REP_LOWCY);
+	DodajReputacje(2,REP_LOWCY);
 	B_GivePlayerXP(300);
 	Log_SetTopicStatus (TOPIC_Ferros_sny, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Ferros_sny, "No tak, przecie¿ najlepiej œpi siê po mocno stê¿onym alkoholu...");

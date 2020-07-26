@@ -418,7 +418,7 @@ FUNC VOID DIA_NASZ_219_Dick_PresjaCzasu_Info()
 	B_LogEntry (TOPIC_Udar_presja, "Nie wiem, czy wielkim sensem by³o uratowanie Dicka, ale przynajmniej zabi³em orków zagra¿aj¹cym myœliwym.");
 	B_GivePlayerXP(700);
 	
-	DodajReputacje(4,REP_MYSLIWI);
+	DodajReputacje(2,REP_LOWCY);
 	
 };
 

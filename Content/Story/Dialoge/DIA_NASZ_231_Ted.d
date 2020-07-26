@@ -808,7 +808,7 @@ FUNC VOID DIA_NASZ_231_Ted_AndHow_Info()
 	Createinvitems (self, ItNa_OgnistaStrzala, 60);
 	B_giveinvitems (self, other, ItNa_OgnistaStrzala, 60);
 	
-	DodajReputacje(4,REP_MYSLIWI);
+	DodajReputacje(3,REP_MYSLIWI);
 	
 	B_GivePlayerXP (500);
 	Log_SetTopicStatus (TOPIC_Ted_trolls, LOG_SUCCESS);

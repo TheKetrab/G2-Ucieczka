@@ -234,9 +234,9 @@ FUNC VOID DIA_NASZ_452_KurgKan_BRON_Info()
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Bron_15_14"); //Ca³y Jan. W porz¹dku, rozejrzê siê i przyniosê ci jakaœ porz¹dn¹ broñ.
 	
 	KurgKanGodarInfo = true;
-	Log_CreateTopic (TOPIC_ORCWEAPON, LOG_MISSION);
-	Log_SetTopicStatus(TOPIC_ORCWEAPON, LOG_RUNNING);
-	B_LogEntry (TOPIC_ORCWEAPON,"Kurg-Kan najwidoczniej mo¿e ju¿ poruszaæ siê po obozie z broni¹ u pasa i æwiczyæ walkê. Poprosi³ mnie, bym poszuka³ i przyniós³ mu miecz orka-elity. Chyba siê nie obrazi, jakbym znalaz³ jednak coœ lepszego."); 
+	Log_CreateTopic (TOPIC_OrcWeapon, LOG_MISSION);
+	Log_SetTopicStatus(TOPIC_OrcWeapon, LOG_RUNNING);
+	B_LogEntry (TOPIC_OrcWeapon,"Kurg-Kan najwidoczniej mo¿e ju¿ poruszaæ siê po obozie z broni¹ u pasa i æwiczyæ walkê. Poprosi³ mnie, bym poszuka³ i przyniós³ mu miecz orka-elity. Chyba siê nie obrazi, jakbym znalaz³ jednak coœ lepszego."); 
 	
 };
 // ***********************************************************************************************************************
@@ -284,9 +284,9 @@ FUNC VOID DIA_NASZ_452_KurgKan_BRON_MAM_Info()
 		AI_Output (self,other,"DIA_NASZ_452_KurgKan_MamBron_15_06");  //Tak. Ale Kurg-Kan nie wiedzieæ, czy j¹ braæ. Byæ niegodny.
 		AI_Output (other,self,"DIA_NASZ_452_KurgKan_MamBron_15_07");  //Nie opowiadaj bzdur, przyjacielu. Jesteœ godny, bo chcesz u¿yæ tej broni do obrony obozu. A teraz bierz j¹ i idŸ trenowaæ. 
 		AI_Output (self,other,"DIA_NASZ_452_KurgKan_MamBron_15_08");  //Will-przyjaciel mieæ racja. Dziêkowaæ. Daæ nagroda.
-		DodajReputacje(5,REP_LOWCY);
-		Log_SetTopicStatus(TOPIC_ORCWEAPON, LOG_SUCCESS);
-		Log_AddEntry (TOPIC_ORCWEAPON,"Broñ, któr¹ sprezentowa³ orkowi, zrobi³a na nim ogromne wra¿enie. Na pocz¹tku nie chcia³ jej przyj¹æ, ale po mojej namowie zgodzi³ siê i mnie za to wynagrodzi³."); 
+		DodajReputacje(2,REP_LOWCY);
+		Log_SetTopicStatus(TOPIC_OrcWeapon, LOG_SUCCESS);
+		Log_AddEntry (TOPIC_OrcWeapon,"Broñ, któr¹ sprezentowa³ orkowi, zrobi³a na nim ogromne wra¿enie. Na pocz¹tku nie chcia³ jej przyj¹æ, ale po mojej namowie zgodzi³ siê i mnie za to wynagrodzi³."); 
 	
 
 	}
@@ -296,9 +296,9 @@ FUNC VOID DIA_NASZ_452_KurgKan_BRON_MAM_Info()
 		B_giveinvitems(other,self,ItMw_2H_OrcSword_02,1);
 		AI_EquipBestMeleeWeapon	(self);
 		AI_Output (self,other,"DIA_NASZ_452_KurgKan_MamBron_15_10");  //Dziêkowaæ, Will-przyjaciel. Byæ dobra broñ, pozwoliæ chroniæ obóz. Will braæ nagroda. 
-		DodajReputacje(3,REP_LOWCY);
-		Log_SetTopicStatus(TOPIC_ORCWEAPON, LOG_SUCCESS);
-		Log_AddEntry (TOPIC_ORCWEAPON,"Kurg-Kan by³ zadowolony z broni orkowego elity, któr¹ mu przynios³em."); 
+		DodajReputacje(1,REP_LOWCY);
+		Log_SetTopicStatus(TOPIC_OrcWeapon, LOG_SUCCESS);
+		Log_AddEntry (TOPIC_OrcWeapon,"Kurg-Kan by³ zadowolony z broni orkowego elity, któr¹ mu przynios³em."); 
 	
 	};
 	

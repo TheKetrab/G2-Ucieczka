@@ -479,7 +479,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kjornwon_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjornwon_55_00"); //No proszê, znowu wygra³eœ.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjornwon_55_01"); //Có¿, twoja nagroda.
 
-	DodajReputacje (3, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Kjorna.");
 	Createinvitems (self, itmi_gold, 300);
 	B_Giveinvitems (self, other, itmi_gold, 300);
@@ -634,7 +634,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_ferroswon_Info()
 
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroswon_55_03"); //A, no i z³oto oczywiœcie.
 
-	DodajReputacje (4, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Ferosa.");
 	Createinvitems (self, itmi_gold, 750);
 	B_Giveinvitems (self, other, itmi_gold, 750);
@@ -796,7 +796,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
 		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
 		B_GivePlayerXP (800);
-		DodajReputacje (5, REP_LOWCY);
+		DodajReputacje (2, REP_LOWCY);
 		Kurgan_walka=5;
 
 		Npc_ExchangeRoutine(self,"ArenaZamek");
@@ -812,7 +812,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_03"); //Wyj¹tkowe widowisko. Oczywiœcie nagroda pieniê¿na! 800 sztuk dla ciebie.
 
-	DodajReputacje (5, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Godara i Hokurna.");
 	Createinvitems (self, itmi_gold, 800);
 	B_Giveinvitems (self, other, itmi_gold, 800);
@@ -1125,13 +1125,14 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	
 		B_LogEntry (TOPIC_Kurgan_arena, "Pokona³em Kurgana i zosta³em mistrzem areny.");
 		JestesMistrzemAreny = TRUE;
-		DodajReputacje (6, REP_LOWCY);
+		DodajReputacje (2, REP_LOWCY);
 		B_GivePlayerXP (1000);
 		Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_SUCCESS);
 		KurganArenaQuest = 2;
 		Npc_ExchangeRoutine(NASZ_115_Kurgan, "InCastle");
 		Kurgan_walka=0;
 	
+		// EXIT
 		return;
 	};
 	
@@ -1145,7 +1146,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	KurganSay_YouArePro();
 
 	JestesMistrzemAreny = TRUE;
-	DodajReputacje (6, REP_LOWCY);
+	DodajReputacje (2, REP_LOWCY);
 	B_GivePlayerXP (1000);
 	Log_SetTopicStatus (TOPIC_Kurgan_arena, LOG_SUCCESS);
 	KurganArenaQuest = 2;

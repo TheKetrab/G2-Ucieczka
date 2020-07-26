@@ -675,7 +675,7 @@ func void Psikusy()
 		B_LogEntry (TOPIC_Gestath_psikus, "Wszystko, o co prosi³ mnie Gestath, ju¿ za³atwione.");
 		B_GivePlayerXP(500);
 		
-		DodajReputacje(4,REP_MYSLIWI);
+		DodajReputacje(3,REP_MYSLIWI);
 		
 		MIS_Psikusy_Ready = FALSE;
 		MIS_Psikusy_Done = TRUE;

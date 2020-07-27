@@ -8,15 +8,20 @@ func void PC_Sleep (var int t)
 
 	PLAYER_MOBSI_PRODUCTION	=	MOBSI_NONE;
 	self.aivar[AIV_INVINCIBLE]=FALSE;
+	var int start; start = Wld_GetTimeHour();
+	var int diff;
 	if	(Wld_IsTime(00,00,t,00))
 	{
+		diff = t - start;
 		Wld_SetTime	(t,00);
 	}
 	else
 	{
 		t = t + 24;
+		diff = 24 - (t-start);
 		Wld_SetTime	(t,00);
 	};
+	SleptHours += diff;
 
 	Wld_StopEffect("DEMENTOR_FX");
 
@@ -47,6 +52,7 @@ func void PC_Sleep1h (var int t)
 	self.aivar[AIV_INVINCIBLE]=FALSE;
 
 	t = Wld_GetTimeHour() + 1;
+	SleptHours += 1;
     Wld_SetTime    (t,00); 
 
 		PrintScreen	(PRINT_SleepOver, -1,-1,FONT_Screen,2);

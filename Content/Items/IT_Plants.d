@@ -129,9 +129,13 @@ INSTANCE ItPl_Mana_Herb_01(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Mana_Herb_01;
 };
-
+var int ManaHerb01Eaten;
 	func void Use_Mana_Herb_01 ()
-	{			
+	{	
+		if (Npc_IsPlayer(self) && ManaHerb01Eaten == FALSE) {
+			ManaHerb01Eaten = TRUE;
+			EatenPlants += 1;
+		};
 		//Npc_ChangeAttribute	(self,	ATR_MANA,	Mana_Mana_Herb_01*PlantSkill_Factor);
 		PercentHealSelf(Mana_Mana_Herb_01,ATR_MANA);
 	};
@@ -158,9 +162,14 @@ INSTANCE ItPl_Mana_Herb_02(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Mana_Herb_02;
 };
-
+var int ManaHerb02Eaten;
 	func void Use_Mana_Herb_02 ()
-	{			
+	{	
+		if (Npc_IsPlayer(self) && ManaHerb02Eaten == FALSE) {
+			ManaHerb02Eaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		PercentHealSelf(Mana_Mana_Herb_02,ATR_MANA);
 	};
 /******************************************************************************************/
@@ -186,9 +195,14 @@ INSTANCE ItPl_Mana_Herb_03(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Mana_Herb_03;
 };
-
+var int ManaHerb03Eaten;
 	func void Use_Mana_Herb_03 ()
-	{			
+	{		
+		if (Npc_IsPlayer(self) && ManaHerb03Eaten == FALSE) {
+			ManaHerb03Eaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		PercentHealSelf(Mana_Mana_Herb_03,ATR_MANA);
 	};
 /******************************************************************************************/
@@ -215,9 +229,14 @@ INSTANCE ItPl_Health_Herb_01(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Health_Herb_01;
 };
-
+var int HealthHerb01Eaten;
 	func void Use_Health_Herb_01 ()
-	{			
+	{		
+		if (Npc_IsPlayer(self) && HealthHerb01Eaten == FALSE) {
+			HealthHerb01Eaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		PercentHealSelf(HP_Health_Herb_01,ATR_HITPOINTS);
 	};
 /******************************************************************************************/
@@ -242,9 +261,14 @@ INSTANCE ItPl_Health_Herb_02(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Health_Herb_02;
 };
-
+var int HealthHerb02Eaten;
 	func void Use_Health_Herb_02 ()
 	{			
+		if (Npc_IsPlayer(self) && HealthHerb02Eaten == FALSE) {
+			HealthHerb02Eaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		PercentHealSelf(HP_Health_Herb_02,ATR_HITPOINTS);
 	};
 
@@ -268,9 +292,14 @@ INSTANCE ItPl_Health_Herb_03(C_Item)
 	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= HP_Health_Herb_03*PlantSkill_Factor;
 	TEXT[5]				= 	NAME_Value;		COUNT[5]	= Value_Health_Herb_03;
 };
-
+var int HealthHerb03Eaten;
 	func void Use_Health_Herb_03 ()
-	{			
+	{		
+		if (Npc_IsPlayer(self) && HealthHerb03Eaten == FALSE) {
+			HealthHerb03Eaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		PercentHealSelf(HP_Health_Herb_03,ATR_HITPOINTS);
 	};
 
@@ -302,8 +331,14 @@ INSTANCE ItPl_Dex_Herb_01(C_Item)
 };
 
 var int ZmiennaDexPlant;
+var int DexHerbEaten;
 FUNC VOID USE_Dex_Herb_01 ()
 {	
+	if (Npc_IsPlayer(self) && DexHerbEaten == FALSE) {
+		DexHerbEaten = TRUE;
+		EatenPlants += 1;
+	};
+
 	if (Npc_IsPlayer (self))
 	{
 		ZmiennaDexPlant = ZmiennaDexPlant + 1;
@@ -344,8 +379,14 @@ INSTANCE ItPl_Strength_Herb_01(C_Item)
 };
 
 var int ZmiennaStrPlant;
+var int StrHerbEaten;
 FUNC VOID USE_Strength_Herb_01 ()
 {
+	if (Npc_IsPlayer(self) && StrHerbEaten == FALSE) {
+		StrHerbEaten = TRUE;
+		EatenPlants += 1;
+	};
+
 	if (Npc_IsPlayer (self))
 	{
 		ZmiennaStrPlant = ZmiennaStrPlant + 1;
@@ -383,9 +424,14 @@ INSTANCE ItPl_Speed_Herb_01(C_Item)
  
 	   
 };  
-
+var int SpeedHerbEaten;
 	func void Use_Speed_Herb_01 ()                                               
-	{			                                                                                                                                             
+	{		
+		if (Npc_IsPlayer(self) && SpeedHerbEaten == FALSE) {
+			SpeedHerbEaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		Mdl_ApplyOverlayMDSTimed	(self, "HUMANS_SPRINT.MDS", Speed_Boost);   
 	};	
   	
@@ -484,9 +530,14 @@ INSTANCE ItPl_Blueplant(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Blueplant;
 };
-
+var int BlueplantEaten;
 	func void Use_Blueplant ()
-	{			
+	{		
+		if (Npc_IsPlayer(self) && BlueplantEaten == FALSE) {
+			BlueplantEaten = TRUE;
+			EatenPlants += 1;
+		};
+	
 		//Npc_ChangeAttribute	(self,	ATR_MANA,	    Mana_Blueplant);
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Blueplant);
 		PercentHealSelf(HP_Blueplant,ATR_HITPOINTS);
@@ -516,9 +567,13 @@ INSTANCE ItPl_Forestberry (C_Item)
 	COUNT[5]			= 	Value_Forestberry;
 
 };
-
+var int ForestberryEaten;
 	FUNC VOID Use_Forestberry()
 	{
+		if (Npc_IsPlayer(self) && ForestberryEaten == FALSE) {
+			ForestberryEaten = TRUE;
+			EatenPlants += 1;
+		};
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Forestberry);
 		PercentHealSelf(HP_Forestberry,ATR_HITPOINTS);
 		
@@ -547,9 +602,13 @@ INSTANCE ItPl_Planeberry (C_Item)
 	COUNT[5]			= 	Value_Planeberry;
 
 };
-
+var int PlantberryEaten;
 	FUNC VOID Use_Planeberry()
 	{
+		if (Npc_IsPlayer(self) && PlantberryEaten == FALSE) {
+			PlantberryEaten = TRUE;
+			EatenPlants += 1;
+		};
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Planeberry);
 		PercentHealSelf(HP_Planeberry,ATR_HITPOINTS);
 	};
@@ -583,8 +642,13 @@ INSTANCE ItPl_Temp_Herb(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Temp_Herb;
 };
+var int TempHerbEaten;
 	FUNC VOID Use_Temp_Herb()
 	{
+		if (Npc_IsPlayer(self) && TempHerbEaten == FALSE) {
+			TempHerbEaten = TRUE;
+			EatenPlants += 1;
+		};
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Temp_Herb);
 		PercentHealSelf(HP_Temp_Herb,ATR_HITPOINTS);
 	};
@@ -612,8 +676,13 @@ INSTANCE ItPl_Perm_Herb(C_Item)
 	TEXT[5]				= 	NAME_Value;		
 	COUNT[5]			= 	Value_Perm_Herb;
 };
+var int PermHerbEaten;
 	FUNC VOID Use_Perm_Herb()
 	{
+		if (Npc_IsPlayer(self) && PermHerbEaten == FALSE) {
+			PermHerbEaten = TRUE;
+			EatenPlants += 1;
+		};
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Perm_Herb);
 		PercentHealSelf(HP_Perm_Herb,ATR_HITPOINTS);
 	};

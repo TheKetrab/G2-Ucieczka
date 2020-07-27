@@ -81,6 +81,10 @@ INSTANCE ItFo_Addon_Rum(C_Item)
 
 	FUNC VOID UseRum()
 	{
+		if (Npc_IsPlayer(self)) {
+			DrunkTrinken += 1;
+		};
+		
 		PercentHealSelf(Mana_Rum,ATR_HITPOINTS);
 	};
 
@@ -114,6 +118,10 @@ INSTANCE ItFo_Addon_Grog(C_Item)
 
 	FUNC VOID UseGrog()
 	{
+		if (Npc_IsPlayer(self)) {
+			DrunkTrinken += 1;
+		};
+	
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS, HP_Grog);
 		PercentHealSelf(HP_Grog,ATR_HITPOINTS);
 	};	

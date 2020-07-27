@@ -1,3 +1,5 @@
+var int Osiagniecie18OneTime;
+
 // "magic constants"
 const int zCModel_AniIsActive 			= 	 5727888;//0x00576690
 const int oCNpc__GetModel               = 	 7571232; //0x00738720
@@ -1225,6 +1227,17 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 
 		
 	};
+	
+
+
+	// ACHIEVEMENT
+	if (Npc_IsPlayer(oth) && Osiagniecie18OneTime == FALSE) {
+		if (oth.attribute[ATR_HITPOINTS] - dmg == 1) {
+			Osiagniecie18OneTime = TRUE;
+			AddAchievement(Acv18Title,Acv18Content);
+		};
+	};
+
 
 
 	return dmg;

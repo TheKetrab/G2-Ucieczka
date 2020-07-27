@@ -68,35 +68,38 @@ const string Acv19Title   = "Antidotum";
 const string Acv19Content = "Wyleczy³eœ siê z trucizny.";
 var int OdtrutkaEverUsed;
 
-const string Acv20Title   = "Pijaczyna";
-const string Acv20Content = "Kupi³eœ 100 butelek alkoholu.";
+const string Acv20Title   = "Szanowany cz³onek";
+const string Acv20Content = "Zdoby³eœ 100 reputacji w swojej gildii.";
 
 const string Acv21Title   = "Œpioch";
 const string Acv21Content = "Przespa³eœ 100 godzin!";
+var int SleptHours;
 
 const string Acv22Title   = "Pokorny s³uga";
-const string Acv22Content = "Modli³eœ siê do Innosa codziennie przez tydzieñ.";
+const string Acv22Content = "Modli³eœ siê do Innosa codziennie przez 3 dni.";
+var int InnosPrayInRow;
 
 const string Acv23Title   = "Magnat";
 const string Acv23Content = "Odnalaz³eœ dobytek magnatów."; // rabowanie zamku - ka¿dy ma jaki artefakt albo coœ (Gomez, Kruk,Bartholo, Arto, Blizna)
 
-const string Acv24Title   = "Mistrz myœlistwa";
-const string Acv24Content = "Nauczy³eœ siê wszystkich trofeów.";
+const string Acv24Title   = "Biegacz";
+const string Acv24Content = "Przebieg³eœ 50 kilometrów.";
 
-const string Acv25Title   = "Biegacz";
+const string Acv25Title   = "Król biegaczy";
 const string Acv25Content = "Przebieg³eœ 100 kilometrów.";
 
 const string Acv26Title   = "Strzelec";
 const string Acv26Content = "Strzeli³eœ 500 razy z broni dystansowej.";
 
-const string Acv27Title   = "RzeŸnik";
-const string Acv27Content = "Wydoby³eœ 500 miês."; // jesli podnosi z ofiary w assess theft item = itfomuttonraw i nie ma flagi item dropped
+const string Acv27Title   = "Odkrywca";
+const string Acv27Content = "Nauczy³eœ siê wszystkich nowych umiejêtnoœci.";
 
-const string Acv28Title   = "Alkoholik";
+const string Acv28Title   = "Pijaczyna";
 const string Acv28Content = "Wypi³eœ 30 butelek alkoholu.";
+var int DrunkTrinken;
 
-const string Acv29Title   = "Szczêœciarz";
-const string Acv29Content = "Otworzy³eœ 5 skrzyñ zgaduj¹c kombinacjê od razu."; // TODO - uodporniæ to na wczytywanie
+const string Acv29Title   = "Mistrz myœlistwa";
+const string Acv29Content = "Nauczy³eœ siê zbierania wszystkich trofeów.";
 
 const string Acv30Title   = "Król rabunku";
 const string Acv30Content = "Otworzy³eœ wszystkie kufry w obozach £owców i Myœliwych.";

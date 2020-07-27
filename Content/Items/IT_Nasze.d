@@ -3540,8 +3540,12 @@ FUNC VOID Use_ItNa_KsiegaZmiennych()
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Podniesione zardzewia³e miecze: ",IntToString(ZardzewialeMieczePodniesione)));
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Z³amane wytrychy: ",IntToString(ZlamaneWytrychy)));
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("U¿yte ró¿ne zaklêcia: ",IntToString(WillUzyteZaklecia)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Zjedzone ró¿ne roœliny: ",IntToString(EatenPlants)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Przespane godziny: ",IntToString(SleptHours)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Wypite butelki alkoholu: ",IntToString(DrunkTrinken)));
 
-
+				
+				
 				Doc_Show		( nDocID );
 };
 
@@ -8081,6 +8085,10 @@ INSTANCE ItNa_Jabol(C_Item)
 
 func void UseJabol()
 {
+	if (Npc_IsPlayer(self)) {
+		DrunkTrinken += 1;
+	};
+
 	if(Npc_IsPlayer(self))
 	{
 		Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
@@ -8116,6 +8124,10 @@ INSTANCE ItNa_Ryzowka (C_Item)
 
 func void UseRyzowka()
 {
+	if (Npc_IsPlayer(self)) {
+		DrunkTrinken += 1;
+	};
+
 	if (RyzowkaOneTime == FALSE) {
 		
 		hero.lp+=1;
@@ -8151,6 +8163,10 @@ INSTANCE ItNa_WyciagJagody (C_Item)
 
 func void UseWyciagJagody()
 {
+	if (Npc_IsPlayer(self)) {
+		DrunkTrinken += 1;
+	};
+
 	WyciagJagodyMax = WyciagJagodyMax + 1;
 };
 
@@ -8180,6 +8196,10 @@ INSTANCE ItNa_WyciagGrzyby (C_Item)
 
 func void UseWyciagGrzyby()
 {
+	if (Npc_IsPlayer(self)) {
+		DrunkTrinken += 1;
+	};
+
 	WyciagGrzybyMax = WyciagGrzybyMax + 1;
 };
 

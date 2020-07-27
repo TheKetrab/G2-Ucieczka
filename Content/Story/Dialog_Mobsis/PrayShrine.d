@@ -503,19 +503,19 @@ FUNC VOID PC_PrayShrine_PunktyZycia_Info()
 	
 	if (Npc_HasItems (hero,ItMi_Gold) >=1000)
 	{
-		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+5P¯ (1000 szt. z³ota)",PC_PrayShrine_PunktyZycia_Gold);
+		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+3P¯ (1000 szt. z³ota)",PC_PrayShrine_PunktyZycia_Gold);
 	};
 	if (Npc_HasItems (hero,ItMi_Nugget) >=5)
 	{
-		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+5P¯ (5 bry³ek rudy)",PC_PrayShrine_PunktyZycia_Nugget);
+		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+3P¯ (5 bry³ek rudy)",PC_PrayShrine_PunktyZycia_Nugget);
 	};
 	if (Npc_HasItems (hero,ItMi_GoldNugget_Addon) >=10)
 	{
-		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+5P¯ (10 bry³ek z³ota)",PC_PrayShrine_PunktyZycia_GoldNugget);
+		Info_AddChoice (PC_PrayShrine_PunktyZycia,"+3P¯ (10 bry³ek z³ota)",PC_PrayShrine_PunktyZycia_GoldNugget);
 	};
 };
 
-
+var int InnosLastPrayDay;
 FUNC VOID PC_PrayShrine_PunktyZycia_Back ()
 {
 	Info_ClearChoices (PC_PrayShrine_PunktyZycia);
@@ -523,34 +523,52 @@ FUNC VOID PC_PrayShrine_PunktyZycia_Back ()
 
 FUNC VOID PC_PrayShrine_PunktyZycia_Gold ()
 {
+	// PRAY IN ROW
+	var int day; day = Wld_GetDay();
+	if (day == InnosLastPrayDay + 1) { InnosPrayInRow += 1; InnosLastPrayDay = day; }
+	else if (day == InnosLastPrayDay) { } // do nothing
+	else { InnosPrayInRow = 1; InnosLastPrayDay = day; };
+
 	Wld_PlayEffect("spellFX_PalHeal_ORIGIN",  hero, hero, 0, 0, 0, FALSE );
 	Snd_Play ("MFX_Heal_Cast" );
 	Npc_RemoveInvItems  (hero,ItMi_Gold, 1000);
-	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 5;
-	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 5;
+	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 3;
+	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 3;
 	Info_ClearChoices (PC_PrayShrine_PunktyZycia);
-	PrintScreen ("P¯ +5", -1, -1, "font_old_20_white.tga", 2);
+	PrintScreen ("P¯ +3", -1, -1, "font_old_20_white.tga", 2);
 };
 
 FUNC VOID PC_PrayShrine_PunktyZycia_Nugget ()
 {
+	// PRAY IN ROW
+	var int day; day = Wld_GetDay();
+	if (day == InnosLastPrayDay + 1) { InnosPrayInRow += 1; InnosLastPrayDay = day; }
+	else if (day == InnosLastPrayDay) { } // do nothing
+	else { InnosPrayInRow = 1; InnosLastPrayDay = day; };
+
 	Wld_PlayEffect("spellFX_PalHeal_ORIGIN",  hero, hero, 0, 0, 0, FALSE );
 	Snd_Play ("MFX_Heal_Cast" );
 	Npc_RemoveInvItems  (hero,ItMi_Nugget, 5);
-	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 5;
-	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 5;
+	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 3;
+	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 3;
 	Info_ClearChoices (PC_PrayShrine_PunktyZycia);
-	PrintScreen ("P¯ +5", -1, -1, "font_old_20_white.tga", 2);
+	PrintScreen ("P¯ +3", -1, -1, "font_old_20_white.tga", 2);
 };
 
 FUNC VOID PC_PrayShrine_PunktyZycia_GoldNugget ()
 {
+	// PRAY IN ROW
+	var int day; day = Wld_GetDay();
+	if (day == InnosLastPrayDay + 1) { InnosPrayInRow += 1; InnosLastPrayDay = day; }
+	else if (day == InnosLastPrayDay) { } // do nothing
+	else { InnosPrayInRow = 1; InnosLastPrayDay = day; };
+
 	Wld_PlayEffect("spellFX_PalHeal_ORIGIN",  hero, hero, 0, 0, 0, FALSE );
 	Snd_Play ("MFX_Heal_Cast" );
 	Npc_RemoveInvItems  (hero,ItMi_GoldNugget_Addon, 10);
-	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 5;
-	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 5;
+	hero.attribute[ATR_HITPOINTS_MAX]	= hero.attribute[ATR_HITPOINTS_MAX] + 3;
+	hero.attribute[ATR_HITPOINTS]		= hero.attribute[ATR_HITPOINTS] + 3;
 	Info_ClearChoices (PC_PrayShrine_PunktyZycia);
-	PrintScreen ("P¯ +5", -1, -1, "font_old_20_white.tga", 2);
+	PrintScreen ("P¯ +3", -1, -1, "font_old_20_white.tga", 2);
 };
 

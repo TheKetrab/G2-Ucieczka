@@ -285,6 +285,8 @@ func void B_Hero_AssessDamage()
 
 func void B_AssessDamage ()
 {
+
+
 	if( C_ScHasReadiedMieczRuniczny())
 	{
 		B_BeliarsWeaponSpecialDamage (other, self);

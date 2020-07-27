@@ -29,10 +29,7 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   
   if (rep_lowcy_s >= 100) && (RepLowcy_OneTime == FALSE)	{
 		RepLowcy_OneTime = TRUE;
-		Snd_Play ("LEVELUP");
-	//	PrintScreen ("Premia za maksimum reputacji: +5 PN", -1, 50, "font_old_20_white.tga", 3);
-		PrintS_Ext("Premia za maksimum reputacji: +5 PN", RGBA(255,255,255,0));
-		hero.lp = hero.lp + 5;
+		AddAchievement(Acv20Title,Acv20Content);
 	};
  }
  else if(ukogo==2){
@@ -49,10 +46,7 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   
   if (rep_mysliwi_s >= 100) && (RepMysliwi_OneTime == FALSE)	{
 		RepMysliwi_OneTime = TRUE;
-		Snd_Play ("LEVELUP");
-	//	PrintScreen ("Premia za maksimum reputacji: +5 PN", -1, 50, "font_old_20_white.tga", 3);
-		PrintS_Ext("Premia za maksimum reputacji: +5 PN", RGBA(255,255,255,0));
-		hero.lp = hero.lp + 5;
+		AddAchievement(Acv20Title,Acv20Content);
 	};
  }
  else if(ukogo==3){
@@ -70,9 +64,8 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
 	if (rep_bandyci_s >= 100) && (RepBandyci_OneTime == FALSE)	{
 		RepBandyci_OneTime = TRUE;
 		Snd_Play ("LEVELUP");
-	//	PrintScreen ("Premia za maksimum reputacji: +5 PN", -1, 50, "font_old_20_white.tga", 3);
-		PrintS_Ext("Premia za maksimum reputacji: +5 PN", RGBA(255,255,255,0));
-		hero.lp = hero.lp + 5;
+		PrintS_Ext("Premia za maksimum reputacji: +2 PN", RGBA(255,255,255,0));
+		hero.lp = hero.lp + 2;
 	};
  };
 };

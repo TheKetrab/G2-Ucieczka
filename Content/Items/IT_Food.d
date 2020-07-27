@@ -496,6 +496,10 @@ INSTANCE ItFo_Beer (C_Item)
 
 	FUNC VOID Use_Beer()
 	{
+		if (Npc_IsPlayer(self)) {
+			DrunkTrinken += 1;
+		};
+		
 		PercentHealSelf(-5,ATR_HITPOINTS);
 		PercentHealSelf(5,ATR_MANA);
 	};
@@ -524,6 +528,10 @@ INSTANCE ItFo_Booze (C_Item)
 
 	FUNC VOID Use_Booze()
 	{
+		if (Npc_IsPlayer(self)) {
+			DrunkTrinken += 1;
+		};
+		
 		PercentHealSelf(-5,ATR_HITPOINTS); 
 		PercentHealSelf(7,ATR_MANA); 
 	};
@@ -552,6 +560,10 @@ INSTANCE ItFo_Wine (C_Item)
 
 	FUNC VOID Use_Wine()
 	{
+		if (Npc_IsPlayer(self)) {
+			DrunkTrinken += 1;
+		};
+		
 		PercentHealSelf(-4,ATR_HITPOINTS); 
 		PercentHealSelf(8,ATR_MANA); 
 	};

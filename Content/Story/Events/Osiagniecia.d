@@ -134,7 +134,33 @@ func void Use_ItNa_KsiegaOsiagniec ()
 };
 
 
+func int HeroHasAllNewSkills() {
 
+	return (
+		WalkaTarcza == TRUE
+	 && SzybkaNaukaTaught == TRUE
+	 && level_regeneracji == 3
+	 && LevelMiner >= 90
+	 && level_zielarstwa == 2
+	 );
+
+};
+
+func int HeroHasAllTrophySkills() {
+
+	return (
+		PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_FireTongue]		== FALSE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_CrawlerPlate]	== FALSE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Mandibles]		== FALSE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_DrgSnapperHorn]	== FALSE // Chris i Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_ShadowHorn]		== FALSE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Claws]			== FALSE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Fur]				== FALSE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFSting]			== FALSE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFWing]			== FALSE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Teeth]			== FALSE // Chris
+	);
+};
 
 // ***** ***** OSIAGNIECIA - TICKTOCK ***** *****
 var int Osiagniecie1OneTime;
@@ -154,7 +180,7 @@ var int Osiagniecie14OneTime;
 var int Osiagniecie15OneTime;
 var int Osiagniecie16OneTime;
 var int Osiagniecie17OneTime;
-var int Osiagniecie18OneTime;
+
 var int Osiagniecie19OneTime;
 var int Osiagniecie20OneTime;
 var int Osiagniecie21OneTime;
@@ -197,19 +223,19 @@ func void Check_OSIAGNIECIA() {
 	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14
 	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15
 	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
-	if (Osiagniecie17OneTime == FALSE)											{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 // TODO
-	if (Osiagniecie18OneTime == FALSE)											{ Osiagniecie18OneTime = TRUE; AddAchievement(Acv18Title,Acv18Content); };	// 18
+	if (Osiagniecie17OneTime == FALSE && EatenPlants >= 14)						{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 - h1,h2,h3,m1,m2,m3,dex,str,speed,blue,forber,plantber,temp,perm
+	// 18 ---> Ustawiane w funkcji MyLeGoFuncs.d / DMG_OnDmg																								// 18
 	if (Osiagniecie19OneTime == FALSE && OdtrutkaEverUsed == TRUE)				{ Osiagniecie19OneTime = TRUE; AddAchievement(Acv19Title,Acv19Content); };	// 19
-	if (Osiagniecie20OneTime == FALSE)											{ Osiagniecie20OneTime = TRUE; AddAchievement(Acv20Title,Acv20Content); };	// 20 TODO
-	if (Osiagniecie21OneTime == FALSE)											{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21 TODO
-	if (Osiagniecie22OneTime == FALSE)											{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22 TODO
+	// 20 ---> Ustawiane w funkcji Reputation.d / DodajReputacje																							// 20
+	if (Osiagniecie21OneTime == FALSE && SleptHours >= 100)						{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21
+	if (Osiagniecie22OneTime == FALSE && InnosPrayInRow >= 3)					{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22
 	if (Osiagniecie23OneTime == FALSE)											{ Osiagniecie23OneTime = TRUE; AddAchievement(Acv23Title,Acv23Content); };	// 23 TODO
-	if (Osiagniecie24OneTime == FALSE)											{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24 // TODO
+	if (Osiagniecie24OneTime == FALSE && VST_Kilometers >= 50)					{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24
 	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 
 	if (Osiagniecie26OneTime == FALSE)											{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26 // TODO
-	if (Osiagniecie27OneTime == FALSE)											{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27 // TODO
-	if (Osiagniecie28OneTime == FALSE)											{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28 // TODO
-	if (Osiagniecie29OneTime == FALSE)											{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29 // TODO 
+	if (Osiagniecie27OneTime == FALSE && HeroHasAllNewSkills())					{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27
+	if (Osiagniecie28OneTime == FALSE && DrunkTrinken >= 30)					{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28
+	if (Osiagniecie29OneTime == FALSE && HeroHasAllTrophySkills())				{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29
 	if (Osiagniecie30OneTime == FALSE)											{ Osiagniecie30OneTime = TRUE; AddAchievement(Acv30Title,Acv30Content); };	// 30 // TODO
 
 	

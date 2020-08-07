@@ -149,16 +149,16 @@ func int HeroHasAllNewSkills() {
 func int HeroHasAllTrophySkills() {
 
 	return (
-		PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_FireTongue]		== FALSE // Tabuk
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_CrawlerPlate]	== FALSE // Tabuk
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Mandibles]		== FALSE // Tabuk
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_DrgSnapperHorn]	== FALSE // Chris i Tabuk
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_ShadowHorn]		== FALSE // Tabuk
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Claws]			== FALSE // Chris
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Fur]				== FALSE // Chris
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFSting]			== FALSE // Chris
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFWing]			== FALSE // Chris
-	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Teeth]			== FALSE // Chris
+		PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_FireTongue]		== TRUE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_CrawlerPlate]	== TRUE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Mandibles]		== TRUE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_DrgSnapperHorn]	== TRUE // Chris i Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_ShadowHorn]		== TRUE // Tabuk
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Claws]			== TRUE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Fur]				== TRUE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFSting]			== TRUE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_BFWing]			== TRUE // Chris
+	 && PLAYER_TALENT_TAKEANIMALTROPHY [TROPHY_Teeth]			== TRUE // Chris
 	);
 };
 
@@ -180,7 +180,7 @@ var int Osiagniecie14OneTime;
 var int Osiagniecie15OneTime;
 var int Osiagniecie16OneTime;
 var int Osiagniecie17OneTime;
-
+//var int Osiagniecie18OneTime;
 var int Osiagniecie19OneTime;
 var int Osiagniecie20OneTime;
 var int Osiagniecie21OneTime;
@@ -194,6 +194,14 @@ var int Osiagniecie28OneTime;
 var int Osiagniecie29OneTime;
 var int Osiagniecie30OneTime;
 
+
+var int achievement_skok_onetime;
+func void ACHIEVEMENT_SKOK_SCRIPT_FUNC() {
+	if (achievement_skok_onetime == FALSE) {
+		achievement_skok_onetime = TRUE;
+		AddAchievement(Acv13Title,Acv13Content);
+	};
+};
 
 func void Check_OSIAGNIECIA() {
 
@@ -219,7 +227,7 @@ func void Check_OSIAGNIECIA() {
 
 	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(Acv11Title,Acv11Content); };	// 11
 	if (Osiagniecie12OneTime == FALSE && hero.lp >= 50)							{ Osiagniecie12OneTime = TRUE; AddAchievement(Acv12Title,Acv12Content); };	// 12
-	if (Osiagniecie13OneTime == FALSE)											{ Osiagniecie13OneTime = TRUE; AddAchievement(Acv13Title,Acv13Content); };	// 13 // TODO
+	// 13 ---> Ustawiane w funkcji ACHIEVEMENT_SKOK_SCRIPT_FUNC																								// 13
 	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14
 	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15
 	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
@@ -229,14 +237,14 @@ func void Check_OSIAGNIECIA() {
 	// 20 ---> Ustawiane w funkcji Reputation.d / DodajReputacje																							// 20
 	if (Osiagniecie21OneTime == FALSE && SleptHours >= 100)						{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21
 	if (Osiagniecie22OneTime == FALSE && InnosPrayInRow >= 3)					{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22
-	if (Osiagniecie23OneTime == FALSE)											{ Osiagniecie23OneTime = TRUE; AddAchievement(Acv23Title,Acv23Content); };	// 23 TODO
+	// 23 ---> Ustawiane w funkcji BonusPack.d / check_all_magnat																							// 23
 	if (Osiagniecie24OneTime == FALSE && VST_Kilometers >= 50)					{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24
 	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 
 	if (Osiagniecie26OneTime == FALSE)											{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26 // TODO
 	if (Osiagniecie27OneTime == FALSE && HeroHasAllNewSkills())					{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27
 	if (Osiagniecie28OneTime == FALSE && DrunkTrinken >= 30)					{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28
 	if (Osiagniecie29OneTime == FALSE && HeroHasAllTrophySkills())				{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29
-	if (Osiagniecie30OneTime == FALSE)											{ Osiagniecie30OneTime = TRUE; AddAchievement(Acv30Title,Acv30Content); };	// 30 // TODO
+	// 30 ---> Ustawiane w funkcji KrolRabunku.d / CheckAllChests																							// 30
 
 	
 
@@ -247,3 +255,4 @@ func void Check_OSIAGNIECIA() {
 	};
 
 };
+

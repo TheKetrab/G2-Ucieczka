@@ -3,7 +3,7 @@
 //					BONUSPACK
 // ***** ***** ***** ***** ***** 
 //
-// 1. Pierscien + amulet + pas.
+// 1. Pierscienie + amulet + pas.
 // 2. Za ubranie calego zestawu bonus.
 //
 
@@ -110,5 +110,123 @@ FUNC VOID Equip_ItNa_Pas_Smierci ()
 FUNC VOID UnEquip_ItNa_Pas_Smierci ()
 {
 	P_Smierci_IsEquipped = FALSE;
+};
+
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+// Magnat: Pierscien Arto + Pierœcieñ Blizny + Amulet Gomeza + Pas Bartholo + Maska Kruka
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+
+var int P_Arto_IsEquipped;		// +5 zrêcznoœci			w skrzyni w pokoju Arto
+var int P_Blizny_IsEquipped;	// +5 si³y					na stole w g³ównej sali tronowej
+var int A_Gomeza_IsEquipped;	// +5 1h i 2h				w skrzyni w pokoju Gomeza
+var int P_Bartholo_IsEquipped;	// +5 mana i hp				powieszony na œcianie przy wejœciu w prawej dolnej komnacie w domu magów
+var int M_Kruka_IsEquipped;		// +5 prot do wszystkiego	w piwnicy zamku, w komnacie zaraz przed zeskokiem do wiêzienia, le¿y na skrzyni
+var int Magnat_OneTime;
+
+func int all_magnat_equipped() {
+
+	if (P_Arto_IsEquipped==TRUE) 
+	&& (P_Blizny_IsEquipped==TRUE) 
+	&& (A_Gomeza_IsEquipped==TRUE) 
+	&& (P_Bartholo_IsEquipped==TRUE)
+	&& (M_Kruka_IsEquipped==TRUE)
+	{
+		return TRUE;
+	};
+	
+	return FALSE;
+};
+
+FUNC VOID check_all_magnat()
+{
+	if ((Magnat_OneTime==FALSE) && all_magnat_equipped())
+	{
+		Magnat_OneTime = TRUE;
+		AddAchievement(Acv23Title,Acv23Content);
+		B_GivePlayerXP(500);
+	};
+};
+
+FUNC VOID Equip_ItNa_Pierscien_Arto ()
+{
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,+5);
+	P_Arto_IsEquipped = TRUE;
+	check_all_magnat();
+};
+
+FUNC VOID UnEquip_ItNa_Pierscien_Arto ()
+{
+	Npc_ChangeAttribute(self,ATR_DEXTERITY,-5);
+	P_Arto_IsEquipped = FALSE;
+};
+
+FUNC VOID Equip_ItNa_Pierscien_Blizny ()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,+5);
+	
+	P_Blizny_IsEquipped = TRUE;
+	check_all_magnat();
+};
+
+FUNC VOID UnEquip_ItNa_Pierscien_Blizny ()
+{
+	Npc_ChangeAttribute(self,ATR_STRENGTH,-5);
+	P_Blizny_IsEquipped = FALSE;
+};
+
+FUNC VOID Equip_ItNa_Amulet_Gomeza ()
+{
+	A_Gomeza_IsEquipped = TRUE;
+	check_all_magnat();
+	
+	B_AddFightSkill (self, NPC_TALENT_1H, +5);
+	B_AddFightSkill (self, NPC_TALENT_2H, +5);
+};
+
+FUNC VOID UnEquip_ItNa_Amulet_Gomeza ()
+{
+	A_Gomeza_IsEquipped = FALSE;
+
+	B_AddFightSkill (self, NPC_TALENT_1H, -5);
+	B_AddFightSkill (self, NPC_TALENT_2H, -5);
+};
+
+FUNC VOID Equip_ItNa_Pas_Bartholo ()
+{
+	P_Bartholo_IsEquipped = TRUE;
+	check_all_magnat();
+
+	self.attribute[ATR_HITPOINTS]		= self.attribute[ATR_HITPOINTS] + 5;
+	self.attribute[ATR_HITPOINTS_MAX]	= self.attribute[ATR_HITPOINTS_MAX] + 5;
+	self.attribute[ATR_MANA]			= self.attribute[ATR_MANA] + 5;
+	self.attribute[ATR_MANA_MAX]		= self.attribute[ATR_MANA_MAX] + 5;
+
+};
+
+FUNC VOID UnEquip_ItNa_Pas_Bartholo ()
+{
+	P_Bartholo_IsEquipped = FALSE;
+
+	self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] - 5;
+	if (self.attribute[ATR_MANA] > 5) { self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 5; }
+	else { self.attribute[ATR_MANA] = 0; };
+
+	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - 5;
+	if (self.attribute[ATR_HITPOINTS] > 5) { self.attribute[ATR_HITPOINTS] = self.attribute[ATR_HITPOINTS] - 5; }
+	else { self.attribute[ATR_HITPOINTS] = 1; };
+
+};
+
+FUNC VOID Equip_ItNa_Maska_Kruka ()
+{
+	M_Kruka_IsEquipped = TRUE;
+	check_all_magnat();
+};
+
+FUNC VOID UnEquip_ItNa_Maska_Kruka ()
+{
+	M_Kruka_IsEquipped = FALSE;
 };
 

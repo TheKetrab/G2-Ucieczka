@@ -41,8 +41,8 @@ var int ZardzewialeMieczePodniesione;
 const string Acv12Title   = "Nieuk";
 const string Acv12Content = "Mia³eœ a¿ 50 niewykorzystanych punktów nauki!";
 
-const string Acv13Title   = "Otwieracz";
-const string Acv13Content = "Otworzy³eœ 100 skrzyñ.";
+const string Acv13Title   = "Skoczek";
+const string Acv13Content = "Skoczy³eœ znajwy¿szego wodospadu w Górniczej Dolinie.";
 
 const string Acv14Title   = "£amacz wytrychów";
 const string Acv14Content = "Z³ama³eœ 50 wytrychów.";
@@ -80,7 +80,7 @@ const string Acv22Content = "Modli³eœ siê do Innosa codziennie przez 3 dni.";
 var int InnosPrayInRow;
 
 const string Acv23Title   = "Magnat";
-const string Acv23Content = "Odnalaz³eœ dobytek magnatów."; // rabowanie zamku - ka¿dy ma jaki artefakt albo coœ (Gomez, Kruk,Bartholo, Arto, Blizna)
+const string Acv23Content = "Odnalaz³eœ artefakty magnatów.";
 
 const string Acv24Title   = "Biegacz";
 const string Acv24Content = "Przebieg³eœ 50 kilometrów.";

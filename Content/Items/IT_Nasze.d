@@ -642,6 +642,143 @@ INSTANCE  ItNa_Pas_Smierci (C_Item)
 	
 };
 
+// *******************
+// Magnat
+// *******************
+
+INSTANCE ItNa_Pierscien_Arto(C_Item)
+{
+	name 					=	NAME_Ring;
+
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_RING;
+
+	value 					=	0;
+
+	visual 					=	"ItRi_Prot_Fire_02.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_Pierscien_Arto;
+	on_unequip			=	UnEquip_ItNa_Pierscien_Arto;
+
+	wear						= 	WEAR_EFFECT;
+	effect					=	"SPELLFX_ITEMGLIMMER"; 
+
+	description			= "Pierœcieñ Arto";
+	
+	TEXT[2]			= NAME_Bonus_Dex;
+	COUNT[2]		= 5;
+
+	TEXT[5]				= NAME_Value;
+	COUNT[5]			= value;
+		
+	INV_ZBIAS			= INVCAM_ENTF_RING_STANDARD;
+	INV_ROTZ				= INVCAM_Z_RING_STANDARD;
+	INV_ROTX				= INVCAM_X_RING_STANDARD;
+	
+};
+
+// ******************************************************
+INSTANCE ItNa_Pierscien_Blizny(C_Item)
+{
+	name 					=	NAME_Ring;
+
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_RING;
+
+	value 					=	0;
+
+	visual 					=	"ItRi_Prot_Fire_02.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_Pierscien_Blizny;
+	on_unequip			=	UnEquip_ItNa_Pierscien_Blizny;
+
+	wear						= 	WEAR_EFFECT;
+	effect					=	"SPELLFX_ITEMGLIMMER"; 
+
+	description			= "Pierœcieñ Blizny";
+	
+	TEXT[2]			= NAME_Bonus_Str;
+	COUNT[2]		= 5;
+
+	TEXT[5]				= NAME_Value;
+	COUNT[5]			= value;
+		
+	INV_ZBIAS			= INVCAM_ENTF_RING_STANDARD;
+	INV_ROTZ				= INVCAM_Z_RING_STANDARD;
+	INV_ROTX				= INVCAM_X_RING_STANDARD;
+	
+};
+
+// ******************************************************
+INSTANCE  ItNa_Amulet_Gomeza(C_Item)
+{
+	name 					=	NAME_Amulett;
+
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_AMULET;
+
+	value 					=	0;
+
+	visual 					=	"ItAm_Prot_Fire_01.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_Amulet_Gomeza;
+	on_unequip			=	UnEquip_ItNa_Amulet_Gomeza;
+
+	wear						= 	WEAR_EFFECT;
+	effect					=	"SPELLFX_ITEMGLIMMER"; 
+
+	description			= "Amulet Gomeza";
+		
+
+	TEXT[2]				= NAME_ADDON_BONUS_1H;			COUNT[2]	= 5;
+	TEXT[3]				= NAME_ADDON_BONUS_2H;			COUNT[3]	= 5;
+
+		
+	TEXT[5]				= NAME_Value;
+	COUNT[5]			= value;
+	
+	INV_ZBIAS			= INVCAM_ENTF_AMULETTE_STANDARD;
+	
+};
+
+// ******************************************************
+INSTANCE  ItNa_Pas_Bartholo (C_Item)
+{
+	name 				=	NAME_Addon_Belt;
+
+	mainflag 			=	ITEM_KAT_MAGIC;
+	flags 				=	ITEM_BELT|ITEM_MULTI;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Belt_10.3ds";
+
+	visual_skin 		=	0;
+	material 			=	MAT_METAL;
+	on_equip			=	Equip_ItNa_Pas_Bartholo;
+	on_unequip		=	Unequip_ItNa_Pas_Bartholo;
+
+	description		=  "Pas Bartholo";
+
+	
+	TEXT[2]			= NAME_Bonus_HP;		COUNT[2]		= 5;	
+	TEXT[3] 		= NAME_Bonus_Mana;		COUNT[3]		= 5;
+	
+
+	TEXT[5]			=   NAME_Value;
+	COUNT[5]		=   value;
+
+	INV_ZBIAS		= INVCAM_ENTF_AMULETTE_STANDARD;
+	inv_rotx			= INVCAM_ENTF_MISC2_STANDARD;
+	
+};
+
 
 
 // *******************
@@ -10805,7 +10942,7 @@ INSTANCE Helmet (C_Item)
 FUNC VOID Use_AllHelmets ()
 {
 	CreateInvItems (hero,ITNA_KapturMysliwego, 1);		// Kap2			~4		200		sprzedaje hunt jesli jestes mysliwym
-	CreateInvItems (hero,ITNA_Maska, 1);				// Kap2			~5		300		u nieznanego na pó³ce
+	CreateInvItems (hero,ITNA_Maska_Kruka, 1);				// Kap2			~5		300		u nieznanego na pó³ce
 	CreateInvItems (hero,ITNA_HelmSniacego, 1);			// Kap5 bonus	~6		500		na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
 	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);		// Kap3			~9		500		do zebrania w misji 'helmy rycerzy'
 	CreateInvItems (hero,ITNA_DjgHelmet, 1);			// Kap3			~9		500		kupuje siê razem ze zbroj¹ ³owcy orków
@@ -10840,9 +10977,9 @@ INSTANCE ITNA_KapturMysliwego (C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_Maska (C_Item)
+INSTANCE ITNA_Maska_Kruka (C_Item)
 {
-	name = "Maska";
+	name = "Maska Kruka";
 	mainflag = ITEM_KAT_NF;
 	flags = 0;
 	description = name;
@@ -10853,6 +10990,10 @@ INSTANCE ITNA_Maska (C_Item)
 	value = 300;
 	material = MAT_METAL;
 
+	on_equip			=	Equip_ItNa_Maska_Kruka;
+	on_unequip		=	Unequip_ItNa_Maska_Kruka;
+
+	
 	protection[PROT_EDGE] = 5;
 	protection[PROT_BLUNT] = 5;
 	protection[PROT_POINT] = 4;

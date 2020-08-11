@@ -800,7 +800,7 @@ func void Spell_Cast_Teleport()
 	if (Npc_GetActiveSpell(self) == SPL_TeleportBagno		)	{	Spell_Cast_TeleportBagno		(); };
 	if (Npc_GetActiveSpell(self) == SPL_Grow				)	{	Spell_Cast_Grow					(); };	
 	if (Npc_GetActiveSpell(self) == SPL_SummonKurgan		)	{	Spell_Cast_SPL_SummonKurgan		(); };
-	if (Npc_GetActiveSpell(self) == SPL_SummonStraznik		)	{	Spell_Cast_SummonStraznik	(); };
+	if (Npc_GetActiveSpell(self) == SPL_SummonStraznik		)	{	Spell_Cast_SummonStraznik		(); };
 
 
 	if (Npc_GetActiveSpell(self) == SPL_PalTeleportSecret	)	{	Spell_Cast_PalTeleportSecret	(); };
@@ -810,7 +810,8 @@ func void Spell_Cast_Teleport()
 	if (Npc_GetActiveSpell(self) == SPL_TeleportXardas		)	{	Spell_Cast_TeleportXardas		(); };
 	if (Npc_GetActiveSpell(self) == SPL_TeleportPassNW		)	{	Spell_Cast_TeleportPassNW		(); };
 	if (Npc_GetActiveSpell(self) == SPL_TeleportPassOW		)	{	Spell_Cast_TeleportPassOW		(); };
-	if (Npc_GetActiveSpell(self) == SPL_TeleportOrcTown			)	{	Spell_Cast_TeleportOrcTown			(); };
+	if (Npc_GetActiveSpell(self) == SPL_TeleportOrcTown		)	{	Spell_Cast_TeleportOrcTown		(); };
+	if (Npc_GetActiveSpell(self) == SPL_TeleportOC			)	{	Spell_Cast_TeleportOC 			(); };
 	if (Npc_GetActiveSpell(self) == SPL_TeleportOWDemonTower)	{	Spell_Cast_TeleportOWDemonTower (); };
 	if (Npc_GetActiveSpell(self) == SPL_TeleportTaverne		)	{	Spell_Cast_TeleportTaverne		(); };
 	

@@ -87,6 +87,11 @@ func int ZS_Attack_Loop ()
 	
 	
 	// EXIT LOOP IF...
+	if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NASZ_024_BaalOrun)
+	 && RitualOrun_Running == TRUE)
+	{
+		return LOOP_END;
+	};
 	
 	// reset bandit attitude?
 	var int banditsVar; banditsVar = CheckBanditsVar(self);

@@ -928,7 +928,7 @@ INSTANCE ItNa_ShaBaNakk (C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
-// TODO schowac w jakiejs skrzyni na poczatku gry
+
 INSTANCE ItNa_MalaMaczuga (C_Item)
 {	
 	name 				=	"Ma³a maczuga";  
@@ -954,7 +954,7 @@ INSTANCE ItNa_MalaMaczuga (C_Item)
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
-// TODO dodac w jakiejs skrzyni na poczatku gry
+
 INSTANCE ItNa_Maczuga (C_Item)
 {	
 	name 				=	"Maczuga";  

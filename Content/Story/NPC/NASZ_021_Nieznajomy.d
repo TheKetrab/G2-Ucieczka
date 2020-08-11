@@ -28,7 +28,7 @@ instance NASZ_021_Nieznajomy (Npc_Default)
 
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_Lester, BodyTex_P, ITNA_GUR_M);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic",Face_N_Orun, BodyTex_N, ITNA_GUR_M);		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); 	
 		
@@ -71,3 +71,11 @@ FUNC VOID Rtn_End_21 ()
 	TA_Stand_WP		(08,00,23,00,"TOT");
     TA_Stand_WP		(23,00,08,00,"TOT");
 };
+
+
+FUNC VOID Rtn_FightRitual_21 ()
+{	
+	TA_Stand_WP		(08,00,23,00,"TOT");
+    TA_Stand_WP		(23,00,08,00,"TOT");
+};
+

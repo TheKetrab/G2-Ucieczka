@@ -100,7 +100,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Quest_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_127_Jeremiasz_Quest_15_00"); //Potrzebujesz czegoœ?
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_01"); //Do mojej pracy potrzebna jest cierpliwoœæ, która powoli mi siê ju¿ koñczy.
-	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_02"); //Stanie ca³ymi dniami przy stole alchemicznym mo¿e w koñcu siê nudziæ. A i mój wiek mi doskwiera. Te stare nogi ju¿ d³ugo nie poci¹gn¹...
+	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_02"); //Stanie ca³ymi dniami przy stole alchemicznym mo¿e w koñcu siê znudziæ. A i mój wiek mi doskwiera. Te stare nogi ju¿ d³ugo nie poci¹gn¹...
 	AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Quest_55_03"); //Przynieœ mi coœ bardzo mocno odurzaj¹cego, tak na uspokojenie. Tylko uprzedzam: Bagienne ziele nie wystarczy. Ju¿ nie raz próbowa³em.
 
 	Log_CreateTopic (TOPIC_Jeremiasz_lek, LOG_MISSION);
@@ -484,7 +484,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ buelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole. Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_03"); //W czasie, gdy ska³a bêdzie siê namaczaæ, ty posiekaj w drobny maczek liœcie roœliny i wsyp do buteleczki. Zalej to wod¹, jeœli chcesz, mo¿esz tam te¿ napluæ. Ha, ha!
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_04"); //Teraz dolej soku ³odygi, zakorkuj i mocno wstrz¹œnij.
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_04"); //Teraz dolej soku ³odygi, zakorkuj i mocno potrz¹œnij.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_05"); //Co z reszt¹ ³odygi?
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_06"); //Jest bez soku, mo¿esz j¹ wyrzuciæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_07"); //Gdybyœ by³ zainteresowany, mo¿esz rzuciæ okiem do którejœæ z ksi¹¿ek le¿¹cych na stole.
@@ -538,7 +538,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_00"); //A wiêc chcia³byœ dowiedzieæ siê czegoœ jeszcze?
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_01"); //Proces wytwarzania tych mieszanek jest trochê d³ugi, a ja nie mam czasu za ka¿dym razem tutaj przychodziæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_02"); //Prawdziwy znawca roœlin potrafi obejœæ siê bez tworzenia mieszanki.
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_03"); //Pamiêtasz, jak wspomina³em o tym, ¿e zamiast dolewaæ wody mo¿esz napluæ do œrodka?
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_03"); //Pamiêtasz, jak wspomnia³em o tym, ¿e zamiast dolewaæ wody mo¿esz napluæ do œrodka?
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_04"); //To nie by³ ¿art. Œlina ma specyficzne w³aœciwoœci. Wystarczy wiedzieæ, jak nadgryŸæ korzeñ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_05"); //Przede wszystkim podczas zbierania staraj siê odrywaæ roœlinê jak najbli¿ej ziemi. Potem przegryŸ korzeñ od spodu i wys¹cz p³yn.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_06"); //Wydaje siê obrzydliwe...

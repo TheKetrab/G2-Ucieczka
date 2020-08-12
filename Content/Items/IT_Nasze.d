@@ -3680,8 +3680,8 @@ FUNC VOID Use_ItNa_KsiegaZmiennych()
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Zjedzone ró¿ne roœliny: ",IntToString(EatenPlants)));
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Przespane godziny: ",IntToString(SleptHours)));
 				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Wypite butelki alkoholu: ",IntToString(DrunkTrinken)));
+				Doc_PrintLines   ( nDocID,  0, ConcatStrings("Zdeptane chrz¹szcze: ",IntToString(zdeptane_chrzaszcze)));
 
-				
 				
 				Doc_Show		( nDocID );
 };

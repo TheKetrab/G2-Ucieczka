@@ -240,7 +240,7 @@ func void Check_OSIAGNIECIA() {
 	// 23 ---> Ustawiane w funkcji BonusPack.d / check_all_magnat																							// 23
 	if (Osiagniecie24OneTime == FALSE && VST_Kilometers >= 50)					{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24
 	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 
-	if (Osiagniecie26OneTime == FALSE)											{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26 // TODO
+	if (Osiagniecie26OneTime == FALSE && zdeptane_chrzaszcze >= 10)				{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26
 	if (Osiagniecie27OneTime == FALSE && HeroHasAllNewSkills())					{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27
 	if (Osiagniecie28OneTime == FALSE && DrunkTrinken >= 30)					{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28
 	if (Osiagniecie29OneTime == FALSE && HeroHasAllTrophySkills())				{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29

@@ -44,7 +44,10 @@ func void _Focusnames() {
 	else if (Hlp_Is_oCMobContainer(her.focus_vob)) 
 	{
 		var oCMobContainer m; m =_^(her.focus_vob);
-		if(m._oCMobLockable_bitfield & oCMobLockable_bitfield_locked)
+		if (Hlp_StrCmp(m._zCObject_objectName,"ARTEFAKT_MISTIC")) {
+			col = Focusnames_Color_Neutral();
+		}
+		else if(m._oCMobLockable_bitfield & oCMobLockable_bitfield_locked)
 		{
 			if(STR_LEN(m._oCMobLockable_keyInstance))
 			{

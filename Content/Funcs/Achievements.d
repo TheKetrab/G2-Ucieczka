@@ -88,8 +88,9 @@ const string Acv24Content = "Przebieg³eœ 50 kilometrów.";
 const string Acv25Title   = "Król biegaczy";
 const string Acv25Content = "Przebieg³eœ 100 kilometrów.";
 
-const string Acv26Title   = "Strzelec";
-const string Acv26Content = "Strzeli³eœ 500 razy z broni dystansowej.";
+const string Acv26Title   = "Zgniatacz";
+const string Acv26Content = "Zdepta³eœ 10 chrz¹szczy.";
+var int zdeptane_chrzaszcze;
 
 const string Acv27Title   = "Odkrywca";
 const string Acv27Content = "Nauczy³eœ siê wszystkich nowych umiejêtnoœci.";

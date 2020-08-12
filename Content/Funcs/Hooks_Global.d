@@ -32,6 +32,7 @@ func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 		sleeper.attribute[0]  = 0;
 		if(ECX == MEM_READINT(_hero)/*pointer to player*/)
 		{
+			zdeptane_chrzaszcze += 1;
 			B_GivePlayerXP(sleeper.level*10);
 		
 		};

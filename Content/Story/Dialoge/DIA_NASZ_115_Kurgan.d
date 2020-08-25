@@ -706,7 +706,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_Info()
 
 	if (Wld_IsTime(19,00,20,59)) {
 	
-		if(KAPITEL >= 3) {
+		//if(KAPITEL >= 3) { FIX Ucieczka 1.1 -> kontynuacja walk ju¿ od drugiego rozdzia³u, bo w trzecim jest zbyt ma³o czasu zanim id¹ do twierdzy
 			AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurn_55_00"); //Œwietnie. Zdajesz sobie chyba sprawê, ¿e jesteœ szanowanym gladiatorem.
 			AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurn_55_01"); //Kilku ludzi domaga³o siê, bym wyznaczy³ walkê jednego gladiatora kontra dwóch.
 			AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurn_55_02"); //Jesteœ jak dot¹d niepokonany. Nadajesz siê do takiej potyczki.
@@ -723,11 +723,11 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_Info()
 				Info_AddChoice	  (DIA_NASZ_115_Kurgan_GodarHokurn, "Nie mam tyle z³ota.", DIA_NASZ_115_Kurgan_GodarHokurn_nomoney);
 			};
 	
-		}
+		//}
 	
-		else {
-			KurganSayToHero_NooneWantFight();
-		};
+		//else {
+		//	KurganSayToHero_NooneWantFight();
+		//};
 	};
 };
 
@@ -791,6 +791,8 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 	
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_01"); //Ale jest jeszcze jedna osoba, która mo¿e pogrzebaæ tw¹ dumê.
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnWon_55_02"); //Stocz walkê ze mn¹! Zobaczymy, czy dasz radê tak¿e mi. ChodŸ!
+		
+		self.flags = 0; // byc moze mial niesmiertelnosc -> teraz juz nie ma
 		
 		B_LogEntry(TOPIC_Kurgan_arena,"Pokona³em Godara i Hokurna. Pora na najpotê¿niejszego gladiatora, czyli szefa areny.");
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");

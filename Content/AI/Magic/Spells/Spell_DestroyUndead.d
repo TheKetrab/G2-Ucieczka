@@ -3,7 +3,7 @@
 // *****************
 
 const int	SPL_Cost_DESTROYUNDEAD		=	100;
-const int 	SPL_Damage_DESTROYUNDEAD 	= 	1000; //soll halt wirklich killen!
+const int 	SPL_Damage_DESTROYUNDEAD 	= 	3000; //soll halt wirklich killen! // FIX UCIECZKA 1.1: poprawione z 1000 na 3000, bo 414_zombie ma 2k hp i go nie zabijalo!
 var int DestroyUndeadUsed;
 
 INSTANCE Spell_DestroyUndead(C_Spell_Proto)

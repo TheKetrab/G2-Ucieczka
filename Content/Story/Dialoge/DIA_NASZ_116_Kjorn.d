@@ -440,6 +440,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_IHelpYou_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_IHelpYou_15_00"); //Zdecydowa³em, ¿e ci pomogê.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_IHelpYou_55_01"); //No dobra, w takim razie ruszaj!
+	B_giveinvitems (self, other, ItNa_Mapa_Bracia, 1);
 
 	Log_CreateTopic (TOPIC_Kjorn_bracia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_RUNNING);
@@ -524,7 +525,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_Info()
 
 func void FinishQuestKjorn(var int mode) {
 
-	DodajReputacje(REP_LOWCY,3);
+	DodajReputacje(3,REP_LOWCY);
 
 	if (mode == 1) { // zloto
 		Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_SUCCESS);

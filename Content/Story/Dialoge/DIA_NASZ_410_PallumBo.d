@@ -20,9 +20,6 @@ FUNC VOID DIA_NASZ_410_PallumBo_EXIT_Info()
 {
 	AI_StopProcessInfos (self);
 
-	NASZ_410_PallumBo.guild = GIL_ORC;
-	Npc_SetTrueGuild (NASZ_410_PallumBo, GIL_ORC);
-	Npc_SetTempAttitude (NASZ_410_PallumBo, ATT_HOSTILE);
 	B_Attack (NASZ_405_VanGan, NASZ_410_PallumBo, AR_KILL, 0);
 	B_Attack (NASZ_410_PallumBo, NASZ_405_VanGan, AR_KILL, 0);
 };
@@ -55,5 +52,8 @@ FUNC VOID DIA_NASZ_410_PallumBo_siema_Info()
 	AI_Output (self, other,"DIA_NASZ_410_PallumBo_siema_15_02"); //ORAK SZAKA!
 
 	B_LogEntry (TOPIC_VanGan_zemsta, "Zaczê³o siê. Ten ork jest potê¿ny... Chyba nie obejdzie siê bez mojej pomocy.");
+	NASZ_410_PallumBo.guild = GIL_ORC;
+	Npc_SetTrueGuild (NASZ_410_PallumBo, GIL_ORC);
+	Npc_SetTempAttitude (NASZ_410_PallumBo, ATT_HOSTILE);
 
 };

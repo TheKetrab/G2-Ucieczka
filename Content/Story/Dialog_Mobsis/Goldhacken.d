@@ -194,30 +194,35 @@ func void kopanie_zlota(var int brudne) {
 			CreateInvItems (hero, ItMi_GoldNugget_Addon, 3);	
 			PrintScreen ("Odpad³y 3 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (100);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_GoldNugget_Addon))));
 		}
 		else if(LevelMiner >= 90)
 		{
 			CreateInvItems (hero, ItMi_GoldNugget_Addon, 3);	
 			PrintScreen ("Odpad³y 3 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (75);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_GoldNugget_Addon))));
 		}
 		else if(LevelMiner >= 65)
 		{
 			CreateInvItems (hero, ItMi_GoldNugget_Addon, 2);	
 			PrintScreen ("Odpad³y 2 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (50);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_GoldNugget_Addon))));
 		}
 		else if(LevelMiner >=40)
 		{
 			CreateInvItems (hero, ItMi_GoldNugget_Addon, 2);	
 			PrintScreen ("Odpad³y 2 samorodki z³ota!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (25);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_GoldNugget_Addon))));
 		}
 		else //if(LevelMiner >=20) 20 juz posiadasz na starcie gry
 		{
 			CreateInvItems (hero, ItMi_GoldNugget_Addon, 1);	
 			PrintScreen ("Odpad³ 1 samorodek z³ota!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (10);
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_GoldNugget_Addon))));
 		};
 		
 		

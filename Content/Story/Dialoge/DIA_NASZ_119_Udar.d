@@ -839,7 +839,7 @@ FUNC VOID DIA_NASZ_119_Udar_PatrolFinish_Info()
 	AI_Output (self, other,"DIA_NASZ_119_Udar_PatrolFinish_15_08"); //To brzmi naprawdê Ÿle. I to wszystko akurat teraz, kiedy przygotowujemy siê do szturmu na zamek. Niech to cholera, trzeba szybko przygotowaæ siê do ataku, aby zdobyæ bezpieczne schronienie w tym miejscu.
 	
 	B_GivePlayerXP(500);
-	DodajReputacje(REP_LOWCY,2);
+	DodajReputacje(2,REP_LOWCY);
 	Log_SetTopicStatus (TOPIC_Udar_patrol, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Udar_patrol, "Przynios³em Udarowi raport od zwiadowców i opowiedzia³em mu o sytuacji.");
 
@@ -1046,7 +1046,7 @@ FUNC VOID DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Info()
 	};
 
 	B_GivePlayerXP(500);
-	DodajReputacje(REP_LOWCY,1);
+	DodajReputacje(1,REP_LOWCY);
 	
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Udar_oddzial, "Powiadomi³em Udara, ¿e znalaz³em ludzi za palisad¹.");

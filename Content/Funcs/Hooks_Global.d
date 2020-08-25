@@ -563,6 +563,14 @@ func void oCNpcInventory_HandleEvent_hook()
 		itm = _^(ptr);
 		if(itm.flags & ITEM_SHIELD)
 		{
+			// KETRAB - zakladanie tarczy przez klawisz CTRL
+			var c_item meleeWeap; meleeWeap = Npc_GetEquippedMeleeWeapon(hero);
+			if(meleeWeap.flags & (ITEM_SWD | ITEM_AXE)) {
+				AI_Function_I(hero, QS_EquipWeapon, ptr);
+			} else {
+				PrintS("Za³ó¿ broñ jednorêczn¹ przed u¿yciem tarczy!");
+			};
+			
 			MEM_WriteInt(ESP+4,-1);  return;
 		};
 		if(itm.mainflag == ITEM_KAT_NF && itm.flags)
@@ -711,7 +719,7 @@ func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
 
 		if(itm.wear == WEAR_HEAD)
 		{
-			
+			print("bubu");
 			var int pHelm; pHelm = GetItemSlot(hero,"ZS_HELMET");
 			//var int pWeap; pWeap = QS_GetSlotItem(1);
 			if(!HelmetEquipped && pHelm)

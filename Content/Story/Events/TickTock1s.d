@@ -822,22 +822,22 @@ func void BDTPotion()
 		if (HeroDrankBDTPotionOneTime == FALSE) {
 			HeroDrankBDTPotionOneTime = TRUE;
 			
-			if (Npc_GetTalentSkill (other, NPC_TALENT_PICKPOCKET) == FALSE)
+			if (Npc_GetTalentSkill (hero, NPC_TALENT_PICKPOCKET) == FALSE)
 			{ 
 				BDTPotion_PickPocket = TRUE;
 				Npc_SetTalentSkill 	(hero, NPC_TALENT_PICKPOCKET, 1);
 			};
-			if (Npc_GetTalentSkill (other, NPC_TALENT_ACROBAT) == FALSE)
+			if (Npc_GetTalentSkill (hero, NPC_TALENT_ACROBAT) == FALSE)
 			{ 
 				BDTPotion_Acrobat = TRUE;
 				Npc_SetTalentSkill 	(hero, NPC_TALENT_ACROBAT, 1);
 			};
-			if (Npc_GetTalentSkill (other, NPC_TALENT_SNEAK) == FALSE)
+			if (Npc_GetTalentSkill (hero, NPC_TALENT_SNEAK) == FALSE)
 			{ 
 				BDTPotion_Sneak = TRUE;
 				Npc_SetTalentSkill 	(hero, NPC_TALENT_SNEAK, 1);
 			};
-			if (Npc_GetTalentSkill (other, NPC_TALENT_PICKLOCK) == FALSE)
+			if (Npc_GetTalentSkill (hero, NPC_TALENT_PICKLOCK) == FALSE)
 			{ 
 				BDTPotion_PickLock = TRUE;
 				Npc_SetTalentSkill 	(hero, NPC_TALENT_PICKLOCK, 1);
@@ -1266,9 +1266,18 @@ func void WrzodQuestInserting()
 
 var int ObozOrkowoInfoOneTime;
 
- 
+// TODO wywalic!!
+var int HeroKilofy;
+var int HeroBrylkiZlota;
+
 func void _TickTock_1s()
 {
+	if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry³ki z³ota zniknê³y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	if (npc_hasitems(hero,ItMw_2H_Axe_L_01) < HeroKilofy) { Print("UWAGA!!! Kilof znikn¹³."); HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	
+
 	//Print(IntToString(C_IsInMysliwiTerritory()));
 	//Print(IntToString(Npc_GetBodyState(hero)));
 	//Print(IntToString(WillUsedWheelTwierdza));
@@ -1461,7 +1470,7 @@ func void _TickTock_1s()
 	};	
 
 	
-	if (Kurgan_walka==5) && (NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && (RemoveKurganOneTime == FALSE)
+	if (Kurgan_walka==5) && (NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) && (RemoveKurganOneTime == FALSE) && (KAPITEL < 4) // skoro w kap4 jest walka bez ducha, to nie powinno tego byc
 	{	
 		AI_Teleport (NASZ_401_Kurgan, "TOT"); 
 		B_StartOtherRoutine (NASZ_401_Kurgan,"End");

@@ -429,6 +429,9 @@ func void HeroMonastir_INeedGold_DIA() {
 func void DIA_NASZ_010_Monastir_HelpMe_weaponmoney() {
 
 	HeroMonastir_INeedGold_DIA();
+	Createinvitems (self, ITMI_GOLD, 100);
+	B_giveinvitems (self, other, ITMI_GOLD, 100);
+	MONASTIR_MONEY = TRUE;
 	
 	// ponowiony clearchoice, bo wczesniej jest inny, a nie g³ówny
 	Info_ClearChoices (DIA_NASZ_010_Monastir_HelpMe);

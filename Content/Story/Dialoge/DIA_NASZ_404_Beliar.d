@@ -74,6 +74,11 @@ FUNC VOID DIA_NASZ_404_Beliar_portal_Info()
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_portal_55_04"); //Ale najpierw musisz oddaæ siê swojemu Panu. 
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_portal_55_05"); //Zabij niewinn¹ istotê.
 
+	// FIX UCIECZKA 1.1 - oni sie nasuwaja do zabicia - trzeba im na wszelki wypadek ustawic smiertelnosc
+	NASZ_231_Ted.flags = 0;
+	NASZ_225_Wrzod.flags = 0;
+	NASZ_122_Daniel.flags = 0;
+
 	Log_CreateTopic (TOPIC_bogowie_work, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_RUNNING);
 	B_LogEntry (TOPIC_bogowie_work, "Teraz muszê udowodniæ, ¿e s³u¿ê Beliarowi. Mam zabiæ niewinn¹ istotê. Cholera... Chyba nie mam wyboru. Chyba ¿e bogowi nie chodzi konkretnie o cz³owieka, ale mo¿e te¿ byæ niewinne zwierzê?");

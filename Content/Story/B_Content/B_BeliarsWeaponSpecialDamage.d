@@ -46,8 +46,8 @@ func void B_BeliarsWeaponSpecialDamage (var C_NPC oth, var C_NPC slf) //other is
 		{
 		mocMieczRuniczny = mocMieczRuniczny - 1;
 		
-			if (mocMieczRuniczny == 0) { PrintScreen ("KrysztaÅ‚ w mieczu straciÅ‚ swojÄ… moc", -1,-1, "font_old_20_white.tga",2); }
-			else if (mocMieczRuniczny == 5) { PrintScreen ("KrysztaÅ‚ w mieczu traci blask...", -1,-1, "font_old_20_white.tga",2); }; 
+			if (mocMieczRuniczny == 0) { PrintScreen ("Kryszta³ w mieczu straci³ swoj¹ moc", -1,-1, "font_old_20_white.tga",2); }
+			else if (mocMieczRuniczny == 5) { PrintScreen ("Kryszta³ w mieczu traci blask...", -1,-1, "font_old_20_white.tga",2); }; 
 		
 		
 			if (MieczRunicznyUbrany == 1) {
@@ -60,12 +60,12 @@ func void B_BeliarsWeaponSpecialDamage (var C_NPC oth, var C_NPC slf) //other is
 				Wld_PlayEffect ("spellFX_IceCube_COLLIDE", slf, slf, 0, 0, 0, FALSE);
 				Wld_PlayEffect ("spellFX_Icespell_COLLIDEDYNFX", slf, slf, 0, 0, 0, FALSE);
 				AI_StartState		(slf, ZS_MagicFreeze, 0, "");
-				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau fÃ¼r einen Lurker.
+				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau für einen Lurker.
 			};
 			if (MieczRunicznyUbrany == 3) {
 				Wld_PlayEffect ("spellFX_Whirlwind_COLLIDE", slf, slf, 0, 0, 0, FALSE);
 				AI_StartState		(slf, ZS_Whirlwind, 0, "");
-				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau fÃ¼r einen Lurker.
+				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau für einen Lurker.
 			};
 		};
 		
@@ -97,7 +97,7 @@ func void B_BeliarsWeaponSpecialDamage (var C_NPC oth, var C_NPC slf) //other is
 				Wld_PlayEffect ("spellFX_IceCube_COLLIDE", slf, slf, 0, 0, 0, FALSE);
 				Wld_PlayEffect ("spellFX_Icespell_COLLIDEDYNFX", slf, slf, 0, 0, 0, FALSE);
 				AI_StartState		(slf, ZS_MagicFreeze, 0, "");
-				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau fÃ¼r einen Lurker.
+				B_MagicHurtNpc (oth, slf, 65); //115 Schaden reicht genau für einen Lurker.
 			};
 		};
 	*/

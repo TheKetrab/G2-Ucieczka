@@ -287,35 +287,35 @@ FUNC VOID PC_Coalhacken_Addon_Hour_Info()
 			CreateInvItems (hero, ItMi_Coal, 6);	
 			PrintScreen ("Odpad³o 6 kawa³ków wêgla", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (100);
-			Print(CS("Razem:",IntToString(Npc_HasItems(hero,ItMi_Coal))));
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Coal))));
 		}
 		else if(LevelMiner >= 90)
 		{
 			CreateInvItems (hero, ItMi_Coal, 5);	
 			PrintScreen ("Odpad³o 5 kawa³ków wêgla", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (75);
-			Print(CS("Razem:",IntToString(Npc_HasItems(hero,ItMi_Coal))));
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Coal))));
 		}
 		else if(LevelMiner >= 65)
 		{
 			CreateInvItems (hero, ItMi_Coal, 4);	
 			PrintScreen ("Odpad³y 4 kawa³ki wêgla", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (50);
-			Print(CS("Razem:",IntToString(Npc_HasItems(hero,ItMi_Coal))));
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Coal))));
 		}
 		else if(LevelMiner >=40)
 		{
 			CreateInvItems (hero, ItMi_Coal, 3);	
 			PrintScreen ("Odpad³y 3 kawa³ki wêgla", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (25);
-			Print(CS("Razem:",IntToString(Npc_HasItems(hero,ItMi_Coal))));
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Coal))));
 		}
 		else //if(LevelMiner >=20) 20 juz posiadasz na starcie gry
 		{
 			CreateInvItems (hero, ItMi_Coal, 2);	
 			PrintScreen ("Odpad³y 2 kawa³ki wêgla!", -1, -1, FONT_ScreenSmall, 2);
 			B_GivePlayerXP (10);
-			Print(CS("Razem:",IntToString(Npc_HasItems(hero,ItMi_Coal))));
+			Print(CS("Razem: ",IntToString(Npc_HasItems(hero,ItMi_Coal))));
 		};
 		
 		

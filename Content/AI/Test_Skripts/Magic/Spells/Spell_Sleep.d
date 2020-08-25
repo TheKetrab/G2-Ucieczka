@@ -47,7 +47,7 @@ func int Spell_Logic_Sleep (var int manaInvested) //Parameter manaInvested wird 
 			if (Hlp_GetInstanceID(other) == NASZ_006_Renegat)
 			&& (WillMaRzucicZaklecieNaStraznika)
 			{
-				B_LogEntry(TOPIC_Ben_metody, "StraÅ¼nik zasnÄ…Å‚. Pora na ucieczkÄ™ z jaskini! Pozostaje kwestia tego, jak wydostaÄ‡ siÄ™ z obozu?");
+				B_LogEntry(TOPIC_Ben_metody, "Stra¿nik zasn¹³. Pora na ucieczkê z jaskini! Pozostaje kwestia tego, jak wydostaæ siê z obozu?");
 				Log_SetTopicStatus (TOPIC_Ben_metody, LOG_SUCCESS);
 				B_GivePlayerXP(100);
 				WillMaRzucicZaklecieNaStraznika = FALSE;

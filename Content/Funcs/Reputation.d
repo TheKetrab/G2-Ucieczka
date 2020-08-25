@@ -64,8 +64,8 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
 	if (rep_bandyci_s >= 100) && (RepBandyci_OneTime == FALSE)	{
 		RepBandyci_OneTime = TRUE;
 		Snd_Play ("LEVELUP");
-		PrintS_Ext("Premia za maksimum reputacji: +2 PN", RGBA(255,255,255,0));
-		hero.lp = hero.lp + 2;
+		PrintS_Ext("Premia za maksimum reputacji: +1 PN", RGBA(255,255,255,0));
+		hero.lp = hero.lp + 1;
 	};
  };
 };

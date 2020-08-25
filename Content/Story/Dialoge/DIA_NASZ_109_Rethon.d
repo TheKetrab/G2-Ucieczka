@@ -656,7 +656,7 @@ FUNC VOID DIA_NASZ_109_Rethon_FajkaEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_04"); //Ma zapach podobny do eliksiru si³y. Myœlê, ¿e tobie bardziej siê przyda. Tak jak mi fajka.
 	
 	B_GivePlayerXP(1000);
-	DodajReputacje(REP_LOWCY,2);
+	DodajReputacje(2,REP_LOWCY);
 	Log_SetTopicStatus (TOPIC_Rethon_fajka, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Rethon_fajka, "Rethon cieszy³ siê jak dziecko, gdy zapali³ fajkê. Byæ mo¿e mi tak¿e przyda³aby siê taka zabawka...");
 

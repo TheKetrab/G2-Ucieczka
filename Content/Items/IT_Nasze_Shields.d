@@ -15,6 +15,10 @@ func void Equip_Shield()
 		{
 			Mdl_ApplyOverlayMds (self, "HUMANS_SHIELD.MDS");
 		};
+		
+		if (Hlp_GetInstanceID(ItNa_TarczaMistrzowska) == Hlp_GetInstanceID(item)) {
+			TarczaLowcyUbrana = TRUE;
+		};
 	};
 	};
 };
@@ -25,6 +29,9 @@ func void UnEquip_Shield()
 	self.aivar[AIV_TARCZA] = false;
 	B_AddFightSkill (self, NPC_TALENT_1H, 0);
 	Mdl_RemoveOverlayMDS (self, "HUMANS_SHIELD.MDS");
+
+	// jesli sciagasz jakakolwiek tarcze, to na pewno sciagasz ta tarcze
+	TarczaLowcyUbrana = FALSE;
 };
 
 //----- Shield -----

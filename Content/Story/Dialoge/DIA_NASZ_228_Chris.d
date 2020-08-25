@@ -447,6 +447,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Claws()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = TRUE;
+	
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom pazury.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
 };
 
 // ------ Fell abziehen ------
@@ -470,6 +476,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Teeth()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = TRUE;
+	
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ zwierzêtom k³y.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
 };
 
 // ------ Fell abziehen ------
@@ -493,6 +505,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Fur()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = TRUE;
+	
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...oprawiaæ zwierzêta.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
 };
 
 // ------ Blutfliegenstachel ------
@@ -516,6 +534,13 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFSting()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = TRUE;
+	
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ krwiopijcom ¿¹d³a.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
+
 };
 
 // ------ Blutfliegenflügel ------
@@ -539,6 +564,13 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFWing ()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = TRUE;
+
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ krwiopijcom skrzyd³a.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
+
 };
 
 // ------ DrgSnapperHorn ------
@@ -563,6 +595,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn()
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = TRUE;
+
+	Log_CreateTopic (TOPIC_TalentAnimalTrophy,LOG_NOTE);
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"Teraz mogê:");
+	B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ smoczym zêbaczom rogi.");
+	PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	Npc_SetTalentSkill 	(hero, NPC_TALENT_TAKEANIMALTROPHY, 1);
 };
 
 

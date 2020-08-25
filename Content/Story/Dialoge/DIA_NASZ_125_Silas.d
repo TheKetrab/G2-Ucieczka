@@ -595,7 +595,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3Finish_Info()
 	
 	Log_SetTopicStatus (TOPIC_Silas_ryzowka, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Silas_ryzowka, "Odda³em karczmarzowi beczki. Ucieszy³ siê i zaprosi³ mnie na gratisow¹ butelkê. Mogê przyjœæ za godzinê.");
-	DodajReputacje(REP_LOWCY,2);
+	DodajReputacje(2,REP_LOWCY);
 	B_GivePlayerXP(700);
 	
 	SilasRyzowkaDay = Wld_GetDay();
@@ -617,7 +617,7 @@ INSTANCE DIA_NASZ_125_Silas_QuestKap3Ryzowka   (C_INFO)
 
 FUNC INT DIA_NASZ_125_Silas_QuestKap3Ryzowka_Condition()
 {
-	if (npc_knowsinfo(other,DIA_NASZ_125_Silas_QuestKap3Ryzowka))
+	if (npc_knowsinfo(other,DIA_NASZ_125_Silas_QuestKap3Finish))
 	&& (TimeIsUp(-1,1,SilasRyzowkaDay,SilasRyzowkaHour)) // 1h
 	{
 		return TRUE;

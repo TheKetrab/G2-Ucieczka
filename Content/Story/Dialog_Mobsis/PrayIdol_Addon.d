@@ -129,7 +129,7 @@ instance PC_PrayIdol_Ofiara(C_Info)
 func int PC_PrayIdol_Ofiara_Condition()
 {
 	if(PLAYER_MOBSI_PRODUCTION == MOBSI_PRAYIDOL
-		&& (BELIAR5K == TRUE)
+		&& (BELIAR5K == TRUE) && (OFIARA == FALSE)
 		&& npc_hasitems (hero, ItMi_Gold) >=2000)
 	{
 		return TRUE;

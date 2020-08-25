@@ -677,6 +677,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	if(Npc_IsPlayer(slf))
 	{
 		var int FightSkill; FightSkill = Hlp_Random(99);
+
 		
 		if(Npc_IsInFightMode(slf, FMODE_MELEE))
 		{
@@ -686,6 +687,10 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			{
 				if((FightSkill >= 0) && (FightSkill <= ((slf.HitChance[NPC_TALENT_1H]) - 1)))
 				{
+					if(ReadiedWeapon.damagetype & DAM_FLY) // miecz runiczny C
+					{
+						dmg += slf.attribute[ATR_STRENGTH] + slf.attribute[ATR_DEXTERITY] + (ReadiedWeapon.damageTotal) - oth.protection[PROT_FLY];
+					};
 					if(ReadiedWeapon.damagetype & DAM_BLUNT)
 					{
 						dmg += slf.attribute[ATR_STRENGTH] + slf.attribute[ATR_DEXTERITY] + (ReadiedWeapon.damageTotal) - oth.protection[PROT_BLUNT];
@@ -709,6 +714,10 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				}
 				else
 				{
+					if(ReadiedWeapon.damagetype & DAM_FLY) // miecz runiczny C
+					{
+						dmg += (((slf.attribute[ATR_STRENGTH])/10) - 1) + (((slf.attribute[ATR_DEXTERITY])/10) - 1) + ((ReadiedWeapon.damageTotal)/10) - ((oth.protection[PROT_FLY])/10);
+					};
 					if(ReadiedWeapon.damagetype & DAM_BLUNT)
 					{
 						dmg += (((slf.attribute[ATR_STRENGTH])/10) - 1) + (((slf.attribute[ATR_DEXTERITY])/10) - 1) + ((ReadiedWeapon.damageTotal)/10) - ((oth.protection[PROT_BLUNT])/10);
@@ -785,9 +794,11 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			{
 				dmg = 5;
 			};
+			
 		}
 		else if(Npc_IsInFightMode(slf, FMODE_FAR))
 		{
+
 			if(dmg >= 1)
 			{
 				dmg = 0;
@@ -867,14 +878,14 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 			};
 		}
 		else if (Npc_IsInFightMode(slf, FMODE_MAGIC))
-		{
-			
+		{	
+
 				var C_Spell spl; spl = GFA_GetActiveSpellInst(slf);// _^(Npc_GetSelectedSpell(slf));
 				if(!spl) {return dmg = 0;};
 	
-				
 				if(C_NpcIsUndead(oth) && spl.damage_per_level == SPL_Damage_DESTROYUNDEAD  && !C_NpcIsBoss(oth))
 				{
+
 					dmg = oth.attribute[0];
 					dmg = DiffCalcDmg(dmg);
 					return dmg;
@@ -1233,16 +1244,32 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	// ACHIEVEMENT
 	if (Npc_IsPlayer(oth) && Osiagniecie18OneTime == FALSE) {
 		if (oth.attribute[ATR_HITPOINTS] - dmg == 1) {
-			Osiagniecie18OneTime = TRUE;
-			AddAchievement(Acv18Title,Acv18Content);
+			ff_applyonceext(Acv18Delay,1000,-1);
 		};
 	};
-
 
 
 	return dmg;
 };
 
+var int Acv18DelayTimer;
+func void Acv18Delay() {
+
+	// 0s
+	if (Acv18DelayTimer == FALSE) {
+		Acv18DelayTimer = TRUE;
+		return;
+	};
+
+	// 1s -> jesli jakis npc czlowiek uderzyl hero, to ma 1hp i lezy na ziemi -> czyli dlatego warunek !instate ZS_Unconscious
+	if (!Npc_IsInState(hero,ZS_Unconscious) && (hero.attribute[ATR_HITPOINTS] == 1)) {
+		Osiagniecie18OneTime = TRUE;
+		AddAchievement(Acv18Title,Acv18Content);
+	};
+
+	Acv18DelayTimer = FALSE;
+	ff_remove(Acv18Delay);
+};
 	
 func void _DMG_OnDmg() {
 

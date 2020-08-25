@@ -3234,8 +3234,6 @@ func void Use_Projekt_MieczNienawisci ()
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Piwo ju¿ jest moje! Trochê wypijê, a resztê wymieniê na parê bry³ek.");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
@@ -9623,7 +9621,7 @@ INSTANCE ItNa_ZabiKorzen (C_Item)
 };
 	FUNC VOID USE_ItNa_ZabiKorzen ()
 	{
-		B_RaiseAttribute	(self, ATR_MANA , 5);
+		PercentHealSelf(5,ATR_MANA);
 	};
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****

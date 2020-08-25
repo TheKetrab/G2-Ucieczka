@@ -43,6 +43,12 @@ func void INIT_GLOBAL()
 	CheckDx11();
 	QuickSlot_Init();
 	B_AddFightSkill(hero,0,0);
+	
+	// FIX UCIECZKA 1.1 - po kazdym wczytaniu zmien mu imie, bo wczytanie zmienia imie na defaultowe
+	if (npc_knowsinfo(hero,DIA_NASZ_306_Perrot_done)) {
+		SetName(NASZ_315_Bandzior, "Donks");
+		ShowName(NASZ_315_Bandzior);
+	};
 };
 
 // *********

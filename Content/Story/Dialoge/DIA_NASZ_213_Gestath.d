@@ -1105,7 +1105,9 @@ INSTANCE DIA_NASZ_213_Gestath_KapThree   (C_INFO)
 
 FUNC INT DIA_NASZ_213_Gestath_KapThree_Condition()
 {
-	if (Hlp_StrCmp(Npc_GetNearestWP(self),"OW_PATH_033_TO_CAVE2"))
+	if (Npc_GetDistToWP(self,"OW_PATH_033_TO_CAVE2") < 500)
+	&& (Npc_IsDead(NASZ_303_Nod))
+	&& (Npc_IsDead(NASZ_308_Frut))
 	{
 		return TRUE;
 	};

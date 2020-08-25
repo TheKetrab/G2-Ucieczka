@@ -60,10 +60,14 @@ func void TworzenieBroniGladiatorom()
 func void TickTock_5s() {
 
 	// ***** ***** BRAMA U MYSLIWYCH ***** *****
-	// jesli jest noc to ma byc zamknieta
-	if (Wld_IsTime(21,30,00,00) || Wld_IsTime (00,00,06,30)) {
+	// jesli jest noc to ma byc zamknieta (lub jest rozdzial 4)
+	if (Wld_IsTime(21,30,00,00) || Wld_IsTime (00,00,06,30))
+	|| (GateMysliwi_KapitelToCloseForDay())
+	{
 	
-		if (GateMysliwiTicks >= 2) { // czyli max przez 10s brama jest w nocy otwarta
+		if (GateMysliwiTicks >= 2) // czyli max przez 10s brama jest w nocy otwarta
+		&& (!GateMysliwi_Moving()) // i nie jest w stanie otwierania sie
+		{
 			GateMysliwi_Close();
 			GateMysliwiTicks = 0;
 		}

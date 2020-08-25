@@ -1788,8 +1788,8 @@ func void DIA_NASZ_106_Jan_ZlotySztylet_Info ()
 
 		AI_Output			(self, other, "DIA_NASZ_106_Jan_ZlotySztylet_15_01"); //WeŸ to. Co o tym myœlisz?
 		
-		AI_ReadyMeleeWeapon	(other);
-		AI_PlayAni	(other, "T_1HSINSPECT");
+		//AI_ReadyMeleeWeapon	(other);
+		//AI_PlayAni	(other, "T_1HSINSPECT");
 
 		AI_Output			(other, self, "DIA_NASZ_106_Jan_ZlotySztylet_15_02"); //£adnie zdobiony.
 		AI_Output			(self, other, "DIA_NASZ_106_Jan_ZlotySztylet_15_03"); //Zgadza siê. Jeœli nie bêdziesz chcia³ nim walczyæ, to mo¿esz zawsze sprzedaæ go któremuœ handlarzowi.

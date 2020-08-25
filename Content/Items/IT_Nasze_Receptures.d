@@ -236,7 +236,9 @@ func void Use_Przepis_SerowyGulasz ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Serowy gulasz:"	);
+				Doc_PrintLines	( nDocID,  0, "Serowy gulasz");
+				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Aby wykonaæ potrawê, potrzebne bêd¹ nam cztery kawa³ki sera, dwie polne jagody, mleko, wodê, jab³ko, a tak¿e kilka kropel wina. ");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -281,14 +283,12 @@ func void Use_Przepis_ZupaZGrzybowKopalnianych ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Przepis na zupê z grzybów kopalnianych:"	);
-				Doc_PrintLines	( nDocID,  0, " +3 do si³y i zrêcznoœci");
+				Doc_PrintLines	( nDocID,  0, "Przepis na zupê z grzybów kopalnianych");
+				Doc_PrintLines	( nDocID,  0, "Bonus: zrêcznoœæ +1");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Gotowanie zupy z grzybów kopalnianych jest wskazane dla kucharzy z du¿ym doœwiadczeniem. Aby j¹ ugotowaæ potrzebujemy szeœæ grzybów kopalnianych, chleb, cztery korzenie lecznicze, ¿¹d³o krwiopijcy.");
-				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Przygotowywanie potrawy zaczynamy od dok³adnego odciêcia kapeluszy grzyba od jego trzonka, a tak¿e usuniêcia najczarniejszych blaszek, w których znajduje siê œmiertelna toksyna. Kroimy je na drobne kawa³eczki i wrzucamy do miseczki, gdzie ugniatamy je z owocami korzeni leczniczych (ma to na celu wzmocniæ organizm jedz¹cego). Do utworzonej mieszaniny dodajemy pokrojone kawa³ki chleba i skrapiamy to spreparowan¹ toksyn¹ z ¿¹d³a krwiopijcy.");
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "Tak utworzon¹ potrawê zostawiamy na kilka godzin aby toksyny z grzybów zd¹¿y³y wyparowaæ, po wszystkim mo¿emy zjeœæ danie. Uwaga! Z racji z³ego wp³ywu grzybów na organizm nie zaleca siê spo¿ywania tej potrawy wiêcej ni¿ raz na pó³ roku.");
+				Doc_PrintLines	( nDocID,  0, "Tak utworzon¹ potrawê zostawiamy na kilka godzin aby toksyny z grzybów zd¹¿y³y wyparowaæ, po wszystkim mo¿emy zjeœæ danie. Uwaga! Z racji z³ego wp³ywu grzybów na organizm nie zaleca siê spo¿ywania tej potrawy wiêcej ni¿ raz na pó³ roku.");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -359,7 +359,8 @@ func void Use_Przepis_Orkowy2 ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Orkowa zupa:");
+				Doc_PrintLines	( nDocID,  0, "Orkowa zupa");
+				Doc_PrintLines	( nDocID,  0, "Bonus: si³a +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "- 3x surowe miêso");
 				Doc_PrintLines	( nDocID,  0, "- 5x miêso chrz¹szcza");
@@ -411,7 +412,8 @@ func void Use_Przepis_UdziecZDzikaPoLowiecku ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Udziec z dzika po ³owiecku:"	);
+				Doc_PrintLines	( nDocID,  0, "Udziec z dzika po ³owiecku");
+				Doc_PrintLines	( nDocID,  0, "Bonus: zrêcznoœæ +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Oczyszczone ze œciêgien i resztek skóry miêso pieczemy nad ro¿nem, do momentu a¿ stanie siê dostatecznie chrupkie i soczyste. Nastêpnie kroimy je w kosteczkê i wrzucamy do utworzonego wczeœniej bulionu na bazie zió³ i chmielu. Po oko³o dwóch godzinach mo¿emy wlaæ ca³oœæ do miski.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -455,7 +457,8 @@ func void Use_Przepis_ZupaMleczna ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa mleczna:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa mleczna");
+				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Do gotowanego mleka wrzucamy kawa³ki makaronu i gotujemy tak przez 15 minut. Nastêpnie dorzucamy do ca³oœci trochê jagód zamieszanych z cukrem.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -499,7 +502,8 @@ func void Use_Przepis_ZupaGrzybowa ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa grzybowa:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa grzybowa");
+				Doc_PrintLines	( nDocID,  0, "Bonus: zrêcznoœæ +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Na samym pocz¹tku nale¿y pokroiæ piêæ piekielników i wrzuciæ je do garnka, by zaczê³y siê gotowaæ. W czasie dziesiêciu minut, kiedy wszystko bêdzie siê gotowaæ, wystarczy wrzuciæ do wywaru kilka liœci niebieskiego bzu i zamieszaæ. Po ugotowaniu dodajemy kawa³ki chleba i pieczonego miêsa.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -544,7 +548,8 @@ func void Use_Przepis_ZupaZDuzychGrzybow ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa z du¿ych grzybów:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa z du¿ych grzybów");
+				Doc_PrintLines	( nDocID,  0, "Bonus: si³a +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "W garnku umieœciæ miêso z siedmiu chrz¹szczy. Wlaæ dwa litry wody wymieszanej z po³ow¹ butelki wina, a nastêpnie gotowaæ na wolnym ogniu do momentu wrzenia. Kiedy wywar zacznie siê gotowaæ, wrzucamy do niego pokrojone kapelusze i trzonki trzech du¿ych grzybów. Po po³owie godziny wszystko powinno byæ gotowe do jedzenia.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -589,7 +594,8 @@ func void Use_Przepis_ZupaJarzynowaZJagodami ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa jarzynowa z jagodami:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa jarzynowa z jagodami");
+				Doc_PrintLines	( nDocID,  0, "Bonus: si³a +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "W garnku na ginie i mleku zeszkliæ pokrojone na kawa³ki liœcie zió³ leczniczych i ognistych pokrzyw. Dodaæ pokrojone w drobn¹ kostkê kawa³ki rzepy i gotowaæ do momentu wrzenia. Na samym koñcu dorzucamy do wszystkiego kilka ugniecionych jagód. Dwie polne i dwie leœne powinny wystarczyæ.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -633,7 +639,9 @@ func void Use_Przepis_ZupaSerowa ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa serowa:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa serowa"	);
+				Doc_PrintLines	( nDocID,  0, "Bonus: si³a +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Do garnka pe³nego wywaru powsta³ego w wyniku gotowania mleka wrzucamy trzy ca³e sery i mieszamy do momentu, a¿ ca³oœæ utworzy jedn¹, ci¹gn¹c¹ siê konsystencjê. Do poprawy smaku jak i zapachu wystarczy dodaæ piwo, które zrównowa¿y smak. Podawaj z kawa³kami chleba.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -678,7 +686,9 @@ func void Use_Przepis_PrzysmakMysliwych ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "'Przysmak myœliwych':"	);
+				Doc_PrintLines	( nDocID,  0, "'Przysmak myœliwych'");
+				Doc_PrintLines	( nDocID,  0, "Bonus: zrêcznoœæ +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Na patelniê wrzucamy piêæ kawa³ków miêsa, sma¿ymy i polewamy powoli winem, by je uszlachetniæ. W trakcie tych czynnoœci dla zaoszczêdzenia pokrój kilka jab³ek i usma¿ je razem z miêsem na patelni. Ca³oœæ wrzuciæ do miski i przyprawiæ czerwonym pieprzem z dodatkiem mieszanki zió³.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -723,7 +733,8 @@ func void Use_Przepis_KompotOwocowy ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Kompot owocowy:"	);
+				Doc_PrintLines	( nDocID,  0, "Kompot owocowy");
+				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Do garnka wlewamy zawartoœæ dwóch butelek wody i gotujemy a¿ do momentu wrzenia. Nastêpnie dorzucamy do wszystkiego pokrojone jab³ka i jagody, które ówczeœnie zgnietliœmy i pozbawiliœmy pestek. Kiedy sok z owoców wymiesza siê z wod¹, dodajemy cukru i rozlewamy do butelek.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -770,7 +781,9 @@ func void Use_Przepis_ZupaRybna ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Zupa rybna:"	);
+				Doc_PrintLines	( nDocID,  0, "Zupa rybna"	);
+				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Do garnka wrzucamy mieszankê zió³ i dodajemy do niej dwie ryby, które po oko³o dziesiêciu minutach powinny oddawaæ swój specyficzny zapach. Zio³a powinny po pewnym czasie zneutralizowaæ nieprzyjemn¹ woñ i nadaæ daniu nowy posmak. Ca³oœæ mo¿na zjeœæ z chlebem i winem.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -814,7 +827,9 @@ func void Use_Przepis_GulaszMiesny ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Gulasz miêsny:"	);
+				Doc_PrintLines	( nDocID,  0, "Gulasz miêsny"	);
+				Doc_PrintLines	( nDocID,  0, "Bonus: si³a +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Aby przyrz¹dziæ gulasz potrzebujemy kilka kawa³ków miêsa, grzyby, a tak¿e warzywa. Oczywiœcie usma¿one miêso kroimy na kawa³ki i wrzucamy do utworzonego w wyniku gotowania warzyw wywaru. Ca³oœæ dusimy oko³o godziny i wzbogacamy we wczeœniej pokrojone i oczyszczone grzyby.");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -858,7 +873,9 @@ func void Use_Przepis_PotrawkaZeScierwojada ()
 				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 
 				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Potrawka ze œcierwojada:"	);
+				Doc_PrintLines	( nDocID,  0, "Potrawka ze œcierwojada"	);
+				Doc_PrintLines	( nDocID,  0, "Bonus: zrêcznoœæ +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Przed przyst¹pieniem do gotowania oczyszczamy miêso œcierwojada ze œciêgien i marynujemy je w wywarze z gotowanego piwa. Po dniu oczekiwania mo¿emy wyci¹gn¹æ miêso z marynaty i rozpocz¹æ dalsze przygotowania. Ca³oœæ gotujemy razem z warzywami");
 				Doc_PrintLines	( nDocID,  0, "");
@@ -903,6 +920,8 @@ func void Use_Przepis_ZupaPiwna ()
 
 				Doc_PrintLine	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Zupa piwna:"	);
+				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
+
 				Doc_PrintLines	( nDocID,  0, ""						);
 				Doc_PrintLines	( nDocID,  0, "Miêso podsma¿any na garnku o grubym dnie, a¿ stanie siê wystarczaj¹co chrupi¹ce. Wyjmujemy miêso pozostawiaj¹c w garnku wytopiony t³uszcz, w którym sma¿ymy warzywa. Wszystko wrzucamy do piwa i gotujemy na wolnym ogniu. Po godzinie ca³oœæ winna byæ ju¿ gotowa.");
 				Doc_PrintLines	( nDocID,  0, "");

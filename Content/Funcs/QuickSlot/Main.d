@@ -459,7 +459,7 @@ func void QS_MobInteractionFix()
 };
 
 func void QS_UseItem(var int i)
-{	
+{
 	var oCNpc her; her 	= Hlp_GetNpc(hero);
 	var int itemPtr; itemPtr = QS_GetSlotItem(i);
 	

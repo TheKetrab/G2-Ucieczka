@@ -188,10 +188,12 @@ INSTANCE PC_PrayShrine_Pray (C_Info)
 
 FUNC INT PC_PrayShrine_Pray_Condition ()
 {
-	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_PRAYSHRINE)
-	{	
-		return TRUE;
-	};
+	// W UCIECZCE NIE MOZNA SIE MODLIC
+	return false;
+//	if (PLAYER_MOBSI_PRODUCTION	==	MOBSI_PRAYSHRINE)
+//	{	
+//		return TRUE;
+//	};
 };
 
 FUNC VOID PC_PrayShrine_Pray_Info()

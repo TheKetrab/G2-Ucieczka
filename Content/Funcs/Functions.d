@@ -146,20 +146,15 @@ func int C_IsPlantSkill_FactorItem()
 
 };
 
-
+// UWAGA -> to nie jest celowe procentowo, ale zostala nazwa funkcji
 func void PercentHealSelf(var int proc, var int attrb)
 {
 	var int atrb; atrb = MEM_ReadStatArr(self.attribute,attrb+1);
 	var int procent; procent = proc;//(atrb*proc)/100;
+	if(!procent) { procent = 1; };
 	
-	if(!procent)
-	{
-		procent = 1;
-	};
-	
-	if(C_IsPlantSkill_FactorItem())
-	{
-		procent*=2;
+	if(C_IsPlantSkill_FactorItem() && level_zielarstwa == 2) {
+		procent *= PlantSkill_Factor;
 	};
 	
 	Npc_ChangeAttribute(self,attrb,procent);

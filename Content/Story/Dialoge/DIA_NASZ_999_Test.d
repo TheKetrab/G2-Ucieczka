@@ -52,6 +52,7 @@ FUNC INT DIA_NASZ_999_Test_Teach_Condition()
 
 FUNC VOID DIA_NASZ_999_Test_Teach_Info()
 {
+
 	Info_ClearChoices (DIA_NASZ_999_Test_Teach);
 		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, DIALOG_BACK, DIA_NASZ_999_Test_Teach_BACK);
 		Info_AddChoice	  (DIA_NASZ_999_Test_Teach, "Regeneracja poz. 3", DIA_NASZ_999_Test_Teach_Regeneracja3);

@@ -748,7 +748,7 @@ instance ItMi_ApfelTabak(C_Item)
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "O s³odkim posmaku œwie¿ych jab³ek";
+	text[2] = "O s³odkim posmaku œwie¿ych jab³ek.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -762,7 +762,7 @@ instance ItMi_PilzTabak(C_Item)
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Mocna tabaka o smaku grzybów";
+	text[2] = "Mocna tabaka o smaku grzybów.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -790,7 +790,7 @@ instance ItMi_Honigtabak(C_Item)
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "S³odka tabaka z miodu";
+	text[2] = "S³odka tabaka z miodu.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };
@@ -804,7 +804,7 @@ instance ItMi_SumpfTabak(C_Item)
 	visual = "ItMi_Pocket.3ds";
 	material = MAT_LEATHER;
 	description = name;
-	text[2] = "Mieszanka bagiennego zio³a";
+	text[2] = "Mieszanka bagiennego zio³a.";
 	text[5] = NAME_Value;
 	count[5] = value;
 };

@@ -354,7 +354,8 @@ INSTANCE DIA_NASZ_304_Bam_CiezkiPancerz   (C_INFO)
 
 FUNC INT DIA_NASZ_304_Bam_CiezkiPancerz_Condition()	
 {
-	if (npc_knowsinfo (other, DIA_NASZ_304_Bam_QuestFinishMine))
+	// ukonczone:                           scenka w kopalni         lub                            przyniesione brylki
+	if (npc_knowsinfo (other, DIA_NASZ_304_Bam_QuestFinishMine) || npc_knowsinfo (other, DIA_NASZ_304_Bam_QuestDoneNugget))
 	&& (CiezkiPancerzBandytyKupiony == FALSE)
 	{
 		return TRUE;

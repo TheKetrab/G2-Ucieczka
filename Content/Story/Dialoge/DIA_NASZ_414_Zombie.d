@@ -45,10 +45,11 @@ FUNC VOID DIA_NASZ_414_Zombie_siema_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_414_Zombie_siema_15_00"); //AAARG! AAA. AAGRRRR!
 	
+	NASZ_414_Zombie.guild = GIL_ZOMBIE;
+	Npc_SetTrueGuild (NASZ_414_Zombie, GIL_ZOMBIE);
+
 	AI_StopProcessInfos (self);
 	B_Attack (NASZ_414_Zombie, other, AR_KILL, 1);
 	
-	NASZ_414_Zombie.guild = GIL_ZOMBIE;
-	Npc_SetTrueGuild (NASZ_414_Zombie, GIL_ZOMBIE);
 
 };

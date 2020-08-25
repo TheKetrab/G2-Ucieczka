@@ -207,7 +207,7 @@ FUNC VOID DIA_NASZ_130_Jenkins_EndOfMatt_Info()
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_EndOfMatt_15_10"); //Tak zrobiê.
 	
 	B_GivePlayerXP(700);
-	DodajReputacje(REP_LOWCY,2);
+	DodajReputacje(2,REP_LOWCY);
 	
 	Log_CreateTopic (TOPIC_Jenkins_bestia,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jenkins_bestia, LOG_SUCCESS);

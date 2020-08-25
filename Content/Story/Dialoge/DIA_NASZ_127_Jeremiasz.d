@@ -220,7 +220,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_HowdoYouFeel_Info()
 	B_LogEntry (TOPIC_Jeremiasz_lek, "Zadzia³a³o! Jeremiasz obudzi³ siê i znów jest spokojny i pe³en si³! Jeszcze trochê po¿yje.");
 	Log_SetTopicStatus (TOPIC_Jeremiasz_lek, LOG_SuCCESS);
 	B_GivePlayerXP(500);
-	DodajReputacje(REP_LOWCY,1);
+	DodajReputacje(1,REP_LOWCY);
 };
 
 

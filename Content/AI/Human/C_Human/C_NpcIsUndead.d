@@ -15,6 +15,7 @@ func int C_NpcIsUndead(var C_NPC slf)
      || (slf.guild == GIL_SHADOWBEAST_SKELETON)
      || (slf.guild == GIL_UNDEADORC)
      || (slf.aivar[AIV_MM_REAL_ID] == ID_DRAGON_UNDEAD)
+	 || (slf.id == 414) // NASZ_414_Zombie
      {
      	return TRUE;
      };

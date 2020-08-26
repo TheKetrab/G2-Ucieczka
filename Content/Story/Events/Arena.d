@@ -217,14 +217,13 @@ var int RethonKurganFightIterator;
 func void RethonKurganFight() {
 
 	RethonKurganFightIterator += 1;
-	Print(IntToString(RethonKurganFightIterator));
 
 	// incrementation
 	if (RethonKurganFightFinished == TRUE) { secRethonKurganFightFinished += 1; };
 	
 
 	// cond
-	if (RethonKurganFightIterator >= 2 && RethonKurganBeginingOneTime == FALSE) {
+	if (RethonKurganFightIterator >= 1 && RethonKurganBeginingOneTime == FALSE) {
 
 		//Print("BeginingOneTime");
 		RethonKurganBeginingOneTime = TRUE;
@@ -238,8 +237,7 @@ func void RethonKurganFight() {
 		Npc_ExchangeRoutine (NASZ_115_Kurgan, "KurganRethonArena");
 		Npc_ExchangeRoutine (NASZ_109_Rethon, "Arena");
 		
-		// UWAGA - kamere wy³¹czam, bo siê to pieprzy wszystko
-		Wld_SendTrigger("CAM_RETHON_KURGAN"); // TODO mo¿e na kiedyœ: untrigger dopiero gdy skoncza walczyc plus kilka sekund, to chyba trzeba ustawic w spacerze, zeby nie robilo automatycznie untriggera
+		Wld_SendTrigger("CAM_RETHON_KURGAN");
 	};
 	
 	if (Npc_GetDistToWP(NASZ_109_Rethon,"NASZ_LOWCY_ARENA_01") < 700)
@@ -284,12 +282,12 @@ func void RethonKurganFight() {
 		
 	};
 	
-	if (secRethonKurganFightFinished >= 3) {
+	if (secRethonKurganFightFinished >= 10) {
 		//Print("secAfter");
 		secRethonKurganFightFinished = 0;
 		RethonKurganFightIterator = 0;
 		Wld_SendUnTrigger("CAM_RETHON_KURGAN"); // - wy³¹czenie kamery
-		ff_Remove(RethonKurganFight); //  bogu: to chyba jest dobre // ten remove chyba jest z³y!!!
+		ff_Remove(RethonKurganFight);
 	};
 	
 };

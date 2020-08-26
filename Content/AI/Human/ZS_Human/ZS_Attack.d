@@ -82,6 +82,7 @@ func void ZS_Attack ()
 
 func int ZS_Attack_Loop ()
 {
+
 	// ----- NICHT unten, sonst bei LOAD Game other trotz B_ValidateOther verloren! Warum??? -----
 	Npc_GetTarget (self); // other = target
 	
@@ -308,7 +309,7 @@ func int ZS_Attack_Loop ()
 
 	// ------ Waffe ziehen oder wechseln ------
 	B_SelectWeapon (self, other);				//Waffe oder Spell ziehen
-	
+
 	// ------ ATTACK ------	
 	if ((Hlp_IsValidNpc(other)) 							
 	&& (C_NpcIsDown(other) == FALSE))

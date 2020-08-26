@@ -241,13 +241,12 @@ INSTANCE DIA_NASZ_109_Rethon_ready   (C_INFO)
 
 FUNC INT DIA_NASZ_109_Rethon_ready_Condition()
 {
-	// TODO !!!
-	//if (npc_knowsinfo (other, DIA_NASZ_109_Rethon_zadanie)
-	//&& (Kurgan_OK == TRUE))
-	//&& (KAPITEL < 3)
-	//{
+	if (npc_knowsinfo (other, DIA_NASZ_109_Rethon_zadanie)
+	&& (Kurgan_OK == TRUE))
+	&& (KAPITEL < 3)
+	{
 		return TRUE;
-	//};
+	};
 };
 
 FUNC VOID DIA_NASZ_109_Rethon_ready_Info()

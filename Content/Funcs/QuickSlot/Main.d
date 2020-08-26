@@ -28,17 +28,14 @@ func void QS_AI_EquipWeapon	(var int itemPtr)
 
 func void QS_CreateSlot(var int nr, var int itemPtr)
 {
-	MEM_Info(ConcatStrings("SlotID: ", inttostring(nr)));
-	MEM_Info("QS_CreateSlot #1");
+	// MEM_Info(ConcatStrings("SlotID: ", inttostring(nr)));
 	if(!itemPtr) { return; };
-	MEM_Info("QS_CreateSlot #2");
 	
-	var int slotHndl; 	slotHndl = new (CSlot@);		MEM_Info("QS_CreateSlot #3");
-	var CSlot slot;		slot		= get (slotHndl);	MEM_Info("QS_CreateSlot #4");
+	var int slotHndl; 	slotHndl = new (CSlot@);
+	var CSlot slot;		slot		= get (slotHndl);
 	
 	var int x;		 	x 		= QS_GetPosX(nr);	
 	var oCItem it; 		it		= _^(itemPtr);
-	MEM_Info("QS_CreateSlot #5");
 	
 	if(it.mainflag 			==	ITEM_KAT_DOCS)
 	{
@@ -51,14 +48,11 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	
 	var int pView; pView = View_CreateCenter(	QS_anx(x), 	QS_any(QS_SlotPosY),
 												QS_anx(QS_SlotSize), QS_any(QS_SlotSize));
-	MEM_Info("QS_CreateSlot #6");
 	slot.itemPtr 	= itemPtr;
 	slot.itemInst 	= it.instanz;
 	slot.pView 		= pView;
 	slot.pViewText 	= pView;
-	MEM_Info("QS_CreateSlot #7");
 	MEM_WriteStatArr	(QS_Data, 		nr, slotHndl);
-	MEM_Info("QS_CreateSlot #8");
 	pView = 0;
 	/*
 	if(Npc_HasEquippedWeapon(hero) && (it.mainflag == ITEM_KAT_NF || it.mainflag == ITEM_KAT_FF))
@@ -69,12 +63,11 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 
 func void QS_RemoveSlot(var int nr)
 {
-	var int slotPtr; slotPtr = MEM_ReadStatArr(QS_Data, nr); 	MEM_Info("QS_RemoveSlot #1");
+	var int slotPtr; slotPtr = MEM_ReadStatArr(QS_Data, nr);
 	if(!Hlp_IsValidHandle(slotPtr)) {
 		return;
-	};	MEM_Info("QS_RemoveSlot #2");
+	};
 	var CSlot slot; slot = get (slotPtr);
-	MEM_Info("QS_RemoveSlot #3");
 	
 	if(nr == QS_LastWeaponSlot)	{ QS_LastWeaponSlot = -1; };
 	
@@ -85,18 +78,16 @@ func void QS_RemoveSlot(var int nr)
 	var int itm; itm = QS_GetSlotItem(nr);
 	var c_item i; i = _^(itm);
 
-	
-	MEM_Info("QS_RemoveSlot #4");
 	if(Hlp_IsValidHandle(pView)){
 		View_Delete(pView);
 	};
-MEM_Info("QS_RemoveSlot #5");
+
 	if(Hlp_IsValidHandle(pViewText)){
 		View_Delete(pViewText);
 	};
-MEM_Info("QS_RemoveSlot #6");
-	MEM_WriteStatArr	(QS_Data, 		nr, 0);MEM_Info("QS_RemoveSlot #7");
-	release (slotPtr);MEM_Info("QS_RemoveSlot #8");
+
+	MEM_WriteStatArr	(QS_Data, 		nr, 0);
+	release (slotPtr);
 };
 
 func int QS_GetFirstSpell(var oCNpc her)
@@ -170,7 +161,6 @@ func int QS_CanPutInSlot(var int itemPtr)
 
 func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 {
-	MEM_Info("QS_PutSlot #1");
 	if(!QS_CanPutInSlot(itemPtr)){
 		return;
 	};
@@ -183,10 +173,8 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 	var int removeSlot_idx; removeSlot_idx 	= QS_GetSlotByItem(itemPtr);
 	
 	// Safe - remove slot nr
-	MEM_Info("QS_PutSlot #2");
 	QS_RemoveSlot(nr);
 	
-	MEM_Info("QS_PutSlot #3");
 	if(slotItem) {		
 		if(slotItem != itemPtr) {		
 			if(removeSlot_idx != -1)  {
@@ -201,7 +189,6 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 		QS_CreateSlot(nr, itemPtr);
 	};
 	
-	MEM_Info("QS_PutSlot #4");
 	var c_item it; it = _^(itemptr);
 	var c_item pIt; var int slot; var int pItem; 
 	if(it.mainflag == ITEM_KAT_NF)
@@ -215,7 +202,6 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 	if(it.mainflag == ITEM_KAT_NF&& it.flags &~ ITEM_SHIELD){slot = 1; pItem = QS_GetSlotItem(1);}
 	else{slot = 2; pItem = QS_GetSlotItem(2);};
 	
-	MEM_Info("QS_PutSlot #5");
 	var int pWeap; pWeap = _@(pIt);
 	if(pWeap == itemPtr && nr!=slot)
 	{
@@ -235,7 +221,6 @@ func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 				end;*/
 			//};
 	
-	MEM_Info("QS_PutSlot #6");
 
 };
 

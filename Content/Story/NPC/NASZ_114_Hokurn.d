@@ -53,8 +53,8 @@ FUNC VOID Rtn_Start_114 ()
 
 FUNC VOID Rtn_Arena_114 ()
 {
-	TA_Stand_Guarding	(08,00,23,00,"NASZ_LOWCY_ARENA_01");
-	TA_Stand_Guarding	(23,00,08,00,"NASZ_LOWCY_ARENA_01");		
+	TA_RunToWP	(08,00,23,00,"NASZ_LOWCY_ARENA_01");
+	TA_RunToWP	(23,00,08,00,"NASZ_LOWCY_ARENA_01");		
 };
 
 FUNC VOID Rtn_Twierdza_114 ()

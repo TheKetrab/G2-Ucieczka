@@ -70,23 +70,28 @@ func void DIA_NASZ_452_KurgKan_Die()
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Die_55_01"); //Nie, Kurg-Kan nie chcieæ walczyæ z Will-przyjaciel.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Die_15_02"); //Przykro mi, ale mog³eœ siê tego spodziewaæ b³¹kaj¹c siê przy obozie ludzi.
 	SaveKurgKan = -1;
-	AI_StopProcessInfos(self);
-	//Npc_PercDisable	(self,	PERC_ASSESSTALK);
-	self.guild = GIL_ORC;
-	Npc_SetTrueGuild(self, GIL_ORC);
-	Npc_SetTempAttitude (self, ATT_HOSTILE);
-	self.start_aistate				= ZS_MM_AllScheduler;
-	self.aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
-	//AI_Flee						(self);
-	
-	Perception_Set_Normal();
-	//TODO:bug z walk¹ z orkiem, trzeba najpewniej zrobiæ zs.
-	//AI_ReadyMeleeWeapon	(self);
-	//Npc_SetTarget (self, other );
-	//B_Attack (self, other, AR_KILL, 0);
 
 	B_LogEntry (TOPIC_Miecz_ork, "Problemem okaza³ siê byæ ork, stary znajomy o imieniu Kurg-Kan. Niestety, na wojnie nie mo¿na nikomu ufaæ, wiêc zaj¹³em siê tym problemem jak mog³em.");
 
+	// FIX UCIECZKA 1.1 - udalo sie naprawic to, ze KurgKan nie atakowal.
+	// Problemem bylo to, ze aivar AIV_FightDistCancel byl ustawiony na 0...
+	Info_ClearChoices(DIA_NASZ_452_KurgKan_Hello);
+	Info_AddChoice	(DIA_NASZ_452_KurgKan_Hello, DIALOG_ENDE, DIA_NASZ_452_KurgKan_DeadEnd);
+
+};
+
+func void DIA_NASZ_452_KurgKan_DeadEnd() {
+	
+	var c_npc kurgkan; kurgkan = Hlp_GetNpc(NASZ_452_KurgKan);
+	kurgkan.aivar[AIV_LASTTARGET] = PC_Hero;
+	
+	kurgkan.aivar[AIV_FightDistCancel] = 2000; // 20m
+	
+	AI_StopProcessInfos(self);
+	Perception_Set_Normal();
+	self.guild = GIL_ORC;
+	Npc_SetTrueGuild(self, GIL_ORC);
+	B_Attack(self,hero,AR_KILL,0);
 };
 
 

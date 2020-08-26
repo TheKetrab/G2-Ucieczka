@@ -793,7 +793,7 @@ const string spellFxInstanceNames[MAX_SPELL] =
 	"Teleport",				// 90	SPL_TeleportMysliwi
 	"Teleport",				// 91	SPL_TeleportLowcy
 	"Teleport",				// 92	SPL_TeleportBandyci
-	"KurganDuch",			// 93	SPL_Reserved_93
+	"KurganDuch",				// 93	SPL_KurganDuch
 	"Teleport",				// 94	SPL_TeleportOzywieniec
 	"Teleport",				// 95	SPL_TeleportAlchemicy
 	"Teleport",				// 96	SPL_TeleportTwierdza

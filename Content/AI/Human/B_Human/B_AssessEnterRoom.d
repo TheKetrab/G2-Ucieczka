@@ -116,6 +116,10 @@ func int B_AssessEnterRoom ()
 			return FALSE;
 		};
 		
+		if (Npc_IsInState (self, ZS_RunToWP)) {
+			return FALSE;
+		};
+		
 		// ------ Aus Bett aufstehen de-synchronisieren ------
 		if (C_BodyStateContains (self, BS_LIE))
 		{

@@ -1333,8 +1333,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_rethon3_Info()
 
 FUNC VOID DIA_NASZ_115_Kurgan_rethon3_end()
 {
-	FF_ApplyOnceExt (RethonKurganFight, 1000, -1); // 1 na sekunde
 	AI_StopProcessInfos(self);
+	FF_ApplyOnceExt (RethonKurganFight, 1000, -1); // 1 na sekunde
+
 };
 
 //*********************************************************************

@@ -69,6 +69,13 @@ FUNC VOID Rtn_Arena_115()
 	TA_RunToWP		(23,00,08,00,"NASZ_LOWCY_ARENA_01");
 };
 
+FUNC VOID Rtn_KurganRethonArena_115()
+{
+	TA_RunToWP	 	(08,00,23,00,"NASZ_LOWCY_ARENA_01_A");
+	TA_RunToWP		(23,00,08,00,"NASZ_LOWCY_ARENA_01_A");
+};
+
+
 FUNC VOID Rtn_Twierdza_115()
 {
 	TA_Stand_Guarding	 	(08,00,23,00,"OW_PATH_190");

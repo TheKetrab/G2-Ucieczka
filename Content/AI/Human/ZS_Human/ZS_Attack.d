@@ -15,6 +15,7 @@ func void B_AssessSurprise()
 
 func void ZS_Attack ()
 {
+	
 	Perception_Set_Minimal();				//alle diese Wahrnehmungen werden den ZS_Attack NICHT verlassen
 
 	// ------ lokale Wahrnehmung für verwandelten SC ------
@@ -81,7 +82,6 @@ func void ZS_Attack ()
 
 func int ZS_Attack_Loop ()
 {
-			
 	// ----- NICHT unten, sonst bei LOAD Game other trotz B_ValidateOther verloren! Warum??? -----
 	Npc_GetTarget (self); // other = target
 	
@@ -121,7 +121,8 @@ func int ZS_Attack_Loop ()
 	};
 	
 	// ------ Kampfabbruch, wenn zu weit weg ------
-	if (Npc_GetDistToNpc (self, other) > self.aivar[AIV_FightDistCancel])
+	if (self.id != 115 && self.id != 109)
+	&& (Npc_GetDistToNpc (self, other) > self.aivar[AIV_FightDistCancel])
 	{
 		Npc_ClearAIQueue(self);
 		AI_StandUp		(self);
@@ -166,7 +167,6 @@ func int ZS_Attack_Loop ()
 		B_ClearPerceptions (self);
 		Npc_ClearAIQueue(self);
 		AI_StandUpQuick(self);
-		
 		CzasZakonczycWalkeZPowoduX = FALSE;
 		
 		return LOOP_END;
@@ -202,8 +202,9 @@ func int ZS_Attack_Loop ()
 			B_Say (self, other,	"$RUNCOWARD");
 		};
 	};
-	
+
 	// ------ Warten, ob Feind auch wirklich flieht ------
+
 	if (self.aivar[AIV_PursuitEnd] == TRUE)
 	{
 		// ------ weit genug weg ------
@@ -255,7 +256,7 @@ func int ZS_Attack_Loop ()
 	
 	
 	// LOOP FUNC
-	
+
 	// ------ Vor Attacke kurz warten (bei Angriff aus Dialog) ------
 	if (self.aivar[AIV_WaitBeforeAttack] >= 1) //nur einmal
 	{
@@ -383,7 +384,7 @@ func int ZS_Attack_Loop ()
 			{
 				self.aivar[AIV_LastFightComment] = TRUE; //kein Kommentar abegeben
 			};
-			
+
 			return LOOP_END;
 		};
 	};

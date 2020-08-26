@@ -70,14 +70,13 @@ FUNC VOID Rtn_Start_109 ()
 
 FUNC VOID Rtn_Arena_109 ()
 {
-	TA_RunToWP		(08,00,22,00,"NASZ_LOWCY_ARENA_01");
-	TA_RunToWP		(22,00,08,00,"NASZ_LOWCY_ARENA_01");
+	TA_RunToWP		(08,00,22,00,"NASZ_LOWCY_ARENA_01_B");
+	TA_RunToWP		(22,00,08,00,"NASZ_LOWCY_ARENA_01_B");
 
 };
 
 FUNC VOID Rtn_BeforeRethonKurganFight_109 ()
 {
-	// TODO smalltalk with kurgan
 	TA_Smalltalk		(08,00,22,00,"NASZ_LOWCY_ARENA_06");
 	TA_Smalltalk		(22,00,08,00,"NASZ_LOWCY_ARENA_06");
 

@@ -50,6 +50,11 @@ func void ZS_ObservePlayer ()
 
 func int ZS_ObservePlayer_Loop ()
 {
+	// EXIT IF KURGAN-RETHON FIGHT
+	if (self.id == 115 || self.id == 109) && (RethonKurganFightIterator >= 1) {
+		return LOOP_END;
+	};
+	
 	// ------ SC schleicht ------
 	if (C_BodyStateContains(other,BS_SNEAK))
 	&& (Player_SneakerComment == FALSE)

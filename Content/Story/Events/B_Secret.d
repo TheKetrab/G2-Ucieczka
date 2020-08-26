@@ -449,6 +449,7 @@ func void Xardas_Old_PRZELACZNIK_S1 ()
 
 var int NodKlifOneTime;
 //*******************
+var int NodKlifDelayTimer;
 func void NOD_KLIF ()
 {
 	if (NodKlifOneTime == FALSE)
@@ -456,11 +457,27 @@ func void NOD_KLIF ()
 		Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
 		NodKlifOneTime = TRUE;
 		NieznanyTPActivated = TRUE;
-		Npc_RemoveInvItems	(hero ,ItAt_DemonHeart, 1);
 		Snd_Play ("MFX_TELEKINESIS_STARTINVEST");
 		Wld_SendTrigger ("MOVER_KLIF_1");
 		Wld_SendTrigger ("MOVER_KLIF_2");
 		Wld_SendTrigger ("MOVER_TP_NIEZNANY");
+		
+		// FIX UCIECZKA 1.1 - usuwanie tutaj serca nie dziala,
+		// bo w tym momencie serce jest uzywane w mobintern.
+		// trzeba to odsunac w czasie, np o 2 sekundy
+		NodKlifDelayTimer = 0;
+		ff_applyonceext(Nod_Klif_Delay,1000,-1);
+	};
+};
+
+func void Nod_Klif_Delay() {
+
+	NodKlifDelayTimer += 1;
+	
+	if (NodKlifDelayTimer == 2) {
+		//Print(CS("DEMON KLIF " , IntToString(npc_hasitems(hero,ItAt_DemonHeart))));
+		Npc_RemoveInvItems	(hero ,ItAt_DemonHeart, 1);
+		ff_remove(Nod_Klif_Delay);
 	};
 };
 

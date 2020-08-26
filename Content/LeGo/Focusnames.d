@@ -3,8 +3,8 @@
 \***********************************/
 
 func int Focusnames_Color_Friendly() {
-    //return RGBA(0,   255, 0,   255); // Grün
-	return RGBA(255, 255, 255, 255); // Grün
+    return RGBA(255, 255, 255, 255); // Weiß
+//    return RGBA(0,   255, 0,   255); // Grün
 };
 
 func int Focusnames_Color_Neutral() {
@@ -12,13 +12,13 @@ func int Focusnames_Color_Neutral() {
 };
 
 func int Focusnames_Color_Angry() {
-    //return RGBA(255, 180, 0,   255); // Orange
-	return RGBA(255, 255, 255, 255); // Grün
+//    return RGBA(255, 180, 0,   255); // Orange
+    return RGBA(255, 255, 255, 255); // Weiß
 };
 
 func int Focusnames_Color_Hostile() {
-    //return RGBA(255, 0,   0,   255); // Rot
-	return RGBA(255, 255, 255, 255); // Grün
+//    return RGBA(255, 0,   0,   255); // Rot
+    return RGBA(255, 255, 255, 255); // Weiß
 };
 
 
@@ -41,38 +41,7 @@ func void _Focusnames() {
 		var c_item itm; itm = MEM_PtrToInst(her.focus_vob);
 	// Setze col = RGBA(.., .., .., ..); um die Farbe einzustellen
 	}
-	else if (Hlp_Is_oCMobContainer(her.focus_vob)) 
-	{
-		var oCMobContainer m; m =_^(her.focus_vob);
-		if (Hlp_StrCmp(m._zCObject_objectName,"ARTEFAKT_MISTIC")) {
-			col = Focusnames_Color_Neutral();
-		}
-		else if(m._oCMobLockable_bitfield & oCMobLockable_bitfield_locked)
-		{
-			if(STR_LEN(m._oCMobLockable_keyInstance))
-			{
-				col = rgba(255, 255, 0, 1);
-			}
-			else
-			{
-				col = RGBA(255, 180, 0,   255);
-			};
-		}
-		else
-		{
-			if(m.containList_next)
-			{
-				 col = RGBA(0,   255, 0,   255);
-			}
-			else
-			{
-				col = Focusnames_Color_Neutral();
-			};
-		
-		};
-	}
-	else
-	{
+	else {
 		col = Focusnames_Color_Neutral();
 	};
 

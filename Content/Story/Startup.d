@@ -23,7 +23,7 @@ func void INIT_GLOBAL()
 	Game_InitGerman();
 	//reinit kursora
 	Cursor_Hndl = 0;
-	LeGo_Init (LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Saves  | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS);
+	LeGo_Init ((LeGo_All | LeGo_PrintS | LeGo_Buffs | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Random | LeGo_Saves  | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Timer | GFA_LEGO_FLAGS) & ~LeGo_Bloodsplats);
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL); 

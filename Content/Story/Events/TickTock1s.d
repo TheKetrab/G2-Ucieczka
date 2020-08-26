@@ -1729,7 +1729,7 @@ func void Regeneracja()
 		return;
 	};
 	//Regeneracja
-   if (hero.attribute[ATR_HITPOINTS] > 0 && !HasHeroPosion())
+   if (hero.attribute[ATR_HITPOINTS] > 0 && !HasHeroPoison())
    {
 	
 	  if (level_regeneracji == 1)

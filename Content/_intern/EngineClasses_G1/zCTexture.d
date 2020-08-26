@@ -3,7 +3,7 @@ const int zCResource_bitfield0_cacheOutLock      = ((1 <<  1) - 1) <<  8;
 const int zCResource_bitfield0_cacheClassIndex   = ((1 <<  8) - 1) << 16;
 const int zCResource_bitfield0_managedByResMan   = ((1 <<  1) - 1) << 24;
 const int zCResource_bitfield1_cacheInPriority   = ((1 << 16) - 1) <<  0;
-const int zCResource_bitfield1_canBeCachedOut    = ((1 <<  1) - 1) << 16;
+// const int zCResource_bitfield1_canBeCachedOut = ((1 <<  1) - 1) << 16; //G2 only
 
 class zCResource {
     //zCObject {
@@ -80,14 +80,14 @@ class zCTex_D3D {
 
     //zCTextureExchange
       var int _zCTextureExchange_vtbl;
-    
+
     //zCTexture
-      var int _zCTexture_nextAni[3];     
-      var int _zCTexture_prevAni[3];     
-      var int _zCTexture_actAniFrame[3]; 
+      var int _zCTexture_nextAni[3];
+      var int _zCTexture_prevAni[3];
+      var int _zCTexture_actAniFrame[3];
       var int _zCTexture_numAniFrames[3];
       var int _zCTexture_bitfield;
-    
+
     var int xtex_textureflag; //tends to be 0xDEADFACE
     var int bitfield;
 
@@ -101,16 +101,16 @@ class zCTex_D3D {
         var int xtex_texinfo_averageColor;  // zCOLOR
 
     //zCSurfaceCache_D3D::zCSlotIndex xtex_slotindex
-		var int	xtex_slotindex_dynamic;            //int
-		var int	xtex_slotindex_pixelformat;        //int
-		var int	xtex_slotindex_mipmaps;            //int
-		var int	xtex_slotindex_width;              //int
-		var int	xtex_slotindex_height;             //int
-    
+    var int xtex_slotindex_dynamic;            //int
+    var int xtex_slotindex_pixelformat;        //int
+    var int xtex_slotindex_mipmaps;            //int
+    var int xtex_slotindex_width;              //int
+    var int xtex_slotindex_height;             //int
+
     var int xtex_pPalettePtr;           //char*
     var int xtex_pddpal;                //IDirectDrawPalette*
-    var int xtex_internalnumber;        //int                      
-    var int xtex_alphaTex;              //zBOOL                    
+    var int xtex_internalnumber;        //int
+    var int xtex_alphaTex;              //zBOOL
     var int xtex_pddtex[12];            //IDirectDrawSurface7*
     var int xtex_pddtemporarytex[12];   //IDirectDrawSurface7*
     var int xtex_lastFrameUsed;         //int

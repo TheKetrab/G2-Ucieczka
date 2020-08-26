@@ -1607,3 +1607,14 @@ func void OrcSawYou_Active()
 	};
 
 };
+
+
+func int HasHeroPoison()
+{
+	if(Buff_Has(hero,Poison1HP) || Buff_Has(hero,Poison5HP) || Buff_Has(hero,Poison10HP))
+	{
+		return true;
+	};
+
+	return false;
+};

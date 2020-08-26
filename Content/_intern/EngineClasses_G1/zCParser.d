@@ -56,7 +56,7 @@ class zCParser {
         var int stack_stacksize;                        //0x0054 int //Stackgroesse in Bytes
     
     //zCPar_DataStack           datastack;              //Daten-Stack
-        var int datastack_stack[/*zMAX_SYM_DATASTACK*/ 2048];     //0x0058 //sehr klein. Bei korrekter Nutzung aber egal.
+        var int datastack_stack[/*zMAX_SYM_DATASTACK*/ 1024];     //0x0058 //sehr klein. Bei korrekter Nutzung aber egal.
         var int datastack_sptr;                                   //0x085C int
     
     var int _self;                                      //zCPar_Symbol*
@@ -231,7 +231,7 @@ const int zPAR_TOK_CALL         = 61; //0x3D    //rufe Funktion auf. Es folgen 4
 const int zPAR_TOK_CALLEXTERN   = 62; //0x3E    //rufe External auf. Es folgen 4 byte Symbol der External
 const int zPAR_TOK_POPINT       = 63; //0x3F    //ungenutzt
 const int zPAR_TOK_PUSHINT      = 64; //0x40    //schiebe Integer Konstante auf den Datenstack. Es folgt die Integerkonstante (4 byte)
-const int zPAR_TOK_PUSHVAR      = 65; //0x41    //schiebe Variable auf den Datenstack. Es folt der Symbolindex der Variable (4 byte)
+const int zPAR_TOK_PUSHVAR      = 65; //0x41    //schiebe Varaible auf den Datenstack. Es folt der Symbolindex der Variable (4 byte)
 const int zPAR_TOK_PUSHSTR      = 66; //0x42    //ungenutzt
 const int zPAR_TOK_PUSHINST     = 67; //0x43    //schiebe Instanz auf den Datenstack. Es folgen die 4 byte Symbolindex der Instanz
 const int zPAR_TOK_PUSHINDEX    = 68; //0x44    //ungenutzt

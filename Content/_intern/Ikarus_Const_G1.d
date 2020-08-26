@@ -1,4 +1,4 @@
-const int GOTHIC_BASE_VERSION = 2;
+const int GOTHIC_BASE_VERSION = 1;
 
 //--------------------------------------
 // Nutzervariablen:
@@ -35,75 +35,122 @@ const int    zERR_DEBUG_ERRORBOX = 0;              //Eine Error-Box anzeigen (zu
 //--------------------------------------
 
 //Parser
-const int ContentParserAddress      = 11223232; //0xAB40C0;
-const int vfxParserPointerAddress   =  9234156; //0x8CE6EC
-const int menuParserPointerAddress  =  9248360; //0x8D1E68
-const int pfxParserPointerAddress   =  9278004; //0x8D9234
+const int ContentParserAddress      =  9293320;//0x8DCE08
+const int vfxParserPointerAddress   =  8822380;//0x869E6C
+const int menuParserPointerAddress  =  8836056;//0x86D3D8
+const int pfxParserPointerAddress   =  8864640;//0x874380
 
 //ShowDebug-Einstellung
-const int showDebugAddress = 11232372; //0xAB6474
+const int showDebugAddress = 9298376;//0x8DE1C8
 
 //Array mit alle erzeugten (und nicht wieder zerstörten) Menüs
-const int MEMINT_MenuArrayOffset = 9248324; //0x8D1E44
-const int MEMINT_MenuItemArrayAddres = 9248508; //0x8D1EFC
+const int MEMINT_MenuArrayOffset = 8836020;//0x86D3B4
+const int MEMINT_MenuItemArrayAddres = 8836196; //0x86D464
 
 //Ein paar nützliche statische Objekte
-const int MEMINT_oGame_Pointer_Address = 11208836; //0xAB0884
-const int MEMINT_zTimer_Address = 10073044; //0x99B3D4
-const int MEMINT_oCInformationManager_Address = 11191384; //0xAAC458
-const int MEMINT_gameMan_Pointer_address = 9185624; //0x8C2958
+const int MEMINT_oGame_Pointer_Address = 9283260; //0x8DA6BC
+const int MEMINT_zTimer_Address = 9236968;//0x8CF1E8
+const int MEMINT_oCInformationManager_Address = 10328072;//0x9D9808
+
+const int MEMINT_gameMan_Pointer_address = 8776164; //0x85E9E4
 
 //Zufallszahlenarray der Engine (für Hashwerte):
-const int crc_table_address = 8598048; //0x833220
+const int crc_table_address = 8211704;//0x7D4CF8
 
 //Arrays mit Informationen zu gedrückten Tasten
-const int MEMINT_KeyEvent_Offset  = 9246328; //0x8D1678
-const int MEMINT_KeyToggle_Offset = 9246904;
-const int MEMINT_KeyBuffer_offset = 9248080; //0x8D1D50
+const int MEMINT_KeyEvent_Offset = 8834248;//0x86CCC8
+const int MEMINT_KeyToggle_Offset = 8834768;//0x86CED0
+const int MEMINT_KeyBuffer_offset = 8835804;//0x86D2DC
 
 //Statisches Zeug vom Spawnmanager
-const int SPAWN_INSERTTIME_MAX_Address = 9153740;/*8BACCC*/ //zREAL*
-const int SPAWN_INSERTRANGE_Address    = 9153744;/*8BACD0*/ //zREAL*
-const int SPAWN_REMOVERANGE_Address    = 9153748;/*8BACD4*/ //zREAL*
+const int SPAWN_INSERTTIME_MAX_Address = 8720304; //0x850FB0 //zREAL*
+const int SPAWN_INSERTRANGE_Address    = 8720308; //0x850FB4 //zREAL*
+const int SPAWN_REMOVERANGE_Address    = 8720312; //0x850FB8 //zREAL*
 
-//Die Weltzeit wird nicht weiter gezählt, falls gesetzt
-const int game_holdTime_Address = 11208840; //0xAB0888 //zBOOL*
+/* In Gothic 1 nicht vorhanden: 
+	const int game_holdTime_Address; //zBOOL*
+*/
 
 //Statische Eigenschaften betreffend der Untertitelanzeige:
-const int oCNpc_isEnabledTalkBox_Address        =  9142548; //0x8B8114 //zBOOL* //dominiert die drei folgenden Einstellungen
-const int oCNpc_isEnabledTalkBoxPlayer_Address  =  9142552; //0x8B8118 //zBOOL*
-const int oCNpc_isEnabledTalkBoxAmbient_Address = 11216504; //0xAB2678 //zBOOL*
-const int oCNpc_isEnabledTalkBoxNoise_Address   = 11216508; //0xAB267C //zBOOL*
+const int oCNpc_isEnabledTalkBox_Address        =  8707644; //84DE3C //zBOOL*
+
+/* In Gothic 1 nicht vorhanden:
+	const int oCNpc_isEnabledTalkBoxPlayer_Address;		 //zBOOL*
+	const int oCNpc_isEnabledTalkBoxAmbient_Address;	 //zBOOL*
+	const int oCNpc_isEnabledTalkBoxNoise_Address;		 //zBOOL*
+*/
 
 //globaler Screen (vom Typ zCView), da liegt z.B HP-Bar etc drin.
-const int screen_offset = 11232360;	//0xAB6468
+const int screen_offset = 9298364;	//0x8DE1BC
 
 //Gekapselte Gothic.ini (zum Zugriff stehen Funktionen bereit)
-const int zoptions_Pointer_Address = 9230728; //0x8CD988
+const int zoptions_Pointer_Address = 8820372; //0x869694
 //[modname].ini (zum Zugriff stehen Funktionen bereit)
-const int zgameoptions_Pointer_Address = 9230732; //0x8CD98C
-
-//bspFrameCtr:
-const int bspFrameCtr_Address = 9259332; //0x8D4944;
+const int zgameoptions_Pointer_Address = 8820376; //0x869698
 
 //Performance Counter Ticks per Millisecond
-const int PC_TicksPerMS_Address = 9255828; //0x8D3B94
+const int PC_TicksPerMS_Address = 8842796; //0x86EE2C
 
 //--------------------------------------
 // Sonstige Konstanten
 //--------------------------------------
 
 //Adresse der Methodentabellen zur Unterscheidung von Objekten
-const int oCMobFire_vtbl        = 8638876;
-const int zCMover_vtbl          = 8627324;
-const int oCMob_vtbl            = 8639700;
-const int oCMobInter_vtbl       = 8639884;
-const int oCMobLockable_vtbl    = 8637628;
-const int oCMobContainer_vtbl   = 8637284;
-const int oCMobDoor_vtbl        = 8638548;
-const int oCItem_vtbl           = 8636420;
-const int oCNpc_vtbl            = 8640292;
-const int zCVobLight_vtbl		= 8624756;
+const int oCMobFire_vtbl        = 8247780;
+const int zCMover_vtbl          = 8241068;
+const int oCMob_vtbl            = 8248572;
+const int oCMobInter_vtbl       = 8248756;
+const int oCMobContainer_vtbl   = 8246268;
+const int oCMobDoor_vtbl        = 8247468;
+const int oCItem_vtbl           = 8245452;
+const int oCNpc_vtbl            = 8249140;
+
+const int oCMobBed_vtbl         = 8245708;
+const int oCMobSwitch_vtbl      = 8245988;
+const int oCMobLockable_vtbl    = 8246596;
+
+//orcwarriors constants:
+
+const int zCEventMenager_vtbl            = 8251772;
+const int poCollisionObject_vtbl     	 = 8256180;
+const int poCollisionObjectClass_vtbl    = 7711376;
+const int oCView_vtbl           		 = 8251936;
+const int oCViewStatusBar_vtbl           = 8197216;
+const int zCSkyController_Outdoor_vtbl   = 8243908;
+const int oWorld_vtbl   				 = 8251596;
+const int oCGame_vtbl   				 = 8244204;
+const int zCAIBase_vtbl					 = 8200912;
+const int oCAIHuman_vtbl   				 = 8243220;
+//const int zCVisual_vtbl   			 = ?
+const int zCModel_vtbl   				 = 8208364;
+const int oCNpcTalent_vtbl   			 = 8249116;
+const int zCRoute_vtbl   				 = 8252184;
+const int oCMobLadder_vtbl    			 = 8247188;	
+const int oCInfoMenager_vtbl   			 = 6705872;	
+const int zString_vtbl   				 = 8193768;	
+const int zCZoneSound_vtbl 				 = 8243052;	
+const int zCZoneMusicDefault_vtbl		 = 8252620;	
+const int zCZoneMusic_vtbl				 = 8252476;	
+const int zCCSManager_vtbl				 = 8194068;	
+const int zCAICamera_vtbl				 = 8201664;	
+const int zCVob_vtbl				 	 = 8238156;
+const int oCGameInfo_vtbl			 	 = 8196140;	
+const int zCMenuItem_vtbl		 	 	 = 8251988;
+const int zCTexture_vtbl			 	 = 8254100;
+const int zCMaterial_vtbl			 	 = 8208076;
+const int zCMesh_vtbl			 	 	 = 8208236;
+const int oCFreepoint_vtbl			  	 = 8252220;
+const int oCLensFlare_vtbl			  	 = 8240412;
+const int zCVobSound_vtbl			  	 = 8243052;
+//const int oCWaypoint_vtbl			  	 = ?
+const int zCVobLight_vtbl			  	 = 8238388;
+const int oCTriggerScript_vtbl		  	 = 8196940;
+const int oCMobWheel_vtbl            	 = 8246908;
+const int zCZoneSoundDaytime_vtbl 		 = 8242900;	
+const int oCTriggerChangeLevel_vtbl		 = 8196812;
+const int zCDecal_vtbl					 = 8241804;
+const int oCMeshSoftSkin_vtbl			 = 8209812;
+const int oCModelAni_vtbl				 = 8208660;
 
 //--------------------------------------
 // Tasten
@@ -123,9 +170,9 @@ const int KEY_7               = 08;
 const int KEY_8               = 09;
 const int KEY_9               = 10;
 const int KEY_0               = 11;
-const int KEY_MINUS           = 12;
+const int KEY_MINUS           = 12; 
 const int KEY_EQUALS          = 13;
-const int KEY_BACK            = 14;
+const int KEY_BACK            = 14; 
 const int KEY_TAB             = 15;
 const int KEY_Q               = 16;
 const int KEY_W               = 17;
@@ -139,7 +186,7 @@ const int KEY_O               = 24;
 const int KEY_P               = 25;
 const int KEY_LBRACKET        = 26;
 const int KEY_RBRACKET        = 27;
-const int KEY_RETURN          = 28;
+const int KEY_RETURN          = 28; 
 const int KEY_LCONTROL        = 29;
 const int KEY_A               = 30;
 const int KEY_S               = 31;
@@ -152,7 +199,7 @@ const int KEY_K               = 37;
 const int KEY_L               = 38;
 const int KEY_SEMICOLON       = 39;
 const int KEY_APOSTROPHE      = 40;
-const int KEY_GRAVE           = 41;
+const int KEY_GRAVE           = 41; 
 const int KEY_LSHIFT          = 42;
 const int KEY_BACKSLASH       = 43;
 const int KEY_Z               = 44;
@@ -163,11 +210,11 @@ const int KEY_B               = 48;
 const int KEY_N               = 49;
 const int KEY_M               = 50;
 const int KEY_COMMA           = 51;
-const int KEY_PERIOD          = 52;
-const int KEY_SLASH           = 53;
+const int KEY_PERIOD          = 52; 
+const int KEY_SLASH           = 53; 
 const int KEY_RSHIFT          = 54;
-const int KEY_MULTIPLY        = 55;
-const int KEY_LMENU           = 56;
+const int KEY_MULTIPLY        = 55; 
+const int KEY_LMENU           = 56; 
 const int KEY_SPACE           = 57;
 const int KEY_CAPITAL         = 58;
 const int KEY_F1              = 59;
@@ -181,23 +228,23 @@ const int KEY_F8              = 66;
 const int KEY_F9              = 67;
 const int KEY_F10             = 68;
 const int KEY_NUMLOCK         = 69;
-const int KEY_SCROLL          = 70;
+const int KEY_SCROLL          = 70; 
 const int KEY_NUMPAD7         = 71;
 const int KEY_NUMPAD8         = 72;
 const int KEY_NUMPAD9         = 73;
-const int KEY_SUBTRACT        = 74;
+const int KEY_SUBTRACT        = 74; 
 const int KEY_NUMPAD4         = 75;
 const int KEY_NUMPAD5         = 76;
 const int KEY_NUMPAD6         = 77;
-const int KEY_ADD             = 78;
+const int KEY_ADD             = 78; 
 const int KEY_NUMPAD1         = 79;
 const int KEY_NUMPAD2         = 80;
 const int KEY_NUMPAD3         = 81;
 const int KEY_NUMPAD0         = 82;
-const int KEY_DECIMAL         = 83;
-const int KEY_OEM_102         = 86;
-const int KEY_F11             = 87;
-const int KEY_F12             = 88;
+const int KEY_DECIMAL         = 83; 
+const int KEY_OEM_102         = 86; 
+const int KEY_F11             = 87; 
+const int KEY_F12             = 88; 
 const int KEY_F13             = 100;
 const int KEY_F14             = 101;
 const int KEY_F15             = 102;

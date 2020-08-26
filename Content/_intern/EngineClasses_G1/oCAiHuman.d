@@ -187,8 +187,7 @@ class oCAniCtrl_Human {
         var int _zCAIPlayer_model;                           
         var int _zCAIPlayer_world;                  
         var int _zCAIPlayer_centerPos[3];                         
-        var int _zCAIPlayer_feetY;
-        var int _zCAIPlayer_headY;                  
+        var int _zCAIPlayer_feetY   , headY;                  
         var int _zCAIPlayer_aboveFloor;                       
         var int _zCAIPlayer_waterLevel;                       
         var int _zCAIPlayer_velocityLen2;                     
@@ -198,7 +197,7 @@ class oCAniCtrl_Human {
         var int _zCAIPlayer_slidePolyNormal[3];        
         var int _zCAIPlayer_checkWaterCollBodyLen;  
         var int _zCAIPlayer_modelHeadNode;          
-        var int _zCAIPlayer_bitfield[3]; 
+        var int _zCAIPlayer_bitfield[3];
         var int _zCAIPlayer_bloodVobList_array; 
         var int _zCAIPlayer_bloodVobList_numAlloc;
         var int _zCAIPlayer_bloodVobList_numInArray; 

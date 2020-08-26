@@ -1,15 +1,10 @@
-/*
-//zCZone / zCZoneMusic sind relativ uninteressante Klassen.
+/* address of the pointer that points to the current MusicZone.
+   poorly tested, was null most of the time, don't know why. */
+const int oCZoneMusic__s_musiczone_Address = 9299212; //0x8DE50C //oCZoneMusic*
 
-class zCZone / zCZoneMusic { //beide Klassen vom Speicherbild identisch
-    //[zVob Stuff....]
-    zCWorld             *world; //einzige neue Eigenschaft
-};
-*/
-
-class zCZoneZFog {  
-//class zCZoneZFogDefault { //beide Klassen vom Speicherbild identisch
-    //zCVob {
+class oCZoneMusic {
+//class oCZoneMusicDefault { //beide Klassen vom Speicherbild identisch
+    //  zCVob {
         //zCObject {
         var int    _vtbl;
         var int    _zCObject_refCtr;
@@ -26,8 +21,6 @@ class zCZoneZFog {
         var int    _zCVob_trafoObjToWorld[16];
         var int    _zCVob_bbox3D_mins[3];
         var int    _zCVob_bbox3D_maxs[3];
-        var int    _zCVob_bsphere3D_center[3];
-        var int    _zCVob_bsphere3D_radius;
         var int    _zCVob_touchVobList_array;
         var int    _zCVob_touchVobList_numAlloc;
         var int    _zCVob_touchVobList_numInArray;
@@ -39,10 +32,6 @@ class zCZoneZFog {
         var int    _zCVob_trafo;
         var int    _zCVob_visual;
         var int    _zCVob_visualAlpha;
-        var int    _zCVob_m_fVobFarClipZScale;
-        var int    _zCVob_m_AniMode;
-        var int    _zCVob_m_aniModeStrength;
-        var int    _zCVob_m_zBias;
         var int    _zCVob_rigidBody;
         var int    _zCVob_lightColorStat;
         var int    _zCVob_lightColorDyn;
@@ -55,12 +44,15 @@ class zCZoneZFog {
         var int    _zCVob_m_poCollisionObject;
     //zCZone
         var int     _zCZone_world;      //zCWorld*
-    
-    //zCZoneZFog, Eigenschaften aus dem Spacer bekanntrrun scripts
-    
-    var int fogRangeCenter;  //zREAL     
-    var int innerRangePerc;  //zREAL     
-    var int fogColor;        //zCOLOR   
-    var int bFadeOutSky;     //zBOOL     
-    var int bOverrideColor;  //zBOOL     
+
+    //oCZoneMusic
+	var int enabled;			//zBOOL
+	var int local_enabled;		//zBOOL
+	var int priority;			//int
+	var int ellipsoid;			//zBOOL
+	var int reverbLevel;		//float
+	var int volumeLevel;		//float
+	var int loop;				//zBOOL
+	var int dayEntranceDone;    //zBOOL
+	var int nightEntranceDone;  //zBOOL
 };

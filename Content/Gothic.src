@@ -1,15 +1,10 @@
 _INTERN\CONSTANTS.D
 _INTERN\CLASSES.D
 
-
-
 AI\AI_INTERN\AI_CONSTANTS.D
 
-_INTERN\IKARUS_CONST_G2.D
-_INTERN\ENGINECLASSES_G2\*.D
-_INTERN\IKARUS.D
-_INTERN\float.D
-LeGo\Header.src
+_INTERN\Ikarus_G2.src
+LeGo\Header_G2.src
 Funcs\Functions.d
 Funcs\RandomCombination.d
 Funcs\Achievements.d

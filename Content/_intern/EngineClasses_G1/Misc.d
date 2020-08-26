@@ -45,7 +45,7 @@ class zList {
 //template <class T> 
 class zCList {
     var int data;               //T*
-    var int next;               //zCList<T>*
+    var int next;               //zCListSort<T>*
 };
 
 //template <class T> 
@@ -88,7 +88,7 @@ class zMATRIX4 {
 //  zTPlane: Ebene im Raum
 //------------------------------------------------
 
-class zTPlane 
+class zTPlane
 {
     var int distance;    //zREAL    //vermutlich Distanz zum Ursprung (was sonst?)
     var int normal[3];   //zPOINT3  //normalenvektor
@@ -100,10 +100,10 @@ class zTPlane
 
 /* Bedeutung von zCPolygon.portalPoly:
 
-    enum zTPortalType   { zPORTAL_TYPE_NONE         = 0, 
-                          zPORTAL_TYPE_SMALL        = 1, 
-                          zPORTAL_TYPE_BIG          = 2, 
-                          zPORTAL_TYPE_BIG_NOFADE   = 3 
+    enum zTPortalType   { zPORTAL_TYPE_NONE         = 0,
+                          zPORTAL_TYPE_SMALL        = 1,
+                          zPORTAL_TYPE_BIG          = 2,
+                          zPORTAL_TYPE_BIG_NOFADE   = 3
                         };
 */
 const int zCPolygon_bitfield_polyNumVert            = ((1 <<  8) - 1) <<  0;
@@ -113,35 +113,40 @@ const int zCPolygon_bitfield_sectorPoly             = ((1 <<  1) - 1) << 11;
 const int zCPolygon_bitfield_mustRelight            = ((1 <<  1) - 1) << 12;
 const int zCPolygon_bitfield_portalIndoorOutdoor    = ((1 <<  1) - 1) << 13;
 const int zCPolygon_bitfield_ghostOccluder          = ((1 <<  1) - 1) << 14;
-const int zCPolygon_bitfield_noDynLightNear         = ((1 <<  1) - 1) << 15;
-const int zCPolygon_bitfield_sectorIndex            = ((1 << 16) - 1) << 16; //indoor only
+const int zCPolygon_bitfield_normalMainAxis         = ((1 <<  2) - 1) << 16; //G1 only
+const int zCPolygon_bitfield_sectorIndex            = ((1 <<  8) - 1) << 24; //indoor only
+const int zCPolygon_bitfield1_sectorIndex           = ((1 <<  8) - 1) <<  0; //continued
+/* sectorIndex is split between bitfield[0] and bitfield[1]. Access like so:
+    ((bitfield[0] & zCPolygon_bitfield_sectorIndex) << 8) + (bitfield[1] & zCPolygon_bitfield1_sectorIndex)
+*/
 
 class zCVertFeature {
     var int vertNormal[3];    //zPOINT3
-	var int lightStat;        //zCOLOR	
-	var int lightDyn;         //zCOLOR	
-	var int texu;             //zVALUE	
-    var int texv;             //zVALUE 
+    var int lightStat;        //zCOLOR
+    var int lightDyn;         //zCOLOR
+    var int texu;             //zVALUE
+    var int texv;             //zVALUE
+    var int _empty;           //zVALUE //Padding?
 };
 
-class zCPolygon 
+class zCPolygon
 {
 /*0x0000*/    var int vertex;                 //zCVertex** //array
 /*0x0004*/    var int lastTimeDrawn;          //int
-    
+
               //zTPlane               polyPlane;
 /*0x0008*/        var int polyPlane_distance;     //zREAL
 /*0x000C*/        var int polyPlane_normal[3];    //zVEC3
-    
+
 /*0x0018*/    var int material;               //zCMaterial*
 /*0x001C*/    var int lightmap;               //zCLightMap*
 
-/*0x0020*/    var int clipVert;               //zCVertex      **    
+/*0x0020*/    var int clipVert;               //zCVertex      **
 /*0x0024*/    var int clipFeat;               //zCVertFeature **
 /*0x0028*/    var int numClipVert;            //int
 
 /*0x002C*/    var int feature;                //zCVertFeature ** //array
-/*0x0030*/    var int bitfield;
+/*0x0030*/    var int bitfield[1];
 };
 
 class zCMaterial {
@@ -152,88 +157,78 @@ class zCMaterial {
       var int    _zCObject_hashNext;
       var string _zCObject_objectName;
 
-	//zCArray<zCPolygon*>		polyList;
+    //zCArray<zCPolygon*>       polyList;
         var int polyList_array;         //zCPolygon**
         var int polyList_numAlloc;      //int
         var int polyList_numInArray;    //int
-        
-    var int polyListTimeStamp;          //zDWORD		
-	var int texture;                    //zCTexture*	
-	var int color;						//zCOLOR		
-	var int smoothAngle;                //zREAL		
-	var int matGroup;                   //zTMat_Group	
-	var int bspSectorFront;			    //zCBspSector*	 //outdoor
-	var int bspSectorBack;				//zCBspSector*	 //outdoor
-	var int texAniCtrl;                 //zCTexAniCtrl
-	var int detailObjectVisualName;     //zSTRING*		
 
-	var int kambient;                        //zREAL
+    var int polyListTimeStamp;          //zDWORD
+    var int texture;                    //zCTexture*
+    var int color;                      //zCOLOR
+    var int smoothAngle;                //zREAL
+    var int matGroup;                   //zTMat_Group
+    var int bspSectorFront;             //zCBspSector*   //outdoor
+    var int bspSectorBack;              //zCBspSector*   //outdoor
+    var int texAniCtrl;                 //zCTexAniCtrl
+    var int detailObjectVisualName;     //zSTRING*
+
+    var int kambient;                        //zREAL
     var int kdiffuse;                        //zREAL
-    
-    var int m_bEnvironmentalMappingStrength; //zREAL
-    
-    var int bitfield[7]; //???
-    
+
+    var int bitfield[6]; //???
+
     /*
-		zUINT8				 smooth					: 1;
-		zUINT8				 dontUseLightmaps		: 1;
-		zUINT8				 texAniMap				: 1;
-		zUINT8				 lodDontCollapse		: 1;
-		zUINT8				 noCollDet				: 1;
-		zUINT8				 forceOccluder			: 1;
-		zUINT8				 m_bEnvironmentalMapping: 1;
-		zUINT8				 polyListNeedsSort		: 1;
-		zUINT8				 matUsage				: 8;
-		zUINT8				 libFlag				: 8;
-		zTRnd_AlphaBlendFunc rndAlphaBlendFunc		: 8;
-		zUINT8				 m_bIgnoreSun			: 1;
-	*/
-	                                       
-	var int m_enuWaveMode;                   //zTWaveAniMode	
-	var int m_enuWaveSpeed;                  //zTFFT			
-	var int m_fWaveMaxAmplitude;             //float			
-	var int m_fWaveGridSize;                 //float			
-                                           
-	var int detailTexture;                   //zCTexture*                  
-	var int detailTextureScale;              //zREAL		                    
-	var int texAniMapDelta[2];               //zPOINT2		                
-                                           
-	var int default_mapping[2];              //zPOINT2		                    
-	var int texScale[2];                     //zPOINT2		                        
+        zUINT8               smooth                 : 1;
+        zUINT8               dontUseLightmaps       : 1;
+        zUINT8               texAniMap              : 1;
+        zUINT8               lodDontCollapse        : 1;
+        zUINT8               noCollDet              : 1;
+        zUINT8               polyListNeedsSort      : 1;
+        zUINT8               matUsage               : 8;
+        zUINT8               libFlag                : 8;
+        zTRnd_AlphaBlendFunc rndAlphaBlendFunc      : 8;
+    */
+
+    var int detailTexture;                   //zCTexture*
+    var int detailTextureScale;              //zREAL
+    var int texAniMapDelta[2];               //zPOINT2
+
+    var int default_mapping[2];              //zPOINT2
+    var int texScale[2];                     //zPOINT2
 };
 
 class zTPortalInfo {
-	var int visible;        //zBYTE
-	var int alpha;          //zBYTE
+    var int visible;        //zBYTE
+    var int alpha;          //zBYTE
 };
 
 class zCBspSector {
-	var string sectorName;             //zSTRING
-	
-    //zCArray<zCBspBase*>				sectorNodes;
+    var string sectorName;             //zSTRING
+
+    //zCArray<zCBspBase*>               sectorNodes;
         var int sectorNodes_array;        //zCBspBase**
         var int sectorNodes_numAlloc;    //int
         var int sectorNodes_numInArray;  //int
-        
-	var int sectorIndex;		        //zDWORD
-    
-	//zCArray<zCPolygon*>				sectorPortals;
+
+    var int sectorIndex;                //zDWORD
+
+    //zCArray<zCPolygon*>               sectorPortals;
         var int sectorPortals_array;        //zCPolygon**
         var int sectorPortals_numAlloc;    //int
         var int sectorPortals_numInArray;  //int
-    
-	//zCArray<zTPortalInfo>			sectorPortalInfo;
+
+    //zCArray<zTPortalInfo>         sectorPortalInfo;
         var int sectorPortalInfo_array;      //zTPortalInfo*
         var int sectorPortalInfo_numAlloc;  //int
         var int sectorPortalInfo_numInArray;//int
-    
-	var int activated;          //zTFrameCtr	
-	var int rendered;           //zTFrameCtr	
-	//zTBBox2D	 activePortal;
+
+    var int activated;          //zTFrameCtr
+    var int rendered;           //zTFrameCtr
+    //zTBBox2D   activePortal;
         var int mins[2];                //zVEC2
         var int maxs[2];                //zVEC2
-	var int sectorCenter[3];	//zVEC3
-	var int hasBigNoFade;		//zBOOL8	
+    var int sectorCenter[3];    //zVEC3
+    var int hasBigNoFade;       //zBOOL8
 };
 
 //--------------------------------------
@@ -241,8 +236,8 @@ class zCBspSector {
 //--------------------------------------
 
 class zTBBox3D {
-	var int mins[3]; //zPOINT3	
-	var int maxs[3]; //zPOINT3
+    var int mins[3]; //zPOINT3
+    var int maxs[3]; //zPOINT3
 };
 
 //--------------------------------------
@@ -250,14 +245,14 @@ class zTBBox3D {
 //--------------------------------------
 
 class oCPortalRoom {
-    var string portalName;    //zSTRING 
-    var string ownerNpc;      //zSTRING 
-    var int ownerGuild;    //int           
+    var string portalName;    //zSTRING
+    var string ownerNpc;      //zSTRING
+    var int ownerGuild;    //int
 };
 
 class oCPortalRoomManager {
-    var int oldPlayerPortal;    //zSTRING*      
-    var int curPlayerPortal;    //zSTRING*      
+    var int oldPlayerPortal;    //zSTRING*
+    var int curPlayerPortal;    //zSTRING*
     var int oldPlayerRoom;      //oCPortalRoom*
     var int curPlayerRoom;      //oCPortalRoom*
 
@@ -265,7 +260,7 @@ class oCPortalRoomManager {
         var int portals_array;      //oCPortalRoom**
         var int portals_numAlloc;   //int
         var int portals_numInArray; //int
-        var int portals_compare;    //int (*Compare)(const oCPortalRoom* ele1,const oCPortalRoom* ele2); //sortiert nach Portalnamen.
+        var int portals_compare;    //int (*Compare)(const oCPortalRoom* ele1,const oCPortalRoom* ele2);
 };
 
 //--------------------------------------
@@ -276,17 +271,13 @@ class zCTimer {
     var int factorMotion;        //zREAL        //nicht zu klein machen. Sonst: Freeze bei hoher Framerate!
     var int frameTimeFloat;      //zREAL [msec] //Zeit der zwischen diesem und dem letzten Frame verstrichen ist
     var int totalTimeFloat;      //zREAL [msec] //gesamte Zeit
-    var int frameTimeFloatSecs;  //zREAL  [s]
-    var int totalTimeFloatSecs;  //zREAL  [s]
     var int lastTimer;           //zDWORD
     var int frameTime;           //zDWORD [msec] //nochmal als Ganzahl
     var int totalTime;           //zDWORD [msec]
     var int minFrameTime;        //zDWORD       //antifreeze. Sonst wird die Framezeit auf 0 gerundet und nichts bewegt sich
-          
-    var int forcedMaxFrameTime;  //zDWORD //länger als das darf ein Frame (in Spielzeit) nicht dauern. Um zu große Zeitsprünge für die Objekte zu vermeiden? Jedenfalls sort dies dafür, dass das Spiel langsamer läuft, wenn das Spiel mit rendern nicht hinterherkommt.
 };
 
-const int oCWorldTimer_TicksPerHour		  = 250000;
+const int oCWorldTimer_TicksPerHour       = 250000;
 const int oCWorldTimer_TicksPerMin_approx = 4167; //< 1 sec / Tag daneben
 
 class oCWorldTimer {
@@ -323,8 +314,6 @@ class oCSpawnManager {
     var int spawningEnabled;        //zBOOL
     var int camPos[3];              //zVEC3
     var int insertTime;             //zREAL //Verzögerungszeit des Spawnmanagers (Performancegründe)
-
-    var int spawnFlags; //war mal ne Kopierschutz Sache, böse Raubkopierer hatten mit gepimpten immortal Flags zu kämpfen. jetzt ungenutzt.
 };
 
 //--------------------------------------
@@ -353,109 +342,86 @@ const int zCVobLight_bitfield_colorAniLoop   = ((1 << 1) - 1) <<  4;
 const int zCVobLight_bitfield_isTurnedOn     = ((1 << 1) - 1) <<  5;
 const int zCVobLight_bitfield_lightQuality   = ((1 << 4) - 1) <<  6;
 const int zCVobLight_bitfield_lightType      = ((1 << 4) - 1) << 10;
-const int zCVobLight_bitfield_m_bCanMove     = ((1 << 1) - 1) << 14;
-
-const int zCVobLight_lightData_colorAniList_array_offset = 300; //0x12C
 
 class zCVobLight {
-    //zCVob {
-      //zCObject {
-      var int    _vtbl;
-      var int    _zCObject_refCtr;
-      var int    _zCObject_hashIndex;
-      var int    _zCObject_hashNext;
-      var string _zCObject_objectName;
-      //}
-      var int    _zCVob_globalVobTreeNode;
-      var int    _zCVob_lastTimeDrawn;
-      var int    _zCVob_lastTimeCollected;
-      var int    _zCVob_vobLeafList_array;
-      var int    _zCVob_vobLeafList_numAlloc;
-      var int    _zCVob_vobLeafList_numInArray;
-      var int    _zCVob_trafoObjToWorld[16];
-      var int    _zCVob_bbox3D_mins[3];
-      var int    _zCVob_bbox3D_maxs[3];
-      var int    _zCVob_bsphere3D_center[3];
-      var int    _zCVob_bsphere3D_radius;
-      var int    _zCVob_touchVobList_array;
-      var int    _zCVob_touchVobList_numAlloc;
-      var int    _zCVob_touchVobList_numInArray;
-      var int    _zCVob_type;
-      var int    _zCVob_groundShadowSizePacked;
-      var int    _zCVob_homeWorld;
-      var int    _zCVob_groundPoly;
-      var int    _zCVob_callback_ai;
-      var int    _zCVob_trafo;
-      var int    _zCVob_visual;
-      var int    _zCVob_visualAlpha;
-      var int    _zCVob_m_fVobFarClipZScale;
-      var int    _zCVob_m_AniMode;
-      var int    _zCVob_m_aniModeStrength;
-      var int    _zCVob_m_zBias;
-      var int    _zCVob_rigidBody;
-      var int    _zCVob_lightColorStat;
-      var int    _zCVob_lightColorDyn;
-      var int    _zCVob_lightDirectionStat[3];
-      var int    _zCVob_vobPresetName;
-      var int    _zCVob_eventManager;
-      var int    _zCVob_nextOnTimer;
-      var int    _zCVob_bitfield[5];
-      var int    _zCVob_m_poCollisionObjectClass;
-      var int    _zCVob_m_poCollisionObject;
+//  zCVob {
+//      zCObject {
+            var int    vfptr;
+            var int    _zCObject_refCtr;
+            var int    _zCObject_hashIndex;
+            var int    _zCObject_hashNext;
+            var string _zCObject_objectName;
+//      }
+        var int        _zCVob_globalVobTreeNode;
+        var int        _zCVob_lastTimeDrawn;
+        var int        _zCVob_lastTimeCollected;
+        var int        _zCVob_vobLeafList_array;
+        var int        _zCVob_vobLeafList_numAlloc;
+        var int        _zCVob_vobLeafList_numInArray;
+        var int        _zCVob_trafoObjToWorld[16];
+        var int        _zCVob_bbox3D_mins[3];
+        var int        _zCVob_bbox3D_maxs[3];
+        var int        _zCVob_touchVobList_array;
+        var int        _zCVob_touchVobList_numAlloc;
+        var int        _zCVob_touchVobList_numInArray;
+        var int        _zCVob_type;
+        var int        _zCVob_groundShadowSizePacked;
+        var int        _zCVob_homeWorld;
+        var int        _zCVob_groundPoly;
+        var int        _zCVob_callback_ai;
+        var int        _zCVob_trafo;
+        var int        _zCVob_visual;
+        var int        _zCVob_visualAlpha;
+        var int        _zCVob_rigidBody;
+        var int        _zCVob_lightColorStat;
+        var int        _zCVob_lightColorDyn;
+        var int        _zCVob_lightDirectionStat[3];
+        var int        _zCVob_vobPresetName;
+        var int        _zCVob_eventManager;
+        var int        _zCVob_nextOnTimer;
+        var int        _zCVob_bitfield[5];
+        var int        _zCVob_m_poCollisionObjectClass;
+        var int        _zCVob_m_poCollisionObject;
+//  }
     
     //Ein Licht Vob kann verschiedene Farben und Reichweite haben.
     //Schließlich gibt es animierte Lichter!
     
-             //zCVobLightData    lightData;
-                 //zCArray<zVALUE>       rangeAniScaleList; //zREAL ~ zVALUE
-/*0x120*/            var int lightData_rangeAniScaleList_array;      //zVALUE*
-/*0x124*/            var int lightData_rangeAniScaleList_numAlloc;   //int
-/*0x128*/            var int lightData_rangeAniScaleList_numInArray; //int
-         
-                 //zCArray<zCOLOR>       colorAniList;
-/*0x12C*/            var int lightData_colorAniList_array;           //zCOLOR*
-/*0x130*/            var int lightData_colorAniList_numAlloc;        //int
-/*0x134*/            var int lightData_colorAniList_numInArray;      //int
-                 
-/*0x138*/        var int lensFlareFXNo;                              //int                  
-/*0x13C*/        var int lensFlareFX;                                //zCLensFlareFX*
-                 
-/*0x140*/        var int lightColor;                                 //zCOLOR //Alphakanal hier irrelevant
-/*0x144*/        var int range;                                      //zVALUE
-/*0x148*/        var int rangeInv;                                   //zVALUE
-/*0x14C*/        var int rangeBackup;                                //zVALUE
-                 
-                 //Daten zur Lichtanimation
-                 //Zustand der Reichweitenanimation
-/*0x150*/        var int rangeAniActFrame;                           //zVALUE
-/*0x154*/        var int rangeAniFPS;                                //zVALUE
-                 
-                 //Zustand der Farbanimation
-/*0x158*/        var int colorAniActFrame;                           //zVALUE                
-/*0x15C*/        var int colorAniFPS;                                //zVALUE                
-                 
-                 // spotLights? Ich kenne das Feature nicht.
-/*0x160*/        var int spotConeAngleDeg;                           //zREAL
-                 
-                 //Siehe Auflistung oben
-/*0x164*/        var int bitfield;
+    //zCVobLightData    lightData;
+        //zCArray<zVALUE>       rangeAniScaleList; //zREAL ~ zVALUE
+            var int lightData_rangeAniScaleList_array;      //zVALUE*
+            var int lightData_rangeAniScaleList_numAlloc;   //int
+            var int lightData_rangeAniScaleList_numInArray; //int
         
-    
-             //zTRayTurboValMap<zCPolygon*, int>affectedPolyMap;
-                 /*
-                 struct zSNode                                   
-                 {                                               
-                     KEY             m_Key       ;               
-                     ELEMENT         m_Element   ;               
-                     unsigned long   m_u32Hash   ;               
-                     zSNode*         m_pNext     ;               
-                 }; */
-                 //zCArray<zSNode*>              m_arrNodes;
-/*0x168*/            var int affectedPolyMap_m_arrNodes_array;       //zSNode**
-/*0x16C*/            var int affectedPolyMap_m_arrNodes_numAlloc;    //int
-/*0x170*/            var int affectedPolyMap_m_arrNodes_nunInArray;  //int
-    
-/*0x174*/    var string lightPresetInUse;                //zSTRING
+        //zCArray<zCOLOR>       colorAniList;
+            var int lightData_colorAniList_array;           //zCOLOR*
+            var int lightData_colorAniList_numAlloc;        //int
+            var int lightData_colorAniList_numInArray;      //int
+        
+        var int lensFlareFXNo;                              //int                  
+        var int lensFlareFX;                                //zCLensFlareFX*
+        
+        var int lightColor;                                 //zCOLOR //Alphakanal hier irrelevant
+        var int range;                                      //zVALUE
+        var int rangeInv;                                   //zVALUE
+        var int rangeBackup;                                //zVALUE
+        
+        //Daten zur Lichtanimation
+        //Zustand der Reichweitenanimation
+        var int rangeAniActFrame;                           //zVALUE
+        var int rangeAniFPS;                                //zVALUE
+        
+        //Zustand der Farbanimation
+        var int colorAniActFrame;                           //zVALUE                
+        var int colorAniFPS;                                //zVALUE                
+        
+        // spotLights? Ich kenne das Feature nicht.
+        var int spotConeAngleDeg;                           //zREAL
+        
+        //Siehe Auflistung oben
+        var int bitfield;
+        
+    var string lightPresetInUse;                //zSTRING
 };
 
 //--------------------------------------
@@ -512,7 +478,7 @@ class oCMag_Book {
 */
 
 class zString {
-    var int _vtbl;
+    var int _vtbl; //immer 0
     var int _allocater; //immer 0
     var int ptr; //pointer zu den Daten
     var int len; //Länge des Strings
@@ -535,47 +501,49 @@ const int sizeof_zString = 20;
  * man zCClassDef für die Klasse zCVob.
  */
 
+const int zCClassDef_bitfield_archiveVersion    = ((1 << 16) - 1) <<  0; //zWORD
+const int zCClassDef_bitfield_archiveVersionSum = ((1 << 16) - 1) << 16; //zWORD
+
 class zCClassDef {
     var string className;            //zSTRING
     var string baseClassName;        //zSTRING
     var string scriptClassName;      //zSTRING
     var int baseClassDef;            //zCClassDef* //davon abgeleitet
-    
+
     var int createNewInstance;       //zCObject* ( *) (void) //Pointer auf klassenspezifische Funktion
     var int createNewInstanceBackup; //zCObject* ( *) (void) //Pointer auf klassenspezifische Funktion
-    
+
     /*
     enum zTClassFlags {
         zCLASS_FLAG_SHARED_OBJECTS      = 1<<0, //Mehrfach benutzt Objekte (wie Visuals zum Beispiel)
         zCLASS_FLAG_TRANSIENT           = 1<<1, //Flüchtig, soll nicht gespeichert werden.
         zCLASS_FLAG_RESOURCE            = 1<<2, //keine Ahnung / vermutlich irrelevant
     };*/
-    
+
     var int classFlags;              //zDWORD //siehe enum
     var int classSize;               //zDWORD //Größe in Bytes
-    
+
     var int numLivingObjects;        //Anzahl Objekte von dieser Klasse
     var int numCtorCalled;           //Konstruktor wurde sooft aufgerufen
-    
+
     var int hashTable;               //zCObject** //Hashtabelle der Größe 1024. Objekte sind mit zCObject.hashNext verknüpft, falls mehrere auf den selben Wert hashen.
     //zCArray<zCObject*> objectList;    //alle benannten (!) Objekte von genau (!) dieser Klasse (!) //Ausrufezeichenanmerkungen: 1.) unbenannte sind nicht drin 2.) Objekte von Unterklassen sind nicht drin 3.) diese Eigenschaft kann sehr nützlich sein.
         var int objectList_array;       //zCObject**
         var int objectList_numAlloc;    //int
         var int objectList_numInArray;  //int
-    
-    var int archiveVersion;          //zWORD //vermutlich nutzlos
-    var int archiveVersionSum;       //zWORD //vermutlich nutzlos
-};      
+
+    var int bitfield;
+};
 
 //--------------------------------------
 // oCLogTopic
 //--------------------------------------
 
 class oCLogTopic {
-	var string   		m_strDescription;
-	var int       		m_enuSection	; //LOG_MISSION / LOG_NOTE
-	var int            	m_enuStatus		; //LOG_RUNNING / ...
-	
+    var string          m_strDescription;
+    var int             m_enuSection    ; //LOG_MISSION / LOG_NOTE
+    var int             m_enuStatus     ; //LOG_RUNNING /
+
     //zCList<zString> m_lstEntries;
         var int m_lstEntries_data; //zString*
         var int m_lstEntries_next; //zCList<zString>*
@@ -588,7 +556,7 @@ class oCLogManager {
     var int next; //zCList<oCLogTopic>*
 };
 
-const int oCLogManager_Ptr = 11191608; //0xAAC538
+const int oCLogManager_Ptr = 10328172; //0x9D986C
 
 //--------------------------------------
 // zERROR

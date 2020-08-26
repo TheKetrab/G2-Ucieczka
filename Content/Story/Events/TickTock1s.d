@@ -1286,8 +1286,6 @@ func void _TickTock_1s()
 	
 	// ticktocki w innych plikach
 	
-	if (C_BodyStateContains(hero, BS_DIVE)) { DivingTime += 1; Print(ConcatStrings("Diving time = ",IntToString(DivingTime))); };
-	
 	ARENA();
 	Check_OSIAGNIECIA();
 	

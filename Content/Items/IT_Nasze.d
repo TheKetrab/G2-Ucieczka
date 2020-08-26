@@ -5489,7 +5489,7 @@ INSTANCE ItNa_List_Keroloth (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_List_Keroloth;
 	scemeName			=	"MAP";
-	description			= 	"";
+	description			= 	name;
 };
 func void Use_List_Keroloth ()
 {   
@@ -5538,7 +5538,7 @@ INSTANCE ItNa_List_AranOrkowie (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_List_AranOrkowie;
 	scemeName			=	"MAP";
-	description			= 	"";
+	description			= 	name;
 };
 func void Use_List_AranOrkowie ()
 {
@@ -8978,7 +8978,7 @@ INSTANCE  ItNa_Artefakt_Sila (C_ITEM)
 
 	description			= 	name;
 
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia";
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
 	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
 
 };
@@ -8997,7 +8997,7 @@ INSTANCE  ItNa_Artefakt_Moc (C_ITEM)
 
 	description			= 	name;
 
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia";
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
 	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
 
 };
@@ -9016,7 +9016,7 @@ INSTANCE  ItNa_Artefakt_Odpornosc (C_ITEM)
 
 	description			= 	name;
 
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia";
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
 	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
 
 };
@@ -9034,7 +9034,7 @@ INSTANCE ItNa_Artefakt_Caly (C_Item)
 	material 			=	MAT_STONE;
 
 	description			= 	name;
-	TEXT	[0]			=	"Klucz do niedostêpnego klifu";
+	TEXT	[0]			=	"Klucz do niedostêpnego klifu.";
 	INV_ZBIAS			= 	INVCAM_ENTF_MISC3_STANDARD;
 };
 
@@ -11089,7 +11089,7 @@ INSTANCE ITNA_DjgHelmet (C_Item)
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_RogatyHelm (C_Item)
 {
-	name = "Rogaty He³m";
+	name = "Rogaty he³m";
 	mainflag = ITEM_KAT_NF;
 	flags = 0;
 	description = name;

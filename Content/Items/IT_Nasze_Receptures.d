@@ -339,7 +339,7 @@ INSTANCE ItNa_Przepis_Orkowy2 (C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   Use_Przepis_Orkowy2;
 	scemeName			=	"MAP";
-	description			= 	"Przet³umaczony orkowy przepis.";
+	description			= 	"Przet³umaczony orkowy przepis";
 };
 
 func void Use_Przepis_Orkowy2 ()

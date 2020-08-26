@@ -23,8 +23,6 @@ instance NASZ_122_Daniel (Npc_Default)
 
 	// ------ Inventory ------
 	B_CreateAmbientInv 	(self);
-	CreateInvItems (self, ItKE_Dexter,1);
-	CreateInvItems 	(self, ItWr_RavensKidnapperMission_Addon, 1 );
 		
 	// ------ visuals ------																			
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_NormalBart_Dexter, BodyTex_N, ITAR_Prisoner);	

@@ -295,7 +295,7 @@ func void B_AssessDamage ()
 	
 	if (Npc_IsPlayer (other)) && (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(NASZ_119_Udar)) && (Npc_HasReadiedRangedWeapon(hero) == TRUE) && (KuszaLowcyUbrana == TRUE)
 	{
-		PrintScreen	("Strzeliles w Udara.", -1,-1, "font_old_20_white.tga",5);
+		PrintScreen	("Strzeli³eœ w Udara.", -1,-1, "font_old_20_white.tga",5);
 		WillStrzelilWUdara = TRUE;
 		return;
 	};

@@ -109,7 +109,7 @@ const string	TOPIC_Keroloth_wojna		=	"Wojna";						//+1L(Kopacz)+1L(WalkaPodTwie
 //																				//+2L(Finito)							| +200(Kopacz)+300(Walka)	| brak... TODO: dorobic nagrode???
 //																				//										| +1000 finito = 1600		|
 const string	TOPIC_Keroloth_pomoc		=	"Pomoc strzelców";				//+2L									| +700						| 250z³ota, teleport do twierdzy
-const string	TOPIC_CatSan_ostrze			=	"Ostrze Ducha";					// ---									| +700						| ---
+const string	TOPIC_CatSan_ostrze			=	"Ostrze ducha";					// ---									| +700						| ---
 
 
 //---------- Lowcy ----------
@@ -121,7 +121,7 @@ const string	TOPIC_Jenkins_bestia		=	"W poszukiwaniu nieumar³ej bestii";//+2L			
 const string	TOPIC_Jan_helmy				=	"He³my odesz³ych ¿o³nierzy";	//+2L									| +700						| pierœcieñ ¿ycia ItRi_Hp_02
 const string	TOPIC_Udar_presja			=	"Presja czasu";					//+2L									| +700						| ---
 const string	TOPIC_Silas_ryzowka			=	"Schowek z ry¿ówk¹";			//+2L									| +700						| butelka ry¿ówki
-const string	TOPIC_OrcWeapon				=	"Broñ dla Orka";				//+2L lub +1L							| +700						| 100 szt. z³ota
+const string	TOPIC_OrcWeapon				=	"Broñ dla orka";				//+2L lub +1L							| +700						| 100 szt. z³ota
 
 //---------- Mysliwi ----------
 const string	TOPIC_Benito_jaszczuroludzie =	"Jaszczuroludzie";				//+4M									| +300+700=1000				| ---

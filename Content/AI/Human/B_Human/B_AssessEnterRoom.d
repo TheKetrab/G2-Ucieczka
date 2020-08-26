@@ -135,7 +135,7 @@ func int B_AssessEnterRoom ()
 		|| (Npc_IsInState (self, ZS_Sleep))
 		//|| (Npc_IsInState (self, ZS_Smalltalk))
 		//|| (Npc_IsInState (self, ZS_Smoke_Joint))
-		|| (Npc_IsInState (self, ZS_Stand_ArmsCrossed))
+		|| (Npc_IsInState (self, ZS_Stand_ArmsCrossed) && Npc_GetDistToWP(self,"NASZ_MYSLIWI_GRUPA_04") > 2500) // jesli to Tabuk, to nie obserwuj
 		//|| (Npc_IsInState (self, ZS_Stand_Drinking))
 		|| (Npc_IsInState (self, ZS_Stand_Eating))
 		|| (Npc_IsInState (self, ZS_Stand_Guarding))

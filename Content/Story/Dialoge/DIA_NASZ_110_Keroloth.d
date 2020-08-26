@@ -3082,7 +3082,7 @@ func void DIA_NASZ_110_Keroloth_KurgKan_IShouldnt() {
 };
 
 
-
+var int KerolothKurgKanTrialogState;
 INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn   (C_INFO)
 {
 	npc         = NASZ_110_Keroloth;
@@ -3094,7 +3094,7 @@ INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
 {
-	if(KurgKanFollowPC)
+	if(KurgKanFollowPC && KerolothKurgKanTrialogState == 0)
 	{
 		return TRUE;
 	};
@@ -3102,45 +3102,140 @@ FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 {	
-	var C_NPC Keroloth; Keroloth = Hlp_GetNpc (NASZ_110_Keroloth);
-	var C_NPC KurgKan; KurgKan = Hlp_GetNpc (NASZ_452_KurgKan);
-	TRIA_Invite(Keroloth);
-	TRIA_Invite(KurgKan);
-    TRIA_Start();
- 
-	TRIA_Next(Keroloth);
-	AI_TurnToNpc(other, self);
-	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_01"); //A wiêc to on...
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_02"); //Tak, to Kurg-Kan.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_03"); //Nie rozmawiam z tob¹.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_04"); //Powiedz mi, orku, czy naprawdê chcesz zamieszkaæ w obozie ³owców orków, gdzie wszyscy bêdziemy ci zlecaæ jak najgorsz¹ robotê i nie bêdziesz zbyt dobrze traktowany?
-	TRIA_Next(KurgKan);
-	AI_TurnToNpc(self, other);
-	AI_TurnToNpc(other, self);
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_05"); //Tak. Kurg-Kan nie prze¿yæ sam, a cz³owieki szanowaæ. Mieszkaæ u cz³owiek, pracowaæ dla cz³owiek.
 	
-	TRIA_Next(Keroloth);
-	AI_TurnToNpc(self, other);
-	AI_TurnToNpc(other, self);
+	AI_TurnToNpc(NASZ_110_Keroloth,NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan,NASZ_110_Keroloth);
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_04"); //Powiedz mi, orku, czy naprawdê chcesz zamieszkaæ w obozie ³owców orków, gdzie wszyscy bêdziemy ci zlecaæ jak najgorsz¹ robotê i nie bêdziesz zbyt dobrze traktowany?
+	
+	AI_TurnToNpc(hero,NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan,hero);
+	KerolothKurgKanTrialogState = 1;
+	AI_StopProcessInfos(self);
+	
+};
+
+// --- 1
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn1   (C_INFO)
+{
+	npc         = NASZ_452_KurgKan;
+	nr          = 999;
+	condition   = DIA_NASZ_110_Keroloth_KurgKan_OtoOn1_Condition;
+	information = DIA_NASZ_110_Keroloth_KurgKan_OtoOn1_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn1_Condition()
+{
+	if(KurgKanFollowPC && KerolothKurgKanTrialogState == 1)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn1_Info()
+{	
+	AI_TurnToNpc(NASZ_110_Keroloth,NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan,NASZ_110_Keroloth);
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_05"); //Tak. Kurg-Kan nie prze¿yæ sam, a cz³owieki szanowaæ. Mieszkaæ u cz³owiek, pracowaæ dla cz³owiek.
+
+	AI_TurnToNpc(hero, NASZ_110_Keroloth);
+	AI_TurnToNpc(NASZ_110_Keroloth,hero);
+	
+	KerolothKurgKanTrialogState = 2;
+	AI_StopProcessInfos(self);
+};
+
+// --- 2
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn2   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+	nr          = 999;
+	condition   = DIA_NASZ_110_Keroloth_KurgKan_OtoOn2_Condition;
+	information = DIA_NASZ_110_Keroloth_KurgKan_OtoOn2_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn2_Condition()
+{
+	if(KurgKanFollowPC && KerolothKurgKanTrialogState == 2)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn2_Info()
+{	
+	AI_TurnToNpc(NASZ_110_Keroloth, NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan, NASZ_110_Keroloth);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_06"); //Hmmm... Myœla³em, ¿e znajdê powód, by ci nie pozwoliæ tutaj zamieszkaæ, ale faktycznie jesteœ tak zdesperowany.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_07"); //Dobrze, mo¿esz siê czuæ mieszkañcem tego obozu, ale pamiêtaj, ¿e jesteœ obserwowany. IdŸ do Udara, on ci wymyœli jakieœ zadanie.
+	
+	AI_TurnToNpc(hero, NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan, hero);
 
-	TRIA_Next(KurgKan);
-	AI_TurnToNpc(self, other);
-	AI_TurnToNpc(other, self);
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_08"); //Dobrze, dziêkowaæ Keroloth-przywódca. 
+	KerolothKurgKanTrialogState = 3;
+	AI_StopProcessInfos(self);
+};
 
-	TRIA_Next(Keroloth);
-	AI_TurnToNpc(self, other);
-	AI_TurnToNpc(other, self);
+// --- 3
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn3   (C_INFO)
+{
+	npc         = NASZ_452_KurgKan;
+	nr          = 999;
+	condition   = DIA_NASZ_110_Keroloth_KurgKan_OtoOn3_Condition;
+	information = DIA_NASZ_110_Keroloth_KurgKan_OtoOn3_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn3_Condition()
+{
+	if(KurgKanFollowPC && KerolothKurgKanTrialogState == 3)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn3_Info()
+{	
+	AI_TurnToNpc(NASZ_110_Keroloth, NASZ_452_KurgKan);
+	AI_TurnToNpc(NASZ_452_KurgKan, NASZ_110_Keroloth);
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_08"); //Dobrze, dziêkowaæ Keroloth-przywódca.
+	
+	AI_TurnToNpc(hero,NASZ_110_Keroloth);
+	AI_TurnToNpc(NASZ_110_Keroloth,hero);
+	KerolothKurgKanTrialogState = 4;
+	AI_StopProcessInfos(self);
+};
+
+// --- 4
+INSTANCE DIA_NASZ_110_Keroloth_KurgKan_OtoOn4   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+	nr          = 999;
+	condition   = DIA_NASZ_110_Keroloth_KurgKan_OtoOn4_Condition;
+	information = DIA_NASZ_110_Keroloth_KurgKan_OtoOn4_Info;
+	important 	= true;
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_KurgKan_OtoOn4_Condition()
+{
+	if(KurgKanFollowPC && KerolothKurgKanTrialogState == 4)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn4_Info()
+{	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_09"); //Co do ciebie, Willu...
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_10"); //Tak?
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_KurgKan_OtoOn_55_11"); //Pamiêtaj, ¿e jeœli nabroi, ty za to odpowiadasz. Miej siê na bacznoœci. Daj mi jedynie jego broñ i zmiataj.
 	B_giveinvitems (hero, NASZ_110_Keroloth, ItMw_2H_OrcAxe_02,1);
-	TRIA_Finish();
 
-	AI_StopProcessInfos (self);
+	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(NASZ_452_KurgKan, "Karczma");
 	Npc_ExchangeRoutine(self,"Start");
 	
@@ -3149,7 +3244,24 @@ FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn_Info()
 	
 	KurgKanTanczy = 1; // oznacza, ze ork przyjety do obozu
 	KurgKanFollowPC = 0;
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //*********************************************************************
 //	Info Nauka
 //*********************************************************************

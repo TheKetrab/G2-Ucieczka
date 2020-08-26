@@ -124,7 +124,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_OfCourse_Info()
 	Tabuk_Tarcza1_Trafiono = 0;	
 	FF_ApplyOnceExt(TabukStrzelanie,1000,-1);
 	
-	Print(IntToString(Tabuk_HeroMunition));
+	//Print(IntToString(Tabuk_HeroMunition));
 
 	Log_CreateTopic (TOPIC_Tabuk_tarcza, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Tabuk_tarcza, LOG_RUNNING);

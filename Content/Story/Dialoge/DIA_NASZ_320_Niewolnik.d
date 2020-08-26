@@ -283,7 +283,7 @@ instance DIA_NASZ_320_Niewolnik_ziola		(C_INFO)
 	condition	 = 	DIA_NASZ_320_Niewolnik_ziola_Condition;
 	information	 = 	DIA_NASZ_320_Niewolnik_ziola_Info;
 	permanent	 = 	FALSE;
-	description	 =	"Masz tu swoje osiem roœlin.";
+	description	 =	"Masz tu swoje osiem zió³.";
 };
 
 func int DIA_NASZ_320_Niewolnik_ziola_Condition ()
@@ -298,7 +298,7 @@ func void DIA_NASZ_320_Niewolnik_ziola_Info ()
 {
 	AI_Output			(other, self, "DIA_NASZ_320_Niewolnik_ziola_15_00"); //Masz tu swoje osiem zió³.
 
-	B_giveinvitems (self, other, ItPl_Health_Herb_01, 8);
+	B_giveinvitems (other, self, ItPl_Health_Herb_01, 8);
 
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_ziola_03_01"); //Jestem ci bardzo wdziêczny.
 	AI_Output			(self, other, "DIA_NASZ_320_Niewolnik_ziola_03_02"); //WeŸ te eliksiry w nagrodê. Nam siê nie przydadz¹, no a tobie... Raz jeszcze dziêki.

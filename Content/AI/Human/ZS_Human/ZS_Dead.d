@@ -632,7 +632,8 @@ func void ZS_Dead ()
 	{
 		Psikusy_SheepKiller_Counter = Psikusy_SheepKiller_Counter + 1;
 
-		if(Psikusy_SheepKiller_Counter >= 2) {
+		// jesli zabijesz dokladnie dwie owce w tamtym obozie
+		if(Psikusy_SheepKiller_Counter == 2) {
 			B_LogEntry (TOPIC_Gestath_psikus, "No, doœæ tego ubijania owiec.");
 			MIS_Psikusy_Ready = MIS_Psikusy_Ready + 1;
 		};

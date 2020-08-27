@@ -16,6 +16,32 @@ func string exitDialoge(var string i)
 	return "";
 };
 
+// KETRAB
+const int oCMobContainer__Remove = 7495808;
+func void ClearMobContainer(var string mobContainerName) {
+
+	var int mobContainerPtr; mobContainerPtr = MEM_SearchVobByName(mobContainerName);
+
+	if (mobContainerPtr) {
+		var oCMobContainer chest; chest = MEM_PtrToInst(mobContainerPtr);
+		var int listPtr; listPtr = chest.containList_next;
+		if (listPtr) {
+			var zCListSort list; list = MEM_PtrToInst(listPtr);
+			var int itemPtr; itemPtr = list.data;
+			if (itemPtr) {
+				CALL_IntParam(1);
+				CALL_PtrParam(itemPtr);
+				CALL__thiscall(mobContainerPtr, oCMobContainer__Remove);
+				
+				// RESURSIVE CALL untill data exists
+				ClearMobContainer(mobContainerName);
+			};
+		};
+	} else {
+		MEM_Info(CS("ClearMobContainer > Chest not found: ",mobContainerName));
+	};
+
+};
 
 
 var int NpcsInFight;

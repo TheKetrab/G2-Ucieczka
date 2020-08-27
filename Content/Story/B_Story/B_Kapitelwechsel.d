@@ -196,22 +196,14 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 			AI_EquipBestMeleeWeapon(NASZ_007_Draal);
 			AI_EquipBestArmor (NASZ_007_Draal);
 		};
-		// Funkcje
-		//virtual oCItem * __thiscall oCMobContainer::Remove(class oCItem * int) 	0x00726080
-		var int chest; chest = MEM_SearchVobByName("BAN_NIEWOLNICY_CHEST");
-		if(chest && amount)
-		{
-			var int amount; amount = Mob_HasItems("BAN_NIEWOLNICY_CHEST", ItNa_PaczkaZBronia);
-			if(amount)
-			{
-				const int oCMobContainer__Remove = 7495808;
-				var int pItem; pItem = Itm_GetPtr(ItNa_PaczkaZBronia);
-				CALL_IntParam(amount);
-				CALL_PtrParam(pItem);
-				CALL__thiscall(chest, oCMobContainer__Remove);
-			};
-		};
 		
+		// Funkcje
+		
+		// FIX UCIECZKA 1.1 , ketrab -> poprawiam to, wczesniej remove bralo wskaznik z instancji ItNa_PaczkaZBronia
+		// a wskaznik ten byl oczywiscie inny niz wskaznik elementu w skrzyni. Teraz wskaznik na ten element jest wybierany bezposrednio
+		ClearMobContainer("BAN_NIEWOLNICY_CHEST");
+
+
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
 		B_StartOtherRoutine (NASZ_205_Mysliwy, "Kap3");
 		B_StartOtherRoutine (NASZ_232_Jehen, "Ukryty");

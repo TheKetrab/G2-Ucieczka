@@ -84,6 +84,21 @@ FUNC INT DIA_NASZ_015_Rudolf_siema_Condition()
 FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 {
 
+	// FIX UCIECZKA 1.1 - tarcza znikala podczas trialogu
+	// dlatego usuwam ja rudolfowi i tworze visuala voba (ktory w rzeczywistosci nie jest tarcza)
+	var int shieldPtr; shieldPtr = GetItemSlot (self, "ZS_SHIELD");
+	if(shieldPtr) { 
+		var c_item shield; shield = MEM_PtrToInst(shieldPtr);
+		oCNpc_UnequipItem(NASZ_015_Rudolf, shieldPtr);
+		Npc_RemoveInvItems(NASZ_015_Rudolf,ItNa_Shield_Paladin,1);
+		
+		var int vobPtr; vobPtr = MEM_InsertVob(shield.visual, MEM_GetAnyWP());
+		oCNpc_PutInSlot(NASZ_015_Rudolf, "ZS_SHIELD", vobPtr, 7);
+	};
+	
+	
+	AI_GoToWP(NASZ_016_Netbek,"NASZ_ZAPALISADA_LAS_18");
+
 	var C_NPC Rudolf; Rudolf = Hlp_GetNpc (NASZ_015_Rudolf);
 	var C_NPC Netbek; Netbek = Hlp_GetNpc (NASZ_016_Netbek);
 	
@@ -170,6 +185,8 @@ FUNC VOID DIA_NASZ_015_Rudolf_siema_Info()
 	Log_SetTopicStatus (TOPIC_Udar_oddzial, LOG_RUNNING);
 	B_LogEntry (TOPIC_Udar_oddzial, "Znalaz³em ludzi za palisad¹. Rycerz Rudolf i cz³onek bractwa Netbek. Powinienem powiedzieæ o tym Kerolothowi a nastêpnie Udarowi.");
 	
+
+
 };
 
 //*********************************************************************

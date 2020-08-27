@@ -7,7 +7,7 @@ instance NASZ_015_Rudolf (Npc_Default)
 	guild 		= GIL_OUT;
 	id 			= 15;
 	voice 		= 5;
-	flags       = 0;																	//NPC_FLAG_IMMORTAL oder 0
+	flags       = 2; // UWAGA - powinien byc niesmiertelny, bo jego tarcza jest jako visual vob i jak sie go obije to sie jej nie da podniesc
 	npctype		= NPCTYPE_MAIN;
 	
 	// ------ Attribute ------

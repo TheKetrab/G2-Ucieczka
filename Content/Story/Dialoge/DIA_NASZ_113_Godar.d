@@ -75,7 +75,7 @@ func void DIA_NASZ_113_Godar_hello_Info ()
 INSTANCE DIA_NASZ_113_Godar_ORK   (C_INFO)
 {
 	npc         = NASZ_113_Godar;
-	nr          = 999;
+	nr          = 2;
 	condition   = DIA_NASZ_113_Godar_ORK_Condition;
 	information = DIA_NASZ_113_Godar_ORK_Info;
 	description = "A co do orka...";

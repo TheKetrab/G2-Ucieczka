@@ -346,11 +346,11 @@ const int AIV_SpellLevel 					= 88;
 
 // ------ Moje aivary -----
 const int AIV_OnlyBow						= 89;
-const int AIV_Trucizna						= 90;
-const int    TRUCIZNA_0               = 0;
-const int    TRUCIZNA_1               = 1;
-const int    TRUCIZNA_2               = 2;
-const int    TRUCIZNA_3               = 3;
+const int AIV_POISON						= 90;
+const int    POISON_0               = 0;
+const int    POISON_1               = 1;
+const int    POISON_2               = 2;
+const int    POISON_3               = 3;
 
 const int AIV_TARCZA					= 91;
 const int AIV_COMBO						= 92;
@@ -805,9 +805,9 @@ const int Face_N_Fortuno		= 	159;
 
 //Piraten
 const int Face_P_Greg		= 	160;
+
 const int Face_N_Pirat01	= 	161;
 const int Face_N_ZombieMud	= 	162;
-
 const int Face_N_GreenSkel	= 	163;
 const int Face_ZombiePale1	= 	164;
 const int Face_ZombiePale2	= 	165;

@@ -55,6 +55,7 @@ PROTOTYPE Mst_Default_Troll(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_RestStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_2;
 };
 
 

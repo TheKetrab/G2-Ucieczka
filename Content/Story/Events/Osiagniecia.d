@@ -232,7 +232,7 @@ func void Check_OSIAGNIECIA() {
 	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15
 	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
 	if (Osiagniecie17OneTime == FALSE && EatenPlants >= 14)						{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 - h1,h2,h3,m1,m2,m3,dex,str,speed,blue,forber,plantber,temp,perm
-	// 18 ---> Ustawiane w funkcji MyLeGoFuncs.d / DMG_OnDmg																								// 18
+	// 18 ---> Ustawiane w funkcji OnDamage.d / DMG_OnDmg																									// 18
 	if (Osiagniecie19OneTime == FALSE && OdtrutkaEverUsed == TRUE)				{ Osiagniecie19OneTime = TRUE; AddAchievement(Acv19Title,Acv19Content); };	// 19
 	// 20 ---> Ustawiane w funkcji Reputation.d / DodajReputacje																							// 20
 	if (Osiagniecie21OneTime == FALSE && SleptHours >= 100)						{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21

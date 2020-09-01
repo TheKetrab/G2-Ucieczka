@@ -406,6 +406,11 @@ func int DIA_NASZ_316_Carry_MuchyFinish_Condition ()
 func void DIA_NASZ_316_Carry_MuchyFinish_Info ()
 {
 	AI_Output	(other, self, "DIA_NASZ_316_Carry_MuchyFinish_55_00"); //Mam te twoje sk³adniki.
+
+	B_giveinvitems (other, self, ItPl_SwampHerb, 3);
+	B_giveinvitems (other, self, ItMi_Sulfur, 1);
+	B_giveinvitems (other, self, ItNa_Losos, 1);
+
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_01"); //Teraz bêdê móg³ przygotowaæ p³yn i wszystkie muchy st¹d odlec¹!
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_02"); //Chyba nie bêdê mia³ sobie za z³e, je¿eli nagrodzê ciê t¹ ma³¹ sumk¹...
 	AI_Output	(self, other, "DIA_NASZ_316_Carry_MuchyFinish_03_03"); //Zas³u¿y³eœ.

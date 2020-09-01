@@ -48,6 +48,7 @@ FUNC VOID B_GiveTradeInv_Hunt (var C_NPC slf)
 		CreateInvItems (slf, ItRw_Bow_M_03, 1); 
 		CreateInvItems (slf, ItRw_Bow_M_04, 1); 
 
+		CreateInvItems (slf, ItNa_PierscienGrubegoMysliwego, 1); 
 		CreateInvItems (slf, ItNa_PasMysliwego, 1); 
 
 		Hunt_ItemsGiven_Chapter_2 = TRUE;
@@ -68,6 +69,8 @@ FUNC VOID B_GiveTradeInv_Hunt (var C_NPC slf)
 		CreateInvItems (slf, ItRw_Bow_H_02, 1); 
 		CreateInvItems (slf, ItRw_Bow_H_03, 1); 
 		CreateInvItems (slf, ItRw_Bow_H_04, 1); 
+
+		CreateInvItems (slf, ItNa_PierscienAsasyna, 1); 
 
 		Hunt_ItemsGiven_Chapter_3 = TRUE;
 	};

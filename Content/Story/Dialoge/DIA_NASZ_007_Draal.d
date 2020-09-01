@@ -1,5 +1,3 @@
-// TODO patch - niech jest z nim jakis dialog w listopadzie, ze wow, przyjeli go do obozu albo cos (skoro ma zbroje)
-
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************

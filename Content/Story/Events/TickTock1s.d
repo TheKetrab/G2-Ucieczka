@@ -1780,9 +1780,10 @@ func void LastRitualFunc()
 			//Wld_PlayEffect("SPELLFX_massdeath",  NASZ_402_Innos, NASZ_402_Innos, 0, 0, 0, FALSE );
 			//Wld_PlayEffect("SPELLFX_incovation_blue",  NASZ_402_Innos, NASZ_402_Innos, 0, 0, 0, FALSE );
 			//Wld_PlayEffect("SPELLFX_lightstar_white",  NASZ_402_Innos, NASZ_402_Innos, 0, 0, 0, FALSE );
-		
-			Wld_PlayEffect("Spellfx_Lightningflash_Heavensrage",  ItMi_AmbossEffekt_Addon, ItMi_AmbossEffekt_Addon, 0, 0, 0, FALSE );
-			//Wld_PlayEffect("Spellfx_Lightstar_Orange",  "FP_CEREMONIA_FINAL", "FP_CEREMONIA_FINAL", 0, 0, 0, FALSE );
+			
+			
+			var int finalRitualVob; finalRitualVob = MEM_SearchVobByName("RITUAL_BOGOWIE_EFFECT");
+			if (finalRitualVob) { Wld_VobEffect_Vob("SPELLFXX_Lightningflash_Heavensrage", finalRitualVob); };
 			
 			Npc_ExchangeRoutine (NASZ_010_Monastir, "Kap5GoTo");
 			PoRytualeMonastirBiegnie = TRUE;

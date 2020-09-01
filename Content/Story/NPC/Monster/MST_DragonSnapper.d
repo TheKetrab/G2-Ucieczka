@@ -8,23 +8,23 @@ PROTOTYPE Mst_Default_DragonSnapper(C_Npc)
 	name							=	"Smoczy zêbacz";
 	guild							=	GIL_SNAPPER;
 	aivar[AIV_MM_REAL_ID]			= 	ID_DRAGONSNAPPER;
-	level							=	30;
+	level							=	22;
 	
 	//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	110; 
 	attribute	[ATR_DEXTERITY]		=	110;
-	attribute	[ATR_HITPOINTS_MAX]	=	200;
-	attribute	[ATR_HITPOINTS]		=	200;
+	attribute	[ATR_HITPOINTS_MAX]	=	350;
+	attribute	[ATR_HITPOINTS]		=	350;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	70;
-	protection	[PROT_EDGE]			=	70;
-	protection	[PROT_POINT]		=	70;		
-	protection	[PROT_FIRE]			=	70;
-	protection	[PROT_FLY]			=	70;
-	protection	[PROT_MAGIC]		=	0;
+	protection	[PROT_BLUNT]		=	170;
+	protection	[PROT_EDGE]			=	170;
+	protection	[PROT_POINT]		=	160;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
 	
 	//----- Damage Types ----
 	damagetype 						=	DAM_EDGE;
@@ -76,6 +76,27 @@ INSTANCE DragonSnapper	(Mst_Default_DragonSnapper)
 	Npc_SetToFistMode(self);
 };
 
+INSTANCE DragonSnapper_Easy	(Mst_Default_DragonSnapper)
+{
+	B_SetVisuals_DragonSnapper();
+	Npc_SetToFistMode(self);
+	
+	//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	80; 
+	attribute	[ATR_DEXTERITY]		=	80;
+	attribute	[ATR_HITPOINTS_MAX]	=	280;
+	attribute	[ATR_HITPOINTS]		=	280;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	110;
+	protection	[PROT_EDGE]			=	110;
+	protection	[PROT_POINT]		=	90;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
+};
 
 
 

@@ -408,15 +408,14 @@ INSTANCE DIA_NASZ_227_Vachut_QuestPlace   (C_INFO)
 
 FUNC INT DIA_NASZ_227_Vachut_QuestPlace_Condition()	
 {
-	if (Npc_GetDistToWP(self,"NASZ_BANDYCI_WODOSPAD_04") < 500)
-		// tak licznik nie dziala, ale nie trzeba i tak sprawdzac, czy topielce sa zabite
-		//&& (npc_isdead (Topielec_Wsciekly_A) >= 6)
-		/*&& npc_isdead (Topielec_Wsciekly_A)
-		&& npc_isdead (Topielec_Wsciekly_A)
-		&& npc_isdead (Topielec_Wsciekly_A)
-		&& npc_isdead (Topielec_Wsciekly_A)
-		&& npc_isdead (Topielec_Wsciekly_A))*/
-		&& ( KAPITEL == 3 )
+	if (Npc_GetDistToWP(self,"NASZ_BANDYCI_WODOSPAD_04") < 500
+	 && npc_isdead(Topielec_Wsciekly_A)
+	 && npc_isdead(Topielec_Wsciekly_B)
+	 && npc_isdead(Topielec_Wsciekly_C)
+	 && npc_isdead(Topielec_Wsciekly_D)
+	 && npc_isdead(Topielec_Wsciekly_E)
+	 && npc_isdead(Topielec_Wsciekly_F)
+	 && (KAPITEL == 3))
 	{
 			return TRUE;
 	};

@@ -48,6 +48,7 @@ PROTOTYPE Mst_Default_Razor(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_RestStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_2;
 };
 //-------------------------------------------------------------
 func void Set_Razor_Visuals()

@@ -47,7 +47,6 @@ PROTOTYPE Mst_Default_Wolf(C_Npc)
 	aivar[AIV_MM_FollowInWater] = TRUE;
 	aivar[AIV_MM_Packhunter]	= TRUE;
 	
-	aivar[AIV_Trucizna] = 1;
 	
 	//----- Daily Routine ----
 	start_aistate				= ZS_MM_AllScheduler;
@@ -328,16 +327,16 @@ PROTOTYPE Mst_Default_OrcDog(C_Npc)
 	aivar[AIV_MM_REAL_ID]			= 	ID_ORCDOG;
 	
 	//----- Attribute ----
-	attribute	[ATR_STRENGTH]		=	90;
-	attribute	[ATR_DEXTERITY]		=	90;
-	attribute	[ATR_HITPOINTS_MAX]	=	140;
-	attribute	[ATR_HITPOINTS]		=	140;
+	attribute	[ATR_STRENGTH]		=	110;
+	attribute	[ATR_DEXTERITY]		=	110;
+	attribute	[ATR_HITPOINTS_MAX]	=	280;
+	attribute	[ATR_HITPOINTS]		=	280;
 	
 	//----- Protections ----
-	protection	[PROT_BLUNT]		=	90;
-	protection	[PROT_EDGE]			=	90;
-	protection	[PROT_FIRE]			=	90;
-	protection	[PROT_FLY]			=	90;
+	protection	[PROT_BLUNT]		=	150;
+	protection	[PROT_EDGE]			=	150;
+	protection	[PROT_FIRE]			=	130;
+	protection	[PROT_FLY]			=	130;
 	
 	damagetype 						=	DAM_EDGE;
 
@@ -356,7 +355,8 @@ PROTOTYPE Mst_Default_OrcDog(C_Npc)
 	//----- Daily Routine ----
 	start_aistate				= ZS_MM_AllScheduler;
 
-	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;	
+	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_3;
 	
 };
 
@@ -367,230 +367,43 @@ INSTANCE OrcDog	(Mst_Default_OrcDog)
 	CreateInvItems (self, ItNa_SkoraOrkowegoPsa, 1);
 };
 
+INSTANCE OrcDog_Easy(Mst_Default_OrcDog)
+{
+	Npc_SetToFistMode(self);
+	CreateInvItems (self, ItFoMuttonRaw, 1);
+	CreateInvItems (self, ItNa_SkoraOrkowegoPsa, 1);
+
+	//----- Attribute ----
+	attribute	[ATR_STRENGTH]		=	90;
+	attribute	[ATR_DEXTERITY]		=	90;
+	attribute	[ATR_HITPOINTS_MAX]	=	140;
+	attribute	[ATR_HITPOINTS]		=	140;
+	
+	//----- Protections ----
+	protection	[PROT_BLUNT]		=	90;
+	protection	[PROT_EDGE]			=	90;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+
+};
+
+
 
 
 //************
 //	Zatruty    	
 //************
-INSTANCE WscieklyWilk1	(Mst_Default_GroznyWilk)
+INSTANCE WscieklyWilk	(Mst_Default_GroznyWilk)
 {
 	B_SetVisuals_Wolf();
 	Npc_SetToFistMode(self);
-
 	name							=	"Wœciek³y wilk";
 	level							=	15;
 
 	CreateInvItems (self, ItFoMuttonRaw, 1);
+	aivar[AIV_POISON] = POISON_2;
 };
 
-INSTANCE WscieklyWilk2	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk3	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk4	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk5	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk6	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk7	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk8	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk9	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk10	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk11	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk12	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk13	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk14	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk15	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk16	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk17	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk18	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk19	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
-
-INSTANCE WscieklyWilk20	(Mst_Default_GroznyWilk)
-{
-	B_SetVisuals_Wolf();
-	Npc_SetToFistMode(self);
-
-	name							=	"Wœciek³y wilk";
-	level							=	15;
-
-	CreateInvItems (self, ItFoMuttonRaw, 1);
-};
 
 INSTANCE DuchWilk	(Mst_Default_GroznyWilk)
 {

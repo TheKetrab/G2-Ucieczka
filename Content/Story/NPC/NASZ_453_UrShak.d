@@ -7,6 +7,7 @@ INSTANCE NASZ_453_UrShak (Mst_Default_OrcShaman)
 	name			=	"Ur-Shak";
 	level			=	100;
 	id = 453;
+	flags = 2; // niesmiertelnosc usuwana po dialogu;
 
 	//----- Attributes ----	
 	attribute	[ATR_STRENGTH]		=	140;
@@ -32,13 +33,13 @@ INSTANCE NASZ_453_UrShak (Mst_Default_OrcShaman)
 	
 	// ------ Visuals ------
 	B_SetVisuals_OrcShaman();
-	
+
 	//-------- Inventory --------
 	EquipItem (self, ItMw_2H_OrcAxe_04);
 	EquipItem (self, ItNa_Kostur_UrShaka);
 	
 	//----- Daily Routine ----
-	start_aistate				=  ZS_Kazmin;
+	start_aistate				=  ZS_Stand_WP;
 
 	aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
 };

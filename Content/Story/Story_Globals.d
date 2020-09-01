@@ -1621,7 +1621,7 @@ var int WillHasEquippedKostur;
 var int MissionPlaskowyzRunning;
 var int HeroIsMeatbug;
 var int Gestath_Stopowanie;
-var int WillZatruty;
+
 var int GateTwierdzaOpened;
 var int GateMysliwiOpened;
 var int GateMysliwiOpenedFirstTime;

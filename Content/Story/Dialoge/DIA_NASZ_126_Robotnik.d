@@ -83,7 +83,7 @@ FUNC VOID DIA_NASZ_126_Robotnik_work_Info()
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_08"); //Po drugie: Wejœcie pod owy budynek jest od zewn¹trz, a tam czyhaj¹ bestie.
 	AI_Output (self, other,"DIA_NASZ_126_Robotnik_work_15_09"); //Móg³byœ mi pomóc?
 
-	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_LOWCY_SMOCZYZEBACZ");
+	Wld_InsertNpc	(DragonSnapper_Easy,"FP_ROAM_NASZ_LOWCY_SMOCZYZEBACZ");
 	MIS_ROBOTNIK_READY = TRUE;
 	
 	Log_CreateTopic (TOPIC_Robotnik_deski, LOG_MISSION);

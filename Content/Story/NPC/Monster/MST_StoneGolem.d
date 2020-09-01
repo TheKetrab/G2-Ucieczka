@@ -18,13 +18,13 @@ PROTOTYPE Mst_Default_StoneGolem(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	100;
 	attribute	[ATR_MANA] 			=	100;
 	
-	//----- Protections ----
+	//----- Protections ---- FIX UCIECZKA 1.1 - nie moze byc IMMUNE, bo wtedy sie nie wyzwala funkcja OnDmg
 	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	IMMUNE;
-	protection	[PROT_POINT]		=	IMMUNE;
-	protection	[PROT_FIRE]			=	IMMUNE;
-	protection	[PROT_FLY]			=	IMMUNE;	
-	protection	[PROT_MAGIC]		=	IMMUNE;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	100;
+	protection	[PROT_FIRE]			=	100;
+	protection	[PROT_FLY]			=	100;	
+	protection	[PROT_MAGIC]		=	100;
 	
 	//---- Damage Types ----
 	damagetype 						=	DAM_FLY;

@@ -135,7 +135,7 @@ CONST STRING MOBNAME_ORE_CRYSTAL	 	 = "Kryszta³";					//nasz
 CONST STRING MOBNAME_CRYSTAL_PLACE 		 = "Runiczny hak";				//nasz
 CONST STRING MOBNAME_BOOK_PRZEMIANA		 = "Polowanie na wilki";		//nasz
 CONST STRING MOBNAME_MISSION_GRAVE1	 = "Rodric IV"; 								//nasz
-CONST STRING MOBNAME_MISSION_GRAVE2	 = "Pierwszy Barbarzyñca"; 						//nasz
+CONST STRING MOBNAME_MISSION_GRAVE2	 = "Pierwszy barbarzyñca"; 						//nasz
 CONST STRING MOBNAME_MISSION_GRAVE3	 = "Hosh-Pak"; 									//nasz
 CONST STRING MOBNAME_MISSION_GRAVE4	 = "Kpt. Garond - 'W tobie nadzieja'"; 			//nasz
 CONST STRING MOBNAME_MISSION_GRAVE5	 = "Gestath - 'Ostatni mistrz ³owów'"; 			//nasz
@@ -154,16 +154,16 @@ CONST STRING MOBNAME_MISSION_GRAVE17 = "Melatonix - 'Postrach najm¹drzejszych'";
 CONST STRING MOBNAME_MISSION_GRAVE18 = "Kap³an Œmiercionoœnych - 'Pomœcimy ciê!'"; 	//nasz
 CONST STRING MOBNAME_MISSION_GRAVE19 = "Cassem Da-Na'rem"; 							//nasz
 CONST STRING MOBNAME_MISSION_GRAVE20 = "Mugo - 'UGA!'"; 							//nasz
-CONST STRING MOBNAME_THANKS_1 = "Bogdan Zwei II - za najszybsze odpowiedzi na theModders"; 					//nasz
-CONST STRING MOBNAME_THANKS_2 = "SiemekK - za garœæ pojedyñczych skrypcików"; 							//nasz
-CONST STRING MOBNAME_THANKS_3 = "anonimowy1121 - za pocz¹tki!"; 					//nasz
+CONST STRING MOBNAME_THANKS_1 = "Bogdan Zwei II - za najszybsze odpowiedzi na theModders"; 	//nasz
+CONST STRING MOBNAME_THANKS_2 = "SiemekK - za garœæ pojedyñczych skrypcików"; 				//nasz
+CONST STRING MOBNAME_THANKS_3 = "anonimowy1121 - za pocz¹tki!"; 							//nasz
 CONST STRING MOBNAME_THANKS_4 = "Volsufrick - za remaster filmów"; 							//nasz
-CONST STRING MOBNAME_THANKS_5 = ""; 							//nasz TODO
-CONST STRING MOBNAME_THANKS_6 = "Czudak - za kilkanaœcie œwietnych tekstur"; 							//nasz
-CONST STRING MOBNAME_THANKS_7 = ""; 							//nasz TODO
-CONST STRING MOBNAME_THANKS_8 = ""; 							//nasz TODO 
-CONST STRING MOBNAME_THANKS_9 = ""; 							//nasz TODO
-CONST STRING MOBNAME_THANKS_10 = "Dziêki i tobie graczu, ¿e tu doszed³eœ!"; 							//nasz
+CONST STRING MOBNAME_THANKS_5 = "Szapp - GothicFreeAim"; 									//nasz
+CONST STRING MOBNAME_THANKS_6 = "Czudak - za kilkanaœcie œwietnych tekstur"; 				//nasz
+CONST STRING MOBNAME_THANKS_7 = "LeGo & Ikarus <3"; 										//nasz
+CONST STRING MOBNAME_THANKS_8 = "theModders - ca³ej spo³ecznoœci: Dziêki!"; 				//nasz
+CONST STRING MOBNAME_THANKS_9 = "WorldOfGothic.de - ModderDatenBank"; 						//nasz
+CONST STRING MOBNAME_THANKS_10 = "Dziêki i tobie graczu, ¿e tu doszed³eœ!"; 				//nasz
 
 
 
@@ -804,8 +804,8 @@ const string NAME_ADDON_LEARNLANGUAGE_3 	= "Naucz siê jêzyka kap³anów";
 
 const string NAME_ADDON_MALUS_2H					= "Kara do walki broni¹ dwurêczn¹";
 const string NAME_ADDON_MALUS_1H					= "Kara do walki broni¹ jednorêczn¹";
-const string NAME_ADDON_BONUS_1H					= "Premia do walki broni¹ jednorêczn¹";
-const string NAME_ADDON_BONUS_2H					= "Premia do walki broni¹ dwurêczn¹";
+const string NAME_ADDON_BONUS_1H					= "Premia do walki broni¹ jednorêczn¹:";
+const string NAME_ADDON_BONUS_2H					= "Premia do walki broni¹ dwurêczn¹:";
 const string NAME_ADDON_ONEHANDED_BELIAR			= "Szansa na dodatkowe obra¿enia"; 
 const string NAME_ADDON_TWOHANDED_BELIAR			= "Szansa na dodatkowe obra¿enia"; 
 const string NAME_ADDON_BONUS_BOW					= "Premia do zdolnoœci ³uczniczych"; //nasz

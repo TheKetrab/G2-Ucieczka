@@ -1516,7 +1516,7 @@ INSTANCE DIA_NASZ_110_Keroloth_KapThree   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_KapThree_Condition()
 {
-	if (Kapitel == 3)
+	if (Kapitel == 3 && npc_hasitems(other,ItNa_OkoSwiata) >= 1)
 	{
 		return TRUE;
 	};
@@ -2262,6 +2262,13 @@ func void DIA_NASZ_110_Keroloth_Kap4_end() {
 
 };
 
+func void DIA_NASZ_110_Keroloth_Kap4_end2() {
+	
+	B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");    // zamek -> siedzi przy krzesle z ammannem
+	AI_StopProcessInfos(self);
+
+};
+
 FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 {
 
@@ -2284,7 +2291,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_what()
 	InsertUndeadsNearOUTCamp();
 	
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_Kap4);
-	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_Kap4, DIALOG_ENDE, DIA_NASZ_110_Keroloth_Kap4_end2);
 
 	
 };

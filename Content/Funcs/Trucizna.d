@@ -23,12 +23,74 @@
 
 };*/
 
+// trucizna dziala przez 60s lub do uleczenia sie
+
+var int WillZatruty;
+var int truciznaSec;
+
+func void PoisonStop() {
+	ff_remove(Poison1HP);
+	ff_remove(Poison5HP);
+	ff_remove(Poison10HP);
+	WillZatruty = FALSE;
+	truciznaSec = 0;
+};
+
+func void Poison1HPStart() {
+	truciznaSec = 0;
+	WillZatruty = 1;
+	//Buff_Apply(hero, Poison1HP);
+	ff_applyonceext(Poison1HP,3000,-1);
+	Print(ConcatStrings(G2U_poisson," (-1HP / 3s)"));
+	Snd_Play("TRUCIZNA");
+};
+
+func void Poison5HPStart() {
+	truciznaSec = 0;
+	WillZatruty = 2;
+	//Buff_Apply(hero, Poison5HP);
+	ff_applyonceext(Poison5HP,3000,-1);
+	Print(ConcatStrings(G2U_poisson," (-5HP / 3s)"));
+	Snd_Play ("TRUCIZNA");
+};
+
+func void Poison10HPStart() {
+	truciznaSec = 0;
+	WillZatruty = 3;
+	//Buff_Apply(hero, Poison10HP);
+	ff_applyonceext(Poison10HP,3000,-1);
+	Print(ConcatStrings(G2U_poisson," (-10HP / 3s)"));
+	Snd_Play ("TRUCIZNA");
+};
+
+func void Poison1HP() {
+	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
+	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -1); 
+	truciznaSec += 3;
+};
+
+func void Poison5HP() {
+	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
+	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -5); 
+	truciznaSec += 3;
+};
+
+func void Poison10HP() {
+	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
+	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -10);
+	truciznaSec += 3;
+};
+
+
+
+
+/*
 instance Poison1HP ( lCBuff ) { 
  name = "Trucizna" ; 
  bufftype = BUFF_BAD ; 
  
  durationMS = 10 * 1000 ; 
- tickMS = 1000 ; 
+ tickMS = durationMS ; 
  
  onTick = SAVE_GetFuncID ( posion_damage ) ; 
  
@@ -51,7 +113,7 @@ instance Poison1HP ( lCBuff ) {
  bufftype = BUFF_BAD ; 
  
  durationMS = 10 * 1000 ; 
- tickMS = 1000 ; 
+ tickMS = durationMS ; 
  
  onTick = SAVE_GetFuncID ( posion_damage5 ) ; 
 
@@ -75,7 +137,7 @@ instance Poison1HP ( lCBuff ) {
  bufftype = BUFF_BAD ; 
  
  durationMS = 10 * 1000 ; 
- tickMS = 1000 ; 
+ tickMS = durationMS ; 
  
  onTick = SAVE_GetFuncID ( posion_damage10 ) ; 
  
@@ -92,3 +154,5 @@ instance Poison1HP ( lCBuff ) {
  var c_npc n ; n = _^ ( ptr ) ; 
  Npc_ChangeAttribute ( n , ATR_HITPOINTS ,-10 ) ; 
  } ;
+ */
+

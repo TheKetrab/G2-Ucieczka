@@ -42,12 +42,16 @@ instance NASZ_206_Mysliwy (Npc_Default)
 
 FUNC VOID Rtn_Start_206 ()
 {
-	TA_Pee		(07,00,21,00,"NASZ_MYSLIWI_GRUPA_06");
-	TA_Pee		(21,00,07,00,"NASZ_MYSLIWI_GRUPA_06");
+	TA_Pee					(06,20,08,30,"NASZ_MYSLIWI_GRUPA_06");
+	TA_Stand_Eating			(08,30,12,20,"NASZ_MYSLIWI_GRUPA_02");
+	TA_Pee					(12,20,13,50,"NASZ_MYSLIWI_GRUPA_06");
+	TA_Stand_Eating			(13,50,18,20,"NASZ_MYSLIWI_GRUPA_02");
+	TA_Pee					(18,20,20,50,"NASZ_MYSLIWI_GRUPA_06");
+	TA_Stand_ArmsCrossed	(20,50,06,20,"OW_DJG_ROCKCAMP_01");
 };
 
 FUNC VOID Rtn_Kap4_206 ()
 {
-	TA_Sit_Campfire	(07,00,21,00,"NASZ_MYSLIWI_DOL_29");
-	TA_Sit_Campfire 	(21,00,07,00,"NASZ_MYSLIWI_DOL_29");
+	TA_Sit_Campfire		(07,00,21,00,"NASZ_MYSLIWI_DOL_29");
+	TA_Sit_Campfire		(21,00,07,00,"NASZ_MYSLIWI_DOL_29");
 };

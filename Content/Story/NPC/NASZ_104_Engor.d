@@ -42,7 +42,7 @@ instance NASZ_104_Engor (Npc_Default)
 FUNC VOID Rtn_Start_104 ()
 {	
 	TA_Sit_Bench	(07,50,21,20,"NASZ_LOWCY_DOM_01");
-	TA_Sleep		(21,20,07,50,"NASZ_LOWCY_KARCZMA_27");	
+	TA_Sleep		(21,20,07,50,"NASZ_LOWCY_KARCZMA_27");
 };
 
 FUNC VOID Rtn_Lute_104 ()

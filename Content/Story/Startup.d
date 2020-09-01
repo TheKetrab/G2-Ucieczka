@@ -81,7 +81,6 @@ func void INIT_Testlevel ()
 
 func void STARTUP_OLDCAMP ()
 {
-
 	//FUNKCJE
 	StanDruzyny=1;
 	LevelMiner = 20;
@@ -241,8 +240,6 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(NASZ_325_Grimes,"NASZ_BANDYCI_WODOSPAD_04");
 	Wld_InsertNpc	(NASZ_326_Domenic,"OW_PATH_3_09");
 
-	Wld_InsertItem (ItMi_AmbossEffekt_Addon,"FP_CEREMONIA_FINAL"); //do rytua³u bogów
-
 	Wld_InsertNpc	(Sheep,"NASZ_BANDYCI_OBOZ_16");
 	Wld_InsertNpc	(Follow_Sheep,"NASZ_BANDYCI_OBOZ_16");
 	Wld_InsertNpc	(Sheep,"NASZ_BANDYCI_OBOZ_15");
@@ -361,7 +358,11 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(OrcScout,"FP_SMALLTALK_OC_TO_MAGE_02");
 	Wld_InsertNpc	(OrcElite_Roam,"FP_SMALLTALK_OC_CENTER_03");
 	Wld_InsertNpc	(OrcHerszt_Sit,"FP_ROAM_ORK_OC_01_2");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_SMALLTALK_OC_EBR_01");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_SMALLTALK_OC_EBR_02");
 
+	
+	
 	Wld_InsertNpc	(OrcShaman_Sit,"OC_MAGE_LAB_ALCHEMY");
 	Wld_InsertNpc	(OrcShaman_Sit,"FP_SMALLTALK_OC_MAGE_01");
 	Wld_InsertNpc	(OrcShaman_Sit,"OC_MAGE_UP_02");
@@ -492,7 +493,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(YWolf,"SPAWN_OW_MOLERAT_OCWOOD_OC2");	
 	Wld_InsertNpc	(Scavenger,"SPAWN_OW_SCAVENRGER_OCWOOD1");
 	Wld_InsertNpc	(Scavenger,"SPAWN_OW_SCAVENRGER_OCWOOD1");
-	Wld_InsertNpc	(BloodflyWsciekly01,"SPAWN_OW_BLOODFLY_06_01");
+	Wld_InsertNpc	(BloodflyGreen,"SPAWN_OW_BLOODFLY_06_01");
 	Wld_InsertNpc	(Wolf,"MOVEMENT_OW_PATH_SCAVENGER_01_SPAWN01");
 	Wld_InsertNpc	(Wolf,"MOVEMENT_OW_PATH_SCAVENGER_01_SPAWN01");
 	Wld_InsertNpc	(Wolf,"MOVEMENT_OW_PATH_SCAVENGER_01_SPAWN01");
@@ -501,8 +502,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Warg,"FP_ROAM_OW_WOLF_WOOD05_01");
 	Wld_InsertNpc	(Warg,"FP_ROAM_OW_WOLF_WOOD05_02");
 	Wld_InsertNpc	(Bloodfly,"SPAWN_OW_BLOODFLY_WOOD05_01");
-	Wld_InsertNpc	(BloodflyWsciekly01,"SPAWN_OW_BLOODFLY_WOOD05_01");
-	Wld_InsertNpc	(BloodflyWsciekly01,"SPAWN_OW_BLOODFLY_WOOD05_01");
+	Wld_InsertNpc	(BloodflyGreen,"SPAWN_OW_BLOODFLY_WOOD05_01");
+	Wld_InsertNpc	(BloodflyGreen,"SPAWN_OW_BLOODFLY_WOOD05_01");
 	Wld_InsertNpc	(Wolf,"SPAWN_OW_SCAVENGER_WOOD10_04");
 	Wld_InsertNpc	(Wolf,"SPAWN_OW_SCAVENGER_WOOD10_04");
 	Wld_InsertNpc	(YWolf,"SPAWN_OW_SCAVENGER_WOOD10_04");
@@ -522,7 +523,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_CAVALORN_8");	
 
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_07_01");	
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_07_02");	
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_BLOODFLY_07_02");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_TREE");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_TREE2");	
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_OLDWOOD");
@@ -534,8 +535,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_AL_NL_02");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_AL_NL_03");	
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_SCAVENGER_AL_ORC4");	
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_SCAVENGER_AL_ORC2");	
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_SCAVENGER_AL_ORC3");	
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_SCAVENGER_AL_ORC2");	
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_SCAVENGER_AL_ORC3");	
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_SCAVENGER_AL_ORC");	
 	Wld_InsertNpc	(Molerat,"OW_SAWHUT_MOLERAT_MOVEMENT5");
 	Wld_InsertNpc	(Scavenger,"FP_LOWCY_SCAVENGER_MIECZ");
@@ -556,7 +557,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_13_02");
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_13_01");	
 	Wld_InsertNpc	(YGiant_Rat,"FP_ROAM_GB_01");	
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_GB_02");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_GB_02");
 	
 	//ORCCITY
 	Wld_InsertNpc	(OrcShaman_ORCCITY_MAGICCOIN,"FP_ORC_REST_ORCCITY_01");
@@ -637,16 +638,16 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_01");
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_02");
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_05");
-	Wld_InsertNpc	(MinecrawlerWarriorWsciekly1,"FP_ROAM_MC_03");
-	Wld_InsertNpc	(MinecrawlerWarriorWsciekly1,"FP_ROAM_MC_12");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_MC_03");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_MC_12");
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_10");
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_07");
 	Wld_InsertNpc	(Minecrawler,"FP_ROAM_MC_09");
-	Wld_InsertNpc	(MinecrawlerWarriorWsciekly1,"FP_ROAM_MC_08");
-	Wld_InsertNpc	(MinecrawlerWarriorWsciekly1,"FP_ROAM_MC_11");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_MC_08");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_MC_11");
 
 	//Wulkan
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_WULKAN_01");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_WULKAN_01");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_WULKAN_02");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_WULKAN_03");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_ORC_14_2");
@@ -654,8 +655,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_ORC_18");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_ORC_14");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_ORC_14_3");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_CASTLE_4_03");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_CASTLE_8_04");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_CASTLE_4_03");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_CASTLE_8_04");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_CASTLE_8_05");
 	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_CASTLE_8_2");
 	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_CASTLE_8_1");
@@ -668,13 +669,13 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(DragonSnapper,"CASTLE_17");
 	Wld_InsertNpc	(Demon,"CASTLE_26");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_OW_SCAVENGER_07_01");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_OW_SCAVENGER_07_02");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_OW_SCAVENGER_07_03");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_OW_SCAVENGER_07_02");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_OW_SCAVENGER_07_03");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_OW_SCAVENGER_07_06");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_OW_SCAVENGER_07_08");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_ORC_2_5");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_ORC_2_5");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_ORC_2_1");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_ORC_2_3");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_ORC_2_3");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_04");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_05");
 	Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_06");
@@ -685,7 +686,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_14");
 	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_15");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_WULKAN_16");
-	Wld_InsertNpc	(OrcBiterWsciekly01,"FP_ROAM_MT09_01");
+	Wld_InsertNpc	(OrcBiter,"FP_ROAM_MT09_01");
 	Wld_InsertNpc	(OrcBiter,"FP_ROAM_MT09_02");
 	Wld_InsertNpc	(GroznyTopielec,"FP_ROAM_MT08_02");
 	Wld_InsertNpc	(GroznyTopielec,"FP_ROAM_MT08_01");
@@ -713,13 +714,13 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(StoneGolem,"FP_ROAM_STARAKOPALNIA_E");
 	Wld_InsertNpc	(StoneGolem,"FP_ROAM_STARAKOPALNIA_D");
 	Wld_InsertNpc	(Giant_Rat,"FP_ROAM_STARAKOPALNIA_C");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_F");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_G");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_H");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_F");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_G");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_H");
 	Wld_InsertNpc	(Giant_Rat,"FP_ROAM_STARAKOPALNIA_I");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_J");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_K");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_STARAKOPALNIA_L");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_J");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_K");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_STARAKOPALNIA_L");
 
 
 	//Nowy Oboz
@@ -798,19 +799,19 @@ func void STARTUP_OLDCAMP ()
 
 	//Palisada
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_E_1");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_E_2");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_BLOODFLY_E_2");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_E_3");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_E_4");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_BLOODFLY_E_4");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_E_5");
-	Wld_InsertNpc	(WaranWsciekly01,"OW_PATH_WARAN05_SPAWN02_03");
+	Wld_InsertNpc	(GroznyJaszczur,"OW_PATH_WARAN05_SPAWN02_03");
 	Wld_InsertNpc	(Waran,"OW_PATH_WARAN05_SPAWN02_02");
-	Wld_InsertNpc	(WaranWsciekly01,"FP_ROAM_OW_WARAN_05_01");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_OW_WARAN_05_01");
 	Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_05_05");
 	Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_05_03");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_01_03");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_01_02");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_BLOODFLY_01_02");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_01_01");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_OW_BLOODFLY_01_04");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_OW_BLOODFLY_01_04");
 	Wld_InsertNpc	(Bloodfly,"OW_RIVERBED_06");
 	Wld_InsertNpc	(Lurker,"FP_ROAM_OW_LURKER_RIVER2_BEACH");
 	Wld_InsertNpc	(Lurker,"FP_ROAM_OW_LURKER_RIVER2_BEACH2");
@@ -829,7 +830,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_03_03");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_03_04");	
 	Wld_InsertNpc	(Scavenger,"FP_ROAM_OW_SCAVENGER_03_05");	
-	Wld_InsertNpc	(WaranWsciekly01,"OW_ORCBARRIER_19");
+	Wld_InsertNpc	(GroznyJaszczur,"OW_ORCBARRIER_19");
 	Wld_InsertNpc	(Scavenger,"FP_PALISADE_SCAVENGER_01");
 	Wld_InsertNpc	(Scavenger,"FP_PALISADE_SCAVENGER_02");
 	Wld_InsertNpc	(Scavenger,"FP_PALISADE_SCAVENGER_03");
@@ -859,7 +860,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Wolf,"FP_ROAM_OW_ORCBARRIER_04_04");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_OW_ORCBARRIER_04_05");
 	Wld_InsertNpc	(Waran,"FP_PALISADE_WARAN_01");
-	Wld_InsertNpc	(WaranWsciekly01,"FP_PALISADE_WARAN_02");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_PALISADE_WARAN_02");
 	Wld_InsertNpc	(Waran,"FP_PALISADE_WARAN_03");
 	Wld_InsertNpc	(Gobbo_Green,"FP_NASZ_GOBBO_PALISADA_1");
 	Wld_InsertNpc	(Gobbo_Green,"FP_NASZ_GOBBO_PALISADA_2");
@@ -888,16 +889,16 @@ func void STARTUP_OLDCAMP ()
 
 	//ZaPalisada
 	
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_01");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_02");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_03");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_04");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_05");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_06");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_07");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_08");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_09");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_10");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_01");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_02");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_03");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_04");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_05");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_06");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_07");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_08");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_09");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_NASZ_ZAPALISADA_BLOODFLY_10");
 	
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_NASZ_ZAPALISADA_FIREWARAN_01");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_NASZ_ZAPALISADA_FIREWARAN_02");
@@ -943,15 +944,15 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_06");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_07");
 	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_WEJSCIE_08");
-	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_WEJSCIE_09");
-	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_WEJSCIE_10");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_WEJSCIE_09");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_WEJSCIE_10");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_WEJSCIE_11");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_WEJSCIE_12");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_WEJSCIE_13");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_14");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_WEJSCIE_15");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_WEJSCIE_16");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_17");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_ZAPALISADA_WEJSCIE_14");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_15");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_16");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_ZAPALISADA_WEJSCIE_17");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_WEJSCIE_18");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_WEJSCIE_19");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_20");
@@ -959,9 +960,9 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_22");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_23");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_WEJSCIE_24");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_WEJSCIE_25");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_26");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_27");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_WEJSCIE_25");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_ZAPALISADA_WEJSCIE_26");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_ZAPALISADA_WEJSCIE_27");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_WEJSCIE_28");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_WEJSCIE_29");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_WEJSCIE_30");
@@ -980,11 +981,11 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_09");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_10");
 	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_11");
-	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_LAS_12");
-	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_ZAPALISADA_LAS_13");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_14");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_15");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_16");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_12");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_13");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_14");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_15");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_16");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_17");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_18");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_19");
@@ -992,24 +993,24 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_21");
 	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_22");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_23");
-	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_24");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_24");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_25");
-	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_26");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_26");
 	Wld_InsertNpc	(GroznyKretoszczur,"FP_ROAM_ZAPALISADA_LAS_27");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_LAS_28");
+	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_28");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_29");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_LAS_30");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_31");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_32");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_33");
+	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_30");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_31");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_32");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_33");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_34");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_LAS_35");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_LAS_36");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_37");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_38");
+	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_35");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_ZAPALISADA_LAS_36");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_37");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_38");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_39");
-	Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ZAPALISADA_LAS_40");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ZAPALISADA_LAS_41");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_40");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ZAPALISADA_LAS_41");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_42");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_43");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_44");
@@ -1028,15 +1029,15 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Shadowbeast,"FP_ROAM_ZAPALISADA_LAS_57");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_58");
 	Wld_InsertNpc	(Warg,"FP_ROAM_ZAPALISADA_LAS_59");
-	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_60");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_60");
 	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_61");
 	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_62");
-	Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_ZAPALISADA_LAS_63");
+	Wld_InsertNpc	(Scavenger_Demon_Grozny,"FP_ROAM_ZAPALISADA_LAS_63");
 	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_ZAPALISADA_LAS_64");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_ZAPALISADA_LAS_65");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_ZAPALISADA_LAS_65");
 	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_ZAPALISADA_LAS_66");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_ZAPALISADA_LAS_67");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_ZAPALISADA_LAS_68");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_ZAPALISADA_LAS_67");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_ZAPALISADA_LAS_68");
 	Wld_InsertNpc	(Bloodhound,"FP_ROAM_ZAPALISADA_LAS_69");
 	Wld_InsertNpc	(Bloodhound,"FP_ROAM_ZAPALISADA_LAS_70");
 	Wld_InsertNpc	(Shadowbeast,"FP_ROAM_ZAPALISADA_LAS_71");
@@ -1069,53 +1070,64 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_97");
 	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_98");
 	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_99");
-
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_01");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_100");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_101");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_102");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_103");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_104");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_105");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_106");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_107");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_108");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_109");
+	Wld_InsertNpc	(Zombie01,"FP_ROAM_ZAPALISADA_LAS_110");
+	
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_01");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_02");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_03");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_04");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_03");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_04");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_05");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_06");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_07");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_08");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_07");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_08");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_09");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_10");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_10");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_11");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_12");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_13");
-	Wld_InsertNpc	(GroznyJaszczurWsciekly01,"FP_ROAM_BAGNO_WARAN_14");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_BAGNO_WARAN_14");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_15");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_16");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_17");
 	Wld_InsertNpc	(Waran,"FP_ROAM_BAGNO_WARAN_18");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_01");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_02");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_03");
-	Wld_InsertNpc	(SwampDroneWsciekly01,"FP_ROAM_BAGNO_BLOODFLY_04");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_05");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_06");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_01");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_02");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_03");
+	Wld_InsertNpc	(SwampDrone,"FP_ROAM_BAGNO_BLOODFLY_04");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_05");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_06");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_07");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_08");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_09");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_08");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_09");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_10");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_11");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_12");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_13");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_14");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_15");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_16");
-	Wld_InsertNpc	(SwampDroneWsciekly01,"FP_ROAM_BAGNO_BLOODFLY_17");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_11");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_12");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_13");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_14");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_15");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_16");
+	Wld_InsertNpc	(SwampDrone,"FP_ROAM_BAGNO_BLOODFLY_17");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_18");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_19");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_19");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_20");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_21");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_22");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_23");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_24");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_22");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_23");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_24");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_25");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_26");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_BAGNO_BLOODFLY_27");
-	Wld_InsertNpc	(Bloodfly,"FP_ROAM_BAGNO_BLOODFLY_28");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_26");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_27");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_BAGNO_BLOODFLY_28");
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_01");
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_02");
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_03");
@@ -1131,34 +1143,94 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_13");
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_14");
 	Wld_InsertNpc	(Swampshark,"FP_ROAM_WAZBLOTNY_15");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_01");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_02");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_03");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_04");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_05");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_06");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_07");
-	Wld_InsertNpc	(SwampratWsciekly01,"FP_ROAM_BAGNO_SWAMPRAT_08");
-	Wld_InsertNpc	(SwampratWsciekly11,"FP_ROAM_BAGNO_SWAMPRAT_09");
-	Wld_InsertNpc	(SwampratWsciekly12,"FP_ROAM_BAGNO_SWAMPRAT_10");
-	Wld_InsertNpc	(SwampratWsciekly13,"FP_ROAM_BAGNO_SWAMPRAT_11");
-	Wld_InsertNpc	(SwampratWsciekly14,"FP_ROAM_BAGNO_SWAMPRAT_12");
-	Wld_InsertNpc	(SwampratWsciekly15,"FP_ROAM_BAGNO_SWAMPRAT_13");
-	Wld_InsertNpc	(SwampratWsciekly16,"FP_ROAM_BAGNO_SWAMPRAT_14");
-	Wld_InsertNpc	(SwampratWsciekly17,"FP_ROAM_BAGNO_SWAMPRAT_15");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_01");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_02");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_03");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_04");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_05");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_06");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_07");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_08");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_09");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_10");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_11");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_12");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_13");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_14");
+	Wld_InsertNpc	(Swamprat,"FP_ROAM_BAGNO_SWAMPRAT_15");
 
 	
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_TROLL1");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_TROLL2");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_TROLL3");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_TROLL4");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_TROLL5");
+	Wld_InsertNpc	(Troll,"FP_ROAM_TROLL1");
+	Wld_InsertNpc	(Troll,"FP_ROAM_TROLL2");
+	Wld_InsertNpc	(Troll,"FP_ROAM_TROLL3");
+	Wld_InsertNpc	(Troll,"FP_ROAM_TROLL4");
+	Wld_InsertNpc	(Troll,"FP_ROAM_TROLL5");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_TROLLS_01");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_TROLLS_02");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_TROLLS_03");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_TROLLS_04");
 	Wld_InsertNpc	(FireWaran,"FP_ROAM_ZAPALISADA_TROLLS_05");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_01");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_02");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_03");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_04");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_05");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_06");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_07");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_TROLLS_RAZOR_08");
 	
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_01");
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_02");
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_03");
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_04");
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_05");
+	Wld_InsertNpc	(Bloodhound,"FP_ROAM_NASZ_ZAPALISADA_MGLY_06");
+	
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_01");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_02");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_03");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_04");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_05");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_06");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_07");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_NASZ_ZAPALISADA_PATH_ORCDOG_08");
+	
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_01");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_02");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_03");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_04");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_05");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_06");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_KAMIEN_07");
+	
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_01");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_02");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_03");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_04");
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_05");
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_06");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_07");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_08");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_09");
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_10");
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_11");
+	Wld_InsertNpc	(Razor,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_12");
+	Wld_InsertNpc	(DragonSnapper,"FP_ROAM_NASZ_ZAPALISADA_PATHSWAMP_13");
+	
+	// SUSAN  StoneGolem FireGolem IceGolem SwampGolem
+	Wld_InsertNpc	(StoneGolem,"FP_ROAM_NASZ_SUSAN_GOLEM_01");
+	Wld_InsertNpc	(FireGolem,"FP_ROAM_NASZ_SUSAN_GOLEM_02");
+	Wld_InsertNpc	(IceGolem,"FP_ROAM_NASZ_SUSAN_GOLEM_03");
+	Wld_InsertNpc	(SwampGolem,"FP_ROAM_NASZ_SUSAN_GOLEM_04");
+
+	
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_01");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_02");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_03");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_04");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_05");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_06");
+	Wld_InsertNpc	(OrcDog,"FP_ROAM_GRAVEYARD_ORCDOG_07");
 
 	
 	Wld_InsertNpc	(SkeletonPro,"FP_ROAM_SKELETON_OB_01");
@@ -1296,10 +1368,10 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Wolf,"FP_ROAM_OW_WOLF2_WALD_OC7");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_OW_WOLF2_WALD_OC8");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_ORK_OC_26");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORK_OC_26_2");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORK_OC_27");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORK_OC_26_2");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORK_OC_27");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_ORK_OC_27_2");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORK_OC_27_3");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORK_OC_27_3");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_ORK_OC_10");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_ORK_OC_09");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_ORK_OC_08");
@@ -1338,7 +1410,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_01");
 	Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_02");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_01");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_LASKOPALNIA_02");
+	Wld_InsertNpc	(WscieklyWilk,"FP_LASKOPALNIA_02");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_03");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_04");
 	Wld_InsertNpc	(Lurker,"FP_ROAM_OW_BLOCKGOBBO_CAVE_DM2");
@@ -1359,12 +1431,12 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_SNAPPER_02_08");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_SNAPPER_02_02");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_05");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_LASKOPALNIA_06");
+	Wld_InsertNpc	(WscieklyWilk,"FP_LASKOPALNIA_06");
 	Wld_InsertNpc	(Wolf,"FP_LASKOPALNIA_07");
 	Wld_InsertNpc	(GroznyWilk,"FP_LASKOPALNIA_08");
 	Wld_InsertNpc	(GroznyWilk,"FP_LASKOPALNIA_09");
 	Wld_InsertNpc	(Bloodfly,"FP_LASKOPALNIA_10");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_LASKOPALNIA_11");
+	Wld_InsertNpc	(BloodflyGreen,"FP_LASKOPALNIA_11");
 	Wld_InsertNpc	(Lurker,"FP_LASKOPALNIA_12");
 	Wld_InsertNpc	(Lurker,"FP_LASKOPALNIA_13");
 	Wld_InsertNpc	(Lurker,"FP_LASKOPALNIA_14");
@@ -1380,27 +1452,27 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(GroznyDzik,"FP_LASKOPALNIA_24");
 	Wld_InsertNpc	(GroznyWilk,"FP_LASKOPALNIA_25");
 	Wld_InsertNpc	(GroznyWilk,"FP_LASKOPALNIA_26");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_LASKOPALNIA_27");
+	Wld_InsertNpc	(Troll,"FP_LASKOPALNIA_27");
 	Wld_InsertNpc	(GroznyTopielec,"FP_LASKOPALNIA_28");
 	Wld_InsertNpc	(GroznyTopielec,"FP_LASKOPALNIA_29");
-	Wld_InsertNpc	(WaranWsciekly01,"FP_LASKOPALNIA_30");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_LASKOPALNIA_30");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_LASKOPALNIA_31");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_LASKOPALNIA_32");
 	Wld_InsertNpc	(GroznyJaszczur,"FP_LASKOPALNIA_33");
 	Wld_InsertNpc	(GroznyJaszczur,"FP_LASKOPALNIA_34");
 	Wld_InsertNpc	(GroznyJaszczur,"FP_LASKOPALNIA_35");
 	Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_DEMON_02_03");
-	Wld_InsertNpc	(WaranWsciekly01,"FP_ROAM_OW_WARAN_DEMON_02_02");
+	Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_OW_WARAN_DEMON_02_02");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_WARAN_DEMON_01");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_WARAN_DEMON_02");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_WARAN_DEMON_03");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_WARAN_DEMON_04");
 	Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_WARAN_DEMON_05");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_OW_DT_BLOODFLY_02");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_DT_BLOODFLY_04");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_DT_BLOODFLY_01");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_DT_BLOODFLY_03");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_DT_BLOODFLY_04");
+	Wld_InsertNpc	(Troll,"FP_ROAM_OW_DT_BLOODFLY_02");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_DT_BLOODFLY_04");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_DT_BLOODFLY_01");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_DT_BLOODFLY_03");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_DT_BLOODFLY_04");
 	
 	//Bandyci
 
@@ -1431,9 +1503,9 @@ func void STARTUP_OLDCAMP ()
 
 	// Rybak
 	
-	Wld_InsertNpc	(TrollWsciekly01,"FP_ROAM_OW_WARAN_NC_04");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_BLOODFLY_04_02_02");
-	Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_BLOODFLY_04_02_01");
+	Wld_InsertNpc	(Troll,"FP_ROAM_OW_WARAN_NC_04");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_BLOODFLY_04_02_02");
+	Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_BLOODFLY_04_02_01");
 	Wld_InsertNpc	(IceWolf,"FP_ROAM_RYBAK_01");
 	Wld_InsertNpc	(IceWolf,"FP_ROAM_RYBAK_02");
 	Wld_InsertNpc	(IceWolf,"FP_ROAM_RYBAK_03");
@@ -1503,7 +1575,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_KOPALNIA_2");
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_KOPALNIA_3");
 	Wld_InsertNpc	(Meatbug,"FP_ROAM_OW_MEATBUG_KOPALNIA_4");
-	Wld_InsertNpc	(TrollWsciekly01,"FP_TROLL_KOPALNIA_1");
+	Wld_InsertNpc	(Troll,"FP_TROLL_KOPALNIA_1");
 
 	//Przed zakmiem
 	
@@ -1525,8 +1597,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_ORK_OC_08");
 	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_ORK_OC_10");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_WARG_OC_14");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_WARG_OC_15");
-	Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_WARG_OC_13");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_WARG_OC_15");
+	Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_WARG_OC_13");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_ORK_OC_07_2");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_ORK_OC_07");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_OW_SCAVENGER_AL_NL_02_2");
@@ -1534,7 +1606,7 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Molerat,"FP_SLEEP_OW_SCAVENGER_AL_NL_02_1");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_ORK_OC_25");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_ORK_OC_23");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORK_OC_24");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORK_OC_24");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_WARG_OC_01");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_WARG_OC_02");
 	Wld_InsertNpc	(YWolf,"FP_SIT_OW2");
@@ -1549,8 +1621,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_ORK_OC_14");
 	Wld_InsertNpc	(Gobbo_Green,"FP_ROAM_ORK_OC_19");
 	Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_ORK_OC_11");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_ORK_OC_20_2");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_ORK_OC_20");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_ORK_OC_20_2");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_ORK_OC_20");
 	Wld_InsertNpc	(Molerat,"FP_ZAMEK_MOLERAT_1");
 	Wld_InsertNpc	(Molerat,"FP_ZAMEK_MOLERAT_2");
 	Wld_InsertNpc	(Molerat,"FP_ZAMEK_MOLERAT_3");
@@ -1562,8 +1634,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(YMolerat,"FP_ROAM_OW_MOLERAT_01_03");
 	Wld_InsertNpc	(Molerat,"FP_ROAM_OW_MOLERAT_01_04");
 	Wld_InsertNpc	(Giant_Rat,"FP_OW_GORNS_VERSTECK");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_SLEEP_OW_MOLERAT_01_02");
-	Wld_InsertNpc	(Giant_Rat_Huge01,"FP_ROAM_ITEM_SPECIAL_02");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_SLEEP_OW_MOLERAT_01_02");
+	Wld_InsertNpc	(Giant_Rat_Huge,"FP_ROAM_ITEM_SPECIAL_02");
 
 	
 	// Hoshpak
@@ -1575,8 +1647,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc   (Molerat,"FP_HOSHPACK_MOLERAT_05");	
 	Wld_InsertNpc   (Wolf,"FP_ROAM_OW_SNAPPER_OW_ORC6");	
 	Wld_InsertNpc   (Wolf,"FP_ROAM_OW_SNAPPER_OW_ORC_01");	
-	Wld_InsertNpc   (WscieklyWilk1,"FP_ROAM_OW_SNAPPER_OW_ORC8");	
-	Wld_InsertNpc   (WscieklyWilk1,"FP_ROAM_OW_SNAPPER_OW_ORC4");	
+	Wld_InsertNpc   (WscieklyWilk,"FP_ROAM_OW_SNAPPER_OW_ORC8");	
+	Wld_InsertNpc   (WscieklyWilk,"FP_ROAM_OW_SNAPPER_OW_ORC4");	
 	Wld_InsertNpc   (Wolf,"FP_ROAM_ORC_04");	
 	Wld_InsertNpc   (Wolf,"FP_ROAM_ORC_02");	
 	
@@ -1593,14 +1665,14 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc   (Molerat,"FP_ROAM_OW_SCAVENGER_07_11");
 	Wld_InsertNpc   (YMolerat,"FP_ROAM_OW_SCAVENGER_07_07");
 	Wld_InsertNpc   (Wolf,"FP_ROAM_OW_WOLF_02_12");	
-	Wld_InsertNpc   (WscieklyWilk1,"FP_ROAM_OW_WOLF_02_12");	
+	Wld_InsertNpc   (WscieklyWilk,"FP_ROAM_OW_WOLF_02_12");	
 	Wld_InsertNpc   (Wolf,"FP_ROAM_OW_WOLF_02_11");	
 	Wld_InsertNpc	(Wolf,"FP_ROAM_ORC_13");
 	Wld_InsertNpc	(YWolf,"FP_ROAM_ORC_12");
 	Wld_InsertNpc	(Wolf,"FP_ROAM_ORC_11");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_ORC_08");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORC_2_1_6");
-	Wld_InsertNpc	(BloodflyWsciekly01,"FP_ROAM_ORC_2_1_8");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORC_2_1_6");
+	Wld_InsertNpc	(BloodflyGreen,"FP_ROAM_ORC_2_1_8");
 	Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_SCAVENGER_10_08");
 	// Warge 
 	Wld_InsertNpc	(Warg,"OC_PATH_04");
@@ -1877,12 +1949,12 @@ func void STARTUP_SURFACE ()
 	//-------------SwampDragongebiet------------------
 	
 
-	Wld_InsertNpc		(SwampDroneWsciekly01,"FP_ROAM_SWAMP_ENTRANCE_01");
+	Wld_InsertNpc		(SwampDrone,"FP_ROAM_SWAMP_ENTRANCE_01");
 	Wld_InsertNpc		(Bloodfly,"FP_ROAM_SWAMP_ENTRANCE_02");
-	Wld_InsertNpc		(BloodflyWsciekly01,"FP_ROAM_SWAMP_ENTRANCE_02");
-	Wld_InsertNpc		(BloodflyWsciekly01,"FP_ROAM_SWAMP_ENTRANCE_02");
+	Wld_InsertNpc		(BloodflyGreen,"FP_ROAM_SWAMP_ENTRANCE_02");
+	Wld_InsertNpc		(BloodflyGreen,"FP_ROAM_SWAMP_ENTRANCE_02");
 	Wld_InsertNpc		(Bloodfly,"FP_ROAM_SWAMP_3_01");
-	Wld_InsertNpc		(BloodflyWsciekly01,"FP_ROAM_SWAMP_4_02");
+	Wld_InsertNpc		(BloodflyGreen,"FP_ROAM_SWAMP_4_02");
 
 	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_5_01");
 
@@ -1892,13 +1964,13 @@ func void STARTUP_SURFACE ()
 	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_7_01");
 
 	Wld_InsertNpc		(Swampdrone,"OW_DRAGONSWAMP_023");
-	Wld_InsertNpc		(SwampDroneWsciekly01,"OW_DRAGONSWAMP_023");
-	Wld_InsertNpc		(SwampratWsciekly01,"OW_DRAGONSWAMP_026");
+	Wld_InsertNpc		(SwampDrone,"OW_DRAGONSWAMP_023");
+	Wld_InsertNpc		(Swamprat,"OW_DRAGONSWAMP_026");
 
 	Wld_InsertNpc		(Swamprat,"FP_ROAM_SWAMP_10_01");
 
-	Wld_InsertNpc		(SwampratWsciekly01,"FP_ROAM_SWAMP_11_01");
-	Wld_InsertNpc		(SwampDroneWsciekly01,"FP_ROAM_SWAMP_17_01");
+	Wld_InsertNpc		(Swamprat,"FP_ROAM_SWAMP_11_01");
+	Wld_InsertNpc		(SwampDrone,"FP_ROAM_SWAMP_17_01");
 
 	Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_12_02");
 
@@ -2015,7 +2087,7 @@ func void STARTUP_SURFACE ()
 	Wld_InsertNpc		(OrcWarrior_Roam,"OW_PATH_1_16_7");
 	Wld_InsertNpc		(OrcWarrior_Roam,"OW_PATH_1_16_7");
 
-	Wld_InsertNpc		(TrollWsciekly01,"FP_CAMPFIRE_OW_FALL");
+	Wld_InsertNpc		(Troll,"FP_CAMPFIRE_OW_FALL");
 	
 	
 	

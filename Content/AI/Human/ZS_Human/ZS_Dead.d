@@ -17,8 +17,8 @@ var int Boss10Killed;
 
 var int OzywieniecKilledOneTime;
 var int Psikusy_SheepKiller_Counter;
-
-
+var int KazminKilledOneTime;
+var int OrcShamanHersztKilledOneTime;
 
 func void ZS_Dead ()
 {	
@@ -539,8 +539,10 @@ func void ZS_Dead ()
 		Migration_GoToShamanHerszt();
 	};
 	
-	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcShamanHerszt))
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcShamanHerszt) && OrcShamanHersztKilledOneTime == FALSE)
 	{
+		// FIX UCIECZKA 1.1 - z niewiadomych przyczyn, nawet martwy herszt po uzyciu kodu set time umieral ponownie...
+		OrcShamanHersztKilledOneTime = TRUE;
 		Migration_GoToDowodca();
 	};
 
@@ -597,8 +599,12 @@ func void ZS_Dead ()
 
 	};
 
-	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_028_Kazmin))
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_028_Kazmin) && KazminKilledOneTime == FALSE)
 	{
+		KazminKilledOneTime = TRUE;
+
+		Migration_OrcAttack();
+	
 		B_LogEntry (TOPIC_zacmienie, "Pokrzy¿owa³em plany tego przebrzyd³ego demona Kazmina!");
 		Log_SetTopicStatus (TOPIC_zacmienie, LOG_SUCCESS);
 	

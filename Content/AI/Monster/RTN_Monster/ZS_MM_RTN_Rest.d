@@ -35,12 +35,22 @@ func int ZS_MM_Rtn_Rest_Loop ()
 	
 	if (self.aivar[AIV_TAPOSITION] == NOTINPOS)
 	{
-		if (Wld_IsFPAvailable(self,	"FP_ROAM"))
+		if (Wld_IsFPAvailable(self,	"FP_REST"))
+		{
+			AI_GotoFP (self, "FP_REST");
+		}
+
+		else if (Wld_IsFPAvailable(self,	"FP_ROAM"))
 		{
 			AI_GotoFP (self, "FP_ROAM");
 		};
 		
-		if (Npc_IsOnFP(self, "FP_ROAM"))
+		if (Npc_IsOnFP(self, "FP_REST"))
+		{
+			self.aivar[AIV_TAPOSITION] = ISINPOS;
+		}
+
+		else if (Npc_IsOnFP(self, "FP_ROAM"))
 		{
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};

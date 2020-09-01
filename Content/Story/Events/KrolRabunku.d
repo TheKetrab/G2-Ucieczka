@@ -6,11 +6,13 @@ var int SKRZYNIA_LOWCY_3_Opened;
 var int SKRZYNIA_LOWCY_4_Opened;
 var int SKRZYNIA_LOWCY_5_Opened;
 var int SKRZYNIA_LOWCY_6_Opened;
+var int SKRZYNIA_LOWCY_7_Opened;
 
 var int SKRZYNIA_MYSLIWI_1_Opened;
 var int SKRZYNIA_MYSLIWI_2_Opened;
 var int SKRZYNIA_MYSLIWI_3_Opened;
 var int SKRZYNIA_MYSLIWI_4_Opened;
+var int SKRZYNIA_MYSLIWI_5_Opened;
 
 var int Achievement30OneTime;
 func void CheckAllChests() {
@@ -21,10 +23,12 @@ func void CheckAllChests() {
 	 && SKRZYNIA_LOWCY_4_Opened
 	 && SKRZYNIA_LOWCY_5_Opened
 	 && SKRZYNIA_LOWCY_6_Opened
+	 && SKRZYNIA_LOWCY_7_Opened
 	 && SKRZYNIA_MYSLIWI_1_Opened
 	 && SKRZYNIA_MYSLIWI_2_Opened
 	 && SKRZYNIA_MYSLIWI_3_Opened
-	 && SKRZYNIA_MYSLIWI_4_Opened)
+	 && SKRZYNIA_MYSLIWI_4_Opened
+	 && SKRZYNIA_MYSLIWI_5_Opened)
 	{
 	 if (Achievement30OneTime == FALSE) {
 		Achievement30OneTime = TRUE;
@@ -78,6 +82,13 @@ func void SKRZYNIA_LOWCY_6_S1() {
 	};
 };
 
+func void SKRZYNIA_LOWCY_7_S1() {
+	if (!SKRZYNIA_LOWCY_7_Opened) {
+		SKRZYNIA_LOWCY_7_Opened = TRUE;
+		CheckAllChests();
+	};
+};
+
 func void SKRZYNIA_MYSLIWI_1_S1() {
 	if (!SKRZYNIA_MYSLIWI_1_Opened) {
 		SKRZYNIA_MYSLIWI_1_Opened = TRUE;
@@ -102,6 +113,13 @@ func void SKRZYNIA_MYSLIWI_3_S1() {
 func void SKRZYNIA_MYSLIWI_4_S1() {
 	if (!SKRZYNIA_MYSLIWI_4_Opened) {
 		SKRZYNIA_MYSLIWI_4_Opened = TRUE;
+		CheckAllChests();
+	};
+};
+
+func void SKRZYNIA_MYSLIWI_5_S1() {
+	if (!SKRZYNIA_MYSLIWI_5_Opened) {
+		SKRZYNIA_MYSLIWI_5_Opened = TRUE;
 		CheckAllChests();
 	};
 };

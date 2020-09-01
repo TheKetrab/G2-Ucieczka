@@ -132,8 +132,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 
 		//OKOLICE LOWCOW
 		Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_SCAVENGER_AL_ORC4");
-		Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_SCAVENGER_AL_ORC3");
-		Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_SCAVENGER_AL_ORC2");
+		Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_SCAVENGER_AL_ORC3");
+		Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_SCAVENGER_AL_ORC2");
 		Wld_InsertNpc	(Wolf,"FP_SIT_OW2");
 		Wld_InsertNpc	(GroznyWilk,"FP_ROAM_ORK_OC_25");
 		Wld_InsertNpc	(GroznyScierwojad,"FP_SLEEP_OW_SCAVENGER_AL_NL_02");
@@ -234,12 +234,13 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		
 		// ------ Respawn ------
+		// Vachut
 		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_01"); 
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_02"); 
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_03"); 
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_04"); 
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_05"); 
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"NASZ_BANDYCI_WODOSPAD_06"); 
+		Wld_InsertNpc	(Topielec_Wsciekly_B,"NASZ_BANDYCI_WODOSPAD_02"); 
+		Wld_InsertNpc	(Topielec_Wsciekly_C,"NASZ_BANDYCI_WODOSPAD_03"); 
+		Wld_InsertNpc	(Topielec_Wsciekly_D,"NASZ_BANDYCI_WODOSPAD_04"); 
+		Wld_InsertNpc	(Topielec_Wsciekly_E,"NASZ_BANDYCI_WODOSPAD_05"); 
+		Wld_InsertNpc	(Topielec_Wsciekly_F,"NASZ_BANDYCI_WODOSPAD_06"); 
 
 		// blotne weze
 		Wld_InsertNpc		(Swampshark,"FP_ROAM_SWAMP_ENTRANCE_03");
@@ -260,7 +261,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		//LAS OC
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_MOLERAT_OCWOOD_OC4"); 
 		Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_C2"); 
-		Wld_InsertNpc	(WildBloodfly01,"FP_ROAM_OW_BLOODFLY_C5"); 
+		Wld_InsertNpc	(WildBloodfly,"FP_ROAM_OW_BLOODFLY_C5"); 
 		Wld_InsertNpc	(Bloodfly,"FP_ROAM_OW_BLOODFLY_C4"); 
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_BLOODFLY_WOOD05_04"); 
 		Wld_InsertNpc	(Bloodhound,"FP_ROAM_OW_BLOODFLY_WOOD05_03"); 
@@ -303,12 +304,12 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(GroznyWilk,"FP_PALISADE_SCAVENGER_10"); 
 		Wld_InsertNpc	(GroznyWilk,"FP_PALISADE_SCAVENGER_12"); 
 
-		Wld_InsertNpc	(WaranWsciekly01,"FP_ROAM_OW_WARAN_EBENE_02_04");
+		Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_OW_WARAN_EBENE_02_04");
 		Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_EBENE_02_02");
 		Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_EBENE_02_03");
-		Wld_InsertNpc	(WaranWsciekly01,"FP_ROAM_OW_WARAN_EBENE_02_08");
+		Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_OW_WARAN_EBENE_02_08");
 		Wld_InsertNpc	(Waran,"FP_ROAM_OW_WARAN_EBENE_02_09");
-		Wld_InsertNpc	(WaranWsciekly01,"FP_ROAM_OW_WARAN_EBENE_02_07");
+		Wld_InsertNpc	(GroznyJaszczur,"FP_ROAM_OW_WARAN_EBENE_02_07");
 		Wld_InsertNpc	(Waran,"FP_ROAM_ROCKCAMP_02");
 	
 		//WULKAN
@@ -340,7 +341,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_SHADOWBEAST_10_02");
 		Wld_InsertNpc	(Scavenger_Demon,"FP_ROAM_OW_SHADOWBEAST_10_10_05");
 		Wld_InsertNpc	(Warg,"FP_ROAM_ORC_05");
-		Wld_InsertNpc	(WscieklyWilk1,"FP_ROAM_ORC_06");
+		Wld_InsertNpc	(WscieklyWilk,"FP_ROAM_ORC_06");
 	
 		//OKOLICE LOWCOW
 		Wld_InsertNpc	(IceWolf,"FP_ROAM_OW_SCAVENGER_13_02"); 		
@@ -355,15 +356,15 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		
 		//TOPIELCE
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"FP_ROAM_RYBAK_08"); 		
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"FP_ROAM_OW_SCAVENGER_BANDIT_02"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_RYBAK_08"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_SCAVENGER_BANDIT_02"); 		
 		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_BLOODFLY_E_3"); 		
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"FP_ROAM_OW_BLOODFLY_E_1"); 		
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"FP_ROAM_OW_BLOODFLY_E_2"); 		
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"OW_RIVERBED_07"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_BLOODFLY_E_1"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_BLOODFLY_E_2"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"OW_RIVERBED_07"); 		
 		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_BLOODFLY_01_04"); 		
 		Wld_InsertNpc	(Topielec_Wsciekly,"FP_ROAM_OW_LURKER_RIVER2_BEACH5"); 		
-		Wld_InsertNpc	(Topielec_Wsciekly_A,"FP_LASKOPALNIA_29"); 		
+		Wld_InsertNpc	(Topielec_Wsciekly,"FP_LASKOPALNIA_29"); 		
 	
 		//ZAMEK
 		Wld_InsertNpc	(Warg,"FP_ROAM_ORK_OC_27_4");

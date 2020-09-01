@@ -3,7 +3,7 @@
 // ************
 
 const int SPL_Cost_FireRain			= 150;
-const int SPL_Damage_FireRain 		= 500;
+const int SPL_Damage_FireRain 		= 250;
 var int FireRainUsed;
 
 INSTANCE Spell_FireRain (C_Spell_Proto)

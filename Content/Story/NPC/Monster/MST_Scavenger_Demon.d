@@ -99,25 +99,26 @@ INSTANCE Scavenger_Demon_Grozny	(Mst_Default_Scavenger_Demon)
 	level							=	14;
 
 	//----- Attribute ----
-	attribute	[ATR_STRENGTH]		=	100;
-	attribute	[ATR_DEXTERITY]		=	100;
-	attribute	[ATR_HITPOINTS_MAX]	=	160;
-	attribute	[ATR_HITPOINTS]		=	160;
+	attribute	[ATR_STRENGTH]		=	140;
+	attribute	[ATR_DEXTERITY]		=	140;
+	attribute	[ATR_HITPOINTS_MAX]	=	260;
+	attribute	[ATR_HITPOINTS]		=	260;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections -----
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;
-	protection	[PROT_FIRE]			=	100;
-	protection	[PROT_FLY]			=	100;
-	protection	[PROT_MAGIC]		=	100;
+	protection	[PROT_BLUNT]		=	150;
+	protection	[PROT_EDGE]			=	150;
+	protection	[PROT_POINT]		=	150;
+	protection	[PROT_FIRE]			=	150;
+	protection	[PROT_FLY]			=	140;
+	protection	[PROT_MAGIC]		=	40;
 	
 	//----- Damage Types ----
 	damagetype 						=	DAM_EDGE;
 
 	Mdl_SetModelScale(self,	1.10,	1.10, 	1.10);
+	aivar[AIV_POISON] = POISON_2;
 };
 
 //***************

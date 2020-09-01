@@ -77,7 +77,6 @@ func void B_SetVisuals_OrcShamanStone()
 {
 	Mdl_SetVisual			(self,	"Orc.mds");
 	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
-	//Mdl_SetVisualBody		(self,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShamanStone",	DEFAULT,  	DEFAULT,	-1);
 	Mdl_SetVisualBody		(self,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
 };
 

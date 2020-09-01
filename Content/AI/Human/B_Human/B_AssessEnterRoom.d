@@ -105,6 +105,13 @@ func int B_AssessEnterRoom ()
 	};
 
 	
+	if (C_BodyStateContains(self,BS_WALK)
+	 || C_BodyStateContains(self,BS_RUN)
+	 || self.aivar[AIV_TAPOSITION] != ISINPOS)
+	{
+		return FALSE; // jesli self idzie, biegnie albo nie jest na swoim waypoincie, to ignoruje
+	};
+	
 	// FUNC 
 
 	// ------- Spieler befindet sich in öffentlichem Raum ------
@@ -126,7 +133,7 @@ func int B_AssessEnterRoom ()
 			B_MM_DeSynchronize();
 		};
 			
-		if (Npc_IsInState (self, ZS_Potion_Alchemy))
+		if (Npc_IsInState (self, ZS_Potion_Alchemy) && self.id != 10) // monastir ma gdzies to, ze ktos wchodzi
 		|| (Npc_IsInState (self, ZS_Read_Bookstand))
 		|| (Npc_IsInState (self, ZS_Sit_Bench))
 		//|| (Npc_IsInState (self, ZS_Sit_Campfire))

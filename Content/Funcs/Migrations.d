@@ -3,6 +3,61 @@
 // MIGRATIONS
 // ***** ***** *****
 
+func void Migration_OrcAttack() {
+
+	// Migracja -> orkowy atak po rozwi¹zaniu spraw na bagnie
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_01");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_02");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_03");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_04");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_05");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_06");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_REST_ORCATTACK_07");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_08");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_REST_ORCATTACK_09");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_10");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_11");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_12");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_13");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_14");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_15");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_16");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_REST_ORCATTACK_17");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_18");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_19");
+	Wld_InsertNpc	(OrcUltra_Rest,"FP_REST_ORCATTACK_20");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_21");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_22");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_23");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_24");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_25");
+	Wld_InsertNpc	(OrcWarrior_Rest,"FP_REST_ORCATTACK_26");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_27");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_28");
+	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_29");
+	Wld_InsertNpc	(OrcShaman_Sit,"FP_REST_ORCATTACK_30");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_31");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_32");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_33");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_34");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_35");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_36");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_37");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_38");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_39");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_40");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_41");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_42");
+	Wld_InsertNpc	(OrcUltra_Roam,"FP_ROAM_ORCATTACK_43");
+	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCATTACK_44");
+	Wld_InsertNpc	(OrcWarrior_Roam,"FP_ROAM_ORCATTACK_45");
+	
+	
+	
+
+
+};
+
 func void Migration_LowcyToTwierdza() {
 
 	// Migracja ³owców do twierdzy
@@ -190,6 +245,8 @@ func void Migration_Kap4() {
 	B_StartOtherRoutine (NASZ_225_Wrzod, "Kap4");  // krzyczy
 	B_StartOtherRoutine (NASZ_231_Ted, "Kap4");    // za palisade do klasztoru
 	B_StartOtherRoutine (NASZ_119_Udar,"Kap4");    // zostaje szefem
+
+	B_StartOtherRoutine (NASZ_003_Kopacz,"Kap4"); // torturowany niewolnik siada przy ognisku u lowcow
 	
 	B_StartOtherRoutine (NASZ_319_Niewolnik,"Kap4"); //
 	B_StartOtherRoutine (NASZ_320_Niewolnik,"Kap4"); // niewolnicy pracuja w obozie lowcow
@@ -204,7 +261,7 @@ func void Migration_Kap4() {
 	B_StartOtherRoutine (NASZ_227_Vachut,"Kap4");       // zamek -> kreci roast scavenger
 	B_StartOtherRoutine (NASZ_229_Ayan,"InCastle");     // zamek -> stoi z zalozonymmi rekami pod domem magow
 
-	B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");    // zamek -> siedzi przy krzesle z ammannem
+	//B_StartOtherRoutine (NASZ_110_Keroloth,"Zamek");    // zamek -> siedzi przy krzesle z ammannem
 	B_StartOtherRoutine (NASZ_113_Godar,"Kap4");        // -----> oboz (pije w karczmie)
 	B_StartOtherRoutine (NASZ_114_Hokurn,"Kap4");       // -----> oboz (pije w karczmie)
 	B_StartOtherRoutine (NASZ_115_Kurgan,"InCastle");   // zamek -> stoi tam gdzie Tandor w G2

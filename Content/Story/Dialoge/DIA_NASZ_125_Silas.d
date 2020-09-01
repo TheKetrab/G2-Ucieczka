@@ -442,7 +442,7 @@ FUNC VOID DIA_NASZ_125_Silas_KurgKanDance_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_15_00"); //Ha, ha! Patrz jakiego Phill znalaz³ sobie towarzysza do tañca.
-	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_01"); //Kazaliœcie mu tañczyæ? Nie jestem wam wstyd?
+	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_01"); //Kazaliœcie mu tañczyæ? Nie jest wam wstyd?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_KurgKanDance_55_02"); //Kazaæ? O nie, ten ork po prostu przyszed³ w chwili wolnego i widz¹c tañcz¹cego Philla, zdecydowa³ siê do niego do³¹czyæ. Ubaw po pachy! 
 	AI_Output (other, self,"DIA_NASZ_125_Silas_KurgKanDance_55_03"); //Jeœli tak, to rzeczywiœcie.
 	

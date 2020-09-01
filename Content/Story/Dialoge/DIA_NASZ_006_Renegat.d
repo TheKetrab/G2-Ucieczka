@@ -1,6 +1,3 @@
-// TODO if will uciekl z kopalni (zwoj albo trucizna)
-// to Renegat krzyczy ALARM i cie zabija
-
 
 //*********************************************************************
 //	Info EXIT 

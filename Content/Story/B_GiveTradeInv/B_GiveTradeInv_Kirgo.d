@@ -13,7 +13,7 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 		CreateInvItems (slf,ItPo_Mana_01 	,5); 
 		CreateInvItems (slf,ItPo_Speed 	,4); 
 		CreateInvItems (slf,ItPo_Health_01	,3);
-		CreateInvItems (slf,ItNa_Odtrutka	,3);
+		CreateInvItems (slf,ItNa_Odtrutka	,8);
 		
 		// ------ Scrolls ------
 		CreateInvItems (slf,ItSc_Light		,1);
@@ -29,7 +29,7 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 	if ((Kapitel >= 2)
 	&& Kirgo_ItemsGiven_Chapter_2 == FALSE)
 	{
-		CreateInvItems (slf,ItNa_Odtrutka	,5);
+		CreateInvItems (slf,ItNa_Odtrutka	,15);
 
 		CreateInvItems (slf, ItMi_Gold, 60); 
 		CreateInvItems (slf,ItPo_Mana_01 	,4); 
@@ -50,7 +50,7 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 	if ((Kapitel >= 3)
 	&& (Kirgo_ItemsGiven_Chapter_3 == FALSE))
 	{
-		CreateInvItems (slf,ItNa_Odtrutka	,12);
+		CreateInvItems (slf,ItNa_Odtrutka	,19);
 
 		CreateInvItems (slf, ItMi_Gold, 120);  
 		CreateInvItems (slf,ItPo_Health_01	,5);
@@ -68,7 +68,7 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 	if ((Kapitel >= 4)
 	&& (Kirgo_ItemsGiven_Chapter_4 == FALSE))
 	{
-		CreateInvItems (slf,ItNa_Odtrutka	,10);
+		CreateInvItems (slf,ItNa_Odtrutka	,18);
 
 		CreateInvItems (slf, ItMi_Gold, 220); 
 		CreateInvItems   (slf, ItPo_Health_Addon_04,	3);

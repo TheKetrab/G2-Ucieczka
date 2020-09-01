@@ -57,6 +57,11 @@ func int ZS_MM_Attack_Loop ()
 {	
 	Npc_GetTarget (self); // other = target
 	
+	// UCIECZKA
+	if (self.id == 453 && UrShakRegeneracja == TRUE) {
+		return LOOP_END;
+	};
+	
 	
 	if(other.flags == 6 && C_NpcIsUndead(self)) {
 	

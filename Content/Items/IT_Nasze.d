@@ -2393,7 +2393,94 @@ FUNC VOID UnEquip_ItNa_Ring_Wiernosc()
 	self.protection [PROT_BLUNT]		-=  Ri_ProtEdge02;
 };
 	
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PierscienGrubegoMysliwego(C_Item) //Im Alten Lager
+{
+	name 					=	"Pierœcieñ grubego myœliwego";
 
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_RING;
+
+	value 					=	600;
+
+	visual 					=	"ItRi_Prot_Edge_01.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_PierscienGrubegoMysliwego;
+	on_unequip				=	UnEquip_ItNa_PierscienGrubegoMysliwego;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description				= name;
+	
+	TEXT[0] = "Pierœcieñ uodparnia posiadacza na przewrócenie";
+	TEXT[1] = "przez zêbacze, pe³zacze i inne potwory.";
+		
+	TEXT[5]					= NAME_Value;
+	COUNT[5]				= value;
+		
+	INV_ZBIAS				= INVCAM_ENTF_RING_STANDARD;
+	INV_ROTZ				= INVCAM_Z_RING_STANDARD;
+	INV_ROTX				= INVCAM_X_RING_STANDARD;
+	
+};
+
+var int PierscienGrubegoMysliwegoUbrany;
+FUNC VOID Equip_ItNa_PierscienGrubegoMysliwego()
+{
+	PierscienGrubegoMysliwegoUbrany = TRUE;
+};
+
+FUNC VOID UnEquip_ItNa_PierscienGrubegoMysliwego()
+{
+	PierscienGrubegoMysliwegoUbrany = FALSE;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PierscienAsasyna(C_Item) //Im Alten Lager
+{
+	name 					=	"Pierœcieñ Asasyna";
+
+	mainflag 				=	ITEM_KAT_MAGIC;
+	flags 					=	ITEM_RING;
+
+	value 					=	800;
+
+	visual 					=	"ItRi_Prot_Edge_02.3ds";
+
+	visual_skin 			=	0;
+	material 				=	MAT_METAL;
+	on_equip				=	Equip_ItNa_PierscienAsasyna;
+	on_unequip				=	UnEquip_ItNa_PierscienAsasyna;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description				= name;
+	
+	TEXT[0] = "Pierœcieñ uodparnia posiadacza na otrucie przez potwory.";
+		
+	TEXT[5]					= NAME_Value;
+	COUNT[5]				= value;
+		
+	INV_ZBIAS				= INVCAM_ENTF_RING_STANDARD;
+	INV_ROTZ				= INVCAM_Z_RING_STANDARD;
+	INV_ROTX				= INVCAM_X_RING_STANDARD;
+	
+};
+
+var int PierscienAsasynaUbrany;
+FUNC VOID Equip_ItNa_PierscienAsasyna()
+{
+	PierscienAsasynaUbrany = TRUE;
+};
+
+FUNC VOID UnEquip_ItNa_PierscienAsasyna()
+{
+	PierscienAsasynaUbrany = FALSE;
+};
 
 // **********************************************
 // . . . . . . . . . Projekty . . . . . . . . .
@@ -4573,7 +4660,8 @@ func void Use_Fexo ()
 					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLines	( nDocID,  0, "'To AV mnie wykoñczy!'");
-					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!' (Piêciu braci)");
+					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!'");
+					Doc_PrintLines	( nDocID,  0, "--- Piêciu braci'");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
@@ -5205,7 +5293,7 @@ INSTANCE ItNa_Snaf_Przepis (C_Item)
 
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_FreeMine (C_Item) // TODO wstawiæ do gdzieœ u ³owców
+INSTANCE ItNa_FreeMine (C_Item)
 {
 	name 				=	"Nuty";
 
@@ -6282,7 +6370,7 @@ INSTANCE ItNa_TeleportTwierdza (C_Item)
 	wear				= 	WEAR_EFFECT;
 	effect				=	"SPELLFX_WEAKGLIMMER";
 
-	description			= 	"Teleportacja do Twierdzy";
+	description			= 	"Teleportacja do twierdzy";
 	
 	TEXT	[1]			=	NAME_Manakosten;			
 	COUNT	[1]			=	SPL_COST_TELEPORT;
@@ -6459,7 +6547,6 @@ INSTANCE ItNa_TrfMeatbug (C_Item)
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_TrfGolem (C_Item)
-// TODO: ogarnac ten czar
 {
 	name 				=	NAME_Spruchrolle;
 
@@ -7130,10 +7217,10 @@ INSTANCE ITNA_OUT_ULTRA (C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	60;
-	protection [PROT_BLUNT]	= 	60;
-	protection [PROT_POINT] = 	60;
-	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_EDGE]	=	70;
+	protection [PROT_BLUNT]	= 	70;
+	protection [PROT_POINT] = 	70;
+	protection [PROT_FIRE] 	= 	50;
 	protection [PROT_MAGIC] = 	20;
 
 	value 					=	2000;
@@ -7462,10 +7549,10 @@ INSTANCE ITNA_DJG_ULTRA (C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	60;
-	protection [PROT_BLUNT]	= 	60;
-	protection [PROT_POINT] = 	60;
-	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_EDGE]	=	70;
+	protection [PROT_BLUNT]	= 	70;
+	protection [PROT_POINT] = 	70;
+	protection [PROT_FIRE] 	= 	50;
 	protection [PROT_MAGIC] = 	20;
 
 	value 					=	2000;
@@ -8371,6 +8458,7 @@ FUNC VOID UseOdtrutka()
 
 
 	AI_PlayAni  (self,"T_MAGRUN_2_FEASHOOT");
+	/*
 	if(buff_has(self,Poison10HP))	{
 		Buff_RemoveAll(self,Poison10HP);
 	};
@@ -8382,7 +8470,10 @@ FUNC VOID UseOdtrutka()
 	if(buff_has(self,Poison1HP)){
 		Buff_RemoveAll(self,Poison1HP);
 	};
-	WillZatruty = FALSE;
+	*/
+
+	PoisonStop();
+	
 	Wld_PlayEffect("Spellfx_Lightstar_Orange",  self, self, 0, 0, 0, FALSE );
 	Snd_Play ("MFX_HEAL_CAST"); 
 	AI_PlayAni  (self,"T_FEASHOOT_2_STAND");
@@ -8467,7 +8558,8 @@ FUNC VOID UseTrucizna()
 	
 	if(Npc_IsPlayer(self)) {
 		//TruciznaFunction1();
-		buff_apply(hero,Poison10HP);
+		//buff_apply(hero,Poison10HP);
+		Poison10HPStart();
 	}
 	
 	else {
@@ -9183,10 +9275,6 @@ FUNC VOID Equip_AmuletKrzywegoOgnika()
 		Wld_SpawnNpcRange	(self,	Wisp_Helper,	1,	500);
  		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Wisp_Helper, Wisp_Helper, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_Transform_Cast");
-		//TODO ! ognik ma miec partymember true, to ponizej nie dziala, bo wisphelper to id a nie c_npc
-		// -> zrobic c_npc i ustawic aivara partymember na true
-		//Wisp_Helper.aivar[AIV_PARTYMEMBER] = TRUE;
-		// on NIE ma byæ w dru¿ynie! (tylko partymember)
 	};
 };
 
@@ -9572,7 +9660,6 @@ FUNC VOID Speed1()
 			else { str = ConcatStrings(str," minut"); };
 		};
 		
-		// TODO bogu, napis w lewym górnym rogu ekranu
 		PrintScreen	(str,-1,-1, "font_old_20_white.tga",2);
 
 	}
@@ -10548,7 +10635,8 @@ INSTANCE ItNa_KopalnianyGrzyb(C_Item)
 
 func void Use_ItNa_KopalnianyGrzyb ()
 {			
-	buff_apply(self,Poison1HP);
+	//buff_apply(self,Poison1HP);
+	Poison1HPStart();
 };
 
 

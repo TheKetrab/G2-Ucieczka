@@ -46,9 +46,10 @@ instance NASZ_010_Monastir (Npc_Default)
 
 FUNC VOID Rtn_Start_10 ()
 {
-	TA_Practice_Magic		(06,30,12,20,"NASZ_LOWCY_DOM_04");
-	TA_Sleep		(23,30,06,30,"NASZ_LOWCY_DOM_04");
-
+	TA_Sleep			(22,40,07,30,"NASZ_LOWCY_DOM_04");
+	TA_Read_Bookstand	(07,30,10,30,"NASZ_LOWCY_DOM_07");
+	TA_Potion_Alchemy	(10,30,17,20,"NASZ_LOWCY_DOM_08");
+	TA_Read_Bookstand	(17,30,22,40,"NASZ_LOWCY_DOM_07");
 };
 
 FUNC VOID Rtn_Gate_10()

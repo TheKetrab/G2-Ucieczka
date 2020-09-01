@@ -24,24 +24,23 @@ var int UrShakRegeneracja;
 var int UrShakBattleIterator;
 var int UrShakBattleRandom;
 var int UrShakBattleRandomOrc;
+var int UrShakBattlePart;
 
-//TODO: skamienia³y wygl¹d przy 30%hp
 func void B_SetVisuals_OrcShaman_URSHAK()
 {
-	//Mdl_SetVisual			(NASZ_453_UrShak,	"Orc.mds");
-	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
-	//Mdl_SetVisualBody		(NASZ_453_UrShak,	"Orc_BodyShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
+	Mdl_SetVisualBody		(NASZ_453_UrShak,	"Orc_BodyShaman",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
 };
 
 func void B_SetVisuals_OrcShamanStone_URSHAK()
 {
-	//Mdl_SetVisual			(NASZ_453_UrShak,	"Orc.mds");
-	//								Body-Mesh			Body-Tex	Skin-Color	Head-MMS	Head-Tex	Teeth-Tex	ARMOR
-	//Mdl_SetVisualBody		(NASZ_453_UrShak,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShamanStone",	DEFAULT,  	DEFAULT,	-1);
+	// UWAGA - glowa musi pozostac taka sama, bo inaczej sie buguje
+	Mdl_SetVisualBody		(NASZ_453_UrShak,	"Orc_BodyShamanStone",	DEFAULT,	DEFAULT,	"Orc_HeadShaman",	DEFAULT,  	DEFAULT,	-1);
 };
 
 
-
+// UR SHAK --> 400hp
+// 50% --> 80% = 200hp --> 320hp
+// 20% --> 50% = 80hp --> 200hp
 
 func void ZabijOrkow(var c_npc slf)
 {
@@ -51,48 +50,118 @@ func void ZabijOrkow(var c_npc slf)
 	};
 };
 
-func int CalcProc(var int liczba, var int proc)
-{
-	return (liczba*proc)/100;
-};
+func void UrShakRegenerationFunc1() {
 
-func void UrshakWait()
-{
-	if (UrShakBattleIterator != 60)
-	{
+	if (NASZ_453_UrShak.attribute[0] >= 320) {
+		ff_remove(UrShakRegenerationFunc1);
+		UrShakRegeneracja = FALSE;
+		B_SetVisuals_OrcShaman_URSHAK();
+		UrShakBattlePart = 2;
 		
-	}
-	else
-	{
-		ff_remove(UrshakWait);
+		NASZ_453_UrShak.flags = 0;
+
+		Npc_ClearAIQueue	(NASZ_453_UrShak);
+		Npc_SetTarget		(NASZ_453_UrShak, hero);
+		B_ClearPerceptions	(NASZ_453_UrShak);
+		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
+		
+		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+
 	};
+
+	NASZ_453_UrShak.attribute[0] += 6; // 120hp / 6hp = 20 sekund
 };
 
+func void UrShakRegenerationFunc2() {
+
+	// EXIT
+	if (NASZ_453_UrShak.attribute[0] >= 200) {
+		ff_remove(UrShakRegenerationFunc2);
+		UrShakRegeneracja = FALSE;
+		B_SetVisuals_OrcShaman_URSHAK();
+		UrShakBattlePart = 3;
+		
+		NASZ_453_UrShak.flags = 0;
+		
+		Npc_ClearAIQueue	(NASZ_453_UrShak);
+		Npc_SetTarget		(NASZ_453_UrShak, hero);
+		B_ClearPerceptions	(NASZ_453_UrShak);
+		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
+		
+		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+
+	};
+
+	NASZ_453_UrShak.attribute[0] += 6; // 120hp / 6hp = 20 sekund
+};
+
+// FIX UCIECZKA 1.1 - odswiezylem to, zeby bylo tak, jak mialo byc
+
+// funckja wywolywana 1 raz na sekunde
 func void UrshakBattle()
 {
-	if(D3D11_enabled) {Print("WY£¥CZ DX11 PODCZAS TEJ WALKI!!!!");};
-	// po zabiciu urshaka
-	if(Npc_IsDead(NASZ_453_UrShak)) { DoForSphere(ZabijOrkow); ff_remove(UrshakBattle); };
+	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
+
+	//Print(CS("Part: ",IntToString(UrShakBattlePart)));
+	if (D3D11_enabled) {Print("WY£¥CZ DX11 PODCZAS TEJ WALKI!!!!");};
 	
-	// 70% hp 
-	if((NASZ_453_UrShak.attribute[0] <= 120  && !UrShakRegeneracja))
+	// po zabiciu urshaka: EXIT
+	if (Npc_IsDead(NASZ_453_UrShak)) { 
+		DoForSphere(ZabijOrkow);
+		ff_remove(UrshakBattle);
+	};
+	
+	// 50% hp -> renegeracja do 80%
+	if (UrShakBattlePart == 1
+	 && NASZ_453_UrShak.attribute[0] <= 200 
+	 && !UrShakRegeneracja)
 	{
 		B_SetVisuals_OrcShamanStone_URSHAK();
 		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
 		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
-		NASZ_453_UrShak.attribute[0] = NASZ_453_UrShak.attribute[1];
-		UrShakRegeneracja = true;
 
-	};
-	
-	// 40% hp
-	if(UrShakRegeneracja && NASZ_453_UrShak.attribute[0] <=  160  && !UrShakBattleIterator)
-	{
-		UrShakBattleIterator += 1;
-		//to nie ma sensu AI_WAITMS(NASZ_453_UrShak,60000);
+		UrShakRegeneracja = true;
+		B_ClearPerceptions(NASZ_453_UrShak);
+		B_ResetAll (NASZ_453_UrShak);
+
+		Wld_PlayEffect("SPELLFX_INCOVATION_BLUE",  ur, ur, 0, 0, 0, FALSE );
+		Wld_PlayEffect("SPELLFX_lightstar_white",  ur, ur, 0, 0, 0, FALSE );
+		
+		NASZ_453_UrShak.flags = 2;
+		ff_applyonceext(UrShakRegenerationFunc1,1000,-1);
 		
 	};
+	
+	// 20% hp -> renegeracja do 50%
+	if (UrShakBattlePart == 2
+	 && NASZ_453_UrShak.attribute[0] <= 80 
+	 && !UrShakRegeneracja)
+	{
+		B_SetVisuals_OrcShamanStone_URSHAK();
+		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
 
+		UrShakRegeneracja = true;
+		B_ClearPerceptions(NASZ_453_UrShak);
+		B_ResetAll (NASZ_453_UrShak);
+
+		Wld_PlayEffect("SPELLFX_INCOVATION_BLUE",  ur, ur, 0, 0, 0, FALSE );
+		Wld_PlayEffect("SPELLFX_lightstar_white",  ur, ur, 0, 0, 0, FALSE );
+		
+		NASZ_453_UrShak.flags = 2;
+		ff_applyonceext(UrShakRegenerationFunc2,1000,-1);
+	};	
+	
+	// 20% hp -> regeneracja do 50%
+	if (UrShakBattlePart == 2
+	 &&    UrShakRegeneracja && NASZ_453_UrShak.attribute[0] <=  160  && !UrShakBattleIterator)
+	{
+		UrShakBattleIterator += 1;
+		
+	};
+/*
 	if(UrShakBattleIterator)
 	{
 		if(UrShakBattleIterator != 61)
@@ -135,9 +204,8 @@ func void UrshakBattle()
 		
 		};
 	};
-
+*/
 };
-	
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -204,5 +272,9 @@ func void DIA_NASZ_453_UrShak_Hello_End()
 	AI_Teleport(NASZ_453_UrShak,"OW_ROCKDRAGON_06");
 	Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
 	Wld_InsertNpc	(OrcUltra_Roam,"OW_ROCKDRAGON_11");
+	
+	NASZ_453_UrShak.flags = 0;
+	UrShakBattlePart = 1;
+	
 	FF_ApplyOnceExt(UrshakBattle,1000,-1);
 };

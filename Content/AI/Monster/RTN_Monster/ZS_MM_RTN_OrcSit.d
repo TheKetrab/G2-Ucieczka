@@ -44,13 +44,34 @@ func int ZS_MM_Rtn_OrcSit_loop()
 		if (Wld_IsFPAvailable(self,	"FP_CAMPFIRE"))
 		{
 			AI_GotoFP (self, "FP_CAMPFIRE");
+		}
+		else if (Wld_IsFPAvailable(self,	"FP_REST"))
+		{
+			AI_GotoFP (self, "FP_REST");
+		}
+		else if (Wld_IsFPAvailable(self,	"FP_ROAM"))
+		{
+			AI_GotoFP (self, "FP_ROAM");
 		};
+
 		
 		if (Npc_IsOnFP(self, "FP_CAMPFIRE"))
 		{
 			AI_PlayAniBS (self,	"T_STAND_2_GUARDSLEEP", BS_SIT);
 			self.aivar[AIV_TAPOSITION] = ISINPOS;
+		}
+		else if (Npc_IsOnFP(self, "FP_REST"))
+		{
+			AI_PlayAniBS (self,	"T_STAND_2_GUARDSLEEP", BS_SIT);
+			self.aivar[AIV_TAPOSITION] = ISINPOS;
+		}
+		else if (Npc_IsOnFP(self, "FP_ROAM"))
+		{
+			AI_PlayAniBS (self,	"T_STAND_2_GUARDSLEEP", BS_SIT);
+			self.aivar[AIV_TAPOSITION] = ISINPOS;
 		};
+
+
 	}
 	else //ISINPOS
 	{

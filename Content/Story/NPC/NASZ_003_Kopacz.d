@@ -48,3 +48,10 @@ FUNC VOID Rtn_Twierdza_3 ()
 	TA_Sit_Bench	 (08,00,23,00,"NASZ_TWIERDZA_52");
 	TA_Sit_Bench	 (23,00,08,00,"NASZ_TWIERDZA_52");
 };
+
+FUNC VOID Rtn_Kap4_3 ()
+{	
+	TA_Sit_Campfire (20,00,08,00,"NASZ_LOWCY_DOL_12");
+	TA_Sit_Campfire (08,00,20,00,"NASZ_LOWCY_DOL_12");
+};
+

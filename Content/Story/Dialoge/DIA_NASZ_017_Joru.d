@@ -139,7 +139,7 @@ INSTANCE DIA_NASZ_017_Joru_Lutnia   (C_INFO)
 
 FUNC INT DIA_NASZ_017_Joru_Lutnia_Condition()
 {
-	if (Npc_HasItems(hero,ItMi_Lute) &&Npc_KnowsInfo(other, DIA_NASZ_017_Joru_Lojalnosc))
+	if (Npc_HasItems(hero,ItMi_Lute) && Npc_KnowsInfo(other, DIA_NASZ_017_Joru_Lojalnosc))
 	{
 		return TRUE;
 	};
@@ -148,9 +148,9 @@ FUNC INT DIA_NASZ_017_Joru_Lutnia_Condition()
 FUNC VOID DIA_NASZ_017_Joru_Lutnia_Info()
 {
 	AI_UseItemToState(hero,ItMi_Lute,1);
-	AI_UseItemToState(hero,ItMi_Lute,2);
-	AI_UseItemToState(hero,ItMi_Lute,3);
-	AI_UseItemToState(hero,ItMi_Lute,4);
+	AI_Wait(self,5);
+	AI_Wait(other,5);
+	AI_UseItemToState(hero,ItMi_Lute,-1);
 	
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_017_00"); //Ta melodia, przypomnia³a mi o moim ¿yciu przed Koloni¹ Górnicz¹... Dziêkujê, nieznajomy! Mam nadziejê, ¿e w przesz³oœci by³em dla ciebie dobrym przyjacielem.
 	AI_Output (other, self,"DIA_NASZ_017_Joru_Lutnia_15_01"); //Nawet nie wiesz jak bardzo. Wielokrotnie ratowa³eœ mi skórê z tarapatów.

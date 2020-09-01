@@ -719,7 +719,6 @@ func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
 
 		if(itm.wear == WEAR_HEAD)
 		{
-			print("bubu");
 			var int pHelm; pHelm = GetItemSlot(hero,"ZS_HELMET");
 			//var int pWeap; pWeap = QS_GetSlotItem(1);
 			if(!HelmetEquipped && pHelm)

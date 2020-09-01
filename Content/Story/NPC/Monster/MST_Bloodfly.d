@@ -86,127 +86,14 @@ INSTANCE Bloodfly	(Mst_Default_Bloodfly)
 {
 	B_SetVisuals_Bloodfly();
 	Npc_SetToFistMode(self);
+	aivar[AIV_POISON] = POISON_1;
 };
 
-// Wsciekly
-INSTANCE BloodflyWsciekly01	(Mst_Default_Bloodfly)
+INSTANCE BloodflyGreen	(Mst_Default_Bloodfly)
 {
 	B_SetVisuals_Bloodfly3();
 	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly02	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly03	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly04	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly05	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly06	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly07	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly08	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly09	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly10	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly11	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly12	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly13	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly14	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly15	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly16	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly17	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly18	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly19	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE BloodflyWsciekly20	(Mst_Default_Bloodfly)
-{
-	B_SetVisuals_Bloodfly3();
-	Npc_SetToFistMode(self);
+	aivar[AIV_POISON] = POISON_2;
 };
 
 //*************
@@ -307,7 +194,8 @@ PROTOTYPE Mst_Default_BloodflyWild(C_Npc)
 	//----- Daily Routine ----	
 	start_aistate				= ZS_MM_AllScheduler;
 	
-	aivar[AIV_MM_WuselStart] 	= OnlyRoutine;	
+	aivar[AIV_MM_WuselStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_3;
 };
 
 
@@ -315,125 +203,12 @@ PROTOTYPE Mst_Default_BloodflyWild(C_Npc)
 //	Bloodfly   
 //*************
 
-INSTANCE WildBloodfly01	(Mst_Default_BloodflyWild)
+INSTANCE WildBloodfly	(Mst_Default_BloodflyWild)
 {
 	B_SetVisuals_Bloodfly2();
 	Npc_SetToFistMode(self);
 };
 
-INSTANCE WildBloodfly02	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly03	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly04	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly05	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly06	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly07	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly08	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly09	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly10	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly11	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly12	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly13	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly14	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly15	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly16	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly17	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly18	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly19	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE WildBloodfly20	(Mst_Default_BloodflyWild)
-{
-	B_SetVisuals_Bloodfly2();
-	Npc_SetToFistMode(self);
-};
 
 INSTANCE QuestWrzodBloodfly	(Mst_Default_Bloodfly)
 {

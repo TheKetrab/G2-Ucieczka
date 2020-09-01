@@ -467,7 +467,7 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_01"); //Gdybym powiedzia³ ci od razu, prawdopodobnie nie chcia³byœ w ogóle o tym s³yszeæ.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_02"); //To jednak ju¿ nieistotne, wa¿ne jest to, i¿ plan siê zmieni³.
 	
-	TRIA_Next(Sattar);
+	TRIA_Next(Daryl);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_03"); //Wspólnie stwierdziliœmy, ¿e ucieczka nas wszystkich jest nierealnym planem i nim siê obejrzymy, stra¿nicy nafaszeruj¹ nas be³tami. 
@@ -478,7 +478,7 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_04"); //Dlatego uznaliœmy, ¿e ty, jako najm³odszy z nas wszystkich, bêdziesz mia³ najwiêksze szanse powodzenia w tej misji.
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_05"); //Jesteœ zwinny, silny i bystry. Wierzê, ¿e dasz sobie radê i uciekniesz z obozu. 
 
-	TRIA_Next(Sattar);
+	TRIA_Next(Daryl);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_06"); //Jednak nie zmusimy ciê do tego, sam musisz siê zgodziæ Willu. 
@@ -491,10 +491,14 @@ FUNC VOID DIA_NASZ_005_Ben_TaktykiEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_09"); //Po prostu nie zapomnij o swoich przyjacio³ach i towarzyszach niedoli.  
 	AI_Output (other, self,"DIA_NASZ_005_Ben_TaktykiEnd_55_10"); //Obiecujê, ¿e wrócê tutaj z pomoc¹ i wsparciem. Teraz jednak nie powinniœmy traciæ czasu, zaczynajmy. 
 	
-	TRIA_Next(Daryl);
+	TRIA_Next(Sattar);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_11"); //Masz racjê, nim jednak wyruszysz, zabierz nasze wyposa¿enie. Znajdziesz je w dziurze w tunelu, tobie przyda siê zdecydowanie bardziej.
+
+	TRIA_Next(Daryl);
+	AI_TurnToNpc(other, self);
+    AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_TaktykiEnd_55_12"); //No i jeszcze mikstura. Trzymaj.
 	Createinvitems (self, ItNa_TruciznaDaryl, 1);
 	B_giveinvitems (self, other, ItNa_TruciznaDaryl, 1);
@@ -575,10 +579,14 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_12"); //Po prostu nie zapomnij o swoich przyjacio³ach i towarzyszach niedoli. 
 	AI_Output (other, self,"DIA_NASZ_005_Ben_MetodyEnd_55_13"); //Nie zawiodê was, obiecujê. Nie traæmy czasu, powinniœmy ju¿ zaczynaæ. 
 	
-	TRIA_Next(Sattar);
+	TRIA_Next(Daryl);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_14"); //Zgadzam siê. Zanim jednak wyruszysz w podró¿, udaj siê do tunelu i wykop z dziury nasze zaopatrzenie. Tobie przyda siê bardziej.
+
+	TRIA_Next(Sattar);
+	AI_TurnToNpc(other, self);
+    AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_15"); //WeŸ zwój, uœpij stra¿nika i zmykaj st¹d.
 	Createinvitems (self, ItSc_Sleep, 1);
 	B_giveinvitems (self, other, ItSc_Sleep, 1);

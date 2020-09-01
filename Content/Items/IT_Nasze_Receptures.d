@@ -1106,7 +1106,8 @@ FUNC VOID Use_ItNa_ZupaZOrkowegoPrzepisu()
 		PrzepisOrkowyRunning = FALSE;
 	};
 
-	Buff_Apply(self, Poison1HP);
+	//Buff_Apply(self, Poison1HP);
+	Poison1HPStart();
 };
 
 

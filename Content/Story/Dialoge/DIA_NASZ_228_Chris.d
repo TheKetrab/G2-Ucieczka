@@ -230,11 +230,11 @@ FUNC VOID DIA_NASZ_228_Chris_go_Info()
 	
 	NASZ_228_Chris.flags = 2;
 	
-	Wld_InsertNpc	(OrcDog,"OW_PATH_340");
-	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_F");
-	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_G");
-	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_H");
-	Wld_InsertNpc	(OrcDog,"FP_NASZ_POLOWANIE_I");
+	Wld_InsertNpc	(OrcDog_Easy,"OW_PATH_340");
+	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_F");
+	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_G");
+	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_H");
+	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_I");
 
 	
 	Npc_ExchangeRoutine (NASZ_228_Chris, "Guide");

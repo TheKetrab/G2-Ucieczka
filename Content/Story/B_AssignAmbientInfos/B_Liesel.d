@@ -1,3 +1,7 @@
+func void FollowSheep_Mee() {
+	AI_Output (self, other,"DIA_Follow_Sheep_me_15_00"); //Meee!
+};
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -45,10 +49,10 @@ FUNC INT DIA_Follow_Sheep_me_Condition()
 
 FUNC VOID DIA_Follow_Sheep_me_Info()
 {
-	AI_Output (self, other,"DIA_Follow_Sheep_me_15_00"); //Meee!
-
+	FollowSheep_Mee();
 	AI_StopProcessInfos (self);	
 };
+
 
 //*********************************************************************
 //	Info Follow
@@ -74,7 +78,7 @@ FUNC INT DIA_Follow_Sheep_follow_Condition()
 FUNC VOID DIA_Follow_Sheep_follow_Info()
 {
 	AI_Output (other,self ,"DIA_Follow_Sheep_follow_15_00"); //Chodü za mnπ.
-	AI_Output (self, other,"DIA_Follow_Sheep_follow_55_01"); //Meee!
+	FollowSheep_Mee();
 	
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
 	//Npc_ExchangeRoutine (self, "Follow");
@@ -111,7 +115,7 @@ FUNC INT DIA_Follow_Sheep_second_Condition()
 FUNC VOID DIA_Follow_Sheep_second_Info()
 {
 	AI_Output (other,self ,"DIA_Follow_Sheep_second_15_00"); //To tutaj. Bπdü grzeczna.
-	AI_Output (self, other,"DIA_Follow_Sheep_second_55_01"); //Meee!
+	FollowSheep_Mee();
 	AI_Output (other,self ,"DIA_Follow_Sheep_second_15_02"); //Mam nadziejÍ, øe to znaczy≥o "jasne"...
 
 	MolyMozeSieTepnac = TRUE;

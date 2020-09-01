@@ -29,7 +29,7 @@
 func int GFA_GetDrawForce(var C_Item weapon, var int talent) {
 
     // Default:
-    return 100; // Remove this line if you  want to use this configuration function!
+    //return 100; // Remove this line if you  want to use this configuration function!
     // --- Everything below is ignored ---
 
 
@@ -78,7 +78,7 @@ func int GFA_GetDrawForce(var C_Item weapon, var int talent) {
 func int GFA_GetAccuracy(var C_Item weapon, var int talent) {
 
     // Default:
-    return MEMINT_SwitchG1G2(hero.attribute[ATR_DEXTERITY], talent); // Remove this line if you want to use this config!
+    // return MEMINT_SwitchG1G2(hero.attribute[ATR_DEXTERITY], talent); // Remove this line if you want to use this config!
     // --- Everything below is ignored ---
 
 
@@ -91,9 +91,13 @@ func int GFA_GetAccuracy(var C_Item weapon, var int talent) {
         talent = hero.attribute[ATR_DEXTERITY];
     };
 
+    // UCIECZKA 1.1
+    talent = GFA_ScaleRanges(talent, 0, 100, 60, 100);
+
     // Get draw force from the function above and re-scale it from [0, 100] to [80, 100]
     var int drawForce; drawForce = GFA_GetDrawForce(weapon, talent);
-    drawForce = GFA_ScaleRanges(drawForce, 0, 100, 80, 100);
+    //drawForce = GFA_ScaleRanges(drawForce, 0, 100, 80, 100);
+    drawForce = GFA_ScaleRanges(drawForce, 0, 100, 80, 130); // UCIECZKA - longer drawing time increases accuracy
 
     // Scale accuracy by draw force
     var int accuracy; accuracy = (talent * drawForce) / 100;

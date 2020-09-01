@@ -50,7 +50,8 @@ PROTOTYPE Mst_Default_SwampDrone(C_Npc)
 	//----- Daily Routine ----	
 	start_aistate				= ZS_MM_AllScheduler;
 	
-	aivar[AIV_MM_WuselStart] 	= OnlyRoutine;	
+	aivar[AIV_MM_WuselStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_2;
 };
 
 //******************
@@ -69,40 +70,6 @@ func void B_SetVisuals_SwampDrone()
 //*************
 
 INSTANCE SwampDrone	(Mst_Default_SwampDrone)
-{
-	B_SetVisuals_SwampDrone();
-	Npc_SetToFistMode(self);
-};
-
-//*************
-//	Wsciekly   
-//*************
-
-INSTANCE SwampDroneWsciekly01	(Mst_Default_SwampDrone)
-{
-	B_SetVisuals_SwampDrone();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE SwampDroneWsciekly02	(Mst_Default_SwampDrone)
-{
-	B_SetVisuals_SwampDrone();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE SwampDroneWsciekly03	(Mst_Default_SwampDrone)
-{
-	B_SetVisuals_SwampDrone();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE SwampDroneWsciekly04	(Mst_Default_SwampDrone)
-{
-	B_SetVisuals_SwampDrone();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE SwampDroneWsciekly05	(Mst_Default_SwampDrone)
 {
 	B_SetVisuals_SwampDrone();
 	Npc_SetToFistMode(self);

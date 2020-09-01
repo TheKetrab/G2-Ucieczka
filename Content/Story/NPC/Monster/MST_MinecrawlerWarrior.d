@@ -50,6 +50,7 @@ PROTOTYPE Mst_Default_MinecrawlerWarrior(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_WuselStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_1;
 };
 
 
@@ -71,40 +72,6 @@ func void B_SetVisuals_MinecrawlerWarrior()
 //************************
 
 INSTANCE MinecrawlerWarrior	(Mst_Default_MinecrawlerWarrior)
-{
-	B_SetVisuals_MinecrawlerWarrior();
-	Npc_SetToFistMode(self);
-};
-
-//************************
-// Wsciekly    
-//************************
-
-INSTANCE MinecrawlerWarriorWsciekly1	(Mst_Default_MinecrawlerWarrior)
-{
-	B_SetVisuals_MinecrawlerWarrior();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE MinecrawlerWarriorWsciekly2	(Mst_Default_MinecrawlerWarrior)
-{
-	B_SetVisuals_MinecrawlerWarrior();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE MinecrawlerWarriorWsciekly3	(Mst_Default_MinecrawlerWarrior)
-{
-	B_SetVisuals_MinecrawlerWarrior();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE MinecrawlerWarriorWsciekly4	(Mst_Default_MinecrawlerWarrior)
-{
-	B_SetVisuals_MinecrawlerWarrior();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE MinecrawlerWarriorWsciekly5	(Mst_Default_MinecrawlerWarrior)
 {
 	B_SetVisuals_MinecrawlerWarrior();
 	Npc_SetToFistMode(self);

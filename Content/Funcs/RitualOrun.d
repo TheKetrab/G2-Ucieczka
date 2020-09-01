@@ -6,6 +6,8 @@ var int RitualOrun_Vob2;
 var int RitualOrun_Vob3;
 var int RitualOrun_Vob4;
 
+var int OrunRitualRunning;
+
 func void RitualOrun_InitVobs() {
 
 	RitualOrun_Vob1 = MEM_SearchVobByName("RITUAL_ORUN_VOB1");
@@ -22,7 +24,7 @@ func void RitualOrun_Start() {
 	RitualOrun_Running = TRUE;
 
 	FF_ApplyOnceExt(RitualOrun_Loop,250,-1); // 0.25 s
-	// TODO od teraz nie mozna zagadywac oruna
+	OrunRitualRunning = TRUE;
 };
 
 
@@ -32,7 +34,7 @@ func void RitualOrun_End() {
 	RitualOrun_Running = FALSE;
 	FF_Remove(RitualOrun_Loop);
 
-	// TODO od teraz mozna zagadywac oruna
+	OrunRitualRunning = FALSE;
 };
 
 
@@ -178,7 +180,7 @@ func void RitualOrun_Loop() {
 	// ----- ----- ----- ----- -----
 
 	else if (RitualOrun_Iterator == 15) {
-		B_StartOtherRoutine (NASZ_024_BaalOrun, "Rytual"); // TODO bogu, wydaje mi sie, ze ta zmiana rutyny nie dziala, tak samo jak w RitualMonastir
+		B_StartOtherRoutine (NASZ_024_BaalOrun, "Rytual"); // TODO, wydaje mi sie, ze ta zmiana rutyny nie dziala, tak samo jak w RitualMonastir
 	}
 	
 	// 20s

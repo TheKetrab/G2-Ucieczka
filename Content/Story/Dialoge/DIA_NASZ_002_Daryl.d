@@ -676,7 +676,9 @@ FUNC VOID DIA_NASZ_002_Daryl_Metody1_Info()
 	
 	Npc_ExchangeRoutine (NASZ_002_Daryl, "TriaMiner");
 	Npc_ExchangeRoutine (NASZ_005_Ben, "TriaMiner");
-	Npc_ExchangeRoutine (NASZ_020_Sattar, "TriaMiner");
+	
+	// FIX UCIECZKA 1.1 -> Sattar jeszcze nie! On dopiero jak skonczy robic brylke
+	// Npc_ExchangeRoutine (NASZ_020_Sattar, "TriaMiner");
 
 };
 

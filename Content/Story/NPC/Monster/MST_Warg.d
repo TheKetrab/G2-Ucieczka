@@ -13,15 +13,15 @@ PROTOTYPE Mst_Default_Warg(C_Npc)
 	//----- Attributes ----
 	attribute	[ATR_STRENGTH]		=	95;
 	attribute	[ATR_DEXTERITY]		=	95;
-	attribute	[ATR_HITPOINTS_MAX]	=	180;	
-	attribute	[ATR_HITPOINTS]		=	180;
+	attribute	[ATR_HITPOINTS_MAX]	=	200;
+	attribute	[ATR_HITPOINTS]		=	200;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----
-	protection	[PROT_BLUNT]		=	80;
-	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	75;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	85;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -51,6 +51,7 @@ PROTOTYPE Mst_Default_Warg(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_2;
 };
 
 

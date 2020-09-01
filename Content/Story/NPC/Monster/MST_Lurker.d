@@ -213,12 +213,13 @@ PROTOTYPE Mst_Default_WscieklyLurker(C_Npc)
 	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
 
 	CreateInvItems (self, ItNa_MiesoTopielca, 1);
+	aivar[AIV_POISON] = POISON_2;
 
 };
 
 
 
-
+// VACHUT KAP 3
 INSTANCE Topielec_Wsciekly_A	(Mst_Default_WscieklyLurker)
 {
 	B_SetVisuals_Lurker2();
@@ -254,61 +255,6 @@ INSTANCE Topielec_Wsciekly_F	(Mst_Default_WscieklyLurker)
 	B_SetVisuals_Lurker2();
 	Npc_SetToFistMode(self);
 };
-
-INSTANCE Topielec_Wsciekly_G	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_H	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_I	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_J	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_K	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE topielec_Wsciekly_L	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_M	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_N	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE Topielec_Wsciekly_O	(Mst_Default_WscieklyLurker)
-{
-	B_SetVisuals_Lurker2();
-	Npc_SetToFistMode(self);
-};
-
 
 //*************
 //	Wsciekly Topielec

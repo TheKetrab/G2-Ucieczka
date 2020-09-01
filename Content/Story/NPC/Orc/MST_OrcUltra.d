@@ -12,20 +12,20 @@ PROTOTYPE Mst_Default_OrcUltra(C_Npc)
 	level							=	35;
 	
 	//----- Attribute -----	
-	attribute	[ATR_STRENGTH]		=	70; //+100 Waffe //MIN 120!
-	attribute	[ATR_DEXTERITY]		=	70; 
-	attribute	[ATR_HITPOINTS_MAX]	=	350;
-	attribute	[ATR_HITPOINTS]		=	350;
+	attribute	[ATR_STRENGTH]		=	130; //+100 Waffe //MIN 120!
+	attribute	[ATR_DEXTERITY]		=	130; 
+	attribute	[ATR_HITPOINTS_MAX]	=	450;
+	attribute	[ATR_HITPOINTS]		=	450;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;
-	protection	[PROT_FIRE]			=	100;
+	protection	[PROT_BLUNT]		=	160;
+	protection	[PROT_EDGE]			=	160;
+	protection	[PROT_POINT]		=	150;
+	protection	[PROT_FIRE]			=	140;
 	protection	[PROT_FLY]			=	100;
-	protection	[PROT_MAGIC]		=	100;
+	protection	[PROT_MAGIC]		=	80;
 	
 	//----- HitChances -----
 	HitChance	[NPC_TALENT_1H]			= 100;

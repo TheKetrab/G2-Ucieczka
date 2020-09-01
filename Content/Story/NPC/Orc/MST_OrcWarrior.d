@@ -25,7 +25,7 @@ PROTOTYPE Mst_Default_OrcWarrior(C_Npc)
 	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	80;
 	protection	[PROT_FLY]			=	80;
-	protection	[PROT_MAGIC]		=	80;
+	protection	[PROT_MAGIC]		=	30;
 	
 	//----- HitChances -----
 	HitChance	[NPC_TALENT_1H]			= 60;

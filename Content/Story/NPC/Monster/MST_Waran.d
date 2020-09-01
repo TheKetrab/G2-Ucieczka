@@ -50,6 +50,7 @@ PROTOTYPE Mst_Default_Waran(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_1;
 };
 
 //************
@@ -77,100 +78,6 @@ func void B_SetVisuals_Waran2()
 //**************
 
 INSTANCE Waran	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-//**************
-//	Wsciekly    	
-//**************
-
-INSTANCE WaranWsciekly01	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly02	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly03	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly04	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly05	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly06	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly07	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly08	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly09	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly10	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly11	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly12	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly13	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly14	(Mst_Default_Waran)
-{
-	Npc_SetToFistMode(self);
-	B_SetVisuals_Waran2();
-};
-
-INSTANCE WaranWsciekly15	(Mst_Default_Waran)
 {
 	Npc_SetToFistMode(self);
 	B_SetVisuals_Waran2();
@@ -244,69 +151,10 @@ PROTOTYPE Mst_Default_WaranGrozny(C_Npc)
 	start_aistate				= ZS_MM_AllScheduler;
 
 	aivar[AIV_MM_RoamStart] 	= OnlyRoutine;
+	aivar[AIV_POISON] = POISON_2;
 };
 
 INSTANCE GroznyJaszczur	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly01	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly02	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly03	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly04	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly05	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly06	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly07	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly08	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly09	(Mst_Default_WaranGrozny)
-{
-	B_SetVisuals_Waran();
-	Npc_SetToFistMode(self);
-};
-
-INSTANCE GroznyJaszczurWsciekly10	(Mst_Default_WaranGrozny)
 {
 	B_SetVisuals_Waran();
 	Npc_SetToFistMode(self);

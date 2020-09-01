@@ -62,7 +62,7 @@ func int GraveMission_Grave2_Condition ()
 
 func void GraveMission_Grave2_S1 ()
 {
-	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób Pierwszego Barbarzyñcy.");
+	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób Pierwszego barbarzyñcy.");
 	Npc_RemoveInvItems         (hero, ItNa_WodaSwiecona_Adanos, 1);
 
 	B_GivePlayerXP (100);
@@ -507,7 +507,7 @@ func int GraveMission_Grave14_Condition ()
 
 func void GraveMission_Grave14_S1 ()
 {
-	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób pradziada wilków.");
+	B_LogEntry (TOPIC_Udar_Grave, "Oczyœci³em grób Pradziada wilków.");
 	Npc_RemoveInvItems         (hero, ItNa_WodaSwiecona_Adanos, 1);
 
 	B_GivePlayerXP (100);

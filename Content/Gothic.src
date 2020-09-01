@@ -12,6 +12,7 @@ Funcs\Reputation.d
 Funcs\BanditKilled.d
 Funcs\JusticeMode.d
 Funcs\Teach.d
+funcs\trucizna.d
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
 STORY\Story_Globals.d
@@ -80,6 +81,7 @@ STORY\B_Story\B_KillNpc.d
 STORY\B_Story\B_RemoveNpc.d
 STORY\B_Content\B_RemoveQuarhodron.d
 STORY\B_Content\B_PlayerFindItem.d
+
 
 
 Story\Events\BonusPack.d
@@ -187,7 +189,6 @@ Story\Events\OrcSawYou.d
 AI\HUMAN\B_Human\B_FinishingMove.d
 AI\HUMAN\B_Human\B_SelectWeapon.d
 AI\HUMAN\B_Human\B_AssessEnemy.d
-funcs\trucizna.d
 AI\HUMAN\B_Human\B_AssessDamage.d
 AI\HUMAN\B_Human\B_AssessDrawWeapon.d
 AI\HUMAN\B_Human\B_AssessEnterRoom.d
@@ -232,6 +233,8 @@ AI\MAGIC\C_CanNpcCollideWithSpell.d
 AI\MAGIC\Spells\Spell_*.d
 Funcs\DiffLvl.d
 LeGo\MyLeGoFuncs.d
+Funcs\TrollSpecialAttack.d
+Funcs\OnDamage.d
 funcs\QuickSlot\Quickslot.src
 AI\MAGIC\Spell_ProcessMana.d
 AI\MAGIC\Spell_ProcessMana_Release.d

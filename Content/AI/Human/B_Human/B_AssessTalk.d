@@ -12,9 +12,21 @@ func void B_AssessTalk ()
 	// EXIT IF...
 	
 	if (Jeremiasz_AlmostDead == TRUE) && (self.id == 127) {
-		// jesli jeremiasz wypil lek to sie go nie da zagadac
-		return;
+		return; // jesli jeremiasz wypil lek, to sie go nie da zagadac
 	};
+	
+	if (MonastirRitualRunning == TRUE) && (self.id == 10) {
+		return; // jesli Monastir odprawia, rytual to sie go nie da zagadac
+	};
+	
+	if (OrunRitualRunning == TRUE) && (self.id == 24) {
+		return; // jesli Orun odprawia rytual, to sie go nie da zagadac
+	};
+	
+	if (LastRitual == TRUE) && (self.id == 402 || self.id == 403 || self.id == 404) {
+		return; // jesli bogowie odprawiaja rytual, to sie nie da zagadac
+	};
+	
 	
 	// ------- FORBIDDEN: Levelinspektor oder Rockefeller wird ignoriert ------
 	var C_NPC PCL; PCL = Hlp_GetNpc(PC_Levelinspektor);

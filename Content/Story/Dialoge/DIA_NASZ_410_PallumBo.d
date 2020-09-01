@@ -20,8 +20,14 @@ FUNC VOID DIA_NASZ_410_PallumBo_EXIT_Info()
 {
 	AI_StopProcessInfos (self);
 
+	var c_npc vangan; vangan = Hlp_GetNpc(NASZ_405_VanGan);
+	var c_npc pallumbo; pallumbo = Hlp_GetNpc(NASZ_410_PallumBo);
+	vangan.aivar[AIV_LASTTARGET] = NASZ_410_PallumBo;
+	pallumbo.aivar[AIV_LASTTARGET] = NASZ_405_VanGan;
+
 	B_Attack (NASZ_405_VanGan, NASZ_410_PallumBo, AR_KILL, 0);
 	B_Attack (NASZ_410_PallumBo, NASZ_405_VanGan, AR_KILL, 0);
+	
 };
 
 //*********************************************************************

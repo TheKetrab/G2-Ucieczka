@@ -49,7 +49,6 @@ FUNC VOID Rtn_Start_119 ()
 	
 };
 
-// TODO Udar nie zmienia rutyny, czemu?
 
 FUNC VOID Rtn_Kap4_119 ()
 {

@@ -8,6 +8,7 @@ var int RitualMonastir_Vob4;
 var int RitualMonastir_Vob5;
 var int RitualMonastir_Vob6;
 
+var int MonastirRitualRunning;
 
 func void RitualMonastir_InitVobs() {
 
@@ -25,7 +26,7 @@ func void RitualMonastir_Start() {
 	RitualMonastir_InitVobs();
 
 	FF_ApplyOnceExt(RitualMonastir_Loop,250,-1); // 0.25 s
-	// TODO od teraz nie mozna zagadywac monastira
+	MonastirRitualRunning = TRUE;
 };
 
 
@@ -67,7 +68,7 @@ func void RitualMonastir_End() {
 	Wld_VobEffect_Vob("SPELLFX_incovation_blue",RitualMonastir_Vob1);
 	Wld_VobEffect_Vob("SPELLFX_lightstar_white",RitualMonastir_Vob1);
 
-	// TODO od teraz mozna zagadywac monastira
+	MonastirRitualRunning = FALSE;
 };
 
 

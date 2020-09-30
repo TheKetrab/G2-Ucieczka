@@ -25,7 +25,7 @@ func void MonkSayWolfCounter() {
 func void HeroSayWolfCounter() {
 
 	var string snd;
-	snd = ConcatStrings("SVM_WILL_WOLF",IntToString(MonkWolfKiller));
+	snd = ConcatStrings("SVM_WILL_WOLF",IntToString(HeroWolfKiller));
 	Snd_Play(snd);
 	WolfCounterText();
 

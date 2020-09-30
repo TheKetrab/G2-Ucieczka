@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_DemonLord(C_Npc)
 	//------ Protections ----
 	protection	[PROT_BLUNT]		= 130;
 	protection	[PROT_EDGE]			= 130;
-	protection	[PROT_POINT]		= 130;
+	protection	[PROT_POINT]		= 90;
 	protection	[PROT_FIRE]			= 130;		
 	protection	[PROT_FLY]			= 130;	
 	protection	[PROT_MAGIC]		= 130;

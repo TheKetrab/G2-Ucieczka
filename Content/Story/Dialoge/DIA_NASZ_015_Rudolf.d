@@ -6,7 +6,8 @@ func int WhatArmorRudolf() {
 	if (Hlp_IsItem (armor, ItNa_DJG_L)
 	 || Hlp_IsItem (armor, ItNa_DJG_M)
 	 || Hlp_IsItem (armor, ItNa_DJG_H)
-	 || Hlp_IsItem (armor, ItNa_DJG_S))
+	 || Hlp_IsItem (armor, ItNa_DJG_S)
+	 || Hlp_IsItem (armor, ItNa_DJG_ULTRA))
 	{
 		return 1;
 	};
@@ -14,7 +15,8 @@ func int WhatArmorRudolf() {
 	if (Hlp_IsItem (armor, ItNa_OUT_L)
 	 || Hlp_IsItem (armor, ItNa_OUT_M)
 	 || Hlp_IsItem (armor, ItNa_OUT_H)
-	 || Hlp_IsItem (armor, ItNa_OUT_S))
+	 || Hlp_IsItem (armor, ItNa_OUT_S)
+	 || Hlp_IsItem (armor, ItNa_OUT_ULTRA))
 	{
 		return 2;
 	};

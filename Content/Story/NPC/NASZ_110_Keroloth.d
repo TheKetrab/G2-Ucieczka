@@ -63,9 +63,16 @@ FUNC VOID Rtn_Start_110 ()
 
 FUNC VOID Rtn_TwierdzaFollow_110 ()
 {	
-	TA_RunToWP		(08,00,20,00,"OW_PATH_186");
-	TA_RunToWP			(20,00,08,00,"OW_PATH_186");
+	TA_Guide_Player		(08,00,20,00,"OW_PATH_186");
+	TA_Guide_Player		(20,00,08,00,"OW_PATH_186");
 };
+
+FUNC VOID Rtn_TwierdzaWalkaPre_110 ()
+{	
+	TA_RunToWP		(08,00,20,00,"NASZ_TWIERDZA_18");
+	TA_RunToWP			(20,00,08,00,"NASZ_TWIERDZA_18");
+};
+
 
 FUNC VOID Rtn_TwierdzaIn_110 ()
 {	

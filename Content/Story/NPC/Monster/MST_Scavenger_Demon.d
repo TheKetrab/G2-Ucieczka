@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Scavenger_Demon(C_Npc)
 	//----- Protections -----
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	10;
+	protection	[PROT_POINT]		=	20;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -109,7 +109,7 @@ INSTANCE Scavenger_Demon_Grozny	(Mst_Default_Scavenger_Demon)
 	//----- Protections -----
 	protection	[PROT_BLUNT]		=	150;
 	protection	[PROT_EDGE]			=	150;
-	protection	[PROT_POINT]		=	150;
+	protection	[PROT_POINT]		=	90;
 	protection	[PROT_FIRE]			=	150;
 	protection	[PROT_FLY]			=	140;
 	protection	[PROT_MAGIC]		=	40;
@@ -136,9 +136,9 @@ INSTANCE NiespokojnyScierwojad1	(Mst_Default_Scavenger_Demon)
 	attribute	[ATR_HITPOINTS_MAX]	=	60;
 	attribute	[ATR_HITPOINTS]		=	120;
 	
-	protection	[PROT_BLUNT]		=	60;
-	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_BLUNT]		=	40;
+	protection	[PROT_EDGE]			=	40;
+	protection	[PROT_POINT]		=	40;
 };
 
 INSTANCE NiespokojnyScierwojad2	(Mst_Default_Scavenger_Demon)
@@ -152,9 +152,9 @@ INSTANCE NiespokojnyScierwojad2	(Mst_Default_Scavenger_Demon)
 	attribute	[ATR_HITPOINTS_MAX]	=	60;
 	attribute	[ATR_HITPOINTS]		=	120;
 	
-	protection	[PROT_BLUNT]		=	60;
-	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_BLUNT]		=	40;
+	protection	[PROT_EDGE]			=	40;
+	protection	[PROT_POINT]		=	40;
 };
 
 INSTANCE NiespokojnyScierwojad3	(Mst_Default_Scavenger_Demon)
@@ -168,9 +168,9 @@ INSTANCE NiespokojnyScierwojad3	(Mst_Default_Scavenger_Demon)
 	attribute	[ATR_HITPOINTS_MAX]	=	60;
 	attribute	[ATR_HITPOINTS]		=	120;
 	
-	protection	[PROT_BLUNT]		=	60;
-	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_BLUNT]		=	40;
+	protection	[PROT_EDGE]			=	40;
+	protection	[PROT_POINT]		=	40;
 };
 
 

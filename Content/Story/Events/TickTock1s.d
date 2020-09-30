@@ -1266,17 +1266,19 @@ func void WrzodQuestInserting()
 
 var int ObozOrkowoInfoOneTime;
 
-// TODO wywalic!!
-var int HeroKilofy;
-var int HeroBrylkiZlota;
+var int HeroKilofy;			// wykomentowane
+var int HeroBrylkiZlota;	// wykomentowane
 
 func void _TickTock_1s()
 {
-	if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
-	if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry趾i z這ta znikn窸y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
-	if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
-	if (npc_hasitems(hero,ItMw_2H_Axe_L_01) < HeroKilofy) { Print("UWAGA!!! Kilof znikn像."); HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry趾i z這ta znikn窸y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) < HeroKilofy) { Print("UWAGA!!! Kilof znikn像."); HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
 	
+	if (C_BodyStateContains(hero,BS_DIVE)) {
+		DivingTime += 1;
+	};
 
 	//Print(IntToString(C_IsInMysliwiTerritory()));
 	//Print(IntToString(Npc_GetBodyState(hero)));

@@ -947,7 +947,7 @@ FUNC INT DIA_NASZ_119_Udar_Kap4Start_Condition()
 FUNC VOID DIA_NASZ_119_Udar_Kap4Start_Info()
 {
 
-	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_15_00"); //Jesteœ wreszcie! Jakie wieœci przynosisz?		
+	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_15_00"); //Jesteœ wreszcie! Jakie wieœci przynosisz?
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_01"); //Uda³o siê nam odbiæ zamek, a orkowe si³y zosta³y starte z powierzchni ziemi. Teraz pozosta³o nam jedynie zaj¹æ siê umacnianiem naszej pozycji w tym rejonie.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_02"); //Niestety, kilku ludzi przyp³aci³o to ¿yciem. W tym Gestath...
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03"); //To smutna wiadomoœæ. Niech Beliar nie dobierze siê do jego duszy, a Innos wype³ni j¹ œwiat³em.
@@ -1042,7 +1042,7 @@ FUNC VOID DIA_NASZ_119_Udar_ZaginionyOddzialFinish_Info()
 
 	if (npc_knowsinfo(other,DIA_NASZ_015_Rudolf_MamPamietnik)) {
 		AI_Output (other, self,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_03"); //Niestety, jego dwóch pozosta³ych towarzyszy nie ¿yje.
-		AI_Output (self, other,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_04"); //I tak jestem zaskoczony, ¿e Rudolf nie poleg³. Dziêkujê za informacje.
+		AI_Output (self, other,"DIA_NASZ_119_Udar_ZaginionyOddzialFinish_55_04"); //I tak jestem zaskoczony, ¿e Rudolf nie poleg³. Dziêki za informacje.
 	};
 
 	B_GivePlayerXP(500);

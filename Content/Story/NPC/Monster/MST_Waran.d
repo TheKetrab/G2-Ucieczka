@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Waran(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_POINT]		=	30;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -122,7 +122,7 @@ PROTOTYPE Mst_Default_WaranGrozny(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	80;
+	protection	[PROT_POINT]		=	40;
 	protection	[PROT_FIRE]			=	80;
 	protection	[PROT_FLY]			=	80;
 	protection	[PROT_MAGIC]		=	0;

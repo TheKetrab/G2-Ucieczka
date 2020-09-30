@@ -384,6 +384,7 @@ FUNC VOID DIA_NASZ_307_Monk_koniec_Info()
 	//aktywuje misje z Carrym
 	B_StartOtherRoutine (NASZ_316_Carry,"Away");
 	CarryBiegnie = TRUE;
+	Carry_Stopowanie = TRUE;
 
 	if (HeroWolfKiller >= 7) {
 		AI_Output (self, other,"DIA_NASZ_307_Monk_koniec_15_00"); //Ale¿ z ciebie bieg³y myœliwy... Zabi³eœ wiêcej wilków ode mnie. Tego siê nie spodziewa³em.

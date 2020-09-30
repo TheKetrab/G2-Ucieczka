@@ -154,7 +154,7 @@ var int KapturMysliwegoKupiony;
 INSTANCE DIA_NASZ_211_Hunt_Kaptur   (C_INFO)
 {
 	npc         = NASZ_211_Hunt;
- 	nr          = 4;
+ 	nr          = 101;
  	condition   = DIA_NASZ_211_Hunt_Kaptur_Condition;
  	information = DIA_NASZ_211_Hunt_Kaptur_Info;
  	permanent   = TRUE;
@@ -196,7 +196,7 @@ var int SredniPancerzMysliwegoKupiony;
 INSTANCE DIA_NASZ_211_Hunt_SredniPancerz   (C_INFO)
 {
 	npc         = NASZ_211_Hunt;
- 	nr          = 4;
+ 	nr          = 102;
  	condition   = DIA_NASZ_211_Hunt_SredniPancerz_Condition;
  	information = DIA_NASZ_211_Hunt_SredniPancerz_Info;
  	permanent   = TRUE;
@@ -247,7 +247,7 @@ var int WzmocnionaZbrojaMysliwegoKupiona;
 INSTANCE DIA_NASZ_211_Hunt_WzmocnionaZbroja   (C_INFO)
 {
 	npc         = NASZ_211_Hunt;
- 	nr          = 5;
+ 	nr          = 103;
  	condition   = DIA_NASZ_211_Hunt_WzmocnionaZbroja_Condition;
  	information = DIA_NASZ_211_Hunt_WzmocnionaZbroja_Info;
  	permanent   = TRUE;
@@ -353,7 +353,7 @@ FUNC INT DIA_NASZ_211_Hunt_UltraArmorSkladniki_Condition()
 var int UltraZbrojaOut_Day;
 FUNC VOID DIA_NASZ_211_Hunt_UltraArmorSkladniki_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_211_Hunt_UltraArmorSkladniki_55_00"); //Mam wszystkie trofea na zbrojê.
+	AI_Output (other, self,"DIA_NASZ_211_Hunt_UltraArmorSkladniki_55_00"); //Mam wszystkie trofea na zbrojê.
 	B_GiveInvItems(other,self,ItAt_TrollFur,1);
 	B_GiveInvItems(other,self,ItAt_CrawlerPlate,5);
 	B_GiveInvItems(other,self,ItAt_ShadowHorn,2);
@@ -374,7 +374,7 @@ var int UltraZbrojaMysliwegoKupiona;
 INSTANCE DIA_NASZ_211_Hunt_UltraZbroja   (C_INFO)
 {
 	npc         = NASZ_211_Hunt;
- 	nr          = 5;
+ 	nr          = 104;
  	condition   = DIA_NASZ_211_Hunt_UltraZbroja_Condition;
  	information = DIA_NASZ_211_Hunt_UltraZbroja_Info;
  	permanent   = TRUE;

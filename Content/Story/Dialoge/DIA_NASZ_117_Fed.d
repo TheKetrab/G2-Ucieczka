@@ -36,7 +36,7 @@ INSTANCE DIA_NASZ_117_Fed_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_117_Fed_siema_Condition()
 {
-	if (Npc_IsInState (self, ZS_Talk)) && (Kurgan_walka==0)
+	if (Npc_IsInState (self, ZS_Talk)) && (ArenaQuestState==0)
 	{
 		return TRUE;
 	};
@@ -66,7 +66,7 @@ INSTANCE DIA_NASZ_117_Fed_arena   (C_INFO)
 FUNC INT DIA_NASZ_117_Fed_arena_Condition()
 {
 	if ((Kurgan_walka==1)
-		&& Hlp_StrCmp(Npc_GetNearestWP(self),"NASZ_LOWCY_ARENA_01")
+		&& Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 400
 		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE))
 	{
 		return TRUE;

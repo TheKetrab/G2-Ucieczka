@@ -182,7 +182,6 @@ func void kopanie_zlota(var int brudne) {
 
 	if (brudne == 1) {
 		MozeszKopacBrudneSamorodki = MozeszKopacBrudneSamorodki + 1;
-		return;
 	};
 
 	if (B_GoldMob_Bestimmung() == TRUE)

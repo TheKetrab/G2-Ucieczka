@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Lurker(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_POINT]		=	30;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -181,10 +181,10 @@ PROTOTYPE Mst_Default_WscieklyLurker(C_Npc)
 	
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]		=	100;
-	protection	[PROT_POINT]		=	100;
-	protection	[PROT_FIRE]		=	100;
-	protection	[PROT_FLY]		=	100;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	60;
+	protection	[PROT_FIRE]			=	100;
+	protection	[PROT_FLY]			=	100;
 	protection	[PROT_MAGIC]		=	100;
 	
 	//----- Damage Types----
@@ -287,7 +287,7 @@ INSTANCE GroznyTopielec	(Mst_Default_Lurker)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	80;
 	protection	[PROT_EDGE]			=	80;
-	protection	[PROT_POINT]		=	80;
+	protection	[PROT_POINT]		=	50;
 	protection	[PROT_FIRE]			=	80;
 	protection	[PROT_FLY]			=	80;
 	

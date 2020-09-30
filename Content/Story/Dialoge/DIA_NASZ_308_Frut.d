@@ -201,7 +201,7 @@ FUNC VOID DIA_NASZ_308_Frut_zadanie_Info()
 	Log_CreateTopic (TOPIC_Frut_niewolnicy, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Frut_niewolnicy, LOG_RUNNING);
 	B_LogEntry (TOPIC_Frut_niewolnicy, "Mam przyprowadziæ Frutowi nowego niewolnika z kopalni. Z jego opisu wynika³o, ¿e pod wodospadem jest jaskinia, w której trwa wydobycie. Nie pomiesza³o mu siê coœ?");
-	Frut_wstrzymywanie=1;	
+	Frut_wstrzymywanie=1;
 };
 
 //*********************************************************************
@@ -378,6 +378,7 @@ FUNC VOID DIA_NASZ_308_Frut_Monk_Info()
 	AI_Output (other, self,"DIA_NASZ_308_Frut_Monk_55_02"); //Prócz pozdrowieñ mia³em przekazaæ ci te¿ potê¿nego kopa w dupê.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_Monk_55_03"); //O! To ju¿ mi siê podoba.
 
+	Frut_wstrzymywanie=1;
 	AI_StopProcessInfos (self);
 	B_Attack (self, hero, AR_NONE, 1);
 
@@ -410,6 +411,7 @@ FUNC INT DIA_NASZ_308_Frut_monkwin_Condition()
 FUNC VOID DIA_NASZ_308_Frut_monkwin_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_308_Frut_monkwin_55_00"); //Nie ujdzie ci to p³azem... Obiecujê.
+	Frut_wstrzymywanie=0;
 	Npc_ExchangeRoutine (self, "Brama");
 	Npc_ExchangeRoutine (NASZ_307_Monk, "Straz");
 };
@@ -440,7 +442,8 @@ FUNC INT DIA_NASZ_308_Frut_monklose_Condition()
 FUNC VOID DIA_NASZ_308_Frut_monklose_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_308_Frut_monklose_55_00"); //Coœ jeszcze mia³eœ mi przekazaæ?
-	
+	Frut_wstrzymywanie=0;
+
 	//B_LogEntry (TOPIC_Monk_Frut, "Zawali³em. Jestem zbyt s³aby i oberwa³em od Fruta.");
 	//Log_SetTopicStatus (TOPIC_Monk_Frut, LOG_FAILED);
 	

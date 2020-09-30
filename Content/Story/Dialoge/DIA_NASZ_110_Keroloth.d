@@ -23,11 +23,11 @@ FUNC VOID DIA_NASZ_110_Keroloth_EXIT_Info()
 {
 	if (mieczrunicznykeroloth_onetime == TRUE)
 	{
+		Npc_RemoveInvItems (self, ItNa_MieczRunicznyKeroloth, 1);
 		Createinvitems (self, ItNa_DJG_Weapon_H, 1);
 		AI_EquipBestMeleeWeapon	(self);
 		AI_StopProcessInfos (self);
 		mieczrunicznykeroloth_onetime = FALSE;
-		Npc_RemoveInvItems (self, ItNa_MieczRunicznyKeroloth, 1);
 	};
 	
 	AI_StopProcessInfos (self);
@@ -1602,7 +1602,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_znam_Info()
 	
 	ProwadziszKerolothaDoTwierdzy = TRUE;
 
-	Npc_ExchangeRoutine (self, "TwierdzaFollow"); // zmienione na Guide
+	Npc_ExchangeRoutine (self, "TwierdzaFollow"); // zmienione na GuidePlayer!
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_110_Keroloth,1);
 	AI_StopProcessInfos (self);
@@ -1921,7 +1921,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_SzturmOrkow_what()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_SzturmOrkow_what_55_01"); //Pójdê za tob¹.
 
 	AI_StopProcessInfos (self);
-	Npc_ExchangeRoutine (self, "TwierdzaFollow");
+	Npc_ExchangeRoutine (self, "TwierdzaWalkaPre");
 	TwierdzaAtakReady = TRUE;
 };
 
@@ -2011,7 +2011,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_AfterSzturmOrkow_Info()
 	
 	WillGoToCastle = TRUE;
 	//ff_applyonceext(DrugiAtak,1000,-1);
-	B_LogEntry (TOPIC_Keroloth_Wojna, "Obroniliœmy twierdzê. Teraz wyruszamy razem z Kerolothem zdobyæ zamek. Mam wzi¹æ sobie kogo chcê do pomocy. ¯eby orkowie nie zamknêli siê za kratami, za³o¿ê kostur Ur-Shaka.");
+	B_LogEntry (TOPIC_Keroloth_Wojna, "Obroniliœmy twierdzê. Teraz wyruszamy razem z Kerolothem zdobyæ zamek. ¯eby orkowie nie zamknêli siê za kratami, za³o¿ê kostur Ur-Shaka.");
 };
 
 //*********************************************************************
@@ -2245,9 +2245,9 @@ FUNC VOID DIA_NASZ_110_Keroloth_Kap4_Info()
 
 func void InsertUndeadsNearOUTCamp() {
 
-	Wld_InsertNpc(Zombie01,"FP_KAP4_UNDEAD_01");
-	Wld_InsertNpc(Zombie01,"FP_KAP4_UNDEAD_02");
-	Wld_InsertNpc(Zombie01,"FP_KAP4_UNDEAD_03");
+	Wld_InsertNpc(Zombie01_OutCamp1,"FP_KAP4_UNDEAD_01");
+	Wld_InsertNpc(Zombie01_OutCamp2,"FP_KAP4_UNDEAD_02");
+	Wld_InsertNpc(Zombie01_OutCamp3,"FP_KAP4_UNDEAD_03");
 	Wld_InsertNpc(SkeletonShield,"FP_KAP4_UNDEAD_04");
 	Wld_InsertNpc(SkeletonPro,"FP_KAP4_UNDEAD_05");
 	Wld_InsertNpc(SkeletonPro,"FP_KAP4_UNDEAD_06");
@@ -2607,6 +2607,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 	};
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
+	Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, DIALOG_BACK, DIA_NASZ_110_Keroloth_IWasBehindTheWall_back);
 	
 	if (WillBylZapalisada && !HeroSaidKerolothInfoBeachOneTime) {
 		Info_AddChoice	  (DIA_NASZ_110_Keroloth_IWasBehindTheWall, "Orkowie rozbili obóz na pla¿y.", DIA_NASZ_110_Keroloth_IWasBehindTheWall_orc);
@@ -2625,6 +2626,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_Info()
 	};
 };
 
+FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_back()
+{
+	Info_ClearChoices (DIA_NASZ_110_Keroloth_IWasBehindTheWall);
+};
 
 FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
 {

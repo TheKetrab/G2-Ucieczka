@@ -324,7 +324,7 @@ FUNC VOID DIA_NASZ_205_Mysliwy_QuestDone_Info()
 		B_GivePlayerXP (500);
 	};
 
-	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_07"); //Dziêki za pomoc. WeŸ ten ³uk. Znalaz³em go ostatnio grzebi¹c w skrzyni. Wydaje mi siê, ¿e nale¿a³ do Gestatha, ale nasz szef sprawi³ sobie ju¿ nowy.
+	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_07"); //Dziêki za pomoc. WeŸ ten ³uk. Znalaz³em go ostatnio grzebi¹c w skrzyni. Wydaje mi siê, ¿e nale¿a³ do Gestatha, ale nasz szef sprawi³ ju¿ sobie nowy.
 	AI_Output (self, other,"DIA_NASZ_205_Mysliwy_QuestDone_55_08"); //Ja jestem przywi¹zany do swojego, a tobie nale¿y siê przyzwoita nagroda. Raz jeszcze: Dziêkujê!
 	
 	Createinvitems (self, ItRw_Bow_H_03, 1);

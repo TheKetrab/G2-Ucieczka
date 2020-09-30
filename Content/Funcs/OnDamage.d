@@ -579,28 +579,28 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		// ----- ----- TRUCIZNA ----- -----
 		if (Npc_IsPlayer(oth) && PierscienAsasynaUbrany == FALSE) {
 			
-			if (slf.aivar[AIV_POISON] == POISON_1) // 5% szansy
+			if (slf.aivar[AIV_POISON] == POISON_1) // 10% szansy
 			{
 				slf.aivar[AIV_RandomDmg] = hlp_random(100);
-				if (slf.aivar[AIV_RandomDmg] < 5 && WillZatruty < 1)
+				if (slf.aivar[AIV_RandomDmg] < 10 && WillZatruty < 1)
 				{
 					Poison1HPStart();
 				};
 			}
 			
-			else if (slf.aivar[AIV_POISON] == POISON_2) // 10% szansy
+			else if (slf.aivar[AIV_POISON] == POISON_2) // 20% szansy
 			{
 				slf.aivar[AIV_RandomDmg] = hlp_random(100);
-				if (slf.aivar[AIV_RandomDmg] < 10 && WillZatruty < 2)
+				if (slf.aivar[AIV_RandomDmg] < 20 && WillZatruty < 2)
 				{
 					Poison5HPStart();
 				};
 			}
 			
-			else if (slf.aivar[AIV_POISON] == POISON_3) // 15% sznasy
+			else if (slf.aivar[AIV_POISON] == POISON_3) // 30% sznasy
 			{
 				slf.aivar[AIV_RandomDmg] = hlp_random(100);
-				if (slf.aivar[AIV_RandomDmg] < 15 && WillZatruty < 3)
+				if (slf.aivar[AIV_RandomDmg] < 30 && WillZatruty < 3)
 				{
 					Poison10HPStart();
 				};

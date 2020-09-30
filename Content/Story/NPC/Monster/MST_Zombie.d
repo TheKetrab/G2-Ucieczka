@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Zombie(C_Npc)
 	//----- Protection ----
 	protection	[PROT_BLUNT]		=	50;
 	protection	[PROT_EDGE]			=	50;
-	protection	[PROT_POINT]		=	50;	
+	protection	[PROT_POINT]		=	30;	
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	50;
 	protection	[PROT_MAGIC]		=	0;
@@ -116,6 +116,23 @@ INSTANCE Zombie01		(Mst_Default_Zombie)
 	B_SetVisuals_Zombie01();
 	Npc_SetToFistMode(self);
 };
+
+INSTANCE Zombie01_OutCamp1		(Mst_Default_Zombie)
+{
+	B_SetVisuals_Zombie01();
+	Npc_SetToFistMode(self);
+};
+INSTANCE Zombie01_OutCamp2		(Mst_Default_Zombie)
+{
+	B_SetVisuals_Zombie01();
+	Npc_SetToFistMode(self);
+};
+INSTANCE Zombie01_OutCamp3		(Mst_Default_Zombie)
+{
+	B_SetVisuals_Zombie01();
+	Npc_SetToFistMode(self);
+};
+
 
 INSTANCE Zombie0exp		(Mst_Default_Zombie)
 {

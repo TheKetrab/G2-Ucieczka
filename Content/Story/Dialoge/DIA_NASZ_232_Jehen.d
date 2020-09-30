@@ -461,7 +461,7 @@ FUNC VOID DIA_NASZ_232_Jehen_WhoDoISee_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_11"); //Czy¿by twój strach przemin¹³?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_12"); //Nie, po prostu spe³niam swój obowi¹zek, a we dwóch bêdzie znacznie bezpieczniej. Wyruszamy o pó³nocy, nie zapomnij siê przygotowaæ.
 
-	B_LogEntry (TOPIC_Dobar_pancerze, "Znalaz³em myœliwego, który jeszcze nie zacz¹³ polowaæ na orkowe psy. Okaza³o siê bowiem, i¿ spotka³ siê z zupe³nie nowym k³opotem, jakim by³o spotkanie z tajemniczym, nieumar³ym cieniostworem.");
+	B_LogEntry (TOPIC_Dobar_pancerze, "Znalaz³em myœliwego, który jeszcze nie zacz¹³ polowaæ na orkowe psy. Okaza³o siê bowiem, i¿ spotka³ siê z zupe³nie nowym k³opotem, jakim by³o spotkanie z tajemniczym, nieumar³ym cieniostworem. O pó³nocy wyruszymy na polowanie.");
 };
 
 //*********************************************************************
@@ -491,6 +491,7 @@ FUNC VOID DIA_NASZ_232_Jehen_LetsGo_Info()
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_LetsGo_55_00"); //Jestem gotów, ruszajmy!
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LetsGo_55_01"); //Trzymaj siê blisko mnie. Nie chcê, by coœ nas rozdzieli³o.
 
+	self.flags = 2;
 	Npc_ExchangeRoutine(self,"LastTimeISee");
 	AI_StopProcessInfos(self);
 	
@@ -769,7 +770,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Trup_Info()
 	Npc_ExchangeRoutine(self,"Bestia1");
 	AI_StopProcessInfos(self);
 	
-	self.flags = 2;
+	self.flags = 2; // ustawione tu, z wersji 1.0, od wersji 1.1 ustawione tak¿e wczeœniej
 
 	Wld_InsertNpc(BestiaSwiatynna,"NASZ_JEHEN_QUEST_06");
 	
@@ -941,11 +942,11 @@ FUNC VOID DIA_NASZ_232_Jehen_Part2Finish_Info()
 	DodajReputacje(2,REP_MYSLIWI);
 	B_GivePlayerXP(700);
 
-	Wld_InsertNpc(OrcDog,"FP_ROAM_OW_ORCBARRIER_04_01");
-	Wld_InsertNpc(OrcDog,"FP_ROAM_OW_ORCBARRIER_04_02");
-	Wld_InsertNpc(OrcDog,"FP_ROAM_OW_ORCBARRIER_04_03");
-	Wld_InsertNpc(OrcDog,"FP_ROAM_OW_ORCBARRIER_04_04");
-	Wld_InsertNpc(OrcDog,"FP_ROAM_OW_ORCBARRIER_04_05");
+	Wld_InsertNpc(OrcDog_Easy,"FP_ROAM_OW_ORCBARRIER_04_01");
+	Wld_InsertNpc(OrcDog_Easy,"FP_ROAM_OW_ORCBARRIER_04_02");
+	Wld_InsertNpc(OrcDog_Easy,"FP_ROAM_OW_ORCBARRIER_04_03");
+	Wld_InsertNpc(OrcDog_Easy,"FP_ROAM_OW_ORCBARRIER_04_04");
+	Wld_InsertNpc(OrcDog_Easy,"FP_ROAM_OW_ORCBARRIER_04_05");
 	
 };
 

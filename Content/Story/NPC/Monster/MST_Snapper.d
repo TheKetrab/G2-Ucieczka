@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Snapper(C_Npc)
 	//----- Protections ----	
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;		
+	protection	[PROT_POINT]		=	30;		
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -200,7 +200,7 @@ INSTANCE GroznyZebacz	(Mst_Default_Snapper)
 	//----- Protections ----	
 	protection	[PROT_BLUNT]		=	100;
 	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;		
+	protection	[PROT_POINT]		=	60;		
 	protection	[PROT_FIRE]			=	100;
 	protection	[PROT_FLY]			=	100;
 
@@ -225,9 +225,9 @@ INSTANCE GroznyZebaczWarta1	(Mst_Default_Snapper)
 	attribute	[ATR_HITPOINTS]		=	160;
 
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;		
+	protection	[PROT_BLUNT]		=	80;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	60;		
 	protection	[PROT_FIRE]			=	100;
 	protection	[PROT_FLY]			=	100;
 
@@ -248,9 +248,9 @@ INSTANCE GroznyZebaczWarta2	(Mst_Default_Snapper)
 	attribute	[ATR_HITPOINTS]		=	160;
 
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;		
+	protection	[PROT_BLUNT]		=	80;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	60;		
 	protection	[PROT_FIRE]			=	100;
 	protection	[PROT_FLY]			=	100;
 
@@ -271,9 +271,9 @@ INSTANCE GroznyZebaczWarta3	(Mst_Default_Snapper)
 	attribute	[ATR_HITPOINTS]		=	160;
 
 	//----- Protections ----	
-	protection	[PROT_BLUNT]		=	100;
-	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;		
+	protection	[PROT_BLUNT]		=	80;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	60;		
 	protection	[PROT_FIRE]			=	100;
 	protection	[PROT_FLY]			=	100;
 

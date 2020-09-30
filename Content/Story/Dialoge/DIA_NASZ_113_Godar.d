@@ -98,9 +98,11 @@ FUNC VOID DIA_NASZ_113_Godar_ORK_Info()
 	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_04"); //Co? Jak to siê sta³o?
 	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_05"); //Trochê g³upio siê po tym wszystkim przyznaæ, ale uznaliœmy, ¿e pójdziemy z ch³opakami na polowanie. I chcieliœmy wzi¹æ ze sob¹ orka...
 	AI_Output			(other, self,"DIA_NASZ_113_Godar_ORK_15_06"); //Niech zgadnê: Bez broni, ¿eby robi³ wam za przynêtê?
-	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_07"); //Tak... W ka¿dym razie, chcieliœmy zapolowaæ na parê wilków, mo¿e wargów. Tymczasem na drodze wpadliœmy na najprawdziwsze brzytwy, których nie widzia³em od dawna w kolonii. Kaza³em Kurg-Kanowi podejœæ jak najbli¿ej siê da, by sprowokowa³ zwierzêta i skupi³ na siebie ich uwagê, a my je szybko zestrzelimy z kuszy.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_07a"); //Tak... W ka¿dym razie, chcieliœmy zapolowaæ na parê wilków, mo¿e wargów. Tymczasem na drodze wpadliœmy na najprawdziwsze brzytwy, których nie widzia³em od dawna w kolonii.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_07b"); //Kaza³em Kurg-Kanowi podejœæ jak najbli¿ej siê da, by sprowokowa³ zwierzêta i skupi³ na sobie ich uwagê.
 	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_08"); //I co dzia³o siê potem?
-	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_09"); //Zabiliœmy brzytwy, a tu nagle siê okaza³o, ¿e zamiast dwóch sztuk, by³o ich ca³e stado i zostaliœmy szybko otoczeni. Zaczê³a siê krwawa jatka i nawet nam dobrze sz³o, a¿ nie wyskoczy³ na mnie samiec alfa. Powali³ mnie na ziemiê i ca³ymi si³ami, powstrzymywa³em go, by nie odgryz³ mi g³owy.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_09a"); //Zabiliœmy brzytwy, a tu nagle siê okaza³o, ¿e zamiast dwóch sztuk, by³o ich ca³e stado i zostaliœmy szybko otoczeni.
+	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_09b"); //Zaczê³a siê krwawa jatka i nawet nam dobrze sz³o, a¿ nie wyskoczy³ na mnie samiec alfa. Powali³ mnie na ziemiê i ca³ymi si³ami, powstrzymywa³em go, by nie odgryz³ mi g³owy.
 	AI_Output			(other,self, "DIA_NASZ_113_Godar_ORK_15_10"); //Chyba wiem, do czego to zmierza.
 	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_11"); //Wtedy us³ysza³em ryk. A¿ mi serce zamar³o, ale wtedy okaza³o siê, ¿e ten ork leci mi na ratunek.
 	AI_Output			(self, other,"DIA_NASZ_113_Godar_ORK_15_12"); //I myœlisz, ¿e mia³ jak¹œ broñ? Nie! Pobieg³ na niego z piêœciami! Rzuci³ siê, przewracaj¹c alfê na ziemiê i...

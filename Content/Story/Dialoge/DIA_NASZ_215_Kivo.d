@@ -202,17 +202,18 @@ FUNC INT DIA_NASZ_215_Kivo_RenegaciOnPlace_Condition()
 
 FUNC VOID DIA_NASZ_215_Kivo_RenegaciOnPlace_Info()
 {
-	var C_NPC Kivo; Kivo = Hlp_GetNpc (NASZ_215_Kivo);
-	var C_NPC Louis; Louis = Hlp_GetNpc (NASZ_217_Louis);
-	var C_NPC Vachut; Vachut = Hlp_GetNpc (NASZ_227_Vachut);
+	// FIX Ucieczka 1.1 - niestety dubbing nagrany jako wszystko Kivo, wiec to juz nie moze byc trialog :(
+	//var C_NPC Kivo; Kivo = Hlp_GetNpc (NASZ_215_Kivo);
+	//var C_NPC Louis; Louis = Hlp_GetNpc (NASZ_217_Louis);
+	//var C_NPC Vachut; Vachut = Hlp_GetNpc (NASZ_227_Vachut);
 	
-	TRIA_Invite(Kivo);
-	TRIA_Invite(Louis);
-	TRIA_Invite(Vachut);
+	//TRIA_Invite(Kivo);
+	//TRIA_Invite(Louis);
+	//TRIA_Invite(Vachut);
 	
-    TRIA_Start();
+    //TRIA_Start();
  
-	TRIA_Next(Kivo);
+	//TRIA_Next(Kivo);
 	
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_15_00"); //I jesteœmy. Widzisz ju¿ dziurê, któr¹ chcesz siê przedostaæ?
 	AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_01"); //Jeszcze nie, muszê przyjrzeæ siê lepiej tym barykadom.
@@ -223,15 +224,15 @@ FUNC VOID DIA_NASZ_215_Kivo_RenegaciOnPlace_Info()
 		AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_03"); //Wy udajcie siê pod drug¹ bramê. Stamt¹d zaatakujecie.
 	};
 	
-	TRIA_Next(Louis);
-	AI_TurnToNpc(other, self);
-    AI_TurnToNpc(self, other);
+	//TRIA_Next(Louis);
+	//AI_TurnToNpc(other, self);
+    //AI_TurnToNpc(self, other);
 	
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_04"); //Szczerze mówi¹c, czujê wiêkszy entuzjazm, gdy mam zabijaæ ludzi a nie zwierzynê.
 
-	TRIA_Next(Vachut);
-	AI_TurnToNpc(other, self);
-    AI_TurnToNpc(self, other);
+	//TRIA_Next(Vachut);
+	//AI_TurnToNpc(other, self);
+    //AI_TurnToNpc(self, other);
 	
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_05"); //Po drodze zebra³em trochê t³uszczu z bestii i napcha³em do pojemniczka.
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_06"); //Myœlê, ¿e mo¿e ci siê przydaæ, w razie gdyby ko³owrót nie chcia³ siê poruszyæ.
@@ -241,14 +242,14 @@ FUNC VOID DIA_NASZ_215_Kivo_RenegaciOnPlace_Info()
 	
 	AI_Output (other, self,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_07"); //Dziêki.
 
-	TRIA_Next(Kivo);
-	AI_TurnToNpc(other, self);
-    AI_TurnToNpc(self, other);
+	//TRIA_Next(Kivo);
+	//AI_TurnToNpc(other, self);
+    //AI_TurnToNpc(self, other);
 		
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_08"); //Zaatakujemy pod os³on¹ nocy. Do tego czasu odpocznijmy trochê.
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_RenegaciOnPlace_55_09"); //Ty, Willu, idŸ poszukaj szpary miêdzy deskami. A, i najwa¿niejsze: Nie daj siê zdeptaæ, gdy bêdziesz przemieniony w ma³ego owada.
 	
-	TRIA_Finish();
+	//TRIA_Finish();
 	
 	B_LogEntry(TOPIC_Korth_kopalnia,"Dotarliœmy pod kopalniê. Kivo powiedzia³, ¿e zaatakujemy pod os³on¹ nocy. Muszê znaleŸæ jak¹œ szparê, by wejœæ do œrodka. Vachut da³ mi te¿ ³ój kretoszczura, ¿ebym móg³ przekrêciæ ko³owrót i otworzyæ bramê myœliwym.");
 

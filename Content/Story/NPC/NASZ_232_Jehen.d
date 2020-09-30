@@ -5,7 +5,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	name 	= "Jehen";
 	guild 	= GIL_OUT;
 	id 	= 232;
-	voice 	= 5;
+	voice 	= 13;
 	flags   = 0;																			//NPC_FLAG_IMMORTAL oder 0
 	npctype	= NPCTYPE_MAIN;
 	

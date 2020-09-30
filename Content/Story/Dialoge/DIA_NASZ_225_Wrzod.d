@@ -169,7 +169,7 @@ FUNC VOID DIA_NASZ_225_Wrzod_CanIHelp_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_05"); //Tamto miejsce wydaje mi siê idealne do spe³nienia moich zabaw.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_06"); //Dodatkowo chcia³bym, ¿eby by³ tam jakiœ œcierwojad, kretoszczur i krwiopijca.
 	AI_Output (other, self,"DIA_NASZ_225_Wrzod_CanIHelp_15_07"); //Zobaczê, co da siê zrobiæ.
-	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_08"); //Na sam¹ myœl a¿ œlinka mi cieknie!
+	AI_Output (self, other,"DIA_NASZ_225_Wrzod_CanIHelp_15_08"); //Na sam¹ myœl a¿ mi œlinka cieknie!
 
 	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Ten psychopata wymyœli³ sobie nawet miejsce do swoich zabaw. W lesie obok Obozu na Bagnie jest jaskinia, w której niegdyœ by³a gorzelnia. Muszê oswoiæ œcierwojada, kretoszczura i krwiopijcê, a potem przyprowadziæ je tam. Przynajmniej za jakiœ czas w obozie myœliwych bêdzie cicho.");
 

@@ -91,9 +91,13 @@ func int GFA_GetAccuracy(var C_Item weapon, var int talent) {
         talent = hero.attribute[ATR_DEXTERITY];
     };
 
-    // UCIECZKA 1.1
-    talent = GFA_ScaleRanges(talent, 0, 100, 60, 100);
-
+    // UCIECZKA 1.1 - od 10% lukow faktycznie Will umie strzelac
+    if (talent >= 10) {
+        talent = GFA_ScaleRanges(talent, 0, 100, 60, 100);
+    } else {
+        talent = GFA_ScaleRanges(talent, 0, 100, 0, 100);
+    };
+    
     // Get draw force from the function above and re-scale it from [0, 100] to [80, 100]
     var int drawForce; drawForce = GFA_GetDrawForce(weapon, talent);
     //drawForce = GFA_ScaleRanges(drawForce, 0, 100, 80, 100);

@@ -1739,7 +1739,7 @@ INSTANCE ItMw_Rabenschnabel (C_Item)
 	value 				=	1800;
 
 	damageTotal  		= 	58;
-	damagetype 			=	DAM_BLUNT;
+	damagetype 			=	DAM_BLUNT; // dzia³a na golemy
 	range    			=  	Range_Rabenschnabel;		
 
 	cond_atr[2]   		=	ATR_DEXTERITY;
@@ -1747,6 +1747,7 @@ INSTANCE ItMw_Rabenschnabel (C_Item)
 	visual 				=	"ItMw_058_1h_warhammer_02.3DS";
 
 	description			= name;
+	TEXT[0]				= "M³ot dla silnych myœliwych ze specjalnym k³ujcem.";
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_OneHanded;

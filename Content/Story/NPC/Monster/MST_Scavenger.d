@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Scavenger(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	35;
 	protection	[PROT_EDGE]			=	35;
-	protection	[PROT_POINT]		=	0;
+	protection	[PROT_POINT]		=	5;
 	protection	[PROT_FIRE]			=	35;
 	protection	[PROT_FLY]			=	35;
 	protection	[PROT_MAGIC]		=	0;

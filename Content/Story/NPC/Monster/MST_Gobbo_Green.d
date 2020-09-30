@@ -21,7 +21,7 @@ prototype Mst_Default_Gobbo_Green (C_NPC)
 	// ------ Protection ------
 	protection	[PROT_BLUNT]		=	30;
 	protection	[PROT_EDGE]			=	30;
-	protection	[PROT_POINT]		=	30;
+	protection	[PROT_POINT]		=	10;
 	protection	[PROT_FIRE]			=	30;
 	protection	[PROT_FLY]			=	30;
 	protection	[PROT_MAGIC]		=	0;

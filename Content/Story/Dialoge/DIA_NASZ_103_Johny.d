@@ -161,7 +161,7 @@ FUNC VOID DIA_NASZ_103_Johny_paczka_znika()
 	Info_ClearChoices (DIA_NASZ_103_Johny_paczka);
 
 		if(npc_hasitems(other,ItFo_Beer)>=1) {
-			Info_AddChoice	  (DIA_NASZ_103_Johny_paczka, "Umowa stoi. Zimne piwo dla ciebie! (30 szt. z³ota)", DIA_NASZ_103_Johny_paczka_30);	
+			Info_AddChoice	  (DIA_NASZ_103_Johny_paczka, "Umowa stoi. Zimne piwo dla ciebie!", DIA_NASZ_103_Johny_paczka_30);	
 		};
 		Info_AddChoice	  (DIA_NASZ_103_Johny_paczka, "Chyba siê nie zrozumieliœmy...", DIA_NASZ_103_Johny_paczka_50);	
 };
@@ -179,7 +179,6 @@ FUNC VOID DIA_NASZ_103_Johny_paczka_30()
 	AI_Output (other,self ,"DIA_NASZ_103_Johny_paczka_30_15_00"); //Umowa stoi. Zimne piwo dla ciebie!
 	
 	B_GiveInvItems (other, self, ItFo_Beer, 1);
-	B_GiveInvItems (other, self, ItMi_Gold, 30);
 	
 	AI_Output (self, other,"DIA_NASZ_103_Johny_paczka_30_55_01"); //Za resztê z³ota kupiê sobie jeszcze kilka wieczorem.
 	johny_paczka_gold = 30;

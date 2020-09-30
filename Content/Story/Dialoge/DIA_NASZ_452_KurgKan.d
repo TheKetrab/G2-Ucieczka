@@ -1,4 +1,9 @@
 
+func void ApplyKurgKanArmor() {
+	B_SetVisuals_OrcPal(NASZ_452_KurgKan);
+};
+
+
 // ***********************************************************************************************************************
 // 	  	DIA_NASZ_452_KurgKan_EXIT
 // ***********************************************************************************************************************
@@ -57,8 +62,10 @@ func void DIA_NASZ_452_KurgKan_Hello_Info ()
 	AI_Output (self, other,"DIA_NASZ_452_KurgKan_Hello_55_14"); //Will mieæ racjê! Kurg-Kan zagro¿ony. Co zrobiæ, co zrobiæ?
 	
 	Info_ClearChoices(DIA_NASZ_452_KurgKan_Hello);
-	Info_AddChoice	(DIA_NASZ_452_KurgKan_Hello, "Bardzo mi przykro.", DIA_NASZ_452_KurgKan_Die);
-	Info_AddChoice	(DIA_NASZ_452_KurgKan_Hello, "Pogadam z przywódc¹ ³owców orków.", DIA_NASZ_452_KurgKan_SaveHim);
+		Info_AddChoice	(DIA_NASZ_452_KurgKan_Hello, "Bardzo mi przykro.", DIA_NASZ_452_KurgKan_Die);
+		if (KAPITEL < 3) {
+			Info_AddChoice	(DIA_NASZ_452_KurgKan_Hello, "Pogadam z przywódc¹ ³owców orków.", DIA_NASZ_452_KurgKan_SaveHim);
+		};
 	
 };
 var int SaveKurgKan;
@@ -339,9 +346,8 @@ FUNC INT DIA_NASZ_452_KurgKan_Zbroja_Condition()
 };
 FUNC VOID DIA_NASZ_452_KurgKan_Zbroja_Info()
 {	
+	ff_remove(ApplyKurgKanArmor);
 	
-	
-	// zbroje zak³ada w trzecim rozdziale - sprawdzic TODO
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_00");  //Czy ty masz na sobie zbrojê zrobion¹ z blach paladyna?
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_01");  //Tak, Jan daæ. Powiedzieæ, ¿e potrzebna zbroja do walki, do ochrony. Atakowaæ zamek z ³owcy.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_02");  //Rozumiem, ¿e trzeba ci by³o daæ zbrojê, ale wybór jest doœæ nietypowy. Muszê zapytaæ Jana, sk¹d ten pomys³.

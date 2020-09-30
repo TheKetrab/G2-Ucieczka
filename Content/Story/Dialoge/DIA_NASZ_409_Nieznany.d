@@ -60,7 +60,7 @@ func void DIA_NASZ_409_Nieznany_kto_Info ()
 	
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_00"); //Co?! Kim¿e ty jesteœ?
 	AI_Output			(other, self, "DIA_NASZ_409_Nieznany_kto_19_01"); //To chyba ja powinienem siê o to zapytaæ.
-	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_02"); //Moje imiê nie jest istotne.
+	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_02"); //Moje imiê jest nieistotne.
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_03"); //Wiedz jednak, ¿e strzegê potê¿nego amuletu, który nie powinien wpaœæ w rêce takiego œmiertelnika, jak ty.
 	AI_Output			(self ,other, "DIA_NASZ_409_Nieznany_kto_19_04"); //Zawróæ albo bêdzie za póŸno!					
 																																	

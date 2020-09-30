@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Icewolf(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	60;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	60;
+	protection	[PROT_POINT]		=	40;
 	protection	[PROT_FIRE]			=	40;
 	protection	[PROT_FLY]			=	100;
 	protection	[PROT_MAGIC]		=	0;

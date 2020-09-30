@@ -235,7 +235,7 @@ var int CiezkiPancerzLowcyKupiony;
 INSTANCE DIA_NASZ_104_Engor_CiezkiPancerz   (C_INFO)
 {
 	npc         = NASZ_104_Engor;
- 	nr          = 3;
+ 	nr          = 101;
  	condition   = DIA_NASZ_104_Engor_CiezkiPancerz_Condition;
  	information = DIA_NASZ_104_Engor_CiezkiPancerz_Info;
  	permanent   = TRUE;
@@ -284,7 +284,7 @@ var int CiezkaZbrojaLowcyKupiona;
 INSTANCE DIA_NASZ_104_Engor_CiezkaZbroja   (C_INFO)
 {
 	npc         = NASZ_104_Engor;
- 	nr          = 4;
+ 	nr          = 102;
  	condition   = DIA_NASZ_104_Engor_CiezkaZbroja_Condition;
  	information = DIA_NASZ_104_Engor_CiezkaZbroja_Info;
  	permanent   = TRUE;

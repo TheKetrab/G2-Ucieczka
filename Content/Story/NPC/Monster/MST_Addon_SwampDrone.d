@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_SwampDrone(C_Npc)
 	//----- Ptotection ----
 	protection	[PROT_BLUNT]		= 50;
 	protection	[PROT_EDGE]			= 50;
-	protection	[PROT_POINT]		= 0;
+	protection	[PROT_POINT]		= 15;
 	protection	[PROT_FIRE]			= 50;
 	protection	[PROT_FLY]			= 50;
 	protection	[PROT_MAGIC]		= 0;

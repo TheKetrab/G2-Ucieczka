@@ -427,6 +427,7 @@ FUNC INT DIA_NASZ_223_Ratford_koniec_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_223_Ratford_zadanie)
 	&& npc_hasitems (other, ItNa_ZapasowaPila) >=1)
+	&& Npc_GetDistToNpc (NASZ_223_Ratford, NASZ_222_Cappel) > 1000 // 10 metrow! maja byc daleko od siebie
 	&& !TimeIsUp(7,-1,RatfordTrzyDni,-1) // siedem dni :)
 	{
 		return TRUE;

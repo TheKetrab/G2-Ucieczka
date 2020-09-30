@@ -131,7 +131,7 @@ INSTANCE BlackWolf	(Mst_Default_Warg)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	50;
 	protection	[PROT_EDGE]			=	50;
-	protection	[PROT_POINT]		=	50;
+	protection	[PROT_POINT]		=	30;
 	protection	[PROT_FIRE]			=	50;
 	protection	[PROT_FLY]			=	50;
 	protection	[PROT_MAGIC]		=	50;

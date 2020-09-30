@@ -116,7 +116,7 @@ FUNC VOID DIA_Follow_Sheep_second_Info()
 {
 	AI_Output (other,self ,"DIA_Follow_Sheep_second_15_00"); //To tutaj. B¹dŸ grzeczna.
 	FollowSheep_Mee();
-	AI_Output (other,self ,"DIA_Follow_Sheep_second_15_02"); //Mam nadziejê, ¿e to znaczy³o "jasne"...
+	AI_Output (other,self ,"DIA_Follow_Sheep_second_15_02"); //Mam nadziejê, ¿e to znaczy³o 'jasne'...
 
 	MolyMozeSieTepnac = TRUE;
 	ff_applyonceext(TPMoly,1000,-1);

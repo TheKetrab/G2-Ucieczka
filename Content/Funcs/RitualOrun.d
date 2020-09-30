@@ -61,8 +61,8 @@ func void RitualOrun_Loop() {
 		cain.guild = GIL_SKELETON;
 		Npc_SetTrueGuild (NASZ_021_Nieznajomy, GIL_SKELETON);
 
-		Wld_InsertNpc(DemonLord,"NASZ_ZAPALISADA_RITUAL_02");
-		Wld_InsertNpc(DemonLord,"NASZ_ZAPALISADA_RITUAL_03");
+		Wld_InsertNpc(Demon,"NASZ_ZAPALISADA_RITUAL_02");
+		Wld_InsertNpc(Demon,"NASZ_ZAPALISADA_RITUAL_03");
 	}
 	
 	else if (RitualOrun_Iterator == 8) {

@@ -71,7 +71,7 @@ instance DIA_NASZ_316_Carry_hello		(C_INFO)
 
 func int DIA_NASZ_316_Carry_hello_Condition ()
 {
-	if Npc_IsInState (self, ZS_Talk)
+	if Npc_IsInState (self, ZS_Talk) && (Carry_Stopowanie == FALSE)
 	{
 		return TRUE;
 	};
@@ -343,6 +343,7 @@ func void DIA_NASZ_316_Carry_Muchy_Info ()
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_Muchy_03_05"); //Hej! Nie pozwalaj sobie. Zaraz za³atwisz mi potrzebne sk³adniki albo nagadam na ciebie Nodowi.
 	
 	Carry_Day = Wld_GetDay();
+	Carry_Stopowanie = FALSE;
 
 	Log_CreateTopic (TOPIC_Carry_plyn, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Carry_plyn, LOG_RUNNING);

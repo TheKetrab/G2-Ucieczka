@@ -11,7 +11,13 @@ instance NASZ_702_Invisible3 (Npc_Default)
 	
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 5);																	
-	
+	protection	[PROT_BLUNT]		=	90;
+	protection	[PROT_EDGE]			=	90;
+	protection	[PROT_POINT]		=	100;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	0;
+
 	// ------ Kampf-Taktik ------
 	fight_tactic	= FAI_HUMAN_MASTER;	
 	

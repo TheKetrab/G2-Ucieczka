@@ -18,7 +18,7 @@ PROTOTYPE Mst_Default_Razor(C_Npc)
 //--------------------------------------------------------------
 	protection	[PROT_BLUNT]		= 90;
 	protection	[PROT_EDGE]			= 90;
-	protection	[PROT_POINT]		= 90;
+	protection	[PROT_POINT]		= 60;
 	protection	[PROT_FIRE]			= 90;
 	protection	[PROT_FLY]			= 90;
 	protection	[PROT_MAGIC]		= 0;

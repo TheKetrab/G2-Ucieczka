@@ -76,10 +76,6 @@ func void B_SetVisuals_OrcPal(var c_npc slf)
 	Mdl_SetVisualBody		(slf,	"ORC_BODYPAL",	DEFAULT,	DEFAULT,	"Orc_HeadPal",	DEFAULT,  	DEFAULT,	-1);
 };
 
-func void KurgKanKap3() {
-	B_SetVisuals_OrcPal(NASZ_452_KurgKan);
-	B_StartOtherRoutine(NASZ_452_KurgKan,"WithSword");
-};
 
 //******************
 //	Orc Slave   														

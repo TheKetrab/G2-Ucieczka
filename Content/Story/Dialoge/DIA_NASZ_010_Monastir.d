@@ -150,7 +150,7 @@ FUNC VOID DIA_NASZ_010_Monastir_idea_Info()
 
 	Info_ClearChoices (DIA_NASZ_010_Monastir_idea);
 		Info_AddChoice	  (DIA_NASZ_010_Monastir_idea, "Mo¿e jakieœ wskazówki, gdzie go szukaæ?", DIA_NASZ_010_Monastir_idea_seek);
-		Info_AddChoice	  (DIA_NASZ_010_Monastir_idea, "I ja mam znaleŸæ ten zwój?", DIA_NASZ_010_Monastir_idea_and);
+		Info_AddChoice	  (DIA_NASZ_010_Monastir_idea, "Mam znaleŸæ zwój, tak?", DIA_NASZ_010_Monastir_idea_and);
 };
 
 FUNC VOID DIA_NASZ_010_Monastir_idea_seek()
@@ -165,7 +165,7 @@ FUNC VOID DIA_NASZ_010_Monastir_idea_seek()
 FUNC VOID DIA_NASZ_010_Monastir_idea_and()
 {
 
-	AI_Output (other,self ,"DIA_NASZ_010_Monastir_idea_and_15_00"); //I ja mam znaleŸæ ten zwój?
+	AI_Output (other,self ,"DIA_NASZ_010_Monastir_idea_and_15_00"); //Mam znaleŸæ zwój, tak?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_idea_and_55_01"); //Dok³adnie. IdŸ, znajdŸ i zabij o¿ywieñca oraz przynieœ mi ten zwój.
 
 };

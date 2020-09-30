@@ -12,10 +12,10 @@ const int	Value_ManaExtrakt		=	40;			const int	Mana_Extrakt	=	50;
 const int	Value_ManaElixier		=	60;			const int	Mana_Elixier	=	75;
 
 
-const int	Value_StrElixier		=	1000;		const int	STR_Elixier		=	3;
-const int	Value_DexElixier		=	1000;		const int	DEX_Elixier		=	3;
-const int	Value_HpMaxElixier		=	500;		const int	HPMax_Elixier	=	5;
-const int	Value_ManaMaxElixier	=	500;		const int	ManaMax_Elixier	=	5;
+const int	Value_StrElixier		=	1000;		const int	STR_Elixier		=	1;
+const int	Value_DexElixier		=	1000;		const int	DEX_Elixier		=	1;
+const int	Value_HpMaxElixier		=	500;		const int	HPMax_Elixier	=	3;
+const int	Value_ManaMaxElixier	=	500;		const int	ManaMax_Elixier	=	3;
 const int	Value_MegaDrink			=	1800;		const int	STRorDEX_MegaDrink = 15; //Joly: MegaBoost am Ende des Spiels!!!!!!!!
 
 const int	Value_Speed				=	200;		const int	Time_Speed		=	300000;	// 5 min

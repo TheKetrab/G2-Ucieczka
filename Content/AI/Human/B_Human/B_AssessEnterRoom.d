@@ -55,8 +55,8 @@ func int B_AssessEnterRoom ()
 	};
 
 	// jesli to ktorys z nich, to nie reaguja, jak spia, bo spia na polu
-	//     RATFORD          LOUIS              DICK             SNAF               DOBAR              VICK
-	if (self.id == 223 || self.id == 217 || self.id == 219 || self.id == 226 || self.id == 224 || self.id == 204)
+	//     RATFORD          LOUIS              DICK             SNAF               DOBAR              VICK              JEHEN
+	if (self.id == 223 || self.id == 217 || self.id == 219 || self.id == 226 || self.id == 224 || self.id == 204 || self.id == 232)
 	&& (Npc_IsInState (self, ZS_Sleep))
 	{
 		return FALSE;

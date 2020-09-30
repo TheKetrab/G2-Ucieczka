@@ -1841,12 +1841,19 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(SkeletonPro,"FP_ROAM_FOGTOWER_24");
 	Wld_InsertNpc	(SkeletonMage,"FP_ROAM_FOGTOWER_25");
 	Wld_InsertNpc	(SkeletonGood,"FP_ROAM_FOGTOWER_26");
-	Wld_InsertNpc	(SkeletonGood,"FP_ROAM_FOGTOWER_27");
-	Wld_InsertNpc	(Skeleton,"FP_ROAM_FOGTOWER_28");
-	Wld_InsertNpc	(SkeletonPro,"FP_ROAM_FOGTOWER_29");
-	Wld_InsertNpc	(SkeletonGood,"FP_ROAM_FOGTOWER_30");
-	Wld_InsertNpc	(SkeletonGood,"FP_ROAM_FOGTOWER_31");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_FOGTOWER_27");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_FOGTOWER_28");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_FOGTOWER_29");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_FOGTOWER_30");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_FOGTOWER_31");
 
+	
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WRZOD_01");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WRZOD_02");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WRZOD_03");
+	Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WRZOD_04");
+	
+	
 };
 
 	func void INIT_SUB_OLDCAMP()

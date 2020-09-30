@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Gobbo_Black(C_NPC)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	55;
 	protection	[PROT_EDGE]			=	60;
-	protection	[PROT_POINT]		=	45;
+	protection	[PROT_POINT]		=	35;
 	protection	[PROT_FIRE]			=	60;
 	protection	[PROT_FLY]			=	60;
 	protection	[PROT_MAGIC]		=	0;
@@ -160,9 +160,9 @@ INSTANCE BlackGobboGigant1 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	200;
-	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	100;
 	name							=	"Olbrzymi goblin";
 	level = 30;
 
@@ -178,9 +178,9 @@ INSTANCE BlackGobboGigant2 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	200;
-	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	100;
 	name							=	"Olbrzymi goblin";
 	level = 30;
 };
@@ -195,9 +195,9 @@ INSTANCE BlackGobboGigant3 (Mst_Default_Gobbo_Black)
 	attribute	[ATR_HITPOINTS]		=	300;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	200;
-	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		=	120;
+	protection	[PROT_EDGE]			=	120;
+	protection	[PROT_POINT]		=	100;
 	name							=	"Olbrzymi goblin";
 	level = 30;
 };

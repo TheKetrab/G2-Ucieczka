@@ -647,12 +647,12 @@ FUNC VOID DIA_NASZ_109_Rethon_FajkaEnd_Info()
 	B_GiveInvItems(other,self,tabakId,1);
 	B_UseItem(self,ItNa_Fajka);
 	
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_02"); //Mam dla ciebie specjaln¹ nagrodê.
+	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_03"); //Oto twoja nagroda.
 
 	Createinvitems(self,ItNa_RykSmoka,1);
 	B_GiveInvItems(self,other,ItNa_RykSmoka,1);
 
-	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_03"); //Gdy jeszcze zajmowa³em siê polowaniem na smoki, w jednej z jaskiñ znalaz³em nieboszczyka. Mia³ przy sobie tê oto miksturê.
+	
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_FajkaEnd_55_04"); //Ma zapach podobny do eliksiru si³y. Myœlê, ¿e tobie bardziej siê przyda. Tak jak mi fajka.
 	
 	B_GivePlayerXP(1000);
@@ -687,15 +687,15 @@ FUNC VOID DIA_Rethon_Teach_Info()
 {
 	AI_Output (other,self ,"DIA_Rethon_Teach_15_00"); //Ucz mnie.
 
-	if(Wld_IsTime(21,00,00,35)){
+	if (Wld_IsTime(21,00,00,35) && KAPITEL < 4) {
 		AI_Output (self, other,"DIA_Rethon_Teach_15_01"); //Nie widzisz, ¿e jestem zajêty? PrzyjdŸ jutro.
 	}
 
-	else if(Wld_IsTime(00,35,04,00)){
+	else if (Wld_IsTime(00,35,04,00) && KAPITEL < 4) {
 		AI_Output (self, other,"DIA_Rethon_Teach_15_02"); //Daj mi spaæ! Pogadamy rano.
 	}
 
-	else if(Wld_IsTime(04,00,08,00)){
+	else if (Wld_IsTime(04,00,08,00) && KAPITEL < 4) {
 		AI_Output (self, other,"DIA_Rethon_Teach_15_03"); //Widzisz, abym sta³ i trenowa³ innych? PrzyjdŸ, kiedy bêdê na placu treningowym.
 	}
 	else

@@ -348,7 +348,7 @@ instance SVM_0 (C_SVM)
 	Aargh_3					=	"SVM_0_Aargh_3"						;//Aargh
 	Dead					=	"SVM_0_Dead"						;//Aaaarhhh!
 
-	FOUNDTREASURE			=   "SVM_15_Addon_FOUNDTREASURE"		;//Ach. S¹dzê, ¿e coœ znalaz³em.
+	FOUNDTREASURE			=	"SVM_0_ADDON_FOUNDTREASURE"			;//Hmm. S¹dzê, ¿e coœ znalaz³em.
 
 };
 

@@ -201,7 +201,8 @@ func void UleczIch(var c_npc slf)
 {
     if(slf.aivar[AIV_PARTYMEMBER]==TRUE)
     {
-		Npc_ChangeAttribute	(slf,ATR_HITPOINTS, +500);
+		slf.attribute[ATR_HITPOINTS] =  slf.attribute[ATR_HITPOINTS_MAX]; // FIX Ucieczka 1.1 -> leczy na maxa
+		//Npc_ChangeAttribute	(slf,ATR_HITPOINTS, +500);
 		Wld_PlayEffect("spellFX_PalHeal_ORIGIN",  slf, slf, 0, 0, 0, FALSE );
 	};
 };
@@ -1828,7 +1829,7 @@ INSTANCE ItNa_MieczRunicznyKeroloth (C_Item)
 
 	value 				=	Value_Runenschwert;
 
-	damageTotal  		= 	10;
+	damageTotal  		= 	200;
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_Runenschwert;		
 
@@ -2142,7 +2143,7 @@ INSTANCE ItNa_StaryPykacz (C_Item)
 	description			= name;
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 30;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 15;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -2150,7 +2151,7 @@ FUNC VOID Equip_ItNa_StaryPykacz()
 {
  	if Npc_IsPlayer (self)
 	{ 
-		B_AddFightSkill (self, NPC_TALENT_1H, 30);
+		B_AddFightSkill (self, NPC_TALENT_1H, 15);
 	};
 };
 
@@ -2158,7 +2159,7 @@ FUNC VOID UnEquip_ItNa_StaryPykacz()
 {
  	if Npc_IsPlayer (self)
 	{ 
-		B_AddFightSkill (self, NPC_TALENT_1H, -30);
+		B_AddFightSkill (self, NPC_TALENT_1H, -15);
 	};
 };
 
@@ -7957,11 +7958,11 @@ INSTANCE  ItNa_PasMadrosci (C_Item)
 	description		=  "Pas m¹droœci";
 
 	TEXT[1]			=	NAME_Bonus_Str;			
-	COUNT[1]		= 	7;
+	COUNT[1]		= 	3;
 	TEXT[2]			=	NAME_Bonus_Dex;		
-	COUNT[2]		= 	7;
+	COUNT[2]		= 	3;
 	TEXT[3]			=	NAME_Bonus_ManaMax;
-	COUNT[3]		= 	5;
+	COUNT[3]		= 	2;
 
 	TEXT[5]			=   NAME_Value;
 	COUNT[5]		=   value;
@@ -7972,15 +7973,15 @@ INSTANCE  ItNa_PasMadrosci (C_Item)
 };
 FUNC VOID Equip_ItNa_PasMadrosci()
 {
-	Npc_ChangeAttribute(self, ATR_STRENGTH, + 7 );
-	Npc_ChangeAttribute(self, ATR_DEXTERITY, + 7 );
-	Npc_ChangeAttribute(self, ATR_MANA_MAX, + 5 );
+	Npc_ChangeAttribute(self, ATR_STRENGTH, +3 );
+	Npc_ChangeAttribute(self, ATR_DEXTERITY, +3 );
+	Npc_ChangeAttribute(self, ATR_MANA_MAX, +2 );
 };
 FUNC VOID UnEquip_ItNa_PasMadrosci()
 {
-	Npc_ChangeAttribute(self, ATR_STRENGTH, - 7 );
-	Npc_ChangeAttribute(self, ATR_DEXTERITY, - 7 );
-	Npc_ChangeAttribute(self, ATR_MANA_MAX, - 5 );
+	Npc_ChangeAttribute(self, ATR_STRENGTH, -3 );
+	Npc_ChangeAttribute(self, ATR_DEXTERITY, -3 );
+	Npc_ChangeAttribute(self, ATR_MANA_MAX, -2 );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****

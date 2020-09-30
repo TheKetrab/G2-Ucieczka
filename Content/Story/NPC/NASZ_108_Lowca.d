@@ -43,14 +43,21 @@ instance NASZ_108_Lowca (Npc_Default)
 
 FUNC VOID Rtn_PreStart_108 ()
 {
-	TA_Practice_Sword	(04,15,22,45,"NASZ_LOWCY_TRENING_06");
-	TA_Pee				(22,45,04,15,"NASZ_LOWCY_DOL_10");
+	TA_Sit_Campfire			(04,15,07,45,"NASZ_LOWCY_DOL_13");
+	TA_Practice_Sword		(04,15,16,45,"NASZ_LOWCY_TRENING_06");
+	TA_Stand_ArmsCrossed	(16,45,19,30,"NASZ_LOWCY_DOL_03");
+	TA_Sit_Campfire			(19,30,22,45,"NASZ_LOWCY_DOL_13");
+	TA_Pee					(22,45,04,15,"NASZ_LOWCY_DOL_10");
 };
+
 
 FUNC VOID Rtn_Start_108 ()
 {
-	TA_Practice_Sword	(20,00,08,00,"NASZ_LOWCY_TRENING_06");
-	TA_Practice_Sword	(08,00,20,00,"NASZ_LOWCY_TRENING_06");
+	TA_Sit_Campfire			(04,15,07,45,"NASZ_LOWCY_DOL_13");
+	TA_Practice_Sword		(04,15,16,45,"NASZ_LOWCY_TRENING_06");
+	TA_Stand_ArmsCrossed	(16,45,19,30,"NASZ_LOWCY_DOL_03");
+	TA_Sit_Campfire			(19,30,22,45,"NASZ_LOWCY_DOL_13");
+	TA_Sit_Campfire			(22,45,04,15,"NASZ_LOWCY_DOL_13");
 };
 
 FUNC VOID Rtn_Twierdza_108 ()

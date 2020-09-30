@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Draconian(C_Npc)
 	//----- Protection ----
 	protection	[PROT_BLUNT]		=	85;
 	protection	[PROT_EDGE]			=	85;
-	protection	[PROT_POINT]		=	85; 
+	protection	[PROT_POINT]		=	70; 
 	protection	[PROT_FIRE]			=	85;
 	protection	[PROT_FLY]			=	85;
 	protection	[PROT_MAGIC]		=	65;	

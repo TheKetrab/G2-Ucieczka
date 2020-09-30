@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Gobbo_Warrior (C_NPC)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	100;
 	protection	[PROT_EDGE]			=	100;
-	protection	[PROT_POINT]		=	100;
+	protection	[PROT_POINT]		=	60;
 	protection	[PROT_FIRE]			=	100;
 	protection	[PROT_FLY]			=	100;
 	protection	[PROT_MAGIC]		=	0;

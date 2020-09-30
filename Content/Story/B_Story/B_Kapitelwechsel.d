@@ -81,7 +81,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_OW_MOLERATS_WOOD_OM");
 		Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_OW_MOLERATS_WOOD_OM3");
 		Wld_InsertNpc	(Gobbo_Black,"FP_ROAM_OW_MOLERATS_WOOD_OM5");
-		Wld_InsertNpc	(DragonSnapper,"FP_SMALLTALK_A_START_PATH_1_5_1");
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_SMALLTALK_A_START_PATH_1_5_1");
 		Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_OW_STARTSCAVNGERBO_01_01");
 		Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_OW_STARTSCAVNGERBO_01_02");
 		Wld_InsertNpc	(GroznyScierwojad,"FP_ROAM_OW_STARTSCAVENGER_02_01");
@@ -89,7 +89,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Lurker,"OW_RIVERBED_07");
 		Wld_InsertNpc	(Lurker,"FP_SLEEP_OW_BLOODFLY_01_02");
 		Wld_InsertNpc	(Lurker,"FP_ROAM_OW_BLOODFLY_01_02");
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_OW_STARTSCAVENGER_02_03");
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_OW_STARTSCAVENGER_02_03");
 		Wld_InsertNpc	(Snapper,"FP_ROAM_OW_SCAVENGER_01_05");
 		Wld_InsertNpc	(Snapper,"FP_ROAM_OW_GOBBO_07_04");
 		Wld_InsertNpc	(Snapper,"FP_ROAM_OW_GOBBO_07_02");
@@ -180,11 +180,12 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 	{	
 		if (Kap3OneTime == FALSE) {
 
-		// ta funkcja jednak juz od w rozdzialu!
+		// ta funkcja jednak juz od tego rozdzialu!
 		FF_ApplyOnceExt (Kap4Event, 3000, -1); //raz na 3s
 		
 		if (KurgKanTanczy) {
-			KurgKanKap3();
+			B_StartOtherRoutine(NASZ_452_KurgKan,"WithSword");
+			ff_applyonceext(ApplyKurgKanArmor,1000,-1);
 		};
 		
 		if (DraalUratowany) {
@@ -207,6 +208,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_SendTrigger ("TRIGGER_PELZACZE_KRATA");
 		B_StartOtherRoutine (NASZ_205_Mysliwy, "Kap3");
 		B_StartOtherRoutine (NASZ_232_Jehen, "Ukryty");
+		B_StartOtherRoutine (NASZ_307_Monk, "Koniec2"); // teleport do TOT
+		B_StartOtherRoutine (NASZ_304_Bam, "Koniec2"); // teleport do TOT
 		Wld_InsertNpc(NASZ_021_Nieznajomy,"TOT");
 		Npc_RemoveInvItems (NASZ_327_Danny,ItFo_SmellyFish,30);
 		Npc_RemoveInvItems (NASZ_327_Danny,ItFo_Fish,20);
@@ -271,8 +274,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_02");
 		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_03");
 		Wld_InsertNpc	(Keiler,"FP_ROAM_OW_WARAN_ORC_04");
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_06");
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_WULKAN_07");
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_WULKAN_06");
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_WULKAN_07");
 		Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_08");
 		Wld_InsertNpc	(Snapper,"FP_ROAM_WULKAN_09");
 
@@ -285,19 +288,19 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Razor,"FP_ROAM_OW_BLOODFLY_WALD_OC2"); 
 		Wld_InsertNpc	(Razor,"FP_ROAM_ORK_OC_11_2"); 
 		Wld_InsertNpc	(Razor,"FP_ROAM_ORK_OC_12"); 
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_OW_SNAPPER_OCWOOD1_05_04"); 
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_OW_SNAPPER_OCWOOD1_05_01"); 
-		Wld_InsertNpc	(DragonSnapper,"FP_LASZAMEK_MOLERAT_04"); 
-		Wld_InsertNpc	(DragonSnapper,"FP_ROAM_OW_WARAN_OC_PSI2"); 
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_OW_SNAPPER_OCWOOD1_05_04"); 
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_OW_SNAPPER_OCWOOD1_05_01"); 
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_LASZAMEK_MOLERAT_04"); 
+		Wld_InsertNpc	(DragonSnapper_Medium,"FP_ROAM_OW_WARAN_OC_PSI2"); 
 		Wld_InsertNpc	(Warg,"FP_ROAM_WARG_OC_10");
 		Wld_InsertNpc	(Warg,"FP_ROAM_WARG_OC_11");
 		Wld_InsertNpc	(Warg,"FP_ROAM_WARG_OC_12");
 		Wld_InsertNpc	(Warg,"FP_ROAM_WARG_OC_13");
 
 		//PALISADA
-		Wld_InsertNpc	(DragonSnapper,"NASZ_FP_VICK_C"); 
-		Wld_InsertNpc	(DragonSnapper,"NASZ_FP_VICK_B"); 
-		Wld_InsertNpc	(DragonSnapper,"NASZ_FP_VICK_A"); 
+		Wld_InsertNpc	(Bloodhound,"NASZ_FP_VICK_C"); 
+		Wld_InsertNpc	(Bloodhound,"NASZ_FP_VICK_B"); 
+		Wld_InsertNpc	(Bloodhound,"NASZ_FP_VICK_A"); 
 		Wld_InsertNpc	(Razor,"FP_ROAM_OW_ORCBARRIER_08_03"); 
 		Wld_InsertNpc	(Razor,"FP_ROAM_OW_ORCBARRIER_08_02"); 
 		Wld_InsertNpc	(GroznyWilk,"FP_PALISADE_SCAVENGER_11"); 
@@ -428,6 +431,35 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		Wld_InsertNpc	(Harpy_Gigant,"FP_HARPY_PLASKOWYZ");
 		Wld_InsertNpc	(OrcBiterGigant1,"FP_KASACZ1_PLASKOWYZ");
 		Wld_InsertNpc	(OrcBiterGigant2,"FP_KASACZ2_PLASKOWYZ");
+		
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WULKAN_04");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WULKAN_05");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WULKAN_06");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WULKAN_07");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_WULKAN_08");
+		
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_BLOCKGOBBO_CAVE_DM1");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_BLOCKGOBBO_CAVE_DM6");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_BLOCKGOBBO_CAVE_DM7");
+		
+		Wld_InsertNpc	(MinecrawlerWarrior,"START_OW_ABANDONEDMINE");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_MOLERAT_02_01");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_SLEEP_OW_MOLERAT_02_01");
+		
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_CAMPFIRE_NASZ_1");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_CAMPFIRE_DARYL_2");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_MEATBUG_KOPALNIA_3_03");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_ROAM_OW_MEATBUG_KOPALNIA_3");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_CAMPFIRE_SATTAR_SIT");
+
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_NASZ_PHILL_GOBBO_4");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_NASZ_PHILL_GOBBO_5");
+
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_STAND_GUARDING_TENGRON");
+		Wld_InsertNpc	(MinecrawlerWarrior,"OW_NEWMINE_06_B");
+		Wld_InsertNpc	(MinecrawlerWarrior,"OW_NEWMINE_05");
+		Wld_InsertNpc	(MinecrawlerWarrior,"FP_CAMPFIRE_OW_NEWMINE_03");
+		
 		
 		// ------ Missionsvariablen ----
 		

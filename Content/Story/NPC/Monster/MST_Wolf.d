@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_Wolf(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	30;
 	protection	[PROT_EDGE]			=	30;
-	protection	[PROT_POINT]		=	0;
+	protection	[PROT_POINT]		=	10;
 	protection	[PROT_FIRE]			=	30;
 	protection	[PROT_FLY]			=	30;
 	protection	[PROT_MAGIC]		=	0;
@@ -335,6 +335,7 @@ PROTOTYPE Mst_Default_OrcDog(C_Npc)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	150;
 	protection	[PROT_EDGE]			=	150;
+	protection	[PROT_POINT]		=	110;
 	protection	[PROT_FIRE]			=	130;
 	protection	[PROT_FLY]			=	130;
 	
@@ -382,6 +383,7 @@ INSTANCE OrcDog_Easy(Mst_Default_OrcDog)
 	//----- Protections ----
 	protection	[PROT_BLUNT]		=	90;
 	protection	[PROT_EDGE]			=	90;
+	protection	[PROT_POINT]		=	50;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 

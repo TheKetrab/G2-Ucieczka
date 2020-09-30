@@ -37,7 +37,7 @@ INSTANCE DIA_NASZ_116_Kjorn_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_116_Kjorn_siema_Condition()
 {
-	if (Npc_IsInState (self, ZS_Talk)) && (Kurgan_walka<2)
+	if (Npc_IsInState (self, ZS_Talk)) && (ArenaQuestState<2)
 	{
 		return TRUE;
 	};
@@ -139,7 +139,7 @@ INSTANCE DIA_NASZ_116_Kjorn_arena   (C_INFO)
 FUNC INT DIA_NASZ_116_Kjorn_arena_Condition()
 {
 	if ((Kurgan_walka==2)
-		&& Hlp_StrCmp(Npc_GetNearestWP(self),"NASZ_LOWCY_ARENA_01")
+		&& Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 400
 		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE))
 	{
 		return TRUE;

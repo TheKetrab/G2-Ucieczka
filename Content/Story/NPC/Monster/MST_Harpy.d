@@ -91,8 +91,8 @@ INSTANCE Harpy_Gigant	(Mst_Default_Harpie)
 	attribute	[ATR_HITPOINTS]		=	200;
 	attribute	[ATR_STRENGTH]		=	200;
 	attribute	[ATR_DEXTERITY]		=	200;
-	protection	[PROT_BLUNT]		=	200;
-	protection	[PROT_EDGE]			=	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		=	140;
+	protection	[PROT_EDGE]			=	140;
+	protection	[PROT_POINT]		=	140;
 	level = 25;
 };

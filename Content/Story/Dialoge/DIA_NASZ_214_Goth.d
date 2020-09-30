@@ -485,6 +485,7 @@ INSTANCE DIA_NASZ_214_Goth_Undeads   (C_INFO)
 FUNC INT DIA_NASZ_214_Goth_Undeads_Condition()
 {
 	if (KAPITEL >= 4)
+	&& (npc_isdead(Zombie01_OutCamp1) && npc_isdead(Zombie01_OutCamp2) && npc_isdead(Zombie01_OutCamp3))
 	{
 		return TRUE;
 	};

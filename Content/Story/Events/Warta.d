@@ -65,7 +65,7 @@ func void WartaCz3Create()
 	//Print("WartaCz3Create");
 	Wld_InsertNpc(DragonSnapperWarta3,"NASZ_ZEBACZE_WP_2"); // zebacz ktorego sledzimy
 	Wld_InsertNpc(DragonSnapperWarta4,"NASZ_ZEBACZE_WP_5"); // przywodca stada
-	Wld_InsertNpc(DragonSnapper,"FP_REST_ZEBACZ_01");
+	Wld_InsertNpc(DragonSnapper_Medium,"FP_REST_ZEBACZ_01");
 	Wld_InsertNpc(GroznyZebacz,"FP_REST_ZEBACZ_02");
 	Wld_InsertNpc(GroznyZebacz,"FP_REST_ZEBACZ_03");
 	Wld_InsertNpc(Snapper,"FP_REST_ZEBACZ_04");

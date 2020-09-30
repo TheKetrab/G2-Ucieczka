@@ -228,6 +228,8 @@ FUNC VOID DIA_NASZ_228_Chris_go_Info()
 	AI_Output (other, self,"DIA_NASZ_228_Chris_go_55_00"); //ChodŸmy zapolowaæ.
 	AI_Output (self, other,"DIA_NASZ_228_Chris_go_55_01"); //Wieje po³udniowo-zachodni wiatr. Zwierzyna nie wyczuje naszego zapachu i siê nie sp³oszy.
 	
+	AI_StopProcessInfos(self);
+
 	NASZ_228_Chris.flags = 2;
 	
 	Wld_InsertNpc	(OrcDog_Easy,"OW_PATH_340");
@@ -236,11 +238,9 @@ FUNC VOID DIA_NASZ_228_Chris_go_Info()
 	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_H");
 	Wld_InsertNpc	(OrcDog_Easy,"FP_NASZ_POLOWANIE_I");
 
-	
 	Npc_ExchangeRoutine (NASZ_228_Chris, "Guide");
 	//self.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_228_Chris,1);
-	AI_StopProcessInfos(self);
 };
 
 //*********************************************************************

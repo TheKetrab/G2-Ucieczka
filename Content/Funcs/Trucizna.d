@@ -63,6 +63,7 @@ func void Poison10HPStart() {
 	Snd_Play ("TRUCIZNA");
 };
 
+// UCIECZKA 1.1 -> Kiedys: 1/5/10 -> Teraz: 1/10/20
 func void Poison1HP() {
 	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
 	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -1); 
@@ -71,13 +72,13 @@ func void Poison1HP() {
 
 func void Poison5HP() {
 	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
-	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -5); 
+	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -10); 
 	truciznaSec += 3;
 };
 
 func void Poison10HP() {
 	if (truciznaSec >= 60) { PoisonStop(); Print("Trucizna przesta³a dzia³aæ."); };
-	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -10);
+	Npc_ChangeAttribute (hero, ATR_HITPOINTS , -20);
 	truciznaSec += 3;
 };
 

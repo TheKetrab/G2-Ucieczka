@@ -12,6 +12,10 @@ instance NASZ_327_Danny (Npc_Default)
 
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 3);														
+	attribute[ATR_HITPOINTS_MAX] = 900;
+	attribute[ATR_HITPOINTS] = 900;
+
+		
 		
 	// ------ Kampf-Taktik ------
 	fight_tactic		= FAI_HUMAN_COWARD;	

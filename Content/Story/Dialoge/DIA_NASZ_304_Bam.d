@@ -220,6 +220,8 @@ FUNC VOID DIA_NASZ_304_Bam_QuestGoWithMe_Info()
 	AI_Output (other, self,"DIA_NASZ_304_Bam_QuestGoWithMe_55_01"); //Rozmawia³em z Marcosem i powiedzia³, ¿e jeœli nie wierzysz, ¿e prace nadal trwaj¹, to mo¿esz przyjœæ i zobaczyæ to na w³asne oczy. A rudê doœle w odpowiednim czasie.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestGoWithMe_55_02"); //Dobra. Chêtnie zamieniê z nim dwa s³owa. ProwadŸ.
 
+	Bam_Stopowanie = TRUE;
+	
 	Npc_ExchangeRoutine(self,"Follow");
 	Druzyna(NASZ_304_Bam,1);
 	
@@ -274,7 +276,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestTRIA_Info()
 	TRIA_Next(Kjorn);
 	AI_TurnToNpc(self,other);
     AI_TurnToNpc(other,self);
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_06"); //Nie myœlicie chyba, ¿e ta przerwa w dostawie jest bez przyczyny? Ostatnio jedenemu z nas, zachcia³o siê trochê mocniej ni¿ zwykle przywaliæ pewnemu kopaczowi.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_06"); //Nie myœlicie chyba, ¿e ta przerwa w dostawie jest bez przyczyny? Ostatnio jednemu z nas, zachcia³o siê trochê mocniej ni¿ zwykle przywaliæ pewnemu kopaczowi.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_07"); //Reszta zaœ zaczê³a strajkowaæ i buntowaæ siê. A my nie mogliœmy ich przecie¿ torturowaæ i karaæ, bo ich wydajnoœæ by³aby zerowa.
 
 	TRIA_Next(Bam);
@@ -326,6 +328,8 @@ FUNC VOID DIA_NASZ_304_Bam_QuestFinishMine_Info()
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestFinishMine_55_01"); //Wracam do obozu. A ty, Willu, pamiêtaj, ¿eby za jakiœ czas przyjœæ do mnie z dostaw¹ od Marcosa i reszty renegatów.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestFinishMine_55_02"); //A poza tym, gdybyœ chcia³ kupiæ lepsz¹ zbrojê, to zajrzyj do mnie.
 
+	Bam_Stopowanie = FALSE;
+	
 	Npc_ExchangeRoutine(self,"Start");
 	Druzyna(NASZ_304_Bam,0);
 	Npc_ExchangeRoutine(NASZ_116_Kjorn,"Kopalnia");

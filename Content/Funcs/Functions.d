@@ -106,6 +106,7 @@ func int bIsHammer(var c_item itm) {
 	if (Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_Kriegshammer1)
 	 || Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_Kriegshammer2)
 	 || Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_1H_Mace_L_04)
+	 || Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItMw_Rabenschnabel)
 	 || Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_MlotOrkow))
 	{
 		return TRUE;
@@ -120,6 +121,7 @@ func int bNpcHasHammer(var c_npc slf) {
 	if (Npc_HasItems(slf,ItMw_Kriegshammer1)
 	 || Npc_HasItems(hero,ItMw_Kriegshammer2)
 	 || Npc_HasItems(hero,ItMw_1H_Mace_L_04)
+	 || Npc_HasItems(hero,ItMw_Rabenschnabel) // kruczy dziób -> zręczność
 	 || Npc_HasItems(hero,ItNa_MlotOrkow))
 	{
 		return TRUE;

@@ -3,9 +3,11 @@
 
 func void TRIGGER_ZOMBIE_TP_FUNC() {
 
-	AI_Teleport (hero, "OW_PATH_035");
-	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
-	Snd_Play ("MFX_TELEPORT_CAST");
+	if (Npc_IsPlayer(self)) { // trigger wywolywany przez hero
+		AI_Teleport (hero, "OW_PATH_035");
+		Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,0,0,0,FALSE);
+		Snd_Play ("MFX_TELEPORT_CAST");
+	};
 };
 
 func void TRIGGER_NIEZNANY_TP_FUNC() {

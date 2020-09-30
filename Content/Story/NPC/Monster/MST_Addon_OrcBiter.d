@@ -18,7 +18,7 @@ PROTOTYPE Mst_Default_OrcBiter(C_Npc)
 //----------------------------------------------------
 	protection	[PROT_BLUNT]		= 80;
 	protection	[PROT_EDGE]			= 80;
-	protection	[PROT_POINT]		= 80;
+	protection	[PROT_POINT]		= 50;
 	protection	[PROT_FIRE]			= 80;
 	protection	[PROT_FLY]			= 80;
 	protection	[PROT_MAGIC]		= 0;
@@ -87,9 +87,9 @@ INSTANCE OrcBiterGigant1 (Mst_Default_OrcBiter)
 	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_STRENGTH]		=	250;
 	attribute	[ATR_DEXTERITY]		=	250;
-	protection	[PROT_BLUNT]		= 	200;
-	protection	[PROT_EDGE]			= 	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		= 	170;
+	protection	[PROT_EDGE]			= 	170;
+	protection	[PROT_POINT]		=	170;
 	level = 40;
 };
 
@@ -104,9 +104,9 @@ INSTANCE OrcBiterGigant2 (Mst_Default_OrcBiter)
 	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_STRENGTH]		=	250;
 	attribute	[ATR_DEXTERITY]		=	250;
-	protection	[PROT_BLUNT]		= 	200;
-	protection	[PROT_EDGE]			= 	200;
-	protection	[PROT_POINT]		=	200;
+	protection	[PROT_BLUNT]		= 	170;
+	protection	[PROT_EDGE]			= 	170;
+	protection	[PROT_POINT]		=	170;
 	level = 40;
 };
 

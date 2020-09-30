@@ -76,6 +76,28 @@ INSTANCE DragonSnapper	(Mst_Default_DragonSnapper)
 	Npc_SetToFistMode(self);
 };
 
+INSTANCE DragonSnapper_Medium	(Mst_Default_DragonSnapper)
+{
+	B_SetVisuals_DragonSnapper();
+	Npc_SetToFistMode(self);
+	
+	//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	95; 
+	attribute	[ATR_DEXTERITY]		=	95;
+	attribute	[ATR_HITPOINTS_MAX]	=	300;
+	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	135;
+	protection	[PROT_EDGE]			=	135;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
+};
+
 INSTANCE DragonSnapper_Easy	(Mst_Default_DragonSnapper)
 {
 	B_SetVisuals_DragonSnapper();
@@ -146,12 +168,44 @@ INSTANCE DragonSnapperWarta1	(Mst_Default_DragonSnapper)
 {
 	B_SetVisuals_DragonSnapper();
 	Npc_SetToFistMode(self);
+	
+		//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	95; 
+	attribute	[ATR_DEXTERITY]		=	95;
+	attribute	[ATR_HITPOINTS_MAX]	=	300;
+	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	135;
+	protection	[PROT_EDGE]			=	135;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
 };
 
 INSTANCE DragonSnapperWarta2	(Mst_Default_DragonSnapper)
 {
 	B_SetVisuals_DragonSnapper();
 	Npc_SetToFistMode(self);
+	
+		//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	95; 
+	attribute	[ATR_DEXTERITY]		=	95;
+	attribute	[ATR_HITPOINTS_MAX]	=	300;
+	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	135;
+	protection	[PROT_EDGE]			=	135;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
 };
 
 INSTANCE DragonSnapperWarta3	(Mst_Default_DragonSnapper)
@@ -161,6 +215,22 @@ INSTANCE DragonSnapperWarta3	(Mst_Default_DragonSnapper)
 	guild = GIL_MEATBUG;
 	name = "Ranny smoczy zêbacz";
 	attribute[ATR_HITPOINTS] = 130;
+	
+		//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	95; 
+	attribute	[ATR_DEXTERITY]		=	95;
+	attribute	[ATR_HITPOINTS_MAX]	=	300;
+	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	135;
+	protection	[PROT_EDGE]			=	135;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
 };
 
 INSTANCE DragonSnapperWarta4	(Mst_Default_DragonSnapper)
@@ -168,4 +238,20 @@ INSTANCE DragonSnapperWarta4	(Mst_Default_DragonSnapper)
 	B_SetVisuals_DragonSnapper();
 	Npc_SetToFistMode(self);
 	name	=	"Przywódca stada";
+	
+		//----- Attribute ----	
+	attribute	[ATR_STRENGTH]		=	95; 
+	attribute	[ATR_DEXTERITY]		=	95;
+	attribute	[ATR_HITPOINTS_MAX]	=	300;
+	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_MANA_MAX] 		=	0;
+	attribute	[ATR_MANA] 			=	0;
+	
+	//------ Protections ----	
+	protection	[PROT_BLUNT]		=	135;
+	protection	[PROT_EDGE]			=	135;
+	protection	[PROT_POINT]		=	110;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	20;
 };

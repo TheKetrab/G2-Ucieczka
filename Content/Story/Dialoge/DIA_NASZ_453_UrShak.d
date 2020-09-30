@@ -271,7 +271,7 @@ func void DIA_NASZ_453_UrShak_Hello_End()
 	//AI_StartState 		(self, ZS_MM_AllScheduler, 0, "");
 	AI_Teleport(NASZ_453_UrShak,"OW_ROCKDRAGON_06");
 	Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
-	Wld_InsertNpc	(OrcUltra_Roam,"OW_ROCKDRAGON_11");
+	Wld_InsertNpc		(OrcNewHeavy, "OW_ROCKDRAGON_11");
 	
 	NASZ_453_UrShak.flags = 0;
 	UrShakBattlePart = 1;

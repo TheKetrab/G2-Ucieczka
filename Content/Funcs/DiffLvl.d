@@ -1,10 +1,10 @@
 const string DiffLevelError = "B³¹d z ustawieniem poziomu trudnoœci. Zosta³ on automatycznie ustawiony na normalny. Mo¿esz zmieniæ go w menu.";
 const string JusticeError = "B³¹d z ustawieniem trybu sprawiedliwoœci. Zosta³ on automatycznie ustawiony na zero. Mo¿esz zmieniæ go w menu.";
 
-const int Easy = 0;			const int EasyDmg = 125; 		const int EasyEnemyDmg = 75;
-const int Normal = 1; 		const int NormalDmg = 100; 		const int NormalEnemyDmg = 100;
-const int Hard = 2;			const int HardDmg = 75; 		const int HardEnemyDmg = 125;
-const int SuperHard = 2;	const int SuperHardDmg = 70; 	const int SuperHardEnemyDmg = 150;
+const int Easy = 0;			const int EasyDmg = 150; 		const int EasyEnemyDmg = 50;
+const int Normal = 1; 		const int NormalDmg = 125; 		const int NormalEnemyDmg = 75;
+const int Hard = 2;			const int HardDmg = 100; 		const int HardEnemyDmg = 100;
+const int SuperHard = 2;	const int SuperHardDmg = 75; 	const int SuperHardEnemyDmg = 150;
 const int Legendary = 4;	const int LegendaryDmg = 50; 	const int LegendaryEnemyDmg = 200;
 const int defaultDMG = 5;
 const int hundred = 100;

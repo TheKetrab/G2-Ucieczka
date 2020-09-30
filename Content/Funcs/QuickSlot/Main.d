@@ -413,7 +413,8 @@ func void QS_MobInteractionFix()
 	var string useWithItem; useWithItem = MEM_ReadString(ECX+420);
 	if(STR_LEN(useWithItem))
 	{
-		var int i; i = 0; repeat(i,10);
+		var int i; i = 0;
+		repeat(i,10);
 			var int pItem; pItem = QS_GetSlotItem(i);
 			if(pItem)
 			{
@@ -422,6 +423,7 @@ func void QS_MobInteractionFix()
 				{
 					QS_RemoveSlot(i);
 					var string name; name = MEM_ReadString(pItem+292);
+					if (Hlp_StrCmp(name,"Kilof")) { Npc_RemoveInvItems(hero,ItMw_2H_Axe_L_01,1); };
 					MEM_Info(ConcatStrings(name," jest potrzebny do interakcji. Zosta³ usuniêty z QS."));
 					var int mainflags; mainflags = MEM_ReadInt(pItem+oCItem__MainFlag_Offset);
 					if(mainflags &  (ITEM_KAT_NF |  ITEM_KAT_FF))

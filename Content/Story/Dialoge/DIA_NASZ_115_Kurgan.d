@@ -192,7 +192,7 @@ func void HeroWannaFightArena() {
 	AI_Output (other,self ,"HeroWannaFightArena_15_00"); //Chcê walczyæ.
 
 	if (Wld_IsTime(21,00,23,59)) {
-		AI_Output (self, other,"HeroWannaFightArena_55_01"); //Wszystkim chce siê ju¿ spaæ. Walka w takich godzinach nie ma sensu.
+		AI_Output (self, other,"HeroWannaFightArena_55_01"); //Wszystkim chce siê spaæ. Walka w takich godzinach nie ma sensu.
 	}
 
 	else if (Wld_IsTime(00,00,04,00)) {
@@ -254,6 +254,7 @@ FUNC INT DIA_NASZ_115_Kurgan_fed_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_fed_Info()
 {
 	HeroWannaFightArena();
+	ArenaQuestState = 1;
 
 	if (Wld_IsTime(19,00,20,59)) { // jesli godzina jest okej
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_55_00"); //Na pocz¹tek dostaniesz prostego przeciwnika.
@@ -403,6 +404,7 @@ FUNC INT DIA_NASZ_115_Kurgan_kjorn_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_kjorn_Info()
 {
 	HeroWannaFightArena();
+	ArenaQuestState = 2;
 
 	if (Wld_IsTime(19,00,20,59)) {
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjorn_55_00"); //Dobra. Myœlê, ¿e Kjorn bêdzie dobrym przeciwnikiem.
@@ -549,7 +551,8 @@ FUNC INT DIA_NASZ_115_Kurgan_ferros_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_ferros_Info()
 {
 	HeroWannaFightArena();
-	
+	ArenaQuestState = 3;
+
 	if(Wld_IsTime(19,00,20,59)) {
 	
 		if(KAPITEL >=2) {
@@ -703,6 +706,7 @@ FUNC INT DIA_NASZ_115_Kurgan_GodarHokurn_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_Info()
 {
 	HeroWannaFightArena();
+	ArenaQuestState = 4;
 
 	if (Wld_IsTime(19,00,20,59)) {
 	
@@ -914,7 +918,8 @@ FUNC INT DIA_NASZ_115_Kurgan_kurgan_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_kurgan_Info()
 {
 	HeroWannaFightArena();
-	
+	ArenaQuestState = 5;
+
 	if (Wld_IsTime(19,00,20,59)) {
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurgan_55_00"); //Szczerze mówi¹c, czeka³em na ten moment. Ostatnim twoim przeciwnikiem bêdê ja.
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurgan_55_01"); //Chyba obaj zdajemy sobie sprawê, ¿e ta walka nie bêdzie prosta. Jesteœ bardzo dobry, pokona³eœ wszystkich.

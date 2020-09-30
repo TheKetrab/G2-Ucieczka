@@ -10,7 +10,14 @@ instance NASZ_703_Invisible4 (Npc_Default)
 	npctype		= NPCTYPE_MAIN;
 	
 	// ------ Attribute ------
-	B_SetAttributesToChapter (self, 5);																	
+	B_SetAttributesToChapter (self, 5);
+	protection	[PROT_BLUNT]		=	90;
+	protection	[PROT_EDGE]			=	90;
+	protection	[PROT_POINT]		=	100;
+	protection	[PROT_FIRE]			=	90;
+	protection	[PROT_FLY]			=	90;
+	protection	[PROT_MAGIC]		=	0;
+
 	
 	// ------ Kampf-Taktik ------
 	fight_tactic	= FAI_HUMAN_MASTER;	

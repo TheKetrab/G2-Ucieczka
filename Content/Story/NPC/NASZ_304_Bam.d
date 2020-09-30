@@ -71,3 +71,9 @@ FUNC VOID Rtn_Koniec_304 ()
 	TA_RunToWP			(08,00,23,00,"NASZ_BANDYCI_RYBY_I");
     TA_RunToWP			(23,00,08,00,"NASZ_BANDYCI_RYBY_I");
 };
+
+FUNC VOID Rtn_Koniec2_304 () // FIX Ucieczka 1.1 - Bam jest nieœmiertelny i nie jest liczony do bandit counter
+{	
+	TA_RunToWP			(08,00,23,00,"TOT");
+    TA_RunToWP			(23,00,08,00,"TOT");
+};

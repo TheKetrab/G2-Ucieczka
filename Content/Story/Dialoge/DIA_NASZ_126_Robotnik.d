@@ -307,6 +307,7 @@ INSTANCE DIA_NASZ_126_Robotnik_WorkFail   (C_INFO)
 FUNC INT DIA_NASZ_126_Robotnik_WorkFail_Condition()
 {
 	if TimeIsUp(3,-1,RobotnikDay,-1) && (MIS_ROBOTNIK_READY == TRUE)
+	&& npc_knowsinfo(other,DIA_NASZ_126_Robotnik_Gwozdzie) // dopiero tu sie ustawia dzien
 	{
 		return TRUE;
 	};

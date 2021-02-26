@@ -579,6 +579,7 @@ func void DIA_NASZ_211_Hunt_SellFur_Info ()
 	|| (Npc_HasItems(other, ItAt_TrollFur) > 0)
 	|| (Npc_HasItems(other, ItAt_TrollBlackFur) > 0)
 	|| (Npc_HasItems(other, ItAt_Addon_KeilerFur) > 0)
+	|| (Npc_HasItems(other, ItNa_SkoraOrkowegoPsa) > 0)
 	{
 		
 		if (Npc_HasItems(other, ItAt_Addon_KeilerFur) > 0)
@@ -686,6 +687,8 @@ func void DIA_NASZ_211_Hunt_SellFur_Info ()
 		Npc_RemoveInvItems (NASZ_211_Hunt, ItAt_ShadowFur, Npc_HasItems(NASZ_211_Hunt, ItAt_ShadowFur));
 		Npc_RemoveInvItems (NASZ_211_Hunt, ItAt_TrollFur, Npc_HasItems(NASZ_211_Hunt, ItAt_TrollFur));
 		Npc_RemoveInvItems (NASZ_211_Hunt, ItAt_TrollBlackFur, Npc_HasItems(NASZ_211_Hunt, ItAt_TrollBlackFur));
+		Npc_RemoveInvItems (NASZ_211_Hunt, ItNa_SkoraOrkowegoPsa, Npc_HasItems(NASZ_211_Hunt, ItNa_SkoraOrkowegoPsa));		
+		
 	}
 
 	else

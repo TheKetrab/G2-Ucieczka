@@ -1,3 +1,13 @@
+func void ApplyDraalArmor() {
+
+	if (Npc_GetDistToNPC(hero,NASZ_007_Draal) < 1500) {
+		AI_EquipBestArmor (NASZ_007_Draal);
+		AI_EquipBestRangedWeapon(NASZ_007_Draal);
+		AI_EquipBestMeleeWeapon(NASZ_007_Draal);
+		ff_remove(ApplyDraalArmor);
+	};
+};
+
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************

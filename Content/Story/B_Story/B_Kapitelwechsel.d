@@ -195,7 +195,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 			
 			AI_EquipBestRangedWeapon(NASZ_007_Draal);
 			AI_EquipBestMeleeWeapon(NASZ_007_Draal);
-			AI_EquipBestArmor (NASZ_007_Draal);
+			ff_applyonceext(ApplyDraalArmor,1000,-1); // AI_EquipBestArmor (NASZ_007_Draal);			
 		};
 		
 		// Funkcje

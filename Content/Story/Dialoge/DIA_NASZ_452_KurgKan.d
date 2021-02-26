@@ -1,6 +1,10 @@
 
 func void ApplyKurgKanArmor() {
-	B_SetVisuals_OrcPal(NASZ_452_KurgKan);
+
+	if (Npc_GetDistToNPC(hero,NASZ_452_KurgKan) < 1000) {
+		B_SetVisuals_OrcPal(NASZ_452_KurgKan);
+		ff_remove(ApplyKurgKanArmor);
+	};
 };
 
 
@@ -346,8 +350,6 @@ FUNC INT DIA_NASZ_452_KurgKan_Zbroja_Condition()
 };
 FUNC VOID DIA_NASZ_452_KurgKan_Zbroja_Info()
 {	
-	ff_remove(ApplyKurgKanArmor);
-	
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_00");  //Czy ty masz na sobie zbrojê zrobion¹ z blach paladyna?
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_01");  //Tak, Jan daæ. Powiedzieæ, ¿e potrzebna zbroja do walki, do ochrony. Atakowaæ zamek z ³owcy.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_02");  //Rozumiem, ¿e trzeba ci by³o daæ zbrojê, ale wybór jest doœæ nietypowy. Muszê zapytaæ Jana, sk¹d ten pomys³.

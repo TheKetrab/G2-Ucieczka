@@ -143,7 +143,15 @@ func void Jan_Placenie_Placenie(var int rodzaj) {
 	};
 	
 
-	
+	// GOLD
+	if (rodzaj == 2) {
+		CreateInvItems(NASZ_106_Jan,ItMi_Gold,10);
+		B_GiveInvItems(NASZ_106_Jan,hero,ItMi_Gold,10);
+	} else if (rodzaj == 3) {
+		CreateInvItems(NASZ_106_Jan,ItMi_Gold,30);
+		B_GiveInvItems(NASZ_106_Jan,hero,ItMi_Gold,30);	
+	};
+
 };
 
 

@@ -19,9 +19,9 @@ PROTOTYPE Mst_Default_DragonSnapper(C_Npc)
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	170;
-	protection	[PROT_EDGE]			=	170;
-	protection	[PROT_POINT]		=	160;
+	protection	[PROT_BLUNT]		=	130;
+	protection	[PROT_EDGE]			=	130;
+	protection	[PROT_POINT]		=	120;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 	protection	[PROT_MAGIC]		=	20;
@@ -90,9 +90,9 @@ INSTANCE DragonSnapper_Medium	(Mst_Default_DragonSnapper)
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	135;
-	protection	[PROT_EDGE]			=	135;
-	protection	[PROT_POINT]		=	110;
+	protection	[PROT_BLUNT]		=	115;
+	protection	[PROT_EDGE]			=	115;
+	protection	[PROT_POINT]		=	100;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 	protection	[PROT_MAGIC]		=	20;
@@ -112,8 +112,8 @@ INSTANCE DragonSnapper_Easy	(Mst_Default_DragonSnapper)
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	110;
-	protection	[PROT_EDGE]			=	110;
+	protection	[PROT_BLUNT]		=	90;
+	protection	[PROT_EDGE]			=	90;
 	protection	[PROT_POINT]		=	90;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
@@ -172,15 +172,15 @@ INSTANCE DragonSnapperWarta1	(Mst_Default_DragonSnapper)
 		//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	95; 
 	attribute	[ATR_DEXTERITY]		=	95;
-	attribute	[ATR_HITPOINTS_MAX]	=	300;
-	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_HITPOINTS_MAX]	=	280;
+	attribute	[ATR_HITPOINTS]		=	280;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	135;
-	protection	[PROT_EDGE]			=	135;
-	protection	[PROT_POINT]		=	110;
+	protection	[PROT_BLUNT]		=	100;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 	protection	[PROT_MAGIC]		=	20;
@@ -194,15 +194,15 @@ INSTANCE DragonSnapperWarta2	(Mst_Default_DragonSnapper)
 		//----- Attribute ----	
 	attribute	[ATR_STRENGTH]		=	95; 
 	attribute	[ATR_DEXTERITY]		=	95;
-	attribute	[ATR_HITPOINTS_MAX]	=	300;
-	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_HITPOINTS_MAX]	=	280;
+	attribute	[ATR_HITPOINTS]		=	280;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	135;
-	protection	[PROT_EDGE]			=	135;
-	protection	[PROT_POINT]		=	110;
+	protection	[PROT_BLUNT]		=	100;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 	protection	[PROT_MAGIC]		=	20;
@@ -220,14 +220,14 @@ INSTANCE DragonSnapperWarta3	(Mst_Default_DragonSnapper)
 	attribute	[ATR_STRENGTH]		=	95; 
 	attribute	[ATR_DEXTERITY]		=	95;
 	attribute	[ATR_HITPOINTS_MAX]	=	300;
-	attribute	[ATR_HITPOINTS]		=	300;
+	attribute	[ATR_HITPOINTS]		=	160;
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	135;
-	protection	[PROT_EDGE]			=	135;
-	protection	[PROT_POINT]		=	110;
+	protection	[PROT_BLUNT]		=	100;
+	protection	[PROT_EDGE]			=	100;
+	protection	[PROT_POINT]		=	80;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;
 	protection	[PROT_MAGIC]		=	20;

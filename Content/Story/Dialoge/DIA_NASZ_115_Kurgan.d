@@ -1051,7 +1051,7 @@ INSTANCE DIA_NASZ_115_Kurgan_DuchPrzyzwany   (C_INFO)
 
 FUNC INT DIA_NASZ_115_Kurgan_DuchPrzyzwany_Condition()
 {
-	if ((Kurgan_walka==5)
+	if ((Kurgan_Arena_GoingToFightWithKurgan == TRUE)
 	&& (Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 500)
 	&& (KurganMozeStop == TRUE))
 	{

@@ -6,7 +6,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	guild 	= GIL_OUT;
 	id 	= 232;
 	voice 	= 13;
-	flags   = 0;																			//NPC_FLAG_IMMORTAL oder 0
+	flags   = 2;																			//NPC_FLAG_IMMORTAL oder 0
 	npctype	= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;

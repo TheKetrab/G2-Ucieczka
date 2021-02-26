@@ -225,6 +225,7 @@ const int 	ID_GIGANT					= 66;
 const int 	ID_WSCIEKLYLURKER			= 67;
 const int 	ID_ORCDOG					= 68;
 const int 	ID_BLACKWOLF				= 69;
+const int 	ID_DEMON_0EXP				= 70;
 
 
 // ----------------------------------------------

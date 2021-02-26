@@ -322,7 +322,7 @@ PROTOTYPE Mst_Default_OrcDog(C_Npc)
 	Npc_SetToFistMode(self);
 
 	name							=	"Orkowy pies";
-	level							=	15;
+	level							=	20;
 	guild							=	GIL_WOLF;
 	aivar[AIV_MM_REAL_ID]			= 	ID_ORCDOG;
 	

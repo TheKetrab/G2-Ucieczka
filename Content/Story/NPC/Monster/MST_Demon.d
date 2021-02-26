@@ -80,6 +80,7 @@ INSTANCE Demon0exp (Mst_Default_Demon)
 	B_SetVisuals_Demon();
 	Npc_SetToFistMode(self);
 	level = 0;
+	aivar[AIV_MM_REAL_ID] = ID_DEMON_0EXP;
 };
 
 //******************

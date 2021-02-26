@@ -2,7 +2,7 @@
 
 var int KurganArenaQuest; // 0 - nieaktywny, 1 - aktywny, 2 - ukonczony
 
-
+var int Kurgan_Arena_GoingToFightWithKurgan;
 var int Kurgan_rethon;
 var int Kurgan_walka;
 var int Kurgan_OK;
@@ -964,7 +964,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurgan_ok()
 	B_GiveInvItems (other, self, ItMI_gold, 1000);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 1000);
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "Arena");
-	Kurgan_walka=5;
+	Kurgan_Arena_GoingToFightWithKurgan = TRUE;
 	NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
 	AI_StopProcessInfos (self);
 	WalkaTrwa = TRUE;
@@ -985,7 +985,7 @@ INSTANCE DIA_NASZ_115_Kurgan_arena   (C_INFO)
 
 FUNC INT DIA_NASZ_115_Kurgan_arena_Condition()
 {
-	if (Kurgan_walka==5)
+	if (Kurgan_Arena_GoingToFightWithKurgan == TRUE)
 	&& (Npc_GetDistToWP(self,"NASZ_LOWCY_ARENA_01") < 500)
 	&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_NONE)
 	{
@@ -1067,6 +1067,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_DuchPrzyzwany_Info()
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_55_03"); //Powodzenia, mistrzu!
 	KURGAN_WALCZY = TRUE;
 	KurganAtakuje = TRUE;
+
+	Kurgan_walka=5;
+	Kurgan_Arena_GoingToFightWithKurgan = FALSE;
 
 	Info_ClearChoices (DIA_NASZ_115_Kurgan_DuchPrzyzwany);
 	Info_AddChoice	  (DIA_NASZ_115_Kurgan_DuchPrzyzwany, "KONIEC", DIA_NASZ_115_Kurgan_DuchPrzyzwany_end);
@@ -1161,6 +1164,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurganwon_Info()
 	KURGAN_WALCZY = FALSE;
 	Kurgan_walka=0;
 	WalkaTrwa = FALSE;
+	
 };
 
 //*********************************************************************

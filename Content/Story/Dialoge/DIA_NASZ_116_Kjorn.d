@@ -525,7 +525,7 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_Info()
 
 func void FinishQuestKjorn(var int mode) {
 
-	DodajReputacje(REP_LOWCY,3);
+	DodajReputacje(3,REP_LOWCY);
 
 	if (mode == 1) { // zloto
 		Log_SetTopicStatus (TOPIC_Kjorn_bracia, LOG_SUCCESS);

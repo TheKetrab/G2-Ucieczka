@@ -154,3 +154,40 @@ FUNC VOID DIA_NASZ_016_Netbek_WTF_Info()
 	AI_StopProcessInfos (self);
 	B_StartOtherRoutine (self,"Dead");
 };
+
+// ************************************************************
+// 			  				PICK POCKET
+// ************************************************************
+
+INSTANCE DIA_NASZ_016_Netbek_PICKPOCKET (C_INFO)
+{
+	npc			= NASZ_016_Netbek;
+	nr			= 900;
+	condition	= DIA_NASZ_016_Netbek_PICKPOCKET_Condition;
+	information	= DIA_NASZ_016_Netbek_PICKPOCKET_Info;
+	permanent	= TRUE;
+	description = Pickpocket_20; // 20|40|60|80|100|120
+};                       
+
+FUNC INT DIA_NASZ_016_Netbek_PICKPOCKET_Condition()
+{
+	C_Beklauen (23);
+};
+ 
+FUNC VOID DIA_NASZ_016_Netbek_PICKPOCKET_Info()
+{	
+	Info_ClearChoices	(DIA_NASZ_016_Netbek_PICKPOCKET);
+	Info_AddChoice		(DIA_NASZ_016_Netbek_PICKPOCKET, DIALOG_BACK 		,DIA_NASZ_016_Netbek_PICKPOCKET_BACK);
+	Info_AddChoice		(DIA_NASZ_016_Netbek_PICKPOCKET, DIALOG_PICKPOCKET	,DIA_NASZ_016_Netbek_PICKPOCKET_DoIt);
+};
+
+func void DIA_NASZ_016_Netbek_PICKPOCKET_DoIt()
+{
+	B_BeklauenThings (ItMi_Joint, 5);
+	Info_ClearChoices (DIA_NASZ_016_Netbek_PICKPOCKET);
+};
+	
+func void DIA_NASZ_016_Netbek_PICKPOCKET_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_016_Netbek_PICKPOCKET);
+};

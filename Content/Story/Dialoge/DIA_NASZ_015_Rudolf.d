@@ -458,3 +458,40 @@ FUNC VOID DIA_NASZ_015_Rudolf_OrkowyPrzepis_Info()
 	B_LogEntry (TOPIC_Orkowy_przepis, "W koñcu dysponujê przet³umaczonym przepisem. Teraz trzeba jeszcze znaleŸæ sk³adniki i poprosiæ Snafa o przyrz¹dzenie zupy.");
 
 };
+
+// ************************************************************
+// 			  				PICK POCKET
+// ************************************************************
+
+INSTANCE DIA_NASZ_015_Rudolf_PICKPOCKET (C_INFO)
+{
+	npc			= NASZ_015_Rudolf;
+	nr			= 900;
+	condition	= DIA_NASZ_015_Rudolf_PICKPOCKET_Condition;
+	information	= DIA_NASZ_015_Rudolf_PICKPOCKET_Info;
+	permanent	= TRUE;
+	description = Pickpocket_120; // 20|40|60|80|100|120
+};                       
+
+FUNC INT DIA_NASZ_015_Rudolf_PICKPOCKET_Condition()
+{
+	C_Beklauen (115);
+};
+ 
+FUNC VOID DIA_NASZ_015_Rudolf_PICKPOCKET_Info()
+{	
+	Info_ClearChoices	(DIA_NASZ_015_Rudolf_PICKPOCKET);
+	Info_AddChoice		(DIA_NASZ_015_Rudolf_PICKPOCKET, DIALOG_BACK 		,DIA_NASZ_015_Rudolf_PICKPOCKET_BACK);
+	Info_AddChoice		(DIA_NASZ_015_Rudolf_PICKPOCKET, DIALOG_PICKPOCKET	,DIA_NASZ_015_Rudolf_PICKPOCKET_DoIt);
+};
+
+func void DIA_NASZ_015_Rudolf_PICKPOCKET_DoIt()
+{
+	B_BeklauenGold (183);
+	Info_ClearChoices (DIA_NASZ_015_Rudolf_PICKPOCKET);
+};
+	
+func void DIA_NASZ_015_Rudolf_PICKPOCKET_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_015_Rudolf_PICKPOCKET);
+};

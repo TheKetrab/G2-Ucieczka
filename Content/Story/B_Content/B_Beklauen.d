@@ -12,13 +12,13 @@
 // 007	| 73		| 42 szt. złota
 // 008	| 78		| 3x mikstura lecznicza
 // 009	|			|
-// 010	| ???		| ??? TODO: Monastir?
+// 010	| 102		| masowe zniszczenie, zwój
 // 011	|			|
 // 012	| 			| 
 // 013	|			|
 // 014	|			|
-// 015	| ???		| ??? TODO: Rudolf
-// 016	| ???		| ??? TODO: Netbek
+// 015	| 115		| 183 szt. złota
+// 016	| 23		| 5x łodyga bagiennego ziela
 // 017	| 			| 
 // 018	| 			| 
 // 019	|			|

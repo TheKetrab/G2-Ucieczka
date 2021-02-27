@@ -1000,3 +1000,39 @@ FUNC VOID DIA_NASZ_010_Monastir_Kap5Start_yes()
 	AI_StopProcessInfos (self);
 };
 	
+// ************************************************************
+// 			  				PICK POCKET
+// ************************************************************
+
+INSTANCE DIA_NASZ_010_Monastir_PICKPOCKET (C_INFO)
+{
+	npc			= NASZ_010_Monastir;
+	nr			= 900;
+	condition	= DIA_NASZ_010_Monastir_PICKPOCKET_Condition;
+	information	= DIA_NASZ_010_Monastir_PICKPOCKET_Info;
+	permanent	= TRUE;
+	description = Pickpocket_100; // 20|40|60|80|100|120
+};                       
+
+FUNC INT DIA_NASZ_010_Monastir_PICKPOCKET_Condition()
+{
+	C_Beklauen (102);
+};
+ 
+FUNC VOID DIA_NASZ_010_Monastir_PICKPOCKET_Info()
+{	
+	Info_ClearChoices	(DIA_NASZ_010_Monastir_PICKPOCKET);
+	Info_AddChoice		(DIA_NASZ_010_Monastir_PICKPOCKET, DIALOG_BACK 		,DIA_NASZ_010_Monastir_PICKPOCKET_BACK);
+	Info_AddChoice		(DIA_NASZ_010_Monastir_PICKPOCKET, DIALOG_PICKPOCKET	,DIA_NASZ_010_Monastir_PICKPOCKET_DoIt);
+};
+
+func void DIA_NASZ_010_Monastir_PICKPOCKET_DoIt()
+{
+	B_BeklauenThings (ItSc_MassDeath, 1);
+	Info_ClearChoices (DIA_NASZ_010_Monastir_PICKPOCKET);
+};
+	
+func void DIA_NASZ_010_Monastir_PICKPOCKET_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_010_Monastir_PICKPOCKET);
+};

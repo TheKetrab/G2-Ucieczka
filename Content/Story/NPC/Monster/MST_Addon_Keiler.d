@@ -82,7 +82,7 @@ INSTANCE Keiler	(Mst_Default_Keiler)
 {
 	B_SetVisuals_Keiler();
 	Npc_SetToFistMode(self);
-	CreateInvItems (self, ItFoMuttonRaw, 1);
+	CreateInvItems (self, ItNa_MiesoDzika, 1);
 };
 
 //************
@@ -93,7 +93,7 @@ INSTANCE GroznyDzik	(Mst_Default_Keiler)
 {
 	B_SetVisuals_Keiler2();
 	Npc_SetToFistMode(self);
-	CreateInvItems (self, ItFoMuttonRaw, 1);
+	CreateInvItems (self, ItNa_MiesoDzika, 1);
 	
 	name							=	"Groüny dzik";
 	level							=	12;

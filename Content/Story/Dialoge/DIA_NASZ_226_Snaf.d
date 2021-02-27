@@ -536,14 +536,13 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaMleczna ()
 	if(npc_hasitems(other, Itfo_milk) >= 1)
 	&&(npc_hasitems(other, ItPl_Forestberry) >= 2)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 2)
+	&&(npc_hasitems(other, ItFo_Bread) >= 1)
 	{
 
 		B_GiveInvItems (other, self, Itfo_milk, 1);
 		B_GiveInvItems (other, self, ItPl_Forestberry, 2);
 		B_GiveInvItems (other, self, ItPl_Planeberry, 2);
-	//	B_GiveInvItems (other, self, ItFo_Bread, 2);
-	//	B_GiveInvItems (other, self, ItPl_Health_Herb_03, 1);
-	//	B_GiveInvItems (other, self, ItAt_Sting, 1);
+		B_GiveInvItems (other, self, ItFo_Bread, 1);
 		
 		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaMleczna_55_00"); //Zupa mleczna.
 		SnafSay_Momment();	
@@ -624,6 +623,8 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaJarzynowaZJagodami ()
 	&&(npc_hasitems(other, ItPl_Beet) >= 1)
 	&&(npc_hasitems(other, ItPl_Forestberry) >= 2)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 2)
+	&&(npc_hasitems(other, ItFo_Booze) >= 1)
+	&&(npc_hasitems(other, ItFo_Milk) >= 1)
 	{
 		B_GiveInvItems (other, self, ItPl_Health_Herb_02, 2);
 		B_GiveInvItems (other, self, ItPl_Mana_Herb_01, 2);
@@ -675,12 +676,12 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaSerowa ()
 
 FUNC VOID DIA_NASZ_226_Snaf_UCS_PrzysmakMysliwych ()
 {
-	if(npc_hasitems(other, ItFoMuttonRaw) >= 3)
+	if(npc_hasitems(other, ItFoMuttonRaw) >= 5)
 	&&(npc_hasitems(other, ItFo_Wine) >= 1)
 	&&(npc_hasitems(other, ItFo_Apple) >= 3)
 	&&(npc_hasitems(other, ItFo_Addon_Pfeffer_01) >= 1)
 	{
-		B_GiveInvItems (other, self, ItFoMuttonRaw, 3);
+		B_GiveInvItems (other, self, ItFoMuttonRaw, 5);
 		B_GiveInvItems (other, self, ItFo_Wine, 1);
 		B_GiveInvItems (other, self, ItFo_Apple, 3);
 		B_GiveInvItems (other, self, ItFo_Addon_Pfeffer_01, 1);
@@ -703,11 +704,12 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_PrzysmakMysliwych ()
 FUNC VOID DIA_NASZ_226_Snaf_UCS_KompotOwocowy ()
 {
 	if(npc_hasitems(other, ItFo_Apple) >= 2)
-//	&&(npc_hasitems(other, ItFo_Water) >= 2)
+	&&(npc_hasitems(other, ItFo_Water) >= 2)
 	&&(npc_hasitems(other, ItPl_Forestberry) >= 3)
 	&&(npc_hasitems(other, ItPl_Planeberry) >= 3)
 	{
 		B_GiveInvItems (other, self, ItFo_Apple, 2);
+		B_GiveInvItems (other, self, ItFo_Water, 2);
 		B_GiveInvItems (other, self, ItPl_Forestberry, 3);
 		B_GiveInvItems (other, self, ItPl_Planeberry, 3);
 		
@@ -729,10 +731,12 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_KompotOwocowy ()
 FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaRybna ()
 {
 	if(npc_hasitems(other, ItFo_Fish) >= 2)
+	&&(npc_hasitems(other, ItPl_Health_Herb_03) >= 2)
 	&&(npc_hasitems(other, ItFo_Bread) >= 1)
 	&&(npc_hasitems(other, ItFo_Wine) >= 1)
 	{
 		B_GiveInvItems (other, self, ItFo_Fish, 2);
+		B_GiveInvItems (other, self, ItPl_Health_Herb_03, 2);
 		B_GiveInvItems (other, self, ItFo_Bread, 1);
 		B_GiveInvItems (other, self, ItFo_Wine, 1);
 		
@@ -755,11 +759,11 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_GulaszMiesny ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 5)
 	&&(npc_hasitems(other, ItPl_Mushroom_01) >= 2)
-	
+	&&(npc_hasitems(other, ItPl_Beet) >= 1)	
 	{
 		B_GiveInvItems (other, self, ItFoMuttonRaw, 5);
 		B_GiveInvItems (other, self, ItPl_Mushroom_01, 2);
-
+		B_GiveInvItems (other, self, ItPl_Beet, 1);
 		
 		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_GulaszMiesny_55_00"); //Gulasz miêsny.
 		SnafSay_Momment();	
@@ -805,11 +809,11 @@ FUNC VOID DIA_NASZ_226_Snaf_UCS_ZupaPiwna ()
 {
 	if(npc_hasitems(other, ItFoMuttonRaw) >= 3)
 	&&(npc_hasitems(other, ItFo_Beer) >= 4)
-
+	&&(npc_hasitems(other, ItFo_Sausage) >= 1)
 	{
 		B_GiveInvItems (other, self, ItFoMuttonRaw, 3);
 		B_GiveInvItems (other, self, ItFo_Beer, 4);
-
+		B_GiveInvItems (other, self, ItFo_Sausage, 1);
 		
 		AI_Output (other, self,"DIA_NASZ_226_Snaf_UCS_ZupaPiwna_55_00"); //Zupa piwna.
 		SnafSay_Momment();	

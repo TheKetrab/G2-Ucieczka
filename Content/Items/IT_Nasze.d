@@ -10293,13 +10293,13 @@ INSTANCE ItNa_MiesoDzika (C_Item)
 	on_state[0]			=	Use_MiesoDzika;
 
 	description			= 	name;
-	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= HP_Bacon;
-	TEXT[5]				= 	NAME_Value;		COUNT[5]	= Value_Bacon;
+	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= 10;
+	TEXT[5]				= 	NAME_Value;			COUNT[5]	= 5;
 
 };
 FUNC VOID Use_MiesoDzika()
 {
-	PercentHealSelf(HP_Bread,ATR_HITPOINTS);
+	PercentHealSelf(10,ATR_HITPOINTS);
 };
 
 

@@ -19,6 +19,7 @@ var int OzywieniecKilledOneTime;
 var int Psikusy_SheepKiller_Counter;
 var int KazminKilledOneTime;
 var int OrcShamanHersztKilledOneTime;
+var int OrcScoutHersztKilledOneTime;
 
 func void ZS_Dead ()
 {	
@@ -534,8 +535,9 @@ func void ZS_Dead ()
 		B_LogEntry (TOPIC_Goth_kradziez, "Mapa doprowadzi³a mnie do miejsca, gdzie spotka³em z³odzieja, z którym szybko siê rozprawi³em.");
 	};
 	
-	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcScoutHerszt))
+	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (OrcScoutHerszt) && OrcScoutHersztKilledOneTime == FALSE)
 	{
+		OrcScoutHersztKilledOneTime = TRUE; // analogicznie jak shammanherszt
 		Migration_GoToShamanHerszt();
 	};
 	

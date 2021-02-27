@@ -9,7 +9,7 @@ PROTOTYPE Mst_Default_OrcUltra(C_Npc)
 	guild							=	GIL_ORC;
 	aivar[AIV_MM_REAL_ID]			= 	ID_ORCELITE;
 	voice							=	18;
-	level							=	35;
+	level							=	40;
 	
 	//----- Attribute -----	
 	attribute	[ATR_STRENGTH]		=	130; //+100 Waffe //MIN 120!

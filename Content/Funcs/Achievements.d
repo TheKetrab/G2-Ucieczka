@@ -42,7 +42,7 @@ const string Acv12Title   = "Nieuk";
 const string Acv12Content = "Mia³eœ a¿ 50 niewykorzystanych punktów nauki!";
 
 const string Acv13Title   = "Skoczek";
-const string Acv13Content = "Skoczy³eœ znajwy¿szego wodospadu w Górniczej Dolinie.";
+const string Acv13Content = "Skoczy³eœ z najwy¿szego wodospadu w Górniczej Dolinie.";
 
 const string Acv14Title   = "£amacz wytrychów";
 const string Acv14Content = "Z³ama³eœ 50 wytrychów.";

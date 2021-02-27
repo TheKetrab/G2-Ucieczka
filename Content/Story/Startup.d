@@ -2098,7 +2098,28 @@ func void STARTUP_SURFACE ()
 	
 	
 	
-	
+	// ----- Meatbug -----
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_01");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_02");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_03");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_04");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_05");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_06");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_07");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_08");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_09");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_10");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_11");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_12");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_13");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_14");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_15");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_16");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_17");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_18");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_19");
+	Wld_InsertNpc		(Meatbug,"FP_ROAM_MEATBUG_U12_20");
+		
 };
 
 	FUNC VOID INIT_SUB_SURFACE()

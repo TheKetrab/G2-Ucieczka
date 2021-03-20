@@ -94,6 +94,34 @@ func int Inv_IsEmpty(var c_npc _slf)
 	return false;
 };
 
+func void Npc_AssessThieft_S(var int victimPtr, var int thieftPtr)
+{
+	const int oCNpc__AssessThieft_S = 7718608;
+	CALL_PtrParam(thieftPtr); 
+	CALL__Thiscall(victimPtr,oCNpc__AssessThieft_S);
+};
+
+func void Loot_NothingThere()
+{
+	var int rnd; rnd = Hlp_Random (100);
+	
+	if (rnd <= 40)	
+	{	
+		Print(PRINT_NOTHINGTOGET);
+		B_Say_Overlay (hero, hero, "$NOTHINGTOGET");	
+	}
+	else if (rnd <= 80)	
+	{	
+		Print(PRINT_NOTHINGTOGET02);
+		B_Say_Overlay (hero, hero, "$NOTHINGTOGET02");	
+	}
+	else if (rnd <= 99)	
+	{	
+		Print(PRINT_NOTHINGTOGET03);
+		B_Say_Overlay (hero, hero, "$NOTHINGTOGET03");	
+	};
+};
+
 FUNC void QuickLoot (var C_NPC slf, var C_NPC oth){
     var int amount;
     var int itmID; 
@@ -103,8 +131,9 @@ FUNC void QuickLoot (var C_NPC slf, var C_NPC oth){
 
 	
 	var int loop; loop = MEM_StackPos.position;
-    
-	
+   
+   //na wszelki wypadek + mo¿na to te¿ u¿yæ dla innych npc
+	var int isOthPlayer; isOthPlayer = Npc_IsPlayer(oth);
 	if (i < INV_CAT_MAX)
     {
         var int slotNr;    slotNr = 0;
@@ -119,32 +148,38 @@ FUNC void QuickLoot (var C_NPC slf, var C_NPC oth){
 				slotNr += 1;
 				MEM_StackPos.position = inLoop;
 			};
-			MEM_CAllByString("B_AssessTheft");
-			//slf.aivar[AIV_QuickLoot] = false;
-			txt = ConcatStrings("Spl¹drowa³eœ: ",slf.name);
 			
-			if(!txtFix)
-			{		
-				PrintS_Ext(txt, RGBA(255,255,255,0));
-				txtFix = true;
-			};
+			if(isOthPlayer)
+			{
+				txt = ConcatStrings("Spl¹drowa³eœ: ",slf.name);
 				
-			
-			txt = item.name;
-			txt = ConcatStrings(txt, ", ");
-			txt = ConcatStrings(txt, IntToString(amount));
-			txt = ConcatStrings(txt, " szt.");
-			PrintS_Ext(txt, RGBA(255,255,255,0));
+				if(!txtFix)
+				{		
+					PrintS_Ext(txt, RGBA(255,255,255,0));
+					txtFix = true;
+
+					var int heroPtr; heroPtr = MEM_ReadInt(_hero);
+					var int victimPtr; victimPtr = _@(slf);
+					Npc_AssessThieft_S(victimPtr,heroPtr);
+				};
+					
+				
+				txt = item.name;
+				txt = ConcatStrings(txt, ", ");
+				txt = ConcatStrings(txt, IntToString(amount));
+				txt = ConcatStrings(txt, " szt.");
+				PrintS_Ext(txt, RGBA(255,255,255,0));
+			};
 		
 			CreateInvItems (oth, itmID, amount);
             Npc_RemoveInvItems (slf, itmID, amount);
             MEM_StackPos.position = inLoop;
 			
         };
-		if(i>=8 && !amount &&!txtFix)
+		//TODO:  czy to zostawiæ lub usun¹æ hooka i przenisæ na dó³?? / bogu 
+		if(i>=8 && !amount && !txtFix)
 		{
-			//slf.aivar[AIV_QuickLoot] = true;
-			
+			//Loot_NothingThere();
 			var int rnd; rnd = Hlp_Random (100);
 	
 			if (rnd <= 40)	
@@ -162,11 +197,16 @@ FUNC void QuickLoot (var C_NPC slf, var C_NPC oth){
 				Print(PRINT_NOTHINGTOGET03);
 				B_Say_Overlay (hero, hero, "$NOTHINGTOGET03");	
 			};
-			//PrintS_Ext(txt, RGBA(255,255,255,0));
 		};
 		i += 1;
         MEM_StackPos.position = loop;
     };
+	
+	/*
+	if(!amount && !txtFix && isOthPlayer)
+	{		
+		Loot_NothingThere();
+	};	*/
 };
 
 
@@ -1259,7 +1299,7 @@ INSTANCE ItNa_Kostur_UrShaka (C_Item)
 	range    			=  	10;		
 	
 	cond_atr[2]   			=	ATR_STRENGTH;
-	cond_value[2]  			=	10;
+	cond_value[2]  			=	1;
 	visual 				=	"ItMW_MageStaff_Good_2H_01.3DS"; 
 	//effect				=	"SPELLFX_UNDEAD_DRAGON";
 

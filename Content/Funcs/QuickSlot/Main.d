@@ -131,12 +131,13 @@ func int QS_CanPutInSlot(var int itemPtr)
 {
 	
 	var c_item it; it  = _^(itemPtr);
+
 	
 	if((!IsHelmet(it) && ((it.mainflag == ITEM_KAT_NF) ))			// Walka wrêcz
 	|| (it.flags & (ITEM_BOW | ITEM_CROSSBOW)) 		// Broñ dystansowa
 	|| (it.mainflag == ITEM_KAT_RUNE)				// Magia
 	|| (STR_Len(it.scemeName))						// Przedmioty u¿ytkowe
-	|| (it.flags & ITEM_TORCH))						// Przedmioty u¿ytkowe
+	|| (it.flags & ITEM_TORCH))						// Przedmioty u¿ytkowe					
 	{
 		return true;
 	};
@@ -423,6 +424,7 @@ func void QS_MobInteractionFix()
 				{
 					QS_RemoveSlot(i);
 					var string name; name = MEM_ReadString(pItem+292);
+					//TODO: czy to potrzebne? / bogu
 					if (Hlp_StrCmp(name,"Kilof")) { Npc_RemoveInvItems(hero,ItMw_2H_Axe_L_01,1); };
 					MEM_Info(ConcatStrings(name," jest potrzebny do interakcji. Zosta³ usuniêty z QS."));
 					var int mainflags; mainflags = MEM_ReadInt(pItem+oCItem__MainFlag_Offset);
@@ -641,6 +643,20 @@ func void QS_DrawNumbersInInv()
 		if(viewPtr && itemPtr) {
 			var int slotNr; slotNr = QS_GetSlotByItem(itemPtr);
 			var int col; col = QS_GetSlotColor();
+			
+			var int instID; instID = MEM_ReadInt(itemPtr+816);
+			if(instID == Hlp_GetInstanceID(ItNa_Kostur_Urshaka))
+			{
+				if(WillHasEquippedKostur)
+				{
+					ViewPtr_SetTexture(viewPtr, QS_SlotFrameInInvTexture);
+				}
+				else
+				{
+					ViewPtr_SetTexture(viewPtr, "QS_Alpha.TGA");
+				};
+				return;
+			};
 			
 			if(slotNr != -1)
 			{

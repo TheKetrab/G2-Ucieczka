@@ -1,39 +1,40 @@
+//Thanks for @Splash and @Siemekk for advices
 
-// @Splash
-func void CreateRandomCombination(var int mobPtr, var int length)
-{
-    var string combination; combination = "";
-    var int i; i = 0;
 
-    repeat(i, length);
-        if (Hlp_Random(2)) {
-            combination = ConcatStrings(combination, "L");
-        }
-        else {
-            combination = ConcatStrings(combination, "R");
-        };
-    end;
+const int oCMobLockable__pickLockStr_Offset = 588;
 
-    var oCMobLockable mob; mob = _^(mobPtr);
-    mob.pickLockStr = combination;
+func void SetRandomCombination(var int ptr)
+{		
+	var int pickLockStrAdr; pickLockStrAdr = ptr+oCMobLockable__pickLockStr_Offset;
+	var int len; len = MEM_ReadInt(pickLockStrAdr+zSTRING_Lenght_Offset);
+
+	if(len == 0){ return; };
+		
+	var string combination; combination = "";
+	var int i; i = 0;
+
+	repeat(i, len);
+		if (Hlp_Random(2)) {
+			combination = ConcatStrings(combination, "L");
+		}
+		else {
+			combination = ConcatStrings(combination, "R");
+		};
+	end;
+
+	MEM_WriteString(pickLockStrAdr,combination);
 };
 
-// @Siemekk
-func void SetRandomCombination(var int node)
+func void ForAllMobs_RandomCombination()
 {
-    var zCListSort list; list = _^(node);
-
-	var int ptr; ptr = list.data;
-		
-	if (Hlp_Is_oCMobLockable(ptr))
-	{
-		var oCMobLockable mob; mob = _^(ptr);
-		var int len; len = STR_Len(mob.pickLockStr);
-
-		if(len)
+	 var int list; list = MEM_World.voblist;
+	 while(list);
+		var int data; data = MEM_ReadInt(list+zCListSort_Data_Offset);
+		if (Hlp_Is_oCMobLockable(data))
 		{
-			CreateRandomCombination(ptr, len);
+			SetRandomCombination(data);
 		};
-	};
-
+		var int next; next = MEM_ReadInt(list+zCListSort_Next_Offset);
+        list = next;
+    end;
 };

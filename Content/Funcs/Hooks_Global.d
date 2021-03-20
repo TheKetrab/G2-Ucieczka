@@ -18,7 +18,7 @@ const int oCNpc__EV_AttackLeft = 7668064;
 const int oCNpc__EV_AttackRight = 7668064;
 const int oCNpc__EV_AttackRun  = 7673808;
 const int oCNpc__EV_AttackForward  = 7664640;
-
+const int oCZoneMusic__GetHerostatus = 6562848;
 
 
 func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
@@ -108,7 +108,8 @@ func void HandleEvents_hook(/*int key*/)
 
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
-		var int fcsss; fcsss = MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/);
+		var int heroPtr; heroPtr = MEM_READINT(hero);
+		var int fcsss; fcsss = MEM_READINT(heroPtr+2476/*player->focus_vob*/);
 		if(!NpcIsFighting(hero) && !C_NpcIsDown(hero) && HLP_Is_oCNpc(fcsss))
 		{
 			var c_npc slf; slf = _^(fcsss);
@@ -210,17 +211,81 @@ func int Game_GetHeroStatus()
 	return CALL_RetValAsInt();
 };
 
-const int oCZoneMusic__GetHerostatus = 6562848;
+const func mm_attack_func = ZS_MM_ATTACK;
+const func attack_func = ZS_ATTACK;
+const int dword_AAD648_Adr = 11195976;
+const int oCNpc__Enemy_Offset = 1176;
+const int oCNpc__state_curState_valid_Offset = 1468;
+const int oCNpc__state_curState_Idx_Offset = 1444;
+const int oCNpc__state_nextState_Idx_Offset = 1504;
+//const int zCArray__numInArray_Offset = 8;
+func int IsHeroInDanger()
+{
+                        //zCArray<T>::numInArray;
+    var int num; num = MEM_ReadInt(dword_AAD648_Adr+zCArray__numInArray_Offset);
+
+    if(num)
+    {
+        var int playerPtr; playerPtr = MEM_ReadInt(_hero);
+        
+        if(playerPtr == 0){ return false; };        
+        
+        var int ele; 
+        var int currStateIdx;
+        var int nextStateIdx;
+
+        var int arrPtr; arrPtr = MEM_ReadInt(dword_AAD648_Adr);
+        var int i; i = 0;
+        var int label; label = MEM_StackPos.position;
+        if(i < num)
+        {    
+            ele = MEM_ReadIntArray(arrPtr,i);
+            
+			var int enemyPtr; enemyPtr = MEM_ReadInt(ele+oCNpc__Enemy_Offset);
+            if(enemyPtr == playerPtr)
+            {
+
+                var int validCurrState; validCurrState = MEM_ReadInt(ele+oCNpc__state_curState_valid_Offset);
+				if(validCurrState)
+                {
+                    currStateIdx = MEM_ReadInt(ele+oCNpc__state_curState_Idx_Offset);
+                    if(currStateIdx == mm_attack_func || currStateIdx == attack_func)
+                    {
+                        return true;
+                    };    
+                }
+                else
+                {
+                    nextStateIdx = MEM_ReadInt(ele+oCNpc__state_nextState_Idx_Offset);
+                    if(nextStateIdx == mm_attack_func || nextStateIdx == attack_func)
+                    {
+                        return true;
+                    };    
+                };
+            };
+            
+            i+=1;
+            MEM_StackPos.position = label;
+        };
+    };
+    return false;
+};
+
 func int HeroStatusFix()
 {
+	var int status; status = MEM_ReadInt(oCZoneMusic__s_herostatus);
 	
-	return MEM_ReadInt(oCZoneMusic__s_herostatus); 
-
-	
-	/*var int ret; ret = Game_GetHeroStatus(); Printi(ret);
-	if(ret == 1) {EAX = 2; return 2;};
-	EAX = ret; 
-	return ret;*/
+	//zagro¿enie, nie walka, taka wartoœæ jest, gdy nie ma siê wyci¹gniêtej broni i atakuje nas przeciwnik
+	//lub hp <=5 lub jest siê w portalu z nazw¹ WALD, wiêc trzeba to zignorowaæ 
+	//i sprawdziæ czy faktycznie jest siê w zagro¿eniu
+	if(status == 1) 
+	{
+		return IsHeroInDanger();
+	}
+	else
+	{
+		return status == 2;
+	};
 };
 
 func void DynamicSaveSystem()
@@ -336,9 +401,9 @@ func void VobSetVisual(var int vobPtr, var string str)
 func void SHIELD_EQUIP()
 {
 	var int ptr; ptr = MEM_ReadInt(ESP+4);
-	if(!MEM_ReadInt(ptr)) {return;};
+	if(!ptr) { return; };
 	
-	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
+	var c_item itm; itm = _^(ptr);
 	if(itm.flags & ITEM_SHIELD)
 	{
 		if(ECX == MEM_ReadInt(_hero))
@@ -488,6 +553,9 @@ func void UpdateStaffSlot()
 	
 	oCNpc_SetToSlotPosition_(ECX, slotvob, "ZS_CROSSBOW");
 };
+
+const int oCNpc__PutInSlot_ucieczka = 7643760;
+
 var int HelmetEquipped;
 const int RuneIterator = 3;
 const int oCNpcInventory__HandleEvent = 7397440;
@@ -506,15 +574,18 @@ func void oCNpcInventory_HandleEvent_hook()
 	if(!ptr) {
 		return;
 	};
+	var int action; action = (key == MOUSE_BUTTONLEFT|| key == keyAction_1 || key == keyAction_2|| key ==  KEY_LCONTROL );
 	var c_item itm; 
-	if(key == keyAction_1 || key == keyAction_2)
+	var int isKostur; isKostur = Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_Kostur_UrShaka);
+	if(action  || key == KEY_1)
 	{
 		itm = _^(ptr);
 		if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_Kostur_UrShaka))
 		{	
 			var c_npc slf; slf = _^(nptr);
 			MEM_WriteInt(ESP+4,-1);
-			if(!itm.hp)
+			
+			if(!WillHasEquippedKostur)
 			{
 				if (!oCNpc_GetInvSlot_(nptr, "ZS_STAFF"))
 				{
@@ -522,25 +593,39 @@ func void oCNpcInventory_HandleEvent_hook()
 				};
 				WillHasEquippedKostur = TRUE;
 				ff_applyonceext(ZamekFunc,1000,-1);
+				
 				Wld_InsertItem(Hlp_GetInstanceID(itm),MEM_GetAnyWP());
+				
 				var zCTree newTreeNode; newTreeNode = _^(MEM_World.globalVobTree_firstChild);
 				var int itmPtr; itmPtr = newTreeNode.data;
+				
+				//CALL_IntParam(true);
+				//CALL_PtrParam(itmPtr);
+				//CALL_zSTRINGPtrParam("ZS_STAFF");
+				//CALL__thiscall(_@(slf),oCNpc__PutInSlot_ucieczka);
 				oCNpc_PutInSlot(slf, "ZS_STAFF", itmPtr, true);
-				var int vob; vob = GetItemSlot(slf,"ZS_STAFF");
-				itm.flags = itm.flags | ITEM_ACTIVE;
-				itm.hp = 1;
+				
+
+				//itm.flags = itm.flags | ITEM_ACTIVE;
+
 			}
 			else
 			{
-				oCNpc_RemoveFromSlot(slf, "ZS_STAFF", itmPtr, true);
-				itm.flags = itm.flags & ~ ITEM_ACTIVE;
-				itm.hp = 0;
+				var int vob; vob = GetItemSlot(slf,"ZS_STAFF");
+				
+
+				oCNpc_RemoveFromSlot(slf, "ZS_STAFF", vob, 0);
+				//itm.flags = itm.flags & ~ ITEM_ACTIVE;
 				WillHasEquippedKostur = FALSE;
 				ff_remove(ZamekFunc);
 			};
 			
+			return;
 		};	
+		
 	};
+	
+	
 	
 	//QS
 	
@@ -551,10 +636,10 @@ func void oCNpcInventory_HandleEvent_hook()
 		return;
 	};
 	
-	if(key == MOUSE_BUTTONLEFT
-	|| key == keyAction_1
-	|| key == keyAction_2
-	|| key ==  KEY_LCONTROL 
+	
+	if(isKostur){return;};
+	
+	if(action 
 	|| key == KEY_1 
 	||  key == KEY_2)	
 	{
@@ -576,15 +661,13 @@ func void oCNpcInventory_HandleEvent_hook()
 		if(itm.mainflag == ITEM_KAT_NF && itm.flags)
 		{
 		   QS_PutSlot(hero, 1, ptr);  MEM_WriteInt(ESP+4,-1);
-		   ptr;
-		   MEM_CallByString("QS_AI_EquipWeapon");
+		   QS_AI_EquipWeapon(ptr);
 	
 		}
 		else if(itm.mainflag == ITEM_KAT_FF)
 		{
 			QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
-			ptr;
-			MEM_CallByString("QS_AI_EquipWeapon");
+			QS_AI_EquipWeapon(ptr);
 		}
 		
 			
@@ -630,7 +713,6 @@ func void oCNpcInventory_HandleEvent_hook()
 		
 
 
-	
 	
 	//if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); MEM_WriteInt(ESP+4,-1); }; 
 	//if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1); }; 
@@ -813,8 +895,6 @@ func void Hooks_Global()
 		HookEngineF(oCNpc__CloseDeadNpc,5,CloseDeadNpc);
 		HookEngineF(oCNpc__OpenDeadNpc,6,OpenDeadNpc);
 		HookEngineF(oCGame__GetHeroStatus,5,DynamicSaveSystem);
-
-		HookEngineF(oCNpc__fighting,7,HeroStatusFix);
 		
 		
 		HookEngineF(oCNpc__EV_DrawWeapon,6,PrintMunitionType); 

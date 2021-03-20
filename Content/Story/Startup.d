@@ -36,7 +36,7 @@ func void INIT_GLOBAL()
 	//ff_applyonce(loop);
 	// random combination
 	if (STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))) {
-		List_ForFS(MEM_World.voblist, SetRandomCombination);
+		ForAllMobs_RandomCombination();
 	};
 	Hooks_Global();
 	

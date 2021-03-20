@@ -1,6 +1,9 @@
 const int GOTHIC_BASE_VERSION = 2;
 //nasze
 const int _hero = 11216516;
+const int zSTRING_Lenght_Offset  = 12;
+const int zCListSort_Data_Offset = 4;
+const int zCListSort_Next_Offset = 8;
 
 //--------------------------------------
 // Nutzervariablen:

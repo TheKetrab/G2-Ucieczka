@@ -2,19 +2,19 @@
 // Alle Transform Spells
 // *********************
 
-const int SPL_Cost_TrfSheep			= 10; // nasz swampdrone
-const int SPL_Cost_TrfScavenger		= 10;
-const int SPL_Cost_TrfGiantRat		= 10; // nasz stonegolem
-const int SPL_Cost_TrfGiantBug		= 10; // nasz meatbug
-const int SPL_Cost_TrfWolf			= 10;
-const int SPL_Cost_TrfWaran			= 10;
-const int SPL_Cost_TrfSnapper		= 10;
-const int SPL_Cost_TrfWarg			= 10;
-const int SPL_Cost_TrfFireWaran		= 10;
-const int SPL_Cost_TrfLurker		= 10;
-const int SPL_Cost_TrfShadowbeast	= 10;
-const int SPL_Cost_TrfDragonSnapper	= 10;
-const int SPL_Cost_TrfMeatbug		= 10;
+const int SPL_Cost_TrfSheep			= 5; // nasz swampdrone
+const int SPL_Cost_TrfScavenger		= 5;
+const int SPL_Cost_TrfGiantRat		= 5; // nasz stonegolem
+const int SPL_Cost_TrfGiantBug		= 5; // nasz meatbug
+const int SPL_Cost_TrfWolf			= 5;
+const int SPL_Cost_TrfWaran			= 5;
+const int SPL_Cost_TrfSnapper		= 5;
+const int SPL_Cost_TrfWarg			= 5;
+const int SPL_Cost_TrfFireWaran		= 5;
+const int SPL_Cost_TrfLurker		= 5;
+const int SPL_Cost_TrfShadowbeast	= 5;
+const int SPL_Cost_TrfDragonSnapper	= 5;
+const int SPL_Cost_TrfMeatbug		= 5;
 
 var int TrfSheepUsed;
 var int TrfScavengerUsed;

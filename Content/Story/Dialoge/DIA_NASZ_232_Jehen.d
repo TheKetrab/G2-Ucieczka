@@ -330,6 +330,8 @@ FUNC VOID DIA_NASZ_232_Jehen_TalkedToGestath_TakeThis()
 	B_GiveInvItems(self,other,ItMi_Lute,1);
 	LutniaDlaEngora = 1;
 	
+	B_LogEntry (TOPIC_Engor_lutnia, "Mam instrument. W koñcu mogê zanieœæ go Engorowi.");
+
 	B_LogEntry (TOPIC_Jehen_strzala, "Zdecydowa³em, ¿e wezmê stary instument Jehena. Nie ma czasu do stracenia! Engor i tak bêdzie zadowolony - nie wspominaj¹c o Silasie.");
 	Log_SetTopicStatus(TOPIC_Jehen_strzala, LOG_SUCCESS);
 	
@@ -415,6 +417,8 @@ FUNC VOID DIA_NASZ_232_Jehen_HowWork_Info()
 	
 		AI_Output (other, self,"DIA_NASZ_232_Jehen_HowWork_55_03"); //O to siê nie martw, trzymaj siê!
 		AI_Output (self, other,"DIA_NASZ_232_Jehen_HowWork_55_04"); //Ty równie¿!
+		
+		B_LogEntry (TOPIC_Engor_lutnia, "Mam instrument. W koñcu mogê zanieœæ go Engorowi.");
 		
 		Log_SetTopicStatus (TOPIC_Jehen_strzala, LOG_SUCCESS);
 		B_LogEntry (TOPIC_Jehen_strzala, "Mam lutniê! Teraz mogê zanieœæ j¹ Engorowi.");

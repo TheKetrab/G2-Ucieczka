@@ -35,6 +35,7 @@ FUNC INT PC_Smazenie_Exit_Condition()
 
 FUNC VOID PC_Smazenie_Exit_Info ()
 {
+	Npc_RemoveInvItems(hero,ItFoMutton,1);
 	B_ENDPRODUCTIONDIALOG ();		
 };
 

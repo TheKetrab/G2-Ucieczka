@@ -93,7 +93,7 @@ FUNC INT DIA_NASZ_020_Sattar_Metody1_Condition()
 FUNC VOID DIA_NASZ_020_Sattar_Metody1_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_020_Sattar_Metody1_15_00"); //Mam nadziejê, ¿e nie jesteœ zajêty lub zbyt zmêczony, bo przychodzê do ciebie w pilnej sprawie.
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_01"); //Domyœlam siê, ¿e przysy³a ciê Ben? Najwy¿szy czas!
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_01"); //Tak, wiem o co chodzi. S³ysza³em wasz¹ rozmowê.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_02"); //Najlepiej bêdzie jak od razu zabierzemy siê do pracy, gdy¿ bêdê potrzebowa³ potem nieco czasu, aby stworzyæ magiczn¹ formu³ê zaklêcia.
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_03"); //Nie zrozum mnie Ÿle, nie w¹tpiê w twe umiejêtnoœci magiczne, ale... Mo¿esz mi wyt³umaczyæ, jak chcesz stworzyæ zwój od podstaw?
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_04"); //Nie wiem zbyt wiele o ca³ym procesie zaklinania formu³ w zwojach. Znam jedynie kilka faktów, jakie zas³ysza³em bêd¹c pos³añcem Magów Ognia jeszcze w czasach kolonii karnej.

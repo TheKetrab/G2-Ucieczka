@@ -453,16 +453,16 @@ FUNC VOID DIA_NASZ_122_Daniel_Training_Info()
 	
 	if(LevelMiner <= 80) && (LevelMiner > 55)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz     (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz      (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
 	}
 	else if(LevelMiner <= 55) && (LevelMiner > 30)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz     (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz      (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
 		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Zawodowiec (Wymagane 55% górnictwa) 10 PN, 200 szt. z³ota",DIA_NASZ_122_Daniel_Training_zawodowiec);
 	}
 	else if(LevelMiner <= 30)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz     (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Mistrz      (Wymagane 80% górnictwa) 15 PN, 300 szt. z³ota",DIA_NASZ_122_Daniel_Training_mistrz);
 		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Zawodowiec (Wymagane 55% górnictwa) 10 PN, 200 szt. z³ota",DIA_NASZ_122_Daniel_Training_zawodowiec);
 		Info_AddChoice (DIA_NASZ_122_Daniel_Training,"Kopacz     (Wymagane 30% górnictwa) 5  PN, 100 szt. z³ota",DIA_NASZ_122_Daniel_Training_kopacz);
 	};
@@ -584,16 +584,16 @@ FUNC VOID DIA_NASZ_122_Daniel_TrainingFree_Info()
 	
 	if(LevelMiner <= 80) && (LevelMiner > 55)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz     (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz      (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
 	}
 	else if(LevelMiner <= 55) && (LevelMiner > 30)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz     (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz      (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
 		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Zawodowiec (Wymagane 55% górnictwa) 10 PN",DIA_NASZ_122_Daniel_TrainingFree_zawodowiec);
 	}
 	else if(LevelMiner <= 30)
 	{
-		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz     (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
+		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Mistrz      (Wymagane 80% górnictwa) 15 PN",DIA_NASZ_122_Daniel_TrainingFree_mistrz);
 		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Zawodowiec (Wymagane 55% górnictwa) 10 PN",DIA_NASZ_122_Daniel_TrainingFree_zawodowiec);
 		Info_AddChoice (DIA_NASZ_122_Daniel_TrainingFree,"Kopacz     (Wymagane 30% górnictwa) 5  PN",DIA_NASZ_122_Daniel_TrainingFree_kopacz);
 	};

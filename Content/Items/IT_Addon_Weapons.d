@@ -121,7 +121,7 @@ INSTANCE ItMW_Addon_Stab02 (C_Item)
 
 	description			= 	name;
 
-	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[1]				= NAME_Damage;					COUNT[0]	= damageTotal;
 	
 	TEXT[2]				= NAME_Bonus_Mana;				COUNT[2]	= 20;//FIXME_FILLER
 	TEXT[3] 			= NAME_Mana_needed;				COUNT[3]	= cond_value[2];
@@ -383,7 +383,7 @@ INSTANCE ItMW_Addon_Keule_1h_01 (C_Item)
 
 	description			= name;
 	
-	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[1]				= NAME_Damage;					COUNT[0]	= damageTotal;
 	
 	TEXT[2]				= NAME_ADDON_MALUS_1H;			COUNT[2]	= Waffenbonus_10;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];

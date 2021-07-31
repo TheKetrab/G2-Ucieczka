@@ -36,8 +36,7 @@ FUNC VOID DIA_NASZ_002_Daryl_EXIT_Info()
 	}
 	else
 	{
-		AI_StopProcessInfos (self);
-		
+		AI_StopProcessInfos (self);		
 	};
 };
 

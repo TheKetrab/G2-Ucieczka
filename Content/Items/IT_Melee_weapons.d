@@ -1557,7 +1557,7 @@ INSTANCE ItMw_1H_Special_01 (C_Item)
 
 	description			= name;
 	
-	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[0]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[2]				= NAME_ADDON_BONUS_1H;			COUNT[2]	= Waffenbonus_10;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -2227,7 +2227,7 @@ INSTANCE ItMw_2H_Special_03 (C_Item)
 
 	description			= name;
 	
-	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[0]	= damageTotal;
 	
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_10;

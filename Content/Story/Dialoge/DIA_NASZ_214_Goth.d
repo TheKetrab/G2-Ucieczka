@@ -135,6 +135,8 @@ FUNC VOID DIA_NASZ_214_Goth_HavePieczyste_Info()
 	AI_Output (other, self,"DIA_NASZ_214_Goth_HavePieczyste_55_10"); //Oczywiœcie, dziêki za wskazówkê.
 	
 	B_StartOtherRoutine(NASZ_232_Jehen,"Start");
+
+	B_LogEntry (TOPIC_Engor_lutnia, "Zadowolony myœliwy zdradzi³ mi imiê: to Jehen.");
 	
 	Log_CreateTopic (TOPIC_Jehen_strzala, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jehen_strzala, LOG_RUNNING);

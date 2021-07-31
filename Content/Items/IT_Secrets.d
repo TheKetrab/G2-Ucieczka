@@ -128,7 +128,7 @@ INSTANCE ItSe_GoldPocket20	(C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   GoldPocket25;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";
@@ -158,7 +158,7 @@ INSTANCE ItSe_GoldPocket25	(C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   GoldPocket25;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";
@@ -187,7 +187,7 @@ INSTANCE ItSe_GoldPocket50	(C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   GoldPocket50;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";
@@ -216,7 +216,7 @@ INSTANCE ItSe_GoldPocket100	(C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   GoldPocket100;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";
@@ -245,7 +245,7 @@ INSTANCE ItSe_HannasBeutel	(C_Item)
 	material 			=	MAT_LEATHER;
 	on_state[0]			=   HannasBeutel;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";

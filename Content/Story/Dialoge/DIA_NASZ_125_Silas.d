@@ -136,6 +136,7 @@ INSTANCE DIA_NASZ_125_Silas_End   (C_INFO)
 FUNC INT DIA_NASZ_125_Silas_End_Condition()
 {
 	if (LOWCA_SIKA_END == TRUE)
+	 || (npc_isdead(NASZ_108_Lowca) && NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) // po wygraniu walki
 	{
 		return TRUE;
 	};

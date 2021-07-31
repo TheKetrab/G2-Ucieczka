@@ -353,7 +353,7 @@ func void DIA_NASZ_103_Johny_PICKPOCKET_DoIt()
 	
 	B_BeklauenThings (ItNa_HuntAmulet, 1);
 	
-	if (other.attribute[ATR_DEXTERITY] < 16) {
+	if (hero.attribute[ATR_DEXTERITY] < 16) {
 		B_LogEntry (TOPIC_Hunt_amulet, "Johny nakry³ mnie na kradzie¿y. Chyba bêdê musia³ uczciwie kupiæ amulet.");
 		JohnyThiefFail = TRUE;
 	}

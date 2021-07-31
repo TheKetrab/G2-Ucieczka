@@ -784,7 +784,7 @@ INSTANCE ItSe_Golemchest_Mis	(C_Item)
 	material 			=	MAT_METAL;
 	on_state[0]			=   Use_GolemChest;
 	
-	description			= 	"Skórzany mieszek.";
+	description			= 	"Skórzany mieszek";
 	
 	TEXT[0]				= 	"";
 	TEXT[1]				= 	"";

@@ -108,7 +108,7 @@ func void HandleEvents_hook(/*int key*/)
 
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
-		var int heroPtr; heroPtr = MEM_READINT(hero);
+		var int heroPtr; heroPtr = MEM_READINT(_hero);
 		var int fcsss; fcsss = MEM_READINT(heroPtr+2476/*player->focus_vob*/);
 		if(!NpcIsFighting(hero) && !C_NpcIsDown(hero) && HLP_Is_oCNpc(fcsss))
 		{

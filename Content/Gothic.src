@@ -5,6 +5,9 @@ AI\AI_INTERN\AI_CONSTANTS.D
 
 _INTERN\Ikarus_G2.src
 LeGo\Header_G2.src
+
+Spine\Spine.src
+
 Funcs\Functions.d
 Funcs\RandomCombination.d
 Funcs\Achievements.d

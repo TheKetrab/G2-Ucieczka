@@ -861,7 +861,10 @@ FUNC VOID DIA_NASZ_232_Jehen_HaveLuski_Info()
 	AI_StopProcessInfos(self);
 	
 	B_LogEntry (TOPIC_Jehen_poscig, "Jehen zauwa¿y³ b³ysk œwiat³a dochodz¹cy spod wody, z jaskini pod wulkanem. Muszê to sprawdziæ.");
+	
+	Npc_ClearAIQueue(NASZ_021_Nieznajomy);
 	B_StartOtherRoutine(NASZ_021_Nieznajomy,"StartOUT");
+	AI_Teleport(NASZ_021_Nieznajomy,"NASZ_JEHEN_QUEST_09");
 };
 
 //*********************************************************************

@@ -29,7 +29,7 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   
   if (rep_lowcy_s >= 100) && (RepLowcy_OneTime == FALSE)	{
 		RepLowcy_OneTime = TRUE;
-		AddAchievement(Acv20Title,Acv20Content);
+		AddAchievement(20,Acv20Title,Acv20Content);
 	};
  }
  else if(ukogo==2){
@@ -46,7 +46,7 @@ FUNC VOID DodajReputacje(var int ile, var int ukogo){
   
   if (rep_mysliwi_s >= 100) && (RepMysliwi_OneTime == FALSE)	{
 		RepMysliwi_OneTime = TRUE;
-		AddAchievement(Acv20Title,Acv20Content);
+		AddAchievement(20,Acv20Title,Acv20Content);
 	};
  }
  else if(ukogo==3){

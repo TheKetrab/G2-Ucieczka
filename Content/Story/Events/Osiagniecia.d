@@ -199,52 +199,52 @@ var int achievement_skok_onetime;
 func void ACHIEVEMENT_SKOK_SCRIPT_FUNC() {
 	if (achievement_skok_onetime == FALSE) {
 		achievement_skok_onetime = TRUE;
-		AddAchievement(Acv13Title,Acv13Content);
+		AddAchievement(13,Acv13Title,Acv13Content);
 	};
 };
 
 func void Check_OSIAGNIECIA() {
 
-	if (Osiagniecie1OneTime == FALSE && PokonaneWszystkie_Liczba >= 1000)		{ Osiagniecie1OneTime = TRUE; AddAchievement(Acv1Title,Acv1Content); };		// 1
-	if (Osiagniecie2OneTime == FALSE && LevelMiner >= 100)						{ Osiagniecie2OneTime = TRUE; AddAchievement(Acv2Title,Acv2Content); };		// 2
-	if (Osiagniecie3OneTime == FALSE && PoznaneSekrety_Liczba >= 5)				{ Osiagniecie3OneTime = TRUE; AddAchievement(Acv3Title,Acv3Content);		// 3
+	if (Osiagniecie1OneTime == FALSE && PokonaneWszystkie_Liczba >= 1000)		{ Osiagniecie1OneTime = TRUE; AddAchievement(1,Acv1Title,Acv1Content); };		// 1
+	if (Osiagniecie2OneTime == FALSE && LevelMiner >= 100)						{ Osiagniecie2OneTime = TRUE; AddAchievement(2,Acv2Title,Acv2Content); };		// 2
+	if (Osiagniecie3OneTime == FALSE && PoznaneSekrety_Liczba >= 5)				{ Osiagniecie3OneTime = TRUE; AddAchievement(3,Acv3Title,Acv3Content);			// 3
 																				  Log_SetTopicStatus(TOPIC_Gildia_Alchemikow, LOG_SUCCESS);
 																				  B_LogEntry (TOPIC_Gildia_Alchemikow,"Znam ju¿ wszystkie przepisy Gildii Alchemików. Wykorzystam ich sekrety. Z pewnoœci¹!"); };
-	if (Osiagniecie4OneTime == FALSE && NauczoneZlodziejskie >= 4) 				{ Osiagniecie4OneTime = TRUE; AddAchievement(Acv4Title,Acv4Content); };		// 4
-	if (Osiagniecie5OneTime == FALSE && JestesMistrzemAreny == TRUE)			{ Osiagniecie5OneTime = TRUE; AddAchievement(Acv5Title,Acv5Content); };		// 5
+	if (Osiagniecie4OneTime == FALSE && NauczoneZlodziejskie >= 4) 				{ Osiagniecie4OneTime = TRUE; AddAchievement(4,Acv4Title,Acv4Content); };		// 4
+	if (Osiagniecie5OneTime == FALSE && JestesMistrzemAreny == TRUE)			{ Osiagniecie5OneTime = TRUE; AddAchievement(5,Acv5Title,Acv5Content); };		// 5
 	if (Osiagniecie6OneTime == FALSE && npc_isdead(NASZ_009_Marcos)
 									 && npc_isdead(NASZ_006_Renegat)
 									 && npc_isdead(NASZ_011_Renegat)
 									 && npc_isdead(NASZ_013_Renegat)
-									 && npc_isdead(NASZ_014_Renegat))			{ Osiagniecie6OneTime = TRUE; AddAchievement(Acv6Title,Acv6Content); };		// 6
+									 && npc_isdead(NASZ_014_Renegat))			{ Osiagniecie6OneTime = TRUE; AddAchievement(6,Acv6Title,Acv6Content); };		// 6
 	  
 
-	if (Osiagniecie7OneTime == FALSE && WszystkieGrobyAchievement >= 20)		{ Osiagniecie7OneTime = TRUE; AddAchievement(Acv7Title,Acv7Content); };		// 7
-	if (Osiagniecie8OneTime == FALSE && wszyscy_orkowie_nie_zyja == TRUE)		{ Osiagniecie8OneTime = TRUE; AddAchievement(Acv8Title,Acv8Content); };		// 8
-	if (Osiagniecie9OneTime == FALSE && ZabiteBossy >= 10)						{ Osiagniecie9OneTime = TRUE; AddAchievement(Acv9Title,Acv9Content); };		// 9
-	if (Osiagniecie10OneTime == FALSE && ZabiteGiganty >= 7)					{ Osiagniecie10OneTime = TRUE; AddAchievement(Acv10Title,Acv10Content); };	// 10
+	if (Osiagniecie7OneTime == FALSE && WszystkieGrobyAchievement >= 20)		{ Osiagniecie7OneTime = TRUE; AddAchievement(7,Acv7Title,Acv7Content); };		// 7
+	if (Osiagniecie8OneTime == FALSE && wszyscy_orkowie_nie_zyja == TRUE)		{ Osiagniecie8OneTime = TRUE; AddAchievement(8,Acv8Title,Acv8Content); };		// 8
+	if (Osiagniecie9OneTime == FALSE && ZabiteBossy >= 10)						{ Osiagniecie9OneTime = TRUE; AddAchievement(9,Acv9Title,Acv9Content); };		// 9
+	if (Osiagniecie10OneTime == FALSE && ZabiteGiganty >= 7)					{ Osiagniecie10OneTime = TRUE; AddAchievement(10,Acv10Title,Acv10Content); };	// 10
 
 
-	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(Acv11Title,Acv11Content); };	// 11
-	if (Osiagniecie12OneTime == FALSE && hero.lp >= 50)							{ Osiagniecie12OneTime = TRUE; AddAchievement(Acv12Title,Acv12Content); };	// 12
-	// 13 ---> Ustawiane w funkcji ACHIEVEMENT_SKOK_SCRIPT_FUNC																								// 13
-	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(Acv14Title,Acv14Content); };	// 14
-	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(Acv15Title,Acv15Content); };	// 15
-	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(Acv16Title,Acv16Content); };	// 16
-	if (Osiagniecie17OneTime == FALSE && EatenPlants >= 14)						{ Osiagniecie17OneTime = TRUE; AddAchievement(Acv17Title,Acv17Content); };	// 17 - h1,h2,h3,m1,m2,m3,dex,str,speed,blue,forber,plantber,temp,perm
-	// 18 ---> Ustawiane w funkcji OnDamage.d / DMG_OnDmg																									// 18
-	if (Osiagniecie19OneTime == FALSE && OdtrutkaEverUsed == TRUE)				{ Osiagniecie19OneTime = TRUE; AddAchievement(Acv19Title,Acv19Content); };	// 19
-	// 20 ---> Ustawiane w funkcji Reputation.d / DodajReputacje																							// 20
-	if (Osiagniecie21OneTime == FALSE && SleptHours >= 100)						{ Osiagniecie21OneTime = TRUE; AddAchievement(Acv21Title,Acv21Content); };	// 21
-	if (Osiagniecie22OneTime == FALSE && InnosPrayInRow >= 3)					{ Osiagniecie22OneTime = TRUE; AddAchievement(Acv22Title,Acv22Content); };	// 22
-	// 23 ---> Ustawiane w funkcji BonusPack.d / check_all_magnat																							// 23
-	if (Osiagniecie24OneTime == FALSE && VST_Kilometers >= 50)					{ Osiagniecie24OneTime = TRUE; AddAchievement(Acv24Title,Acv24Content); };	// 24
-	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(Acv25Title,Acv25Content); };	// 25 
-	if (Osiagniecie26OneTime == FALSE && zdeptane_chrzaszcze >= 10)				{ Osiagniecie26OneTime = TRUE; AddAchievement(Acv26Title,Acv26Content); };	// 26
-	if (Osiagniecie27OneTime == FALSE && HeroHasAllNewSkills())					{ Osiagniecie27OneTime = TRUE; AddAchievement(Acv27Title,Acv27Content); };	// 27
-	if (Osiagniecie28OneTime == FALSE && DrunkTrinken >= 30)					{ Osiagniecie28OneTime = TRUE; AddAchievement(Acv28Title,Acv28Content); };	// 28
-	if (Osiagniecie29OneTime == FALSE && HeroHasAllTrophySkills())				{ Osiagniecie29OneTime = TRUE; AddAchievement(Acv29Title,Acv29Content); };	// 29
-	// 30 ---> Ustawiane w funkcji KrolRabunku.d / CheckAllChests																							// 30
+	if (Osiagniecie11OneTime == FALSE && ZardzewialeMieczePodniesione >= 100)	{ Osiagniecie11OneTime = TRUE; AddAchievement(11,Acv11Title,Acv11Content); };	// 11
+	if (Osiagniecie12OneTime == FALSE && hero.lp >= 50)							{ Osiagniecie12OneTime = TRUE; AddAchievement(12,Acv12Title,Acv12Content); };	// 12
+	// 13 ---> Ustawiane w funkcji ACHIEVEMENT_SKOK_SCRIPT_FUNC																									// 13
+	if (Osiagniecie14OneTime == FALSE && ZlamaneWytrychy >= 50)					{ Osiagniecie14OneTime = TRUE; AddAchievement(14,Acv14Title,Acv14Content); };	// 14
+	if (Osiagniecie15OneTime == FALSE && WillUzyteZaklecia >= 30)				{ Osiagniecie15OneTime = TRUE; AddAchievement(15,Acv15Title,Acv15Content); };	// 15
+	if (Osiagniecie16OneTime == FALSE && DivingTime >= 300)						{ Osiagniecie16OneTime = TRUE; AddAchievement(16,Acv16Title,Acv16Content); };	// 16
+	if (Osiagniecie17OneTime == FALSE && EatenPlants >= 14)						{ Osiagniecie17OneTime = TRUE; AddAchievement(17,Acv17Title,Acv17Content); };	// 17 - h1,h2,h3,m1,m2,m3,dex,str,speed,blue,forber,plantber,temp,perm
+	// 18 ---> Ustawiane w funkcji OnDamage.d / DMG_OnDmg																										// 18
+	if (Osiagniecie19OneTime == FALSE && OdtrutkaEverUsed == TRUE)				{ Osiagniecie19OneTime = TRUE; AddAchievement(19,Acv19Title,Acv19Content); };	// 19
+	// 20 ---> Ustawiane w funkcji Reputation.d / DodajReputacje																								// 20
+	if (Osiagniecie21OneTime == FALSE && SleptHours >= 100)						{ Osiagniecie21OneTime = TRUE; AddAchievement(21,Acv21Title,Acv21Content); };	// 21
+	if (Osiagniecie22OneTime == FALSE && InnosPrayInRow >= 3)					{ Osiagniecie22OneTime = TRUE; AddAchievement(22,Acv22Title,Acv22Content); };	// 22
+	// 23 ---> Ustawiane w funkcji BonusPack.d / check_all_magnat																								// 23
+	if (Osiagniecie24OneTime == FALSE && VST_Kilometers >= 50)					{ Osiagniecie24OneTime = TRUE; AddAchievement(24,Acv24Title,Acv24Content); };	// 24
+	if (Osiagniecie25OneTime == FALSE && VST_Kilometers >= 100)					{ Osiagniecie25OneTime = TRUE; AddAchievement(25,Acv25Title,Acv25Content); };	// 25 
+	if (Osiagniecie26OneTime == FALSE && zdeptane_chrzaszcze >= 10)				{ Osiagniecie26OneTime = TRUE; AddAchievement(26,Acv26Title,Acv26Content); };	// 26
+	if (Osiagniecie27OneTime == FALSE && HeroHasAllNewSkills())					{ Osiagniecie27OneTime = TRUE; AddAchievement(27,Acv27Title,Acv27Content); };	// 27
+	if (Osiagniecie28OneTime == FALSE && DrunkTrinken >= 30)					{ Osiagniecie28OneTime = TRUE; AddAchievement(28,Acv28Title,Acv28Content); };	// 28
+	if (Osiagniecie29OneTime == FALSE && HeroHasAllTrophySkills())				{ Osiagniecie29OneTime = TRUE; AddAchievement(29,Acv29Title,Acv29Content); };	// 29
+	// 30 ---> Ustawiane w funkcji KrolRabunku.d / CheckAllChests																								// 30
 
 	
 

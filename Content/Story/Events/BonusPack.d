@@ -144,7 +144,7 @@ FUNC VOID check_all_magnat()
 	if ((Magnat_OneTime==FALSE) && all_magnat_equipped())
 	{
 		Magnat_OneTime = TRUE;
-		AddAchievement(Acv23Title,Acv23Content);
+		AddAchievement(23,Acv23Title,Acv23Content);
 		B_GivePlayerXP(500);
 	};
 };

@@ -106,7 +106,11 @@ const string Acv30Title   = "Król rabunku";
 const string Acv30Content = "Otworzy³eœ wszystkie kufry w obozach £owców i Myœliwych.";
 
 
-func void AddAchievement(var string title, var string content) {
+func void AddAchievement(var int id, var string title, var string content) {
+
+	// ----- SPINE -----
+	Spine_UnlockAchievement(id-1);
+	// ----- ----- -----
 
 	AchievementsCnt += 1;
 

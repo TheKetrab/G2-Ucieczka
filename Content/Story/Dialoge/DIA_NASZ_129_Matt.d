@@ -324,6 +324,7 @@ FUNC VOID DIA_NASZ_129_Matt_HowDoYou_Info()
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"FollowMountain");
 	
-	AI_Teleport(NASZ_021_Nieznajomy,"NASZ_NIEZNAJOMY_2");
+	Npc_ClearAIQueue(NASZ_021_Nieznajomy);
 	B_StartOtherRoutine(NASZ_021_Nieznajomy,"StartDJG");
+	AI_Teleport(NASZ_021_Nieznajomy,"NASZ_NIEZNAJOMY_2");
 };

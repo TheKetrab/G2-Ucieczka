@@ -1453,8 +1453,10 @@ func void _TickTock_1s()
 	
 	if ((NieznajomySiePojawiaMattOneTime == FALSE) && (npc_hasitems(hero,ItNa_RytualneOstrze)>=1) && (npc_hasitems(hero,ItNa_Matt_Kartka)>=1)) {
 		NieznajomySiePojawiaMattOneTime = TRUE;
-		AI_Teleport(NASZ_021_Nieznajomy,"NASZ_MATT_DEAD_2");
+
+		Npc_ClearAIQueue(NASZ_021_Nieznajomy);
 		B_StartOtherRoutine(NASZ_021_Nieznajomy,"Matt");
+		AI_Teleport(NASZ_021_Nieznajomy,"NASZ_MATT_DEAD_2");
 	};
 	
 	

@@ -646,7 +646,7 @@ func void Acv18Delay() {
 	// 1s -> jesli jakis npc czlowiek uderzyl hero, to ma 1hp i lezy na ziemi -> czyli dlatego warunek !instate ZS_Unconscious
 	if (!Npc_IsInState(hero,ZS_Unconscious) && (hero.attribute[ATR_HITPOINTS] == 1)) {
 		Osiagniecie18OneTime = TRUE;
-		AddAchievement(Acv18Title,Acv18Content);
+		AddAchievement(18,Acv18Title,Acv18Content);
 	};
 
 	Acv18DelayTimer = FALSE;

@@ -13,9 +13,9 @@ func int NpcBreakArenaLaw(var c_npc slf) {
 
 func int HeroIsLeavingArena() {
 
-	if (Npc_GetDistToWP (hero, "NASZ_LOWCY_ARENA_01") >=650)
-	&& (Npc_GetDistToWP (hero, "NASZ_LOWCY_ARENA_20") >= 100) // zeby obejmowalo arene, jesli jest przy tym wp, to jest ok 
-	&& (Npc_GetDistToWP	(hero, "NASZ_LOWCY_ARENA_01") < 1000)
+	if (Npc_GetDistToWP (hero, "NASZ_LOWCY_ARENA_01") >= 660)
+	//&& (Npc_GetDistToWP (hero, "NASZ_LOWCY_ARENA_20") >= 100) // zeby obejmowalo arene, jesli jest przy tym wp, to jest ok 
+	&& (Npc_GetDistToWP	(hero, "NASZ_LOWCY_ARENA_01") < 800)
 	&& (Arena_Opuszczasz_Raz == FALSE)
 	{
 		return true;

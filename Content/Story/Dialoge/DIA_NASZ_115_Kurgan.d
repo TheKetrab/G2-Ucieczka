@@ -298,9 +298,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_fed_ok()
 
 	B_GiveInvItems (other, self, ItMI_gold, 100);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 100);
+
+	Npc_ClearAIQueue(NASZ_117_Fed);
 	Npc_ExchangeRoutine (NASZ_117_Fed, "Arena");
 	Kurgan_walka=1;
 	NASZ_117_Fed.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
+
 	AI_StopProcessInfos (self);
 	WalkaTrwa = TRUE;
 };
@@ -339,7 +342,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_fedwon_Info()
 	Createinvitems (self, itmi_gold, 150);
 	B_Giveinvitems (self, other, itmi_gold, 150);
 	B_GivePlayerXP (100);
+
+	Npc_ClearAIQueue(NASZ_117_Fed);
 	Npc_ExchangeRoutine(NASZ_117_Fed, "START");
+
 	Kurgan_walka=0;
 	FED_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -371,7 +377,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_fedlost_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fedlost_55_00"); //Przegra³eœ. Twoje z³oto dostaje Fed.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fedlost_55_01"); //Jeœli bêdziesz chcia³ wyrównaæ z nim rachunki, to przyjdŸ, zap³aæ i walcz!
+
+	Npc_ClearAIQueue(NASZ_117_Fed);
 	Npc_ExchangeRoutine(NASZ_117_Fed, "START");
+
 	Kurgan_walka=0;
 	FED_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -447,9 +456,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_kjorn_ok()
 
 	B_GiveInvItems (other, self, ItMI_gold, 200);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 200);
+
+	Npc_ClearAIQueue(NASZ_116_Kjorn);
 	Npc_ExchangeRoutine (NASZ_116_Kjorn, "Arena");
 	Kurgan_walka=2;
 	NASZ_116_Kjorn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
+
 	AI_StopProcessInfos (self);
 	WalkaTrwa = TRUE;
 };
@@ -486,7 +498,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_kjornwon_Info()
 	Createinvitems (self, itmi_gold, 300);
 	B_Giveinvitems (self, other, itmi_gold, 300);
 	B_GivePlayerXP (200);
+	
+	Npc_ClearAIQueue(NASZ_116_Kjorn);
 	Npc_ExchangeRoutine(NASZ_116_Kjorn, "START");
+
 	Kurgan_walka=0;
 	KJORN_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -518,7 +533,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_kjornlost_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjornlost_55_00"); //Nie da siê ukryæ, ¿e przegra³eœ.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjornlost_55_01"); //Jeœli zechcesz ma³ego rewan¿u, to mów œmia³o.
+
+	Npc_ClearAIQueue(NASZ_116_Kjorn);
 	Npc_ExchangeRoutine(NASZ_116_Kjorn, "START");
+
 	Kurgan_walka=0;
 	KJORN_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -597,9 +615,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_ferros_ok()
 
 	B_GiveInvItems (other, self, ItMI_gold, 500);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 500);
+
+	Npc_ClearAIQueue(NASZ_118_Ferros);
 	Npc_ExchangeRoutine (NASZ_118_Ferros, "Arena");
 	Kurgan_walka=3;
 	NASZ_118_Ferros.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
+
 	AI_StopProcessInfos (self);
 	WalkaTrwa = TRUE;
 };
@@ -642,7 +663,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_ferroswon_Info()
 	Createinvitems (self, itmi_gold, 750);
 	B_Giveinvitems (self, other, itmi_gold, 750);
 	B_GivePlayerXP (500);
+
+	Npc_ClearAIQueue(NASZ_118_Ferros);
 	Npc_ExchangeRoutine(NASZ_118_Ferros, "START");
+
 	Kurgan_walka=0;
 	FERROS_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -673,7 +697,10 @@ FUNC INT DIA_NASZ_115_Kurgan_ferroslost_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_ferroslost_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferroslost_55_00"); //Nie przejmuj siê. Nastêpnym razem ci siê uda.
+
+	Npc_ClearAIQueue(NASZ_118_Ferros);
 	Npc_ExchangeRoutine(NASZ_118_Ferros, "START");
+
 	Kurgan_walka=0;
 	FERROS_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -754,11 +781,15 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_ok()
 
 	B_GiveInvItems (other, self, ItMI_gold, 400);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 400);
+
+	Npc_ClearAIQueue(NASZ_113_Godar);
 	Npc_ExchangeRoutine (NASZ_113_Godar, "Arena");
+	Npc_ClearAIQueue(NASZ_114_Hokurn);
 	Npc_ExchangeRoutine (NASZ_114_Hokurn, "Arena");
 	Kurgan_walka=4;
 	NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
 	NASZ_114_Hokurn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;
+
 	AI_StopProcessInfos (self);
 	WalkaTrwa = TRUE;
 };
@@ -799,8 +830,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 		self.flags = 0; // byc moze mial niesmiertelnosc -> teraz juz nie ma
 		
 		B_LogEntry(TOPIC_Kurgan_arena,"Pokona³em Godara i Hokurna. Pora na najpotê¿niejszego gladiatora, czyli szefa areny.");
+
+		Npc_ClearAIQueue(NASZ_113_Godar);
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
+		Npc_ClearAIQueue(NASZ_114_Hokurn);
 		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
+
 		B_GivePlayerXP (800);
 		DodajReputacje (2, REP_LOWCY);
 		Kurgan_walka=5;
@@ -823,8 +858,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnWon_Info()
 	Createinvitems (self, itmi_gold, 800);
 	B_Giveinvitems (self, other, itmi_gold, 800);
 	B_GivePlayerXP (800);
+
+	Npc_ClearAIQueue(NASZ_113_Godar);
 	Npc_ExchangeRoutine(NASZ_113_Godar, "START");
+	Npc_ClearAIQueue(NASZ_114_Hokurn);
 	Npc_ExchangeRoutine(NASZ_114_Hokurn, "START");
+
 	Kurgan_walka=0;
 	GODARHOKURN_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -873,7 +912,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnLost_Info()
 		
 		FailQuest(TOPIC_Kurgan_arena,"");
 		
+		Npc_ClearAIQueue(NASZ_113_Godar);
 		Npc_ExchangeRoutine(NASZ_113_Godar, "InCastle");
+		Npc_ClearAIQueue(NASZ_114_Hokurn);
 		Npc_ExchangeRoutine(NASZ_114_Hokurn, "InCastle");
 		Kurgan_walka=0;
 
@@ -884,8 +925,12 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurnLost_Info()
 	// ----- ----- ----- ----
 	
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurnLost_55_02"); //Ale jedyny klucz do nastêpnej walki to wygraæ z tymi dwoma.
+
+	Npc_ClearAIQueue(NASZ_113_Godar);
 	Npc_ExchangeRoutine(NASZ_113_Godar, "START");
+	Npc_ClearAIQueue(NASZ_114_Hokurn);
 	Npc_ExchangeRoutine(NASZ_114_Hokurn, "START");
+
 	Kurgan_walka=0;
 	GODARHOKURN_WALCZY = FALSE;
 	WalkaTrwa = FALSE;
@@ -1504,21 +1549,31 @@ FUNC VOID DIA_NASZ_115_Kurgan_SzturmNaZamek_Info()
 	WillIdziePierwszyRazNaZamek = TRUE;
 	HookEngineF(oCNpc__ProcessNpc,6,UratujFunc);
 	
+	Npc_ClearAIQueue(NASZ_113_Godar);
 	B_StartOtherRoutine (NASZ_113_Godar,"Zamek");
 	//NASZ_113_Godar.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_113_Godar,1);
+
+	Npc_ClearAIQueue(NASZ_114_Hokurn);
 	B_StartOtherRoutine (NASZ_114_Hokurn,"Zamek");
 	//NASZ_114_Hokurn.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_114_Hokurn,1);
+
 	B_StartOtherRoutine (NASZ_115_Kurgan,"Zamek");
 	//NASZ_115_Kurgan.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_115_Kurgan,1);
+
+	Npc_ClearAIQueue(NASZ_116_Kjorn);
 	B_StartOtherRoutine (NASZ_116_Kjorn,"Zamek");
 	//NASZ_116_Kjorn.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_116_Kjorn,1);
+
+	Npc_ClearAIQueue(NASZ_117_Fed);
 	B_StartOtherRoutine (NASZ_117_Fed,"Zamek");
 	//NASZ_117_Fed.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_117_Fed,1);
+
+	Npc_ClearAIQueue(NASZ_118_Ferros);
 	B_StartOtherRoutine (NASZ_118_Ferros,"Zamek");
 	//NASZ_118_Ferros.aivar[AIV_PARTYMEMBER] = TRUE;
 	Druzyna (NASZ_118_Ferros,1);

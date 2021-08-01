@@ -14,13 +14,16 @@ func void PC_Sleep (var int t)
 	{
 		diff = t - start;
 		Wld_SetTime	(t,00);
+		Print("1");
 	}
 	else
 	{
 		t = t + 24;
-		diff = 24 - (t-start);
+		diff = t - start;
 		Wld_SetTime	(t,00);
+		Print("2");
 	};
+	Print(IntToString(diff));
 	SleptHours += diff;
 
 	Wld_StopEffect("DEMENTOR_FX");

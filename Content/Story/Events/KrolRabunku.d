@@ -32,7 +32,7 @@ func void CheckAllChests() {
 	{
 	 if (Achievement30OneTime == FALSE) {
 		Achievement30OneTime = TRUE;
-		AddAchievement(Acv30Title,Acv30Content);
+		AddAchievement(30,Acv30Title,Acv30Content);
 	 };
 	 
 	};

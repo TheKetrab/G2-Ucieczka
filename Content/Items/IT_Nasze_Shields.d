@@ -35,7 +35,7 @@ func void UnEquip_Shield()
 };
 
 //----- Shield -----
-INSTANCE Shield (C_Item)
+INSTANCE Shields (C_Item)
 {
 	name 				=	"All shields :)";
 

@@ -2059,7 +2059,7 @@ INSTANCE ItNa_Kosmyk (C_Item)
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_MieczSusan (C_Item) 
 {	
-	name 				=	"Grzech Szakala";
+	name 				=	"G³os Susan";
 
 	mainflag 			=	ITEM_KAT_NF;
 	flags 				=	ITEM_SWD;
@@ -2387,7 +2387,7 @@ INSTANCE ItNa_MlotOrkow (C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Ring_Wiernosc(C_Item) //Im Alten Lager
+INSTANCE ItNa_Ring_Wiernosc(C_Item)
 {
 	name 					=	"Pierœcieñ wiernoœci";
 
@@ -2523,862 +2523,326 @@ FUNC VOID UnEquip_ItNa_PierscienAsasyna()
 	PierscienAsasynaUbrany = FALSE;
 };
 
-// **********************************************
-// . . . . . . . . . Projekty . . . . . . . . .
-// **********************************************
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE Project (C_Item)
+INSTANCE  ItNa_Artefakt_Sila (C_ITEM)
 {
-	name 				=	"All projects :)";
+	name 				=	"Kawa³ek artefaktu";
 
 	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION |ITEM_MULTI;
+	flags 				=	ITEM_MISSION|ITEM_MULTI;
 
 	value 				=	0;
 
-	visual 				=	"ItMi_Pocket.3ds";
-	scemename			=	"MAPSEALED";	
-	material 			=	MAT_LEATHER;
-	on_state[0]			=	Use_AllProjects;
+	visual 				=	"KawalekArtefaktu.3DS"; 
+	material 			=	MAT_METAL;
+
 	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
+	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
+
 };
 
-FUNC VOID Use_AllProjects ()
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE  ItNa_Artefakt_Moc (C_ITEM)
 {
-	// Sila / Obrazenia (Kapitel to find) / Gdzie
-	CreateInvItems (hero,ItNa_Projekt_Zmija, 1);				// 44/53 (Kap3 poczatek)   / skrzynia na pietrze u Ryzowego Ksiecia
-	CreateInvItems (hero,ItNa_Projekt_CwiekowanaMaczuga, 1);	// 11/25 (Kap1 srodek)     / skrzynia w jaskini do ktorej idziesz z Philem
-	CreateInvItems (hero,ItNa_Projekt_MieczNienawisci, 1);		// 51/44 (Kap2 koniec)     / skrzynia w domku w twierdzy
-	CreateInvItems (hero,ItNa_Projekt_MieczSwiatla, 1);			// 72/66 (Kap4 poczatek)   / w skrzyni w poziemiach zamku
-	CreateInvItems (hero,ItNa_Projekt_MieczWojenny, 1);			// 28/34 (Kap2 srodek)     / na beczkach w krypcie obok Cavalorna
-	CreateInvItems (hero,ItNa_Projekt_MieczBojowy, 1);			// 24/26 (Kap2 poczatek)   / daje Hokurn za przyniesienie mu map
-	CreateInvItems (hero,ItNa_Projekt_MieczSedziego, 1);		// 15/22 (Kap1 srodek)     / w jaskini z bossem Poln¹ Besti¹
-	CreateInvItems (hero,ItNa_Projekt_ChlopskiMiecz, 1);		// 7/14  (Kap1 poczatek)   / skrzynia w strzepku zawalonej wiezy (Gorn ma tam zloto)
-	CreateInvItems (hero,ItNa_Projekt_DobryMiecz, 1);			// 30/35 (Kap2 srodek)     / w jaskini Perrota na stole alchemicznym
-	CreateInvItems (hero,ItNa_Projekt_DobryDlugiMiecz, 1);		// 35/45 (Kap3 poczatek)   / w skrzyni w kopalni zajêtej przez pe³zacze
-	CreateInvItems (hero,ItNa_Projekt_RubinoweOstrze, 1);		// 50/50 (Kap3 srodek)     / w skrzyni w orkowym namiocie w obozie przed zamkiem
-	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 65/65 (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
-	CreateInvItems (hero,ItNa_Projekt_Oskard, 1);				// 25/35 (Kap2 srodek)     / w skrzyni w krypcie obok górskiej fortecy
-	CreateInvItems (hero,ItNa_Projekt_Inkwizytor, 1);			// 50/60 (Kap3 koniec)     / w skrzyni obok dziewiêciu prze³¹czników
-	CreateInvItems (hero,ItNa_Projekt_RunaMocy, 1);				// 60/60 (Kap3 srodek)     / w skrzyni obok przelacznika w gorskiej twierdzy, ktory odsuwa regal z ksiazkami
+	name 				=	"Kawa³ek artefaktu";
 
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION|ITEM_MULTI;
+
+	value 				=	0;
+
+	visual 				=	"KawalekArtefaktu.3DS"; 
+	material 			=	MAT_METAL;
+
+	description			= 	name;
+
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
+	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
+
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE  ItNa_Artefakt_Odpornosc (C_ITEM)
+{
+	name 				=	"Kawa³ek artefaktu";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION|ITEM_MULTI;
+
+	value 				=	0;
+
+	visual 				=	"KawalekArtefaktu.3DS"; 
+	material 			=	MAT_METAL;
+
+	description			= 	name;
+
+	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
+	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
+
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Artefakt_Caly (C_Item)
+{
+	name 				=	"Artefakt";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MULTI|ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_PortalRing_01.3DS"; 
+	material 			=	MAT_STONE;
+
+	description			= 	name;
+	TEXT	[0]			=	"Klucz do niedostêpnego klifu.";
+	INV_ZBIAS			= 	INVCAM_ENTF_MISC3_STANDARD;
 };
 
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_ChlopskiMiecz (C_Item)
+INSTANCE ItRi_Str_Mud(C_Item)
 {
-	name 				=	"Projekt";
+    name                     =    NAME_Ring;
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
+    mainflag                 =    ITEM_KAT_MAGIC;
+    flags                     =    ITEM_RING;
 
-	value 				=	0;
+    value                     =    Value_Ri_Strg02;
 
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_ChlopskiMiecz;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Ch³opski miecz";
+    visual                     =    "ItRi_Str_02.3ds";
+
+    visual_skin             =    0;
+    material                 =    MAT_METAL;
+    on_equip                =    Equip_ItRi_Str_02;
+    on_unequip                =    UnEquip_ItRi_Str_02;
+
+    wear            =     WEAR_EFFECT;
+    effect            =    "SPELLFX_ITEMGLIMMER"; 
+
+    description                = "Pierœcieñ si³y";
+    
+    TEXT[2]                    = NAME_Bonus_Str;
+    COUNT[2]                = Ri_Strg02;
+    TEXT[3]                    = "Nagrawerowano na nim symbol Magów ognia.";
+    TEXT[5]                    = NAME_Value;
+    COUNT[5]                = value;
+        
+    INV_ZBIAS                = INVCAM_ENTF_RING_STANDARD;
+    INV_ROTZ                = INVCAM_Z_RING_STANDARD;
+    INV_ROTX                = INVCAM_X_RING_STANDARD;
+    
 };
-func void Use_Projekt_ChlopskiMiecz ()
-{   
-	var int Projekt_ChlopskiMiecz_OneTime;
-	if (Projekt_ChlopskiMiecz_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_ChlopskiMiecz_OneTime = TRUE;
-	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Ch³opski miecz:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Wykuæ gor¹cy prêt na oko³o 30 centymetrów. Z reszty prêta uformowaæ poprzeczkê i stopiæ razem w ogniu. Na koñcu ostrze uformowaæ w szpic.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 7");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 14");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
+ 
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_DobryMiecz (C_Item)
+INSTANCE  ItNa_OkoSwiata(C_Item)
 {
-	name 				=	"Projekt";
+	name 			=	"Oko Œwiata";
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
+	mainflag 		=	ITEM_KAT_MAGIC;
+	flags 			=	ITEM_AMULET;
 
-	value 				=	0;
+	value 			=	1000;
 
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_DobryMiecz;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Dobry miecz";
-};
-func void Use_Projekt_DobryMiecz ()
-{   
-	var int Projekt_DobryMiecz_OneTime;
-	if (Projekt_DobryMiecz_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_DobryMiecz_OneTime = TRUE;
-	};
+	visual 			=	"ItAm_Prot_Fire_01.3ds";
+
+	visual_skin 	=	0;
+	material 		=	MAT_METAL;
+	on_equip		=	Equip_ItNa_OkoSwiata;
+	on_unequip		=	UnEquip_ItNa_OkoSwiata;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description		= "Oko Œwiata";
 	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Dobry miecz:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugi szpiczasty koniec. Klingê ubiæ na p³asko i raczej szeroko. Rêkojeœæ drewniana.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 30");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_DobryDlugiMiecz (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_DobryDlugiMiecz;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Dobry d³ugi miecz";
-};
-func void Use_Projekt_DobryDlugiMiecz ()
-{   
-	var int Projekt_DobryDlugiMiecz_OneTime;
-	if (Projekt_DobryDlugiMiecz_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_DobryDlugiMiecz_OneTime = TRUE;
-	};
+	TEXT[2]			= "Ten amulet czyni posiadacza silniejszym,";
+	TEXT[3]			= "zrêczniejszym i m¹drzejszym.";
+	TEXT[5]			= NAME_Value;
+	COUNT[5]		= value;
 	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Dobry d³ugi miecz:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- skóra wilka");
-				
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Ogromn¹ ró¿nicê mo¿e wyczuæ posiadacz, jeœli rêkojeœæ owiniemy cieñkim skórzanym paskiem. Ostrze powinno mieæ przynajmniej pó³ metra, by dobrze s³u¿yæ ka¿demu stra¿nikowi.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 35");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 45");
-				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_RubinoweOstrze (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_RubinoweOstrze;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Rubinowe ostrze";
-};
-func void Use_Projekt_RubinoweOstrze ()
-{   
-	var int Projekt_RubinoweOstrze_OneTime;
-	if (Projekt_RubinoweOstrze_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_RubinoweOstrze_OneTime = TRUE;
-	};
+	INV_ZBIAS				= INVCAM_ENTF_AMULETTE_STANDARD;
 	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Rubinowe ostrze:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- 2x wêgiel");
-				Doc_PrintLines	( nDocID,  0, "- per³a");
-				Doc_PrintLines	( nDocID,  0, "- 2x bry³ka magicznej rudy");
-				
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Si³a klejnotu dodaje charyzmy posiadaczowi. Aby dobrze go wykonaæ, nale¿y rozdrobniæ wêgiel w drobny maczek, wetrzeæ proch w per³ê i rudê, a nastêpnie wrzuciæ to razem do ognia. Wêgiel siê wypali a klejnoty stopi¹. Klinga powinna byæ lekko pofa³dowana.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 50");
-				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +7");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
 };
 
+	FUNC VOID Equip_ItNa_OkoSwiata()
+	{
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_ElBastardo (C_Item)
-{
-	name 				=	"Projekt";
+		Npc_ChangeAttribute(self,ATR_STRENGTH,+ 10);
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ 10);
+		self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + 10;
+		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + 10;
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_ElBastardo;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: El Bastardo";
-};
-func void Use_Projekt_ElBastardo ()
-{   
-	var int Projekt_ElBastardo_OneTime;
-	if (Projekt_ElBastardo_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_ElBastardo_OneTime = TRUE;
+		
+		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  self, self, 0, 0, 0, FALSE );
+		Wld_PlayEffect("FX_EarthQuake",  self, self, 0, 0, 0, FALSE );
+		Wld_PlayEffect("spellFX_INCOVATION_WHITE",  self, self, 0, 0, 0, FALSE );
+		
+		AI_PlayAni (self,"T_MAGRUN_2_HEASHOOT");	
+		AI_StandUp (self);
+		Snd_Play ("MFX_FIRERAIN_INVEST"); 
 	};
-	
-	var int nDocID;
 
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "El Bastardo:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- 10 bry³ek magicznej rudy");
-				Doc_PrintLines	( nDocID,  0, "- akwamaryn");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Stalowy prêt prze³amaæ na pó³ i uformowaæ w kolce, które stopiæ przy rêkojeœci razem z kling¹. Ca³oœæ pokryæ magiczn¹ rud¹, a we wnêtrzu rêkojeœci zamocowaæ akwamaryn.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 65");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 65");
-				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +8");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_Oskard (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_Oskard;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Oskard";
-};
-func void Use_Projekt_Oskard ()
-{   
-	var int Projekt_Oskard_OneTime;
-	if (Projekt_Oskard_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_Oskard_OneTime = TRUE;
+	FUNC VOID UnEquip_ItNa_OkoSwiata()
+	{
+		Npc_ChangeAttribute(self,ATR_STRENGTH,- 10);
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,- 10);
+		self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] - 10;
+		if (self.attribute[ATR_MANA] > (10))
+		{
+			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 10;
+		}
+		else
+		{
+			self.attribute[ATR_MANA] = 0;
 	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Oskard:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				Doc_PrintLines	( nDocID,  0, "- skóra dzika");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Kij owin¹æ dobrze nat³uszczon¹ skór¹ dzika, by przyleg³a i sklei³a siê z drewnem. Stal rozgrzaæ i uformowaæ dwie p³aszczyzny, które nastêpnie nale¿y na³o¿yæ na siebie i uformowaæ w maczugê.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 25");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_Inkwizytor (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_Inkwizytor;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Inkwizytor";
-};
-func void Use_Projekt_Inkwizytor ()
-{   
-	var int Projekt_Inkwizytor_OneTime;
-	if (Projekt_Inkwizytor_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_Inkwizytor_OneTime = TRUE;
-	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Inkwizytor:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				Doc_PrintLines	( nDocID,  0, "- skóra cieniostwora");
-				Doc_PrintLines	( nDocID,  0, "- pazury");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Wyj¹tkowo przyjemna w dotyku skóra cieniostwora powinna znaleŸæ siê na kiju. Na jego koñcu przypominaj¹ca jajo g³owica z pofa³dowaniami. Ca³oœæ zakoñczona szpicem z pazura.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_RunaMocy (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_RunaMocy;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Runa mocy";
-};
-func void Use_Projekt_RunaMocy ()
-{   
-	var int Projekt_RunaMocy_OneTime;
-	if (Projekt_RunaMocy_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_RunaMocy_OneTime = TRUE;
-	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Runa mocy:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- 4x surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- 8 bry³ek magicznej rudy");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				Doc_PrintLines	( nDocID,  0, "- ska³a krystaliczna");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugie ostrze z kilkoma kolcami u spodu. Do drewnianej rêkojeœci nale¿y w³o¿yæ ska³ê krystaliczn¹, ostrze pokryæ magiczn¹ rud¹.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz dwurêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 60");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_MieczBojowy (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_MieczBojowy;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Miecz bojowy";
-};
-func void Use_Projekt_MieczBojowy ()
-{   
-	var int Projekt_MieczBojowy_OneTime;
-	if (Projekt_MieczBojowy_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_MieczBojowy_OneTime = TRUE;
-	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Miecz bojowy:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- piêæ lag");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Rêkojeœæ tej broni sk³ada siê z kilku kawa³ków drewna, które w przekroju przypominaj¹ piêciok¹t. Dziêki temu uchwyt jest bardzo wygodny dla posiadacza. Do œrodka w³o¿one jest ostrze, formowane na p³ask¹ i d³ug¹ liniê.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 24");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 26");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_MieczWojenny (C_Item)
+INSTANCE  ItNa_AmuletKrzywegoOgnika (C_Item)  
 {
-	name 				=	"Projekt";
+	name 			=	"Amulet krzywego ognika";
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
+	mainflag 		=	ITEM_KAT_MAGIC;
+	flags 			=	ITEM_AMULET;
 
-	value 				=	0;
+	value 			=	400;
 
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_MieczWojenny;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Miecz wojenny";
-};
-func void Use_Projekt_MieczWojenny ()
-{   
-	var int Projekt_MieczWojenny_OneTime;
-	if (Projekt_MieczWojenny_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_MieczWojenny_OneTime = TRUE;
-	};
+	visual 			=	"ItAm_Mana_01.3ds";
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_WEAKGLIMMER_BLUE"; 
+
+	visual_skin 	=	0;
+	material 		=	MAT_METAL;
+	on_equip		=	Equip_AmuletKrzywegoOgnika;
+	on_unequip		=	UnEquip_AmuletKrzywegoOgnika;
+
+	description		=  name;
+
+	TEXT[0]			= "Przyzwie ognika tylko jeden raz.";
+
+	TEXT[5]			= NAME_Value;
+	COUNT[5]		= value;
+
+	INV_ZBIAS		= INVCAM_ENTF_AMULETTE_STANDARD;
 	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Miecz wojenny:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- k³y");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "K³y zwierz¹t nie tylko s¹ dobrym materia³em do wyrobu przedmiotów codziennego u¿ytku. Mog¹ sprawdziæ siê równie¿, gdy chcemy, by koñce rêkojeœci by³y zabójcze. Wystarczy umocowaæ je na kiju i œci¹æ nadmiar drewna.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 28");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 34");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
 };
 
+var int Equip_AmuletKrzywegoOgnika_OneTime;
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_MieczSedziego (C_Item)
+FUNC VOID Equip_AmuletKrzywegoOgnika()
 {
-	name 				=	"Projekt";
+	if (Equip_AmuletKrzywegoOgnika_OneTime == FALSE)
+	{
+		Equip_AmuletKrzywegoOgnika_OneTime = TRUE;
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_MieczSedziego;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Miecz sêdziego";
-};
-func void Use_Projekt_MieczSedziego ()
-{   
-	var int Projekt_MieczSedziego_OneTime;
-	if (Projekt_MieczSedziego_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_MieczSedziego_OneTime = TRUE;
+		var C_NPC DetWsp;
+		DetWsp = Hlp_GetNpc (Wisp_Helper);
+		AI_Teleport (DetWsp, "TOT");
+		Wld_SpawnNpcRange	(self,	Wisp_Helper,	1,	500);
+ 		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Wisp_Helper, Wisp_Helper, 0, 0, 0, FALSE );
+		Snd_Play ("MFX_Transform_Cast");
 	};
-	
-	var int nDocID;
+};
 
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+FUNC VOID UnEquip_AmuletKrzywegoOgnika()
+{
+		
+	var C_NPC DetWsp;
+	DetWsp = Hlp_GetNpc (Wisp_Helper);
 
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Miecz sêdziego:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
+	if (Npc_IsDead(DetWsp) == FALSE)
+	{
+		Snd_Play ("WSP_Dead_A1");
+	};
 
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "W¹ska klinga œciêta na górze. Z czym innym nie wypada pokazaæ siê arystokracie. Mo¿na wzmocniæ ostrze, przetapiaj¹c go kilkukrotnie.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 15");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 22");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
+	AI_Teleport (DetWsp, "TOT");
+	B_RemoveNpc (DetWsp);
+	AI_Teleport (DetWsp, "TOT");
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_MieczSwiatla (C_Item)
+INSTANCE  ItNa_HuntAmulet(C_Item)
 {
-	name 				=	"Projekt";
+	name 			=	NAME_Amulett;
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
+	mainflag 		=	ITEM_KAT_MAGIC;
+	flags 			=	ITEM_AMULET;
 
-	value 				=	0;
+	value 			=	300;
 
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_MieczSwiatla;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Miecz œwiat³a";
-};
-func void Use_Projekt_MieczSwiatla ()
-{   
-	var int Projekt_MieczSwiatla_OneTime;
-	if (Projekt_MieczSwiatla_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_MieczSwiatla_OneTime = TRUE;
-	};
+	visual 			=	"ItAm_Strg_01.3ds";
+
+	visual_skin 	=	0;
+	material 		=	MAT_METAL;
+	on_equip		=	Equip_ItNa_HuntAmulet;
+	on_unequip		=	UnEquip_ItNa_HuntAmulet;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description		= "Oko myœliwego";
 	
-	var int nDocID;
+	TEXT[2]			= NAME_Bonus_Dex;
+	COUNT[2]		= 10;
+	
+	TEXT[5]			= NAME_Value;
+	COUNT[5]		= value;
 
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Miecz œwiat³a:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- kwarc");
-				Doc_PrintLines	( nDocID,  0, "- ska³a krystaliczna");
-				Doc_PrintLines	( nDocID,  0, "- bry³ka rudy");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Stal rozgrzewamy w ogniu i stapiamy z kwarcem. Ska³ê krystaliczn¹ nale¿y uformowaæ w pó³kole i zbiæ z bry³k¹ magicznej rudy tak, by odbija³y œwiat³o, gdy patrzymy w kryszta³ na rêkojeœci.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 72");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 66");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
+	INV_ZBIAS				= INVCAM_ENTF_AMULETTE_STANDARD;
+	
 };
 
+	FUNC VOID Equip_ItNa_HuntAmulet()
+	{
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ 10);
+	};
+
+	FUNC VOID UnEquip_ItNa_HuntAmulet()
+	{
+		Npc_ChangeAttribute(self,ATR_DEXTERITY,- 10);
+	};
+
+	
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_Zmija (C_Item)
+INSTANCE  ItNa_AmuletZRudy(C_Item)
 {
-	name 				=	"Projekt";
+	name 			=	NAME_Amulett;
 
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
+	mainflag 		=	ITEM_KAT_MAGIC;
+	flags 			=	ITEM_AMULET;
 
-	value 				=	0;
+	value 			=	Value_ItAm_Addon_MANA;
 
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_Zmija;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: ¯mija";
-};
-func void Use_Projekt_Zmija ()
-{   
-	var int Projekt_Zmija_OneTime;
-	if (Projekt_Zmija_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_Zmija_OneTime = TRUE;
-	};
+	visual 			=	"ItAm_Hp_01.3ds";
+
+	visual_skin 	=	0;
+	material 		=	MAT_METAL;
+	on_equip		=	Equip_ItAm_Addon_MANA;
+	on_unequip		=	UnEquip_ItAm_Addon_MANA;
+
+	wear			= 	WEAR_EFFECT;
+	effect			=	"SPELLFX_ITEMGLIMMER"; 
+
+	description		=  "Nale¿a³ do piêciu braci";
+
+	TEXT[2]			= NAME_Bonus_Mana;
+	COUNT[2]		= MA_Amulett_Solo_Bonus;
 	
-	var int nDocID;
+	TEXT[3]			= "";
+	TEXT[4]			= "";
+	 
+	TEXT[5]			= NAME_Value;
+	COUNT[5]		= value;
 
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "¯mija:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- dwa kawa³ki surowej stali");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				Doc_PrintLines	( nDocID,  0, "- dwie bry³ki z³ota");
-				Doc_PrintLines	( nDocID,  0, "- per³a");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Rozgrzewamy stal i jedn¹ bry³kê z³ota, stapiamy prêty na jednym koñcu. Pozosta³e koñce skrêcamy w spiralê i ca³oœæ montujemy w rêkojeœæ wykonan¹ z twardego drewna. Poz³acamy j¹ i montujemy per³ê. UWAGA - per³a nie ma tylko charakteru ozdobnego. Niesie za sob¹ duszê tej broni...");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 53");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_CwiekowanaMaczuga (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_CwiekowanaMaczuga;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Æwiekowana maczuga";
-};
-func void Use_Projekt_CwiekowanaMaczuga ()
-{   
-	var int Projekt_CwiekowanaMaczuga_OneTime;
-	if (Projekt_CwiekowanaMaczuga_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_CwiekowanaMaczuga_OneTime = TRUE;
-	};
+	INV_ZBIAS		= INVCAM_ENTF_AMULETTE_STANDARD;
 	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Æwiekowana maczuga:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- laga");
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "W³aœnie wymyœli³em nowy rodzaj broni! Trzeba rozgrzaæ stalowy prêt i zedrzeæ go no¿em. Z pozosta³ej czêœci nale¿y uformowaæ g³owicê. Ze zdartych opi³ków trzeba sporz¹dziæ kolce i powbijaæ je do reszty.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Tutaj tego nie sprzedam, ale mo¿e uda siê pohandlowaæ ze Szkodznikami z Nowego Obozu...");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Darrion");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 11");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 25");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
 };
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Projekt_MieczNienawisci (C_Item)
-{
-	name 				=	"Projekt";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Projekt_MieczNienawisci;
-	scemeName			=	"MAP";
-	description			= 	"Projekt broni: Miecz nienawiœci";
-};
-var int Projekt_MieczNienawisci_OneTime; // musi byc globalnie - bo Jan
-func void Use_Projekt_MieczNienawisci ()
-{   
-	if (Projekt_MieczNienawisci_OneTime==FALSE) {
-		B_GivePlayerXP(25);
-		Projekt_MieczNienawisci_OneTime = TRUE;
-	};
-	
-	var int nDocID;
-
-	nDocID = 	Doc_Create		()			  ;								// DocManager 
-				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-
-				Doc_PrintLine	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "Miecz nienawiœci:"	);
-				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "- surowa stal");
-				Doc_PrintLines	( nDocID,  0, "- piwo");
-				
-				Doc_PrintLines	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Dogadam siê ze Stonem. Wykujê dla niego 10 mieczy, a on da je stra¿nikom. Mam tylko nadziejê, ¿e Bloodwyn nie bêdzie siê miesza³. A, i za ka¿dy miecz dostanê butelkê piwa!");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Zanotujê ten pomys³, bo jeszcze zapomnê i nici z ch³odnego trunku: Rozgrzaæ stal. Uformowaæ ostrze i wyostrzyæ g³owniê. Zostawiæ na chwilê i ponownie kuæ na wielkim ogniu. Sztych powinien byæ têpy, ¿eby móc zadawaæ ból, za to czubek bardzo ostry.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Piwo ju¿ jest moje! Trochê wypijê, a resztê wymieniê na parê bry³ek.");
-				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
-				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +9");
-				Doc_PrintLine	( nDocID,  0, "");
-
-				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-			
-				Doc_Show		( nDocID );
-};
-
-
-
-
-
-
-
 
 
 // **********************************************
@@ -3918,76 +3382,6 @@ func void Use_Uroboros1 ()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_KsiegaXardasOld (C_ITEM) 
-{	
-	name 					=	"Almanach mocy";
-
-	mainflag 				=	ITEM_KAT_DOCS;
-	flags 					=	ITEM_MISSION;
-
-	value 					=	0;
-
-	visual 					=	"ItWr_Book_02_05.3ds";  					//BUCH VARIATIONEN: ItWr_Book_01.3DS , ItWr_Book_02_01.3DS, ItWr_Book_02_02.3DS, ItWr_Book_02_03.3DS, ItWr_Book_02_04.3DS, ItWr_Book_02_05.3DS
-	material 				=	MAT_LEATHER;
-
-	scemeName				=	"MAP";
-	description				= 	name;
-	TEXT[5]					= 	NAME_Value;
-	COUNT[5]				= 	value;
-	on_state[0]				=	Use_ItNa_KsiegaXardasOld;
-};
-
-var int ItNa_KsiegaXardasOldFirstTime;
-FUNC VOID Use_ItNa_KsiegaXardasOld ()
-{   	 
-	if (ItNa_KsiegaXardasOldFirstTime == FALSE)
-	{
-		B_LogEntry (TOPIC_bogowie_work, "Chyba znalaz³em ksiêgê, o któr¹ chodzi³o Beliarowi. S¹ tu jakieœ dziwne s³owa...");
-		WillKnowXardasOldBook = TRUE;
-	};
-	
-	ItNa_KsiegaXardasOldFirstTime = TRUE;
-		
-	var int nDocID;
-		
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  2 );                         //wieviel Pages
-
-					Doc_SetPage 	( nDocID,  0, "BOOK_MAGE_L.tga"  , 0 	); // VARIATIONEN: BOOK_BROWN_L.tga , BOOK_MAGE_L.tga , BOOK_RED_L.tga
-					Doc_SetPage 	( nDocID,  1, "BOOK_MAGE_R.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
-					
-					//1.Seite
-
- 					Doc_SetMargins	( nDocID,  0,  275, 20, 30, 20, 1   		);  //  0 -> margins are in pixels 					
-					Doc_SetFont 	( nDocID,  0, FONT_BookHeadline	   			); 	// -1 -> all pages 
- 					Doc_PrintLine	( nDocID,  0, ""					);										
-					Doc_SetFont 	( nDocID,  0, "Font_20_Book_Hi.tga"	   			); 	// -1 -> all pages 
-					Doc_PrintLine	( nDocID,  0, ""					);										
-					Doc_PrintLines	( nDocID,  0, "KARA K'TA KRUSHAK");
-					Doc_PrintLines	( nDocID,  0, "");		
-					
-					//2.Seite
-					Doc_SetMargins	( nDocID, -1, 30, 20, 275, 20, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus, links,oben,rechts,unten)
-					Doc_SetFont 	( nDocID,  1, FONT_BookHeadline	   			); 	// -1 -> all pages 
-					Doc_PrintLine	( nDocID,  1, ""					);										
-					Doc_SetFont 	( nDocID,  1, FONT_Book	   			); 	// -1 -> all pages 
-					Doc_PrintLine	( nDocID,  1, ""					);
-					Doc_PrintLines	( nDocID,  1, ""	);
-					Doc_PrintLine	( nDocID,  1, ""					);
-					//Absatz
-					Doc_PrintLines	( nDocID,  1, "");
-					Doc_PrintLine	( nDocID,  1, ""					);
-					//Absatz
-					Doc_PrintLine	( nDocID,  1, ""					);
-					//Absatz
-					Doc_PrintLines	( nDocID,  1, "");
-					
-					Doc_Show		( nDocID );
-
-	
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Uroboros2 (C_ITEM) 
 {	
 	name 					=	"Stara ksiêga";
@@ -4365,6 +3759,76 @@ func void Use_Uroboros6 ()
 					
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_KsiegaXardasOld (C_ITEM) 
+{	
+	name 					=	"Almanach mocy";
+
+	mainflag 				=	ITEM_KAT_DOCS;
+	flags 					=	ITEM_MISSION;
+
+	value 					=	0;
+
+	visual 					=	"ItWr_Book_02_05.3ds";  					//BUCH VARIATIONEN: ItWr_Book_01.3DS , ItWr_Book_02_01.3DS, ItWr_Book_02_02.3DS, ItWr_Book_02_03.3DS, ItWr_Book_02_04.3DS, ItWr_Book_02_05.3DS
+	material 				=	MAT_LEATHER;
+
+	scemeName				=	"MAP";
+	description				= 	name;
+	TEXT[5]					= 	NAME_Value;
+	COUNT[5]				= 	value;
+	on_state[0]				=	Use_ItNa_KsiegaXardasOld;
+};
+
+var int ItNa_KsiegaXardasOldFirstTime;
+FUNC VOID Use_ItNa_KsiegaXardasOld ()
+{   	 
+	if (ItNa_KsiegaXardasOldFirstTime == FALSE)
+	{
+		B_LogEntry (TOPIC_bogowie_work, "Chyba znalaz³em ksiêgê, o któr¹ chodzi³o Beliarowi. S¹ tu jakieœ dziwne s³owa...");
+		WillKnowXardasOldBook = TRUE;
+	};
+	
+	ItNa_KsiegaXardasOldFirstTime = TRUE;
+		
+	var int nDocID;
+		
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  2 );                         //wieviel Pages
+
+					Doc_SetPage 	( nDocID,  0, "BOOK_MAGE_L.tga"  , 0 	); // VARIATIONEN: BOOK_BROWN_L.tga , BOOK_MAGE_L.tga , BOOK_RED_L.tga
+					Doc_SetPage 	( nDocID,  1, "BOOK_MAGE_R.tga" , 0	); // VARIATIONEN: BOOK_BROWN_R.tga , BOOK_MAGE_R.tga , BOOK_RED_R.tga
+					
+					//1.Seite
+
+ 					Doc_SetMargins	( nDocID,  0,  275, 20, 30, 20, 1   		);  //  0 -> margins are in pixels 					
+					Doc_SetFont 	( nDocID,  0, FONT_BookHeadline	   			); 	// -1 -> all pages 
+ 					Doc_PrintLine	( nDocID,  0, ""					);										
+					Doc_SetFont 	( nDocID,  0, "Font_20_Book_Hi.tga"	   			); 	// -1 -> all pages 
+					Doc_PrintLine	( nDocID,  0, ""					);										
+					Doc_PrintLines	( nDocID,  0, "KARA K'TA KRUSHAK");
+					Doc_PrintLines	( nDocID,  0, "");		
+					
+					//2.Seite
+					Doc_SetMargins	( nDocID, -1, 30, 20, 275, 20, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus, links,oben,rechts,unten)
+					Doc_SetFont 	( nDocID,  1, FONT_BookHeadline	   			); 	// -1 -> all pages 
+					Doc_PrintLine	( nDocID,  1, ""					);										
+					Doc_SetFont 	( nDocID,  1, FONT_Book	   			); 	// -1 -> all pages 
+					Doc_PrintLine	( nDocID,  1, ""					);
+					Doc_PrintLines	( nDocID,  1, ""	);
+					Doc_PrintLine	( nDocID,  1, ""					);
+					//Absatz
+					Doc_PrintLines	( nDocID,  1, "");
+					Doc_PrintLine	( nDocID,  1, ""					);
+					//Absatz
+					Doc_PrintLine	( nDocID,  1, ""					);
+					//Absatz
+					Doc_PrintLines	( nDocID,  1, "");
+					
+					Doc_Show		( nDocID );
+
+	
+};
+
 
 /*
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -4557,14 +4021,6 @@ func void Use_PamietnikKannaha ()
 					
 };
 
-
-
-
-
-
-
-
-
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_CorKalom_Book (C_ITEM)
 {
@@ -4668,670 +4124,6 @@ func void Use_Zagadka_Adanos ()
 				
 					Doc_Show		( nDocID );
 };
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Fexo (C_Item)
-{
-	name 				=	"Fexo";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Fexo;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_Fexo ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Cz³owiek, który o¿ywi³ Star¹ Kopalniê i w¹tek na bagnie. Stworzon¹ przeze mnie 'r¹bankê' za palisad¹ zamieni³ na opowieœæ o biednych duszach nêkanych przez Kazmina i nadchodz¹ce 'Zaæmienie'.");
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "'To AV mnie wykoñczy!'");
-					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!'");
-					Doc_PrintLines	( nDocID,  0, "--- Piêciu braci'");
-					Doc_PrintLine	( nDocID,  0, "");
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Mghej4 (C_Item)
-{
-	name 				=	"Maciey";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Mghej4;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_Mghej4 ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Multibetatester, od samego pocz¹tku, do samego koñca. Przechodzi³ pierwsze misje lata temu, gdy na zamku stacjonowali jeszcze nieusuniêci paladyni! Wielkie podziêkowania równie¿ za kilkanaœcie godzin spêdzonych w Spacerze na poprawianiu roœlinnoœci oraz stworzeniu orkowego obozu na pla¿y.");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_PreriowyScierwojad (C_Item)
-{
-	name 				=	"Preriowy œcierwojad";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_PreriowyScierwojad;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_PreriowyScierwojad ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Za model 3D zniszczonego Bractwa Œni¹cego i za kilka czarnych robót w skryptach. Dziêki!");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_TheKetrab (C_Item)
-{
-	name 				=	"TheKetrab";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_TheKetrab;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_TheKetrab ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Gdybym wiedzia³, ile godzin spêdzê przy stworzeniu tej modyfikacji, to bym siê za to nigdy nie zabra³. Chocia¿ mo¿e dobrze, ¿e nie wiedzia³em..."	);
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, "");
-					Doc_PrintLines	( nDocID,  0, "-> i tak suma czasów gry wszystkich konsumentów bêdzie mniejsza!"						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLines	( nDocID,  0, "..."						);
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Bogu (C_Item)
-{
-	name 				=	"Bogu";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Bogu;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_Bogu ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Gdyby nie Ty, ten mod by³by co najmniej dwa razy gorszy i dobrze o tym wiesz. Ten dzik poprawi³ multum b³êdów, z którymi sobie nie radzi³em i wprowadzi³ wiele innowacji skryptowych. Tylko dziêki niemu uda³o siê to ukoñczyæ w 2019 roku.");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Simen (C_Item)
-{
-	name 				=	"Simen";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Simen;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_Simen ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Nale¿y Ci siê, zawodowy krytyku i narzekaczu! Z radami tego pana, 'Ucieczka' sta³a siê bardziej logiczna, ciekawsza i bugoodporna. Ile jeszcze modyfikacji uratujesz przed wydaniem jako niedorobionych?");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Mchuable (C_Item)
-{
-	name 				=	"Mchuable";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_Mchuable;
-	scemeName			=	"MAP";
-	description			= 	name;
-};
-func void Use_Mchuable ()
-{   
-		var int nDocID;
-
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-	
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, "Te 2500 kwestii chyba na zawsze zostanie w Twojej g³owie, co? W mojej równie¿. I przycinanie tego, nazywanie ich i przypominanie o robocie :) Wykona³eœ kawa³ dobrej roboty. Brawo!");
-					Doc_PrintLines	( nDocID,  0, ""						);
-					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
-					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
-					Doc_PrintLine	( nDocID,  0, ""						);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_Domenic (C_Item)
-{
-	name 		= "Mapa Domenica";
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 50;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_ItNa_Mapa_Domenic;
-
-	description	= name;
-	TEXT[0]		= "Na tej mapie Domenic zaznaczy³ drogê jak¹ przeszed³,";
-	TEXT[1]		= "podczas eksploracji Górniczej Doliny.";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-	func void Use_ItNa_Mapa_Domenic ()
-	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Domenic);
-		};
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_DOMENIC.tga", TRUE);  // TRUE = scale to fullscreen
-					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
-					Doc_Show			(Document);
-	};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_GraveMission (C_Item)
-{
-	name 		= "Mapa grobów";
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 50;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_ItNa_Mapa_GraveMission;
-
-	description	= name;
-	TEXT[0]		= "Na mapie zaznaczono miejsca,";
-	TEXT[1]		= "w któych znajduj¹ siê groby.";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-	func void Use_ItNa_Mapa_GraveMission ()
-	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_GraveMission);
-		};
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_GRAVEMISSION.tga", TRUE);  // TRUE = scale to fullscreen
-					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****	
-instance ItNa_Mapa_Adanos (C_Item)
-{
-	name 		= "Mapa do skarbu";
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 50;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_ItNa_Mapa_Adanos;
-
-	description	= name;
-	TEXT[0]		= "";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-var int OpenAdanosMapaOneTime;
-	func void Use_ItNa_Mapa_Adanos ()
-	{
-		if (OpenAdanosMapaOneTime== FALSE)
-		{
-			OpenAdanosMapaOneTime = TRUE;
-			B_LogEntry (TOPIC_bogowie_work, "Hmm... na mapie z wie¿y mgie³ jest zaznaczony plac wymian. Co tam znajdê?");
-		};
-
-
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "Map_Adanos.tga", TRUE);  // TRUE = scale to fullscreen
-					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
-					Doc_Show			(Document);
-	};
-	
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_Demonow (C_Item)
-{
-	name 		= "Mapa demonów";
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 50;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_ItNa_Mapa_Demonow;
-
-	description	= name;
-	TEXT[0]		= "Monastir nakreœli³ prawdopodobne miejsca";
-	TEXT[1]		= "pojawienia siê stworzeñ Beliara.";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-	func void Use_ItNa_Mapa_Demonow ()
-	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_Demonow);
-		};
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_DEMON.tga", TRUE);  // TRUE = scale to fullscreen
-					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
-					Doc_Show			(Document);
-	};
-	
-	
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_ObozWypadowy (C_Item)
-{
-	name 		= "Mapa Górniczej Doliny";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 50;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_Mapa_ObozWypadowy;
-
-	description	= name;
-	TEXT[0]		= "Na tej mapie zaznaczono obóz wypadowy myœliwych.";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_Mapa_ObozWypadowy()
-	{
-		if (Npc_IsPlayer(self))
-		{
-			B_SetPlayerMap(ItNa_Mapa_ObozWypadowy);
-		};
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_GESTATH.tga", TRUE);  // TRUE = scale to fullscreen
-					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -78500, 47500, 54000, -53000);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_Morska (C_Item)
-{
-	name 		= "Mapa morska";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 200;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_Mapa_Morska;
-
-	description	= name;
-	TEXT[0]		= "";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_Mapa_Morska()
-	{
-
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_LOUIS.tga", TRUE);  // TRUE = scale to fullscreen
-//					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_Lens (C_Item)
-{
-	name 		= "Mapa";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 100;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_Mapa_Lens;
-
-	description	= name;
-	TEXT[0]		= "Wydaje siê, ¿e 'X' ma coœ wspólnego";
-	TEXT[1]		= "z kradzie¿¹ dokonan¹ na myœliwych.";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_Mapa_Lens()
-	{
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_LENS.tga", TRUE);  // TRUE = scale to fullscreen
-//					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_NowyOboz (C_Item)
-{
-	name 		= "Plan Nowego Obozu";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 100;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_NowyOboz;
-
-	description	= name;
-	TEXT[0]		= "";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_NowyOboz()
-	{
-
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_NEWCAMP.tga", TRUE);  // TRUE = scale to fullscreen
-//					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_ObozNaBagnie (C_Item)
-{
-	name 		= "Plan Obozu Na Bagnie";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 200;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_ObozNaBagnie;
-
-	description	= name;
-	TEXT[0]		= "";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_ObozNaBagnie()
-	{
-
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_PSICAMP.tga", TRUE);  // TRUE = scale to fullscreen
-//					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-instance ItNa_Mapa_Bracia (C_Item)
-{
-	name 		= "Mapa piêciu braci";  // 
-
-	mainflag 	= ITEM_KAT_DOCS;
-	flags 		= ITEM_MISSION|ITEM_MULTI;
-
-	value 		= 200;
-
-	visual 		= "ItWr_Map_01.3DS";
-	material 	= MAT_LEATHER;
-
-	scemeName	= "MAP";
-	on_state[0]	= Use_Mapa_Bracia;
-
-	description	= name;
-	TEXT[0]		= "";
-	TEXT[1]		= "";
-	TEXT[5]		= NAME_Value;
-	COUNT[5]	= value;
-};
-
-	func void Use_Mapa_Bracia()
-	{
-
-
-		var int Document;
-		Document =	Doc_CreateMap		();
-					Doc_SetPages		(Document, 1);
-					Doc_SetPage 		(Document, 0, "MAP_BROTHERS.tga", TRUE);  // TRUE = scale to fullscreen
-//					Doc_SetLevel		(Document, "OldWorld\OldWorld.zen");
-					Doc_SetLevelCoords	(Document, -28000, 50500, 95500, -42500);
-					Doc_Show			(Document);
-	};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Snaf_Przepis (C_Item)
-{
-	name 				=	"Przepis na potrawkê z chrz¹szczy";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItWr_Scroll_01.3DS";
-	material 			=	MAT_LEATHER;
-
-	description			= 	"Przepis na potrawkê z chrz¹szczy";
-	TEXT[2]				= 	"Prawdopodobnie nale¿y do Snafa.";
-};
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_FreeMine (C_Item)
@@ -5908,346 +4700,275 @@ func void Use_PradawnePismo_1 ()
 		
 };
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_KsiegaWiedzy		(C_Item)
-{
-	name 				=	"Ksiêga wiedzy";
-
-	mainflag 			=	ITEM_KAT_DOCS;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	1000;
-
-	visual 				=	"ItWr_Book_02_02.3DS";
-	material 			=	MAT_LEATHER;
-	on_state[0]			=   Use_KsiegaWiedzy;
-	scemeName			=	"MAPSEALED";
-	description			=  	name;
-
-	TEXT[0]					=   "Wiedza zawarta w ksiêdze zwiêksza punkty nauki.";
-	TEXT[5]					= 	NAME_Value;
-	COUNT[5]				= 	value;
-};
-
-func void Use_KsiegaWiedzy ()
-{   
-	Snd_Play ("LEVELUP");
-	PrintScreen ("PN +2", -1, 50, "font_old_20_white.tga", 3);
-	hero.lp = hero.lp + 2;
-};
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_FragmentZwoju (C_Item)
+INSTANCE ItNa_Fexo (C_Item)
 {
-	name 				=	"Fragment zwoju";
+	name 				=	"Fexo";
 
 	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
 	value 				=	0;
 
-	visual 				=	"ItNa_FragmentListu.3DS";
+	visual 				=	"ItWr_Scroll_01.3DS";
 	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Fexo;
+	scemeName			=	"MAP";
 	description			= 	name;
 };
+func void Use_Fexo ()
+{   
+		var int nDocID;
 
-// **********************************************
-// . . . . . . . . . . Klucze . . . . . . . . . .
-// **********************************************
-
-INSTANCE ItNa_KeyStraznik_Moc(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"Otwiera drzwi do krypty.";
-	TEXT[3]				=   "";
-	
-};
-
-INSTANCE ItNa_KeyStraznik_Sila(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Otwiera drzwi do krypty.";
-	TEXT[3]				=   "";
-	
-};
-
-INSTANCE ItNa_KeyStraznik_Odpornosc(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Otwiera drzwi do krypty.";
-	TEXT[3]				=   "";
-	
-};
-
-INSTANCE ItNa_KeyBron_Skrzynia(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Klucz do skrzyni Brona.";
-	TEXT[3]				=   "";
-	
-};
-
-INSTANCE ItNa_Key_Perrot(C_Item)
-{
-	name 				=	"Klucz Perrota";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Otwiera laboratorium Perrota.";
-	TEXT[3]				=   "";
-	
-};
-
-
-INSTANCE ItNa_Key_Lens(C_Item)
-{
-	name 				=	"Klucz Lensa";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Cz³owiek, który o¿ywi³ Star¹ Kopalniê i w¹tek na bagnie. Stworzon¹ przeze mnie 'r¹bankê' za palisad¹ zamieni³ na opowieœæ o biednych duszach nêkanych przez Kazmina i nadchodz¹ce 'Zaæmienie'.");
+					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "'To AV mnie wykoñczy!'");
+					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!'");
+					Doc_PrintLines	( nDocID,  0, "--- Piêciu braci'");
+					Doc_PrintLine	( nDocID,  0, "");
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_KorthPiwo(C_Item)
+INSTANCE ItNa_Mghej4 (C_Item)
 {
-	name 				=	"Klucz do kufra z piwem";
+	name 				=	"Maciey";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Mghej4;
+	scemeName			=	"MAP";
 	description			= 	name;
+};
+func void Use_Mghej4 ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Multibetatester, od samego pocz¹tku, do samego koñca. Przechodzi³ pierwsze misje lata temu, gdy na zamku stacjonowali jeszcze nieusuniêci paladyni! Wielkie podziêkowania równie¿ za kilkanaœcie godzin spêdzonych w Spacerze na poprawianiu roœlinnoœci oraz stworzeniu orkowego obozu na pla¿y.");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Ratford(C_Item)
+INSTANCE ItNa_PreriowyScierwojad (C_Item)
 {
-	name 				=	"Klucz do wiêzienia";
+	name 				=	"Preriowy œcierwojad";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_PreriowyScierwojad;
+	scemeName			=	"MAP";
 	description			= 	name;
+};
+func void Use_PreriowyScierwojad ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"Otwiera drzwi na szczycie wielkiego domu.";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Za model 3D zniszczonego Bractwa Œni¹cego i za kilka czarnych robót w skryptach. Dziêki!");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Keroloth(C_Item)
+INSTANCE ItNa_TheKetrab (C_Item)
 {
-	name 				=	"Klucz do magazynu";
+	name 				=	"TheKetrab";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_TheKetrab;
+	scemeName			=	"MAP";
 	description			= 	name;
+};
+func void Use_TheKetrab ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"Otwiera magazyn przy wejœciu do obozu ³owców orków.";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Gdybym wiedzia³, ile godzin spêdzê przy stworzeniu tej modyfikacji, to bym siê za to nigdy nie zabra³. Chocia¿ mo¿e dobrze, ¿e nie wiedzia³em..."	);
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, "");
+					Doc_PrintLines	( nDocID,  0, "-> i tak suma czasów gry wszystkich konsumentów bêdzie mniejsza!"						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLines	( nDocID,  0, "..."						);
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Louis(C_Item)
+INSTANCE ItNa_Bogu (C_Item)
 {
-	name 				=	"Klucz Louisa";
+	name 				=	"Bogu";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Bogu;
+	scemeName			=	"MAP";
 	description			= 	name;
+};
+func void Use_Bogu ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Gdyby nie Ty, ten mod by³by co najmniej dwa razy gorszy i dobrze o tym wiesz. Ten dzik poprawi³ multum b³êdów, z którymi sobie nie radzi³em i wprowadzi³ wiele innowacji skryptowych. Tylko dziêki niemu uda³o siê to ukoñczyæ w 2019 roku.");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Bandzior(C_Item)
+INSTANCE ItNa_Simen (C_Item)
 {
-	name 				=	"Klucz Bandziora";
+	name 				=	"Simen";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Simen;
+	scemeName			=	"MAP";
 	description			= 	name;
+};
+func void Use_Simen ()
+{   
+		var int nDocID;
+
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"Znalaz³em go przy bandycie przed kopalni¹.";
-	TEXT[3]				=   "";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Nale¿y Ci siê, zawodowy krytyku i narzekaczu! Z radami tego pana, 'Ucieczka' sta³a siê bardziej logiczna, ciekawsza i bugoodporna. Ile jeszcze modyfikacji uratujesz przed wydaniem jako niedorobionych?");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Ben(C_Item)
+INSTANCE ItNa_Mchuable (C_Item)
 {
-	name 				=	"Klucz Bena";
+	name 				=	"Mchuable";
 
-	mainflag 			=	ITEM_KAT_NONE;
+	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;
 
-	value 				=	Value_Key_01;
+	value 				=	0;
 
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Mchuable;
+	scemeName			=	"MAP";
 	description			= 	name;
-	
-	TEXT[2]				=	"";
-	TEXT[3]				=   "";
-	
 };
+func void Use_Mchuable ()
+{   
+		var int nDocID;
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_WielkiDom(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 	
-	TEXT[2]				=	"Znaleziony w obozie myœliwych.";
-	TEXT[3]				=   "";
-	
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_Robotnik(C_Item)
-{
-	name 				=	"Klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Klucz do piwnicy domu Kerolotha.";
-	TEXT[3]				=   "";
-	
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_Key_CatSan(C_Item)
-{
-	name 				=	"Stary klucz";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	Value_Key_01;
-
-	visual 				=	"ItKe_Key_01.3ds";
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-	
-	TEXT[2]				=	"Znalaz³em go w górskiej fortecy.";
-	TEXT[3]				=   "Wygl¹da, jakby mia³ tysi¹c lat.";
-	
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, "Te 2500 kwestii chyba na zawsze zostanie w Twojej g³owie, co? W mojej równie¿. I przycinanie tego, nazywanie ich i przypominanie o robocie :) Wykona³eœ kawa³ dobrej roboty. Brawo!");
+					Doc_PrintLines	( nDocID,  0, ""						);
+					Doc_PrintLines	( nDocID,  0, " ----- ----- ----- ----- ----- ");
+					Doc_PrintLines	( nDocID,  0, ""); // TODO jakas notka od niego
+					Doc_PrintLine	( nDocID,  0, ""						);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
 };
 
 // **********************************************
@@ -7623,7 +6344,6 @@ INSTANCE ITNA_DJG_ULTRA (C_Item)
 	COUNT[5]				= 	value;
 };
 
-
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_ARMOR_ANCIENT (C_Item)
 {
@@ -7665,6 +6385,7 @@ INSTANCE ITNA_ARMOR_ANCIENT (C_Item)
 	COUNT[5]				= 	value;
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_UkrytaZbroja (C_Item)
 {
 	name 					=	"Ukryta Zbroja";
@@ -7799,7 +6520,6 @@ FUNC VOID UnEquip_ItNa_PasMysliwego()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-
 INSTANCE ItNa_PasStalowejReki (C_Item)
 {
 	name 			=	NAME_Addon_Belt;
@@ -7846,7 +6566,6 @@ FUNC VOID UnEquip_ItNa_PasStalowejReki()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-
 INSTANCE  ItNa_PasLowcyOrkow (C_Item)
 {
 	name 			=	NAME_Addon_Belt;
@@ -7896,7 +6615,6 @@ FUNC VOID UnEquip_ItNa_PasLowcyOrkow()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-
 INSTANCE  ItNa_SzarfaSniacego (C_Item)
 {
 	name 			=	NAME_Addon_Belt;
@@ -7935,7 +6653,6 @@ FUNC VOID UnEquip_ItNa_SzarfaSniacego()
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-
 INSTANCE  ItNa_PasBandyty (C_Item)
 {
 	name 			=	NAME_Addon_Belt;
@@ -8200,87 +6917,6 @@ FUNC VOID Use_PaczkaMikstur_Power ()
 	CreateInvItems (hero,ItPo_Perm_DEX, 2);
 
 };
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_SakwaTed (C_Item)
-{
-	name 				=	"Sakwa myœliwego";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Pocket.3ds";	
-	material 			=	MAT_LEATHER;
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_PaczkaGwozdzi (C_Item)
-{
-	name 				=	"Paczka gwoŸdzi";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Pocket.3ds";	
-	material 			=	MAT_LEATHER;
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_JehenPaczkaZFutrami (C_Item)
-{
-	name 				=	"Paczka z futrami";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Packet.3ds";	
-	material 			=	MAT_LEATHER;
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_JehenPaczkaZMiesem (C_Item)
-{
-	name 				=	"Paczka z miêsem";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Packet.3ds";	
-	material 			=	MAT_LEATHER;
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_PaczkaMalychGwozdzi (C_Item)
-{
-	name 				=	"Paczka ma³ych gwoŸdzi";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_Pocket.3ds";	
-	material 			=	MAT_LEATHER;
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
-};
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_WywarVachuta(C_Item)
@@ -8826,42 +7462,345 @@ INSTANCE ItNa_KropleDuszy(C_Item)
 		Snd_Play ("DEM_Warn");
 	};
 
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_PieczenSnafa (C_Item)	//kommt aus Bratpfannen-Mobsi !!!
-{	
-	name 				=	"Pieczeñ Snafa";
 
-	mainflag 			=	ITEM_KAT_FOOD;
-	flags 				=	ITEM_MULTI;
+
+// **********************************************
+// . . . . . . . . . . Strza³y . . . . . . . . . .
+// **********************************************
+
+const string ARROWS_NORMAL = "U¿ywasz zwyk³e strza³y";
+const string ARROWS_SHARP = "U¿ywasz ostre strza³y";
+const string ARROWS_FIRE = "U¿ywasz ogniste strza³y";
+const string ARROWS_ICE = "U¿ywasz lodowe strza³y";
+
+const string ARROWS_YOU_USE_ALREADY = "Ju¿ u¿ywasz tych strza³!";
+const string ARROWS_ON_CBOW = "Strza³ nie mo¿na na³o¿yæ na kuszê!";
+const string ARROWS_NO_BOW = "Brak wyposa¿onego ³uku!";
+
+const string BOLTS_NORMAL = "U¿ywasz zwyk³e be³ty";
+const string BOLTS_SHARP = "U¿ywasz ostre be³ty";
+
+const string BOLTS_YOU_USE_ALREADY = "Ju¿ u¿ywasz tych be³tów!";
+const string BOLTS_ON_BOW = "Be³tów nie mo¿na na³o¿yæ na ³uk!";
+const string BOLTS_NO_CBOW = "Brak wyposa¿onej kuszy!";
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItRw_Arrow(C_Item)
+{
+	name 				=	"Strza³a";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+
+	value 				=	Value_Pfeil;
+
+	on_state[0]			=   Use_ZwyklaStrzala;
+	scemeName			=	"MAPSEALED";
 	
-	value 				=	Value_Meat;
-	
-	visual 				=	"ItFoMutton.3DS";
-	material 			=	MAT_LEATHER;
-	scemeName			=	"MEAT";
-	on_state[0]			=	Use_PieczenSnafa;
+	visual 				=	"ItRw_Arrow.3ds";
+	material 			=	MAT_WOOD;
 
 	description			= 	name;
-	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= 50;
-	TEXT[5]				= 	NAME_Value;		COUNT[5]	= Value_Meat;
-
+	TEXT[5]				= 	NAME_Value;			COUNT[5]	= value;
 };
 
-FUNC VOID Use_PieczenSnafa()
+FUNC void Use_ZwyklaStrzala()
 {
-	PercentHealSelf(20,ATR_HITPOINTS);
+	CreateInvItems(self,ItRw_Arrow,1);
+	
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_BOW)
+		{
+			if(BowMunition == NormalArrow)
+			{
+				PrintS_Ext(ARROWS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(ARROWS_NORMAL, RGBA(255,255,255,0));
+				BowMunition = NormalArrow;
+				RangedWeapon.munition = ItRw_Arrow;
+			};
+		}
+		else
+		{
+			PrintS_Ext(ARROWS_ON_CBOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(ARROWS_NO_BOW, RGBA(255,255,255,0));
+	};
 };
 
-instance ItNa_PieczenDlaGotha(C_Item)
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItRw_Bolt(C_Item)
 {
-	name = "Pieczeñ dla Gotha";
-	mainflag = ITEM_KAT_NONE;
-	flags = ITEM_MULTI;
-	value = 0;
-	visual = "ItFoMutton.3DS";
-	material = MAT_LEATHER;
-	description = name;
+	name 				=	"Be³t";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
+
+	value 				=	Value_Bolzen; // 1
+	
+	on_state[0]			=   Use_NormalBolt;
+	scemeName			=	"MAPSEALED";
+
+	visual 				=	"ItRw_Bolt.3ds";
+	material 			=	MAT_WOOD;
+
+	description			= 	name;
+	TEXT[5]				= 	NAME_Value;			COUNT[5]	= value;
 };
+
+FUNC void Use_NormalBolt()
+{
+	CreateInvItems(self,ItRw_Bolt,1);
+	
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_CROSSBOW)
+		{
+			if(CBowMunition == NormalBolt)
+			{
+				PrintS_Ext(BOLTS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(BOLTS_NORMAL, RGBA(255,255,255,0));
+				CBowMunition = NormalBolt;
+				RangedWeapon.munition = ItRw_Bolt;
+			};
+		}
+		else
+		{
+			PrintS_Ext(BOLTS_ON_BOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(BOLTS_NO_CBOW, RGBA(255,255,255,0));
+	};
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItRw_SharpBolt(C_Item)
+{
+	name 				=	"Ostry be³t";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
+
+	value 				=	5;
+	
+	on_state[0]			=   Use_SharpBolt;
+	scemeName			=	"MAPSEALED";
+
+	visual 				=	"ItRw_Bolt.3ds";
+	material 			=	MAT_WOOD;
+
+	description			= 	name;
+	TEXT[2]				= 	"Obra¿enia + 10";
+	TEXT[5]				= 	NAME_Value;				COUNT[5]	= value;
+};
+
+FUNC void Use_SharpBolt()
+{
+	CreateInvItems(self,ItRw_SharpBolt,1);
+	
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_CROSSBOW)
+		{
+			if(CBowMunition == SharpBolt)
+			{
+				PrintS_Ext(BOLTS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(BOLTS_SHARP, RGBA(255,255,255,0));
+				CBowMunition = SharpBolt;
+				RangedWeapon.munition = ItRw_SharpBolt;
+			};
+		}
+		else
+		{
+			PrintS_Ext(BOLTS_ON_BOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(BOLTS_NO_CBOW, RGBA(255,255,255,0));
+	};
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_OgnistaStrzala(C_Item)
+{
+	name 				=	"Ognista strza³a";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+
+	value 				=	5;
+	
+	on_state[0]			=   Use_OgnistaStrzala;
+	scemeName			=	"MAPSEALED";
+	
+	visual 				=	"ItRw_Arrow.3ds";
+	
+	effect				=	"SPELLFX_FIREARROW";
+	
+	material 			=	MAT_WOOD;
+
+	description			= 	name;
+	TEXT[2]			    = 	"Obra¿enia magiczne + 30";
+	TEXT[5]				= 	NAME_Value;						COUNT[5]	= value;
+};
+
+FUNC void Use_OgnistaStrzala()
+{
+	CreateInvItems(self,ItNa_OgnistaStrzala,1);
+	
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_BOW)
+		{
+			if(BowMunition == FireArrow)
+			{
+				PrintS_Ext(ARROWS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(ARROWS_FIRE, RGBA(255,255,255,0));
+				BowMunition = FireArrow;
+				RangedWeapon.munition = ItNa_OgnistaStrzala;
+			};
+		}
+		else
+		{
+			PrintS_Ext(ARROWS_ON_CBOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(ARROWS_NO_BOW, RGBA(255,255,255,0));
+	};
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_OstraStrzala(C_Item)
+{
+	name 				=	"Ostra strza³a";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+
+	value 				=	5;
+	
+	on_state[0]			=   Use_OstraStrzala;
+	scemeName			=	"MAPSEALED";
+	
+	visual 				=	"ItRw_Arrow.3ds";
+	
+	material 			=	MAT_WOOD;
+
+	description			= 	name;
+	TEXT[2]				=	"Obra¿enia + 30";
+	TEXT[5]				= 	NAME_Value;				COUNT[5]	= value;
+};
+
+FUNC void Use_OstraStrzala()
+{
+	CreateInvItems(self,ItNa_OstraStrzala,1);
+	
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_BOW)
+		{
+			if(BowMunition == SharpArrow)
+			{
+				PrintS_Ext(ARROWS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(ARROWS_SHARP, RGBA(255,255,255,0));
+				BowMunition = SharpArrow;
+				RangedWeapon.munition = ItNa_OstraStrzala;
+			};
+		}
+		else
+		{
+			PrintS_Ext(ARROWS_ON_CBOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(ARROWS_NO_BOW, RGBA(255,255,255,0));
+	};
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_LodowaStrzala(C_Item)
+{
+	name 				=	"Lodowa strza³a";
+
+	mainflag 			=	ITEM_KAT_MUN;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+
+	value 				=	5;
+	
+	on_state[0]			=   Use_LodowaStrzala;
+	scemeName			=	"MAPSEALED";
+	
+	visual 				=	"ItRw_IceArrow.3ds";
+	
+	material 			=	MAT_WOOD;
+	
+	effect				=	"SPELLFX_WEAKGLIMMER";
+
+	description			= 	name;
+	TEXT[2]				= 	"Obra¿enia magiczne + 30";
+	TEXT[5]				= 	NAME_Value;					COUNT[5]	= value;
+};
+
+FUNC void Use_LodowaStrzala()
+{
+	CreateInvItems(self,ItNa_LodowaStrzala,1);
+
+	if(NPC_HasEquippedRangedWeapon(hero))
+	{
+		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+		if(RangedWeapon.flags & ITEM_BOW)
+		{
+			if(BowMunition == IceArrow)
+			{
+				PrintS_Ext(ARROWS_YOU_USE_ALREADY, RGBA(255,255,255,0));
+			}
+			else
+			{
+				PrintS_Ext(ARROWS_ICE, RGBA(255,255,255,0));
+				BowMunition = IceArrow;
+				RangedWeapon.munition = ItNa_LodowaStrzala;
+			};
+		}
+		else
+		{
+			PrintS_Ext(ARROWS_ON_CBOW, RGBA(255,255,255,0));
+		};
+	}
+	else
+	{
+		PrintS_Ext(ARROWS_NO_BOW, RGBA(255,255,255,0));
+	};
+};
+
 
 
 
@@ -8871,7 +7810,8 @@ instance ItNa_PieczenDlaGotha(C_Item)
 
 instance ItNa_Empty(C_Item)
 {
-	name = "empty";
+	// stary sposób na pioruny w dowolnym miejscu (Ayan Orc)
+	name = "";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MISSION;
 	material = MAT_METAL;
@@ -8947,8 +7887,7 @@ instance ItNa_Ratford_Skrzyneczka(C_Item)
 	count[5] = value;
 };
 
-
-
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_PaczkaZBronia (C_Item)
 {
 	name 				=	"Paczka z broni¹";
@@ -8960,7 +7899,7 @@ INSTANCE ItNa_PaczkaZBronia (C_Item)
 	description			= 	name;
 };
 
-
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_PaczkaZZywnoscia (C_Item)
 {
 	name 				=	"Paczka z ¿ywnoœci¹";
@@ -8987,8 +7926,7 @@ FUNC VOID Use_PaczkaZZywnoscia ()
 
 };
 
-
-
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_PaczkaMikstur (C_Item)
 {
 	name 				=	"Paczka mikstur";
@@ -9095,326 +8033,6 @@ instance ItNa_Beczulka(C_Item)
 };
 
 
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE  ItNa_Artefakt_Sila (C_ITEM)
-{
-	name 				=	"Kawa³ek artefaktu";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION|ITEM_MULTI;
-
-	value 				=	0;
-
-	visual 				=	"KawalekArtefaktu.3DS"; 
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
-	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
-
-};
-
-INSTANCE  ItNa_Artefakt_Moc (C_ITEM)
-{
-	name 				=	"Kawa³ek artefaktu";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION|ITEM_MULTI;
-
-	value 				=	0;
-
-	visual 				=	"KawalekArtefaktu.3DS"; 
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
-	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
-
-};
-
-INSTANCE  ItNa_Artefakt_Odpornosc (C_ITEM)
-{
-	name 				=	"Kawa³ek artefaktu";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION|ITEM_MULTI;
-
-	value 				=	0;
-
-	visual 				=	"KawalekArtefaktu.3DS"; 
-	material 			=	MAT_METAL;
-
-	description			= 	name;
-
-	TEXT	[0]			=	"Fragment du¿ego, ozdobnego pierœcienia.";
-	INV_ZBIAS			= 	INVCAM_ENTF_MISC5_STANDARD;
-
-};
-
-INSTANCE ItNa_Artefakt_Caly (C_Item)
-{
-	name 				=	"Artefakt";
-
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MULTI|ITEM_MISSION;
-
-	value 				=	0;
-
-	visual 				=	"ItMi_PortalRing_01.3DS"; 
-	material 			=	MAT_STONE;
-
-	description			= 	name;
-	TEXT	[0]			=	"Klucz do niedostêpnego klifu.";
-	INV_ZBIAS			= 	INVCAM_ENTF_MISC3_STANDARD;
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItRi_Str_Mud(C_Item)
-{
-    name                     =    NAME_Ring;
-
-    mainflag                 =    ITEM_KAT_MAGIC;
-    flags                     =    ITEM_RING;
-
-    value                     =    Value_Ri_Strg02;
-
-    visual                     =    "ItRi_Str_02.3ds";
-
-    visual_skin             =    0;
-    material                 =    MAT_METAL;
-    on_equip                =    Equip_ItRi_Str_02;
-    on_unequip                =    UnEquip_ItRi_Str_02;
-
-    wear            =     WEAR_EFFECT;
-    effect            =    "SPELLFX_ITEMGLIMMER"; 
-
-    description                = "Pierœcieñ si³y";
-    
-    TEXT[2]                    = NAME_Bonus_Str;
-    COUNT[2]                = Ri_Strg02;
-    TEXT[3]                    = "Nagrawerowano na nim symbol Magów ognia.";
-    TEXT[5]                    = NAME_Value;
-    COUNT[5]                = value;
-        
-    INV_ZBIAS                = INVCAM_ENTF_RING_STANDARD;
-    INV_ROTZ                = INVCAM_Z_RING_STANDARD;
-    INV_ROTX                = INVCAM_X_RING_STANDARD;
-    
-};
- 
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE  ItNa_OkoSwiata(C_Item)
-{
-	name 			=	"Oko Œwiata";
-
-	mainflag 		=	ITEM_KAT_MAGIC;
-	flags 			=	ITEM_AMULET;
-
-	value 			=	1000;
-
-	visual 			=	"ItAm_Prot_Fire_01.3ds";
-
-	visual_skin 	=	0;
-	material 		=	MAT_METAL;
-	on_equip		=	Equip_ItNa_OkoSwiata;
-	on_unequip		=	UnEquip_ItNa_OkoSwiata;
-
-	wear			= 	WEAR_EFFECT;
-	effect			=	"SPELLFX_ITEMGLIMMER"; 
-
-	description		= "Oko Œwiata";
-	
-	TEXT[2]			= "Ten amulet czyni posiadacza silniejszym,";
-	TEXT[3]			= "zrêczniejszym i m¹drzejszym.";
-	TEXT[5]			= NAME_Value;
-	COUNT[5]		= value;
-	
-	INV_ZBIAS				= INVCAM_ENTF_AMULETTE_STANDARD;
-	
-};
-
-	FUNC VOID Equip_ItNa_OkoSwiata()
-	{
-
-		Npc_ChangeAttribute(self,ATR_STRENGTH,+ 10);
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ 10);
-		self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] + 10;
-		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] + 10;
-
-		
-		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  self, self, 0, 0, 0, FALSE );
-		Wld_PlayEffect("FX_EarthQuake",  self, self, 0, 0, 0, FALSE );
-		Wld_PlayEffect("spellFX_INCOVATION_WHITE",  self, self, 0, 0, 0, FALSE );
-		
-		AI_PlayAni (self,"T_MAGRUN_2_HEASHOOT");	
-		AI_StandUp (self);
-		Snd_Play ("MFX_FIRERAIN_INVEST"); 
-	};
-
-	FUNC VOID UnEquip_ItNa_OkoSwiata()
-	{
-		Npc_ChangeAttribute(self,ATR_STRENGTH,- 10);
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,- 10);
-		self.attribute[ATR_MANA_MAX] = self.attribute[ATR_MANA_MAX] - 10;
-		if (self.attribute[ATR_MANA] > (10))
-		{
-			self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - 10;
-		}
-		else
-		{
-			self.attribute[ATR_MANA] = 0;
-	};
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE  ItNa_AmuletKrzywegoOgnika (C_Item)  
-{
-	name 			=	"Amulet krzywego ognika";
-
-	mainflag 		=	ITEM_KAT_MAGIC;
-	flags 			=	ITEM_AMULET;
-
-	value 			=	400;
-
-	visual 			=	"ItAm_Mana_01.3ds";
-
-	wear			= 	WEAR_EFFECT;
-	effect			=	"SPELLFX_WEAKGLIMMER_BLUE"; 
-
-	visual_skin 	=	0;
-	material 		=	MAT_METAL;
-	on_equip		=	Equip_AmuletKrzywegoOgnika;
-	on_unequip		=	UnEquip_AmuletKrzywegoOgnika;
-
-	description		=  name;
-
-	TEXT[0]			= "Przyzwie ognika tylko jeden raz.";
-
-	TEXT[5]			= NAME_Value;
-	COUNT[5]		= value;
-
-	INV_ZBIAS		= INVCAM_ENTF_AMULETTE_STANDARD;
-	
-};
-
-var int Equip_AmuletKrzywegoOgnika_OneTime;
-
-FUNC VOID Equip_AmuletKrzywegoOgnika()
-{
-	if (Equip_AmuletKrzywegoOgnika_OneTime == FALSE)
-	{
-		Equip_AmuletKrzywegoOgnika_OneTime = TRUE;
-
-		var C_NPC DetWsp;
-		DetWsp = Hlp_GetNpc (Wisp_Helper);
-		AI_Teleport (DetWsp, "TOT");
-		Wld_SpawnNpcRange	(self,	Wisp_Helper,	1,	500);
- 		Wld_PlayEffect("spellFX_LIGHTSTAR_WHITE",  Wisp_Helper, Wisp_Helper, 0, 0, 0, FALSE );
-		Snd_Play ("MFX_Transform_Cast");
-	};
-};
-
-FUNC VOID UnEquip_AmuletKrzywegoOgnika()
-{
-		
-	var C_NPC DetWsp;
-	DetWsp = Hlp_GetNpc (Wisp_Helper);
-
-	if (Npc_IsDead(DetWsp) == FALSE)
-	{
-		Snd_Play ("WSP_Dead_A1");
-	};
-
-	AI_Teleport (DetWsp, "TOT");
-	B_RemoveNpc (DetWsp);
-	AI_Teleport (DetWsp, "TOT");
-};
-
-
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE  ItNa_HuntAmulet(C_Item)
-{
-	name 			=	NAME_Amulett;
-
-	mainflag 		=	ITEM_KAT_MAGIC;
-	flags 			=	ITEM_AMULET;
-
-	value 			=	300;
-
-	visual 			=	"ItAm_Strg_01.3ds";
-
-	visual_skin 	=	0;
-	material 		=	MAT_METAL;
-	on_equip		=	Equip_ItNa_HuntAmulet;
-	on_unequip		=	UnEquip_ItNa_HuntAmulet;
-
-	wear			= 	WEAR_EFFECT;
-	effect			=	"SPELLFX_ITEMGLIMMER"; 
-
-	description		= "Oko myœliwego";
-	
-	TEXT[2]			= NAME_Bonus_Dex;
-	COUNT[2]		= 10;
-	
-	TEXT[5]			= NAME_Value;
-	COUNT[5]		= value;
-
-	INV_ZBIAS				= INVCAM_ENTF_AMULETTE_STANDARD;
-	
-};
-
-	FUNC VOID Equip_ItNa_HuntAmulet()
-	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,+ 10);
-	};
-
-	FUNC VOID UnEquip_ItNa_HuntAmulet()
-	{
-		Npc_ChangeAttribute(self,ATR_DEXTERITY,- 10);
-	};
-
-	
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-	INSTANCE  ItNa_AmuletZRudy(C_Item)
-{
-	name 			=	NAME_Amulett;
-
-	mainflag 		=	ITEM_KAT_MAGIC;
-	flags 			=	ITEM_AMULET;
-
-	value 			=	Value_ItAm_Addon_MANA;
-
-	visual 			=	"ItAm_Hp_01.3ds";
-
-	visual_skin 	=	0;
-	material 		=	MAT_METAL;
-	on_equip		=	Equip_ItAm_Addon_MANA;
-	on_unequip		=	UnEquip_ItAm_Addon_MANA;
-
-	wear			= 	WEAR_EFFECT;
-	effect			=	"SPELLFX_ITEMGLIMMER"; 
-
-	description		=  "Nale¿a³ do piêciu braci";
-
-	TEXT[2]			= NAME_Bonus_Mana;
-	COUNT[2]		= MA_Amulett_Solo_Bonus;
-	
-	TEXT[3]			= "";
-	TEXT[4]			= "";
-	 
-	TEXT[5]			= NAME_Value;
-	COUNT[5]		= value;
-
-	INV_ZBIAS		= INVCAM_ENTF_AMULETTE_STANDARD;
-	
-};
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 instance ItNa_ZapasowaPila(C_Item)
@@ -9557,8 +8175,6 @@ INSTANCE ItNa_PaczkaZiela (C_Item)
 	description			= 	NAME;
 	TEXT[2]				= 	"Z daleka czuæ zapach bagiennego ziela...";
 };
-
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Innos_Posazek(C_Item)
@@ -10680,338 +9296,33 @@ func void Use_ItNa_KopalnianyGrzyb ()
 	Poison1HPStart();
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PieczenSnafa (C_Item)
+{	
+	name 				=	"Pieczeñ Snafa";
 
-// **********************************************
-// . . . . . . . . . . Strza³y . . . . . . . . . .
-// **********************************************
-
-INSTANCE ItRw_Arrow(C_Item)
-{
-	name 				=	"Strza³a";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_BOW|ITEM_MULTI;
-
-	value 				=	Value_Pfeil;
-
-	on_state[0]			=   Use_ZwyklaStrzala;
-	scemeName			=	"MAPSEALED";
+	mainflag 			=	ITEM_KAT_FOOD;
+	flags 				=	ITEM_MULTI;
 	
-	visual 				=	"ItRw_Arrow.3ds";
-	material 			=	MAT_WOOD;
+	value 				=	Value_Meat;
+	
+	visual 				=	"ItFoMutton.3DS";
+	material 			=	MAT_LEATHER;
+	scemeName			=	"MEAT";
+	on_state[0]			=	Use_PieczenSnafa;
 
 	description			= 	name;
-	TEXT[5]				= 	NAME_Value;			COUNT[5]	= value;
+	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= 50;
+	TEXT[5]				= 	NAME_Value;		COUNT[5]	= Value_Meat;
+
 };
 
-FUNC void Use_ZwyklaStrzala()
+FUNC VOID Use_PieczenSnafa()
 {
-	CreateInvItems(self,ItRw_Arrow,1);
-	
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_BOW)
-		{
-			if(BowMunition == NormalArrow)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych strza³!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz zwyk³e strza³y", RGBA(255,255,255,0));
-				BowMunition = NormalArrow;
-				RangedWeapon.munition = ItRw_Arrow;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Strza³ nie mo¿na na³o¿yæ na kuszê!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onego ³uku!", RGBA(255,255,255,0));
-	};
+	PercentHealSelf(20,ATR_HITPOINTS);
 };
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INSTANCE ItRw_Bolt(C_Item)
-{
-	name 				=	"Be³t";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
-
-	value 				=	Value_Bolzen; // 1
-	
-	on_state[0]			=   Use_NormalBolt;
-	scemeName			=	"MAPSEALED";
-
-	visual 				=	"ItRw_Bolt.3ds";
-	material 			=	MAT_WOOD;
-
-	description			= 	name;
-	TEXT[5]				= 	NAME_Value;			COUNT[5]	= value;
-};
-
-FUNC void Use_NormalBolt()
-{
-	CreateInvItems(self,ItRw_Bolt,1);
-	
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_CROSSBOW)
-		{
-			if(CBowMunition == NormalBolt)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych be³tów!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz zwyk³e be³ty", RGBA(255,255,255,0));
-				CBowMunition = NormalBolt;
-				RangedWeapon.munition = ItRw_Bolt;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Be³tów nie mo¿na na³o¿yæ na ³uk!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onej kuszy!", RGBA(255,255,255,0));
-	};
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INSTANCE ItRw_SharpBolt(C_Item)
-{
-	name 				=	"Ostry be³t";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
-
-	value 				=	5;
-	
-	on_state[0]			=   Use_SharpBolt;
-	scemeName			=	"MAPSEALED";
-
-	visual 				=	"ItRw_Bolt.3ds";
-	material 			=	MAT_WOOD;
-
-	description			= 	name;
-	TEXT[2]				= 	"Obra¿enia + 10";
-	TEXT[5]				= 	NAME_Value;				COUNT[5]	= value;
-};
-
-FUNC void Use_SharpBolt()
-{
-	CreateInvItems(self,ItRw_SharpBolt,1);
-	
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_CROSSBOW)
-		{
-			if(CBowMunition == SharpBolt)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych be³tów!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz ostre be³ty", RGBA(255,255,255,0));
-				CBowMunition = SharpBolt;
-				RangedWeapon.munition = ItRw_SharpBolt;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Be³tów nie mo¿na na³o¿yæ na ³uk!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onej kuszy!", RGBA(255,255,255,0));
-	};
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INSTANCE ItNa_OgnistaStrzala(C_Item)
-{
-	name 				=	"Ognista strza³a";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_BOW|ITEM_MULTI;
-
-	value 				=	5;
-	
-	on_state[0]			=   Use_OgnistaStrzala;
-	scemeName			=	"MAPSEALED";
-	
-	visual 				=	"ItRw_Arrow.3ds";
-	
-	effect				=	"SPELLFX_FIREARROW";
-	
-	material 			=	MAT_WOOD;
-
-	description			= 	name;
-	TEXT[2]			    = 	"Obra¿enia magiczne + 30";
-	TEXT[5]				= 	NAME_Value;						COUNT[5]	= value;
-};
-
-FUNC void Use_OgnistaStrzala()
-{
-	CreateInvItems(self,ItNa_OgnistaStrzala,1);
-	
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_BOW)
-		{
-			if(BowMunition == FireArrow)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych strza³!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz ogniste strza³y", RGBA(255,255,255,0));
-				BowMunition = FireArrow;
-				RangedWeapon.munition = ItNa_OgnistaStrzala;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Strza³ nie mo¿na na³o¿yæ na kuszê!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onego ³uku!", RGBA(255,255,255,0));
-	};
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INSTANCE ItNa_OstraStrzala(C_Item)
-{
-	name 				=	"Ostra strza³a";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_BOW|ITEM_MULTI;
-
-	value 				=	5;
-	
-	on_state[0]			=   Use_OstraStrzala;
-	scemeName			=	"MAPSEALED";
-	
-	visual 				=	"ItRw_Arrow.3ds";
-	
-	material 			=	MAT_WOOD;
-
-	description			= 	name;
-	TEXT[2]				=	"Obra¿enia + 30";
-	TEXT[5]				= 	NAME_Value;				COUNT[5]	= value;
-};
-
-FUNC void Use_OstraStrzala()
-{
-	CreateInvItems(self,ItNa_OstraStrzala,1);
-	
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_BOW)
-		{
-			if(BowMunition == SharpArrow)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych strza³!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz ostre strza³y", RGBA(255,255,255,0));
-				BowMunition = SharpArrow;
-				RangedWeapon.munition = ItNa_OstraStrzala;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Strza³ nie mo¿na na³o¿yæ na kuszê!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onego ³uku!", RGBA(255,255,255,0));
-	};
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-INSTANCE ItNa_LodowaStrzala(C_Item)
-{
-	name 				=	"Lodowa strza³a";
-
-	mainflag 			=	ITEM_KAT_MUN;
-	flags 				=	ITEM_BOW|ITEM_MULTI;
-
-	value 				=	5;
-	
-	on_state[0]			=   Use_LodowaStrzala;
-	scemeName			=	"MAPSEALED";
-	
-	visual 				=	"ItRw_IceArrow.3ds";
-	
-	material 			=	MAT_WOOD;
-	
-	effect				=	"SPELLFX_WEAKGLIMMER";
-
-	description			= 	name;
-	TEXT[2]				= 	"Obra¿enia magiczne + 30";
-	TEXT[5]				= 	NAME_Value;					COUNT[5]	= value;
-};
-
-FUNC void Use_LodowaStrzala()
-{
-	CreateInvItems(self,ItNa_LodowaStrzala,1);
-
-	if(NPC_HasEquippedRangedWeapon(hero))
-	{
-		var C_ITEM RangedWeapon; RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
-		if(RangedWeapon.flags & ITEM_BOW)
-		{
-			if(BowMunition == IceArrow)
-			{
-				PrintS_Ext("Ju¿ u¿ywasz tych strza³!", RGBA(255,255,255,0));
-			}
-			else
-			{
-				PrintS_Ext("U¿ywasz lodowe strza³y", RGBA(255,255,255,0));
-				BowMunition = IceArrow;
-				RangedWeapon.munition = ItNa_LodowaStrzala;
-			};
-		}
-		else
-		{
-			PrintS_Ext("Strza³ nie mo¿na na³o¿yæ na kuszê!", RGBA(255,255,255,0));
-		};
-	}
-	else
-	{
-		PrintS_Ext("Brak wyposa¿onego ³uku!", RGBA(255,255,255,0));
-	};
-};
-
-
-
-// **********************************************
-// . . . . . . . . . G1 Swords . . . . . . . . .
-// **********************************************
-
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 //----- G1Swords -----
 INSTANCE G1Swords (C_Item)
 {
@@ -11043,284 +9354,157 @@ FUNC VOID Use_G1Swords ()
 
 };
 
-
-// **********************************************
-// . . . . . . . . . . He³my . . . . . . . . . .
-// **********************************************
-
-//----- Helmet -----
-INSTANCE Helmet (C_Item)
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Snaf_Przepis (C_Item)
 {
-	name 				=	"All helmets :)";
+	name 				=	"Przepis na potrawkê z chrz¹szczy";
 
 	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION |ITEM_MULTI;
+	flags 				=	ITEM_MISSION;
 
 	value 				=	0;
 
-	visual 				=	"ItMi_Pocket.3ds";
-	scemename			=	"MAPSEALED";	
+	visual 				=	"ItWr_Scroll_01.3DS";
 	material 			=	MAT_LEATHER;
-	on_state[0]			=	Use_AllHelmets;
+
+	description			= 	"Przepis na potrawkê z chrz¹szczy";
+	TEXT[2]				= 	"Prawdopodobnie nale¿y do Snafa.";
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_KsiegaWiedzy		(C_Item)
+{
+	name 				=	"Ksiêga wiedzy";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	1000;
+
+	visual 				=	"ItWr_Book_02_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_KsiegaWiedzy;
+	scemeName			=	"MAPSEALED";
+	description			=  	name;
+
+	TEXT[0]					=   "Wiedza zawarta w ksiêdze zwiêksza punkty nauki.";
+	TEXT[5]					= 	NAME_Value;
+	COUNT[5]				= 	value;
+};
+
+func void Use_KsiegaWiedzy ()
+{   
+	Snd_Play ("LEVELUP");
+	PrintScreen ("PN +2", -1, 50, "font_old_20_white.tga", 3);
+	hero.lp = hero.lp + 2;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_FragmentZwoju (C_Item)
+{
+	name 				=	"Fragment zwoju";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItNa_FragmentListu.3DS";
+	material 			=	MAT_LEATHER;
+	description			= 	name;
+};
+
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_SakwaTed (C_Item)
+{
+	name 				=	"Sakwa myœliwego";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Pocket.3ds";	
+	material 			=	MAT_LEATHER;
 	description			= 	name;
 	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
 };
 
-FUNC VOID Use_AllHelmets ()
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PaczkaGwozdzi (C_Item)
 {
-	CreateInvItems (hero,ITNA_KapturMysliwego, 1);		// Kap2			~4		200		sprzedaje hunt jesli jestes mysliwym
-	CreateInvItems (hero,ITNA_Maska_Kruka, 1);				// Kap2			~5		300		u nieznanego na pó³ce
-	CreateInvItems (hero,ITNA_HelmSniacego, 1);			// Kap5 bonus	~6		500		na koncu gry, okragly przelacznik, za krat¹ z pe³zaczami
-	CreateInvItems (hero,ITNA_KolczugaRycerza, 1);		// Kap3			~9		500		do zebrania w misji 'helmy rycerzy'
-	CreateInvItems (hero,ITNA_DjgHelmet, 1);			// Kap3			~9		500		kupuje siê razem ze zbroj¹ ³owcy orków
-	CreateInvItems (hero,ITNA_RogatyHelm, 1);			// Kap3			~11		650		na prawo od CatSana - na pó³ce
-	CreateInvItems (hero,ITNA_TwardyHelmWojownika, 1);	// Kap4			~13		800		na orkowej stra¿nicy obok tartaku za palisad¹
-	CreateInvItems (hero,ITNA_HelmBarda, 1);			// Kap3			~14		900		na najwy¿szej wie¿y w NO
-	CreateInvItems (hero,ITNA_DJG_ULTRA_HELMET, 1);		// Kap4			~16		1000	mozna kupic od Jana po misji ze zbroja
+	name 				=	"Paczka gwoŸdzi";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Pocket.3ds";	
+	material 			=	MAT_LEATHER;
+	description			= 	name;
+	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_KapturMysliwego (C_Item)
+INSTANCE ItNa_JehenPaczkaZFutrami (C_Item)
 {
-	name = "Kaptur myœliwego";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "KapturMysliwego.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 200;
+	name 				=	"Paczka z futrami";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Packet.3ds";	
+	material 			=	MAT_LEATHER;
+	description			= 	name;
+	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_JehenPaczkaZMiesem (C_Item)
+{
+	name 				=	"Paczka z miêsem";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Packet.3ds";	
+	material 			=	MAT_LEATHER;
+	description			= 	name;
+	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PaczkaMalychGwozdzi (C_Item)
+{
+	name 				=	"Paczka ma³ych gwoŸdzi";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItMi_Pocket.3ds";	
+	material 			=	MAT_LEATHER;
+	description			= 	name;
+	TEXT[5]				= 	NAME_Value;	COUNT[5]	= value;
+};
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_PieczenDlaGotha(C_Item)
+{
+	name = "Pieczeñ dla Gotha";
+	mainflag = ITEM_KAT_NONE;
+	flags = ITEM_MULTI;
+	value = 0;
+	visual = "ItFoMutton.3DS";
 	material = MAT_LEATHER;
-
-	protection[PROT_EDGE] = 4;
-	protection[PROT_BLUNT] = 4;
-	protection[PROT_POINT] = 2;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_Maska_Kruka (C_Item)
-{
-	name = "Maska Kruka";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
 	description = name;
-	
-	visual = "Maska.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 300;
-	material = MAT_METAL;
-
-	on_equip			=	Equip_ItNa_Maska_Kruka;
-	on_unequip		=	Unequip_ItNa_Maska_Kruka;
-
-	
-	protection[PROT_EDGE] = 5;
-	protection[PROT_BLUNT] = 5;
-	protection[PROT_POINT] = 4;
-	protection[PROT_FIRE] = 4;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_HelmSniacego (C_Item)
-{
-	name = "He³m Œni¹cego";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "HelmSniacego.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 500;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 6;
-	protection[PROT_BLUNT] = 6;
-	protection[PROT_POINT] = 5;
-	protection[PROT_FIRE] = 7;
-	protection[PROT_MAGIC] = 8;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_KolczugaRycerza (C_Item)
-{
-	name = "Kolczuga rycerza";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "HelmRycerza.3ds"; 
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 500;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 9;
-	protection[PROT_BLUNT] = 9;
-	protection[PROT_POINT] = 7;
-	protection[PROT_FIRE] = 6;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_DjgHelmet (C_Item)
-{
-	name = "He³m ³owcy orków";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "DJG_H_HELMET.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 500;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 9;
-	protection[PROT_BLUNT] = 9;
-	protection[PROT_POINT] = 7;
-	protection[PROT_FIRE] = 6;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_RogatyHelm (C_Item)
-{
-	name = "Rogaty he³m";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "RogatyHelm.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 650;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 11;
-	protection[PROT_BLUNT] = 11;
-	protection[PROT_POINT] = 9;
-	protection[PROT_FIRE] = 7;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_TwardyHelmWojownika (C_Item)
-{
-	name = "Twardy he³m wojownika";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "TwardyHelmWojownika.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 800;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 13;
-	protection[PROT_BLUNT] = 13;
-	protection[PROT_POINT] = 9;
-	protection[PROT_FIRE] = 8;
-	protection[PROT_MAGIC] = 3;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_HelmBarda (C_Item)
-{
-	name = "He³m barda";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "HelmBarda.3ds";
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 900;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 14;
-	protection[PROT_BLUNT] = 14;
-	protection[PROT_POINT] = 10;
-	protection[PROT_FIRE] = 10;
-	protection[PROT_MAGIC] = 6;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;		count[5] = value;
-};
-
-// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
-{
-	name = "He³m z pancerza orka-elity";
-	mainflag = ITEM_KAT_NF;
-	flags = 0;
-	description = name;
-	
-	visual = "PAL_ORC_HELM_NEW.3ds"; 
-	visual_skin = 0;
-	wear = WEAR_HEAD;
-	value = 1000;
-	material = MAT_METAL;
-
-	protection[PROT_EDGE] = 16;
-	protection[PROT_BLUNT] = 16;
-	protection[PROT_POINT] = 12;
-	protection[PROT_FIRE] = 12;
-	protection[PROT_MAGIC] = 10;
-
-	text[0] = ""; 
-	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
-	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
-	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
-	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
-	text[5] = NAME_Value;		count[5] = value;
 };

@@ -163,9 +163,9 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 
 
 
-INSTANCE Recepture (C_Item)
+INSTANCE Receptures (C_Item)
 {
-	name 				=	"All receptures :)";
+	name 				=	"Przepisy na potrawy";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MISSION |ITEM_MULTI;

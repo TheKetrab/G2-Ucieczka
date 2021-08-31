@@ -1,4 +1,6 @@
 
+const string KAPITELANFANG = "Pocz¹tek rozdzia³u.";
+
 //***************************************************************************
 //	Rahmen-Infos
 //***************************************************************************
@@ -34,7 +36,7 @@ INSTANCE KapitelHelper_INFO1 (C_INFO)
 	information		= KapitelHelper_INFO1_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Kapitel 1"; 
+	description		= "Rozdzia³ 1"; 
 };
 
 FUNC INT KapitelHelper_INFO1_Condition()
@@ -47,7 +49,7 @@ func VOID KapitelHelper_INFO1_Info()
 
 	Info_ClearChoices	( KapitelHelper_INFO1 );
 	Info_AddChoice		( KapitelHelper_INFO1, DIALOG_BACK			                			, KapitelHelper_BACK1);
-	Info_AddChoice		( KapitelHelper_INFO1, "KAPITELANFANG"			                			, KapitelHelper_KAPITEL1ANFANG);
+	Info_AddChoice		( KapitelHelper_INFO1, KAPITELANFANG			                			, KapitelHelper_KAPITEL1ANFANG);
 };
 
 //---------------------------------------------------------------------
@@ -76,7 +78,7 @@ INSTANCE KapitelHelper_INFO2 (C_INFO)
 	information		= KapitelHelper_INFO2_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Kapitel 2"; 
+	description		= "Rozdzia³ 2"; 
 };
 
 FUNC INT KapitelHelper_INFO2_Condition()
@@ -89,7 +91,7 @@ func VOID KapitelHelper_INFO2_Info()
 
 	Info_ClearChoices	( KapitelHelper_INFO2 );
 	Info_AddChoice		( KapitelHelper_INFO2, DIALOG_BACK			                			, KapitelHelper_BACK2);
-	Info_AddChoice		( KapitelHelper_INFO2, "KAPITELANFANG"			                			, KapitelHelper_KAPITEL2ANFANG);
+	Info_AddChoice		( KapitelHelper_INFO2, KAPITELANFANG			                			, KapitelHelper_KAPITEL2ANFANG);
 };
 //---------------------------------------------------------------------
 //	BACK
@@ -118,7 +120,7 @@ INSTANCE KapitelHelper_INFO3 (C_INFO)
 	information		= KapitelHelper_INFO3_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Kapitel 3"; 
+	description		= "Rozdzia³ 3"; 
 };
 
 FUNC INT KapitelHelper_INFO3_Condition()
@@ -131,7 +133,7 @@ func VOID KapitelHelper_INFO3_Info()
 
 	Info_ClearChoices	( KapitelHelper_INFO3 );
 	Info_AddChoice		( KapitelHelper_INFO3, DIALOG_BACK			                			, KapitelHelper_BACK3);
-	Info_AddChoice		( KapitelHelper_INFO3, "KAPITELANFANG"			                			, KapitelHelper_KAPITEL3ANFANG);
+	Info_AddChoice		( KapitelHelper_INFO3, KAPITELANFANG			                			, KapitelHelper_KAPITEL3ANFANG);
 };
 //---------------------------------------------------------------------
 //	BACK
@@ -161,7 +163,7 @@ INSTANCE KapitelHelper_INFO4 (C_INFO)
 	information		= KapitelHelper_INFO4_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Kapitel 4"; 
+	description		= "Rozdzia³ 4"; 
 };
 
 FUNC INT KapitelHelper_INFO4_Condition()
@@ -174,7 +176,7 @@ func VOID KapitelHelper_INFO4_Info()
 
 	Info_ClearChoices	( KapitelHelper_INFO4 );
 	Info_AddChoice		( KapitelHelper_INFO4, DIALOG_BACK			                			, KapitelHelper_BACK4);
-	Info_AddChoice		( KapitelHelper_INFO4, "KAPITELANFANG"			                			, KapitelHelper_KAPITEL4ANFANG);
+	Info_AddChoice		( KapitelHelper_INFO4, KAPITELANFANG			                			, KapitelHelper_KAPITEL4ANFANG);
 };
 //---------------------------------------------------------------------
 //	BACK

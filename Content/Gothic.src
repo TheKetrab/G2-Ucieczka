@@ -85,7 +85,7 @@ STORY\B_Story\B_RemoveNpc.d
 STORY\B_Content\B_RemoveQuarhodron.d
 STORY\B_Content\B_PlayerFindItem.d
 
-
+Funcs\Learning.d
 
 Story\Events\BonusPack.d
 ITEMS\Tuning_*.d

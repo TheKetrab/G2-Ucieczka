@@ -234,11 +234,11 @@ AI\MAGIC\B_AssessMagic.d
 AI\MAGIC\C_CanNpcCollideWithSpell.d
 
 AI\MAGIC\Spells\Spell_*.d
-Funcs\DiffLvl.d
 LeGo\MyLeGoFuncs.d
+funcs\QuickSlot\Quickslot.src
+Funcs\DiffLvl.d
 Funcs\TrollSpecialAttack.d
 Funcs\OnDamage.d
-funcs\QuickSlot\Quickslot.src
 AI\MAGIC\Spell_ProcessMana.d
 AI\MAGIC\Spell_ProcessMana_Release.d
 

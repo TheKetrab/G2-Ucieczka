@@ -94,17 +94,21 @@ func int EQ_IsOpen()
 };
 func void HandleEvents_hook(/*int key*/)
 {
+	
 	var int key; key = MEM_ReadInt(ESP+4);
-	if(key == KEY_1) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_2) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_3) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_4) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_5) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_6) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_7) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1);	};};
-	if(key == KEY_8) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};};
-	if(key == KEY_9) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1);	};};
-	if(key == KEY_0) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};};
+	if(DisableQuickSlot == false)
+	{
+		if(key == KEY_1) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_2) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_3) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_4) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_5) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_6) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_7) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1);	};};
+		if(key == KEY_8) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_9) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1);	};};
+		if(key == KEY_0) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};};
+	};
 
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)
 	{
@@ -626,63 +630,69 @@ func void oCNpcInventory_HandleEvent_hook()
 	};
 	
 	
-	
-	//QS
-	
-	if(key == keyWeapon_1
-	|| key == keyWeapon_2)
+	if(DisableQuickSlot == false)
 	{
-		MEM_WriteInt(ESP + 4, -1);
-		return;
+		//QS
+	
+		if(key == keyWeapon_1
+		|| key == keyWeapon_2)
+		{
+			MEM_WriteInt(ESP + 4, -1);
+			return;
+		};
 	};
 	
 	
 	if(isKostur){return;};
 	
-	if(action 
+	if((action 
 	|| key == KEY_1 
-	||  key == KEY_2)	
+	|| key == KEY_2)
+	&& DisableQuickSlot == false
+	)	
 	{
 		
 		
 		itm = _^(ptr);
-		if(itm.flags & ITEM_SHIELD)
-		{
-			// KETRAB - zakladanie tarczy przez klawisz CTRL
-			var c_item meleeWeap; meleeWeap = Npc_GetEquippedMeleeWeapon(hero);
-			if(meleeWeap.flags & (ITEM_SWD | ITEM_AXE)) {
-				AI_Function_I(hero, QS_EquipWeapon, ptr);
-			} else {
-				PrintS("Za³ó¿ broñ jednorêczn¹ przed u¿yciem tarczy!");
+
+			if(itm.flags & ITEM_SHIELD)
+			{
+				// KETRAB - zakladanie tarczy przez klawisz CTRL
+				var c_item meleeWeap; meleeWeap = Npc_GetEquippedMeleeWeapon(hero);
+				if(meleeWeap.flags & (ITEM_SWD | ITEM_AXE)) {
+					AI_Function_I(hero, QS_EquipWeapon, ptr);
+				} else {
+					PrintS("Za³ó¿ broñ jednorêczn¹ przed u¿yciem tarczy!");
+				};
+				
+				MEM_WriteInt(ESP+4,-1);  return;
 			};
+			if(itm.mainflag == ITEM_KAT_NF)
+			{
+			   QS_PutSlot(hero, 1, ptr);  MEM_WriteInt(ESP+4,-1);
+				QS_AI_EquipWeapon(ptr);
+
+			}
+			else if(itm.mainflag == ITEM_KAT_FF)
+			{
+				QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
+				QS_AI_EquipWeapon(ptr);
+
+			}
 			
-			MEM_WriteInt(ESP+4,-1);  return;
-		};
-		if(itm.mainflag == ITEM_KAT_NF && itm.flags)
-		{
-		   QS_PutSlot(hero, 1, ptr);  MEM_WriteInt(ESP+4,-1);
-		   QS_AI_EquipWeapon(ptr);
-	
-		}
-		else if(itm.mainflag == ITEM_KAT_FF)
-		{
-			QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
-			QS_AI_EquipWeapon(ptr);
-		}
+				
+				//MEM_WriteInt(ESP+4,-1);
 		
-			
-			//MEM_WriteInt(ESP+4,-1);
-	
-		// KETRAB
-		else if (itm.mainflag == ITEM_KAT_RUNE)
-		{
-			// jesli ten item byl juz gdzies w qs, to zostanie zwrocony
-			// jego index zatem putslot zdejmie go z qs
-			var int freeslot; freeslot = QS_GetFreeSlotNr(itm);
-			if (freeslot != -1) {
-				QS_PutSlot(hero, freeslot, ptr);  MEM_WriteInt(ESP+4,-1);
+			// KETRAB
+			else if (itm.mainflag == ITEM_KAT_RUNE)
+			{
+				// jesli ten item byl juz gdzies w qs, to zostanie zwrocony
+				// jego index zatem putslot zdejmie go z qs
+				var int freeslot; freeslot = QS_GetFreeSlotNr(itm);
+				if (freeslot != -1) {
+					QS_PutSlot(hero, freeslot, ptr);  MEM_WriteInt(ESP+4,-1);
+				};
 			};
-		};
 
 	};
 		/*if(itm.mainflag == ITEM_KAT_RUNE)
@@ -712,18 +722,20 @@ func void oCNpcInventory_HandleEvent_hook()
 		};*/
 		
 
-
+	if(DisableQuickSlot == false)
+	{
 	
-	//if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	//if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_3) { QS_PutSlot(hero, 3, ptr); MEM_WriteInt(ESP+4,-1);  }; 
-	if(key == KEY_4) { QS_PutSlot(hero, 4, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_5) { QS_PutSlot(hero, 5, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_6) { QS_PutSlot(hero, 6, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_7) { QS_PutSlot(hero, 7, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_8) { QS_PutSlot(hero, 8, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_9) { QS_PutSlot(hero, 9, ptr); MEM_WriteInt(ESP+4,-1); }; 
-	if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		//if(key == KEY_1) { QS_PutSlot(hero, 1, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		//if(key == KEY_2) { QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_3) { QS_PutSlot(hero, 3, ptr); MEM_WriteInt(ESP+4,-1);  }; 
+		if(key == KEY_4) { QS_PutSlot(hero, 4, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_5) { QS_PutSlot(hero, 5, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_6) { QS_PutSlot(hero, 6, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_7) { QS_PutSlot(hero, 7, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_8) { QS_PutSlot(hero, 8, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_9) { QS_PutSlot(hero, 9, ptr); MEM_WriteInt(ESP+4,-1); }; 
+		if(key == KEY_0) { QS_PutSlot(hero, 0, ptr); MEM_WriteInt(ESP+4,-1); }; 
+	};
 	
 };
 //void __thiscall oCNpc::EquipItem(class oCItem *) 	0x007323C0 	0 	7

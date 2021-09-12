@@ -8,6 +8,15 @@ const int 		QS_SizeY					= 128;
 const int 		QS_SlotPosY					= 60;
 const int 		QS_SlotSize					= 60;
 
+var int DontRenderSlots;
+
+
+var int RenderOnScreen;
+var int DisableQuickSlot;
+
+var int QS_HideKey1;
+var int QS_HideKey2;
+
 // Debugging
 var int QS_DebugLevel;	
 const int QS_Debug_Off 			= 0;
@@ -24,7 +33,9 @@ func int QS_RenderOnScreen()
 	|| hero.guild > GIL_SEPERATOR_HUM
 	|| Npc_IsInState(hero, ZS_Dead)
 	|| her.interactMob
-	|| !MEM_GAME.showPlayerStatus)	{
+	|| !MEM_GAME.showPlayerStatus
+	|| DontRenderSlots
+	)	{
 		return false;
 	};
 	
@@ -33,15 +44,16 @@ func int QS_RenderOnScreen()
 
 func int QS_CanUseItem(var oCNpc her)
 {
-	if(!QS_RenderOnScreen()
-	|| !(C_BodyStateContains(hero, BS_STAND) 
+	if(!(C_BodyStateContains(hero, BS_STAND) 
 		|| C_BodyStateContains(hero, BS_WALK)
 		|| C_BodyStateContains(hero, BS_SNEAK) 
 		|| C_BodyStateContains(hero, BS_RUN) 
 		|| C_BodyStateContains(hero, BS_SPRINT))	
 	|| QS_IsInvOpen()
 	|| MEM_ReadInt(zCConsole__cur_console)
-	|| Npc_IsInState(hero, ZS_Unconscious))
+	|| Npc_IsInState(hero, ZS_Unconscious)
+	|| (!QS_RenderOnScreen() && DontRenderSlots == false)
+	)
 	{
 		return false;
 	};

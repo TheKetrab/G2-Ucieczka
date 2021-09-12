@@ -23,6 +23,8 @@ instance PC_Hero (NPC_DEFAULT)
 	
 	//Nałożona broń
 	EquipItem (self, ItMw_2H_Axe_L_01);
+	Npc_GetInvItem(self,ItMw_2H_Axe_L_01);
+	QS_PutSlot(self,1,_@(item));
 	
 	// ------ visuals ------
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal02, BodyTex_N, ITAR_Prisoner);

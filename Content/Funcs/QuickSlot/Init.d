@@ -1,16 +1,27 @@
 func void QS_InitHooks()
 {
-	// Fix hide weapon on using last spell
-	QS_WriteNOP(oCMag_Book_SpellCast_Check_SpellBook, 
-				oCMag_Book_SpellCast_Check_SpellBook_NumBytes);
+	var int i;
+	i = 0;
+	
+//	MemoryProtectionOverride(oCMag_Book_SpellCast_Check_SpellBook, oCMag_Book_SpellCast_Check_SpellBook_NumBytes);
+	//repeat(i,oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes);
+	//	MEM_WriteStatArr(oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes,i, MEM_ReadByte(oCMag_Book_SpellCast_Check_SpellBook+i));
+		//MEM_WriteByte(oCMag_Book_SpellCast_Check_SpellBook+i,ASMINT_OP_nop);
+	//end;
+	
 		
 	// Disable mag_book
 	MemoryProtectionOverride(7577148, 5);
-	MEM_WriteByte(7577148 + 0, 233);
-	MEM_WriteByte(7577148 + 1, 229);
-	MEM_WriteByte(7577148 + 2, 001);
-	MEM_WriteByte(7577148 + 3, 000);
-	MEM_WriteByte(7577148 + 4, 000);
+	
+	i = 0;
+	repeat(i,5);
+		
+		MEM_WriteStatArr(DisableMagBook_Oryginal_Bytes,i, MEM_ReadByte(7577148+i));
+		MEM_WriteByte(7577148 + i, MEM_ReadStatArr(DisableMagBook_New_Bytes,i));
+
+	end;
+	
+
 	
 	HookEngineF(oCGame__RenderX,
 				oCGame__RenderX_Len,
@@ -48,14 +59,86 @@ func void QS_InitHooks()
 	HookEngineF(oCItemContainer_Draw_FF_posX, 
 				oCItemContainer_Draw_FF_posX_Len, 
 				QS_RemoveInvNumber_FF);		
-	HookEngineF(oCMobInter__StartInteraction, 
-				6, 
-				QS_MobInteractionFix);	
+	//HookEngineF(oCMobInter__StartInteraction, 
+			//	6, 
+			//	QS_MobInteractionFix);	
 	
 	// Fix keyWeapon in using oCItemContainer
 	HookEngineF(6914805 /*006982F5*/, 8, Hook_ReturnFalse); 						
 	HookEngineF(6935581 /*0069D41D*/, 8, Hook_ReturnFalse);
+	
+
+	
+	//DisableQuickSlot = 0;
 };
+
+func void QS_RemoveHooks()
+{	
+	var int i; i = 0;
+	var int byte;
+	
+	MemoryProtectionOverride(7577148, 5);
+	repeat(i,DisableMagBook_Oryginal_Bytes_NumBytes);
+		byte = MEM_ReadStatArr(DisableMagBook_Oryginal_Bytes,i);
+		MEM_WriteByte(7577148+i,byte);
+	end;
+	
+	
+	RemoveHookF(oCGame__RenderX,
+				oCGame__RenderX_Len,
+				QS_RenderHook);	
+				
+	RemoveHookF(oCGame__UpdateResolution,
+				oCGame__UpdateResolution_Len,
+				QS_UpdateResolution);
+	
+	RemoveHookF(oCNpc__SetAsPlayer,
+				oCNpc__SetAsPlayer_Len,
+				QS_SwitchHeroFix);				
+		
+	RemoveHookF(oCNpc__OpenInventory,
+				oCNpc__OpenInventory_Len,
+				QS_OpenInventory);	
+					
+	RemoveHookF(oCMag_Book_SpellCast_Check_SpellBook, 
+				oCMag_Book_SpellCast_Check_SpellBook_NumBytes, 
+				QS_FixUseLastSpell);		
+							
+	RemoveHookF(oCMag_Book_SpellCast, 
+				oCMag_Book_SpellCast_Len, 
+				QS_SpellCast_GetSpell);
+					
+	// Draw quickslot numbers		
+	RemoveHookF(oCItemContainer_Draw_PrintText, 
+				oCItemContainer_Draw_PrintText_Len, 
+				QS_DrawNumbersInInv);	
+
+	RemoveHookF(oCItemContainer_Draw_NF_posX, 
+				oCItemContainer_Draw_NF_posX_Len, 
+				QS_RemoveInvNumber_NF);
+					
+	RemoveHookF(oCItemContainer_Draw_FF_posX, 
+				oCItemContainer_Draw_FF_posX_Len, 
+				QS_RemoveInvNumber_FF);		
+	//HookEngineF(oCMobInter__StartInteraction, 
+			//	6, 
+			//	QS_MobInteractionFix);	
+	
+	// Fix keyWeapon in using oCItemContainer
+	RemoveHookF(6914805 /*006982F5*/, 8, Hook_ReturnFalse); 						
+	RemoveHookF(6935581 /*0069D41D*/, 8, Hook_ReturnFalse);
+	
+
+	// Fix hide weapon on using last spell
+	//MemoryProtectionOverride(oCMag_Book_SpellCast_Check_SpellBook, oCMag_Book_SpellCast_Check_SpellBook_NumBytes);
+	//repeat(i,oCMag_Book_SpellCast_Check_SpellBook_NumBytes);
+		// byte = MEM_ReadStatArr(oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes,i);
+		//MEM_WriteByte(oCMag_Book_SpellCast_Check_SpellBook+i,byte);
+	//end;
+	
+	//DisableQuickSlot = 1;
+};
+
 
 func void QS_InitBaseData()
 {
@@ -80,10 +163,10 @@ func void QS_InitBaseData()
 		MEM_WriteInt (QS_RenderWorld + zCWorld__bIsInventoryWorld_offset, true);
 	};
 	
-	if(!QS_FirstTime)
-	{
-		FF_ApplyOnceExt (QSEquipWeaponFirstTimeFix, 250, -1);
-	};
+	//if(!QS_FirstTime)
+	//{
+		//FF_ApplyOnceExt (QSEquipWeaponFirstTimeFix, 250, -1);
+	//};
 };
 				
 func int QuickSlot_InitOnce()

@@ -46,8 +46,9 @@ const int IT_EXTENDED_MENU		= 16384;
 var int diffLevel;
 var int JuiceMode;
 instance m (zCMenuItem);
+
 func int GetDiffLvl()
-{	
+{		
 	var int mPtr; mPtr =  MEM_GetMenuItemByString ("MENUITEM_OPT_JUSTICE");
 	//var zCMenuItem m; 
 	if(!mPtr) {return -1;};
@@ -87,6 +88,12 @@ func int GetDiffLvl()
 	};
 	
 	return diffLevel;
+};
+
+func void Menu_Settings_apply()
+{
+	QS_CheckIfDisable();
+	GetDiffLvl();
 };
 
 func int DiffCalcDmg(var int dmg)
@@ -216,7 +223,7 @@ func void Install_Character_Menu_Hook()
 	   //HookEngineF(7547197, 5,qpt);
 	   
 	   //poziom trudnoœci
-	   //HookEngineF(cGameManager__ApplySomeSettings_rtn, 6, GetDiffLvl);
+	   HookEngineF(cGameManager__ApplySomeSettings_rtn, 6, Menu_Settings_apply);
 	   done = true;
 	};
 

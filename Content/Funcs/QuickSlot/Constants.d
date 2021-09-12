@@ -68,7 +68,8 @@ const int oCMagBook__Register				= 4676528;	// 0x00475BB0	(oCItem*)
 const int oCMagBook__DeRegister 			= 4676800;	// 0x00475CC0	(oCItem*)
 const int zCModel__IsAnimationActive 		= 5727888; 	// 0x00576690
 const int oCItemContainer__IsOpen 			= 7377408; 	// 0x00709200
-const int oCItem__Flags_Offset						= 344;	// 0x0158
+const int oCItem__Flags_Offset				= 344;	// 0x0158
+const int oCItem__instanz_Offset 			= 816;
 
 const int zCArray__array_offset			= 0;  	// 0x00
 const int zCArray__numAlloc_offset		= 4;  	// 0x04
@@ -106,7 +107,22 @@ const int oCAIHuman__PC_WeaponMove				= 6922464; // 0x0069A0E0
 const int oCMag_Book_SpellCast 					= 4679584; // 0x004767A0
 const int oCGame__HandleEvent	 				= 7324016; // 0x006FC170
 const int oCNpc__SetAsPlayer					= 7612064; // 0x007426A0
-			
+
+const int DisableMagBook_Oryginal_Bytes_NumBytes = 5;
+	
+var int DisableMagBook_Oryginal_Bytes[DisableMagBook_Oryginal_Bytes_NumBytes];
+const int DisableMagBook_New_Bytes[DisableMagBook_Oryginal_Bytes_NumBytes] = {		
+	233,
+	229,
+	001,
+	000,
+	000
+};
+
+var int oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes[oCMag_Book_SpellCast_Check_SpellBook_NumBytes];
+
+
+	
 // Small engine functions
 func int QS_IsInvOpen()
 {

@@ -206,6 +206,29 @@ func int QS_GetSlotByItem(var int iPtr)
 	return -1;
 };
 
+
+func int QS_GetSlotByInstOrPointer(var int ptr)
+{
+	if(!ptr) {return -1;};
+	
+	var int i;
+	repeat(i, 10);
+		var int itemPtr; itemPtr = QS_GetSlotItem(i);
+		
+		if(!itemPtr){continue;};
+		
+		if(itemPtr == ptr){ return i;};
+		
+		var int newItemInstanz; newItemInstanz = MEM_ReadInt(ptr+oCItem__instanz_Offset);
+		var int oldItemInstanz; oldItemInstanz = MEM_ReadInt(itemPtr+oCItem__instanz_Offset);
+		if(newItemInstanz == oldItemInstanz)
+		{
+			return i;
+		};
+	end;
+	return -1;
+};
+
 // KETRAB
 func int QS_GetFreeSlotNr(var c_item itm)
 {

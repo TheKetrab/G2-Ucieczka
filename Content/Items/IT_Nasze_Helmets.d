@@ -1,3 +1,6 @@
+const int INVCAM_ENTF_HELMET_STANDARD = 140;
+const int INVCAM_X_HELMET_STANDARD    = 20;
+const int INVCAM_Y_HELMET_STANDARD    = 25;
 
 // **********************************************
 // . . . . . . . . . . He³my . . . . . . . . . .
@@ -56,6 +59,11 @@ INSTANCE ITNA_KapturMysliwego (C_Item)
 	text[1] = NAME_Prot_Edge;	count[1] = protection[PROT_EDGE];
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -86,6 +94,11 @@ INSTANCE ITNA_Maska_Kruka (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -114,6 +127,11 @@ INSTANCE ITNA_HelmSniacego (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -140,6 +158,11 @@ INSTANCE ITNA_KolczugaRycerza (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 
@@ -167,6 +190,11 @@ INSTANCE ITNA_DjgHelmet (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 
@@ -194,6 +222,11 @@ INSTANCE ITNA_RogatyHelm (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -222,6 +255,11 @@ INSTANCE ITNA_TwardyHelmWojownika (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -250,6 +288,11 @@ INSTANCE ITNA_HelmBarda (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
+	
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -278,4 +321,9 @@ INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
+
+	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
+	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
+	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
+
 };

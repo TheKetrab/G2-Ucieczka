@@ -21,7 +21,7 @@ instance NASZ_223_Ratford (Npc_Default)
 	// ------ Equippte Waffen ------																	//Munition wird automatisch generiert, darf aber angegeben werden
 	EquipItem	(self, ItMw_ShortSword4);
 	EquipItem	(self, ItRw_Sld_Bow); 
-	EquipItem	(self, ItNa_KapturMysliwego);
+	Npc_EquipHelmet	(self, ItNa_KapturMysliwego);
 
 	// ------ Inventory ------
 	B_CreateAmbientInv 	(self);

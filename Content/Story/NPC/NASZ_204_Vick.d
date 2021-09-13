@@ -19,7 +19,7 @@ instance NASZ_204_Vick (Npc_Default)
 	// ------ Na³o¿ona broñ ------																	//Munition wird automatisch generiert, darf aber angegeben werden
 	EquipItem	(self, ItMw_1H_Sword_L_03);
 	EquipItem	(self, ItRw_Sld_Bow); 
-	EquipItem	(self, ItNa_KapturMysliwego);
+	Npc_EquipHelmet	(self, ItNa_KapturMysliwego);
 
 	// ------ Inwentarz ------
 	B_CreateAmbientInv (self);

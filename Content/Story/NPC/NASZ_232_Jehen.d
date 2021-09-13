@@ -20,7 +20,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	// ------ Na³o¿ona broñ ------																	//Munition wird automatisch generiert, darf aber angegeben werden
 	EquipItem	(self, ItMw_ShortSword4);
 	EquipItem	(self, ItRw_Sld_Bow); 
-	EquipItem	(self, ItNa_KapturMysliwego);
+	Npc_EquipHelmet	(self, ItNa_KapturMysliwego);
 	//AI_EquipArmor(self,ItNa_KapturMysliwego);
 	
 	// ------ Inwentarz ------

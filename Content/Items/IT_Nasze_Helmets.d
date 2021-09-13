@@ -6,6 +6,33 @@ const int INVCAM_Y_HELMET_STANDARD    = 25;
 // . . . . . . . . . . He³my . . . . . . . . . .
 // **********************************************
 
+//EngineAdr_GX.d containts it
+//const int oCNpc__EquipItem = 7545792;
+func void Engine_Npc_EquipItem(var int npcPtr, var int itemPtr)
+{
+	Call_PtrParam(itemPtr);
+	CALL__thiscall(npcPtr,oCNpc__EquipItem);
+};
+
+func void Npc_EquipHelmet(var c_npc npc, var int helmetInst)
+{
+	if(!Hlp_IsValidNpc(npc)){return;};
+	
+	if(!Npc_GetInvItem(npc,helmetInst))
+	{
+		CreateInvItems(npc,helmetInst,1);
+	};	
+	
+	var int npcPtr; npcPtr = _@(npc);
+	var int itemPtr; itemPtr = _@(item);
+	
+	
+	if(!npcPtr || !ItemPtr){return;};
+	
+	Engine_Npc_EquipItem(npcPtr,itemPtr);
+};
+
+
 //----- Helmet -----
 INSTANCE Helmets (C_Item)
 {
@@ -41,7 +68,7 @@ FUNC VOID Use_AllHelmets ()
 INSTANCE ITNA_KapturMysliwego (C_Item)
 {
 	name = "Kaptur myœliwego";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -63,14 +90,13 @@ INSTANCE ITNA_KapturMysliwego (C_Item)
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_Maska_Kruka (C_Item)
 {
 	name = "Maska Kruka";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -94,18 +120,17 @@ INSTANCE ITNA_Maska_Kruka (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_HelmSniacego (C_Item)
 {
 	name = "He³m Œni¹cego";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -127,18 +152,17 @@ INSTANCE ITNA_HelmSniacego (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_KolczugaRycerza (C_Item)
 {
 	name = "Kolczuga rycerza";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -158,19 +182,17 @@ INSTANCE ITNA_KolczugaRycerza (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_DjgHelmet (C_Item)
 {
 	name = "He³m ³owcy orków";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -190,19 +212,17 @@ INSTANCE ITNA_DjgHelmet (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_RogatyHelm (C_Item)
 {
 	name = "Rogaty he³m";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -222,18 +242,17 @@ INSTANCE ITNA_RogatyHelm (C_Item)
 	text[2] = NAME_Prot_Point;	count[2] = protection[PROT_POINT];
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_TwardyHelmWojownika (C_Item)
 {
 	name = "Twardy he³m wojownika";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -255,18 +274,17 @@ INSTANCE ITNA_TwardyHelmWojownika (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_HelmBarda (C_Item)
 {
 	name = "He³m barda";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -288,18 +306,17 @@ INSTANCE ITNA_HelmBarda (C_Item)
 	text[3] = NAME_Prot_Fire;	count[3] = protection[PROT_FIRE];
 	text[4] = NAME_Prot_Magic;	count[4] = protection[PROT_MAGIC];
 	text[5] = NAME_Value;		count[5] = value;
-	
+
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
 {
 	name = "He³m z pancerza orka-elity";
-	mainflag = ITEM_KAT_NF;
+	mainflag = ITEM_KAT_ARMOR;
 	flags = 0;
 	description = name;
 	
@@ -325,5 +342,4 @@ INSTANCE ITNA_DJG_ULTRA_HELMET (C_Item)
 	INV_ZBIAS				= INVCAM_ENTF_HELMET_STANDARD;
 	INV_ROTX				= INVCAM_X_HELMET_STANDARD;
 	INV_ROTY				= INVCAM_Y_HELMET_STANDARD;
-
 };

@@ -808,49 +808,6 @@ func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
 			};
 		};
 	
-	if(bIsPlayer)
-	{
-
-		if(itm.wear == WEAR_HEAD)
-		{
-			var int pHelm; pHelm = GetItemSlot(hero,"ZS_HELMET");
-			//var int pWeap; pWeap = QS_GetSlotItem(1);
-			if(!HelmetEquipped && pHelm)
-			{
-				HelmetEquipped = pHelm;
-			};
-			
-			if(itm.flags & ITEM_ACTIVE)
-			{
-
-				if(HelmetEquipped)
-				{
-					HelmetEquipped = false;
-					EAX = 1;
-				}
-				else
-				{
-					HelmetEquipped = ptr;
-					EAX = 1;
-				};
-			}
-			else
-			{
-				if(HelmetEquipped)
-				{
-					EAX = 0;
-					return;
-				}
-				else
-				{
-					HelmetEquipped = ptr;
-					EAX = 1;
-				};
-			};
-			
-		};
-	};
-	
 	EAX = 1;
 };
 

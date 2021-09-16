@@ -702,56 +702,125 @@ FUNC VOID DIA_NASZ_220_Kirgo_WrzodNieDziala_Info()
 ///////////////////////////////////////////////////////////////////////
 //	Info TEACH MANA
 ///////////////////////////////////////////////////////////////////////
-instance DIA_NASZ_220_Kirgo_TEACH_MANA		(C_INFO)
-{
-	npc			 = 	NASZ_220_Kirgo;
-	nr 			 =  98;
-	condition	 = 	DIA_NASZ_220_Kirgo_TEACH_MANA_Condition;
-	information	 = 	DIA_NASZ_220_Kirgo_TEACH_MANA_Info;
-	permanent	 = 	TRUE;
-	description	 = 	"Chcê zwiêkszyæ moj¹ moc magiczn¹.";
+
+const int Kirgo_MANA_MAX = 50;
+var int Kirgo_Teach_NoMore;
+
+func void KirgoAddChoicesMANA() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_MANA, 1, Kirgo_MANA_MAX) > 0) {
+		Info_AddChoice		(DIA_Kirgo_Teach, BuildLearnString(LEARN_MANA, 1, Kirgo_MANA_MAX), DIA_Kirgo_Teach_MANA_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_MANA, 5, Kirgo_MANA_MAX) > 1) {
+		Info_AddChoice		(DIA_Kirgo_Teach, BuildLearnString(LEARN_MANA, 5, Kirgo_MANA_MAX), DIA_Kirgo_Teach_MANA_5); 
+	};
+
 };
-func int DIA_NASZ_220_Kirgo_TEACH_MANA_Condition ()
-{	
-	if (other.attribute[ATR_MANA_MAX] < 50)
+
+func void KirgoSay_CantTeachYou() {
+	AI_Output(self,other,"KirgoSay_CantTeachYou_55_00"); //Dalej musisz rozwijaæ siê sam. Ja nie jestem w stanie ci ju¿ pomóc.
+	Kirgo_Teach_NoMore = TRUE;
+};
+
+func void KirgoSay_NoMoney() {
+	AI_Output (self, other,"KirgoSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+};
+
+func void KirgoSay_NoExp() {
+	AI_Output (self, other,"KirgoSay_NoExp_55_00"); //Brak ci doœwiadczenia.
+};
+
+INSTANCE DIA_Kirgo_Teach   (C_INFO)
+{
+	npc         = NASZ_220_Kirgo;
+ 	nr          = 100;
+ 	condition   = DIA_Kirgo_Teach_Condition;
+ 	information = DIA_Kirgo_Teach_Info;
+ 	permanent   = TRUE;
+ 	description = "Chcê zwiêkszyæ moj¹ moc magiczn¹.";
+};
+
+FUNC INT DIA_Kirgo_Teach_Condition()
+{
+	if (Kirgo_Teach_NoMore == FALSE)
 	{
 		return TRUE;
 	};
 };
 
-func void DIA_NASZ_220_Kirgo_TEACH_MANA_Info ()
+FUNC VOID DIA_Kirgo_Teach_Info()
 {
-		AI_Output (other, self, "DIA_NASZ_220_Kirgo_TEACH_MANA_15_00"); //Chcê zwiêkszyæ moj¹ moc magiczn¹.
-		
-		Info_ClearChoices   (DIA_NASZ_220_Kirgo_TEACH_MANA);	
-		Info_AddChoice 		(DIA_NASZ_220_Kirgo_TEACH_MANA,DIALOG_BACK,DIA_NASZ_220_Kirgo_TEACH_MANA_BACK);		
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_5); };
+	AI_Output (other, self, "DIA_NASZ_220_Kirgo_TEACH_MANA_15_00"); //Chcê zwiêkszyæ moj¹ moc magiczn¹.
+
+	if (GetTalentNow(LEARN_MANA) >= Kirgo_MANA_MAX)
+	{
+		KirgoSay_CantTeachYou();
+		Info_ClearChoices 	(DIA_Kirgo_Teach);
+		return;
+	};
+
+	Info_ClearChoices   (DIA_Kirgo_Teach);
+	Info_AddChoice 		(DIA_Kirgo_Teach, DIALOG_BACK, DIA_Kirgo_Teach_BACK);
+	KirgoAddChoicesMANA();
 };
-FUNC VOID DIA_NASZ_220_Kirgo_TEACH_MANA_BACK()
+
+func void DIA_Kirgo_Teach_BACK()
 {	
-	Info_ClearChoices   (DIA_NASZ_220_Kirgo_TEACH_MANA);	
+	Info_ClearChoices (DIA_Kirgo_Teach);
 };
-FUNC VOID DIA_NASZ_220_Kirgo_TEACH_MANA_1()
+
+FUNC VOID DIA_Kirgo_Teach_MANA_1 ()
 {
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachAttributePoints (self, other, ATR_MANA_MAX, 1, 50);
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_MANA,1,Kirgo_MANA_MAX)) {
+		KirgoSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_MANA,1,Kirgo_MANA_MAX)) {
+		KirgoSay_NoExp();
+	}
+	else {
 	
-	Info_ClearChoices   (DIA_NASZ_220_Kirgo_TEACH_MANA);	
-	Info_AddChoice 		(DIA_NASZ_220_Kirgo_TEACH_MANA,DIALOG_BACK,DIA_NASZ_220_Kirgo_TEACH_MANA_BACK);		
-	if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_5); };
+		B_TeachAttributePoints (self, other, ATR_MANA_MAX, 1, Kirgo_MANA_MAX);
+
+		if (GetTalentNow(LEARN_MANA) >= Kirgo_MANA_MAX)
+		{
+			KirgoSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Kirgo_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Kirgo_Teach);
+		Info_AddChoice 		(DIA_Kirgo_Teach,	DIALOG_BACK		,DIA_Kirgo_Teach_Back);
+		KirgoAddChoicesMANA();
+	};
+
 };
-FUNC VOID DIA_NASZ_220_Kirgo_TEACH_MANA_5()
+
+FUNC VOID DIA_Kirgo_Teach_MANA_5 ()
 {
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachAttributePoints (self, other, ATR_MANA_MAX, 5, 50);
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_MANA,5,Kirgo_MANA_MAX)) {
+		KirgoSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_MANA,5,Kirgo_MANA_MAX)) {
+		KirgoSay_NoExp();
+	}
+	else {
 	
-	Info_ClearChoices   (DIA_NASZ_220_Kirgo_TEACH_MANA);	
-	Info_AddChoice 		(DIA_NASZ_220_Kirgo_TEACH_MANA,DIALOG_BACK,DIA_NASZ_220_Kirgo_TEACH_MANA_BACK);		
-	if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_220_Kirgo_TEACH_MANA,"Mana + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_220_Kirgo_TEACH_MANA_5); };
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_MANA,5,Kirgo_MANA_MAX);
+		B_TeachAttributePoints (self, other, ATR_MANA_MAX, amount, Kirgo_MANA_MAX);
+
+		if (GetTalentNow(LEARN_MANA) >= Kirgo_MANA_MAX)
+		{
+			KirgoSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Kirgo_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Kirgo_Teach);
+		Info_AddChoice 		(DIA_Kirgo_Teach,	DIALOG_BACK		,DIA_Kirgo_Teach_Back);
+		KirgoAddChoicesMANA();
+	};
 };
+
 
 //*********************************************************************
 //	Info MakePotion

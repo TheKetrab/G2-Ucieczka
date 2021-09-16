@@ -567,141 +567,6 @@ func void DIA_NASZ_215_Kivo_CanYouTeach_Info ()
 
 };
 
-// ************************************************************
-// 			  				TEACH
-// ************************************************************
-var int Kivo_Merke_Bow;
-// ------------------------------------------------------
-
-instance DIA_NASZ_215_Kivo_TeachBow (C_INFO)
-{
-	npc		 	= NASZ_215_Kivo;
-	nr		 	= 101;
-	condition	= DIA_NASZ_215_Kivo_TeachBow_Condition;
-	information	= DIA_NASZ_215_Kivo_TeachBow_Info;
-	permanent 	= TRUE;
-	description	= "Chcê siê nauczyæ czegoœ o ³ucznictwie.";
-};
-
-func int DIA_NASZ_215_Kivo_TeachBow_Condition ()
-{
-	if (npc_knowsinfo (other, DIA_NASZ_215_Kivo_CanYouTeach))
-	&& (other.HitChance[NPC_TALENT_BOW] < 100)
-	{
-		return TRUE;
-	};
-};
-
-func void DIA_NASZ_215_Kivo_TeachBow_Info ()
-{
-	AI_Output (other, self, "DIA_NASZ_215_Kivo_TeachBow_15_00"); //Chcê siê nauczyæ czegoœ o ³ucznictwie.
-	AI_Output (self, other, "DIA_NASZ_215_Kivo_TeachBow_08_01"); //Czego mogê ciê nauczyæ?
-	
-	Kivo_Merke_Bow = other.HitChance[NPC_TALENT_BOW];
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-	Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow, DIALOG_BACK, DIA_NASZ_215_Kivo_TeachBow_Back);
-	
-	if (other.HitChance[NPC_TALENT_BOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5); };
-	}
-
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5High); };
-	};
-};
-
-FUNC VOID DIA_NASZ_215_Kivo_TeachBow_Back ()
-{
-	if (Kivo_Merke_Bow < other.HitChance[NPC_TALENT_BOW])
-	{
-		AI_Output (self ,other,"DIA_NASZ_215_Kivo_TeachBow_BACK_08_00"); //No i proszê. Od razu poprawi³a siê twoja celnoœæ.
-	};
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-};
-
-FUNC VOID DIA_NASZ_215_Kivo_TeachBow_BOW_1 ()
-{
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 1, 100);
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-
-	Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow, DIALOG_BACK, DIA_NASZ_215_Kivo_TeachBow_Back);
-
-	if (other.HitChance[NPC_TALENT_BOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5); };
-	}
-
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5High); };
-	};
-};
-
-FUNC VOID DIA_NASZ_215_Kivo_TeachBow_BOW_5 ()
-{
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 5, 100);
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-
-	Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow, DIALOG_BACK, DIA_NASZ_215_Kivo_TeachBow_Back);
-
-	if (other.HitChance[NPC_TALENT_BOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5); };
-	}
-
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5High); };
-	};
-};
-
-FUNC VOID DIA_NASZ_215_Kivo_TeachBow_BOW_1High ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 1, 100);
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-
-	Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow, DIALOG_BACK, DIA_NASZ_215_Kivo_TeachBow_Back);
-
-	if (other.HitChance[NPC_TALENT_BOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5); };
-	}
-
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5High); };
-	};
-};
-
-FUNC VOID DIA_NASZ_215_Kivo_TeachBow_BOW_5High ()
-{
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 5, 100);
-	
-	Info_ClearChoices (DIA_NASZ_215_Kivo_TeachBow);
-
-	Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow, DIALOG_BACK, DIA_NASZ_215_Kivo_TeachBow_Back);
-
-	if (other.HitChance[NPC_TALENT_BOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5); };
-	}
-
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice (DIA_NASZ_215_Kivo_TeachBow,"£uki + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_215_Kivo_TeachBow_Bow_5High); };
-	};
-};
 //*********************************************************************
 //	         AmmannQuest
 //*********************************************************************
@@ -739,7 +604,128 @@ FUNC VOID DIA_NASZ_215_Kivo_AmmannQuest_Info()
 
 };
 
+// ************************************************************
+// 			  				TEACH
+// ************************************************************
 
+const int Kivo_BOW_MAX = 100;
+var int Kivo_Merke_Bow;
+
+func void KivoAddChoicesBOW() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_BOW, 1, Kivo_BOW_MAX) > 0) {
+		Info_AddChoice		(DIA_Kivo_Teach, BuildLearnString(LEARN_BOW, 1, Kivo_BOW_MAX), DIA_Kivo_Teach_BOW_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_BOW, 5, Kivo_BOW_MAX) > 1) {
+		Info_AddChoice		(DIA_Kivo_Teach, BuildLearnString(LEARN_BOW, 5, Kivo_BOW_MAX), DIA_Kivo_Teach_BOW_5); 
+	};
+
+};
+
+func void KivoSay_CantTeachYou() {
+	AI_Output(self,other,"KivoSay_CantTeachYou_01_00"); //Niczego wiêcej ciê ju¿ nie nauczê. Strzelaj, ¿eby twoja celnoœæ nie mala³a.
+};
+
+func void KivoSay_NoMoney() {
+	AI_Output (self, other,"KivoSay_NoMoney_01_00"); //Nie masz doœæ z³ota.
+};
+
+func void KivoSay_NoExp() {
+	AI_Output (self, other,"KivoSay_NoExp_01_00"); //Brak ci doœwiadczenia.
+};
+
+INSTANCE DIA_Kivo_Teach   (C_INFO)
+{
+	npc         = NASZ_215_Kivo;
+ 	nr          = 100;
+ 	condition   = DIA_Kivo_Teach_Condition;
+ 	information = DIA_Kivo_Teach_Info;
+ 	permanent   = TRUE;
+	description = "Chcê siê nauczyæ czegoœ o ³ucznictwie.";
+};
+
+FUNC INT DIA_Kivo_Teach_Condition()	
+{
+	if (npc_knowsinfo (other, DIA_NASZ_215_Kivo_CanYouTeach))
+	&& (other.HitChance[NPC_TALENT_BOW] < 100)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_Kivo_Teach_Info()
+{
+	AI_Output (other, self, "DIA_NASZ_215_Kivo_TeachBow_15_00"); //Chcê siê nauczyæ czegoœ o ³ucznictwie.
+	AI_Output (self, other, "DIA_NASZ_215_Kivo_TeachBow_08_01"); //Czego mogê ciê nauczyæ?
+	
+	Kivo_Merke_Bow = other.HitChance[NPC_TALENT_BOW];
+	
+	Info_ClearChoices 	(DIA_Kivo_Teach);
+	Info_AddChoice 		(DIA_Kivo_Teach,	DIALOG_BACK		,DIA_Kivo_Teach_Back);
+	KivoAddChoicesBOW();
+};
+
+FUNC VOID DIA_Kivo_Teach_Back ()
+{
+	if (Kivo_Merke_Bow < other.HitChance[NPC_TALENT_BOW] && other.HitChance[NPC_TALENT_BOW] < 100)
+	{
+		AI_Output (self ,other,"DIA_NASZ_215_Kivo_TeachBow_BACK_08_00"); //No i proszê. Od razu poprawi³a siê twoja celnoœæ.
+	};
+
+	Info_ClearChoices (DIA_Kivo_Teach);
+};
+
+FUNC VOID DIA_Kivo_Teach_BOW_1 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_BOW,1,Kivo_BOW_MAX)) {
+		KivoSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_BOW,1,Kivo_BOW_MAX)) {
+		KivoSay_NoExp();
+	}
+	else {
+	
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 1, Kivo_BOW_MAX);
+	
+		if (GetTalentNow(LEARN_BOW) >= Kivo_BOW_MAX)
+		{
+			KivoSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Kivo_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Kivo_Teach);
+		Info_AddChoice 		(DIA_Kivo_Teach,	DIALOG_BACK		,DIA_Kivo_Teach_Back);
+		KivoAddChoicesBOW();
+	};
+
+};
+
+FUNC VOID DIA_Kivo_Teach_BOW_5 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_BOW,5,Kivo_BOW_MAX)) {
+		KivoSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_BOW,5,Kivo_BOW_MAX)) {
+		KivoSay_NoExp();
+	}
+	else {
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_BOW,5,Kivo_BOW_MAX);
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, amount, Kivo_BOW_MAX);
+	
+		if (GetTalentNow(LEARN_BOW) >= Kivo_BOW_MAX)
+		{
+			KivoSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Kivo_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Kivo_Teach);
+		Info_AddChoice 		(DIA_Kivo_Teach,	DIALOG_BACK		,DIA_Kivo_Teach_Back);
+		KivoAddChoicesBOW();
+	};
+};
 
 // ************************************************************
 // 			  				PICK POCKET

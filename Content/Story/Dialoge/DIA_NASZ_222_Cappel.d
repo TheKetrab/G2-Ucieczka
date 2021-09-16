@@ -164,135 +164,133 @@ FUNC VOID DIA_NASZ_222_Cappel_koniec_Info()
 //					Teach
 // *******************************************
 
+const int Cappel_STR_MAX = 90;
 var int Cappel_Teach_STR;
+var int Cappel_Teach_NoMore;
 
-INSTANCE DIA_NASZ_222_Cappel_Teach(C_INFO)
-{
-	npc		= NASZ_222_Cappel;
-	nr		= 5;
-	condition	= DIA_NASZ_222_Cappel_Teach_Condition;
-	information	= DIA_NASZ_222_Cappel_Teach_Info;
-	permanent	= TRUE;
-	description	= "Ucz mnie.";
-};                       
+func void CappelAddChoicesSTR() {
 
-FUNC INT DIA_NASZ_222_Cappel_Teach_Condition()
+	if (AlignRequestedAmountToTeacherMax(LEARN_STR, 1, Cappel_STR_MAX) > 0) {
+		Info_AddChoice		(DIA_Cappel_Teach, BuildLearnString(LEARN_STR, 1, Cappel_STR_MAX), DIA_Cappel_Teach_STR_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_STR, 5, Cappel_STR_MAX) > 1) {
+		Info_AddChoice		(DIA_Cappel_Teach, BuildLearnString(LEARN_STR, 5, Cappel_STR_MAX), DIA_Cappel_Teach_STR_5); 
+	};
+
+};
+
+func void CappelSay_CantTeachYou() {
+	AI_Output(self,other,"CappelSay_CantTeachYou_55_00"); //Niestety, niczego wiêcej ju¿ ciê nie nauczê.
+	Cappel_Teach_NoMore = TRUE;
+};
+
+func void CappelSay_NoMoney() {
+	AI_Output (self, other,"CappelSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+};
+
+func void CappelSay_NoExp() {
+	AI_Output (self, other,"CappelSay_NoExp_55_00"); //Brak ci doœwiadczenia.
+};
+
+INSTANCE DIA_Cappel_Teach   (C_INFO)
 {
-	if (Npc_KnowsInfo (other, DIA_NASZ_222_Cappel_nauka))
+	npc         = NASZ_222_Cappel;
+ 	nr          = 100;
+ 	condition   = DIA_Cappel_Teach_Condition;
+ 	information = DIA_Cappel_Teach_Info;
+ 	permanent   = TRUE;
+ 	description = "Ucz mnie.";
+};
+
+FUNC INT DIA_Cappel_Teach_Condition()
+{
+	if (npc_knowsinfo (other, DIA_NASZ_222_Cappel_nauka))
+	&& (Cappel_Teach_NoMore == FALSE)
 	{
 		return TRUE;
 	};
 };
- 
-FUNC VOID DIA_NASZ_222_Cappel_Teach_Info()
-{	
+
+FUNC VOID DIA_Cappel_Teach_Info()
+{
 	AI_Output (other,self ,"DIA_NASZ_222_Cappel_Teach_15_00"); //Ucz mnie.
 
-		Cappel_Teach_STR = other.attribute[ATR_STRENGTH];
-
-		Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
-		Info_AddChoice		(DIA_NASZ_222_Cappel_Teach, DIALOG_BACK, DIA_NASZ_222_Cappel_Teach_Back);
+	if (GetTalentNow(LEARN_STR) >= Cappel_STR_MAX)
+	{
+		CappelSay_CantTeachYou();
+		Info_ClearChoices 	(DIA_Cappel_Teach);
+		return;
+	};
 		
-		if (other.attribute[ATR_STRENGTH] < 50) {
-			if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1); };
-			if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5); };
-		}
+	Cappel_Teach_STR = other.attribute[ATR_STRENGTH];
 
-		else {
-			if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1High); };
-			if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5High); };
-		};
+	Info_ClearChoices   (DIA_Cappel_Teach);
+	Info_AddChoice 		(DIA_Cappel_Teach, DIALOG_BACK, DIA_Cappel_Teach_BACK);
+	CappelAddChoicesSTR();
 };
 
-FUNC VOID DIA_NASZ_222_Cappel_Teach_Back ()
+func void DIA_Cappel_Teach_BACK()
 {
-	if (Cappel_Teach_STR < other.attribute[ATR_STRENGTH])
+	if (Cappel_Teach_STR < other.attribute[ATR_STRENGTH] && other.attribute[ATR_STRENGTH] < Cappel_STR_MAX)
 	{
 		AI_Output (self, other, "DIA_NASZ_222_Cappel_Teach_Back_01_00"); //Œwietnie! Teraz mo¿esz skuteczniej wykorzystywaæ swoje umiejêtnoœci.
 	};
-
-	Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
-};
-
-FUNC VOID DIA_NASZ_222_Cappel_Teach_STR_1 ()
-{
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, 90);
 	
-	Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
-	
-	Info_AddChoice		(DIA_NASZ_222_Cappel_Teach, DIALOG_BACK, DIA_NASZ_222_Cappel_Teach_Back);
-
-		if (other.attribute[ATR_STRENGTH] < 50) {
-			if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1); };
-			if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5); };
-		}
-
-		else {
-			if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1High); };
-			if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5High); };
-		};
+	Info_ClearChoices (DIA_Cappel_Teach);
 };
 
-FUNC VOID DIA_NASZ_222_Cappel_Teach_STR_5 ()
+FUNC VOID DIA_Cappel_Teach_STR_1 ()
 {
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 5, 90);
-
-	Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
-
-	Info_AddChoice		(DIA_NASZ_222_Cappel_Teach, DIALOG_BACK, DIA_NASZ_222_Cappel_Teach_Back);
-
-		if (other.attribute[ATR_STRENGTH] < 50) {
-			if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1); };
-			if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5); };
-		}
-
-		else {
-			if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1High); };
-			if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5High); };
-		};
-};
-
-FUNC VOID DIA_NASZ_222_Cappel_Teach_STR_1High ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, 90);
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_STR,1,Cappel_STR_MAX)) {
+		CappelSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_STR,1,Cappel_STR_MAX)) {
+		CappelSay_NoExp();
+	}
+	else {
 	
-	Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
+		B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, Cappel_STR_MAX);
 	
-	Info_AddChoice		(DIA_NASZ_222_Cappel_Teach, DIALOG_BACK, DIA_NASZ_222_Cappel_Teach_Back);
-
-		if (other.attribute[ATR_STRENGTH] < 50) {
-			if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1); };
-			if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5); };
-		}
-
-		else {
-			if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1High); };
-			if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5High); };
+		if (GetTalentNow(LEARN_STR) >= Cappel_STR_MAX)
+		{
+			CappelSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Cappel_Teach);
+			return;
 		};
+	
+		Info_ClearChoices 	(DIA_Cappel_Teach);
+		Info_AddChoice 		(DIA_Cappel_Teach,	DIALOG_BACK		,DIA_Cappel_Teach_Back);
+		CappelAddChoicesSTR();
+	};
+
 };
 
-FUNC VOID DIA_NASZ_222_Cappel_Teach_STR_5High ()
+FUNC VOID DIA_Cappel_Teach_STR_5 ()
 {
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 5, 90);
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_STR,5,Cappel_STR_MAX)) {
+		CappelSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_STR,5,Cappel_STR_MAX)) {
+		CappelSay_NoExp();
+	}
+	else {
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_STR,5,Cappel_STR_MAX);
+		B_TeachAttributePoints (self, other, ATR_STRENGTH, amount, Cappel_STR_MAX);
 
-	Info_ClearChoices (DIA_NASZ_222_Cappel_Teach);
-
-	Info_AddChoice		(DIA_NASZ_222_Cappel_Teach, DIALOG_BACK, DIA_NASZ_222_Cappel_Teach_Back);
-
-		if (other.attribute[ATR_STRENGTH] < 50) {
-			if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1); };
-			if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5); };
-		}
-
-		else {
-			if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_1High); };
-			if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_222_Cappel_Teach,"Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_222_Cappel_Teach_STR_5High); };
+		if (GetTalentNow(LEARN_STR) >= Cappel_STR_MAX)
+		{
+			CappelSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Cappel_Teach);
+			return;
 		};
+
+		Info_ClearChoices 	(DIA_Cappel_Teach);
+		Info_AddChoice 		(DIA_Cappel_Teach,	DIALOG_BACK		,DIA_Cappel_Teach_Back);
+		CappelAddChoicesSTR();
+	};
 };
+
 
 //*********************************************************************
 //	Info HowAreYou

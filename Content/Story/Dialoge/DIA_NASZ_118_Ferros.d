@@ -273,7 +273,7 @@ FUNC VOID DIA_NASZ_118_Ferros_HowDoUFeel_Info()
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_15_01"); //Zdecydowanie lepiej, chocia¿ nadal ciê¿ko jest mi siê wyspaæ. Prawdopodobnie to wina dzia³ania eliksiru.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_02"); //Mogê mieæ do ciebie ostatni¹ proœbê?
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_03"); //Oczywiœcie, o co chodzi?
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w swoim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ? Oczywiœcie oddam ci koszty zakupy.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w swoim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ? Oczywiœcie oddam ci koszta zakupów.
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_05"); //Zobaczê, co da siê zrobiæ.
 
 	B_LogEntry (TOPIC_Ferros_sny, "Feros czuje siê ju¿ lepiej, lecz nadal ma k³opoty z zaœniêciem. Rozwi¹zaniem ma byæ nalewka od Jeremiasza.");
@@ -490,17 +490,31 @@ FUNC VOID DIA_NASZ_118_Ferros_arena_Info()
 //*********************************************************************
 //	Teach
 //*********************************************************************
-INSTANCE DIA_NASZ_118_Ferros_teach   (C_INFO)
+
+const int Ferros_STR_MAX = 90;
+
+func void FerrosAddChoicesSTR() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_STR, 1, Ferros_STR_MAX) > 0) {
+		Info_AddChoice		(DIA_Ferros_Teach, BuildLearnString(LEARN_STR, 1, Ferros_STR_MAX), DIA_Ferros_Teach_STR_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_STR, 5, Ferros_STR_MAX) > 1) {
+		Info_AddChoice		(DIA_Ferros_Teach, BuildLearnString(LEARN_STR, 5, Ferros_STR_MAX), DIA_Ferros_Teach_STR_5); 
+	};
+
+};
+
+INSTANCE DIA_Ferros_Teach   (C_INFO)
 {
 	npc         = NASZ_118_Ferros;
  	nr          = 100;
- 	condition   = DIA_NASZ_118_Ferros_teach_Condition;
- 	information = DIA_NASZ_118_Ferros_teach_Info;
+ 	condition   = DIA_Ferros_Teach_Condition;
+ 	information = DIA_Ferros_Teach_Info;
  	permanent   = TRUE;
  	description = "Chcê byæ silniejszy.";
 };
 
-FUNC INT DIA_NASZ_118_Ferros_teach_Condition()
+FUNC INT DIA_Ferros_Teach_Condition()
 {
 	if (npc_knowsinfo (other, DIA_NASZ_118_Ferros_CanYouTeach))
 	{
@@ -508,107 +522,85 @@ FUNC INT DIA_NASZ_118_Ferros_teach_Condition()
 	};
 };
 
-FUNC VOID DIA_NASZ_118_Ferros_teach_Info()
+FUNC VOID DIA_Ferros_Teach_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_118_Ferros_teach_15_00"); //Chcê byæ silniejszy.
-	
-	Info_ClearChoices (DIA_NASZ_118_Ferros_Teach);
-	
-	Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, DIALOG_BACK, DIA_NASZ_118_Ferros_Teach_Back);
-	
-	if (other.attribute[ATR_STRENGTH] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5); };
+
+	Info_ClearChoices   (DIA_Ferros_Teach);
+	Info_AddChoice 		(DIA_Ferros_Teach, DIALOG_BACK, DIA_Ferros_Teach_BACK);
+	FerrosAddChoicesSTR();
+};
+
+func void DIA_Ferros_Teach_BACK()
+{
+	Info_ClearChoices (DIA_Ferros_Teach);
+};
+
+func void FerrosSay_CantTeachYou() {
+	AI_Output(self,other,"FerrosSay_CantTeachYou_55_00"); //Zdajesz siê byæ silniejszy ode mnie. Nie mogê ciê dalej trenowaæ.
+};
+
+func void FerrosSay_NoMoney() {
+	AI_Output (self, other,"FerrosSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+};
+
+func void FerrosSay_NoExp() {
+	AI_Output (self, other,"FerrosSay_NoExp_55_00"); //Brak ci doœwiadczenia.
+};
+
+
+FUNC VOID DIA_Ferros_Teach_STR_1 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_STR,1,Ferros_STR_MAX)) {
+		FerrosSay_NoMoney();
 	}
-	
+	else if (hero.lp < CalculateLearnLPCost(LEARN_STR,1,Ferros_STR_MAX)) {
+		FerrosSay_NoExp();
+	}
 	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5High); };
+	
+		B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, Ferros_STR_MAX);
+	
+		if (GetTalentNow(LEARN_STR) >= Ferros_STR_MAX)
+		{
+			FerrosSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Ferros_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Ferros_Teach);
+		Info_AddChoice 		(DIA_Ferros_Teach,	DIALOG_BACK		,DIA_Ferros_Teach_Back);
+		FerrosAddChoicesSTR();
+	};
+
+};
+
+FUNC VOID DIA_Ferros_Teach_STR_5 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_STR,5,Ferros_STR_MAX)) {
+		FerrosSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_STR,5,Ferros_STR_MAX)) {
+		FerrosSay_NoExp();
+	}
+	else {
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_STR,5,Ferros_STR_MAX);
+		B_TeachAttributePoints (self, other, ATR_STRENGTH, amount, Ferros_STR_MAX);
+
+		if (GetTalentNow(LEARN_STR) >= Ferros_STR_MAX)
+		{
+			FerrosSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Ferros_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Ferros_Teach);
+		Info_AddChoice 		(DIA_Ferros_Teach,	DIALOG_BACK		,DIA_Ferros_Teach_Back);
+		FerrosAddChoicesSTR();
 	};
 };
 
-FUNC VOID DIA_NASZ_118_Ferros_Teach_Back ()
-{
-	Info_ClearChoices (DIA_NASZ_118_Ferros_Teach);
-};
-
-FUNC VOID DIA_NASZ_118_Ferros_Teach_STR_1 ()
-{
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, 90);
-	
-	Info_ClearChoices 	(DIA_NASZ_118_Ferros_Teach);
-	Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, DIALOG_BACK, DIA_NASZ_118_Ferros_Teach_Back);
-
-	if (other.attribute[ATR_STRENGTH] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5High); };
-	};
-};
-
-
-FUNC VOID DIA_NASZ_118_Ferros_Teach_STR_5 ()
-{
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 5, 90);
-	
-	Info_ClearChoices 	(DIA_NASZ_118_Ferros_Teach);
-	Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, DIALOG_BACK, DIA_NASZ_118_Ferros_Teach_Back);
-
-	if (other.attribute[ATR_STRENGTH] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5High); };
-	};
-};
-
-FUNC VOID DIA_NASZ_118_Ferros_Teach_STR_1High ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, 90);
-	
-	Info_ClearChoices 	(DIA_NASZ_118_Ferros_Teach);
-	Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, DIALOG_BACK, DIA_NASZ_118_Ferros_Teach_Back);
-
-	if (other.attribute[ATR_STRENGTH] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5High); };
-	};
-};
-
-
-FUNC VOID DIA_NASZ_118_Ferros_Teach_STR_5High ()
-{
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachAttributePoints (self, other, ATR_STRENGTH, 5, 90);
-	
-	Info_ClearChoices 	(DIA_NASZ_118_Ferros_Teach);
-	Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, DIALOG_BACK, DIA_NASZ_118_Ferros_Teach_Back);
-
-	if (other.attribute[ATR_STRENGTH] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_118_Ferros_Teach, "Si³a + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_118_Ferros_Teach_STR_5High); };
-	};
-};
 
 func void OPEN_RENEGACI_ATTACK_S1() {
 

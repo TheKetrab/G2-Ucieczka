@@ -3259,21 +3259,6 @@ FUNC VOID DIA_NASZ_110_Keroloth_KurgKan_OtoOn4_Info()
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //*********************************************************************
 //	Info Nauka
 //*********************************************************************
@@ -3308,6 +3293,35 @@ FUNC VOID DIA_NASZ_110_Keroloth_nauka_Info()
 };
 
 
+//*********************************************************************
+//	TEACH
+//*********************************************************************
+
+const int Keroloth_1H_MAX = 100;
+const int Keroloth_2H_MAX = 100;
+
+func void KerolothAddChoices1H() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_1H, 1, Keroloth_1H_MAX) > 0) {
+		Info_AddChoice		(DIA_Keroloth_Teach, BuildLearnString(LEARN_1H, 1, Keroloth_1H_MAX), DIA_Keroloth_Teach_1h_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_1H, 5, Keroloth_1H_MAX) > 1) {
+		Info_AddChoice		(DIA_Keroloth_Teach, BuildLearnString(LEARN_1H, 5, Keroloth_1H_MAX), DIA_Keroloth_Teach_1h_5); 
+	};
+
+};
+
+func void KerolothAddChoices2H() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_2H, 1, Keroloth_2H_MAX) > 0) {
+		Info_AddChoice		(DIA_Keroloth_Teach, BuildLearnString(LEARN_2H, 1, Keroloth_2H_MAX), DIA_Keroloth_Teach_2h_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_2H, 5, Keroloth_2H_MAX) > 1) {
+		Info_AddChoice		(DIA_Keroloth_Teach, BuildLearnString(LEARN_2H, 5, Keroloth_2H_MAX), DIA_Keroloth_Teach_2h_5);
+	};
+
+};
+
 func void HeroSay_LetsTrainKeroloth() {
 	AI_Output (other,self ,"HeroSay_LetsTrainKeroloth_15_00"); //Dobra. Bierzmy siê do nauki.
 };
@@ -3319,147 +3333,164 @@ func void KerolothSay_YouDontNeedATeacher() {
 func void KerolothSay_YouArePro1h() {
 	AI_Output(self,other,"KerolothSay_YouArePro1h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki jednorêcznym orê¿em.
 };
-		
+
 func void KerolothSay_YouArePro2h() {
 	AI_Output(self,other,"KerolothSay_YouArePro2h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki broni¹ drurêczn¹.
 };
-		
 
-//*********************************************************************
-//	Info Nauka1
-//*********************************************************************
-INSTANCE DIA_NASZ_110_Keroloth_nauka1   (C_INFO)
+func void KerolothSay_NoMoney() {
+	AI_Output (self, other,"KerolothSay_NoMoney_04_00"); //Nie masz doœæ z³ota.
+};
+
+func void KerolothSay_NoExp() {
+	AI_Output (self, other,"KerolothSay_NoExp_04_00"); //Brak ci doœwiadczenia.
+};
+
+
+INSTANCE DIA_Keroloth_Teach   (C_INFO)
 {
 	npc         = NASZ_110_Keroloth;
  	nr          = 101;
- 	condition   = DIA_NASZ_110_Keroloth_nauka1_Condition;
- 	information = DIA_NASZ_110_Keroloth_nauka1_Info;
+ 	condition   = DIA_Keroloth_Teach_Condition;
+ 	information = DIA_Keroloth_Teach_Info;
  	permanent   = TRUE;
-	description = "Ucz mnie pos³ugiwania siê broni¹ jednorêczn¹.";
+	description = "Bierzmy siê do nauki.";
 };
 
-FUNC INT DIA_NASZ_110_Keroloth_nauka1_Condition()	
+FUNC INT DIA_Keroloth_Teach_Condition()	
 {
-	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_nauka) && other.HitChance[NPC_TALENT_1H] >= 60)
+	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_nauka))
+	&& (other.HitChance[NPC_TALENT_1H] >= 60 || other.HitChance[NPC_TALENT_2H] >= 60)
 	{
 		return TRUE;
 	};
 };
 
-FUNC VOID DIA_NASZ_110_Keroloth_nauka1_Info()
+FUNC VOID DIA_Keroloth_Teach_Info()
 {
 	HeroSay_LetsTrainKeroloth();
-	
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_5); };
 
-};
-FUNC VOID DIA_NASZ_110_Keroloth_nauka1_Back ()
-{
-	Info_ClearChoices (DIA_NASZ_110_Keroloth_nauka1);
-};
-
-
-FUNC VOID DIA_NASZ_110_Keroloth_nauka1_1 ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, 100);
-	
-	if (other.HitChance[NPC_TALENT_1H] >= 100)
-	{
-		KerolothSay_YouArePro1h();
+	if (other.HitChance[NPC_TALENT_1H] >= 100 && other.HitChance[NPC_TALENT_2H] >= 100) {
 		KerolothSay_YouDontNeedATeacher();
+		return;
 	};
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_5); };
-};
-
-FUNC VOID DIA_NASZ_110_Keroloth_nauka1_5 ()
-{
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 5, 100);
 	
-	if (other.HitChance[NPC_TALENT_1H] >= 100)
-	{
-		KerolothSay_YouArePro1h();
-		KerolothSay_YouDontNeedATeacher();
-	};
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka1);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka1,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka1_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka1, "Broñ jednorêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka1_5); };
+	Info_ClearChoices 	(DIA_Keroloth_Teach);
+		Info_AddChoice 		(DIA_Keroloth_Teach,	DIALOG_BACK		,DIA_Keroloth_Teach_Back);
+		if (GetTalentNow(LEARN_2H) >= 60) { KerolothAddChoices2H(); };
+		if (GetTalentNow(LEARN_1H) >= 60) { KerolothAddChoices1H(); };
 };
-//*********************************************************************
-//	Info Nauka2
-//*********************************************************************
-INSTANCE DIA_NASZ_110_Keroloth_nauka2   (C_INFO)
+FUNC VOID DIA_Keroloth_Teach_Back ()
 {
-	npc         = NASZ_110_Keroloth;
- 	nr          = 102;
- 	condition   = DIA_NASZ_110_Keroloth_nauka2_Condition;
- 	information = DIA_NASZ_110_Keroloth_nauka2_Info;
- 	permanent   = TRUE;
-	description = "Ucz mnie pos³ugiwania siê broni¹ dwurêczn¹.";
+	Info_ClearChoices (DIA_Keroloth_Teach);
 };
 
-FUNC INT DIA_NASZ_110_Keroloth_nauka2_Condition()	
+FUNC VOID DIA_Keroloth_Teach_1h_1 ()
 {
-	if (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_nauka) && other.HitChance[NPC_TALENT_2H] >= 60)
-	{
-		return TRUE;
-	};
-};
-
-FUNC VOID DIA_NASZ_110_Keroloth_nauka2_Info()
-{
-	HeroSay_LetsTrainKeroloth();
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_1H,1,Keroloth_1H_MAX)) {
+		KerolothSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_1H,1,Keroloth_1H_MAX)) {
+		KerolothSay_NoExp();
+	}
+	else {
 	
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_5); };
-
-};
-FUNC VOID DIA_NASZ_110_Keroloth_nauka2_Back ()
-{
-	Info_ClearChoices (DIA_NASZ_110_Keroloth_nauka2);
-};
-
-
-FUNC VOID DIA_NASZ_110_Keroloth_nauka2_1 ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, 1, 50);
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, Keroloth_1H_MAX);
 	
-	if (other.HitChance[NPC_TALENT_2H] >= 100)
-	{
-		KerolothSay_YouArePro2h();
-		KerolothSay_YouDontNeedATeacher();
+		if (GetTalentNow(LEARN_1H) >= Keroloth_1H_MAX)
+		{
+			KerolothSay_YouArePro1h();
+			KerolothSay_YouDontNeedATeacher();
+			Info_ClearChoices 	(DIA_Keroloth_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Keroloth_Teach);
+		Info_AddChoice 		(DIA_Keroloth_Teach,	DIALOG_BACK		,DIA_Keroloth_Teach_Back);
+		KerolothAddChoices1H();
 	};
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_5); };
+
 };
 
-FUNC VOID DIA_NASZ_110_Keroloth_nauka2_5 ()
+FUNC VOID DIA_Keroloth_Teach_1h_5 ()
 {
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, 5, 100);
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_1H,5,Keroloth_1H_MAX)) {
+		KerolothSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_1H,5,Keroloth_1H_MAX)) {
+		KerolothSay_NoExp();
+	}
+	else {
 	
-	if (other.HitChance[NPC_TALENT_2H] >= 100)
-	{
-		KerolothSay_YouArePro2h();
-		KerolothSay_YouDontNeedATeacher();
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_1H,5,Keroloth_1H_MAX);
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, amount, Keroloth_1H_MAX);
+	
+		if (GetTalentNow(LEARN_1H) >= Keroloth_1H_MAX)
+		{
+			KerolothSay_YouArePro1h();
+			KerolothSay_YouDontNeedATeacher();
+			Info_ClearChoices 	(DIA_Keroloth_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Keroloth_Teach);
+		Info_AddChoice 		(DIA_Keroloth_Teach,	DIALOG_BACK		,DIA_Keroloth_Teach_Back);
+		KerolothAddChoices1H();
 	};
-	Info_ClearChoices 	(DIA_NASZ_110_Keroloth_nauka2);
-	Info_AddChoice 		(DIA_NASZ_110_Keroloth_nauka2,	DIALOG_BACK		,DIA_NASZ_110_Keroloth_nauka2_Back);
-	if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_1); };
-	if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice	(DIA_NASZ_110_Keroloth_nauka2, "Broñ dwurêczna + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_110_Keroloth_nauka2_5); };
+};
+
+FUNC VOID DIA_Keroloth_Teach_2h_1 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_2H,1,Keroloth_2H_MAX)) {
+		KerolothSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_2H,1,Keroloth_2H_MAX)) {
+		KerolothSay_NoExp();
+	}
+	else {
+	
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, 1, Keroloth_2H_MAX);
+	
+		if (GetTalentNow(LEARN_2H) >= Keroloth_2H_MAX)
+		{
+			KerolothSay_YouArePro2h();
+			KerolothSay_YouDontNeedATeacher();
+			Info_ClearChoices 	(DIA_Keroloth_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Keroloth_Teach);
+		Info_AddChoice 		(DIA_Keroloth_Teach,	DIALOG_BACK		,DIA_Keroloth_Teach_Back);
+		KerolothAddChoices2H();
+	};
+};
+
+FUNC VOID DIA_Keroloth_Teach_2h_5 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_2H,5,Keroloth_2H_MAX)) {
+		KerolothSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_2H,5,Keroloth_2H_MAX)) {
+		KerolothSay_NoExp();
+	}
+	else {
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_2H,5,Keroloth_2H_MAX);
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, amount, Keroloth_2H_MAX);
+	
+		if (GetTalentNow(LEARN_2H) >= Keroloth_2H_MAX)
+		{
+			KerolothSay_YouArePro2h();
+			KerolothSay_YouDontNeedATeacher();
+			Info_ClearChoices 	(DIA_Keroloth_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Keroloth_Teach);
+		Info_AddChoice 		(DIA_Keroloth_Teach,	DIALOG_BACK		,DIA_Keroloth_Teach_Back);
+		KerolothAddChoices2H();
+	};
+
 };
 
 // ************************************************************

@@ -1238,26 +1238,46 @@ FUNC VOID DIA_NASZ_119_Udar_ThanksToYou_Info()
 
 
 
-
-
-
-
-
-
 //*********************************************************************
-//	Info Teach
+//	Teach
 //*********************************************************************
-INSTANCE DIA_NASZ_119_Udar_Teach   (C_INFO)
+
+const int Udar_CBOW_MAX = 100;
+
+func void UdarAddChoicesCBOW() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_CBOW, 1, Udar_CBOW_MAX) > 0) {
+		Info_AddChoice		(DIA_Udar_Teach, BuildLearnString(LEARN_CBOW, 1, Udar_CBOW_MAX), DIA_Udar_Teach_CBOW_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_CBOW, 5, Udar_CBOW_MAX) > 1) {
+		Info_AddChoice		(DIA_Udar_Teach, BuildLearnString(LEARN_CBOW, 5, Udar_CBOW_MAX), DIA_Udar_Teach_CBOW_5); 
+	};
+
+};
+
+func void UdarSay_CantTeachYou() {
+	AI_Output(self,other,"DIA_NASZ_119_Udar_Teach_01_00"); //Nie potrafiê ciê ju¿ niczego nauczyæ. Opanowa³eœ do mistrzostwa sztukê strzelania. Gratulujê.
+};
+
+func void UdarSay_NoMoney() {
+	AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_15_01"); //Nie masz doœæ z³ota.
+};
+
+func void UdarSay_NoExp() {
+	AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_55_04"); //Brak ci doœwiadczenia.
+};
+
+INSTANCE DIA_Udar_Teach   (C_INFO)
 {
 	npc         = NASZ_119_Udar;
- 	nr          = 100;
- 	condition   = DIA_NASZ_119_Udar_Teach_Condition;
- 	information = DIA_NASZ_119_Udar_Teach_Info;
+ 	nr          = 101;
+ 	condition   = DIA_Udar_Teach_Condition;
+ 	information = DIA_Udar_Teach_Info;
  	permanent   = TRUE;
 	description = "Ucz mnie strzelaæ z kuszy.";
 };
 
-FUNC INT DIA_NASZ_119_Udar_Teach_Condition()	
+FUNC INT DIA_Udar_Teach_Condition()	
 {
 	if (npc_knowsinfo (other, DIA_NASZ_119_Udar_nauka)
 	&& (other.HitChance[NPC_TALENT_CROSSBOW] < 100))
@@ -1266,114 +1286,72 @@ FUNC INT DIA_NASZ_119_Udar_Teach_Condition()
 	};
 };
 
-FUNC VOID DIA_NASZ_119_Udar_Teach_Info()
+FUNC VOID DIA_Udar_Teach_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Teach_15_00"); //Ucz mnie strzelaæ z kuszy.
-
-	Info_ClearChoices 	(DIA_NASZ_119_Udar_Teach);
-	Info_AddChoice 		(DIA_NASZ_119_Udar_Teach,	DIALOG_BACK		,DIA_NASZ_119_Udar_Teach_Back);
-
-	if (other.HitChance[NPC_TALENT_CROSSBOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5); };
-	}
 	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5High); };
-	};
+	Info_ClearChoices 	(DIA_Udar_Teach);
+	Info_AddChoice 		(DIA_Udar_Teach,	DIALOG_BACK		,DIA_Udar_Teach_Back);
+	UdarAddChoicesCBOW();
 };
 
-
-func void DIA_NASZ_119_Udar_Teach_Back ()
+FUNC VOID DIA_Udar_Teach_Back ()
 {
-	if (other.HitChance[NPC_TALENT_CROSSBOW] >= 100)
-	{
-		AI_Output(self,other,"DIA_NASZ_119_Udar_Teach_01_00"); //Nie potrafiê ciê ju¿ niczego nauczyæ. Opanowa³eœ do mistrzostwa sztukê strzelania. Gratulujê.
-		
-	};
-	Info_ClearChoices (DIA_NASZ_119_Udar_Teach);
+	Info_ClearChoices (DIA_Udar_Teach);
 };
 
-func void DIA_NASZ_119_Udar_Teach_1H_1 ()
+FUNC VOID DIA_Udar_Teach_CBOW_1 ()
 {
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 1, 100);
-	
-	Info_ClearChoices 	(DIA_NASZ_119_Udar_Teach);
-
-	Info_AddChoice 		(DIA_NASZ_119_Udar_Teach,	DIALOG_BACK		,DIA_NASZ_119_Udar_Teach_Back);
-
-	if (other.HitChance[NPC_TALENT_CROSSBOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5); };
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_CBOW,1,Udar_CBOW_MAX)) {
+		UdarSay_NoMoney();
 	}
-	
+	else if (hero.lp < CalculateLearnLPCost(LEARN_CBOW,1,Udar_CBOW_MAX)) {
+		UdarSay_NoExp();
+	}
 	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5High); };
+	
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 1, Udar_CBOW_MAX);
+
+	
+		if (GetTalentNow(LEARN_CBOW) >= Udar_CBOW_MAX)
+		{
+			UdarSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Udar_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Udar_Teach);
+		Info_AddChoice 		(DIA_Udar_Teach,	DIALOG_BACK		,DIA_Udar_Teach_Back);
+		UdarAddChoicesCBOW();
 	};
+
 };
 
-func void DIA_NASZ_119_Udar_Teach_1H_5 ()	
+FUNC VOID DIA_Udar_Teach_CBOW_5 ()
 {
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 5, 100);
-	
-	Info_ClearChoices 	(DIA_NASZ_119_Udar_Teach);
-
-	Info_AddChoice 		(DIA_NASZ_119_Udar_Teach,	DIALOG_BACK		,DIA_NASZ_119_Udar_Teach_Back);
-
-	if (other.HitChance[NPC_TALENT_CROSSBOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5); };
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_CBOW,5,Udar_CBOW_MAX)) {
+		UdarSay_NoMoney();
 	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5High); };
-	};
-};	
-
-func void DIA_NASZ_119_Udar_Teach_1H_1High ()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 1, 100);
-	
-	Info_ClearChoices 	(DIA_NASZ_119_Udar_Teach);
-
-	Info_AddChoice 		(DIA_NASZ_119_Udar_Teach,	DIALOG_BACK		,DIA_NASZ_119_Udar_Teach_Back);
-
-	if (other.HitChance[NPC_TALENT_CROSSBOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5); };
+	else if (hero.lp < CalculateLearnLPCost(LEARN_CBOW,5,Udar_CBOW_MAX)) {
+		UdarSay_NoExp();
 	}
-	
 	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5High); };
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_CBOW,5,Udar_CBOW_MAX);
+		B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, amount, Udar_CBOW_MAX);
+	
+		if (GetTalentNow(LEARN_CBOW) >= Udar_CBOW_MAX)
+		{
+			UdarSay_CantTeachYou();
+			Info_ClearChoices 	(DIA_Udar_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Udar_Teach);
+		Info_AddChoice 		(DIA_Udar_Teach,	DIALOG_BACK		,DIA_Udar_Teach_Back);
+		UdarAddChoicesCBOW();
 	};
 };
-
-func void DIA_NASZ_119_Udar_Teach_1H_5High ()	
-{
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 5, 100);
-	
-	Info_ClearChoices 	(DIA_NASZ_119_Udar_Teach);
-
-	Info_AddChoice 		(DIA_NASZ_119_Udar_Teach,	DIALOG_BACK		,DIA_NASZ_119_Udar_Teach_Back);
-
-	if (other.HitChance[NPC_TALENT_CROSSBOW] < 60) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_119_Udar_Teach,"Kusze + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_119_Udar_Teach_1H_5High); };
-	};
-};	
 
 //*********************************************************************
 //	         SzybkaNauka
@@ -1385,7 +1363,7 @@ INSTANCE DIA_NASZ_119_Udar_SzybkaNauka   (C_INFO)
  	condition   = DIA_NASZ_119_Udar_SzybkaNauka_Condition;
  	information = DIA_NASZ_119_Udar_SzybkaNauka_Info;
  	permanent   = TRUE;
- 	description = "Chcê siê szybciej uczyæ. (500 szt. z³ota, 10PN)";
+ 	description = "Chcê siê szybciej uczyæ. (10 PN, 500 szt. z³ota)";
 };
 
 FUNC INT DIA_NASZ_119_Udar_SzybkaNauka_Condition()	
@@ -1402,11 +1380,12 @@ FUNC VOID DIA_NASZ_119_Udar_SzybkaNauka_Info()
 	AI_Output (other, self,"DIA_NASZ_119_Udar_SzybkaNauka_15_00"); //Chcê siê szybciej uczyæ.
 	
 	if (npc_hasitems (other, ItMi_Gold) < 500) {
-		AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_15_01"); //Nie masz doœæ z³ota.
-		}
+		UdarSay_NoMoney();
+	}
 	else {
 
-		if (hero.lp >= 10){
+		if (hero.lp >= 10) {
+
 			AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_55_02"); //Staraj siê zapamiêtywaæ ka¿dy ruch. Ka¿de wykonane dzie³o.
 			AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_15_03"); //Pamiêtaj: Przyswajanie wiedzy zale¿y od twojego umys³u.
 
@@ -1417,10 +1396,10 @@ FUNC VOID DIA_NASZ_119_Udar_SzybkaNauka_Info()
 			PrintScreen ("Nauka: szybka nauka", -1, -1, FONT_Screen, 2);
 
 			Npc_SetTalentSkill 	(hero, NPC_TALENT_D, 1);
-			}
+		}
 
 		else {
-			AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_55_04"); //Brak ci doœwiadczenia.
+			UdarSay_NoExp();
 		};
 	};
 };	

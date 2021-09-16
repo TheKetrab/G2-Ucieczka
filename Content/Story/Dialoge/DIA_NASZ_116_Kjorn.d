@@ -189,128 +189,6 @@ FUNC VOID DIA_NASZ_116_Kjorn_afterwon_Info()
 };
 
 //*********************************************************************
-//	Teach
-//*********************************************************************
-INSTANCE DIA_NASZ_116_Kjorn_Teach   (C_INFO)
-{
-	npc         = NASZ_116_Kjorn;
- 	nr          = 100;
- 	condition   = DIA_NASZ_116_Kjorn_Teach_Condition;
- 	information = DIA_NASZ_116_Kjorn_Teach_Info;
- 	permanent   = TRUE;
- 	description = "Chcê byæ zrêczniejszy.";
-};
-
-FUNC INT DIA_NASZ_116_Kjorn_Teach_Condition()
-{
-	if (npc_knowsinfo (other, DIA_NASZ_116_Kjorn_PlsHelp))
-	&& (KjornNieBedzieUczylZrecznosci == FALSE)
-	{
-		return TRUE;
-	};
-};
-
-FUNC VOID DIA_NASZ_116_Kjorn_Teach_Info()
-{
-	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Teach_15_00"); //Chcê byæ zrêczniejszy.
-
-	Info_ClearChoices   (DIA_NASZ_116_Kjorn_TEACH);
-	Info_AddChoice 		(DIA_NASZ_116_Kjorn_TEACH, DIALOG_BACK, DIA_NASZ_116_Kjorn_TEACH_BACK);
-	
-	if (other.attribute[ATR_DEXTERITY] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5High); };
-	};
-};
-func void DIA_NASZ_116_Kjorn_TEACH_BACK()
-{
-	Info_ClearChoices (DIA_NASZ_116_Kjorn_TEACH);
-};
-func void DIA_NASZ_116_Kjorn_TEACH_1()
-{
-	if (hero.lp >= 1){ B_giveinvitems (other, self, ItMi_Gold, 5); };
-	B_TeachAttributePoints (self, other, ATR_DEXTERITY, 1, 90);
-	
-	Info_ClearChoices   (DIA_NASZ_116_Kjorn_TEACH);
-	
-	Info_AddChoice 		(DIA_NASZ_116_Kjorn_TEACH, DIALOG_BACK, DIA_NASZ_116_Kjorn_TEACH_BACK);
-
-	if (other.attribute[ATR_DEXTERITY] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5High); };
-	};
-};
-func void DIA_NASZ_116_Kjorn_TEACH_5()
-{
-	if (hero.lp >= 5){ B_giveinvitems (other, self, ItMi_Gold, 25); };
-	B_TeachAttributePoints (self, other, ATR_DEXTERITY, 5, 90);
-	
-	Info_ClearChoices   (DIA_NASZ_116_Kjorn_TEACH);
-	
-	Info_AddChoice 		(DIA_NASZ_116_Kjorn_TEACH, DIALOG_BACK, DIA_NASZ_116_Kjorn_TEACH_BACK);
-
-	if (other.attribute[ATR_DEXTERITY] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5High); };
-	};
-};
-
-func void DIA_NASZ_116_Kjorn_TEACH_1High()
-{
-	if (hero.lp >= 2){ B_giveinvitems (other, self, ItMi_Gold, 10); };
-	B_TeachAttributePoints (self, other, ATR_DEXTERITY, 1, 90);
-	
-	Info_ClearChoices   (DIA_NASZ_116_Kjorn_TEACH);
-	
-	Info_AddChoice 		(DIA_NASZ_116_Kjorn_TEACH, DIALOG_BACK, DIA_NASZ_116_Kjorn_TEACH_BACK);
-
-	if (other.attribute[ATR_DEXTERITY] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5High); };
-	};
-};
-func void DIA_NASZ_116_Kjorn_TEACH_5High()
-{
-	if (hero.lp >= 10){ B_giveinvitems (other, self, ItMi_Gold, 50); };
-	B_TeachAttributePoints (self, other, ATR_DEXTERITY, 5, 90);
-	
-	Info_ClearChoices   (DIA_NASZ_116_Kjorn_TEACH);
-	
-	Info_AddChoice 		(DIA_NASZ_116_Kjorn_TEACH, DIALOG_BACK, DIA_NASZ_116_Kjorn_TEACH_BACK);
-
-	if (other.attribute[ATR_DEXTERITY] < 50) {
-		if (npc_hasitems (other, ItMi_Gold) >= 5) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (1 PN, 5 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1); };
-		if (npc_hasitems (other, ItMi_Gold) >= 25) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (5 PN, 25 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5); };
-	}
-	
-	else {
-		if (npc_hasitems (other, ItMi_Gold) >= 10) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 1. (2 PN, 10 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_1High); };
-		if (npc_hasitems (other, ItMi_Gold) >= 50) { Info_AddChoice		(DIA_NASZ_116_Kjorn_TEACH, "Zrêcznoœæ + 5. (10 PN, 50 szt. z³ota)",DIA_NASZ_116_Kjorn_TEACH_5High); };
-	};
-};
-
-
-//*********************************************************************
 //			PiecBraciQuest
 //*********************************************************************
 INSTANCE DIA_NASZ_116_Kjorn_PiecBraciQuest   (C_INFO)
@@ -599,14 +477,135 @@ FUNC VOID DIA_NASZ_116_Kjorn_Finito_nothing2()
 {
 	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_00"); //I tak myœlê, ¿e mi bardziej siê przyda.
 	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_01"); //A niech ciê... Twój egoizm odwróci siê przeciwko tobie.
-	AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
-
+	
+	// moze i tak nie uczyc zrecznosci bo nauczyl na maxa, wtedy to by bylo bez sensu
+	if (KjornNieBedzieUczylZrecznosci == FALSE)
+	{
+		AI_Output (self, other,"DIA_NASZ_116_Kjorn_Finito_nothing2_15_02"); //OdejdŸ. I nie licz, ¿e bêdê ciê jeszcze uczy³. Skoro ty nie zrobisz czegoœ dla mnie, to ja nie bêdê robi³ niczego dla ciebie.
+	};
+	
 	FinishQuestKjorn(2);
 
 	KjornNieBedzieUczylZrecznosci = TRUE;
 	Info_ClearChoices (DIA_NASZ_116_Kjorn_Finito);
 };
 
+//*********************************************************************
+//	Teach
+//*********************************************************************
+
+const int Kjorn_DEX_MAX = 90;
+
+func void KjornAddChoicesDEX() {
+
+	if (AlignRequestedAmountToTeacherMax(LEARN_DEX, 1, Kjorn_DEX_MAX) > 0) {
+		Info_AddChoice		(DIA_Kjorn_Teach, BuildLearnString(LEARN_DEX, 1, Kjorn_DEX_MAX), DIA_Kjorn_Teach_DEX_1); 
+	};
+	if (AlignRequestedAmountToTeacherMax(LEARN_DEX, 5, Kjorn_DEX_MAX) > 1) {
+		Info_AddChoice		(DIA_Kjorn_Teach, BuildLearnString(LEARN_DEX, 5, Kjorn_DEX_MAX), DIA_Kjorn_Teach_DEX_5); 
+	};
+
+};
+
+INSTANCE DIA_Kjorn_Teach   (C_INFO)
+{
+	npc         = NASZ_116_Kjorn;
+ 	nr          = 100;
+ 	condition   = DIA_Kjorn_Teach_Condition;
+ 	information = DIA_Kjorn_Teach_Info;
+ 	permanent   = TRUE;
+ 	description = "Chcê byæ zrêczniejszy.";
+};
+
+FUNC INT DIA_Kjorn_Teach_Condition()
+{
+	if (npc_knowsinfo (other, DIA_NASZ_116_Kjorn_PlsHelp))
+	&& (KjornNieBedzieUczylZrecznosci == FALSE)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_Kjorn_Teach_Info()
+{
+	AI_Output (other,self ,"DIA_NASZ_116_Kjorn_Teach_15_00"); //Chcê byæ zrêczniejszy.
+
+	Info_ClearChoices   (DIA_Kjorn_Teach);
+	Info_AddChoice 		(DIA_Kjorn_Teach, DIALOG_BACK, DIA_Kjorn_Teach_BACK);
+	KjornAddChoicesDEX();
+};
+
+func void DIA_Kjorn_Teach_BACK()
+{
+	Info_ClearChoices (DIA_Kjorn_Teach);
+};
+
+func void KjornSay_CantTeachYou() {
+	AI_Output(self,other,"KjornSay_CantTeachYou_55_00"); //Pokaza³em ci ju¿ wszystko, co potrafiê. Teraz jedyne co mo¿esz robiæ, to æwiczyæ.
+};
+
+func void KjornSay_NoMoney() {
+	AI_Output (self, other,"KjornSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+};
+
+func void KjornSay_NoExp() {
+	AI_Output (self, other,"KjornSay_NoExp_55_00"); //Brak ci doœwiadczenia.
+};
+
+
+FUNC VOID DIA_Kjorn_Teach_DEX_1 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_DEX,1,Kjorn_DEX_MAX)) {
+		KjornSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_DEX,1,Kjorn_DEX_MAX)) {
+		KjornSay_NoExp();
+	}
+	else {
+	
+		B_TeachAttributePoints (self, other, ATR_DEXTERITY, 1, Kjorn_DEX_MAX);
+	
+		if (GetTalentNow(LEARN_DEX) >= Kjorn_DEX_MAX)
+		{
+			KjornSay_CantTeachYou();
+			KjornNieBedzieUczylZrecznosci = TRUE;
+			Info_ClearChoices 	(DIA_Kjorn_Teach);
+			return;
+		};
+	
+		Info_ClearChoices 	(DIA_Kjorn_Teach);
+		Info_AddChoice 		(DIA_Kjorn_Teach,	DIALOG_BACK		,DIA_Kjorn_Teach_Back);
+		KjornAddChoicesDEX();
+	};
+
+};
+
+FUNC VOID DIA_Kjorn_Teach_DEX_5 ()
+{
+	if (npc_hasitems (other, ItMi_Gold) < CalculateLearnGoldCost(LEARN_DEX,5,Kjorn_DEX_MAX)) {
+		KjornSay_NoMoney();
+	}
+	else if (hero.lp < CalculateLearnLPCost(LEARN_DEX,5,Kjorn_DEX_MAX)) {
+		KjornSay_NoExp();
+	}
+	else {
+	
+		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_DEX,5,Kjorn_DEX_MAX);
+		B_TeachAttributePoints (self, other, ATR_DEXTERITY, amount, Kjorn_DEX_MAX);
+
+		if (GetTalentNow(LEARN_DEX) >= Kjorn_DEX_MAX)
+		{
+			KjornSay_CantTeachYou();
+			KjornNieBedzieUczylZrecznosci = TRUE;
+			Info_ClearChoices 	(DIA_Kjorn_Teach);
+			return;
+		};
+
+		Info_ClearChoices 	(DIA_Kjorn_Teach);
+		Info_AddChoice 		(DIA_Kjorn_Teach,	DIALOG_BACK		,DIA_Kjorn_Teach_Back);
+		KjornAddChoicesDEX();
+	};
+};
 
 // ************************************************************
 // 			  				PICK POCKET

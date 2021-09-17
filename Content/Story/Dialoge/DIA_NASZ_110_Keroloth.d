@@ -3395,6 +3395,7 @@ FUNC VOID DIA_Keroloth_Teach_1h_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,1,Keroloth_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, Keroloth_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= Keroloth_1H_MAX)
@@ -3423,6 +3424,7 @@ FUNC VOID DIA_Keroloth_Teach_1h_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_1H,5,Keroloth_1H_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,amount,Keroloth_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, amount, Keroloth_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= Keroloth_1H_MAX)
@@ -3449,6 +3451,7 @@ FUNC VOID DIA_Keroloth_Teach_2h_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_2H,1,Keroloth_2H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, 1, Keroloth_2H_MAX);
 	
 		if (GetTalentNow(LEARN_2H) >= Keroloth_2H_MAX)
@@ -3476,6 +3479,7 @@ FUNC VOID DIA_Keroloth_Teach_2h_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_2H,5,Keroloth_2H_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_2H,amount,Keroloth_2H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, amount, Keroloth_2H_MAX);
 	
 		if (GetTalentNow(LEARN_2H) >= Keroloth_2H_MAX)

@@ -796,6 +796,7 @@ FUNC VOID DIA_Rethon_Teach_1H_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,1,Rethon_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, RETHON_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= RETHON_1H_MAX)
@@ -823,6 +824,7 @@ FUNC VOID DIA_Rethon_Teach_1H_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_1H,5,RETHON_1H_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,amount,Rethon_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, amount, RETHON_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= RETHON_1H_MAX)
@@ -848,6 +850,7 @@ FUNC VOID DIA_Rethon_Teach_2H_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_2H,1,Rethon_2H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, 1, RETHON_2H_MAX);
 	
 		if (GetTalentNow(LEARN_2H) >= RETHON_2H_MAX)
@@ -874,6 +877,7 @@ FUNC VOID DIA_Rethon_Teach_2H_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_2H,5,RETHON_2H_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_2H,amount,Rethon_2H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_2H, amount, RETHON_2H_MAX);
 	
 		if (GetTalentNow(LEARN_2H) >= RETHON_2H_MAX)

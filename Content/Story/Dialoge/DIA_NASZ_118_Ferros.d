@@ -559,6 +559,7 @@ FUNC VOID DIA_Ferros_Teach_STR_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_STR,1,Ferros_STR_MAX));
 		B_TeachAttributePoints (self, other, ATR_STRENGTH, 1, Ferros_STR_MAX);
 	
 		if (GetTalentNow(LEARN_STR) >= Ferros_STR_MAX)
@@ -586,6 +587,7 @@ FUNC VOID DIA_Ferros_Teach_STR_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_STR,5,Ferros_STR_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_STR,amount,Ferros_STR_MAX));
 		B_TeachAttributePoints (self, other, ATR_STRENGTH, amount, Ferros_STR_MAX);
 
 		if (GetTalentNow(LEARN_STR) >= Ferros_STR_MAX)

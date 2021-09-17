@@ -685,6 +685,7 @@ FUNC VOID DIA_Kivo_Teach_BOW_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_BOW,1,Kivo_BOW_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, 1, Kivo_BOW_MAX);
 	
 		if (GetTalentNow(LEARN_BOW) >= Kivo_BOW_MAX)
@@ -712,6 +713,7 @@ FUNC VOID DIA_Kivo_Teach_BOW_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_BOW,5,Kivo_BOW_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_BOW,amount,Kivo_BOW_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_BOW, amount, Kivo_BOW_MAX);
 	
 		if (GetTalentNow(LEARN_BOW) >= Kivo_BOW_MAX)

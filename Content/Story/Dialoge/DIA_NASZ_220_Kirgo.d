@@ -779,6 +779,7 @@ FUNC VOID DIA_Kirgo_Teach_MANA_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_MANA,1,Kirgo_MANA_MAX));
 		B_TeachAttributePoints (self, other, ATR_MANA_MAX, 1, Kirgo_MANA_MAX);
 
 		if (GetTalentNow(LEARN_MANA) >= Kirgo_MANA_MAX)
@@ -806,6 +807,7 @@ FUNC VOID DIA_Kirgo_Teach_MANA_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_MANA,5,Kirgo_MANA_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_MANA,amount,Kirgo_MANA_MAX));
 		B_TeachAttributePoints (self, other, ATR_MANA_MAX, amount, Kirgo_MANA_MAX);
 
 		if (GetTalentNow(LEARN_MANA) >= Kirgo_MANA_MAX)

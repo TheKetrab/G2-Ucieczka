@@ -292,6 +292,7 @@ FUNC VOID DIA_Louis_Teach_1H_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,1,Louis_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, 1, Louis_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= Louis_1H_MAX)
@@ -319,6 +320,7 @@ FUNC VOID DIA_Louis_Teach_1H_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_1H,5,Louis_1H_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_1H,amount,Louis_1H_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_1H, amount, Louis_1H_MAX);
 	
 		if (GetTalentNow(LEARN_1H) >= Louis_1H_MAX)
@@ -397,6 +399,7 @@ FUNC VOID DIA_Louis_Teach_DEX_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_DEX,1,Louis_DEX_MAX));
 		B_TeachAttributePoints (self, other, ATR_DEXTERITY, 1, Louis_DEX_MAX);
 	
 		if (GetTalentNow(LEARN_DEX) >= Louis_DEX_MAX)
@@ -424,6 +427,7 @@ FUNC VOID DIA_Louis_Teach_DEX_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_DEX,5,Louis_DEX_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_DEX,amount,Louis_DEX_MAX));
 		B_TeachAttributePoints (self, other, ATR_DEXTERITY, amount, Louis_DEX_MAX);
 	
 		if (GetTalentNow(LEARN_DEX) >= Louis_DEX_MAX)

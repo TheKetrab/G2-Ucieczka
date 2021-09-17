@@ -1310,8 +1310,8 @@ FUNC VOID DIA_Udar_Teach_CBOW_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_CBOW,1,Udar_CBOW_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, 1, Udar_CBOW_MAX);
-
 	
 		if (GetTalentNow(LEARN_CBOW) >= Udar_CBOW_MAX)
 		{
@@ -1338,6 +1338,7 @@ FUNC VOID DIA_Udar_Teach_CBOW_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_CBOW,5,Udar_CBOW_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_CBOW,amount,Udar_CBOW_MAX));
 		B_TeachFightTalentPercent (self, other, NPC_TALENT_CROSSBOW, amount, Udar_CBOW_MAX);
 	
 		if (GetTalentNow(LEARN_CBOW) >= Udar_CBOW_MAX)

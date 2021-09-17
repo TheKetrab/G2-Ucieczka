@@ -563,6 +563,7 @@ FUNC VOID DIA_Kjorn_Teach_DEX_1 ()
 	}
 	else {
 	
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_DEX,1,Kjorn_DEX_MAX));
 		B_TeachAttributePoints (self, other, ATR_DEXTERITY, 1, Kjorn_DEX_MAX);
 	
 		if (GetTalentNow(LEARN_DEX) >= Kjorn_DEX_MAX)
@@ -591,6 +592,7 @@ FUNC VOID DIA_Kjorn_Teach_DEX_5 ()
 	else {
 	
 		var int amount; amount = AlignRequestedAmountToTeacherMax(LEARN_DEX,5,Kjorn_DEX_MAX);
+		B_GiveInvItems(other,self,ItMi_Gold,CalculateLearnGoldCost(LEARN_DEX,amount,Kjorn_DEX_MAX));
 		B_TeachAttributePoints (self, other, ATR_DEXTERITY, amount, Kjorn_DEX_MAX);
 
 		if (GetTalentNow(LEARN_DEX) >= Kjorn_DEX_MAX)

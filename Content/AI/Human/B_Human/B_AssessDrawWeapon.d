@@ -9,6 +9,11 @@
 func int B_AssessDrawWeapon()
 {
 	// EXIT IF...
+
+	// NASZ_029_Lukor ma nie reagowaæ na broñ
+	if (self.id == 29) {
+		return FALSE;
+	};
 	
 	// ------ Spieler hat keine Waffe gezogen ------
 	if (Npc_IsInFightMode (other, FMODE_NONE))

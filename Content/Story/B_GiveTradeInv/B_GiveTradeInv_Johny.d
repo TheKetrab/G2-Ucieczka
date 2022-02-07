@@ -9,7 +9,8 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 	if ((Kapitel >= 1)
 	&& (Johny_ItemsGiven_Chapter_1 == FALSE))
 	{
-		CreateInvItems (slf, ItMi_Gold, 100); 
+		CreateInvItems (slf, ItMi_Gold, 100);
+		CreateInvItems (slf, ItMi_Hammer, 2);
 	
 		// ------ Waffen ------
 		CreateInvItems (slf, ItMw_ShortSword3, 1);

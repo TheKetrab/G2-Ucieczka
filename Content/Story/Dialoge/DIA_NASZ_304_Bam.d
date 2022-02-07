@@ -245,7 +245,7 @@ INSTANCE DIA_NASZ_304_Bam_QuestTRIA   (C_INFO)
 
 FUNC INT DIA_NASZ_304_Bam_QuestTRIA_Condition()
 {
-	if (Npc_GetDistToNPC(self,NASZ_116_Kjorn) < 250)
+	if (Npc_GetDistToNPC(self,NASZ_116_Kjorn) < 450)
 	&& (WillIdzieZBamem == TRUE)
 	{
 		return TRUE;

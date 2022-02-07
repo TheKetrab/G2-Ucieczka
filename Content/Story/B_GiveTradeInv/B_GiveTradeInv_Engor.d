@@ -90,6 +90,8 @@ FUNC VOID B_GiveTradeInv_Engor (var C_NPC slf)
 	if ((Kapitel >= 4)
 	&& (Engor_ItemsGiven_Chapter_4 == FALSE))
 	{
+		CreateInvItems (slf,ItMi_HolyWater,2);
+
 		CreateInvItems (slf,ItNa_Odtrutka	,8);
 
 		CreateInvItems (slf, ItMi_Gold, 220); 

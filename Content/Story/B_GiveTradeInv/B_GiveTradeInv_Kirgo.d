@@ -12,7 +12,7 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 		CreateInvItems (slf, ItMi_Gold, 100); 
 		CreateInvItems (slf,ItPo_Mana_01 	,5); 
 		CreateInvItems (slf,ItPo_Speed 	,4); 
-		CreateInvItems (slf,ItPo_Health_01	,3);
+		CreateInvItems (slf,ItPo_Health_01	,13);
 		CreateInvItems (slf,ItNa_Odtrutka	,8);
 		
 		// ------ Scrolls ------
@@ -33,9 +33,9 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 
 		CreateInvItems (slf, ItMi_Gold, 60); 
 		CreateInvItems (slf,ItPo_Mana_01 	,4); 
-		CreateInvItems (slf,ItPo_Health_01	,2); 
-		CreateInvItems (slf,ItPo_Mana_02 	, 2);
-		CreateInvItems (slf,ItPo_Health_02	, 2); 	
+		CreateInvItems (slf,ItPo_Health_01	,12); 
+		CreateInvItems (slf,ItPo_Mana_02 	, 7);
+		CreateInvItems (slf,ItPo_Health_02	, 8); 	
 		CreateInvItems (slf, ItPo_Speed, 6); 
 
 		CreateInvItems (slf, ItPl_Health_Herb_01, 14); 
@@ -53,9 +53,9 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 		CreateInvItems (slf,ItNa_Odtrutka	,19);
 
 		CreateInvItems (slf, ItMi_Gold, 120);  
-		CreateInvItems (slf,ItPo_Health_01	,5);
-		CreateInvItems (slf,ItPo_Health_02	, 3);
-		CreateInvItems (slf,ItPo_Health_03	, 4);
+		CreateInvItems (slf,ItPo_Health_01	, 25);
+		CreateInvItems (slf,ItPo_Health_02	, 16);
+		CreateInvItems (slf,ItPo_Health_03	, 8);
 		CreateInvItems (slf, ItPo_Speed, 1); 
 		CreateInvItems (slf,ItSc_InstantFireball ,5);
 		CreateInvItems (slf,ItNa_Oswojenie	,3);
@@ -73,9 +73,10 @@ FUNC VOID B_GiveTradeInv_Kirgo (var C_NPC slf)
 		CreateInvItems (slf, ItMi_Gold, 220); 
 		CreateInvItems   (slf, ItPo_Health_Addon_04,	3);
 		CreateInvItems   (slf, ItPo_Mana_Addon_04,		3);
-		CreateInvItems (slf,ItPo_Mana_01 	,3); 
-		CreateInvItems (slf,ItPo_Health_02	, 4); 
-		CreateInvItems (slf,ItPo_Health_03	, 2); 
+		CreateInvItems (slf,ItPo_Mana_01 	,13); 
+		CreateInvItems (slf,ItPo_Health_01	, 12); 
+		CreateInvItems (slf,ItPo_Health_02	, 24); 
+		CreateInvItems (slf,ItPo_Health_03	, 12); 
 		CreateInvItems (slf,ItNa_Oswojenie	,1);
 		CreateInvItems (slf, ItNa_GroupHeal, 1); 
 		Kirgo_ItemsGiven_Chapter_4 = TRUE;

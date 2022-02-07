@@ -50,6 +50,9 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 	{
 		if (Npc_GetDistToNpc(slf,oth) <= FIGHT_DIST_RANGED_OUTER)
 		|| (!Npc_HasEquippedRangedWeapon(slf))
+		|| (Hlp_GetInstanceID(slf) == NASZ_101_Korth)
+		|| (Hlp_GetInstanceID(slf) == NASZ_307_Monk)
+		|| (Hlp_GetInstanceID(slf) == NASZ_111_Gerold)
 
 		{
 			return;
@@ -74,6 +77,12 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 		return;
 	};
 	
+	// Gerold ma nie uzywac kuszy
+	if (Npc_IsInFightMode (slf,FMODE_NONE))
+	&& (Hlp_GetInstanceID(slf) == NASZ_111_Gerold) {
+		AI_ReadyMeleeWeapon	(slf);
+		return;
+	};
 	
 	if (slf.aivar[AIV_MM_REAL_ID] == ID_ORCSCOUT)
 	{				

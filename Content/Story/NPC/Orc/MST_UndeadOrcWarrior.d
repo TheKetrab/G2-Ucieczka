@@ -21,7 +21,7 @@ PROTOTYPE Mst_Default_UndeadOrcShamman (C_Npc)
 	//----- Protections ----	
 	protection	[PROT_BLUNT]		=	110;
 	protection	[PROT_EDGE]			=	110;
-	protection	[PROT_POINT]		=	110;
+	protection	[PROT_POINT]		=	65;
 	protection	[PROT_FIRE]			=	110;
 	protection	[PROT_FLY]			=	110;
 	protection	[PROT_MAGIC]		=	0;

@@ -4099,6 +4099,8 @@ INSTANCE ItNa_Zagadka_Adanos (C_Item)
 	on_state[0]			=   Use_Zagadka_Adanos;
 	scemeName			=	"MAP";
 	description			= 	name;
+	
+	TEXT[0]				=	"Dziwne pismo, które da³ mi Adanos.";
 };
 func void Use_Zagadka_Adanos ()
 {   

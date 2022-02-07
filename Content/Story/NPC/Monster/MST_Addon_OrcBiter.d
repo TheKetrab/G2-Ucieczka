@@ -87,9 +87,9 @@ INSTANCE OrcBiterGigant1 (Mst_Default_OrcBiter)
 	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_STRENGTH]		=	250;
 	attribute	[ATR_DEXTERITY]		=	250;
-	protection	[PROT_BLUNT]		= 	170;
-	protection	[PROT_EDGE]			= 	170;
-	protection	[PROT_POINT]		=	170;
+	protection	[PROT_BLUNT]		= 	125;
+	protection	[PROT_EDGE]			= 	125;
+	protection	[PROT_POINT]		=	90;
 	level = 40;
 };
 
@@ -104,9 +104,9 @@ INSTANCE OrcBiterGigant2 (Mst_Default_OrcBiter)
 	attribute	[ATR_HITPOINTS]		=	400;
 	attribute	[ATR_STRENGTH]		=	250;
 	attribute	[ATR_DEXTERITY]		=	250;
-	protection	[PROT_BLUNT]		= 	170;
-	protection	[PROT_EDGE]			= 	170;
-	protection	[PROT_POINT]		=	170;
+	protection	[PROT_BLUNT]		= 	125;
+	protection	[PROT_EDGE]			= 	125;
+	protection	[PROT_POINT]		=	90;
 	level = 40;
 };
 

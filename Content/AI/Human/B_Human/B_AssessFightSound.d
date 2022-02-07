@@ -17,6 +17,13 @@ func void B_AssessFightSound ()
 		return;
 	};
 	
+	// Bam i Monk nie reaguj¹ na atak, tylko biegn¹ do obozu
+	if (NOD_READY_TO_KILL && (self.id == 304 || self.id == 307))
+	{
+		return;
+	};
+
+	
 	// ------ wenn NSC zu weit weg ------
 	if (Npc_GetDistToNpc (self, victim) > PERC_DIST_INTERMEDIAT)
 	&& (Npc_GetDistToNpc (self, other) > PERC_DIST_INTERMEDIAT)

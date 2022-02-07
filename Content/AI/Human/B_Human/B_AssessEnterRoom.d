@@ -27,6 +27,12 @@ func int B_AssessEnterRoom ()
 	{
 		return FALSE;
 	};
+	
+	// Bandyci nie reaguj¹ na hero, przy klifie z artefaktem - nie patrz¹ siê
+	if (Npc_GetDistToWP(self,"OW_PATH_091") < 1000) {
+		return FALSE;
+	};
+
 
 	// ------ nur im selben Raum oder von DRAUSSEN aus reagieren -------
 	// ------ also NICHT aus ANDEREM "Gilden-Portalraum" heraus ------

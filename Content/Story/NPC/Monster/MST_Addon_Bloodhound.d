@@ -16,9 +16,9 @@ PROTOTYPE Mst_Default_Bloodhound(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //----------------------------------------------------------------
-	protection	[PROT_BLUNT]		=	110;
-	protection	[PROT_EDGE]			=	110;
-	protection	[PROT_POINT]		=	90;
+	protection	[PROT_BLUNT]		=	95;
+	protection	[PROT_EDGE]			=	90;
+	protection	[PROT_POINT]		=	75;
 	protection	[PROT_FIRE]			=	70;
 	protection	[PROT_FLY]			=	70;
 	protection	[PROT_MAGIC]		=	0;

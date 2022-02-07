@@ -78,6 +78,7 @@ INSTANCE DragonSnapper	(Mst_Default_DragonSnapper)
 
 INSTANCE DragonSnapper_Medium	(Mst_Default_DragonSnapper)
 {
+	name							=	"M³ody smoczy zêbacz";
 	B_SetVisuals_DragonSnapper();
 	Npc_SetToFistMode(self);
 	
@@ -90,8 +91,8 @@ INSTANCE DragonSnapper_Medium	(Mst_Default_DragonSnapper)
 	attribute	[ATR_MANA] 			=	0;
 	
 	//------ Protections ----	
-	protection	[PROT_BLUNT]		=	115;
-	protection	[PROT_EDGE]			=	115;
+	protection	[PROT_BLUNT]		=	110;
+	protection	[PROT_EDGE]			=	110;
 	protection	[PROT_POINT]		=	100;
 	protection	[PROT_FIRE]			=	90;
 	protection	[PROT_FLY]			=	90;

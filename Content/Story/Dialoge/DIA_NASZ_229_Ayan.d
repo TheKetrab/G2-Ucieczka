@@ -186,7 +186,7 @@ instance DIA_NASZ_229_Ayan_BeforeGraveyard		(C_INFO)
 
 func int DIA_NASZ_229_Ayan_BeforeGraveyard_Condition ()
 {
-	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_F") < 2000)
+	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_F") < 1800)
 	{
 		return TRUE;
 	};
@@ -217,7 +217,7 @@ instance DIA_NASZ_229_Ayan_Closed		(C_INFO)
 
 func int DIA_NASZ_229_Ayan_Closed_Condition ()
 {
-	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_T") < 3000)
+	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_T") < 1500)
 	{
 		return TRUE;
 	};
@@ -254,7 +254,7 @@ instance DIA_NASZ_229_Ayan_hey		(C_INFO)
 
 func int DIA_NASZ_229_Ayan_hey_Condition ()
 {
-	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_03") < 2000)
+	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_03") < 1600)
 	{
 		return TRUE;
 	};
@@ -395,7 +395,7 @@ instance DIA_NASZ_229_Ayan_NextChamber		(C_INFO)
 
 func int DIA_NASZ_229_Ayan_NextChamber_Condition ()
 {
-	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_06") < 2000)
+	if (Npc_GetDistToWP	(self, "NASZ_OZYWIENIEC_06") < 1200)
 	{
 		return TRUE;
 	};

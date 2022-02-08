@@ -2639,7 +2639,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_15_00"); //Sprawy na bagnach zosta³y wyjaœnione.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_01"); //¯aden demon nie pojawi siê ju¿ znik¹d?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caina i demona Kazmina.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wiadomoœci. Teraz jedyne, czego siê obawiam to kontratak orków.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wieœci. Teraz jedyne, czego siê obawiam to kontratak orków.
 	B_GivePlayerXP(500);
 };
 
@@ -2679,7 +2679,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 	
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_15_00"); //Za palisad¹ s¹ ludzie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_01"); //A sk¹d siê tam wziêli?!
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_02"); //Jeden z nich to dawny wyznawca Œni¹cego. Drugi to twój znajomy, utkn¹³ za palisad¹ po tym, jak Garond wys³a³ go za palisadê. Mówiê o paladynie Rudolfie.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_02"); //Jeden z nich to dawny wyznawca Œni¹cego. Drugi to twój znajomy, utkn¹³ za palisad¹ po tym, jak Garond go tam wys³a³. Mówiê o paladynie Rudolfie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_03"); //RUDOLF! Niebywa³e...
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_04"); //Nie wydajesz siê zbyt zachwycony t¹ wiadomoœci¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_05"); //Ci¹gle rywalizowaliœmy o wzglêdy Garonda. Ale jak widaæ to jego Garond wys³a³ na pewn¹ œmieræ, podczas gdy ja szkoli³em wojowników na zamku.

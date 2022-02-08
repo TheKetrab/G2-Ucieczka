@@ -35,6 +35,7 @@ FUNC VOID check_all_wiarolomca()
 {
 	if ((Wiarolomca_OneTime==FALSE) && all_wiarolomca_equipped())
 	{
+		Wiarolomca_OneTime = TRUE;
 		AI_PlayAni (hero, "S_SUCKENERGY_VICTIM"); 
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	10);
 		hero.attribute[0]-=20;

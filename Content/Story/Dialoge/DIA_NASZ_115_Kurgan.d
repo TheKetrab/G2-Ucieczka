@@ -1505,7 +1505,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_ArenaKap4_Info()
 		AI_Output (other, self,"DIA_NASZ_115_Kurgan_ArenaKap4_15_06"); //Nie.
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_07"); //A wiêc jazda, ju¿! Ch³opaki na pewno chêtnie spior¹ ci ty³ek. Do walki!
 		Kurgan_walka = 4;
+		Npc_ClearAIQueue(NASZ_113_Godar);
 		B_StartOtherRoutine(NASZ_113_Godar,"ArenaZamek");
+		Npc_ClearAIQueue(NASZ_114_Hokurn);
 		B_StartOtherRoutine(NASZ_114_Hokurn,"ArenaZamek");
 	};
 

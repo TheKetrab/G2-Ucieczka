@@ -6,7 +6,7 @@ instance NASZ_023_DuchSekciarza (Npc_Default)
 	name 		= "Duch Sekciarza";
 	guild 		= GIL_MEATBUG;
 	id 			= 23;
-	voice 		= 5;
+	voice 		= 7;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	

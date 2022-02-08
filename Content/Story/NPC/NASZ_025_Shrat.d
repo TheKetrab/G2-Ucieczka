@@ -6,7 +6,7 @@ instance NASZ_025_Shrat (Npc_Default)
 	name 		= "Shrat";
 	guild 		= GIL_MEATBUG;
 	id 			= 25;
-	voice 		= 5;
+	voice 		= 4;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	

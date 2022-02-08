@@ -6,7 +6,7 @@ instance NASZ_024_BaalOrun (Npc_Default)
 	name 		= "Baal Orun";
 	guild 		= GIL_MEATBUG;
 	id 			= 24;
-	voice 		= 5;
+	voice 		= 8;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	

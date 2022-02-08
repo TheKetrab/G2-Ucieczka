@@ -6,7 +6,7 @@ instance NASZ_026_DuchNowicjusza (Npc_Default)
 	name 		= "Duch";
 	guild 		= GIL_MEATBUG;
 	id 			= 26;
-	voice 		= 5;
+	voice 		= 2;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	

@@ -6,7 +6,7 @@ instance NASZ_027_Ghorim (Npc_Default)
 	name 		= "Ghorim";
 	guild 		= GIL_MEATBUG;
 	id 			= 27;
-	voice 		= 5;
+	voice 		= 3;
 	flags       = 6;																	//NPC_FLAG_IMMORTAL oder 0
 	npctype		= NPCTYPE_MAIN;
 	

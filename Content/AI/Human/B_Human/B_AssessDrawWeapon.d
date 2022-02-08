@@ -10,6 +10,11 @@ func int B_AssessDrawWeapon()
 {
 	// EXIT IF...
 
+	// Duchy na bagnie nie reaguj¹
+	if (C_IsGhost(self)) {
+		return FALSE;
+	};
+
 	// NASZ_029_Lukor ma nie reagowaæ na broñ
 	if (self.id == 29) {
 		return FALSE;

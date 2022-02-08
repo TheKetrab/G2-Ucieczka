@@ -16,6 +16,7 @@ Funcs\BanditKilled.d
 Funcs\JusticeMode.d
 Funcs\Teach.d
 funcs\trucizna.d
+funcs\IsGhost.d
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
 STORY\Story_Globals.d

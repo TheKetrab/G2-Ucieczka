@@ -11,6 +11,11 @@ func void B_AssessFightSound ()
 {
 	//EXIT IF...
 	
+	// Duchy na bagnie nie reaguj¹
+	if (C_IsGhost(self)) {
+		return;
+	};
+	
 	// ------ wenn Fightsound durch Treffer auf Objekt erzeugt wurde ------
 	if (!Hlp_IsValidNpc (victim))
 	{

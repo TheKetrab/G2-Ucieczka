@@ -16,13 +16,24 @@ FUNC INT DIA_NASZ_026_DuchNowicjusza_EXIT_Condition()
 	return TRUE;
 };
 
+func void DeleteDuchNowicjusza()
+{
+	if(InfoManager_HasFinished())
+	{
+		B_StartOtherRoutine (NASZ_026_DuchNowicjusza,"End");
+		DeleteNpc(NASZ_026_DuchNowicjusza);
+		ff_remove(DeleteDuchNowicjusza);
+	};
+};
+
 FUNC VOID DIA_NASZ_026_DuchNowicjusza_EXIT_Info()
 {
-	AI_StopProcessInfos (self);
 	Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
 	Snd_Play ("MFX_TELEPORT_CAST");
-	AI_Teleport (self, "TOT"); 
-	B_StartOtherRoutine (self,"End");
+
+	AI_StopProcessInfos (self);
+	ff_applyonceext(DeleteDuchNowicjusza,1000,-1);
+	hero.aivar[AIV_INVINCIBLE] = 0;
 
 };
 

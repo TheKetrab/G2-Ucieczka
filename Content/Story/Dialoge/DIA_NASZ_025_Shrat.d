@@ -18,15 +18,26 @@ FUNC INT DIA_NASZ_025_Shrat_EXIT_Condition()
 	return TRUE;
 };
 
+func void DeleteShrat()
+{
+	if(InfoManager_HasFinished())
+	{
+		B_StartOtherRoutine (NASZ_025_Shrat,"End");
+		DeleteNpc(NASZ_025_Shrat);
+		ff_remove(DeleteShrat);
+	};
+};
+
 FUNC VOID DIA_NASZ_025_Shrat_EXIT_Info()
 {
 	if (ShratRediToTelepport == TRUE)
 	{
-		AI_StopProcessInfos (self);
 		Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_TELEPORT_CAST");
-		AI_Teleport (self, "TOT"); 
-		B_StartOtherRoutine (self,"End");
+
+		AI_StopProcessInfos (self);
+		ff_applyonceext(DeleteShrat,1000,-1);
+		hero.aivar[AIV_INVINCIBLE] = 0;
 	};
 	
 	AI_StopProcessInfos (self);

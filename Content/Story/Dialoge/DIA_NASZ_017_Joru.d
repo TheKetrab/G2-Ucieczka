@@ -164,6 +164,7 @@ FUNC VOID DIA_NASZ_017_Joru_Lutnia_Info()
 func void DIA_NASZ_017_Joru_Lutnia_Wait() {
 
 	AI_PlayAni  (self,"T_MAGRUN_2_HEASHOOT");
+	Wld_PlayEffect("SPELLFX_TELEPORT",  self, self, 0, 0, 0, FALSE );
 
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_Lutnia_Wait_55_00"); //KuŸnia. Obróæ siê na po³udniowy zachód. PrzejdŸ 12 kroków, po czym obróæ siê w prawo. Za 40 kroków ponownie skrêæ w prawo miêdzy domy i przejdŸ 13 kroków.
 	AI_Output (self, other,"DIA_NASZ_017_Joru_Lutnia_Lutnia_Wait_55_01"); //Potem obróæ siê lekko w lewo i przejdŸ jeszcze 16 kroków. Po prawej stronie w krzakach ukry³em skarb.

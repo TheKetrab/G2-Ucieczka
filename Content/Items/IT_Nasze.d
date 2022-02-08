@@ -1597,7 +1597,7 @@ INSTANCE ItNa_ZabojcaPradawnych (C_Item)
 	munition			=	ItRw_Arrow;
 
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	95;
+	cond_value[2]  		= 	100;
 	visual 				=	"ItRw_Bow_M_04.mms";
 
 	description			= name;

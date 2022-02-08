@@ -18,15 +18,30 @@ FUNC INT DIA_NASZ_024_BaalOrun_EXIT_Condition()
 	return TRUE;
 };
 
+func void DeleteBaalOrun()
+{
+	if(InfoManager_HasFinished())
+	{
+		B_StartOtherRoutine (NASZ_024_BaalOrun,"End");
+		DeleteNpc(NASZ_024_BaalOrun);
+
+		B_StartOtherRoutine (NASZ_023_DuchSekciarza,"End");
+		DeleteNpc(NASZ_023_DuchSekciarza);
+
+		ff_remove(DeleteBaalOrun);
+	};
+};
+
 FUNC VOID DIA_NASZ_024_BaalOrun_EXIT_Info()
 {
 	if (OrunRediToTelepport == TRUE)
 	{
-		AI_StopProcessInfos (self);
 		Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
 		Snd_Play ("MFX_TELEPORT_CAST");
-		AI_Teleport (self, "TOT"); 
-		B_StartOtherRoutine (self,"End");
+
+		AI_StopProcessInfos (self);
+		ff_applyonceext(DeleteBaalOrun,1000,-1);
+		hero.aivar[AIV_INVINCIBLE] = 0;
 	};
 	
 	AI_StopProcessInfos (self);
@@ -385,11 +400,11 @@ instance DIA_NASZ_024_BaalOrun_RytualCD		(C_INFO)
 
 func int DIA_NASZ_024_BaalOrun_RytualCD_Condition ()
 {
-	if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual))
-	&& (OrunRitual_Finished == TRUE)
-	{
+	//if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual))
+	//&& (OrunRitual_Finished == TRUE)
+	//{
 		return TRUE;
-	};
+	//};
 };
 func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 {

@@ -1678,12 +1678,12 @@ func void TickTock_1s()
 
 func void SludzyBeliara()
 {	
-	if (((Npc_GetDistToPlayer (NASZ_415_SlugaBeliara) < 2000) || (Npc_GetDistToPlayer (NASZ_416_SlugaBeliara) < 2000) || (Npc_GetDistToPlayer (NASZ_417_SlugaBeliara) < 2000)
-		&& ((!npc_isdead (NASZ_415_SlugaBeliara)) || (!npc_isdead (NASZ_416_SlugaBeliara)) || (!npc_isdead (NASZ_417_SlugaBeliara)))) || (Npc_GetDistToWP (hero, "NASZ_ORCCITY_SECOND_06") < 3000))
-	{
+	if (Npc_GetDistToPlayer(NASZ_415_SlugaBeliara) < 2000 || Npc_GetDistToPlayer(NASZ_416_SlugaBeliara) < 2000 || Npc_GetDistToPlayer(NASZ_417_SlugaBeliara) < 2000)
+	  && !(npc_isdead(NASZ_415_SlugaBeliara) && npc_isdead(NASZ_416_SlugaBeliara) && npc_isdead(NASZ_417_SlugaBeliara))
+	  && (Npc_GetDistToWP(hero,"OC_GATE_GUARD_01") > 5000) // niewiadomo czemu obok 'goto pos' te¿ siê w³¹cza³o
+	{	
 		hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS] - 15;
 		Wld_PlayEffect("spellFX_BreathOfDeath_Target",  hero, hero, 0, 0, 0, FALSE );
-		
 	};
 	
 	if(npc_isdead (NASZ_415_SlugaBeliara) && npc_isdead (NASZ_416_SlugaBeliara) && npc_isdead (NASZ_417_SlugaBeliara))

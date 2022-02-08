@@ -220,7 +220,7 @@ func void B_AssessFightSound ()
 	
 	// ----------------------------------------------------------------
 	// ------ Wachen kommen zum Töten (helfen other) ------------------
-	// ----------------------------------------------------------------
+	// ----------------------------------------------------------------	
 	if ( (other.aivar[AIV_ATTACKREASON] == AR_GuardStopsIntruder) 
 	   ||(other.aivar[AIV_ATTACKREASON] == AR_MonsterCloseToGate)
 	   ||(other.aivar[AIV_ATTACKREASON] == AR_HumanMurderedHuman)
@@ -228,6 +228,8 @@ func void B_AssessFightSound ()
 	   ||(other.aivar[AIV_ATTACKREASON] == AR_GuardCalledToKill)
 	   )
 	&& (Npc_GetAttitude(self,other)==ATT_FRIENDLY)
+	&& (Npc_GetAttitude(self,victim)!=ATT_FRIENDLY) // FIX U12 (jak siê mia³o wysoki level, to siê rzucali na tego, kogo zaatakowa³ hero i go zabijali,
+	                                                // dlatego zrobione tak, ¿e zabijaj¹ tylko jeœli nie s¹ przyjació³mi gildyjnymi (nie wiadomo czemu ustawia siê AR_GuildEnemy)
 	{
 		B_Attack (self, victim, AR_GuardCalledToKill, 0);
 		return;
@@ -241,6 +243,7 @@ func void B_AssessFightSound ()
 	   ||(victim.aivar[AIV_ATTACKREASON] == AR_GuardCalledToKill)
 	   )
 	&& (Npc_GetAttitude(self,victim)==ATT_FRIENDLY)
+	&& (Npc_GetAttitude(self,other)!=ATT_FRIENDLY) // FIX U12
 	{
 		B_Attack (self, other, AR_GuardCalledToKill, 0);
 		return;
@@ -256,14 +259,14 @@ func void B_AssessFightSound ()
 	&& (Npc_GetAttitude(self,other)==ATT_FRIENDLY)
 	{
 		// ------ Pack schlägt sich, Pack verträgt sich -------
-		if ( (other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE) )
-		&& ( (victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE) )
-		{
-			//weiter im Text
-		}
+		// if ( (other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE) )
+		// && ( (victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE) )
+		// {
+			// //weiter im Text
+		// }
 		
 		// ------ Egill/Enim-FIX ------
-		else if (!Npc_IsPlayer(other))
+		if (!Npc_IsPlayer(other))
 		&& 		(!Npc_IsPlayer(victim))
 		{
 			//weiter im Text
@@ -284,14 +287,14 @@ func void B_AssessFightSound ()
 	&& (Npc_GetAttitude(self,victim)==ATT_FRIENDLY)
 	{
 		// ------ Pack schlägt sich, Pack verträgt sich -------
-		if ( (other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE) )
-		&& ( (victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE) )
-		{
-			//weiter im Text
-		}
+		// if ( (other.guild == GIL_SLD) || (other.guild == GIL_DJG) || (other.guild == GIL_NONE) )
+		// && ( (victim.guild == GIL_SLD) || (victim.guild == GIL_DJG) || (victim.guild == GIL_NONE) )
+		// {
+			// //weiter im Text
+		// }
 		
 		// ------ Egill/Enim-FIX ------
-		else if (!Npc_IsPlayer(other))
+		if (!Npc_IsPlayer(other))
 		&& 		(!Npc_IsPlayer(victim))
 		{
 			//weiter im Text

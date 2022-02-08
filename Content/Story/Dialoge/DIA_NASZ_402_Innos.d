@@ -106,12 +106,21 @@ FUNC VOID DIA_NASZ_402_Innos_workB_Info()
 	AI_Output (other,self ,"DIA_NASZ_402_Innos_workB_15_02"); //Gdzie mogê znaleŸæ te gady?
 	AI_Output (self, other,"DIA_NASZ_402_Innos_workB_55_03"); //Zwa¿ywszy na sw¹ ognist¹ naturê, kochaj¹ piasek i wybrze¿a morskie. W Górniczej Dolinie wci¹¿ s¹ takie miejsca.
 
+	// jeœli nie umiemy zbieraæ jêzyków, to Innos za darmo uczy, jeœli umiemy to przywraca LP wydane u Tabuka
+	if (PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] == FALSE)
+	{
+		PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_FireTongue] = TRUE;	
+		B_LogEntry (TOPIC_TalentAnimalTrophy,"...usuwaæ ognistym jaszczurom jêzyki.");
+		PrintS_Ext(PRINT_LearnTakeAnimalTrophy, RGBA(255,255,255,0));
+	}
+	else {
+		hero.lp += 3;
+		PrintS_Ext("Innos obdarzy³ ciê doœwiadczeniem: +3 PN", RGBA(255,255,255,0));
+	};
+	
 	Log_CreateTopic (TOPIC_bogowie_work, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_RUNNING);
 	B_LogEntry (TOPIC_bogowie_work, "10 jêzyków ognistych jaszczurów bêdzie dowodem dla Innosa, ¿e potrafiê radziæ sobie z ogniem. Te czerwone gady lubi¹ piasek i wybrze¿e morskie.");
-	
-	
-	
 	
 	
 	Wld_InsertNpc	(FireWaran,"FP_INNOS_SPAWN_JASZCZUR_01");

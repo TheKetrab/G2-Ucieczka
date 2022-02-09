@@ -36,7 +36,7 @@ instance NASZ_409_Nieznany (Npc_Default)
 	// ------ Inventory ------
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_MadPsi, BodyTex_N, ITAR_Xardas);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_L_Normal_GorNaBar, BodyTex_L, ITAR_Xardas);	
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); 
 

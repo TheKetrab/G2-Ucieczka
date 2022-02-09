@@ -23,7 +23,7 @@ instance NASZ_322_Niewolnik (Npc_Default)
 		
 	// ------ visuals ------																			
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_NormalBart12, BodyTex_N, ITAR_Prisoner);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_NormalBart11, BodyTex_N, ITAR_Prisoner);	
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

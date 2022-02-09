@@ -25,7 +25,7 @@ instance NASZ_122_Daniel (Npc_Default)
 	B_CreateAmbientInv 	(self);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_NormalBart_Dexter, BodyTex_N, ITAR_Prisoner);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald", Face_N_NormalBart08, BodyTex_N, ITAR_Prisoner);	
 	Mdl_SetModelFatness	(self, -1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Relaxed.mds"); 
 	

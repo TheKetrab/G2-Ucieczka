@@ -23,7 +23,7 @@ instance NASZ_411_CzlonekBractwa (Npc_Default)
 	B_CreateAmbientInv 	(self);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_Lester, BodyTex_P, ITAR_LESTER);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_N_Fortuno, BodyTex_N, ITAR_LESTER);		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); 	
 		

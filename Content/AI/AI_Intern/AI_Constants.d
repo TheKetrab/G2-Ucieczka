@@ -628,42 +628,42 @@ const int BodyTexMiner_B = 17;
 const int NO_ARMOR			= -1;
 
 // ------- Gesichter für Männer ------
-const int Face_N_Gomez 				=	0	;
-const int Face_N_Scar 				= 	1	;
+//const int Face_N_Gomez 			=	0	;
+//const int Face_N_Scar 			= 	1	;
 const int Face_N_Raven				= 	2	; // 123, 216
-const int Face_N_Bullit				= 	3	;
+//const int Face_N_Bullit			= 	3	;
 const int Face_B_Thorus				= 	4	; // 213
 const int Face_N_Corristo			= 	5	; // 204, 218
-const int Face_N_Milten				= 	6	;
+//const int Face_N_Milten			= 	6	;
 const int Face_N_Bloodwyn			= 	7	; // 317
-const int Face_L_Scatty				= 	8	;
-const int Face_N_YBerion			= 	9	;
+//const int Face_L_Scatty			= 	8	;
+//const int Face_N_YBerion			= 	9	;
 const int Face_N_CoolPock			= 	10	; // 109
 const int Face_B_CorAngar			= 	11	; // 105
 const int Face_B_Saturas			= 	12	; // 102
-const int Face_N_Xardas				= 	13	;
+//const int Face_N_Xardas				= 	13	;
 const int Face_N_Lares				= 	14	; // 402
 const int Face_L_Ratford			= 	15	; // 223
-const int Face_N_Drax				= 	16	;
-const int Face_B_Gorn				= 	17	;
+const int Face_N_Drax				= 	16	; // 212
+//const int Face_B_Gorn				= 	17	;
 const int Face_N_Player				= 	18	;
-const int Face_P_Lester				= 	19	; // 22, 406, 407, 408, 411, 413, 415, 416, 417
-const int Face_N_Lee				= 	20	;
+const int Face_P_Lester				= 	19	; // 22, 415, 416, 417
+//const int Face_N_Lee				= 	20	;
 const int Face_N_Torlof				= 	21	; // 4
 const int Face_N_Mud				= 	22	; // 225
-const int Face_N_Ricelord			= 	23	;
-const int Face_N_Horatio			= 	24	;
+//const int Face_N_Ricelord			= 	23	;
+//const int Face_N_Horatio			= 	24	;
 const int Face_N_Richter			= 	25	; // 106
-const int Face_N_Cipher_neu			= 	26	;
-const int Face_N_Homer				= 	27	;
+//const int Face_N_Cipher_neu		= 	26	;
+//const int Face_N_Homer			= 	27	;
 const int Face_B_Cavalorn			= 	28	; // 220
 const int Face_L_Ian				= 	29	; // 201
-const int Face_L_Diego				= 	30	;
-const int Face_N_MadPsi				= 	31	; // 404, 409
+//const int Face_L_Diego				= 	30	;
+const int Face_N_MadPsi				= 	31	; // 404
 const int Face_N_Bartholo			= 	32	; // 222
 const int Face_N_Snaf				= 	33	; // 224, 226
 const int Face_N_Mordrag			= 	34	; // 101
-const int Face_N_Lefty				= 	35	;
+//const int Face_N_Lefty				= 	35	;
 const int Face_N_Wolf				= 	36	; // 403
 const int Face_N_Fingers			= 	37	; // 320
 const int Face_N_Whistler			= 	38	; // 23
@@ -672,33 +672,33 @@ const int Face_L_Jackal				= 	40	; // 104, 230
 
 //Pale
 const int Face_P_ToughBald			= 	41	; // 107
-const int Face_P_Tough_Drago		= 	42	;
-const int Face_P_Tough_Torrez		= 	43	;
+//const int Face_P_Tough_Drago		= 	42	;
+//const int Face_P_Tough_Torrez		= 	43	;
 const int Face_P_Tough_Rodriguez	= 	44	; // 9, 26
-const int Face_P_ToughBald_Nek		= 	45	;
+const int Face_P_ToughBald_Nek		= 	45	; // 406, 413
 const int Face_P_NormalBald 		= 	46	; // 7
-const int Face_P_Normal01			= 	47	;
-const int Face_P_Normal02			= 	48	;
-const int Face_P_Normal_Fletcher	= 	49	;
-const int Face_P_Normal03			= 	50	;
-const int Face_P_NormalBart01		= 	51	;
-const int Face_P_NormalBart_Cronos	= 	52	;
-const int Face_P_NormalBart_Nefarius= 	53	;
-const int Face_P_NormalBart_Riordian= 	54	;
-const int Face_P_OldMan_Gravo		= 	55	; // 3, 231, 302
+//const int Face_P_Normal01			= 	47	;
+const int Face_P_Normal02			= 	48	; // 407
+//const int Face_P_Normal_Fletcher	= 	49	;
+const int Face_P_Normal03			= 	50	; // 408
+const int Face_P_NormalBart01		= 	51	; // 311
+//const int Face_P_NormalBart_Cronos	= 	52	;
+//const int Face_P_NormalBart_Nefarius= 	53	;
+//const int Face_P_NormalBart_Riordian= 	54	;
+const int Face_P_OldMan_Gravo		= 	55	; // 231
 const int Face_P_Weak_Cutter		= 	56	; // 13
-const int Face_P_Weak_Ulf_Wohlers	= 	57	;
+const int Face_P_Weak_Ulf_Wohlers	= 	57	; // 3
 
 //Normal
-const int Face_N_Important_Arto		= 	58	;
-const int Face_N_ImportantGrey		= 	59	; // 115, 311, 325, 401
+//const int Face_N_Important_Arto	= 	58	;
+const int Face_N_ImportantGrey		= 	59	; // 115, 325, 401
 const int Face_N_ImportantOld		= 	60	;
 const int Face_N_Tough_Lee_ähnlich	= 	61	; // 14
-const int Face_N_Tough_Skip			= 	62	;
-const int Face_N_ToughBart01		= 	63	;
-const int Face_N_Tough_Okyl			= 	64	;
+//const int Face_N_Tough_Skip		= 	62	;
+const int Face_N_ToughBart01		= 	63	; // 209
+const int Face_N_Tough_Okyl			= 	64	; // 302
 const int Face_N_Normal01			= 	65	;
-const int Face_N_Normal_Cord		= 	66	;
+const int Face_N_Normal_Cord		= 	66	; // 210
 const int Face_N_Normal_Olli_Kahn	= 	67	; // 126
 const int Face_N_Normal02			= 	68	; // 116, Will
 const int Face_N_Normal_Spassvogel	= 	69	;
@@ -709,14 +709,14 @@ const int Face_N_Normal_Stone		= 	73	; // 119
 const int Face_N_Normal06			= 	74	;
 const int Face_N_Normal_Erpresser	= 	75	; // 5, 319
 const int Face_N_Normal07			= 	76	; // 130
-const int Face_N_Normal_Blade		= 	77	; // 111, 212
-const int Face_N_Normal08			= 	78	;
+const int Face_N_Normal_Blade		= 	77	; // 111
+const int Face_N_Normal08			= 	78	; // 2
 const int Face_N_Normal14			= 	79	; // 113
-const int Face_N_Normal_Sly			= 	80	; // 2, 209, 214
+const int Face_N_Normal_Sly			= 	80	; // 214
 const int Face_N_Normal16			= 	81	; // 314
 const int Face_N_Normal17			= 	82	;
 const int Face_N_Normal18			= 	83	;
-const int Face_N_Normal19			= 	84	;
+const int Face_N_Normal19			= 	84	; // 232
 const int Face_N_Normal20			= 	85	; // 110
 const int Face_N_NormalBart01		= 	86	;
 const int Face_N_NormalBart02		= 	87	; // 12
@@ -725,14 +725,14 @@ const int Face_N_NormalBart04		= 	89	; // 11
 const int Face_N_NormalBart05		= 	90	; // 6
 const int Face_N_NormalBart06		= 	91	;
 const int Face_N_NormalBart_Senyan	= 	92	; // 15
-const int Face_N_NormalBart08		= 	93	;
+const int Face_N_NormalBart08		= 	93	; // 122
 const int Face_N_NormalBart09		= 	94	;
 const int Face_N_NormalBart10		= 	95	; // 228
-const int Face_N_NormalBart11		= 	96	;
-const int Face_N_NormalBart12		= 	97	; // 309, 322, 324
-const int Face_N_NormalBart_Dexter	= 	98	; // 120, 122, 203, 210, 232
+const int Face_N_NormalBart11		= 	96	; // 322
+const int Face_N_NormalBart12		= 	97	; // 309, 324
+const int Face_N_NormalBart_Dexter	= 	98	; // 120, 203
 const int Face_N_NormalBart_Graham	= 	99	;
-const int Face_N_NormalBart_Dusty	= 	100	;
+const int Face_N_NormalBart_Dusty	= 	100	; // 30
 const int Face_N_NormalBart16		= 	101	; // 217
 const int Face_N_NormalBart17		= 	102	;
 const int Face_N_NormalBart_Huno	= 	103	;
@@ -740,17 +740,17 @@ const int Face_N_NormalBart_Grim	= 	104	;
 const int Face_N_NormalBart20		= 	105	;
 const int Face_N_NormalBart21		=	106	; // 301, 315
 const int Face_N_NormalBart22		= 	107	; // 310
-const int Face_N_OldBald_Jeremiah	= 	108	; // 30, 127, 313
+const int Face_N_OldBald_Jeremiah	= 	108	; // 127
 const int Face_N_Weak_Ulbert		= 	109	; // 131
 const int Face_N_Weak_BaalNetbek	= 	110	;
 const int Face_N_Weak_Herek			= 	111	; // 202, 219
-const int Face_N_Weak04				= 	112	;
+const int Face_N_Weak04				= 	112	; // 313
 const int Face_N_Weak05				= 	113	; // 326, 351
 const int Face_N_Weak_Orry			= 	114	;
 const int Face_N_Weak_Asghan		= 	115	;
-const int Face_N_Weak_Markus_Kark	= 	116	; // 121, 128, 132
-const int Face_N_Weak_Cipher_alt	= 	117	;
-const int Face_N_NormalBart_Swiney 	= 	118	;
+const int Face_N_Weak_Markus_Kark	= 	116	; // 121
+const int Face_N_Weak_Cipher_alt	= 	117	; // 132
+const int Face_N_NormalBart_Swiney 	= 	118	; // 128
 const int Face_N_Weak12				= 	119	; // 112
 
 //Latinos
@@ -758,21 +758,21 @@ const int Face_L_ToughBald01		= 	120	; // 321
 const int Face_L_Tough01			= 	121	;
 const int Face_L_Tough02			= 	122	; // 323, 350
 const int Face_L_Tough_Santino		= 	123	; // 211
-const int Face_L_ToughBart_Quentin	=	124	;
-const int Face_L_Normal_GorNaBar	= 	125	;
-const int Face_L_NormalBart01		= 	126	;
-const int Face_L_NormalBart02		= 	127	; // 18, 108, 206, 316
+const int Face_L_ToughBart_Quentin	=	124	; // 206
+const int Face_L_Normal_GorNaBar	= 	125	; // 409
+const int Face_L_NormalBart01		= 	126	; // 108
+const int Face_L_NormalBart02		= 	127	; // 18, 316
 const int Face_L_NormalBart_Rufus	= 	128	; // 129
 
 //Black
-const int Face_B_ToughBald			= 	129	;
-const int Face_B_Tough_Pacho		= 	130	;
-const int Face_B_Tough_Silas		= 	131	; // 125, 304
-const int Face_B_Normal01			= 	132	;
+const int Face_B_ToughBald			= 	129	; // 229
+const int Face_B_Tough_Pacho		= 	130	; // 1, 205
+const int Face_B_Tough_Silas		= 	131	; // 125
+const int Face_B_Normal01			= 	132	; // 304
 const int Face_B_Normal_Kirgo		= 	133	; // 312
 const int Face_B_Normal_Sharky		= 	134	; // 114
 const int Face_B_Normal_Orik		= 	135	; // 103, 118
-const int Face_B_Normal_Kharim		= 	136	; // 1, 205, 227, 229, 888, 999
+const int Face_B_Normal_Kharim		= 	136	; // 227, 888, 999
 
 // ------ Gesichter für Frauen ------
 
@@ -802,32 +802,45 @@ const int FaceBabe_L_Charlotte2		= 	158 ;
 
 
 //-----------------ADD ON---------------------------------
-const int Face_N_Fortuno		= 	159;
+const int Face_N_Fortuno			= 	159 ; // 22, 411
+const int Face_P_Greg				= 	160 ;
+const int Face_N_Pirat01			= 	161 ;
 
-//Piraten
-const int Face_P_Greg		= 	160;
+// ----- UCIECZKA -----
+//
+// FIX U12: twarze z numerem > 160 po wczytaniu czasem bywa³y czarne
+//
+// Walkthrough:
+// - nowa gra
+// - teleportacja do ³owców, pochodziæ sobie, ¿eby powczytywa³o tekstury
+// - lecimy do bandytów do bramy, Monk ma wczytan¹ twarz
+// - zapisujemy
+// - wychodzimy z gry
+// - w³¹czamy grê
+// ----> Monk ma czarn¹ twarz
+//
+// Rozwi¹zanie: przenumerowano twarze na te, które by³y nieu¿ywane i zmieniono textury.
 
-const int Face_N_Pirat01	= 	161;
-const int Face_N_ZombieMud	= 	162;
-const int Face_N_GreenSkel	= 	163;
-const int Face_ZombiePale1	= 	164;
-const int Face_ZombiePale2	= 	165;
-const int Face_ZombieBlack1	= 	166;
-const int Face_ZombieBlack2	= 	167;
-const int Face_B_Sattar		= 	168; // 20
-const int Face_N_Netbek		= 	169; // 16
-const int Face_N_Orun		=   170; // 21, 24, 29
-const int Face_N_Shrat		=   171; // 25
-const int Face_N_Joru		=   172; // 17
-const int Face_N_Ghorim		=   173; // 27
-const int Face_P_Nod		=   174; // 303
-const int Face_N_Gobby		=   175; // 318
-const int Face_P_Monk		=   176; // 307
-const int Face_N_Frut		=   177; // 308
-const int Face_N_Danny		=   178; // 327
-const int Face_B_Benito		=   179; // 221
-const int Face_B_Miecz		=   180; // 8
-const int Face_B_Bron		=   181; // 124
-const int Face_P_Monastir	=   182; // 10
-const int Face_L_Kivo		=   183; // 215
-const int Face_L_Rabon		=   184; // 305
+const int Face_N_ZombieMud			= 	0 ;
+const int Face_N_GreenSkel			= 	1 ;
+const int Face_ZombiePale1			= 	3 ;
+const int Face_ZombiePale2			= 	6 ;
+const int Face_ZombieBlack1			= 	8 ;
+const int Face_ZombieBlack2			= 	13 ;
+const int Face_B_Sattar				= 	17 ; // 20
+const int Face_N_Netbek				= 	20 ; // 16
+const int Face_N_Orun				=   23 ; // 21, 24, 29
+const int Face_N_Shrat				=   24 ; // 25
+const int Face_N_Joru				=   26 ; // 17
+const int Face_N_Ghorim				=   27 ; // 27
+const int Face_P_Nod				=   30 ; // 303
+const int Face_N_Gobby				=   35 ; // 318
+const int Face_P_Monk				=   42 ; // 307
+const int Face_N_Frut				=   43 ; // 308
+const int Face_N_Danny				=   47 ; // 327
+const int Face_B_Benito				=   49 ; // 221
+const int Face_B_Miecz				=   52 ; // 8
+const int Face_B_Bron				=   53 ; // 124
+const int Face_P_Monastir			=   54 ; // 10
+const int Face_L_Kivo				=   58 ; // 215
+const int Face_L_Rabon				=   62 ; // 305

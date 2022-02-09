@@ -28,8 +28,8 @@ instance NASZ_229_Ayan (Npc_Default)
 	CreateInvItems (self, ItRw_Arrow,25);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Normal_Kharim, BodyTex_B, ITNA_OUT_H);		
-	Mdl_SetModelFatness	(self, 2);
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_ToughBald, BodyTex_B, ITNA_OUT_H);		
+	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 	
 	// ------ NSC-relevante Talente vergeben ------

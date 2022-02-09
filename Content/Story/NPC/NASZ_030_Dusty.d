@@ -23,7 +23,7 @@ INSTANCE NASZ_030_Dusty (Npc_Default)
 	
 
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald",Face_N_OldBald_Jeremiah, BodyTexMiner_N, -1);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_FatBald",Face_N_NormalBart_Dusty, BodyTexMiner_N, -1);		
 	Mdl_SetModelFatness	(self, 1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

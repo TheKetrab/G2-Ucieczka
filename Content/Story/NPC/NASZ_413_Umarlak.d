@@ -23,7 +23,7 @@ instance NASZ_413_Umarlak (Npc_Default)
 	B_CreateAmbientInv 	(self);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_Lester, BodyTex_P, ITAR_CorAngar);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_ToughBald_Nek, BodyTex_P, ITAR_CorAngar);		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); 	
 		

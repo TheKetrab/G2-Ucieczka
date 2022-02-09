@@ -23,7 +23,7 @@ instance NASZ_002_Daryl (Npc_Default)
 
 	// ------ visuals ------					
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal_Sly, BodyTex_N,  ITAR_Prisoner);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal08, BodyTex_N,  ITAR_Prisoner);	
 	Mdl_SetModelFatness	(self, -1);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

@@ -26,7 +26,7 @@ instance NASZ_132_Lowca (Npc_Default)
 	B_CreateAmbientInv (self);
 		
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Thief", Face_N_Weak_Markus_Kark, BodyTex_N, ITNA_DJG_M);		
+	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Bald", Face_N_Weak_Cipher_alt, BodyTex_N, ITNA_DJG_M);		
 	Mdl_SetModelFatness	(self, 2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

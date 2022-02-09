@@ -23,7 +23,7 @@ instance NASZ_001_Kopacz (Npc_Default)
 
 	// ------ visuals ------					
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Normal_Kharim, BodyTex_B,  ITAR_Prisoner);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Tough_Pacho, BodyTex_B,  ITAR_Prisoner);	
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

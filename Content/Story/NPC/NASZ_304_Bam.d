@@ -26,7 +26,7 @@ instance NASZ_304_Bam (Npc_Default)
 		
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	 
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Tough_Silas, BodyTex_B, ITNA_BAN_H);	 
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_B_Normal01, BodyTex_B, ITNA_BAN_H);	 
 	Mdl_SetModelFatness	(self, 2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	

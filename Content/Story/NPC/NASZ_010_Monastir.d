@@ -31,7 +31,7 @@ instance NASZ_010_Monastir (Npc_Default)
 		
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
 	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic", Face_P_Monastir, BodyTex_P, ITAR_KDF_H);		
-	Mdl_SetModelFatness	(self, 3);
+	Mdl_SetModelFatness	(self, 1.5);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 	
 	// ------ NSC-relevante Talente vergeben ------

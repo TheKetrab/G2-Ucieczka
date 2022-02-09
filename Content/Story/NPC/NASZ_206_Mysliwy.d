@@ -26,7 +26,7 @@ instance NASZ_206_Mysliwy (Npc_Default)
 	CreateInvItems (self, ItRw_Arrow,25);
 	
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Pony", Face_L_NormalBart02, BodyTex_L, ITNA_OUT_L );		
+	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Pony", Face_L_ToughBart_Quentin, BodyTex_L, ITNA_OUT_L );		
 	Mdl_SetModelFatness	(self, 2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

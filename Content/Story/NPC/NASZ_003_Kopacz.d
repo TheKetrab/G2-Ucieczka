@@ -23,7 +23,7 @@ instance NASZ_003_Kopacz (Npc_Default)
 
 	// ------ visuals ------					
 	
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Fatbald", Face_P_OldMan_Gravo, BodyTex_P,  ITAR_Prisoner);	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Fatbald", Face_P_Weak_Ulf_Wohlers, BodyTex_P,  ITAR_Prisoner);	
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Tired.mds"); 
 	

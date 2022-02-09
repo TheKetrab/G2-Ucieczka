@@ -35,7 +35,7 @@ instance NASZ_408_Straznik (Npc_Default)
 	// ------ Inventory ------
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_Lester, BodyTex_P, ITAR_KDW_L_ADDON);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald",Face_P_Normal03, BodyTex_P, ITAR_KDW_L_ADDON);		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); 	
 		

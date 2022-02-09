@@ -24,7 +24,7 @@ INSTANCE NASZ_311_Bandzior (Npc_Default)
 	CreateInvItems (self, ItRw_Bolt,25);
 		
 	// ------ visuals ------																			
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_PSIONIC",Face_N_ImportantGrey , BodyTex_N, ITNA_BAN_M);		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_PSIONIC",Face_P_NormalBart01 , BodyTex_P, ITNA_BAN_M);		
 	Mdl_SetModelFatness	(self, -2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); 
 

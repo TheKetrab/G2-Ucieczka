@@ -33,7 +33,7 @@ PROTOTYPE Mst_Default_Duch(C_Npc)
 //    damage        [DAM_INDEX_MAGIC]    =    0;
 
 	// TODO: losowanie twarzy i armora
-    B_SetNpcVisual         (self, MALE, "Hum_Head_Psionic", 174, 0, ITAR_LESTER);        
+    B_SetNpcVisual         (self, MALE, "Hum_Head_Psionic", Face_N_Netbek, 0, ITAR_LESTER);        
     Mdl_SetModelFatness    (self, 1);
     Mdl_ApplyOverlayMds    (self, "Humans_Mage.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 

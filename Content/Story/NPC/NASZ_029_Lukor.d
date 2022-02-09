@@ -23,7 +23,7 @@ instance NASZ_029_Lukor (Npc_Default)
 	CreateInvItems(self,ItNa_KsiegaLukora,1);
 		
 	// ------ visuals ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic", 38/* TODO To sobie dostosuj*/, 1, ITNA_GUR_M );		
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Psionic", Face_N_Orun, 1, ITNA_GUR_M );		
 	Mdl_SetModelFatness	(self, 0);
 	Mdl_ApplyOverlayMds	(self, "Humans_Mage.mds"); // Tired / Militia / Mage / Arrogance / Relaxed
 

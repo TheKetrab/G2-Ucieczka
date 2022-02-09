@@ -26,7 +26,7 @@ instance NASZ_130_Jenkins (Npc_Default)
 	B_CreateAmbientInv (self);
 		
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Pony", 76, BodyTex_N, ITNA_DJG_M);		
+	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_Pony", Face_N_Normal07, BodyTex_N, ITNA_DJG_M);		
 	Mdl_SetModelFatness	(self, 2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

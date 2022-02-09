@@ -26,7 +26,7 @@ instance NASZ_129_Matt (Npc_Default)
 	B_CreateAmbientInv (self);
 		
 	// ------ Wygl¹d ------																			//Muss NACH Attributen kommen, weil in B_SetNpcVisual die Breite abh. v. STR skaliert wird
-	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FATBALD", 128, 2, ITNA_DJG_M);		
+	B_SetNpcVisual 	     	(self, MALE, "Hum_Head_FATBALD", Face_L_NormalBart_Rufus, 2, ITNA_DJG_M);		
 	Mdl_SetModelFatness	(self, 2);
 	Mdl_ApplyOverlayMds	(self, "Humans_Militia.mds"); // Mage / Militia / Tired 
 							      // Relaxed / Arrogance

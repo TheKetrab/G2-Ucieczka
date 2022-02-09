@@ -21,7 +21,6 @@ INSTANCE NASZ_302_Bandzior (Npc_Default)
 	
 	// ------ Inventory ------
 	B_CreateAmbientInv 	(self);
-	CreateInvItems 	(self, ItNa_ListBandyci, 1 );
 	
 			
 	// ------ visuals ------																			

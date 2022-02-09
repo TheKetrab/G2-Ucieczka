@@ -223,6 +223,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_WidzialesJak_Info()
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_03"); //Mo¿e w dom Kuro'K?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_WidzialesJak_55_04"); //Kuro'K byæ ork-stra¿nik. Mieæ dom blisko tutaj. Wyjœæ st¹d i skrêciæ w prawo.
 
+	B_LogEntry (TOPIC_OrcCity_In, "Mój ca³y ekwipunek najprawdopodobniej znajduje siê w domu pewnego orkowego dowódcy. Mam wyjœæ z mojej celi i skrêciæ w prawo.");
 };
 
 //*********************************************************************

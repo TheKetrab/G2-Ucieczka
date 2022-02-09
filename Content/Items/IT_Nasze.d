@@ -4736,7 +4736,7 @@ func void Use_Fexo ()
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLines	( nDocID,  0, "'To AV mnie wykoñczy!'");
 					Doc_PrintLines	( nDocID,  0, "'Gdzie do cholery s¹ te g³upie koœci?!'");
-					Doc_PrintLines	( nDocID,  0, "--- Piêciu braci'");
+					Doc_PrintLines	( nDocID,  0, "--- Piêciu braci");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				

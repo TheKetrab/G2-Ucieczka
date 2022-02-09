@@ -37,7 +37,7 @@ INSTANCE DIA_NASZ_232_Jehen_siema   (C_INFO)
 
 FUNC INT DIA_NASZ_232_Jehen_siema_Condition()
 {
-	if (KAPITEL < 3)
+	if (KAPITEL < 3) && (Npc_GetDistToWP(self,"NASZ_JEHEN_01") < 5000)
 	{
 		return TRUE;
 	};

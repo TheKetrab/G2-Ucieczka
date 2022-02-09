@@ -8,6 +8,10 @@ func int ThiefIgnore() {
 	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_05") < 200)
 	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_06") < 800)
 	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_07") < 300)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_08") < 500)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_09") < 500)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_10") < 500)
+	|| (Npc_GetDistToWP(hero,"NASZ_IGNORE_11") < 500)
 	{
 		return TRUE;
 	};

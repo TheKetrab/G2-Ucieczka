@@ -37,3 +37,94 @@ instance PC_Hero (NPC_DEFAULT)
 	Mdl_ApplyOverlayMds	(self, "Humans_X.mds"); 
 	//Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_Hero_AssessDamage);	
 };
+
+instance PC_Hero_Kap1 (NPC_DEFAULT)
+{
+	name 		= "Will";
+	level		= 5;
+	
+	attribute[ATR_STRENGTH] 		= 10;
+	attribute[ATR_DEXTERITY] 		= 20;
+	attribute[ATR_MANA_MAX] 		= 5;
+	attribute[ATR_MANA] 			= 5;
+	attribute[ATR_HITPOINTS_MAX]	= 80;
+	attribute[ATR_HITPOINTS] 		= 80;
+	
+	EquipItem (self, ItMw_1H_Sword_Short_02);
+	CreateInvItems (self,ItRw_Arrow, 100);
+	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal02, BodyTex_N, ITAR_Leather_L);
+	Mdl_SetVisual (self,"HUMANS.MDS");
+	Mdl_SetModelFatness	(self, -1);
+	
+	B_SetFightSkills 	(self, 10);
+};
+
+instance PC_Hero_Kap2 (NPC_DEFAULT)
+{
+	name 		= "Will";
+	level		= 10;
+	
+	attribute[ATR_STRENGTH] 		= 20;
+	attribute[ATR_DEXTERITY] 		= 45;
+	attribute[ATR_MANA_MAX] 		= 10;
+	attribute[ATR_MANA] 			= 10;
+	attribute[ATR_HITPOINTS_MAX]	= 140;
+	attribute[ATR_HITPOINTS] 		= 140;
+	
+	EquipItem (self, ItNa_Out_Weapon_H);
+	EquipItem (self, ItRw_Bow_L_04);
+	CreateInvItems (self,ItRw_Arrow, 500);
+
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal02, BodyTex_N, ITNA_BAN_M);
+	Mdl_SetVisual (self,"HUMANS.MDS");
+	Mdl_SetModelFatness	(self, -1);
+	
+	B_SetFightSkills 	(self, 30);
+};
+
+instance PC_Hero_Kap3 (NPC_DEFAULT)
+{
+	name 		= "Will";
+	level		= 15;
+	
+	attribute[ATR_STRENGTH] 		= 20;
+	attribute[ATR_DEXTERITY] 		= 75;
+	attribute[ATR_MANA_MAX] 		= 20;
+	attribute[ATR_MANA] 			= 20;
+	attribute[ATR_HITPOINTS_MAX]	= 200;
+	attribute[ATR_HITPOINTS] 		= 200;
+	
+	EquipItem (self, ItNa_StaryPykacz);
+	EquipItem (self, ItRw_Bow_M_04);
+	CreateInvItems (self,ItRw_Arrow, 500);
+	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal02, BodyTex_N, ITNA_OUT_H);
+	Mdl_SetVisual (self,"HUMANS.MDS");
+	Mdl_SetModelFatness	(self, -1);
+	
+	B_SetFightSkills 	(self, 45);
+};
+
+instance PC_Hero_Kap4 (NPC_DEFAULT)
+{
+	name 		= "Will";
+	level		= 25;
+	
+	attribute[ATR_STRENGTH] 		= 30;
+	attribute[ATR_DEXTERITY] 		= 90;
+	attribute[ATR_MANA_MAX] 		= 20;
+	attribute[ATR_MANA] 			= 20;
+	attribute[ATR_HITPOINTS_MAX]	= 250;
+	attribute[ATR_HITPOINTS] 		= 250;
+	
+	EquipItem (self, ItMw_Meisterdegen);
+	EquipItem (self, ItRw_Bow_H_03);
+	CreateInvItems (self,ItRw_Arrow, 500);
+	
+	B_SetNpcVisual 		(self, MALE, "Hum_Head_Bald", Face_N_Normal02, BodyTex_N, ITNA_OUT_ULTRA);
+	Mdl_SetVisual (self,"HUMANS.MDS");
+	Mdl_SetModelFatness	(self, -1);
+	
+	B_SetFightSkills 	(self, 60);
+};

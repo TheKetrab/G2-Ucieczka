@@ -161,7 +161,7 @@ func void B_SetHeroExp()
     hero.attribute[ATR_HITPOINTS_MAX] = 40 + (10* hero.level);
     hero.attribute[ATR_HITPOINTS] = hero.attribute[ATR_HITPOINTS_MAX];
   
-    Attributes = "Level Up!  Lernpunkte:";
+    Attributes = "Level Up!  LP:";
     Attributes = ConcatStrings(Attributes, IntToString(hero.LP));
     Attributes = ConcatStrings(Attributes, "  Hitpoints:");
     Attributes = ConcatStrings(Attributes, IntToString(hero.attribute[ATR_HITPOINTS_MAX]));
@@ -312,6 +312,7 @@ func void B_SetPaladinEquipment ()
 //	Rahmen-Infos
 // 	Ende
 //***************************************************************************
+/*
 instance  CH_kriegen (C_INFO)
 {
 	npc			=  CH;
@@ -321,7 +322,7 @@ instance  CH_kriegen (C_INFO)
 	permanent	=  TRUE;
 	description = "1 Erz geben";
 };                       
-
+*/
 FUNC int  CH_kriegen_Condition()
 {
 	if (LevelStart == FALSE) 
@@ -343,6 +344,7 @@ FUNC VOID  CH_kriegen_Info()
 //	Rahmen-Infos
 // 	Ende
 //***************************************************************************
+/*
 instance  CH_Geben (C_INFO)
 {
 	npc			=  CH;
@@ -352,7 +354,7 @@ instance  CH_Geben (C_INFO)
 	permanent	=  TRUE;
 	description = "zeig mal dingens";
 };                       
-
+*/
 FUNC int  CH_Geben_Condition()
 {
 	if (LevelStart == FALSE) 
@@ -414,7 +416,7 @@ instance  CH_RESET (C_INFO)
 	condition	=  CH_RESET_Condition;
 	information	=  CH_RESET_Info;
 	permanent 	=  TRUE;
-	description = "Totaler Reset";
+	description = "Ca³kowity reset";
 };                       
 
 FUNC int  CH_RESET_Condition()
@@ -466,7 +468,7 @@ FUNC VOID  CH_RESET_Info()
 	
 	AI_UnequipArmor (hero); 
 	
-	PrintScreen ("PC_Hero wieder hergestellt", - 1, - 1, FONT_Screen, 2);   
+	PrintScreen ("Przywrócono PC_Hero", - 1, - 1, FONT_Screen, 2);   
 	
 };
 
@@ -487,10 +489,11 @@ INSTANCE CH_Language (C_INFO)
 
 FUNC INT CH_Language_Condition()
 {
-	if (MiscStart == TRUE)
-	{		
-		return TRUE;
-	};
+	// if (MiscStart == TRUE)
+	// {		
+		// return TRUE;
+	// };
+	return FALSE;
 };
 func VOID CH_Language_Info()
 {
@@ -652,7 +655,7 @@ INSTANCE CH_Level_Start (C_INFO)
 	npc				= CH;
 	condition		= CH_Level_Start_Condition;
 	information		= CH_Level_Start_Info;
-	description		= "Level, Lernpunkte und Gilde"; 
+	description		= "Poziom, punkty nauki i gildia"; 
 	permanent		=  TRUE;
 };
 
@@ -681,7 +684,7 @@ INSTANCE CH_Level_Stopper (C_INFO)
 	nr 				= 99;
 	condition		= CH_Level_Stopper_Condition;
 	information		= CH_Level_Stopper_Info;
-	description		= "ZURÜCK"; 
+	description		= "POWRÓT"; 
 	permanent		=  TRUE;
 };
 

@@ -6976,8 +6976,8 @@ INSTANCE ItNa_Jabol(C_Item)
 
 	description		= 	"Jabol";
 	
-	TEXT[1]			= 	NAME_Bonus_HP;				
-	COUNT[1]		= 	1;
+	TEXT[1]			= 	NAME_Bonus_HpMax;				
+	COUNT[1]		= 	5;
 	
 	TEXT[5]			= 	NAME_Value;					
 	COUNT[5]		= 	Value_Grog;
@@ -6994,8 +6994,8 @@ func void UseJabol()
 	{
 		Wld_PlayEffect("SLOW_TIME",self,self,0,0,0,FALSE);
 	};
-		B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	5);	
-		//Npc_ChangeAttribute	(self, ATR_HITPOINTS,	5);
+		B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	5,FALSE);	
+		Npc_ChangeAttribute	(self, ATR_HITPOINTS,	5);
 		PercentHealSelf(5,ATR_HITPOINTS);
 };
 
@@ -8995,8 +8995,7 @@ func void Use_ItNa_FriedMushroom_01 ()
 		
 		if (Dunkelpilz_Bonus == 50)  
 		{
-			B_RaiseAttribute	(self, ATR_MANA_MAX, 5);
-			//Npc_ChangeAttribute	(self, ATR_MANA, 5);
+			B_RaiseAttribute(self, ATR_MANA_MAX, +5,FALSE);
 			PercentHealSelf(5,ATR_MANA);
 			Snd_Play	("LevelUp");
 			Dunkelpilz_Bonus = 0;
@@ -9114,7 +9113,7 @@ FUNC VOID Use_Losos()
 
 		if (LososBonus == 2)  
 		{
-			B_RaiseAttribute	(self, ATR_MANA_MAX, 1);
+			B_RaiseAttribute(self, ATR_MANA_MAX, +1,FALSE);
 			PercentHealSelf(1,ATR_MANA);
 			//Npc_ChangeAttribute	(self, ATR_MANA, 1);
 			Snd_Play	("LevelUp");

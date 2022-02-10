@@ -11,7 +11,7 @@ func void B_RaiseRealAttributeLearnCounter (var C_NPC oth, var int attrib, var i
 };
 const int Sneak_Anim_Speed = 20;
 // ---------------------------------------
-func void B_RaiseAttribute (var C_NPC oth, var int attrib, var int points)
+func void B_RaiseAttribute (var C_NPC oth, var int attrib, var int points, var int real_attribute)
 {
 	var string concatText;
 	
@@ -74,5 +74,7 @@ func void B_RaiseAttribute (var C_NPC oth, var int attrib, var int points)
 		PrintS_Ext(concatText, RGBA(255,255,255,0));
 	};
 	
-	B_RaiseRealAttributeLearnCounter (oth, attrib, points);
+	if (real_attribute) {
+		B_RaiseRealAttributeLearnCounter (oth, attrib, points);
+	};
 };

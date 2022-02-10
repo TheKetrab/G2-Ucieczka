@@ -283,7 +283,7 @@ FUNC VOID DIA_NASZ_007_Draal_done_Info()
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_02"); //Wielkie dziêki. Nie zapomnê ci tego. W ramach podziêkowañ dam ci ma³¹ wskazówkê: Dobry z³odziej musi byæ nie tylko zrêczny, ale i przebieg³y.
 	AI_Output (self, other,"DIA_NASZ_007_Draal_done_55_03"); //Kiedy bêdziesz ³apa³ przedmiot, który chcesz ukraœæ, chwyæ go jedn¹ rêk¹, a drug¹ machaj i odwracaj uwagê ofiary. To zawsze pomaga, mo¿esz mi wierzyæ.
 
-	B_RaiseAttribute(other, ATR_DEXTERITY, 2);
+	B_RaiseAttribute(other, ATR_DEXTERITY, 2, FALSE);
 	DraalUratowany = TRUE;
 	
 	Npc_ExchangeRoutine (self, "In");

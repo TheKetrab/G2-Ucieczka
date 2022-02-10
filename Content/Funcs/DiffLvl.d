@@ -348,4 +348,13 @@ func void Update_Character_Menu() {
 		Update_Menu_Item("MENU_ITEM_REPUTATION_3_VAL", "");
 	};
 
+
+	// ATRYBUTY
+	Update_Menu_Item("MENU_ITEM_ATTRIBUTE_1_CUSTOM_REAL",	IntToString(hero.aivar[REAL_STRENGTH]));	
+	Update_Menu_Item("MENU_ITEM_ATTRIBUTE_1_CUSTOM_TOTAL",	IntToString(hero.attribute[ATR_STRENGTH]));
+	Update_Menu_Item("MENU_ITEM_ATTRIBUTE_2_CUSTOM_REAL",	IntToString(hero.aivar[REAL_DEXTERITY]));
+	Update_Menu_Item("MENU_ITEM_ATTRIBUTE_2_CUSTOM_TOTAL",	IntToString(hero.attribute[ATR_DEXTERITY]));
+	Update_Menu_Item("MENU_ITEM_ATTRIBUTE_3_CUSTOM_REAL",	IntToString(hero.aivar[REAL_MANA_MAX]));	
+
 };
+

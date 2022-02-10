@@ -33,8 +33,8 @@ instance MENU_STATUS (C_MENU_DEF)
 	items[16]	= "MENU_ITEM_ATTRIBUTE_3_TITLE";
 	items[17]	= "MENU_ITEM_ATTRIBUTE_4_TITLE";
 	// ---------------------------------------------
-	items[18]	= "MENU_ITEM_ATTRIBUTE_1";
-	items[19]	= "MENU_ITEM_ATTRIBUTE_2";
+//	items[18]	= "MENU_ITEM_ATTRIBUTE_1";
+//	items[19]	= "MENU_ITEM_ATTRIBUTE_2";
 	items[20]	= "MENU_ITEM_ATTRIBUTE_3";
 	items[21]	= "MENU_ITEM_ATTRIBUTE_4";
 
@@ -117,6 +117,12 @@ instance MENU_STATUS (C_MENU_DEF)
 	items[66]	= "MENU_ITEM_REPUTATION_3_RANGE";
 	items[67]	= "MENU_ITEM_REPUTATION_3_VAL";
 
+	items[68]	= "MENU_ITEM_ATTRIBUTE_1_CUSTOM_REAL";
+	items[69]	= "MENU_ITEM_ATTRIBUTE_2_CUSTOM_REAL";
+	items[70]	= "MENU_ITEM_ATTRIBUTE_3_CUSTOM_REAL";
+
+	items[71]	= "MENU_ITEM_ATTRIBUTE_1_CUSTOM_TOTAL";
+	items[72]	= "MENU_ITEM_ATTRIBUTE_2_CUSTOM_TOTAL";
 	
 	
 	// ------ Eigenschaften ------
@@ -137,6 +143,10 @@ const int STAT_A_X1 =  500; //Titel
 const int STAT_A_X2 = 2300; //Werte
 const int STAT_A_X3 = 3000; //hintere Werte (Level _0_)
 const int STAT_A_X4 = 3400;	//Ende der A-Spalte (zum zentrieren der Headings)
+
+const int STAT_A_X5 = 1900; // G2U: Real
+const int STAT_A_X6 = 2500; // G2U: Total
+
 
 // ------ 2. Spalte ------
 const int STAT_B_X1 = 3800; //Titel
@@ -304,6 +314,20 @@ INSTANCE MENU_ITEM_ATTRIBUTE_1(C_MENU_ITEM_DEF)
 	flags		= flags & ~IT_SELECTABLE;
 };
 
+INSTANCE MENU_ITEM_ATTRIBUTE_1_CUSTOM_REAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X5;				posy = STAT_ATR_Y + STAT_DY*0;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
+INSTANCE MENU_ITEM_ATTRIBUTE_1_CUSTOM_TOTAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*0;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
 // ------ Geschick -------
 INSTANCE MENU_ITEM_ATTRIBUTE_2_TITLE(C_MENU_ITEM_DEF)
 {
@@ -320,6 +344,20 @@ INSTANCE MENU_ITEM_ATTRIBUTE_2(C_MENU_ITEM_DEF)
 	flags		= flags & ~IT_SELECTABLE;
 };
 
+INSTANCE MENU_ITEM_ATTRIBUTE_2_CUSTOM_REAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X5;				posy = STAT_ATR_Y + STAT_DY*1;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
+INSTANCE MENU_ITEM_ATTRIBUTE_2_CUSTOM_TOTAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*1;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
 // ------ Mana ------
 INSTANCE MENU_ITEM_ATTRIBUTE_3_TITLE(C_MENU_ITEM_DEF)
 {
@@ -331,7 +369,21 @@ INSTANCE MENU_ITEM_ATTRIBUTE_3_TITLE(C_MENU_ITEM_DEF)
 
 INSTANCE MENU_ITEM_ATTRIBUTE_3(C_MENU_ITEM_DEF)
 {
-	posx 		= STAT_A_X2;				posy = STAT_ATR_Y + STAT_DY*2;
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*2;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
+INSTANCE MENU_ITEM_ATTRIBUTE_3_CUSTOM_REAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X5;				posy = STAT_ATR_Y + STAT_DY*2;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
+INSTANCE MENU_ITEM_ATTRIBUTE_3_CUSTOM_TOTAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*2;
 	fontName	= STAT_FONT_DEFAULT;
 	flags		= flags & ~IT_SELECTABLE;
 };
@@ -340,18 +392,31 @@ INSTANCE MENU_ITEM_ATTRIBUTE_3(C_MENU_ITEM_DEF)
 INSTANCE MENU_ITEM_ATTRIBUTE_4_TITLE(C_MENU_ITEM_DEF)
 {
 	posx 		= STAT_A_X1;				posy = STAT_ATR_Y + STAT_DY*3;
-	text[0]		= "Punkty trafieñ";
+	text[0]		= "P¯";
 	fontName	= STAT_FONT_DEFAULT;
 	flags		= flags & ~IT_SELECTABLE;
 };
 
 INSTANCE MENU_ITEM_ATTRIBUTE_4(C_MENU_ITEM_DEF)
 {
-	posx 		= STAT_A_X2;				posy = STAT_ATR_Y + STAT_DY*3;
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*3;
 	fontName	= STAT_FONT_DEFAULT;
 	flags		= flags & ~IT_SELECTABLE;
 };
 
+INSTANCE MENU_ITEM_ATTRIBUTE_4_CUSTOM_REAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X5;				posy = STAT_ATR_Y + STAT_DY*3;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
+
+INSTANCE MENU_ITEM_ATTRIBUTE_4_CUSTOM_TOTAL(C_MENU_ITEM_DEF)
+{
+	posx 		= STAT_A_X6;				posy = STAT_ATR_Y + STAT_DY*3;
+	fontName	= STAT_FONT_DEFAULT;
+	flags		= flags & ~IT_SELECTABLE;
+};
 
 // --------------
 // Rüstungsschutz

@@ -160,7 +160,7 @@ INSTANCE ItFo_Addon_LousHammer (C_Item)
 	{
 		if Hammer_Once == FALSE
 		{
-			B_RaiseAttribute (self,	ATR_MANA_MAX, Mana_LousHammer);
+			B_RaiseAttribute (self,	ATR_MANA_MAX, Mana_LousHammer,FALSE);
 			Hammer_Once = TRUE;
 		};	
 	};
@@ -288,7 +288,7 @@ INSTANCE ItFo_Addon_FireStew (C_Item)
 
 	FUNC VOID Use_FireStew()
 	{
-		B_RaiseAttribute 	(self,	ATR_STRENGTH,	STR_FireStew);
+		B_RaiseAttribute 	(self,	ATR_STRENGTH,	STR_FireStew,FALSE);
 		Npc_ChangeAttribute	(self,	ATR_HITPOINTS_MAX,	HP_FireStew);
 		
 		PrintScreen ("Stärke und Lebensenergie gesteigert!", -1, 34, FONT_ScreenSmall,2); 
@@ -320,7 +320,7 @@ INSTANCE ItFo_Addon_Meatsoup (C_Item)
 	{
 		var string ConcatText;
 		ConcatText = ConcatStrings (NAME_Bonus_Str, IntToString (STR_MeatSoup));
-		B_RaiseAttribute (self,	ATR_STRENGTH, STR_MeatSoup);
+		B_RaiseAttribute (self,	ATR_STRENGTH, STR_MeatSoup, FALSE);
 		PrintScreen (ConcatText, -1, 34, FONT_ScreenSmall,2); 
 	};
 	

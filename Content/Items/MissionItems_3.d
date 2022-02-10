@@ -698,7 +698,7 @@ FUNC VOID Use_Astronomy()
 {   
 		if (Astronomy_once == FALSE)
 		{
-			B_RaiseAttribute (self, ATR_MANA_MAX, 2);
+			B_RaiseAttribute (self, ATR_MANA_MAX, 2, FALSE);
 			Print (PRINT_ReadAstronomy);
 			Astronomy_once = TRUE;
 		};

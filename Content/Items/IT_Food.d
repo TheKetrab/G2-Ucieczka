@@ -76,7 +76,7 @@ INSTANCE ItFo_Apple (C_Item)
 			if (Apple_Bonus == 25)  
 			{
 				Print (PRINT_Eat3);
-				B_RaiseAttribute (self,	ATR_STRENGTH, 1);
+				B_RaiseAttribute(self, ATR_STRENGTH,1,FALSE);
 				Snd_Play	("LevelUp");
 				Apple_Bonus = 0;
 			};
@@ -312,7 +312,7 @@ INSTANCE ItFo_XPStew (C_Item)
 		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Stew);
 		PercentHealSelf(20,ATR_HITPOINTS);
 		Snd_Play	("LevelUp");
-		B_RaiseAttribute (self, ATR_STRENGTH, 1);
+		B_RaiseAttribute (self, ATR_STRENGTH, 1,FALSE);
 	};
 
 
@@ -343,7 +343,7 @@ INSTANCE ItFo_CoragonsBeer (C_Item)
 	FUNC VOID Use_CoragonsBeerBeer()
 	{
 
-		B_RaiseAttribute	(self,	ATR_MANA_MAX,	Mana_Beer);
+		B_RaiseAttribute	(self,	ATR_MANA_MAX,	Mana_Beer,FALSE);
 		Npc_ChangeAttribute	(self,	ATR_MANA,	Mana_Beer);	 
 		
 		Npc_ChangeAttribute	(self,	ATR_HITPOINTS_MAX,	HP_Beer);

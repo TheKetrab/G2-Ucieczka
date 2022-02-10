@@ -99,19 +99,19 @@ func void Use_StonePlate ()
 
 						if 		(StoneplateLevel == 1)
 						{
-							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel1);
+							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel1,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(STR_StPlLevel1));
 							B_Say (self, self, "STONEPLATE_1");
 						}
 						else if (StoneplateLevel == 2)
 						{
-							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel2);
+							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel2,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(STR_StPlLevel2));
 							B_Say (self, self, "STONEPLATE_2");
 						}
 						else if (StoneplateLevel == 3)
 						{
-							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel3);
+							B_RaiseAttribute	(self, ATR_STRENGTH,	STR_StPlLevel3,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(STR_StPlLevel3));
 							B_Say (self, self, "STONEPLATE_3");
 						};
@@ -123,19 +123,19 @@ func void Use_StonePlate ()
 					
 						if 		(StoneplateLevel == 1)
 						{
-							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel1);
+							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel1,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(DEX_StPlLevel1));
 							B_Say (self, self, "STONEPLATE_1");
 						}
 						else if (StoneplateLevel == 2)
 						{
-							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel2);
+							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel2,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(DEX_StPlLevel2));
 							B_Say (self, self, "STONEPLATE_2");
 						}
 						else if (StoneplateLevel == 3)
 						{
-							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel3);
+							B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_StPlLevel3,FALSE);
 							concatText = ConcatStrings (concatText,	IntToString(DEX_StPlLevel3));
 							B_Say (self, self, "STONEPLATE_3");
 						};
@@ -147,21 +147,21 @@ func void Use_StonePlate ()
 						
 						if 		(StoneplateLevel == 1)
 						{
-							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel1);	
+							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel1,FALSE);	
 							Npc_ChangeAttribute	(self, ATR_HITPOINTS,		HPMax_StPlLevel1);
 							concatText = ConcatStrings (concatText,	IntToString(HPMax_StPlLevel1));
 							B_Say (self, self, "STONEPLATE_1");
 						}
 						else if (StoneplateLevel == 2)
 						{
-							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel2);	
+							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel2,FALSE);	
 							Npc_ChangeAttribute	(self, ATR_HITPOINTS,		HPMax_StPlLevel2);
 							concatText = ConcatStrings (concatText,	IntToString(HPMax_StPlLevel2));
 							B_Say (self, self, "STONEPLATE_2");
 						}
 						else if (StoneplateLevel == 3)
 						{
-							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel3);	
+							B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_StPlLevel3,FALSE);	
 							Npc_ChangeAttribute	(self, ATR_HITPOINTS,		HPMax_StPlLevel3);
 							concatText = ConcatStrings (concatText,	IntToString(HPMax_StPlLevel3));
 							B_Say (self, self, "STONEPLATE_3");
@@ -174,21 +174,21 @@ func void Use_StonePlate ()
 
 						if 		(StoneplateLevel == 1)
 						{
-							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel1);
+							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel1,FALSE);
 							Npc_ChangeAttribute	(self, ATR_MANA,		ManaMax_StPlLevel1);
 							concatText = ConcatStrings (concatText,	IntToString(ManaMax_StPlLevel1));
 							B_Say (self, self, "STONEPLATE_1");
 						}
 						else if (StoneplateLevel == 2)
 						{
-							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel2);
+							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel2,FALSE);
 							Npc_ChangeAttribute	(self, ATR_MANA,		ManaMax_StPlLevel2);
 							concatText = ConcatStrings (concatText,	IntToString(ManaMax_StPlLevel2));
 							B_Say (self, self, "STONEPLATE_2");
 						}
 						else if (StoneplateLevel == 3)
 						{
-							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel3);
+							B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_StPlLevel3,FALSE);
 							Npc_ChangeAttribute	(self, ATR_MANA,		ManaMax_StPlLevel3);
 							concatText = ConcatStrings (concatText,	IntToString(ManaMax_StPlLevel3));
 							B_Say (self, self, "STONEPLATE_3");

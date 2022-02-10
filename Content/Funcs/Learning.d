@@ -63,6 +63,24 @@ const int LEARN_MANA_COEF_25     = 1;
 const int LEARN_MANA_COEF_50     = 2;
 const int LEARN_MANA_COEF_75     = 2;
 
+func string GetTalentNameByAttribute(var int attribute) {
+
+	if      (attribute == ATR_STRENGTH)  { return LEARN_STR;  }
+	else if (attribute == ATR_DEXTERITY) { return LEARN_DEX;  }
+	else if (attribute == ATR_MANA_MAX)  { return LEARN_MANA; }
+	else                                 { return "";         };
+
+};
+
+func string GetTalentNameByFightTalent(var int fight_talent) {
+
+	if      (fight_talent == NPC_TALENT_1H)       { return LEARN_1H;   }
+	else if (fight_talent == NPC_TALENT_2H)       { return LEARN_2H;   }
+	else if (fight_talent == NPC_TALENT_BOW)      { return LEARN_BOW;  }
+	else if (fight_talent == NPC_TALENT_CROSSBOW) { return LEARN_CBOW; }
+	else                                          { return "";         };
+
+};
 
 func int GetCostBySkillAndCoef(var string talent, var int part) {
 
@@ -193,16 +211,16 @@ func int GetCostBySkillAndCoefGold(var string talent, var int part) {
 	return 0;
 };
 
-// zwraca aktualn¹ wartoœæ danej umiejêtnoœci
+// zwraca aktualn¹ wartoœæ danej umiejêtnoœci bez bonusów
 func int GetTalentNow(var string talent) {
 
 	if (     Hlp_StrCmp(talent,LEARN_1H))   { return hero.HitChance[NPC_TALENT_1H];       }
 	else if (Hlp_StrCmp(talent,LEARN_2H))   { return hero.HitChance[NPC_TALENT_2H];       }
 	else if (Hlp_StrCmp(talent,LEARN_BOW))  { return hero.HitChance[NPC_TALENT_BOW];      }
 	else if (Hlp_StrCmp(talent,LEARN_CBOW)) { return hero.HitChance[NPC_TALENT_CROSSBOW]; }
-	else if (Hlp_StrCmp(talent,LEARN_STR))  { return hero.attribute[ATR_STRENGTH];        }
-	else if (Hlp_StrCmp(talent,LEARN_DEX))  { return hero.attribute[ATR_DEXTERITY];       }
-	else if (Hlp_StrCmp(talent,LEARN_MANA)) { return hero.attribute[ATR_MANA_MAX];        };
+	else if (Hlp_StrCmp(talent,LEARN_STR))  { return hero.aivar[REAL_STRENGTH];        }
+	else if (Hlp_StrCmp(talent,LEARN_DEX))  { return hero.aivar[REAL_DEXTERITY];       }
+	else if (Hlp_StrCmp(talent,LEARN_MANA)) { return hero.aivar[REAL_MANA_MAX];        };
 
 	return 0;
 };

@@ -273,7 +273,7 @@ INSTANCE ItPo_DragonEggDrinkNeoras_MIS (C_Item)
 	FUNC VOID Use_DragonEggDrinkNeoras()
 	{
 		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Elixier);
-		B_RaiseAttribute (self, ATR_STRENGTH, + 3);
+		B_RaiseAttribute (self, ATR_STRENGTH, + 3, FALSE);
 		Snd_Play ("DEM_Warn");
 		Neoras_SCUsedDragonEggDrink = TRUE;
 	};

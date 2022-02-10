@@ -37,13 +37,20 @@ FUNC VOID check_all_wiarolomca()
 	{
 		Wiarolomca_OneTime = TRUE;
 		AI_PlayAni (hero, "S_SUCKENERGY_VICTIM"); 
-		//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	10);
-		hero.attribute[0]-=20;
-		hero.attribute[1]-=20;
-		hero.attribute[2]-=5;
-		hero.attribute[3]-=5;
-		hero.attribute[4]-=5;
-		hero.attribute[5]-=5;
+
+		hero.attribute[ATR_HITPOINTS] -= 20;
+		hero.attribute[ATR_HITPOINTS_MAX] -= 20;
+
+		hero.attribute[ATR_MANA] -= 5;
+		hero.attribute[ATR_MANA_MAX] -= 5;
+		hero.aivar[REAL_MANA_MAX] -= 5;
+
+		hero.attribute[ATR_STRENGTH] -= 5;
+		hero.aivar[REAL_STRENGTH] -= 5;
+
+		hero.attribute[ATR_DEXTERITY] -= 5;
+		hero.aivar[REAL_DEXTERITY] -= 5;
+
 		PrintS_Ext("Moc artefaktów ochorni³a ciê przed œmierci¹, jednak¿e zosta³eœ os³abiony!", RGBA(255,255,255,0));	
 		B_GivePlayerXP(500);
 	};

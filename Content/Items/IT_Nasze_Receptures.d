@@ -32,7 +32,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	if (dishId == ItNa_SerowyGulasz) {
 		if (SerowyGulaszOneTime == FALSE) {
 			SerowyGulaszOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1);
+			B_RaiseAttribute (slf, ATR_MANA_MAX, 1, FALSE);
 			Npc_ChangeAttribute	(slf, ATR_MANA, 1);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};
@@ -41,7 +41,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaZGrzybowKopalnianych) {
 		if (ZupaZGrzybowKopalnianychOneTime == FALSE) {
 			ZupaZGrzybowKopalnianychOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1);
+			B_RaiseAttribute (slf, ATR_DEXTERITY, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};	
 	}
@@ -49,7 +49,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaZOrkowegoPrzepisu) {
 		if (ZupaZOrkowegoPrzepisuOneTime == FALSE) {
 			ZupaZOrkowegoPrzepisuOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_STRENGTH, 1);
+			B_RaiseAttribute (slf, ATR_STRENGTH, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};	
 	}
@@ -57,7 +57,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_UdziecZDzikaPoLowiecku) {
 		if (UdziecZDzikaPoLowieckuOneTime == FALSE) {
 			UdziecZDzikaPoLowieckuOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1);
+			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};	
 	}
@@ -65,7 +65,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaMleczna) {
 		if (ZupaMlecznaOneTime == FALSE) {
 			ZupaMlecznaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1);
+			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1, FALSE);
 			Npc_ChangeAttribute	(slf, ATR_MANA, 1);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
@@ -74,7 +74,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaGrzybowa) {
 		if (ZupaGrzybowaOneTime == FALSE) {
 			ZupaGrzybowaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1);
+			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -82,7 +82,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaZDuzychGrzybow) {
 		if (ZupaZDuzychGrzybowOneTime == FALSE) {
 			ZupaZDuzychGrzybowOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(slf, ATR_STRENGTH, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -90,7 +90,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaJarzynowaZJagodami) {
 		if (ZupaJarzynowaZJagodamiOneTime == FALSE) {
 			ZupaJarzynowaZJagodamiOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(slf, ATR_STRENGTH, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -98,7 +98,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaSerowa) {
 		if (ZupaSerowaOneTime == FALSE) {
 			ZupaSerowaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(slf, ATR_STRENGTH, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -106,7 +106,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_PrzysmakMysliwych) {
 		if (PrzysmakMysliwychOneTime == FALSE) {
 			PrzysmakMysliwychOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1);
+			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -114,7 +114,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_KompotOwocowy) {
 		if (KompotOwocowyOneTime == FALSE) {
 			KompotOwocowyOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1);
+			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1, FALSE);
 			Npc_ChangeAttribute	(slf, ATR_MANA, 1);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
@@ -123,7 +123,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItFo_FishSoup) {
 		if (ZupaRybnaOneTime == FALSE) {
 			ZupaRybnaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1);
+			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1, FALSE);
 			Npc_ChangeAttribute	(slf, ATR_MANA, 1);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
@@ -132,7 +132,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_GulaszMiesny) {
 		if (GulaszMiesnyOneTime == FALSE) {
 			GulaszMiesnyOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(slf, ATR_STRENGTH, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -140,7 +140,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_PotrawkaZeScierwojada) {
 		if (PotrawkaZeScierwojadaOneTime == FALSE) {
 			PotrawkaZeScierwojadaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1);
+			B_RaiseAttribute	(slf, ATR_DEXTERITY, 1, FALSE);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		
 	}
@@ -148,7 +148,7 @@ func void Eat_Special_Dish(var int dishId, var c_npc slf) {
 	else if (dishId == ItNa_ZupaPiwna) {
 		if (ZupaPiwnaOneTime == FALSE) {
 			ZupaPiwnaOneTime = TRUE;
-			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1);
+			B_RaiseAttribute	(slf, ATR_MANA_MAX, 1, FALSE);
 			Npc_ChangeAttribute	(slf, ATR_MANA, 1);
 			B_GivePlayerXP(EXP_SPECIAL_DISH);
 		};		

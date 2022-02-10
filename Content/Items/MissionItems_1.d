@@ -476,7 +476,7 @@ FUNC VOID Use_SmellyFish()
 
 		if (SledzBonus == 5)  
 		{
-			B_RaiseAttribute	(self, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(self, ATR_STRENGTH, 1, FALSE);
 			Snd_Play	("LevelUp");
 			SledzBonus = 0;
 		};
@@ -937,7 +937,7 @@ INSTANCE ItPo_Perm_LittleMana(C_Item)
 
 	FUNC VOID UseItPo_LittleMana()
 	{
-		B_RaiseAttribute	(self, ATR_MANA_MAX,	3);
+		B_RaiseAttribute	(self, ATR_MANA_MAX,	3, FALSE);
 		Npc_ChangeAttribute	(self, ATR_MANA,	3);
 	};
 //****************************************************

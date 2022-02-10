@@ -345,7 +345,7 @@ FUNC VOID USE_Dex_Herb_01 ()
 
 		if (ZmiennaDexPlant == 3)  
 		{
-			B_RaiseAttribute	(self, ATR_DEXTERITY, 1);
+			B_RaiseAttribute	(self, ATR_DEXTERITY, 1, FALSE);
 			Snd_Play	("LevelUp");
 			ZmiennaDexPlant = 0;
 		};
@@ -393,7 +393,7 @@ FUNC VOID USE_Strength_Herb_01 ()
 
 		if (ZmiennaStrPlant == 3)  
 		{
-			B_RaiseAttribute	(self, ATR_STRENGTH, 1);
+			B_RaiseAttribute	(self, ATR_STRENGTH, 1, FALSE);
 			Snd_Play	("LevelUp");
 			ZmiennaStrPlant = 0;
 		};
@@ -471,7 +471,7 @@ INSTANCE ItPl_Mushroom_01(C_Item)
 			
 			if (Dunkelpilz_Bonus == 50)  
 			{
-				B_RaiseAttribute	(self, ATR_MANA_MAX, 5);
+				B_RaiseAttribute	(self, ATR_MANA_MAX, 5, FALSE);
 				Npc_ChangeAttribute	(self, ATR_MANA, 5);
 				Snd_Play	("LevelUp");
 				Dunkelpilz_Bonus = 0;

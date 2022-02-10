@@ -18,8 +18,12 @@ instance PC_Hero (NPC_DEFAULT)
 	attribute[ATR_DEXTERITY] 		= 5;
 	attribute[ATR_MANA_MAX] 		= 5;
 	attribute[ATR_MANA] 			= 5;
-	attribute[ATR_HITPOINTS_MAX]		= 50;
+	attribute[ATR_HITPOINTS_MAX]	= 50;
 	attribute[ATR_HITPOINTS] 		= 50;
+
+	aivar[REAL_STRENGTH] 			= 5;
+	aivar[REAL_DEXTERITY] 			= 5;
+	aivar[REAL_MANA_MAX] 			= 5;
 	
 	//Nałożona broń
 	EquipItem (self, ItMw_2H_Axe_L_01);
@@ -49,6 +53,10 @@ instance PC_Hero_Kap1 (NPC_DEFAULT)
 	attribute[ATR_MANA] 			= 5;
 	attribute[ATR_HITPOINTS_MAX]	= 80;
 	attribute[ATR_HITPOINTS] 		= 80;
+
+	aivar[REAL_STRENGTH] 			= 10;
+	aivar[REAL_DEXTERITY] 			= 20;
+	aivar[REAL_MANA_MAX] 			= 5;
 	
 	EquipItem (self, ItMw_1H_Sword_Short_02);
 	CreateInvItems (self,ItRw_Arrow, 100);
@@ -71,6 +79,10 @@ instance PC_Hero_Kap2 (NPC_DEFAULT)
 	attribute[ATR_MANA] 			= 10;
 	attribute[ATR_HITPOINTS_MAX]	= 140;
 	attribute[ATR_HITPOINTS] 		= 140;
+
+	aivar[REAL_STRENGTH] 			= 20;
+	aivar[REAL_DEXTERITY] 			= 45;
+	aivar[REAL_MANA_MAX] 			= 10;
 	
 	EquipItem (self, ItNa_Out_Weapon_H);
 	EquipItem (self, ItRw_Bow_L_04);
@@ -94,6 +106,10 @@ instance PC_Hero_Kap3 (NPC_DEFAULT)
 	attribute[ATR_MANA] 			= 20;
 	attribute[ATR_HITPOINTS_MAX]	= 200;
 	attribute[ATR_HITPOINTS] 		= 200;
+
+	aivar[REAL_STRENGTH] 			= 20;
+	aivar[REAL_DEXTERITY] 			= 75;
+	aivar[REAL_MANA_MAX] 			= 20;
 	
 	EquipItem (self, ItNa_StaryPykacz);
 	EquipItem (self, ItRw_Bow_M_04);
@@ -118,6 +134,10 @@ instance PC_Hero_Kap4 (NPC_DEFAULT)
 	attribute[ATR_HITPOINTS_MAX]	= 250;
 	attribute[ATR_HITPOINTS] 		= 250;
 	
+	aivar[REAL_STRENGTH] 			= 30;
+	aivar[REAL_DEXTERITY] 			= 90;
+	aivar[REAL_MANA_MAX] 			= 20;
+
 	EquipItem (self, ItMw_Meisterdegen);
 	EquipItem (self, ItRw_Bow_H_03);
 	CreateInvItems (self,ItRw_Arrow, 500);

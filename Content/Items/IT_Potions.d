@@ -258,7 +258,7 @@ INSTANCE ItPo_Perm_STR(C_Item)
 
 	FUNC VOID UseItPo_Perm_STR()
 	{ 
-		B_RaiseAttribute	(self, ATR_STRENGTH,	STR_Elixier);
+		B_RaiseAttribute	(self, ATR_STRENGTH,	STR_Elixier, FALSE);
 	};
 /******************************************************************************************/		
 INSTANCE ItPo_Perm_DEX(C_Item)
@@ -286,7 +286,7 @@ INSTANCE ItPo_Perm_DEX(C_Item)
 };
 	FUNC VOID UseItPo_Perm_DEX()
 	{ 
-		B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_Elixier);
+		B_RaiseAttribute	(self, ATR_DEXTERITY,	DEX_Elixier, FALSE);
 	};
 /******************************************************************************************/
 INSTANCE ItPo_Perm_Health(C_Item)
@@ -317,7 +317,7 @@ INSTANCE ItPo_Perm_Health(C_Item)
 
 	FUNC VOID UseItPo_Perm_Health()
 	{
-		B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_Elixier);	
+		B_RaiseAttribute	(self, ATR_HITPOINTS_MAX,	HPMax_Elixier, FALSE);	
 		Npc_ChangeAttribute	(self, ATR_HITPOINTS,	HPMax_Elixier);
 	
 	};
@@ -348,7 +348,7 @@ INSTANCE ItPo_Perm_Mana(C_Item)
 
 	FUNC VOID UseItPo_Perm_Mana()
 	{
-		B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_Elixier);
+		B_RaiseAttribute	(self, ATR_MANA_MAX,	ManaMax_Elixier, FALSE);
 		Npc_ChangeAttribute	(self, ATR_MANA,	ManaMax_Elixier);
 	};
 
@@ -421,11 +421,11 @@ INSTANCE ItPo_MegaDrink (C_Item)	//Joly: Megatrank aus Dracheneiern auf der Drac
 		{
 			if (self.attribute[ATR_STRENGTH] < self.attribute[ATR_DEXTERITY])
 				{
-					B_RaiseAttribute	(self, ATR_DEXTERITY,	STRorDEX_MegaDrink);
+					B_RaiseAttribute	(self, ATR_DEXTERITY,	STRorDEX_MegaDrink,FALSE);
 				}
 			else
 				{
-					B_RaiseAttribute	(self, ATR_STRENGTH,	STRorDEX_MegaDrink);
+					B_RaiseAttribute	(self, ATR_STRENGTH,	STRorDEX_MegaDrink,FALSE);
 				};
 	
 			Npc_ChangeAttribute	(self,	ATR_MANA, - ATR_MANA); //Joly: gemäß des Rezeptes

@@ -4,7 +4,7 @@ func int B_TeachFightTalentPercent(var C_Npc slf,var C_Npc oth,var int talent,va
 	var string concatText;
 	var int kosten;
 	var int realHitChance;
-	kosten = B_GetLearnCostTalent(oth,talent,1) * percent;
+	kosten = CalculateLearnLPCost(GetTalentNameByFightTalent(talent), percent, teacherMax); // B_GetLearnCostTalent(oth,talent,1) * percent;
 	if((talent != NPC_TALENT_1H) && (talent != NPC_TALENT_2H) && (talent != NPC_TALENT_BOW) && (talent != NPC_TALENT_CROSSBOW))
 	{
 		PrintS_Ext("*** ERROR: Wrong Parameter ***", RGBA(255,255,255,0));

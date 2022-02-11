@@ -70,6 +70,9 @@ const int zCModel__IsAnimationActive 		= 5727888; 	// 0x00576690
 const int oCItemContainer__IsOpen 			= 7377408; 	// 0x00709200
 const int oCItem__Flags_Offset				= 344;	// 0x0158
 const int oCItem__instanz_Offset 			= 816;
+const int oCMsgMagic__oCMsgMagic = 7778560;
+const int oCNpcInventory__IsIn = 7391872;
+const int oCMagBook__GetSpellItem_Int = 4692960;
 
 const int zCArray__array_offset			= 0;  	// 0x00
 const int zCArray__numAlloc_offset		= 4;  	// 0x04
@@ -79,6 +82,7 @@ const int oCMagBook__items_offset 		= 12; 	// 0x0C
 const int oCMsgManipulate__sizeof 		= 124; 	// 0x7C
 const int oCMsgUseItem__sizeof 			= 80; 	// 0x50
 const int oCMsgWeapon__sizeof 			= 80; 	// 0x50
+const int oCMsgMagic__sizeof = 108;
 
 const int zCWorld__bIsInventoryWorld_offset 			= 136;	// 0x88
 
@@ -107,6 +111,8 @@ const int oCAIHuman__PC_WeaponMove				= 6922464; // 0x0069A0E0
 const int oCMag_Book_SpellCast 					= 4679584; // 0x004767A0
 const int oCGame__HandleEvent	 				= 7324016; // 0x006FC170
 const int oCNpc__SetAsPlayer					= 7612064; // 0x007426A0
+const int hasmagic_begin = 7372470;	//707EB6
+
 
 const int DisableMagBook_Oryginal_Bytes_NumBytes = 5;
 	
@@ -118,6 +124,11 @@ const int DisableMagBook_New_Bytes[DisableMagBook_Oryginal_Bytes_NumBytes] = {
 	000,
 	000
 };
+
+const int MoreMagBookSpells_Max = 7;
+
+var int RemoveSpellNr_Bytes[13];
+
 
 var int oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes[oCMag_Book_SpellCast_Check_SpellBook_NumBytes];
 

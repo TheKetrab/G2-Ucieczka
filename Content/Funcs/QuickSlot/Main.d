@@ -54,8 +54,23 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	}
 	else
 	{
+		if(it.mainflag == ITEM_KAT_RUNE)
+		{
+			var oCNpc her; her = Hlp_GetNpc(hero);
+			var int magBook; magBook = her.mag_book;
+			
+			if(heroSwitch == false)
+			{
+				QS_RegisterRune(magbook,itemPTr);
+			};
+
+			//AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
+		};
+		
 		QS_SlotSize = 60;
 	};
+	
+
 	
 	var int pView; pView = View_CreateCenter(	QS_anx(x), 	QS_any(QS_SlotPosY),
 												QS_anx(QS_SlotSize), QS_any(QS_SlotSize));
@@ -72,6 +87,9 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	};*/
 };
 
+
+
+
 func void QS_RemoveSlot(var int nr)
 {
 	var int slotPtr; slotPtr = MEM_ReadStatArr(QS_Data, nr);
@@ -80,14 +98,23 @@ func void QS_RemoveSlot(var int nr)
 	};
 	var CSlot slot; slot = get (slotPtr);
 	
-	if(nr == QS_LastWeaponSlot)	{ QS_LastWeaponSlot = -1; };
+	//if(nr == QS_LastWeaponSlot)	{ QS_LastWeaponSlot = -1; };
 	
 	var int pView;	 	pView 		= slot.pView;
 	var int pViewText; 	pViewText 	= slot.pViewText;
 	
+	var c_item itm; itm = _^(slot.itemPtr);
 	
-	var int itm; itm = QS_GetSlotItem(nr);
-	var c_item i; i = _^(itm);
+	if(heroSwitch == false)
+	{
+		QS_DeregisterSpell(slot.itemPtr);
+	};
+
+	//AI_Function_I(hero, QS_DeregisterSpell, slot.itemPtr);
+	
+	
+	//var int itm; itm = QS_GetSlotItem(nr);
+	//var c_item i; i = _^(itm);
 
 	if(Hlp_IsValidHandle(pView)){
 		View_Delete(pView);
@@ -175,13 +202,15 @@ func int QS_CanPutInSlot(var int itemPtr)
 
 func void QS_PutSlot(var c_npc slf, var int nr, var int itemPtr)
 {
+
 	if(!QS_CanPutInSlot(itemPtr)){
 		return;
 	};
-	
+		
 	if(!QS_CanEquipItem(slf, itemPtr)) {
 		return;
 	};
+
 	
 	var int slotItem; 		slotItem 		= QS_GetSlotItem(nr);
 	var int removeSlot_idx; removeSlot_idx 	= QS_GetSlotByItem(itemPtr);
@@ -251,6 +280,8 @@ func void QS_DrawWeapon(var int mode)
 {	
 	var int ptr; ptr = QS_oCMsgWeapon_Create(EV_DRAWWEAPON, mode);
 	QS_OnMessage (ptr);
+	
+	
 };
 
 func void QS_HideWeapon(var oCNpc her)
@@ -269,6 +300,31 @@ func void QS_DrawWeapon_Far(var int itemPtr)
 	if(QS_IsMunitionAvailable(itemPtr))	{
 		QS_DrawWeapon(FMODE_FAR);
 	};
+};
+
+
+//00479B70
+func int QS_GetSpellKey(var oCNpc her,var int itemPtr)
+{
+	var int magBook; magBook = her.mag_Book;
+	
+	var int nr;
+	
+	CALL_PtrParam(_@(nr));
+	CALL_PtrParam(itemPtr);
+	
+	CALL__thiscall(magBook,4692848);
+	
+	return nr;
+	
+};
+func void QS_SetFrontSpell(var oCNpc her, var int itemPtr)
+{
+	var int nr; nr = QS_GetSpellKey(her,itemPtr);
+	
+	var int ptr; ptr = QS_oCMsgMagic_SetFrontSpell(nr);
+	
+	QS_OnMessage(ptr);
 };
 
 func void QS_UseMagic(var oCNpc her, var int itemPtr)
@@ -292,8 +348,9 @@ func void QS_UseMagic(var oCNpc her, var int itemPtr)
 		} 
 		else
 		{
-			AI_Function_I	(hero, QS_ClearMagBook, magBook);	
-			AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
+			QS_SetFrontSpell(her,itemptr);
+			//AI_Function_I	(hero, QS_ClearMagBook, magBook);	
+			//AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
 		
 			AI_PrintS		(hero, spellName);
 		};
@@ -301,7 +358,8 @@ func void QS_UseMagic(var oCNpc her, var int itemPtr)
 	else
 	{
 		QS_HideWeapon	(her);
-		AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
+		//AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
+		QS_SetFrontSpell(her,itemptr);
 		QS_DrawWeapon	(FMODE_MAGIC);
 		
 		AI_PrintS(hero, spellName);
@@ -534,11 +592,13 @@ func void QS_UseItem(var int i)
 	else if(it.mainflag == ITEM_KAT_NF)
 	{
 		QS_UseWeapon(it,i);
+		//QS_LastWeaponSlot = i;
 
 	} 
 	else if (it.mainflag == ITEM_KAT_FF)
 	{
 		QS_UseWeapon(it,i);
+		//QS_LastWeaponSlot = i;
 	}
 	else if(it.flags & ITEM_TORCH)
 	{
@@ -549,6 +609,7 @@ func void QS_UseItem(var int i)
 	else if(it.mainflag == ITEM_KAT_RUNE)
 	{
 		QS_UseMagic	(her, itemPtr);
+		//QS_LastWeaponSlot = i;
 	};
 };
 
@@ -578,7 +639,9 @@ func c_item StackAssignItem(var c_item itm)
 
 func void QS_RenderSlot(var int idx)
 {
-    if(!QS_RenderWorld) {
+
+
+   if(!QS_RenderWorld) {
         MEM_Error("QS_RenderWorld is null!");
         return;
     };
@@ -880,11 +943,78 @@ func void QS_DrawNumbersInInv()
 	};	
 };
 
-func void QS_SwitchHeroFix()
+var int heroSwitch;
+
+func void QS_Clear()
 {
+	var int i;
+	repeat(i, 10); 
+		QS_RemoveSlot(i);
+	end;
+};
+
+
+
+func void QS_RestoreMagBook(var int npcPtr)
+{
+	var int mag_book; mag_book = MEM_ReadInt(npcPtr+2324);
+
+	if(!mag_book){return;};
+
+	var int i;
+	var int currSpellSlot; currSpellSlot = 3;
+	repeat(i, 8); 
+		var int spellItem; spellItem = QS_GetMagBookItem(mag_book,i);
+
+		if(spellItem)
+		{
+			if(currSpellSlot == 10)
+			{ 
+				currSpellSlot = 0;
+			};
+			
+			QS_RemoveSlot(currSpellSlot);
+			QS_CreateSlot(currSpellSlot,spellItem);
+
+			
+			currSpellSlot+=1;	
+		
+		}
+		else
+		{
+			break;
+		};
+	end;
+};
+
+func void QS_ValidMagBookNr()
+{
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	
+	var oCMag_Book book; book = _^(her.mag_book);
+	
+	var int idx; idx = ESI - 4;
+	var int currItem; currItem = MEM_ReadIntArray(book.spellitems_array,idx);
+	var int snr; snr = QS_GetSlotByItem(currItem);
+	if(snr != -1)
+	{
+		ESI = snr;
+	};
+
+};
+
+func void QS_SwitchHeroFix()
+{	
+	
 	if(!Hlp_IsValidHandle(QS_BackgroundView))	{
 		return;
 	};
+	
+	heroSwitch = true;
+	
+	QS_Clear();
+	
+	QS_RestoreMagBook(ECX);
 	
 	var C_NPC slf; 	slf 	= _^(ECX);
 	var C_ITEM it;	
@@ -911,6 +1041,10 @@ func void QS_SwitchHeroFix()
 		var int itemPtr; itemPtr = _@(it);
 		QS_CreateSlot(slot, itemPtr);
 	};
+	
+	
+	
+	heroSwitch = false;
 };
 
 const int QS_FirstTime = 0;
@@ -953,8 +1087,10 @@ func void QS_SpellCast_GetSpell()
 	QS_LastSpell_Item = QS_GetSpellItem(her.mag_book);
 };
 
+//nieu¿ywane
 func void QS_FixUseLastSpell()
 {
+	
 	var oCNpc her; her = Hlp_GetNpc(hero);
 	var int magBook; magBook = her.mag_book;
 	if(!magBook) {
@@ -979,9 +1115,10 @@ func void QS_FixUseLastSpell()
 
 func void QS_OpenInventory()
 {
-	var oCNpc her; her = Hlp_GetNpc(hero);
+	//return;
+	//var oCNpc her; her = Hlp_GetNpc(hero);
 
-	QS_ClearMagBook(her.mag_book);
+	//QS_ClearMagBook(her.mag_book);
 
 };
 

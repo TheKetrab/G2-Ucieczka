@@ -71,6 +71,8 @@ func void QS_EquipWeapon(var int itemPtr)
 	
 	CALL_PtrParam	(_@(item));
     CALL__thiscall	(_@(hero), address);	
+	
+	//QS_LastWeaponSlot = QS_GetSlotByItem(itemPtr);
 };
 
 // Check animation
@@ -105,6 +107,32 @@ func int QS_oCMsgWeapon_Create(var int event, var int mode)
     CALL_PtrParam	(mode);		// Weapon mode 
     CALL_PtrParam	(event);	// Event type
     CALL__thiscall	(ptr, oCMsgWeapon__oCMsgWeapon);
+	
+	return ptr;
+};
+
+
+
+func int QS_oCMsgMagic_Create(var int event)
+{
+	
+	var int ptr; ptr = MEM_Alloc(oCMsgMagic__sizeof);
+	
+	
+	CALL_PtrParam	(event);	// Event type
+	CALL__thiscall	(ptr, oCMsgMagic__oCMsgMagic);
+	
+	return ptr;
+	
+};
+
+func int QS_oCMsgMagic_SetFrontSpell(var int nr)
+{
+	var int ptr; ptr = QS_oCMsgMagic_Create(7);
+	
+	if(!ptr) {return 0;};
+	
+	MEM_WriteInt(ptr+104,nr);
 	
 	return ptr;
 };
@@ -145,9 +173,70 @@ func int QS_GetSpellItem	(var int magBook)
 	return CALL_RetValAsPtr();	
 };
 
+
+func int GetItemFromInv(var int npcPtr, var int ptr)
+{
+	//var int invPtr; invPtr = MEM_ReadInt(npcPtr+1640);
+	
+	//
+	var oCNpc npc; npc = _^(npcPtr);
+	
+	var int invPtr; invPtr = npc.inventory2_vtbl;
+	
+	CALL_IntParam(1);
+	CALL_PtrParam(ptr);
+	
+	CALL__Thiscall(invPtr,oCNpcInventory__IsIn);
+	
+	return CALL_RetValAsPtr();
+};
+
+
+
+func int QS_GetMagBookItem(var int magbook, var int i)
+{
+	CALL_IntParam(i);
+	
+	CALL__Thiscall(magbook,oCMagBook__GetSpellItem_Int);
+	
+	return CALL_RetValAsPtr();
+};
+
+func int QS_IsItemInMagBook(var int magbook, var int ptr)
+{
+	var int i;
+	repeat(i,8);
+		var int spellItem; spellItem = QS_GetMagBookItem(magbook,i);
+		if(spellItem == ptr){ return 1;};
+	end;
+	
+	return 0;
+};
+
+func void QS_DeregisterSpell(var int itemPtr)
+{
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	var int magBook; magBook = her.mag_book;
+	
+	if(!magbook || !itemPtr || !QS_IsItemInMagBook(magbook,itemPtr)) {return;};
+				
+	CALL_PtrParam	(itemPtr);
+	CALL__thiscall	(magBook, oCMagBook__DeRegister);	
+
+	var C_ITEM it; it = _^(itemPtr);
+	it.flags = it.flags &~ ITEM_ACTIVE;
+
+};
+
+
+
+
 // Clear mag_book
 func void QS_ClearMagBook(var int magBook)
 {
+	
+	return;
+	
 	if(hero.guild>16) {return;};
 	
 	var int arrPtr; 	arrPtr 	= MEM_ReadInt(magBook + oCMagBook__items_offset + zCArray__array_offset);  

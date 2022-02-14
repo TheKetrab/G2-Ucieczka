@@ -43,6 +43,18 @@ FUNC VOID Rtn_Start_23 ()
    	TA_Stand_Guarding		(23,00,07,30,"NASZ_ZAPALISADA_OB_05");
 };
 
+FUNC VOID Rtn_WithOrun_23 ()
+{	
+	TA_Stand_Guarding		(07,30,23,00,"NASZ_ZAPALISADA_OB_21_A");
+   	TA_Stand_Guarding		(23,00,07,30,"NASZ_ZAPALISADA_OB_21_A");
+};
+
+FUNC VOID Rtn_Rytual_23 () // biegnie do miejsca z rytualem
+{	
+	TA_RunToWP		(07,30,23,00,"NASZ_ZAPALISADA_OB_16");	
+   	TA_RunToWP		(23,00,07,30,"NASZ_ZAPALISADA_OB_16");
+};
+
 FUNC VOID Rtn_End_23 ()
 {	
 	TA_Stand_Guarding		(07,30,23,00,"TOT");	

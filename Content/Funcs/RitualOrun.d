@@ -62,7 +62,7 @@ func void RitualOrun_Loop() {
 		Npc_SetTrueGuild (NASZ_021_Nieznajomy, GIL_SKELETON);
 
 		Wld_InsertNpc(Demon,"NASZ_ZAPALISADA_RITUAL_02");
-		Wld_InsertNpc(Demon,"NASZ_ZAPALISADA_RITUAL_03");
+		//Wld_InsertNpc(Demon,"NASZ_ZAPALISADA_RITUAL_03");
 	}
 	
 	else if (RitualOrun_Iterator == 8) {
@@ -81,13 +81,13 @@ func void RitualOrun_Loop() {
 	else if (RitualOrun_Iterator == 13) {
 
 		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_01");
-		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_02");
-		Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_03");
+		//Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_02");
+		//Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_03");
 		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_04");
-		Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_05");
-		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_06");
+		//Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_05");
+		//Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_06");
 		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_07");
-		Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_08");
+		//Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_08");
 		Wld_InsertNpc(SkeletonPro,"FP_NASZ_ZAPALISADA_RITUAL_09");
 		Wld_InsertNpc(Skeleton_Lord,"FP_NASZ_ZAPALISADA_RITUAL_10");
 	}

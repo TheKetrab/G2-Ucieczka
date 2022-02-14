@@ -173,6 +173,7 @@ const string	TOPIC_Hunt_zbroja			=	"Nowa zbroja";					//---									| +1000					
 const string	TOPIC_Joru_lutnia			=	"Muzykowanie dla ducha";		// ---									| +500						| skarb Joru + pierœcieñ g³odu
 const string	TOPIC_Ghorim_ksiega			=	"Ksiêga objawieñ";				// ---									| +500						| pierœcieñ zarazy
 const string	TOPIC_Shrat_przyjaciel		=	"Koœci przyjaciela";			// ---									| +500						| pas œmierci
+const string	TOPIC_Dusty_muszle			=	"Muszle z bagien";				// ---									| +500						| amulet wojny
 const string	TOPIC_Lojalnosc				=	"Udowodnienie lojalnoœci";		// ---									| +500						| ---
 const string 	Topic_Droga					=	"Droga ku wolnoœci";			// ---									| +1000						| ---
 const string	TOPIC_BadaniaCaloma			=	"Badania Cor Kaloma";			// ---									| +500						| ---

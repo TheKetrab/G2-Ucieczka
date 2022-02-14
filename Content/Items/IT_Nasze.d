@@ -7821,6 +7821,26 @@ instance ItNa_Empty(C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_DustyShell(C_Item)
+{
+	name 		=	"Muszla z bagien";
+
+	mainflag 	=	ITEM_KAT_NONE;
+	flags 		=	ITEM_MULTI;
+
+	value 		=	Value_Shell_01;
+
+	visual 		=	"ItMi_Shell_01.3ds";
+	material 	=	MAT_STONE;
+	description	= 	name;
+	
+	TEXT[5]		= 	NAME_Value;	
+	COUNT[5]	=	value;
+	
+	INV_ZBIAS	= INVCAM_ENTF_MISC2_STANDARD;	
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 instance ItNa_Ratford_Pierscien(C_Item)
 {
 	name = "Z³oty pierœcieñ";

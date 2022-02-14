@@ -77,10 +77,11 @@ func void DIA_NASZ_024_BaalOrun_Lojalnosc_Info ()
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_04"); //Eh, znowu bêdê musia³ robiæ za ch³opca na posy³ki.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_05"); //Jak mogê wam pomóc?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_06"); //Porozmawiaj z Shratem, Joru i Ghorimem. Ka¿dy z nich przydzieli ci jedno zadanie, które musisz rozwi¹zaæ.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_07"); //ZnajdŸ równie¿ ducha o imieniu Dusty. Przebywa gdzieœ nad brzegiem morza.
 	
 	Log_CreateTopic (TOPIC_Lojalnosc,LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Lojalnosc, LOG_RUNNING);
-	B_LogEntry (TOPIC_Lojalnosc, "Kiedy zapyta³em siê przywódcy duchów, jak mogê im pomóc, ten odrzek³, ¿e nie zdradz¹ mi, co mogê uczyniæ, dopóki nie udowodniê im swoich dobrych intencji. Aby zyskaæ zaufanie, muszê udaæ siê do trzech znanych mi nowicjuszy: Joru, Ghorima i Shrata. Tylko, gdzie oni mog¹ byæ?");
+	B_LogEntry (TOPIC_Lojalnosc, "Kiedy zapyta³em siê przywódcy duchów, jak mogê im pomóc, ten odrzek³, ¿e nie zdradz¹ mi, co mogê uczyniæ, dopóki nie udowodniê im swoich dobrych intencji. Aby zyskaæ zaufanie, muszê udaæ siê do czterech znanych mi nowicjuszy: Joru, Ghorima, Shrata i Dusty'ego. Tylko, gdzie oni mog¹ byæ? Baal Orun powiedzia³ mi tylko, ¿e Dusty'ego znajdê gdzieœ nad brzegiem morza.");
 
 };
 ///////////////////////////////////////////////////////////////////
@@ -102,6 +103,7 @@ func int DIA_NASZ_024_BaalOrun_done_Condition ()
 	&& (Npc_HasItems(hero,ItNa_Pierscien_Glodu) >= 1)
 	&& (Npc_HasItems(hero,ItNa_Pierscien_Zarazy) >= 1)
 	&& (Npc_HasItems(hero,ItNa_Pas_Smierci) >= 1)
+	&& (Npc_HasItems(hero,ItNa_Amulet_Wojny) >= 1)
 	{
 		return TRUE;
 	};
@@ -120,6 +122,8 @@ func void DIA_NASZ_024_BaalOrun_done_Info ()
 	B_GivePlayerXP(500);
 	B_LogEntry (TOPIC_Lojalnosc, "Wykaza³em swoj¹ lojalnoœæ, ale oczywiœcie to jeszcze nie koniec. Przede mn¹ kolejne wyzwania.");
 	Log_SetTopicStatus (TOPIC_Lojalnosc, LOG_SUCCESS);
+
+	Npc_ExchangeRoutine(NASZ_023_DuchSekciarza,"WithOrun");
 
 };
 
@@ -341,6 +345,7 @@ func void DIA_NASZ_024_BaalOrun_JakPrzebiegajaPrace_Info ()
 	
 	AI_StopProcessInfos(self);
 	Npc_ExchangeRoutine(self,"Rytual");
+	Npc_ExchangeRoutine(NASZ_023_DuchSekciarza,"Rytual");
 	
 };
 
@@ -364,6 +369,7 @@ func int DIA_NASZ_024_BaalOrun_Rytual_Condition ()
 	&& (Npc_HasItems(hero,ItNa_Pierscien_Glodu) >= 1)
 	&& (Npc_HasItems(hero,ItNa_Pierscien_Zarazy) >= 1)
 	&& (Npc_HasItems(hero,ItNa_Pas_Smierci) >= 1)
+	&& (Npc_HasItems(hero,ItNa_Amulet_Wojny) >= 1)
 	{
 		return TRUE;
 	};
@@ -377,6 +383,7 @@ func void DIA_NASZ_024_BaalOrun_Rytual_Info ()
 	B_GiveInvItems(other,self,ItNa_Pierscien_Glodu,1);
 	B_GiveInvItems(other,self,ItNa_Pierscien_Zarazy,1);
 	B_GiveInvItems(other,self,ItNa_Pas_Smierci,1);
+	B_GiveInvItems(other,self,ItNa_Amulet_Wojny,1);
 	
 	AI_Output			(other,self, "DIA_NASZ_024_BaalOrun_Rytual_15_02"); //Oto one, a teraz zaczynajmy, gdy¿ wyczuwam nadchodz¹ce k³opoty.
 		
@@ -400,11 +407,11 @@ instance DIA_NASZ_024_BaalOrun_RytualCD		(C_INFO)
 
 func int DIA_NASZ_024_BaalOrun_RytualCD_Condition ()
 {
-	//if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual))
-	//&& (OrunRitual_Finished == TRUE)
-	//{
+	if(NPC_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Rytual))
+	&& (OrunRitual_Finished == TRUE)
+	{
 		return TRUE;
-	//};
+	};
 };
 func void DIA_NASZ_024_BaalOrun_RytualCD_Info ()
 {

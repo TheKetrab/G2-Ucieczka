@@ -1,3 +1,4 @@
+var int DustyRediToTelepport;
 //*********************************************************************
 //	Info EXIT 
 //*********************************************************************
@@ -16,9 +17,57 @@ FUNC INT DIA_NASZ_030_Dusty_EXIT_Condition()
 	return TRUE;
 };
 
+func void DeleteDusty()
+{
+	if(InfoManager_HasFinished())
+	{
+		B_StartOtherRoutine (NASZ_030_Dusty,"End");
+		DeleteNpc(NASZ_030_Dusty);
+		ff_remove(DeleteDusty);
+	};
+};
+
 FUNC VOID DIA_NASZ_030_Dusty_EXIT_Info()
 {
+	if (DustyRediToTelepport == TRUE)
+	{
+		Wld_PlayEffect("spellFX_Teleport_RING",  self  , self	, 0, 0, 0, FALSE );
+		Snd_Play ("MFX_TELEPORT_CAST");
+
+		AI_StopProcessInfos (self);
+		ff_applyonceext(DeleteDusty,1000,-1);
+		hero.aivar[AIV_INVINCIBLE] = 0;
+	};
+	
 	AI_StopProcessInfos (self);
+};
+
+//*********************************************************************
+//	Info Before
+//*********************************************************************
+INSTANCE DIA_NASZ_030_Dusty_Before   (C_INFO)
+{
+	npc         = NASZ_030_Dusty;
+ 	nr          = 1;
+ 	condition   = DIA_NASZ_030_Dusty_Before_Condition;
+ 	information = DIA_NASZ_030_Dusty_Before_Info;
+ 	permanent   = TRUE;
+	important   = TRUE;
+};
+
+FUNC INT DIA_NASZ_030_Dusty_Before_Condition()
+{
+	if (!Npc_KnowsInfo(other,DIA_NASZ_024_BaalOrun_Lojalnosc))
+	&& (Npc_IsInState(self, ZS_TALK))
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_NASZ_030_Dusty_Before_Info()
+{
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_Before_027_00"); //MMMM.
+	
 };
 
 //*********************************************************************
@@ -27,16 +76,16 @@ FUNC VOID DIA_NASZ_030_Dusty_EXIT_Info()
 INSTANCE DIA_NASZ_030_Dusty_siema   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 1;
+ 	nr          = 2;
  	condition   = DIA_NASZ_030_Dusty_siema_Condition;
  	information = DIA_NASZ_030_Dusty_siema_Info;
- 	permanent   = TRUE;
+ 	permanent   = FALSE;
  	important   = TRUE;
 };
 
 FUNC INT DIA_NASZ_030_Dusty_siema_Condition()
 {
-	if (!npc_knowsinfo (other, DIA_NASZ_117_Fed_goth))
+	if (npc_knowsinfo (other, DIA_NASZ_024_BaalOrun_Lojalnosc))
 	{
 		return TRUE;
 	};
@@ -55,7 +104,7 @@ FUNC VOID DIA_NASZ_030_Dusty_siema_Info()
 INSTANCE DIA_NASZ_030_Dusty_WhoAreYou   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 2;
+ 	nr          = 3;
  	condition   = DIA_NASZ_030_Dusty_WhoAreYou_Condition;
  	information = DIA_NASZ_030_Dusty_WhoAreYou_Info;
  	permanent   = FALSE;
@@ -84,7 +133,7 @@ FUNC VOID DIA_NASZ_030_Dusty_WhoAreYou_Info()
 INSTANCE DIA_NASZ_030_Dusty_YourArmor   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 3;
+ 	nr          = 4;
  	condition   = DIA_NASZ_030_Dusty_YourArmor_Condition;
  	information = DIA_NASZ_030_Dusty_YourArmor_Info;
  	permanent   = FALSE;
@@ -119,7 +168,7 @@ FUNC VOID DIA_NASZ_030_Dusty_YourArmor_Info()
 INSTANCE DIA_NASZ_030_Dusty_HowHelp   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 4;
+ 	nr          = 5;
  	condition   = DIA_NASZ_030_Dusty_HowHelp_Condition;
  	information = DIA_NASZ_030_Dusty_HowHelp_Info;
  	permanent   = FALSE;
@@ -150,7 +199,7 @@ FUNC VOID DIA_NASZ_030_Dusty_HowHelp_Info()
 INSTANCE DIA_NASZ_030_Dusty_WhatToDo   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 4;
+ 	nr          = 6;
  	condition   = DIA_NASZ_030_Dusty_WhatToDo_Condition;
  	information = DIA_NASZ_030_Dusty_WhatToDo_Info;
  	permanent   = FALSE;
@@ -168,10 +217,12 @@ FUNC INT DIA_NASZ_030_Dusty_WhatToDo_Condition()
 FUNC VOID DIA_NASZ_030_Dusty_WhatToDo_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_WhatToDo_55_00"); //Co dok³adnie mam dla ciebie wy³owiæ?
-	AI_Output (self, other,"DIA_NASZ_030_Dusty_WhatToDo_15_01"); //Do zrobienia naszyjnika potrzebujê przynajmniej 10 muszli. Myœlê, ¿e nie bêdziesz mia³ problemu z ich znalezieniem.
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_WhatToDo_15_01"); //Do zrobienia naszyjnika potrzebujê przynajmniej dziesiêciu muszli. Myœlê, ¿e nie bêdziesz mia³ problemu z ich znalezieniem.
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_WhatToDo_55_02"); //W takim razie wskakujê do wody. Zaraz bêdziesz mia³ swoje muszelki.
 	
-	// TODO B_LogEntry
+	Log_CreateTopic (TOPIC_Dusty_muszle,LOG_MISSION);
+	Log_SetTopicStatus (TOPIC_Dusty_muszle, LOG_RUNNING);
+	B_LogEntry (TOPIC_Dusty_muszle, "Dusty chcia³by, ¿ebym wy³owi³ dla niego muszle, które znajdê w morzu. Mam przynieœæ ich co najmniej 10.");
 };
 
 //*********************************************************************
@@ -180,7 +231,7 @@ FUNC VOID DIA_NASZ_030_Dusty_WhatToDo_Info()
 INSTANCE DIA_NASZ_030_Dusty_HaveShells   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 4;
+ 	nr          = 7;
  	condition   = DIA_NASZ_030_Dusty_HaveShells_Condition;
  	information = DIA_NASZ_030_Dusty_HaveShells_Info;
  	permanent   = FALSE;
@@ -190,12 +241,15 @@ INSTANCE DIA_NASZ_030_Dusty_HaveShells   (C_INFO)
 FUNC INT DIA_NASZ_030_Dusty_HaveShells_Condition()	
 {
 	if (npc_knowsinfo (other, DIA_NASZ_030_Dusty_WhatToDo))
-	//&& (npc_hasitems(other,ItNa_DustyShell) >= 10)
+	&& (npc_hasitems(other,ItNa_DustyShell) >= 10)
 	{
 		return TRUE;
 	};
 };
 
+var int DustyDay;
+var int DustyHour;
+var int Dusty_HeroWantsNecklace;
 FUNC VOID DIA_NASZ_030_Dusty_HaveShells_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_HaveShells_55_00"); //Przynios³em muszle, o które prosi³eœ.
@@ -203,48 +257,19 @@ FUNC VOID DIA_NASZ_030_Dusty_HaveShells_Info()
 	// TODO zrobic 25 muszli w spacerze
 	
 	// hero daje wszystkie jakie ma
-	//B_GiveInvItems(other, self, ItNa_DustyShell, npc_hasitems(other,ItNa_DustyShell));
+	B_GiveInvItems(other, self, ItNa_DustyShell, npc_hasitems(other,ItNa_DustyShell));
 	
-	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_01"); //Wspaniale! Dziêkujê ci, dobry cz³owieku.
-
-	if (true) {//(npc_hasitems(other,ItNa_DustyShell) >= 10) {
-		AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_02"); //Przynios³eœ ich tak du¿o, ¿e bêdê móg³ zrobiæ te¿ jeden dla ciebie. Chcesz?
-
-		Info_ClearChoices (DIA_NASZ_030_Dusty_HaveShells);
-			Info_AddChoice	  (DIA_NASZ_030_Dusty_HaveShells, "Pewnie! Chêtnie taki na siebie za³o¿ê.", DIA_NASZ_030_Dusty_HaveShells_yes);
-			Info_AddChoice	  (DIA_NASZ_030_Dusty_HaveShells, "Nie, dziêki. Daj go któremuœ z duchów.", DIA_NASZ_030_Dusty_HaveShells_no);
-		
-	}
-	else {
-		AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_03"); //Niestety nie mam niczego, co mogê ci daæ. Musz¹ wystarczyæ ci moje modlitwy.
-		AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_04"); //Wystarcz¹. Trzymaj siê, Dusty!
-	
-	};
-	
-	// TODO B_LogEntry
-};
-
-var int Dusty_HeroWantsNecklace;
-var int DustyDay; var int DustyHour;
-FUNC VOID DIA_NASZ_030_Dusty_HaveShells_yes()
-{
-	AI_Output (other,self ,"DIA_NASZ_030_Dusty_HaveShells_yes_15_00"); //Pewnie! Chêtnie taki na siebie za³o¿ê.
-	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_yes_55_01"); //Zatem przyjdŸ do mnie za godzinê. Naszyjnik bêdzie gotowy.
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_01"); //Wspaniale! Dziêkujê ci. Teraz bêdê móg³ wykonaæ naszyjnik.
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_02"); //Bêdzie to dar dla cz³owieka, dziêki czemu odkupiê winy i opuszczê to bagno.
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_03"); //Przyjacielu, przyjdŸ do mnie za godzinê. Naszyjnik bêdzie gotowy.
 
 	DustyDay = Wld_GetDay();
 	DustyHour = Wld_GetTimeHour();
 	
 	Dusty_HeroWantsNecklace = TRUE;
+
+	B_LogEntry (TOPIC_Dusty_muszle, "Naszyjnik, o którym mówi³ duch, okaza³ siê byæ przeznaczony dla mnie. Mam go odebraæ od Dusty'ego za godzinê.");
 	
-	Info_ClearChoices (DIA_NASZ_030_Dusty_HaveShells);
-};
-
-FUNC VOID DIA_NASZ_030_Dusty_HaveShells_no()
-{
-	AI_Output (other,self ,"DIA_NASZ_030_Dusty_HaveShells_no_15_00"); //Nie, dziêki. Daj go któremuœ z duchów.
-	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_no_55_01"); //Dobrze, przyjacielu. Dziêkujê ci za pomoc. Bêdê siê za tob¹ modli³.
-
-	Info_ClearChoices (DIA_NASZ_030_Dusty_HaveShells);
 };
 
 
@@ -254,7 +279,7 @@ FUNC VOID DIA_NASZ_030_Dusty_HaveShells_no()
 INSTANCE DIA_NASZ_030_Dusty_NecklaceIsReady   (C_INFO)
 {
 	npc         = NASZ_030_Dusty;
- 	nr          = 4;
+ 	nr          = 8;
  	condition   = DIA_NASZ_030_Dusty_NecklaceIsReady_Condition;
  	information = DIA_NASZ_030_Dusty_NecklaceIsReady_Info;
  	permanent   = FALSE;
@@ -274,12 +299,18 @@ FUNC VOID DIA_NASZ_030_Dusty_NecklaceIsReady_Info()
 {
 	AI_Output (self, other, "DIA_NASZ_030_Dusty_NecklaceIsReady_55_00"); //Naszyjnik jest gotowy. Proszê.
 
-	//CreateInvItems(self,ItNa_DustyNecklace,1);
-	//B_GiveInvItems(self, other, ItNa_DustyNecklace, 1);
+	CreateInvItems(self,ItNa_Amulet_Wojny,1);
+	B_GiveInvItems(self, other, ItNa_Amulet_Wojny, 1);
 
-	AI_Output (other, self, "DIA_NASZ_030_Dusty_NecklaceIsReady_55_01"); //Le¿y jak ula³! Dziêki.
+	AI_Output (other, self, "DIA_NASZ_030_Dusty_NecklaceIsReady_55_01"); //Prawdziwe arcydzie³o. Dziêki.
 	AI_Output (self, other, "DIA_NASZ_030_Dusty_NecklaceIsReady_55_02"); //Powodzenia, przyjacielu.
 
+	B_LogEntry (TOPIC_Lojalnosc,"Dosta³em od Dusty'ego naszyjnik. Zapewne bêdê musia³ pokazaæ go Baal Orunowi.");
+
+	B_GivePlayerXP(500);
+	B_LogEntry (TOPIC_Dusty_muszle, "Odebra³em naszyjnik.");
+	Log_SetTopicStatus (TOPIC_Dusty_muszle, LOG_SUCCESS);
+	
+	DustyRediToTelepport = TRUE;
 	
 };
-

@@ -5,7 +5,7 @@ INSTANCE NASZ_030_Dusty (Npc_Default)
 	guild 		= GIL_MEATBUG;
 	id 			= 30;
 	voice 		= 14;
-	flags       = 0;																	
+	flags       = 6;
 	npctype		= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
@@ -34,12 +34,17 @@ INSTANCE NASZ_030_Dusty (Npc_Default)
 	B_SetFightSkills (self, 15); 
 
 	// ------ TA anmelden ------
-	daily_routine 		= Rtn_Start_030;
+	daily_routine 		= Rtn_Start_30;
 };
 
-FUNC VOID Rtn_Start_030 ()
+FUNC VOID Rtn_Start_30 ()
 {	
 	TA_Stand_WP		(08,00,16,00,"NASZ_ZAPALISADA_OB_44");
 	TA_Stand_WP		(16,00,08,00,"NASZ_ZAPALISADA_OB_44");
 };
 
+FUNC VOID Rtn_End_30 ()
+{	
+	TA_Stand_Guarding		(07,30,23,00,"TOT");	
+   	TA_Stand_Guarding		(23,00,07,30,"TOT");
+};

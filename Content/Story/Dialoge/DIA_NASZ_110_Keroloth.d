@@ -2692,8 +2692,34 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 };
 
 
+//*********************************************************************
+//	Info OrcAttack
+//*********************************************************************
+INSTANCE DIA_NASZ_110_Keroloth_OrcAttack   (C_INFO)
+{
+	npc         = NASZ_110_Keroloth;
+ 	nr          = 45;
+ 	condition   = DIA_NASZ_110_Keroloth_OrcAttack_Condition;
+ 	information = DIA_NASZ_110_Keroloth_OrcAttack_Info;
+ 	permanent   = FALSE;
+	description = "Pod zamkiem zebra³ siê potê¿ny oddzia³ orków.";
+};
+
+FUNC INT DIA_NASZ_110_Keroloth_OrcAttack_Condition()	
+{
+	if (OrcAttack == TRUE)
+	{
+		return TRUE;
+	};
+};
 
 
+FUNC VOID DIA_NASZ_110_Keroloth_OrcAttack_Info()
+{
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_OrcAttack_15_00"); //Pod zamkiem zebra³ siê potê¿ny oddzia³ orków.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_OrcAttack_55_01"); //Zwróci³em na to uwagê. W³aœnie dlatego zdecydowaliœmy siê zamkn¹æ bramê.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_OrcAttack_55_02"); //Nawet jeœli zabijemy ich wszystkich, to i tak wkrótce pojawi¹ siê kolejni. Musimy utrzymaæ zamek.
+};
 
 
 

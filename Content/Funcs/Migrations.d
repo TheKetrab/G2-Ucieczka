@@ -3,7 +3,12 @@
 // MIGRATIONS
 // ***** ***** *****
 
+var int OrcAttack;
 func void Migration_OrcAttack() {
+
+	OrcAttack = TRUE;
+	Wld_SendTrigger ("ZAMEK_BRAMA_1_SKRYPT");
+	Wld_SendTrigger ("ZAMEK_BRAMA_2_SKRYPT");
 
 	// Migracja -> orkowy atak po rozwi¹zaniu spraw na bagnie
 	Wld_InsertNpc	(OrcElite_Rest,"FP_REST_ORCATTACK_01");

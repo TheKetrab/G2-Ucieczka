@@ -262,6 +262,7 @@ FUNC INT DIA_NASZ_125_Silas_NieBedzie_Condition()
 {
 	if (NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
 	&& (npc_knowsinfo (other, DIA_NASZ_125_Silas_SikaDalej))
+	&& (npc_knowsinfo (other, DIA_NASZ_108_Lowca_walka))
 	{
 		return TRUE;
 	};

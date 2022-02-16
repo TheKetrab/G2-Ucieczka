@@ -285,11 +285,13 @@ instance DIA_NASZ_108_Lowca_walka		(C_INFO)
 func int DIA_NASZ_108_Lowca_walka_Condition ()
 {
 	if (Npc_IsInState (self, ZS_Talk)
-		&& (!LOWCA_SIKA_WALKA_ONETIME)
-		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST))
-		&& (npc_knowsinfo(other,DIA_NASZ_108_Lowca_catch))
-		&& (Lowca108WalkaOSikanie == TRUE)
-
+		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
+		&& (npc_knowsinfo(other,DIA_NASZ_108_Lowca_catch)))
+	&& (
+		(!LOWCA_SIKA_WALKA_ONETIME && Lowca108WalkaOSikanie == TRUE) // kap1
+		|| 
+		(LowcaSika == 3) // kap2
+	)
 	{
 		return TRUE;
 	};
@@ -325,10 +327,13 @@ instance DIA_NASZ_108_Lowca_WalkaPrzegrales		(C_INFO)
 func int DIA_NASZ_108_Lowca_WalkaPrzegrales_Condition ()
 {
 	if (Npc_IsInState (self, ZS_Talk)
-		&& (!LOWCA_SIKA_WALKA_ONETIME)
-		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON))
-		&& (npc_knowsinfo(other,DIA_NASZ_108_Lowca_catch))
-
+		&& (self.aivar[AIV_LastFightAgainstPlayer] == FIGHT_WON)
+		&& (npc_knowsinfo(other,DIA_NASZ_108_Lowca_catch)))
+	&& (
+		(!LOWCA_SIKA_WALKA_ONETIME) // kap1
+		||
+		(LowcaSika == 3) // kap2
+	)
 	{
 		return TRUE;
 	};
@@ -380,6 +385,8 @@ func void DIA_NASZ_108_Lowca_Umawialismy_Info ()
 	AI_ReadyMeleeWeapon (other);
 
 	AI_Output		(self, other, "DIA_NASZ_108_Lowca_Umawialismy_03_03"); //O! To mi siê podoba.
+
+	LowcaSika = 3;
 
 	AI_StopProcessInfos (self);
 	B_Attack (self, other, AR_NONE, 1);

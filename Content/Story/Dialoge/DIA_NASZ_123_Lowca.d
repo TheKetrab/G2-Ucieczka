@@ -37,10 +37,12 @@ instance DIA_NASZ_123_Lowca_hello		(C_INFO)
 
 func int DIA_NASZ_123_Lowca_hello_Condition ()
 {
-	if ((Npc_IsInState (self, ZS_Talk) && (LOWCA_STOP_GADANIE == FALSE))
+	if (((Npc_IsInState (self, ZS_Talk) && (LOWCA_STOP_GADANIE == FALSE))
 	|| (Npc_IsInState (self, ZS_Talk) && (LOWCA_STOP_GADANIE == TRUE) && (Wld_IsTime(02,00,23,30))))
 	&& 	(!Hlp_StrCmp(Npc_GetNearestWP(self),"OW_SPAWN_TRACK_LEICHE_01"))
-	&& (Lowca123_PojedynekDoRozegrania == FALSE)
+	&& (Lowca123_PojedynekDoRozegrania == FALSE))
+	
+	|| (KAPITEL >= 3) // od trzeciego rozdzia³u nie da siê rozmawiaæ, bo inaczej da³oby siê zrobiæ questa z Rethonem treningiem
 	
 	{
 		return TRUE;
@@ -90,6 +92,7 @@ instance DIA_NASZ_123_Lowca_pojedynek		(C_INFO)
 func int DIA_NASZ_123_Lowca_pojedynek_Condition ()
 {
 	if(Lowca123_PojedynekDoRozegrania == TRUE)
+	&& (KAPITEL < 3)
 	{
 		return TRUE;
 	};

@@ -185,6 +185,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		
 		if (KurgKanTanczy) {
 			B_StartOtherRoutine(NASZ_452_KurgKan,"WithSword");
+			KURG_KAN_REFRESH_ARMOR_IS_NECESSARY = TRUE;
 			ff_applyonceext(ApplyKurgKanArmor,1000,-1);
 		};
 		

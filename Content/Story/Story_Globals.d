@@ -1829,3 +1829,4 @@ var int WojownicyCieniaPrzyzwani;
 var int WillZniszczylDemonaOneTime;
 var int HuntAmuletMIS;
 var int ArenaQuestState;
+var int KURG_KAN_REFRESH_ARMOR_IS_NECESSARY;

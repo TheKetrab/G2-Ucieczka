@@ -1,9 +1,10 @@
 
 func void ApplyKurgKanArmor() {
 
-	if (Npc_GetDistToNPC(hero,NASZ_452_KurgKan) < 1000) {
+	if (KURG_KAN_REFRESH_ARMOR_IS_NECESSARY && Npc_GetDistToNPC(hero,NASZ_452_KurgKan) < 2000) {
+		KURG_KAN_REFRESH_ARMOR_IS_NECESSARY = FALSE;
 		B_SetVisuals_OrcPal(NASZ_452_KurgKan);
-		ff_remove(ApplyKurgKanArmor);
+		//ff_remove(ApplyKurgKanArmor); // FIX U12 - niech ten tick tock odœwie¿a do koñca gry, bo trzeba odœwie¿aæ co wczytanie
 	};
 };
 

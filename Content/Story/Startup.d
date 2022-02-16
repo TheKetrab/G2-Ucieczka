@@ -16,7 +16,6 @@ func void STARTUP_GLOBAL()
 }; 
 
 
-
 func void INIT_GLOBAL()
 {
 	// wird fuer jede Welt aufgerufen (vor INIT_<LevelName>)
@@ -50,6 +49,9 @@ func void INIT_GLOBAL()
 		SetName(NASZ_315_Bandzior, "Donks");
 		ShowName(NASZ_315_Bandzior);
 	};
+
+	// FIX UCIECZKA 1.2 - po kazdym wczytaniu zmien zbroje, bo wczytanie zmienia cia³o na defaultowe
+	KURG_KAN_REFRESH_ARMOR_IS_NECESSARY = TRUE;
 };
 
 // *********

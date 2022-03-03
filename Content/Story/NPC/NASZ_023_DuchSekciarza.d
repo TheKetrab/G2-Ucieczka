@@ -51,8 +51,8 @@ FUNC VOID Rtn_WithOrun_23 ()
 
 FUNC VOID Rtn_Rytual_23 () // biegnie do miejsca z rytualem
 {	
-	TA_RunToWP		(07,30,23,00,"NASZ_ZAPALISADA_OB_16");	
-   	TA_RunToWP		(23,00,07,30,"NASZ_ZAPALISADA_OB_16");
+	TA_RunToWP		(07,30,23,00,"NASZ_ZAPALISADA_OB_16_A");	
+   	TA_RunToWP		(23,00,07,30,"NASZ_ZAPALISADA_OB_16_A");
 };
 
 FUNC VOID Rtn_End_23 ()

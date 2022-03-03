@@ -938,3 +938,56 @@ FUNC VOID DIA_NASZ_999_Test_EffectTest_Info()
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_CrawlerPlate] = FALSE;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = FALSE;
 };
+
+
+//*********************************************************************
+//	GoldNugget
+//*********************************************************************
+INSTANCE DIA_NASZ_999_Test_GoldNugget   (C_INFO)
+{
+	npc         = NASZ_999_Test;
+ 	nr          = 13;
+ 	condition   = DIA_NASZ_999_Test_GoldNugget_Condition;
+ 	information = DIA_NASZ_999_Test_GoldNugget_Info;
+ 	permanent   = TRUE;
+ 	description = "Dodaj bry趾i z這ta.";
+};
+
+FUNC INT DIA_NASZ_999_Test_GoldNugget_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_NASZ_999_Test_GoldNugget_Info()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_GoldNugget);
+		Info_AddChoice	  (DIA_NASZ_999_Test_GoldNugget, DIALOG_BACK, DIA_NASZ_999_Test_GoldNugget_BACK);
+		Info_AddChoice	  (DIA_NASZ_999_Test_GoldNugget, "100 bry貫k z這ta", DIA_NASZ_999_Test_GoldNugget_100);
+		Info_AddChoice	  (DIA_NASZ_999_Test_GoldNugget, "25 bry貫k z這ta", DIA_NASZ_999_Test_GoldNugget_25);
+		Info_AddChoice	  (DIA_NASZ_999_Test_GoldNugget, "5 bry貫k z這ta", DIA_NASZ_999_Test_GoldNugget_5);
+};
+
+FUNC VOID DIA_NASZ_999_Test_GoldNugget_BACK()
+{
+	Info_ClearChoices (DIA_NASZ_999_Test_GoldNugget);
+};
+
+FUNC VOID DIA_NASZ_999_Test_GoldNugget_5()
+{	
+	CreateInvItems(self,ItMi_GoldNugget_Addon,5);
+	B_GiveInvItems(self,other,ItMi_GoldNugget_Addon,5);
+	Info_ClearChoices (DIA_NASZ_999_Test_GoldNugget);
+};
+FUNC VOID DIA_NASZ_999_Test_GoldNugget_25()
+{	
+	CreateInvItems(self,ItMi_GoldNugget_Addon,25);
+	B_GiveInvItems(self,other,ItMi_GoldNugget_Addon,25);
+	Info_ClearChoices (DIA_NASZ_999_Test_GoldNugget);
+};
+FUNC VOID DIA_NASZ_999_Test_GoldNugget_100()
+{	
+	CreateInvItems(self,ItMi_GoldNugget_Addon,100);
+	B_GiveInvItems(self,other,ItMi_GoldNugget_Addon,100);
+	Info_ClearChoices (DIA_NASZ_999_Test_GoldNugget);
+};
+

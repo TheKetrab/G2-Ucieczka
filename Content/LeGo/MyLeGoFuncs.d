@@ -1048,3 +1048,87 @@ func int HasHeroPoison()
 	//return false;
 	return WillZatruty;
 };
+
+
+
+
+
+
+func void _AI_FUNCTION_EVENT() {
+    var string s0; var string s1;
+    var int i0; var int i1; var int i2; var int i3; var int fnc;
+    var int ptr; ptr = EBP+88;
+    MEMINT_StackPushVar(ptr);
+    var string AniName; AniName = MEMINT_PopString();
+
+    if(!STR_StartsWith(AniName, "CALL ")) {
+        return;
+    };
+
+    // Provide global instances (will be reverted by HookEngine afterwards)
+    self = _^(ECX);
+    other = MEM_NullToInst(); // Invalidate to avoid misuse
+    item = MEM_NullToInst();
+
+    var string argc; argc = STR_Split(AniName, " ", 1);
+    if (Hlp_StrCmp(argc, "I")) {
+        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 3));
+        MEM_PushIntParam(i0);
+    }
+    else if (Hlp_StrCmp(argc, "S")) {
+        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 3));
+        MEM_PushStringParam(s0);
+    }
+    else if (Hlp_StrCmp(argc, "II")) {
+        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
+        MEM_PushIntParam(i0);
+        MEM_PushIntParam(i1);
+    }
+    else if (Hlp_StrCmp(argc, "SS")) {
+        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
+        s1 = STR_Unescape(STR_Split(AniName, " ", 3));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
+        MEM_PushStringParam(s0);
+        MEM_PushStringParam(s1);
+    }
+    else if (Hlp_StrCmp(argc, "SI")) {
+        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
+        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
+        MEM_PushStringParam(s0);
+        MEM_PushIntParam(i1);
+    }
+    else if (Hlp_StrCmp(argc, "IS")) {
+        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+        s1 = STR_Unescape(STR_Split(AniName, " ", 3));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
+        MEM_PushIntParam(i0);
+        MEM_PushStringParam(s1);
+    }
+	else if (Hlp_StrCmp(argc, "NI")) { // G2U
+        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
+        MEM_PushInstParam(i0);
+        MEM_PushIntParam(i1);
+	}
+	else if (Hlp_StrCmp(argc, "NNII")) { // G2U
+        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
+        i2 = STR_ToInt(STR_Split(AniName, " ", 4));
+        i3 = STR_ToInt(STR_Split(AniName, " ", 5));
+        fnc = STR_ToInt(STR_Split(AniName, " ", 6));
+        MEM_PushInstParam(i0);
+        MEM_PushInstParam(i1);
+        MEM_PushIntParam(i2);
+        MEM_PushIntParam(i3);
+	}
+    else {
+        fnc = STR_ToInt(argc);
+    };
+    MEM_CallByID(fnc);
+};

@@ -4,6 +4,11 @@
 
 func void B_LogEntry (var string topic, var string entry)
 {
+	AI_Function_SS(hero,_B_LogEntry,topic,entry);
+};
+
+func void _B_LogEntry (var string topic, var string entry)
+{
 	Log_AddEntry	(topic, entry);
 
 	
@@ -25,6 +30,11 @@ func void B_LogEntry (var string topic, var string entry)
 };
 
 func void FailQuest(var string topic, var string entry)
+{
+	AI_Function_SS(hero,_FailQuest,topic,entry);
+};
+
+func void _FailQuest(var string topic, var string entry)
 {
 	Log_AddEntry	(topic, entry);
 	

@@ -79,61 +79,7 @@ func void AI_Function_IS(var c_npc slf, var func function, var int param1, var s
 };
 
 //========================================
-// [intern] Enginehook
+// [intern] Enginehook (MyLegoFuncs.d)
 //========================================
-func void _AI_FUNCTION_EVENT() {
-    var string s0; var string s1;
-    var int i0; var int i1; var int fnc;
-    var int ptr; ptr = EBP+88;
-    MEMINT_StackPushVar(ptr);
-    var string AniName; AniName = MEMINT_PopString();
-
-    if(!STR_StartsWith(AniName, "CALL ")) {
-        return;
-    };
-
-    var string argc; argc = STR_Split(AniName, " ", 1);
-    if (Hlp_StrCmp(argc, "I")) {
-        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 3));
-        MEM_PushIntParam(i0);
-    }
-    else if (Hlp_StrCmp(argc, "S")) {
-        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 3));
-        MEM_PushStringParam(s0);
-    }
-    else if (Hlp_StrCmp(argc, "II")) {
-        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
-        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
-        MEM_PushIntParam(i0);
-        MEM_PushIntParam(i1);
-    }
-    else if (Hlp_StrCmp(argc, "SS")) {
-        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
-        s1 = STR_Unescape(STR_Split(AniName, " ", 3));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
-        MEM_PushStringParam(s0);
-        MEM_PushStringParam(s1);
-    }
-    else if (Hlp_StrCmp(argc, "SI")) {
-        s0 = STR_Unescape(STR_Split(AniName, " ", 2));
-        i1 = STR_ToInt(STR_Split(AniName, " ", 3));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
-        MEM_PushStringParam(s0);
-        MEM_PushIntParam(i1);
-    }
-    else if (Hlp_StrCmp(argc, "IS")) {
-        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
-        s1 = STR_Unescape(STR_Split(AniName, " ", 3));
-        fnc = STR_ToInt(STR_Split(AniName, " ", 4));
-        MEM_PushIntParam(i0);
-        MEM_PushStringParam(s1);
-    }
-    else {
-        fnc = STR_ToInt(argc);
-    };
-    MEM_CallByID(fnc);
-};
-
+// func void _AI_FUNCTION_EVENT() {
+// };

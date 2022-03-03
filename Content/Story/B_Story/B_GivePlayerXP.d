@@ -4,6 +4,11 @@
 
 func void B_GivePlayerXP (var int add_xp)
 {
+	AI_Function_I(hero, _B_GivePlayerXP, add_xp);
+};
+
+func void _B_GivePlayerXP (var int add_xp)
+{
 	if (hero.level == 0)
 	{
 		hero.exp_next = 500;

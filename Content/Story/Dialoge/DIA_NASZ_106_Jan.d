@@ -1406,12 +1406,13 @@ FUNC INT DIA_NASZ_106_Jan_HaveSurowce_Condition()
 FUNC VOID DIA_NASZ_106_Jan_HaveSurowce_Info()
 {
 	B_GivePlayerXP(500);
-	
+		
+	AI_Output (other,self ,"DIA_NASZ_106_Jan_HaveSurowce_15_00"); //Mam surowce na tarcze.
+
 	B_GiveInvItems (other, self, ItAt_SharkTeeth, 1);
 	B_GiveInvItems (other, self, ItAt_TrollTooth, 2);
 	B_GiveInvItems (other, self, ItAt_ShadowHorn, 1);
-	
-	AI_Output (other,self ,"DIA_NASZ_106_Jan_HaveSurowce_15_00"); //Mam surowce na tarcze.
+
 	AI_Output (self, other,"DIA_NASZ_106_Jan_HaveSurowce_55_01"); //Doskonale. Zabieram siê do pracy!
 	AI_Output (self, other,"DIA_NASZ_106_Jan_HaveSurowce_55_02"); //Za dwa dni powinienem skoñczyæ. A co z kusz¹? Znalaz³eœ ju¿ kogoœ?
 	
@@ -1465,10 +1466,9 @@ FUNC INT DIA_NASZ_106_Jan_TarczaReady_Condition()
 
 FUNC VOID DIA_NASZ_106_Jan_TarczaReady_Info()
 {
+	AI_Output (self, other,"DIA_NASZ_106_Jan_TarczaReady_15_00"); //Tarcza gotowa. Trzymaj!
 	CreateInvItems(self,ItNa_TarczaMistrzowska,1);
 	B_GiveInvItems(self,other,ItNa_TarczaMistrzowska,1);
-	
-	AI_Output (self, other,"DIA_NASZ_106_Jan_TarczaReady_15_00"); //Tarcza gotowa. Trzymaj!
 	AI_Output (self, other,"DIA_NASZ_106_Jan_TarczaReady_55_01"); //Mam nadziejê, ¿e ci siê spodoba. No, a teraz poka¿ mi siê w pe³nym wyposa¿eniu ³owcy.
 
 	B_LogEntry (TOPIC_Jan_lowca, "Mam ju¿ kuszê. Jan chce mnie zobaczyæ z za³o¿onym mieczem, tarcz¹ i kusz¹.");

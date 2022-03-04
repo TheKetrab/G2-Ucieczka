@@ -155,11 +155,11 @@ FUNC VOID DIA_NASZ_452_KurgKan_Follow_Info()
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Follow_55_01");  //Kurg-Kan s³uchaæ.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Follow_15_02");  //Musisz mi oddaæ broñ i udaæ siê tam ze mn¹ teraz. W obozie bêdziesz wykonywa³ wszystkie zadania, jakie ci przydziel¹. Sprz¹tanie, mycie, tego typu sprawy.
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Follow_15_03");  //Zgadzaæ siê. Will braæ topór.
+	B_giveinvitems (self, other, ItMw_2H_OrcAxe_02,1);
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Follow_15_04");  //Dobrze, no to idziemy do obozu. Postaraj siê nie robiæ ¿adnych gwa³townych ruchów. £owcy w twojej obecnoœci mog¹ byæ trochê nerwowi. 
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Follow_55_05");  //ProwadŸ, przyjaciel.
 	KurgKanFollowPC	= 1;
 	AI_UnequipWeapons			(self);
-	B_giveinvitems (self, other, ItMw_2H_OrcAxe_02,1);
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine(self, "Follow");
 };

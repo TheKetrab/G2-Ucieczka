@@ -129,13 +129,11 @@ FUNC INT DIA_NASZ_220_Kirgo_lista_Condition()
 
 FUNC VOID DIA_NASZ_220_Kirgo_lista_Info()
 {
-
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_lista_15_00"); //Przysy³a mnie Udar. Mam odebraæ paczkê.
 	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_01"); //Nie spodziewa³em siê, ¿e przyœle tu kogoœ. No có¿, trzymaj.
-	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_02"); //Tylko niczego nie wypij! Udar nie by³by zadowolony. Ha, ha, ha!
-
 	CreateInvItems (self, ItNa_PaczkaMikstur, 1);
 	B_GiveInvItems (self, other, ItNa_PaczkaMikstur, 1);
+	AI_Output (self, other,"DIA_NASZ_220_Kirgo_lista_55_02"); //Tylko niczego nie wypij! Udar nie by³by zadowolony. Ha, ha, ha!
 };
 
 //*********************************************************************

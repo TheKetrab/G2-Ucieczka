@@ -339,10 +339,9 @@ FUNC VOID DIA_NASZ_109_Rethon_after_Info()
 	};	
 
 	AI_Output (self, other,"DIA_NASZ_109_Rethon_after_55_03"); //W ramach podziêkowañ, dam ci ten miecz. Przyda ci siê w twoich æwiczeniach. Jest lekki i dobrze wywa¿ony.
-	AI_Output (other, self,"DIA_NASZ_109_Rethon_after_55_04"); //Dziêki Rethon, na pewno zobaczysz mnie z nim kiedyœ na placu treningowym.
-	
 	Createinvitems (self, ItMw_ShortSword5, 1);
 	B_giveinvitems (self, other, ItMw_ShortSword5, 1);
+	AI_Output (other, self,"DIA_NASZ_109_Rethon_after_55_04"); //Dziêki Rethon, na pewno zobaczysz mnie z nim kiedyœ na placu treningowym.	
 	
 	NASZ_115_Kurgan.attribute[ATR_STRENGTH] = 70;
 	NASZ_109_Rethon.attribute[ATR_STRENGTH] = 70;
@@ -766,12 +765,13 @@ FUNC VOID DIA_Rethon_Teach_Shield()
 
 		if (hero.lp >= 10) {
 		
+			B_GiveInvItems (other, self, ItMi_Gold, 300);			
+
 			AI_Output (self, other,"DIA_Rethon_Teach_Shield_55_02"); //Wielu pocz¹tkuj¹cych wojowników pope³nia zasadniczy b³¹d: Trzymaj¹ tarczê ca³y czas uniesion¹ podczas walki, w dodatku spinaj¹c miêœnie bez przerwy.
 			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_03"); //Ogranicza to szybkoœæ ciosów mieczem oraz szybko mêczy organizm.
 			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_04"); //Podczas walki, trzymaj tarczê opuszczon¹, odbijaj tylko ciosy przeciwnika. Nie zapomnij tylko mocno spi¹æ rêki podczas parowania ciosu, inaczej Ÿle by siê to mog³o skoñczyæ.
 			AI_Output (self, other,"DIA_Rethon_Teach_Shield_15_05"); //Muszê jednak zaznaczyæ, ¿e tarcza znacznie spowolni twoje ruchy i nie bêdziesz w stanie machaæ mieczem tak szybko, jak jesteœ w stanie bez tarczy.
 
-			B_GiveInvItems (other, self, ItMi_Gold, 300);			
 			WalkaTarcza = TRUE;
 			hero.lp = hero.lp - 10;
 			

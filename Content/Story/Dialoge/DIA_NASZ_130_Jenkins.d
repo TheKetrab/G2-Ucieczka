@@ -197,8 +197,10 @@ FUNC VOID DIA_NASZ_130_Jenkins_EndOfMatt_Info()
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_EndOfMatt_15_02"); //Niestety, ale Matt nie ¿yje. Na p³askowy¿u wdaliœmy siê w walkê z dwoma nieumar³ymi cieniostworami, które strzeg³y tajemniczego maga. Kiedy z nim porozmawia³em, spostrzeg³em, ¿e Matt znikn¹³.
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_EndOfMatt_15_03"); //Dopiero kiedy zszed³em z góry, uda³o mi siê go znaleŸæ, lecz by³o ju¿ za póŸno. Matt zosta³ zabity, jego cia³o zosta³o brutalnie poranione, zaœ obok niego znalaz³em ten dziwny nó¿ i kartkê.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_04"); //Poka¿ mi to, szybko!
+	B_GiveInvItems(other,self,ItNa_RytualneOstrze,1);
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_05"); //Niepokoj¹ce ostrze, jeszcze nigdy nie widzia³em tego typu orê¿a. Zakrzywione, poszarpane ostrze i delikatny metal...
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_06"); //Broñ godna mistrzowskiego kunsztu kowalskiego.
+	B_GiveInvItems(self,other,ItNa_RytualneOstrze,1);
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_07"); //Zanim zapytasz, to na pewno nie jest robota ¿adnego kowala z kolonii. Ch³opaki znaj¹ siê na swoim fachu, lecz to... To wymaga znacznie wiêkszych umiejêtnoœci.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_08"); //Zaœ co do Matta... To by³ dobry ³owca orków. Nale¿¹ ci siê podziêkowania za pomoc.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_EndOfMatt_15_09"); //Powinieneœ wróciæ do Udara, przeka¿ mu nasz raport i powiedz, ¿e potrzebujemy kilku ludzi do pomocy, bo inaczej nie wrócimy do obozu.

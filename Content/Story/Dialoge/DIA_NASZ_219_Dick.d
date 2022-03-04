@@ -293,8 +293,8 @@ FUNC VOID DIA_NASZ_219_Dick_DobarKupowanie_Info()
 	
 	DobarMrokPolnocyKupiony = TRUE;
 	
-	AI_Output (self, other,"DIA_NASZ_219_Dick_DobarKupowanie_55_01"); //Interesy z tob¹ to sama przyjemnoœæ.
 	B_giveinvitems (other, self, ItMi_Gold, 125);
+	AI_Output (self, other,"DIA_NASZ_219_Dick_DobarKupowanie_55_01"); //Interesy z tob¹ to sama przyjemnoœæ.
 
 	Createinvitems (self, ItNa_MrokPolnocy, 5);	
 	B_giveinvitems (self, other, ItNa_MrokPolnocy, 5);

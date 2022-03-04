@@ -209,6 +209,8 @@ FUNC VOID DIA_NASZ_225_Wrzod_MonstersReady_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_02"); //Zaraz bêdê, moje maleñstwa!
 
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_03"); //Dziêkujê ci, przyjacielu. W nagrodê weŸ ten pierœcieñ si³y.
+	CreateInvItems(self,ItRi_Str_Mud,1);
+	B_GiveInvItems (self,other,ItRi_Str_Mud,1);
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_04"); //Jesteœ moim najlepszym kumplem, zaraz po pewnym cz³owieku, którego Stary Obóz uzna³ za zdrajcê i chcia³ go zabiæ.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_05"); //Ja sam ledwo uszed³em z ¿yciem. Gdyby uda³ siê nasz plan, ¿ylibyœmy d³ugo i szczêœliwie w Starym Obozie, razem ze zwierzêtami.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_06"); //Ten przedmiot nale¿a³ w³aœnie do niego. Prze¿yliœmy wiele wspólnych przygód.
@@ -221,9 +223,6 @@ FUNC VOID DIA_NASZ_225_Wrzod_MonstersReady_Info()
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_13"); //Racja, nie mogê im pozwoliæ na to, aby czeka³y.
 	AI_Output (self, other,"DIA_NASZ_225_Wrzod_MonstersReady_55_14"); //Ju¿ to czujê, jak zag³êbiam siê w ich ciele i tym samym ³¹czymy siê w jedno.
 	AI_Output (other,self,"DIA_NASZ_225_Wrzod_MonstersReady_15_15"); //Baw siê dobrze...
-
-	CreateInvItems(self,ItRi_Str_Mud,1);
-	B_GiveInvItems (self,other,ItRi_Str_Mud,1);
 	
 	AI_StopProcessInfos (self);
 	Npc_ExchangeRoutine (self,"Kap4Done");
@@ -231,7 +230,6 @@ FUNC VOID DIA_NASZ_225_Wrzod_MonstersReady_Info()
 	B_LogEntry (TOPIC_Wrzod_zwierzeta, "Wrzód pobieg³ do swoich zwierz¹t. Szczerze im wspó³czujê.");
 	Log_SetTopicStatus (TOPIC_Wrzod_zwierzeta, LOG_SUCCESS);
 
-	
 	OswajaszDlaWrzoda = FALSE;
 	ff_remove(WrzodQuestInserting);
 };

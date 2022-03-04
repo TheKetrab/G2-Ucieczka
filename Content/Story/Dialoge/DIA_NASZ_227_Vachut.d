@@ -596,10 +596,10 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja1_Info()
 	else {
 
 		if (hero.lp >= 10) {
+			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_55_02"); //Rozmawiaj ze swoim bogiem. On oczyœci twoje myœli i cia³o.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja1_15_03"); //To nie takie trudne! Wystarczy siê wyciszyæ.
 
-			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			level_regeneracji = 1;
 			FF_ApplyOnceExt (Regeneracja, 3000, -1);
 			hero.lp = hero.lp - 10;
@@ -693,6 +693,7 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 		}
 	else {
 		if (hero.lp >= 10){
+			B_GiveInvItems (other, self, ItMi_Gold, 2000);	
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_55_02"); //Teraz staniesz siê jednoœci¹ ze swoj¹ dusz¹.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_03"); //Utrzymuj wyprostowan¹ pozycjê podczas biegu. Lepiej napêdzisz kwriobieg.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_04"); //Wypij te¿ ten wywar. Wzmocni ciê.
@@ -701,7 +702,6 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 			B_GiveInvItems(self,other,ItNa_WywarVachuta,1);
 			AI_UseItem(other,ItNa_WywarVachuta);
 			
-			B_GiveInvItems (other, self, ItMi_Gold, 2000);	
 			level_regeneracji = 3;
 			hero.lp = hero.lp - 10;
 			

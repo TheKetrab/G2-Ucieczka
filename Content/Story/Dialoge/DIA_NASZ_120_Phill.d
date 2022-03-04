@@ -386,9 +386,9 @@ func void DIA_NASZ_120_Phill_Gwozdzie_100 ()
 {
 
 	AI_Output(other,self,"DIA_NASZ_120_Phill_Gwozdzie_100_01_00"); //Wolê zap³aciæ ci 100 sztuk z³ota za te gwoŸdzie.
+	B_giveinvitems (other, self, ItMi_Gold, 100);
 	AI_Output(self,other,"DIA_NASZ_120_Phill_Gwozdzie_100_01_01"); //Sto? W porz¹dku. Bierz, paczka jest twoja.
 
-	B_giveinvitems (other, self, ItMi_Gold, 100);
 	Createinvitems (self, ItNa_PaczkaGwozdzi, 1);
 	B_giveinvitems (self, other, ItNa_PaczkaGwozdzi, 1);
 	

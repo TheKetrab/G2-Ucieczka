@@ -834,11 +834,9 @@ FUNC VOID DIA_NASZ_201_Erak_Kapitel4_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_04"); //Demony! Tak jakby orków nam by³o za ma³o. Od tamtej pory przed bram¹ stoi kilku ludzi, jak sam mog³eœ ju¿ zauwa¿yæ.
 	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_05"); //Czy mogê wam w czymœ pomóc? Widzê, ¿e naprawdê macie tutaj du¿o roboty.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_06"); //Nie, lepiej bêdzie jak natychmiast wrócisz do Kerolotha i przeka¿esz mu raport ode mnie.
-	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_07"); //Je¿eli naprawdê bêdziemy potrzebowali pomocy, to wyœlê do was Ratforda. On jako jedyny da radê przekraœæ siê wszêdzie, gdzie tylko siê da.
-	
 	CreateInvItems(self,ItNa_RaportEraka,1);
 	B_GiveInvItems(self,other,ItNa_RaportEraka,1);
-	
+	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_07"); //Je¿eli naprawdê bêdziemy potrzebowali pomocy, to wyœlê do was Ratforda. On jako jedyny da radê przekraœæ siê wszêdzie, gdzie tylko siê da.	
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_08"); //Nawet nie wiesz, jak bardzo chcia³bym, ¿eby ci nieumarli wojownicy przestali nas nêkaæ.
 	
 	B_LogEntry (TOPIC_Sprawy,"Po rozmowie z Erakiem dosta³em raport, który muszê przekazaæ Kerolothowi. Sytuacja w obozie okaza³a siê byæ bardziej napiêta ni¿ wczeœniej podejrzewa³em. Warto wspomnieæ tak¿e o szkieletach, które zaatakowa³y obóz.");

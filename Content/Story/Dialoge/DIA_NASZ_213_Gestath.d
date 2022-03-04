@@ -513,8 +513,8 @@ func int DIA_NASZ_213_Gestath_Landkarte_Condition ()
 func void DIA_NASZ_213_Gestath_Landkarte_Info ()
 {
 	AI_Output	(other, self, "DIA_NASZ_213_Gestath_Landkarte_15_00"); //Mam tu tak¹ mapê. Mo¿e byæ?
-	AI_Output	(self, other, "DIA_NASZ_213_Gestath_Landkarte_08_01"); //Mo¿e. Zaraz zaznaczê ci, gdzie jest to miejsce.
 	B_GiveInvItems (other, self, ItWr_Map_OldWorld,1);
+	AI_Output	(self, other, "DIA_NASZ_213_Gestath_Landkarte_08_01"); //Mo¿e. Zaraz zaznaczê ci, gdzie jest to miejsce.
 	AI_Output	(self, other, "DIA_NASZ_213_Gestath_Landkarte_08_02"); //Proszê, oto twoja mapa.
 	
 	Npc_RemoveInvItems	(self,ItWr_Map_OldWorld ,1 );
@@ -595,11 +595,10 @@ func void DIA_NASZ_213_Gestath_WantToKillRenegat_Info ()
 		AI_Output	(other, self, "DIA_NASZ_213_Gestath_WantToKillRenegat_15_06"); //Marcos jest schowany w kopalni - za palisad¹. Chcê siê tam jakoœ dostaæ.
 		AI_Output	(self, other, "DIA_NASZ_213_Gestath_WantToKillRenegat_08_07"); //Zapewne bramê da siê otworzyæ tylko od wewn¹trz... Mo¿e znajdziesz gdzieœ szparê miêdzy deskami?
 		AI_Output	(self, other, "DIA_NASZ_213_Gestath_WantToKillRenegat_08_08"); //WeŸ ten magiczny zwój. Przemiana w chrz¹szcza to bardzo u¿yteczne zaklêcie.
-		AI_Output	(self, other, "DIA_NASZ_213_Gestath_WantToKillRenegat_08_09"); //Zabierz ze sob¹ Kivo, Louisa i Vachuta. Niech pomog¹ naszemu nowemu przyjacielowi.
-		
 		CreateInvItems (self, ItNa_TrfMeatbug, 1);									
 		B_GiveInvItems (self, other, ItNa_TrfMeatbug, 1);
-		
+		AI_Output	(self, other, "DIA_NASZ_213_Gestath_WantToKillRenegat_08_09"); //Zabierz ze sob¹ Kivo, Louisa i Vachuta. Niech pomog¹ naszemu nowemu przyjacielowi.
+				
 		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako myœliwy! Gestath da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, dziêki której przedostanê siê do œrodka. Mam zabraæ ze sob¹ Vachuta, Kivo i Louisa.");
 		
 		GestathRenegatOK = TRUE;

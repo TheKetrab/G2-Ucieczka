@@ -218,9 +218,9 @@ FUNC VOID DIA_NASZ_216_Aran_HaveLek_Info()
 	LEKARSTWO_NIEZABIJA = TRUE;
 
 	AI_Output (other, self,"DIA_NASZ_216_Aran_HaveLek_15_00"); //Mam dla ciebie lekarstwo, pij.
+	B_giveinvitems (other, self, ItNa_Aran_Lekarstwo, 1);	
 	AI_Output (self, other,"DIA_NASZ_216_Aran_HaveLek_15_01"); //Zobaczymy, czy mi to pomo¿e.
 
-	B_giveinvitems (other, self, ItNa_Aran_Lekarstwo, 1);	
 	AI_StopProcessInfos (self);
 	B_UseItem (self, ItNa_Aran_Lekarstwo);
 	
@@ -252,7 +252,6 @@ FUNC VOID DIA_NASZ_216_Aran_AreYouOk_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_216_Aran_AreYouOk_15_00"); //Wszystko w porz¹dku?
 	AI_Output (self, other,"DIA_NASZ_216_Aran_AreYouOk_55_01"); //Ah... Tak, tylko jestem strasznie s³aby.
-	B_giveinvitems (other, self, ItNa_Aran_Lekarstwo, 1);
 
 	ARAN_NOGA = TRUE;
 	B_LogEntry (TOPIC_Aran_noga, "Szczêœliwie nic siê nie sta³o. Noga przesta³a boleæ stra¿nika, jest tylko strasznie s³aby.");

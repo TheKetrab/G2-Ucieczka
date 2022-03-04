@@ -293,11 +293,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_fed_nomoney()
 FUNC VOID DIA_NASZ_115_Kurgan_fed_ok()
 {
 	HeroSayToKurgan_Keep();
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_01"); //IdŸ na arenê.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_02"); //Fed te¿ siê tam uda.
-
 	B_GiveInvItems (other, self, ItMI_gold, 100);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 100);
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_01"); //IdŸ na arenê.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_02"); //Fed te¿ siê tam uda.
 
 	Npc_ClearAIQueue(NASZ_117_Fed);
 	Npc_ExchangeRoutine (NASZ_117_Fed, "Arena");
@@ -451,11 +450,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_kjorn_nomoney()
 FUNC VOID DIA_NASZ_115_Kurgan_kjorn_ok()
 {
 	HeroSayToKurgan_Keep();
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjorn_ok_55_01"); //IdŸ na arenê.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjorn_ok_55_02"); //Kjorn bêdzie gotowy.
-
 	B_GiveInvItems (other, self, ItMI_gold, 200);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 200);
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjorn_ok_55_01"); //IdŸ na arenê.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kjorn_ok_55_02"); //Kjorn bêdzie gotowy.
 
 	Npc_ClearAIQueue(NASZ_116_Kjorn);
 	Npc_ExchangeRoutine (NASZ_116_Kjorn, "Arena");
@@ -611,10 +609,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_ferros_nomoney()
 FUNC VOID DIA_NASZ_115_Kurgan_ferros_ok()
 {
 	HeroSayToKurgan_Keep();
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferros_ok_55_01"); //Có¿, powodzenia.
-
 	B_GiveInvItems (other, self, ItMI_gold, 500);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 500);
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_ferros_ok_55_01"); //Có¿, powodzenia.
 
 	Npc_ClearAIQueue(NASZ_118_Ferros);
 	Npc_ExchangeRoutine (NASZ_118_Ferros, "Arena");
@@ -777,10 +774,9 @@ FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_nomoney()
 FUNC VOID DIA_NASZ_115_Kurgan_GodarHokurn_ok()
 {
 	HeroSayToKurgan_Keep();
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurn_ok_55_01"); //IdŸ na arenê i nie daj siê pokonaæ. Powodzenia.
-
 	B_GiveInvItems (other, self, ItMI_gold, 400);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 400);
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_GodarHokurn_ok_55_01"); //IdŸ na arenê i nie daj siê pokonaæ. Powodzenia.
 
 	Npc_ClearAIQueue(NASZ_113_Godar);
 	Npc_ExchangeRoutine (NASZ_113_Godar, "Arena");
@@ -1004,10 +1000,10 @@ FUNC VOID DIA_NASZ_115_Kurgan_kurgan_nomoney()
 FUNC VOID DIA_NASZ_115_Kurgan_kurgan_ok()
 {
 	HeroSayToKurgan_Keep();
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurgan_ok_55_01"); //Dobra, czas udaæ siê na arenê.
-	NASZ_115_Kurgan.flags = 0;
 	B_GiveInvItems (other, self, ItMI_gold, 1000);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 1000);
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_kurgan_ok_55_01"); //Dobra, czas udaæ siê na arenê.
+	NASZ_115_Kurgan.flags = 0;
 	Npc_ExchangeRoutine (NASZ_115_Kurgan, "Arena");
 	Kurgan_Arena_GoingToFightWithKurgan = TRUE;
 	NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_NONE;

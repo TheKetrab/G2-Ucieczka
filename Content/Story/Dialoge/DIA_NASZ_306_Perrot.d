@@ -268,6 +268,8 @@ FUNC INT DIA_NASZ_306_Perrot_done_Condition()
 FUNC VOID DIA_NASZ_306_Perrot_done_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_306_Perrot_done_55_00"); //Za³atwione.
+	B_giveinvitems (other, self, ItFo_Schafswurst, 5);
+	Npc_RemoveInvItems (self, ItFo_Schafswurst, 5);
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_01"); //Serio? O ¿esz ty, œwietna robota!
 	AI_Output (other, self,"DIA_NASZ_306_Perrot_done_55_02"); //Obieca³eœ, ¿e powiesz mi, co mam zrobiæ, by Van-Gan zechcia³ ze mn¹ porozmawiaæ...
 	AI_Output (self, other,"DIA_NASZ_306_Perrot_done_15_03"); //Zgadza siê. S³uchaj: Przed obozem stoi dwóch bandytów. Carry i Donks. Tak siê sk³ada, ¿e Van-Gan szczególnie nie lubi tego drugiego.
@@ -277,9 +279,6 @@ FUNC VOID DIA_NASZ_306_Perrot_done_Info()
 
 	SetName(NASZ_315_Bandzior, "Donks");
 	ShowName(NASZ_315_Bandzior);
-
-	B_giveinvitems (other, self, ItFo_Schafswurst, 5);
-	Npc_RemoveInvItems (self, ItFo_Schafswurst, 5) ;
 	
 	Log_SetTopicStatus (TOPIC_Perrot_owca, LOG_SUCCESS);
 	B_LogEntry (TOPIC_Perrot_owca, "Owca bezpieczna. W zamian Perrot, powiedzia³ mi, ¿e jeœli chcê zagadaæ do orka, to muszê skasowaæ Donksa. To ten bandyta wygnany razem z Carrym.");

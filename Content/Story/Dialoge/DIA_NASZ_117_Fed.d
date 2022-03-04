@@ -183,10 +183,9 @@ FUNC VOID DIA_NASZ_117_Fed_goth_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_15_00"); //Psst.
 	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_01"); //WeŸ tê mapê.
-	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_02"); //A teraz uciekaj. Lepiej, ¿eby Kurgan nas razem nie zobaczy³.
-
 	CreateInvItems (self, ItNa_Mapa_Lens, 1);
 	B_GiveInvItems (self, other, ItNa_Mapa_Lens, 1);
+	AI_Output (self, other,"DIA_NASZ_117_Fed_goth_55_02"); //A teraz uciekaj. Lepiej, ¿eby Kurgan nas razem nie zobaczy³.
 
 	AI_StopProcessInfos (self);
 	B_LogEntry (TOPIC_Goth_kradziez, "Wojownik Fed da³ mi mapê. Tylko có¿ mo¿e chowaæ siê pod znakiem 'X'?");

@@ -483,13 +483,15 @@ FUNC VOID DIA_NASZ_303_Nod_coteraz_Info()
 	AI_Output (other,self ,"DIA_NASZ_303_Nod_coteraz_15_00"); //Co teraz?
 	AI_Output (self, other,"DIA_NASZ_303_Nod_coteraz_55_01"); //Mamy ju¿ wszystkie czêœci, ale ktoœ musi z³¹czyæ je w ca³oœæ.
 	AI_Output (self, other,"DIA_NASZ_303_Nod_coteraz_55_02"); //Tutaj w obozie nikt nie zna siê na kowalstwie. Zabierz wszystkie czêœci i znajdŸ jakiegoœ kowala w Górniczej Dolinie.
+
+	B_giveinvitems (self, other, ItNa_Artefakt_Sila, 1);	
+	B_giveinvitems (self, other, ItNa_Artefakt_Moc, 1);	
+	B_giveinvitems (self, other, ItNa_Artefakt_Odpornosc, 1);
+
 	AI_Output (self, other,"DIA_NASZ_303_Nod_coteraz_55_03"); //Biegiem, szkoda czasu.
 
 	B_LogEntry (TOPIC_Gestath_renegaci, "Nod powierzy³ mi z³¹czenie w ca³oœæ wszystkich czêœci artefaktu. Ale zanim to zrobiê, lepiej powiadomiê Gestatha o ca³ej sytuacji.");
 	
-	B_giveinvitems (self, other, ItNa_Artefakt_Sila, 1);	
-	B_giveinvitems (self, other, ItNa_Artefakt_Moc, 1);	
-	B_giveinvitems (self, other, ItNa_Artefakt_Odpornosc, 1);
 };
 
 var int PRZELACZNIK_ARTEFAKT_DONE;

@@ -220,11 +220,10 @@ FUNC VOID DIA_NASZ_119_Udar_koniec_Info()
 	
 	if (! Kirgo_Oszust)
 	{
+		B_GiveInvItems (other, self, ItNa_PaczkaMikstur, 1);
 		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_01"); //Brakuje kilku. Ah, ten Kirgo, to ju¿ kolejny raz! Chyba te¿ zacznê wysy³aæ ubo¿sze przesy³ki i œwieciæ póŸniej oczami.
 		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_02"); //Mog³em iœæ po nie sam. A mówi³em: Uwa¿aj na niego, ¿eby ciê nie wykiwa³!
 		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_03"); //Có¿, przynajmniej to ty odwali³eœ tê robotê i mia³em dwie godziny czasu dla siebie.
-
-		B_GiveInvItems (other, self, ItNa_PaczkaMikstur, 1);
 
 		B_LogEntry (TOPIC_Udar_mikstury, "Przynios³em Udarowi mikstury. Nie wydawa³ siê jednak zachwycony, bo da³em siê oszukaæ...");
 		Log_SetTopicStatus (TOPIC_Udar_mikstury, LOG_SUCCESS);
@@ -234,15 +233,14 @@ FUNC VOID DIA_NASZ_119_Udar_koniec_Info()
 	}
 	else
 	{
-		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_04"); //S¹ wszystkie. Nie da³eœ siê oszukaæ, jestem pod wra¿eniem.
-		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_05"); //Mam nadziejê, ¿e Kirgo nie stawia³ siê zbytnio, gdy zwróci³eœ mu uwagê na niepe³n¹ przesy³kê?
-		AI_Output (other, self,"DIA_NASZ_119_Udar_koniec_55_06"); //Powiedzmy, ¿e da³em sobie radê.
-		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_07"); //Masz tu trochê z³ota. Dobrze siê spisa³eœ.
-
 		B_GiveInvItems (other, self, ItPo_Health_01, 20);
 		B_GiveInvItems (other, self, ItPo_Health_02, 10);
 		B_GiveInvItems (other, self, ItPo_Mana_01, 10);
 		B_GiveInvItems (other, self, ItPo_Speed, 3);
+		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_04"); //S¹ wszystkie. Nie da³eœ siê oszukaæ, jestem pod wra¿eniem.
+		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_05"); //Mam nadziejê, ¿e Kirgo nie stawia³ siê zbytnio, gdy zwróci³eœ mu uwagê na niepe³n¹ przesy³kê?
+		AI_Output (other, self,"DIA_NASZ_119_Udar_koniec_55_06"); //Powiedzmy, ¿e da³em sobie radê.
+		AI_Output (self, other,"DIA_NASZ_119_Udar_koniec_55_07"); //Masz tu trochê z³ota. Dobrze siê spisa³eœ.
 
 		Createinvitems (self, itmi_gold, 100);
 		B_giveinvitems (self, other, itmi_gold, 100);
@@ -1387,10 +1385,10 @@ FUNC VOID DIA_NASZ_119_Udar_SzybkaNauka_Info()
 
 		if (hero.lp >= 10) {
 
+			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_55_02"); //Staraj siê zapamiêtywaæ ka¿dy ruch. Ka¿de wykonane dzie³o.
 			AI_Output (self, other,"DIA_NASZ_119_Udar_SzybkaNauka_15_03"); //Pamiêtaj: Przyswajanie wiedzy zale¿y od twojego umys³u.
 
-			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			SzybkaNaukaTaught = TRUE;
 			hero.lp = hero.lp - 10;
 			

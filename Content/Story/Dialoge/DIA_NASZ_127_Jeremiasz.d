@@ -480,6 +480,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 	else {
 
 		if (hero.lp >= 10){
+			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_55_00"); //Tak jak mówi³em, na stole destylacyjnym mo¿esz uwarzyæ specjalne wywary. Musisz tylko nauczyæ siê go obs³ugiwaæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ buelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole. Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
@@ -489,7 +490,6 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_06"); //Jest bez soku, mo¿esz j¹ wyrzuciæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_07"); //Gdybyœ by³ zainteresowany, mo¿esz rzuciæ okiem do którejœæ z ksi¹¿ek le¿¹cych na stole.
 			
-			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			level_zielarstwa = 1;
 			hero.lp = hero.lp - 10;
 
@@ -535,6 +535,7 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 	}
 	else {
 		if (hero.lp >= 10){
+			B_GiveInvItems (other, self, ItMi_Gold, 1000);		
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_00"); //A wiêc chcia³byœ dowiedzieæ siê czegoœ jeszcze?
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_01"); //Proces wytwarzania tych mieszanek jest trochê d³ugi, a ja nie mam czasu za ka¿dym razem tutaj przychodziæ.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_02"); //Prawdziwy znawca roœlin potrafi obejœæ siê bez tworzenia mieszanki.
@@ -545,7 +546,6 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo2_Info()
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_15_07"); //M³odzieñcze, jeœli chcesz ¿yæ tak d³ugo jak ja, to mo¿e warto wypróbowaæ moje techniki?
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo2_55_08"); //Jeœli tylko mi to pomo¿e, to na pewno!
 			
-			B_GiveInvItems (other, self, ItMi_Gold, 1000);		
 			level_zielarstwa = 2;
 			hero.lp = hero.lp - 10;
 			

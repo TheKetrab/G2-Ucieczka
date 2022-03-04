@@ -244,13 +244,12 @@ FUNC INT DIA_NASZ_412_CatSan_Ostrze_Condition()
 FUNC VOID DIA_NASZ_412_CatSan_Ostrze_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_Ostrze_15_00"); //Mam ostrze.
+	B_giveinvitems (other, self, ItNa_CatSan_Sword, 1);
 	AI_EquipBestMeleeWeapon	(self);
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_Ostrze_15_01"); //Doskonale. Otworzê wiêc kratê!
 	AI_PlayAni		(self, "HEA");
 	AI_Output (other, self,"DIA_NASZ_412_CatSan_Ostrze_15_02"); //Czy mo¿esz mi towarzyszyæ w walce?
 	AI_Output (self, other,"DIA_NASZ_412_CatSan_Ostrze_15_03"); //Niestety, œmiertelniku, nie zrobiê tego. Magia tego szamana ogranicza mnie. Musisz udaæ siê tam sam.
-
-	B_giveinvitems (other, self, ItNa_CatSan_Sword, 1);
 
 	Wld_SendTrigger ("FORT_4_SCRIPT");
 	

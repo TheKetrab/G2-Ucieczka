@@ -652,10 +652,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_gerold_p()
 {
 	gerold_wybor=2;
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_gerold_p_15_00"); //500 sztuk z³ota.
+	B_GiveInvItems (other, self, ItMi_Gold, 500);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_gerold_p_55_01"); //Cena rozs¹dna.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_gerold_p_55_02"); //IdŸ do niego i powiedz mu, by poszed³ pilnowaæ wejœcia od strony cmentarza.
 
-	B_GiveInvItems (other, self, ItMi_Gold, 500);
 	B_LogEntry (TOPIC_Gerold_Keroloth, "Zap³aci³em Kerolothowi 500 sztuk z³ota. Kaza³ mi powiedzieæ Geroldowi, by poszed³ pilnowaæ wejœcia od strony cmentarza.");
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_gerold);
@@ -665,10 +665,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_gerold_t()
 {
 	gerold_wybor=2;
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_gerold_t_15_00"); //1000 sztuk z³ota.
+	B_GiveInvItems (other, self, ItMi_Gold, 1000);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_gerold_t_55_01"); //Hojny z ciebie goœæ.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_gerold_t_55_02"); //IdŸ do niego i powiedz mu, by poszed³ pilnowaæ wejœcia od strony cmentarza.
 
-	B_GiveInvItems (other, self, ItMi_Gold, 1000);
 	B_LogEntry (TOPIC_Gerold_Keroloth, "Zap³aci³em Kerolothowi 1000 sztuk z³ota. Kaza³ mi powiedzieæ Geroldowi, by poszed³ pilnowaæ wejœcia od strony cmentarza.");
 
 	Info_ClearChoices (DIA_NASZ_110_Keroloth_gerold);
@@ -700,9 +700,9 @@ FUNC VOID DIA_NASZ_110_Keroloth_kasa_Info()
 {
 	gerold_wybor=2;
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_kasa_15_00"); //Masz te 500 sztuk z³ota.
+	B_GiveInvItems (other, self, ItMi_Gold, 500);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_kasa_55_01"); //Dobra. IdŸ do Gerolda i powiedz mu, by poszed³ pilnowaæ wejœcia od strony cmentarza.
 
-	B_GiveInvItems (other, self, ItMi_Gold, 500);
 	B_LogEntry (TOPIC_Gerold_Keroloth, "Zap³aci³em Kerolothowi 500 sztuk z³ota. Kaza³ mi powiedzieæ Geroldowi, by poszed³ pilnowaæ wejœcia od strony cmentarza.");
 };
 
@@ -738,14 +738,14 @@ FUNC VOID DIA_NASZ_110_Keroloth_questnoend_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questnoend_55_02"); //Myœlê, ¿e wœcieknie siê, gdy zobaczy, ¿e zniknê³a.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_03"); //Zgadzam siê. Z tej mapy korzysta³ zapewne ca³e ¿ycia. Dobrze siê spisa³eœ.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_04"); //Masz tu trochê z³ota, mo¿esz to sobie wynagrodziæ w karczmie i wypiæ parê butelek dobrego wina.
+	Createinvitems (self, itmi_gold, 70);
+	B_giveinvitems (self, other, itmi_gold, 70);
 
 	KerolothDostalMape = TRUE;
 
 	B_LogEntry (TOPIC_Keroloth_Louis, "Przynios³em mapê Kerolothowi. Wydawa³ siê byæ zadowolony.");
 	Log_SetTopicStatus (TOPIC_Keroloth_Louis, LOG_SUCCESS);
 	B_GivePlayerXP (300);
-	Createinvitems (self, itmi_gold, 70);
-	B_giveinvitems (self, other, itmi_gold, 70);
 	DodajReputacje (3, REP_LOWCY);
 };
 
@@ -964,10 +964,9 @@ func void DIA_NASZ_110_Keroloth_WantToKillRenegat_Info ()
 		AI_Output	(other, self, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_06"); //Marcos jest schowany w kopalni, za palisad¹. Chcê siê tam jakoœ dostaæ.
 		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_07"); //Zapewne bramê da siê otworzyæ tylko od wewn¹trz... Mo¿e znajdziesz gdzieœ szparê miêdzy deskami?
 		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_08"); //WeŸ ten magiczny zwój. Przemiana w chrz¹szcza to bardzo u¿yteczne zaklêcie.
-		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_09"); //Zabierz ze sob¹ Feda, Ferosa i Kjorna. Przyda im siê trening inny ni¿ walka na arenie.
-		
 		CreateInvItems (self, ItNa_TrfMeatbug, 1);									
 		B_GiveInvItems (self, other, ItNa_TrfMeatbug, 1);
+		AI_Output	(self, other, "DIA_NASZ_110_Keroloth_WantToKillRenegat_15_09"); //Zabierz ze sob¹ Feda, Ferosa i Kjorna. Przyda im siê trening inny ni¿ walka na arenie.		
 		
 		B_LogEntry (TOPIC_Korth_kopalnia, "W koñcu nadszed³ czas powrotu do kopalni. Tym razem jednak ju¿ nie jako kopacz, a jako ³owca orków! Keroloth da³ mi zwój przemiany w chrz¹szcza. Mo¿e gdzieœ miêdzy deskami palisady bêdzie jakaœ ma³a dziura, dziêki której przedostanê siê do œrodka. Mam zabraæ ze sob¹ Feda, Kjorna i Ferosa.");
 
@@ -1772,11 +1771,10 @@ FUNC VOID DIA_NASZ_110_Keroloth_HelpIsReady_Info()
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_HelpIsReady_55_06"); //Oczywiœcie, ruszam w dalsz¹ drogê.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_HelpIsReady_55_07"); //Zaczekaj, weŸ tê runê. Przeniesie ciê prosto do tej chatki.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_HelpIsReady_15_08"); //Potrafisz sporz¹dzaæ runy?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_HelpIsReady_55_09"); //Przebywaj¹c z paladynami nauczy³em siê tego i owego...
-
 	Createinvitems (self, ItNa_TeleportTwierdza, 1);
 	B_giveinvitems (self, other, ItNa_TeleportTwierdza, 1);
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_HelpIsReady_15_08"); //Potrafisz sporz¹dzaæ runy?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_HelpIsReady_55_09"); //Przebywaj¹c z paladynami nauczy³em siê tego i owego...
 
 };
 
@@ -1843,10 +1841,11 @@ FUNC VOID DIA_NASZ_110_Keroloth_MainForces_Info()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MainForces_15_00"); //G³ówne si³y myœliwych s¹ w twierdzy.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_MainForces_15_01"); //Dobra robota. Gdyby nie ty, pewnie to wszystko trwa³oby du¿o d³u¿ej. Przyjmij te dwie sakiewki, jako dowód mojej wdziêcznoœci.
 	
-	Log_SetTopicStatus (TOPIC_Keroloth_pomoc, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Keroloth_pomoc, "Wszyscy myœliwi s¹ ju¿ na miejscu. Zabawa dopiero siê zaczyna...");
 	Createinvitems (self, ItSe_GoldPocket100, 2);
 	B_giveinvitems (self, other, ItSe_GoldPocket100, 2);
+
+	Log_SetTopicStatus (TOPIC_Keroloth_pomoc, LOG_SUCCESS);
+	B_LogEntry (TOPIC_Keroloth_pomoc, "Wszyscy myœliwi s¹ ju¿ na miejscu. Zabawa dopiero siê zaczyna...");
 
 	B_GivePlayerXP(700);
 	DodajReputacje(2,REP_LOWCY);
@@ -2378,10 +2377,10 @@ FUNC INT DIA_NASZ_110_Keroloth_InfoAboutAyan_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_InfoAboutAyan_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoAboutAyan_15_00"); //Zaczekaj! Zapomnia³em przekazaæ ci liœcik, który da³ mi Ayan, zanim wyruszy³ z zamku.
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoAboutAyan_15_01"); //Dok¹d siê uda³?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoAboutAyan_15_02"); //Nie wiem. Nie czytam cudzych wiadomoœci. Sam przeczytaj.
 	CreateInvItems(self,ItNa_AyanList,1);
 	B_GiveInvItems(self,other,ItNa_AyanList,1);
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoAboutAyan_15_01"); //Dok¹d siê uda³?
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoAboutAyan_15_02"); //Nie wiem. Nie czytam cudzych wiadomoœci. Sam przeczytaj.
 };
 
 //*********************************************************************
@@ -2754,8 +2753,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_15_00"); //Mam ma³¹ burzê ognist¹.
-	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_Pyrokinesis, 1);
+	KerolothSay_ComeBackTomorow();
 	MieczRunicznyRunaDana = 1;
 
 	MieczRunicznyDay = Wld_GetDay ();
@@ -2786,8 +2785,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyLod_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyLod_15_00"); //Mam bry³ê lodu.
-	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_IceCube, 1);
+	KerolothSay_ComeBackTomorow();
 	MieczRunicznyRunaDana = 2;
 
 	MieczRunicznyDay = Wld_GetDay ();
@@ -2818,8 +2817,8 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyWiatr_15_00"); //Mam piêœæ wichru.
-	KerolothSay_ComeBackTomorow();
 	B_GiveInvItems (other, self, ItRu_Windfist, 1);
+	KerolothSay_ComeBackTomorow();
 	MieczRunicznyRunaDana = 3;
 
 	MieczRunicznyDay = Wld_GetDay ();

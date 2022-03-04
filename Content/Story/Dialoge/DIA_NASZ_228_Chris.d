@@ -192,8 +192,8 @@ FUNC INT DIA_NASZ_228_Chris_BringBeer_Condition()
 FUNC VOID DIA_NASZ_228_Chris_BringBeer_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_228_Chris_BringBeer_55_00"); //Przynios³em piwa.
-	AI_Output (self, other,"DIA_NASZ_228_Chris_BringBeer_55_01"); //Niech bêdzie. Daj znaæ jak bêdziesz gotów wyruszyæ.
 	B_GiveInvItems (other, self, ItFo_Beer, 3);
+	AI_Output (self, other,"DIA_NASZ_228_Chris_BringBeer_55_01"); //Niech bêdzie. Daj znaæ jak bêdziesz gotów wyruszyæ.
 	B_UseItem (self, ItFo_Beer);
 
 	Log_CreateTopic (TOPIC_Chris_polowanie, LOG_MISSION);
@@ -438,13 +438,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Claws()
 		return;
 	};
 
+	B_GiveInvItems(other,self,ItMi_Gold,25);
+	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Claws_03_00"); //Zwierzêta nie lubi¹ byæ pozbawiane pazurów. Musisz wykonaæ bardzo precyzyjne ciêcie.
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Claws_03_01"); //Skrzy¿uj lekko rêce, a potem silnie pchnij.
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Claws_03_02"); //Handlarze bardzo lubi¹, jeœli ktoœ p³aci im pazurami.
 
-	B_GiveInvItems(other,self,ItMi_Gold,25);
-	Npc_RemoveInvItems(self,ItMi_Gold,25);
-	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Claws] = TRUE;
 	
@@ -468,11 +467,10 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Teeth()
 		return;
 	};
 
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_00"); //Naj³atwiej jest pozbawiæ zwierzê zêbów. Natnij no¿em dzi¹s³o dooko³a zêba.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_01"); //Potem musisz ju¿ tylko uderzyæ w z¹b i po wszystkim.
-
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_00"); //Naj³atwiej jest pozbawiæ zwierzê zêbów. Natnij no¿em dzi¹s³o dooko³a zêba.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Teeth_03_01"); //Potem musisz ju¿ tylko uderzyæ w z¹b i po wszystkim.
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Teeth] = TRUE;
@@ -497,12 +495,11 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_Fur()
 		return;
 	};
 
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Fur_03_00"); //Pozyskanie futra najlepiej jest zacz¹æ od wykonania g³êbokiego naciêcia dooko³a tylnych koñczyn.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Fur_03_01"); //Jeœli zrobisz to w³aœciwie, zdarcie skóry to ju¿ drobnostka.
-	
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
-	
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Fur_03_00"); //Pozyskanie futra najlepiej jest zacz¹æ od wykonania g³êbokiego naciêcia dooko³a tylnych koñczyn.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_Fur_03_01"); //Jeœli zrobisz to w³aœciwie, zdarcie skóry to ju¿ drobnostka.
+		
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_Fur] = TRUE;
 	
@@ -526,12 +523,11 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFSting()
 		return;
 	};
 
+	B_GiveInvItems(other,self,ItMi_Gold,25);
+	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFSting_03_00"); //Na tylnej stronie odw³oku tej muchy znajduje siê miêkki punkt.
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFSting_03_01"); //Jeœli na niego naciœniesz, wysunie siê ¿¹d³o, które bêdziesz móg³ odci¹æ no¿em.
 		
-	B_GiveInvItems(other,self,ItMi_Gold,25);
-	Npc_RemoveInvItems(self,ItMi_Gold,25);
-	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFSting] = TRUE;
 	
@@ -556,11 +552,10 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_BFWing ()
 		return;
 	};
 
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFWing_03_00"); //Najlepszym sposobem na usuniêcie skrzyde³ krwiopijcy jest odciêcie ich ostrym no¿em tu¿ przy samym ciele.
-	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFWing_03_01"); //Musisz uwa¿aæ, skrzyd³a s¹ bardzo delikatne. Jeœli naruszysz ich delikatn¹ pow³okê, stan¹ siê bezwartoœciowe.
-
 	B_GiveInvItems(other,self,ItMi_Gold,25);
 	Npc_RemoveInvItems(self,ItMi_Gold,25);
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFWing_03_00"); //Najlepszym sposobem na usuniêcie skrzyde³ krwiopijcy jest odciêcie ich ostrym no¿em tu¿ przy samym ciele.
+	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_BFWing_03_01"); //Musisz uwa¿aæ, skrzyd³a s¹ bardzo delikatne. Jeœli naruszysz ich delikatn¹ pow³okê, stan¹ siê bezwartoœciowe.
 	
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_BFWing] = TRUE;
@@ -586,13 +581,12 @@ func void DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn()
 		return;
 	};
 
+	B_GiveInvItems(other,self,ItMi_Gold,25);
+	Npc_RemoveInvItems(self,ItMi_Gold,25);
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn_03_00"); //Mimo, ¿e wydaje siê to doœæ proste, mo¿e sprawiæ problem nawet doœwiadczonemu myœliwemu.
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn_03_01"); //Najpierw musisz wbiæ nó¿ jak najg³êbiej w sam œrodek czo³a, a nastêpnie ostro¿nie podwa¿yæ róg.
 	AI_Output			(self, other, "DIA_NASZ_228_Chris_TEACHHUNTING_DrgSnapperHorn_03_02"); //Jeœli nie mo¿esz oddzieliæ go od czaszki, bêdziesz sobie musia³ pomóc drugim no¿em.
-	
-	B_GiveInvItems(other,self,ItMi_Gold,25);
-	Npc_RemoveInvItems(self,ItMi_Gold,25);
-	
+		
 	hero.lp -= 3;
 	PLAYER_TALENT_TAKEANIMALTROPHY[TROPHY_DrgSnapperHorn] = TRUE;
 

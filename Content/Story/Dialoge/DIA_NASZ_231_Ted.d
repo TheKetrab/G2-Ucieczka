@@ -803,10 +803,9 @@ FUNC VOID DIA_NASZ_231_Ted_AndHow_Info()
 	AI_Output (other, self,"DIA_NASZ_231_Ted_AndHow_15_00"); //I jak?
 	AI_Output (self, other,"DIA_NASZ_231_Ted_AndHow_55_01"); //Ta ksiêga jest unikatowa! S¹ tutaj zapiski o ró¿nych zwierzêtach. Zostanê tutaj i przestudiujê j¹ dok³adnie.
 	AI_Output (self, other,"DIA_NASZ_231_Ted_AndHow_55_02"); //Dziêki za pomoc! W nagrodê dam ci kilka ognistych strza³.
-	AI_Output (self, other,"DIA_NASZ_231_Ted_AndHow_55_03"); //Przydadz¹ siê na coœ równie wielkiego jak troll.
-
 	Createinvitems (self, ItNa_OgnistaStrzala, 60);
 	B_giveinvitems (self, other, ItNa_OgnistaStrzala, 60);
+	AI_Output (self, other,"DIA_NASZ_231_Ted_AndHow_55_03"); //Przydadz¹ siê na coœ równie wielkiego jak troll.
 	
 	DodajReputacje(3,REP_MYSLIWI);
 	

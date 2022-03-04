@@ -490,17 +490,15 @@ FUNC VOID DIA_NASZ_111_Gerold_GlodQuest_Info()
 func void Gerold_SayMagicRing() {
 
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_SayMagicRing_55_00"); //Dziêkujê za twoj¹ bezinteresown¹ pomoc, proszê weŸ to w nagrodê.
+	CreateInvItems(self,ItNa_Przepis_UdziecZDzikaPoLowiecku,1);
+	B_GiveInvItems(self,other,ItNa_Przepis_UdziecZDzikaPoLowiecku,1);
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_SayMagicRing_55_01"); //Co to jest?
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_SayMagicRing_55_02"); //To przepis mojej starej matuli na najlepsz¹ w œwiecie dziczyznê. Niestety, ja nigdy nie mia³em talentu do gotowania, wiêc nigdy z niego nie skorzysta³em.
 	AI_Output (self, other,"DIA_NASZ_111_Gerold_SayMagicRing_55_03"); //Myœlê, ¿e ta kartka to odpowiednia nagroda za twoj¹ przys³ugê.
 	AI_Output (other, self,"DIA_NASZ_111_Gerold_SayMagicRing_55_04"); //Tak, to bardzo adekwatna nagroda. Mam nadziejê, ¿e bêdzie mi dane skosztowaæ tej wspania³ej potrawy.
 	
-
 	Mis_GeroldGlod_Running = FALSE;
-	
-	CreateInvItems(self,ItNa_Przepis_UdziecZDzikaPoLowiecku,1);
-	B_GiveInvItems(self,other,ItNa_Przepis_UdziecZDzikaPoLowiecku,1);
-	
+		
 	B_GivePlayerXP(500);
 	DodajReputacje(2,REP_LOWCY);
 	

@@ -13,6 +13,7 @@ instance MENU_MAIN(C_MENU_DEF)
 	items[7] = "MENUITEM_MAIN_INTRO";
 	items[8] = "MENUITEM_MAIN_CREDITS";
 	items[9] = "MENUITEM_MAIN_EXIT";
+	items[10] = "MENUITEM_MAIN_G2UVERSION";
 	defaultoutgame = 2;
 	defaultingame = 4;
 	flags = flags | MENU_SHOW_INFO;
@@ -157,6 +158,20 @@ instance MENUITEM_MAIN_HEADLINE(C_MENU_ITEM_DEF)
 	alphamode = "BLEND";
 	alpha = 220;
 	flags = flags | IT_TXT_CENTER;
+	flags = flags & ~IT_SELECTABLE;
+};
+
+instance MENUITEM_MAIN_G2UVERSION(C_MENU_ITEM_DEF)
+{
+	// Ucieczka.ini -> [OPTIONS] show_Version=0
+	
+	fontname = MENU_FONT_SMALL;
+	backpic = MENU_ITEM_BACK_PIC;
+	text[0] = "v1.2";
+	posx = 6500;
+	posy = 7200;
+	dimx = 8100;
+	dimy = 750;
 	flags = flags & ~IT_SELECTABLE;
 };
 

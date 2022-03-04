@@ -230,7 +230,7 @@ func int GetTalentNow(var string talent) {
 func int AlignRequestedAmountToTeacherMax(var string talent, var int amount, var int teacher_max) {
 
 	var int talent_now; talent_now = GetTalentNow(talent);
-	return max(0, min(teacher_max - talent_now, amount));
+	return _Uclamp(0, teacher_max - talent_now, amount);
 
 };
 
@@ -265,24 +265,24 @@ func int CalculateLearnLPCost(var string talent, var int amount, var int teacher
 	else if (part == 2) {
 	
 		real_cost =
-			(min(75, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,2)
-			+ (max(75, talent_after) - 75) * GetCostBySkillAndCoef(talent,3);
+			(_Umin(75, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,2)
+			+ (_Umax(75, talent_after) - 75) * GetCostBySkillAndCoef(talent,3);
 	
 	}
 		
 	else if (part == 1) {
 	
 		real_cost =
-			(min(50, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,1)
-			+ (max(50, talent_after) - 50) * GetCostBySkillAndCoef(talent,2);	
+			(_Umin(50, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,1)
+			+ (_Umax(50, talent_after) - 50) * GetCostBySkillAndCoef(talent,2);	
 	
 	}
 	
 	else if (part == 0) {
 	
 		real_cost =
-			(min(25, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,0)
-			+ (max(25, talent_after) - 25) * GetCostBySkillAndCoef(talent,1);	
+			(_Umin(25, talent_after) - talent_now) * GetCostBySkillAndCoef(talent,0)
+			+ (_Umax(25, talent_after) - 25) * GetCostBySkillAndCoef(talent,1);	
 	
 	};
 	
@@ -311,24 +311,24 @@ func int CalculateLearnGoldCost(var string talent, var int amount, var int teach
 	else if (part == 2) {
 	
 		real_cost =
-			(min(75, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,2)
-			+ (max(75, talent_after) - 75) * GetCostBySkillAndCoefGold(talent,3);
+			(_Umin(75, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,2)
+			+ (_Umax(75, talent_after) - 75) * GetCostBySkillAndCoefGold(talent,3);
 	
 	}
 		
 	else if (part == 1) {
 	
 		real_cost =
-			(min(50, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,1)
-			+ (max(50, talent_after) - 50) * GetCostBySkillAndCoefGold(talent,2);	
+			(_Umin(50, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,1)
+			+ (_Umax(50, talent_after) - 50) * GetCostBySkillAndCoefGold(talent,2);	
 	
 	}
 	
 	else if (part == 0) {
 	
 		real_cost =
-			(min(25, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,0)
-			+ (max(25, talent_after) - 25) * GetCostBySkillAndCoefGold(talent,1);	
+			(_Umin(25, talent_after) - talent_now) * GetCostBySkillAndCoefGold(talent,0)
+			+ (_Umax(25, talent_after) - 25) * GetCostBySkillAndCoefGold(talent,1);	
 	
 	};
 	

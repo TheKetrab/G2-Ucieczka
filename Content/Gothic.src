@@ -8,6 +8,7 @@ LeGo\Header_G2.src
 
 Spine\Spine.src
 
+Funcs\MinMax.d
 Funcs\Functions.d
 Funcs\RandomCombination.d
 Funcs\Achievements.d

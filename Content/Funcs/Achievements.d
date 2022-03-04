@@ -109,7 +109,7 @@ const string Acv30Content = "Otworzy³eœ wszystkie kufry w obozach £owców i Myœli
 func void AddAchievement(var int id, var string title, var string content) {
 
 	// ----- SPINE -----
-	Spine_UnlockAchievement(id-1);
+	//Spine_UnlockAchievement(id-1);
 	// ----- ----- -----
 
 	AchievementsCnt += 1;

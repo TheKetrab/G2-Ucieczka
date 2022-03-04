@@ -23,7 +23,7 @@ func void INIT_GLOBAL()
 	//reinit kursora
 	Cursor_Hndl = 0;
 	LeGo_Init(LeGo_PrintS | LeGo_HookEngine | LeGo_AI_Function | LeGo_Trialoge | LeGo_Dialoggestures | LeGo_FrameFunctions | LeGo_Cursor | LeGo_Focusnames | LeGo_Random | LeGo_Saves | LeGo_PermMem | LeGo_Anim8 | LeGo_View | LeGo_Interface | LeGo_Bars | LeGo_Buttons | LeGo_Timer | LeGo_EventHandler | LeGo_Gamestate | LeGo_Sprite | LeGo_Names | LeGo_ConsoleCommands);
-	Spine_Init(SPINE_MODULE_GETCURRENTUSERNAME | SPINE_MODULE_ACHIEVEMENTS);
+	//Spine_Init(SPINE_MODULE_GETCURRENTUSERNAME | SPINE_MODULE_ACHIEVEMENTS);
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL); 

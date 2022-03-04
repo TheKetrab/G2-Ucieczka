@@ -7821,24 +7821,25 @@ instance ItNa_Empty(C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-INSTANCE ItNa_DustyShell(C_Item)
-{
-	name 		=	"Muszla z bagien";
+// ---> zmienione na ItMi_Addon_Shell_02
+// INSTANCE ItNa_DustyShell(C_Item)
+// {
+	// name 		=	"Muszla z bagien";
 
-	mainflag 	=	ITEM_KAT_NONE;
-	flags 		=	ITEM_MULTI;
+	// mainflag 	=	ITEM_KAT_NONE;
+	// flags 		=	ITEM_MULTI;
 
-	value 		=	Value_Shell_01;
+	// value 		=	Value_Shell_01;
 
-	visual 		=	"ItMi_Shell_01.3ds";
-	material 	=	MAT_STONE;
-	description	= 	name;
+	// visual 		=	"ItMi_Shell_01.3ds";
+	// material 	=	MAT_STONE;
+	// description	= 	name;
 	
-	TEXT[5]		= 	NAME_Value;	
-	COUNT[5]	=	value;
+	// TEXT[5]		= 	NAME_Value;	
+	// COUNT[5]	=	value;
 	
-	INV_ZBIAS	= INVCAM_ENTF_MISC2_STANDARD;	
-};
+	// INV_ZBIAS	= INVCAM_ENTF_MISC2_STANDARD;	
+// };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 instance ItNa_Ratford_Pierscien(C_Item)
@@ -8850,7 +8851,6 @@ func void Use_Fajka()
 
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// TODO: dac to gdzies do bractwa
 INSTANCE ItNa_Posazek_1(C_Item)
 {
 	name = "Pos¹¿ek";
@@ -8865,7 +8865,6 @@ INSTANCE ItNa_Posazek_1(C_Item)
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
-// TODO: dac to gdzies do bractwa
 INSTANCE ItNa_Posazek_2(C_Item)
 {
 	name = "Pos¹¿ek";

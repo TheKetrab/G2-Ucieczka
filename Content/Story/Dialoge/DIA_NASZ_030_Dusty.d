@@ -241,7 +241,7 @@ INSTANCE DIA_NASZ_030_Dusty_HaveShells   (C_INFO)
 FUNC INT DIA_NASZ_030_Dusty_HaveShells_Condition()	
 {
 	if (npc_knowsinfo (other, DIA_NASZ_030_Dusty_WhatToDo))
-	&& (npc_hasitems(other,ItNa_DustyShell) >= 10)
+	&& (npc_hasitems(other,ItMi_Addon_Shell_02) >= 10)
 	{
 		return TRUE;
 	};
@@ -253,11 +253,8 @@ var int Dusty_HeroWantsNecklace;
 FUNC VOID DIA_NASZ_030_Dusty_HaveShells_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_HaveShells_55_00"); //Przynios³em muszle, o które prosi³eœ.
-	
-	// TODO zrobic 25 muszli w spacerze
-	
-	// hero daje wszystkie jakie ma
-	B_GiveInvItems(other, self, ItNa_DustyShell, npc_hasitems(other,ItNa_DustyShell));
+		
+	B_GiveInvItems(other, self, ItMi_Addon_Shell_02, 10);
 	
 	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_01"); //Wspaniale! Dziêkujê ci. Teraz bêdê móg³ wykonaæ naszyjnik.
 	AI_Output (self, other,"DIA_NASZ_030_Dusty_HaveShells_15_02"); //Bêdzie to dar dla cz³owieka, dziêki czemu odkupiê winy i opuszczê to bagno.

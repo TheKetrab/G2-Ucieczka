@@ -311,9 +311,8 @@ func void DynamicSaveSystem()
 	}
 	else
 	{
-		if(SavingDisabled && !OrcSawYou_Activated)
-		{
-			PrintS_Ext("W³¹czono mo¿liwoœæ zapisywania!", rgba(46, 204, 113, 1));
+		// Ca³y czas mo¿na zapisywaæ, chyba ¿e orc
+		if (!OrcSawYou_Activated) {		
 			AllowSaving();
 		};
 	};

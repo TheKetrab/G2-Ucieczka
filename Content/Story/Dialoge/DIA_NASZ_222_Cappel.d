@@ -180,12 +180,12 @@ func void CappelAddChoicesSTR() {
 };
 
 func void CappelSay_CantTeachYou() {
-	AI_Output(self,other,"CappelSay_CantTeachYou_55_00"); //Niestety, niczego wiêcej ju¿ ciê nie nauczê.
+	AI_Output(self,other,"CappelSay_CantTeachYou_55_00"); //To wszystko co wiem.
 	Cappel_Teach_NoMore = TRUE;
 };
 
 func void CappelSay_NoMoney() {
-	AI_Output (self, other,"CappelSay_NoMoney_55_00"); //Nie masz doœæ z³ota.
+	AI_Output (self, other,"CappelSay_NoMoney_55_00"); //A gdzie z³oto?
 };
 
 func void CappelSay_NoExp() {

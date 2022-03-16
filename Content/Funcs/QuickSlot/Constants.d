@@ -132,7 +132,13 @@ var int RemoveSpellNr_Bytes[13];
 
 var int oCMag_Book_SpellCast_Check_SpellBook_Oryginal_Bytes[oCMag_Book_SpellCast_Check_SpellBook_NumBytes];
 
-
+//domyślne klawisze ukrywania QS
+//string zawiera 1-2 keye
+//jeden key musi mieć 4 cyfry
+//key jest w hex ze stałych z zinput
+//min len 4, max 8
+//w tej chwili to tylko tylda
+const string QS_KEYSDATA = "2900";
 	
 // Small engine functions
 func int QS_IsInvOpen()

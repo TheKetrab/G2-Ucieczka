@@ -186,7 +186,7 @@ func int QS_CanPutInSlot(var int itemPtr)
 	{
 		if(!WalkaTarcza)
 		{
-			PrintScreen("Brak odpowiedniej umiejetnooci.",-1,YPOS_LevelUp,FONT_ScreenSmall,2);
+			PrintScreen("Brak odpowiedniej umiejêtnoœci.",-1,YPOS_LevelUp,FONT_ScreenSmall,2);
 			AI_PlayAni(hero,"T_DONTKNOW");
 			hero.aivar[AIV_TARCZA] = false;
 			return false;
@@ -320,6 +320,13 @@ func int QS_GetSpellKey(var oCNpc her,var int itemPtr)
 };
 func void QS_SetFrontSpell(var oCNpc her, var int itemPtr)
 {
+	var int magbook; magbook = her.mag_Book;
+	
+	if(!QS_IsItemInMagBook(magbook,itemPTr))
+	{
+		QS_RegisterRune(magbook,itemPTr);
+	};
+	
 	var int nr; nr = QS_GetSpellKey(her,itemPtr);
 	
 	var int ptr; ptr = QS_oCMsgMagic_SetFrontSpell(nr);
@@ -338,6 +345,8 @@ func void QS_UseMagic(var oCNpc her, var int itemPtr)
 	var int itHlp;			itHlp 		= QS_GetSpellItem(magBook);	// oCItem*
 	var C_ITEM it; 			it 			= _^(itemPtr);			
 	var string spellName; 	spellName 	= MEM_ReadStatStringArr(TXT_SPELLS, it.spell);
+	
+
 	
 	// Hero is in fmode
 	if(her.fmode == FMODE_MAGIC && itHlp)
@@ -449,7 +458,7 @@ func void QS_UseWeapon(var oCItem it, var int i)
 				}
 				else
 				{
-					PrintS("Za3ó? bron jednoreczn1 przed u?yciem tarczy!");
+					PrintS("Za³ó¿ broñ jednorêczn¹ przed u¿yciem tarczy!");
 				};
 				return;
 			};
@@ -500,7 +509,7 @@ func void QS_MobInteractionFix()
 					var string name; name = MEM_ReadString(pItem+292);
 					//TODO: czy to potrzebne? / bogu
 					if (Hlp_StrCmp(name,"Kilof")) { Npc_RemoveInvItems(hero,ItMw_2H_Axe_L_01,1); };
-					MEM_Info(ConcatStrings(name," jest potrzebny do interakcji. Zosta3 usuniety z QS."));
+					MEM_Info(ConcatStrings(name," jest potrzebny do interakcji. Zosta³ usuniêty z QS."));
 					var int mainflags; mainflags = MEM_ReadInt(pItem+oCItem__MainFlag_Offset);
 					if(mainflags &  (ITEM_KAT_NF |  ITEM_KAT_FF))
 					{
@@ -767,7 +776,9 @@ func int QS_CheckIfDisable()
 // Per Frame loop
 func void QS_RenderHook()
 {		
-	if ((Pressed(QS_HideKey1) || (Pressed(QS_HideKey2))))
+	var int isConsoleActive; isConsoleActive = MEM_ReadInt(zCConsole__cur_console);
+	
+	if (!MEM_Game.singleStep && !isConsoleActive && (Pressed(QS_HideKey1) || (Pressed(QS_HideKey2))))
 	{
 		DontRenderSlots = !DontRenderSlots;
 	};
@@ -1175,4 +1186,12 @@ func void QS_RestoreData()
 {
 	QS_RestorePointer();
 	GameState_AddListener(QS_RestorePointer_Listener);
+};
+
+func void QS_DisableKeyInit()
+{
+	if(!MEM_GothOptExists("KEYS","keyHideQuickSlot"))
+	{
+		MEM_SetGothOpt("KEYS","keyHideQuickSlot",QS_KEYSDATA);
+	};
 };

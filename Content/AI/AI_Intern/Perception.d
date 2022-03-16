@@ -6,10 +6,7 @@ FUNC VOID InitPerceptions()
 {
 	MEM_InitAll();
 	
-	if(!MEM_GothOptExists("KEYS","keyHideQuickSlot"))
-	{
-		MEM_SetGothOpt("KEYS","keyHideQuickSlot","2f002900");
-	};
+	MEM_CallByString("QS_DisableKeyInit");
 	// Die Reichweite der aktiven Wahrnehmungen
 	// PERC_ASSESSPLAYER	// Spieler wird wahrgenommen
 	// PERC_ASSESSENEMY		// der nächste NSC, zu dem ich Att_Hostile habe, wird wahrgenommen! (wenn Temp_Att != Gil_Att, wird Temp_att genommen)

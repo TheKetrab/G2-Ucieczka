@@ -9164,8 +9164,7 @@ INSTANCE ItNa_FriedFish (C_Item)
 
 FUNC VOID Use_FriedFish()
 {
-	//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Fish*4);
-	PercentHealSelf(12,ATR_HITPOINTS);
+	Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Fish*4);
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -9339,7 +9338,7 @@ INSTANCE ItNa_PieczenSnafa (C_Item)
 
 FUNC VOID Use_PieczenSnafa()
 {
-	PercentHealSelf(20,ATR_HITPOINTS);
+	PercentHealSelf(50,ATR_HITPOINTS);
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****

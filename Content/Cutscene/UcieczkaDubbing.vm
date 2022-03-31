@@ -1,7 +1,7 @@
 [BEGINVDF]
 Comment=
-BaseDir=C:\Gry\Gothic II Zlota Edycja
-VDFName=C:\Gry\Gothic II Zlota Edycja\Data\UcieczkaDubbing.vdf
+BaseDir=C:\Gothic\Gothic 2 Ucieczka
+VDFName=C:\Gothic\Gothic 2 Ucieczka\Data\UcieczkaDubbing.vdf
 [FILES]
 [EXCLUDE]
 [INCLUDE]

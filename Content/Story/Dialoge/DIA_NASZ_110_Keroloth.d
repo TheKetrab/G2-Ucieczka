@@ -1648,7 +1648,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Before_Info()
 	
 	Log_CreateTopic (TOPIC_Keroloth_narzedzia, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Keroloth_narzedzia, LOG_RUNNING);
-	B_LogEntry (TOPIC_Keroloth_narzedzia, "Twierdza faktycznie jest w op³akanym stanie i w obecnej postaci nie wytrzyma³aby jednego szturmu orków. Mam wiêc udaæ siê do zamku i poza poinformowaniem reszty w obozie o wymarszu, zabraæ stamt¹d tak¿e piêæ pi³, szeœæ m³otków i cztery kilofy.");
+	B_LogEntry (TOPIC_Keroloth_narzedzia, "Twierdza faktycznie jest w op³akanym stanie i w obecnej postaci nie wytrzyma³aby jednego szturmu orków. Mam wiêc udaæ siê do obozu £owców Orków i poza poinformowaniem reszty w obozie o wymarszu, zabraæ stamt¹d tak¿e piêæ pi³, szeœæ m³otków i cztery kilofy.");
 
 	B_LogEntry (TOPIC_Keroloth_Wojna, "Keroloth dotar³ do twierdzy. Ale to dopiero pocz¹tek wojny... Muszê koniecznie za³atwiæ narzêdzia, aby wzmocniæ zabezpieczenia.");
 

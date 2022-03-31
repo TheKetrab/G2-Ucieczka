@@ -247,7 +247,7 @@ FUNC VOID DIA_NASZ_117_Fed_HowAreYou_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_117_Fed_HowAreYou_15_00"); //Jak siê czujesz?
 	
-	if !(npc_knowsinfo (other, DIA_NASZ_412_CatSan_UrShackKilled))
+	if !(npc_knowsinfo(other, DIA_NASZ_412_CatSan_UrShackKilled) || npc_knowsinfo(other, DIA_NASZ_115_Kurgan_AfterSzturmNaZamek))
 	{
 		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_01"); //Muszê przyznaæ, ¿e trochê siê bojê. Szykuje siê pierwsza powa¿na bitwa.
 		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_02"); //Ale z drugiej strony uwa¿am, ¿e jestem dobrze przygotowany dziêki treningom u Kurgana.

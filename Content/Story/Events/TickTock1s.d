@@ -229,7 +229,7 @@ func void ZadanieJehen()
 	
 			Log_CreateTopic (TOPIC_Jehen_zagubiony, LOG_MISSION);
 			Log_SetTopicStatus (TOPIC_Jehen_zagubiony, LOG_RUNNING);
-			B_LogEntry (TOPIC_Jehen_zagubiony, "Dziwne, po wyjœciu z kopalni nie spotka³em Jehena. Czy¿by gdzieœ siê uda³? Z zakrwawion¹ rêk¹ nie mo¿e byæ daleko. Chyba ¿e porwa³ go pr¹d rzeki albo wodospadu? Muszê go jak najszybciej odszukaæ.");
+			B_LogEntry (TOPIC_Jehen_zagubiony, "Dziwne, po wyjœciu z jaskini nie spotka³em Jehena. Czy¿by gdzieœ siê uda³? Z zakrwawion¹ rêk¹ nie mo¿e byæ daleko. Chyba ¿e porwa³ go pr¹d rzeki albo wodospadu? Muszê go jak najszybciej odszukaæ.");
 			ff_remove(ZadanieJehen);
 
 		};

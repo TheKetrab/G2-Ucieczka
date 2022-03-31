@@ -85,7 +85,7 @@ INSTANCE ItFo_Addon_Rum(C_Item)
 			DrunkTrinken += 1;
 		};
 		
-		PercentHealSelf(Mana_Rum,ATR_HITPOINTS);
+		Npc_ChangeAttribute(self,ATR_MANA,Mana_Rum);
 	};
 
 //#############################################

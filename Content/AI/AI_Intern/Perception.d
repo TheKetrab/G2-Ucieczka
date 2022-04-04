@@ -4,9 +4,13 @@
 
 FUNC VOID InitPerceptions()
 {
-	MEM_InitAll();
+	
+	//MEM_InitAll();
+	//it helps with stack overflow error
+	LeGo_Init(LeGo_All);
 	
 	MEM_CallByString("QS_DisableKeyInit");
+	
 	// Die Reichweite der aktiven Wahrnehmungen
 	// PERC_ASSESSPLAYER	// Spieler wird wahrgenommen
 	// PERC_ASSESSENEMY		// der nächste NSC, zu dem ich Att_Hostile habe, wird wahrgenommen! (wenn Temp_Att != Gil_Att, wird Temp_att genommen)

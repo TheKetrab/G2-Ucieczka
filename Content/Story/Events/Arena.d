@@ -11,6 +11,16 @@ func int NpcBreakArenaLaw(var c_npc slf) {
 	return false;
 };
 
+func void StopWatchFightFix(var c_npc slf)
+{
+	if(Npc_IsInState(slf, ZS_WatchFight))
+	{
+		Npc_ClearAIQueue(slf);
+		AI_StandUpQuick(slf);
+		AI_ContinueRoutine(slf);
+	};
+};
+
 func int HeroIsLeavingArena() {
 
 	if (Npc_GetDistToWP (hero, "NASZ_LOWCY_ARENA_01") >= 660)
@@ -24,8 +34,99 @@ func int HeroIsLeavingArena() {
 	return false;
 };
 
+func void EndFight(var c_npc slf, var c_npc slf2, var int heroWon)
+{
+	Arena_Przegrana_Raz = TRUE;
+	CzasZakonczycWalkeZPowoduX = TRUE;
+
+	var int secondValid; secondValid = Hlp_IsValidNpc(slf2);
+	
+	if(secondValid)
+	{
+		Npc_ClearAIQueue(slf2);
+		AI_StandUpQuick(slf2);
+	};
+	
+	if(heroWon)
+	{
+		PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
+		slf.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+		if(secondValid)
+		{
+			slf2.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			Npc_SendPassivePerc (slf2, PERC_ASSESSDEFEAT, hero, slf2);
+		};
+		Npc_SendPassivePerc (slf, PERC_ASSESSDEFEAT, hero, slf);
+	}
+	else
+	{
+		PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
+		slf.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+		
+		if(secondValid)
+		{
+			slf2.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			Npc_SendPassivePerc (slf2, PERC_ASSESSDEFEAT, slf2, hero);
+		};
+		Npc_SendPassivePerc (slf, PERC_ASSESSDEFEAT, slf, hero);
+			
+	};
+	
+	
+	//DoForSphere(StopWatchFightFix);
+};
+
+func void EndFight_Check(var c_npc slf, var c_npc slf2)
+{
+	if (HeroIsLeavingArena()) {
+		PrintScreen	("Opuszczasz arenê...", -1,-1, "font_old_20_white.tga",2);
+		Arena_Opuszczasz_Raz = TRUE;
+	};
+	
+	if(Arena_Przegrana_Raz == FALSE)
+	{	
+		if (NpcBreakArenaLaw(hero))
+		{
+			EndFight(slf,slf2,false);
+		}
+		else if(NpcBreakArenaLaw(slf) || (Hlp_IsValidNpc(slf2) && NpcBreakArenaLaw(slf2)))
+		{
+			EndFight(slf,slf2,true);
+		};
+		
+	};
+	
+	
+};
+
 func void ARENA ()
 {
+	var c_npc slf; var c_npc slf2;
+	
+	if (FED_WALCZY == TRUE) && !(NASZ_117_Fed.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) 
+	{
+		EndFight_Check(NASZ_117_Fed,null);
+	}
+	else if (KJORN_WALCZY == TRUE) && !(NASZ_116_Kjorn.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) 
+	{
+		EndFight_Check(NASZ_116_Kjorn,null);
+	}
+	else if (FERROS_WALCZY == TRUE) && !(NASZ_118_Ferros.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) 
+	{
+		EndFight_Check(NASZ_118_Ferros,null);
+	}
+	else if (GODARHOKURN_WALCZY == TRUE) && (!(NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) 
+			|| !(NASZ_114_Hokurn.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)) 
+	{
+		EndFight_Check(NASZ_113_Godar,NASZ_114_Hokurn);
+	}
+	else if (KURGAN_WALCZY == TRUE) && !(NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) 
+	{
+		EndFight_Check(NASZ_115_Kurgan,null);
+	};
+	/*return;
+
+
 
 	//Fed
 	if (FED_WALCZY == TRUE) && !(NASZ_117_Fed.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) {
@@ -43,6 +144,8 @@ func void ARENA ()
 			B_Attack (NASZ_117_Fed,hero, AR_NONE, 0);
 			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_117_Fed.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 
 		if (NpcBreakArenaLaw(NASZ_117_Fed))
@@ -54,6 +157,8 @@ func void ARENA ()
 			B_Attack (NASZ_117_Fed,hero, AR_NONE, 0);
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_117_Fed.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 		
 	};
@@ -74,6 +179,8 @@ func void ARENA ()
 			B_Attack (NASZ_116_Kjorn,hero, AR_NONE, 0);
 			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_116_Kjorn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 
 		if (NpcBreakArenaLaw(NASZ_116_Kjorn))
@@ -85,6 +192,8 @@ func void ARENA ()
 			B_Attack (NASZ_116_Kjorn,hero, AR_NONE, 0);
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_116_Kjorn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 	};
 	
@@ -104,6 +213,8 @@ func void ARENA ()
 			B_Attack (NASZ_118_Ferros,hero, AR_NONE, 0);
 			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_118_Ferros.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 
 		if (NpcBreakArenaLaw(NASZ_118_Ferros))
@@ -115,6 +226,8 @@ func void ARENA ()
 			B_Attack (NASZ_118_Ferros,hero, AR_NONE, 0);
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_118_Ferros.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 	};
 	
@@ -139,6 +252,8 @@ func void ARENA ()
 			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
 			NASZ_114_Hokurn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 
 		if (NpcBreakArenaLaw(NASZ_113_Godar))
@@ -155,6 +270,8 @@ func void ARENA ()
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
 			NASZ_114_Hokurn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 		
 		if (NpcBreakArenaLaw(NASZ_114_Hokurn))
@@ -171,6 +288,8 @@ func void ARENA ()
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_113_Godar.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
 			NASZ_114_Hokurn.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 	};
 	
@@ -191,6 +310,8 @@ func void ARENA ()
 			B_Attack (NASZ_115_Kurgan,hero, AR_NONE, 0);
 			PrintScreen	("PRZEGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_WON;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 
 		if (NpcBreakArenaLaw(NASZ_115_Kurgan))
@@ -202,9 +323,11 @@ func void ARENA ()
 			B_Attack (NASZ_115_Kurgan,hero, AR_NONE, 0);
 			PrintScreen	("WYGRANA", -1,-1, "font_old_20_white.tga",2);
 			NASZ_115_Kurgan.aivar[AIV_LastFightAgainstPlayer] = FIGHT_LOST;
+			
+			DoForSphere(StopWatchFightFix);
 		};
 	};
-	
+	*/
 	
 };
 

@@ -2,9 +2,9 @@
 // SPACER: numCanBeActivated=int:-1
 func void TARCZA_OBOZ_WYPADOWY() {
 	
-	if (Tabuk_Tarcza1 == TRUE)
+	if ((Tabuk_Tarcza1 == TRUE)
 	&& (Tabuk_Tarcza1_Wystrzelono <= 3)
-	&& (Npc_GetDistToWP(hero,"NASZ_MYSLIWI_GRUPA_TARCZA1") < 300)
+	&& (Npc_GetDistToWP(hero,"NASZ_MYSLIWI_GRUPA_TARCZA1") < 300))
 	{
 		Print("Trafiony!");
 		Tabuk_Tarcza1_Trafiono += 1;	

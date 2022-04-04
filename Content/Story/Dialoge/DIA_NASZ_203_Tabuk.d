@@ -119,8 +119,9 @@ FUNC VOID DIA_NASZ_203_Tabuk_OfCourse_Info()
 	Npc_ExchangeRoutine (self, "Tarcza1");
 
 	Tabuk_Tarcza1 = TRUE;
-	Tabuk_HeroMunition = GetMunitionAmmount(hero);
+	//Tabuk_HeroMunition = GetMunitionAmmount(hero);
 	Tabuk_Tarcza1_Wystrzelono = 0;
+	TabukStrzelanie_DobreMiejsce = 0;
 	Tabuk_Tarcza1_Trafiono = 0;	
 	FF_ApplyOnceExt(TabukStrzelanie,1000,-1);
 	
@@ -181,9 +182,10 @@ FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone1_Info()
 
 	Tabuk_Tarcza1 = FALSE;
 	Tabuk_Tarcza2 = TRUE;
-	Tabuk_HeroMunition = GetMunitionAmmount(hero);
+	//Tabuk_HeroMunition = GetMunitionAmmount(hero);
 	Tabuk_Tarcza2_Wystrzelono = 0;
 	Tabuk_Tarcza2_Trafiono = 0;	
+	TabukStrzelanie_DobreMiejsce = 0;
 
 	AI_StopProcessInfos(self);
 };

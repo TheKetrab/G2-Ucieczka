@@ -9,7 +9,7 @@
 func void B_CheerFight ()						//wird nur hier (lokal) benutzt
 {
 	// EXIT IF...
-	
+	//Print("cheer");
 	if (Npc_GetStateTime(self) <= 2) 			
 	{
 		return;
@@ -145,6 +145,8 @@ func int ZS_WatchFight_Loop ()
 	// danach ZS_ObservePlayer
 	
 	// ------ Beide Typen sind zu weit weg ------
+	
+	
 	if ((self.id == 304) || (self.id == 307)) && (StopWatchFightNod == TRUE)
 	{
 		Npc_ClearAIQueue(self);
@@ -227,6 +229,7 @@ func int ZS_WatchFight_Loop ()
 			};
 			
 			self.aivar[AIV_StateTime] = Npc_GetStateTime(self);
+			
 		};
 	};
 	

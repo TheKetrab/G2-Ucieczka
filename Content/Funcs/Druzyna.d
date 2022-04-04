@@ -20,6 +20,8 @@ func void Druzyna(var C_NPC slf, var int add)
 
 func void _Druzyna(var C_NPC slf, var int add) //dodawanie lub odejmowanie goœcia z dru¿yny
 {
+	Print(slf.name);
+	
 	if (slf.guild > 16) { // <-- czyli jesli nie jest czlowiekiem
 		slf.aivar[AIV_PARTYMEMBER]=TRUE; // bedzie partymemberem do smierci, wiec nie trzeba wylaczac
 		return; // zeby nie modyfikowal licznika stanu druzyny

@@ -28,7 +28,6 @@ func void INIT_GLOBAL()
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL); 
 	
-	
 	FF_ApplyOnceExt (DistanceMeasurement, 250, -1); //raz na 250ms
 	FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
 	FF_ApplyOnceExt (TickTock_5s, 5000, -1); //raz na 5s
@@ -44,10 +43,20 @@ func void INIT_GLOBAL()
 	QuickSlot_Init();
 	B_AddFightSkill(hero,0,0);
 	
+	CheckMunition();
+
+	
+	//CheckMunition_LoadGame();
+	
 	// FIX UCIECZKA 1.1 - po kazdym wczytaniu zmien mu imie, bo wczytanie zmienia imie na defaultowe
 	if (npc_knowsinfo(hero,DIA_NASZ_306_Perrot_done)) {
-		SetName(NASZ_315_Bandzior, "Donks");
-		ShowName(NASZ_315_Bandzior);
+		
+		//FIX UCIECZKA 1.2 - usuniêcie b³êdów z zspy, gdy nie ma go w œwiecie
+		if(Hlp_IsValidNpc(NASZ_315_Bandzior))
+		{
+			SetName(NASZ_315_Bandzior, "Donks");
+			ShowName(NASZ_315_Bandzior);
+		};
 	};
 
 	// FIX UCIECZKA 1.2 - po kazdym wczytaniu zmien zbroje, bo wczytanie zmienia cia³o na defaultowe

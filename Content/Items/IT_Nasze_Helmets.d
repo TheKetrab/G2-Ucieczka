@@ -5,34 +5,6 @@ const int INVCAM_Y_HELMET_STANDARD    = 25;
 // **********************************************
 // . . . . . . . . . . He³my . . . . . . . . . .
 // **********************************************
-
-//EngineAdr_GX.d containts it
-//const int oCNpc__EquipItem = 7545792;
-func void Engine_Npc_EquipItem(var int npcPtr, var int itemPtr)
-{
-	Call_PtrParam(itemPtr);
-	CALL__thiscall(npcPtr,oCNpc__EquipItem);
-};
-
-func void Npc_EquipHelmet(var c_npc npc, var int helmetInst)
-{
-	if(!Hlp_IsValidNpc(npc)){return;};
-	
-	if(!Npc_GetInvItem(npc,helmetInst))
-	{
-		CreateInvItems(npc,helmetInst,1);
-	};	
-	
-	var int npcPtr; npcPtr = _@(npc);
-	var int itemPtr; itemPtr = _@(item);
-	
-	
-	if(!npcPtr || !ItemPtr){return;};
-	
-	Engine_Npc_EquipItem(npcPtr,itemPtr);
-};
-
-
 //----- Helmet -----
 INSTANCE Helmets (C_Item)
 {

@@ -47,6 +47,7 @@ func void ClearMobContainer(var string mobContainerName) {
 var int NpcsInFight;
 func void ZmienStylWalki( /*var c_npc master*/ ) {
   
+
   if (!ECX) {return;};
   var c_npc master; master = _^ (ECX);
   var c_item itm; itm = Npc_GetEquippedMeleeWeapon(master);
@@ -1117,7 +1118,8 @@ func void _AI_FUNCTION_EVENT() {
         MEM_PushIntParam(i1);
 	}
 	else if (Hlp_StrCmp(argc, "NNII")) { // G2U
-        i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+
+	    i0 = STR_ToInt(STR_Split(AniName, " ", 2));
         i1 = STR_ToInt(STR_Split(AniName, " ", 3));
         i2 = STR_ToInt(STR_Split(AniName, " ", 4));
         i3 = STR_ToInt(STR_Split(AniName, " ", 5));
@@ -1127,8 +1129,24 @@ func void _AI_FUNCTION_EVENT() {
         MEM_PushIntParam(i2);
         MEM_PushIntParam(i3);
 	}
+	else if (Hlp_StrCmp(argc, "NII")) { // G2U
+	
+		i0 = STR_ToInt(STR_Split(AniName, " ", 2));
+		i1 = STR_ToInt(STR_Split(AniName, " ", 3));
+		i2 = STR_ToInt(STR_Split(AniName, " ", 4));
+		fnc = STR_ToInt(STR_Split(AniName, " ", 5));
+		 
+		var c_npc npc; npc = _^(i0);
+		 
+		MEM_PushInstParam(npc);
+		MEM_PushIntParam(i1);
+		MEM_PushIntParam(i2);
+	
+		
+	}
     else {
         fnc = STR_ToInt(argc);
     };
+	
     MEM_CallByID(fnc);
 };

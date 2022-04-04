@@ -174,7 +174,7 @@ func int QS_GetSpellItem	(var int magBook)
 };
 
 
-func int GetItemFromInv(var int npcPtr, var int ptr)
+func int GetItemFromInv(var int npcPtr, var int ptr, var int amount)
 {
 	//var int invPtr; invPtr = MEM_ReadInt(npcPtr+1640);
 	
@@ -183,7 +183,7 @@ func int GetItemFromInv(var int npcPtr, var int ptr)
 	
 	var int invPtr; invPtr = npc.inventory2_vtbl;
 	
-	CALL_IntParam(1);
+	CALL_IntParam(amount);
 	CALL_PtrParam(ptr);
 	
 	CALL__Thiscall(invPtr,oCNpcInventory__IsIn);

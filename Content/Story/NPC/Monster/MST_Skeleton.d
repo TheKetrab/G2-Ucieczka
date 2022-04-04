@@ -86,6 +86,7 @@ func void B_SetVisuals_Lesser_Skeleton()
 
 INSTANCE Skeleton			(Mst_Default_Skeleton)
 {
+
 	B_SetVisuals_Skeleton();
 	fight_tactic	=	FAI_HUMAN_MASTER;
 	B_SetFightSkills (self, 90);

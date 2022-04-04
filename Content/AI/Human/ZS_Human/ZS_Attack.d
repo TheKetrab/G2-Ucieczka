@@ -134,7 +134,7 @@ func int ZS_Attack_Loop ()
 	
 
 	// GODAR
-	if (CzasZakonczycWalkeZPowoduXGODAR == TRUE)
+	/*if (CzasZakonczycWalkeZPowoduXGODAR > 0)
 	&& (WalkaTrwa == TRUE)
 	&& (self.id == 113)
 	{
@@ -142,33 +142,51 @@ func int ZS_Attack_Loop ()
 		Npc_ClearAIQueue(self);
 		AI_StandUpQuick(self);
 		
+
 		CzasZakonczycWalkeZPowoduXGODAR = FALSE;
+	
 		
 		return LOOP_END;
 	};
 	
 	// HOKURN
-	if (CzasZakonczycWalkeZPowoduXHOKURN == TRUE)
+	if (CzasZakonczycWalkeZPowoduXHOKURN > 0)
 	&& (WalkaTrwa == TRUE)
-	&& (self.id == 113)
+	&& (self.id == 114)
 	{
 		B_ClearPerceptions (self);
 		Npc_ClearAIQueue(self);
 		AI_StandUpQuick(self);
 		
-		CzasZakonczycWalkeZPowoduXHOKURN = FALSE;
+		CzasZakonczycWalkeZPowoduXHOKURN = false;
 		
 		return LOOP_END;
-	};
+	};*/
 	
 	
-	if (CzasZakonczycWalkeZPowoduX == TRUE) && (WalkaTrwa == TRUE)
+	if (CzasZakonczycWalkeZPowoduX) && (WalkaTrwa == TRUE)
 	&& ((self.id == 117) || (self.id == 116) || (self.id == 118) || (self.id == 113) || (self.id == 114) || (self.id == 115) || (self.id == 304))
 	{
 		B_ClearPerceptions (self);
 		Npc_ClearAIQueue(self);
 		AI_StandUpQuick(self);
-		CzasZakonczycWalkeZPowoduX = FALSE;
+		
+		//GODAR i HOKURN
+		if(self.id == 113 || self.id == 114)
+		{
+			if(CzasZakonczycWalkeZPowoduX == true)
+			{
+				CzasZakonczycWalkeZPowoduX = 2;
+			}
+			else
+			{
+				CzasZakonczycWalkeZPowoduX = 4;
+			};
+		}
+		else
+		{
+			CzasZakonczycWalkeZPowoduX = FALSE;
+		};
 		
 		return LOOP_END;
 	};

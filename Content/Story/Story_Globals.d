@@ -1782,6 +1782,7 @@ var int Tabuk_Tarcza1_Wystrzelono;
 var int Tabuk_Tarcza2_Wystrzelono;
 var int Tabuk_Tarcza1_Trafiono;
 var int Tabuk_Tarcza2_Trafiono;
+var int TabukStrzelanie_DobreMiejsce;
 var int Golem_MIS_Running;
 var int Golem_MIS_Killed;
 var int WillFoundSwordsOrcAndDraconian;

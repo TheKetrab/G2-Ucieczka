@@ -180,6 +180,24 @@ func void LiftReady()
 
 };
 
+
+//ucieczka 1.2
+func void TabukStrzelanie_Wystrzelenie_Hook()
+{
+	if(TabukStrzelanie_DobreMiejsce == false){ return; };
+	
+	if (Tabuk_Tarcza1 == TRUE) 
+	{
+		Tabuk_Tarcza1_Wystrzelono += 1;
+	}
+	else if (Tabuk_Tarcza2 == TRUE)
+	{
+		Tabuk_Tarcza2_Wystrzelono += 1;
+	};
+		
+};
+
+
 func void TabukStrzelanie()
 {
 	// ***** ***** ***** ***** *****
@@ -187,32 +205,40 @@ func void TabukStrzelanie()
 	// ***** ***** ***** ***** *****
 	
 	if (Tabuk_Tarcza1 == TRUE) 
-	&& (Tabuk_Tarcza1_Wystrzelono <= 3)	
+	&& (Tabuk_Tarcza1_Wystrzelono < 3)	
 	{
 		if (Npc_GetDistToWP(hero,"NASZ_MYSLIWI_GRUPA_TARCZA1") < 300) {
 			
 			PrintScreen ("Stoisz w dobrym miejscu, strzelaj!", 75, 75, FONT_ScreenSmall, 1);
-			
-			if (GetMunitionAmmount(hero) < Tabuk_HeroMunition) { // tzn, ze wystrzeliles strzale
-				Tabuk_HeroMunition = GetMunitionAmmount(hero);
-				Tabuk_Tarcza1_Wystrzelono += 1;
-			};
+			TabukStrzelanie_DobreMiejsce = true;
+			//if (GetMunitionAmmount(hero) < Tabuk_HeroMunition) { // tzn, ze wystrzeliles strzale
+				//Tabuk_HeroMunition = GetMunitionAmmount(hero);
+				//Tabuk_Tarcza1_Wystrzelono += 1;
+			//};
 
+		}
+		else
+		{
+			TabukStrzelanie_DobreMiejsce = false;
 		};
 	};
 	
 	if (Tabuk_Tarcza2 == TRUE)
-	&& (Tabuk_Tarcza2_Wystrzelono <= 3)
+	&& (Tabuk_Tarcza2_Wystrzelono < 3)
 	{		
 		if (Npc_GetDistToWP(hero,"ROCKCAMP") < 300) {
 			
 			PrintScreen ("Stoisz w dobrym miejscu, strzelaj!", 75, 75, FONT_ScreenSmall, 1);
-			
-			if (GetMunitionAmmount(hero) < Tabuk_HeroMunition) { // tzn, ze wystrzeliles strzale
-				Tabuk_HeroMunition = GetMunitionAmmount(hero);
-				Tabuk_Tarcza2_Wystrzelono += 1;
-			};
+			TabukStrzelanie_DobreMiejsce = true;
+			//if (GetMunitionAmmount(hero) < Tabuk_HeroMunition) { // tzn, ze wystrzeliles strzale
+				//Tabuk_HeroMunition = GetMunitionAmmount(hero);
+				//Tabuk_Tarcza2_Wystrzelono += 1;
+			//};
 
+		}
+		else
+		{
+			TabukStrzelanie_DobreMiejsce = false;
 		};
 	};
 
@@ -1269,44 +1295,8 @@ var int ObozOrkowoInfoOneTime;
 var int HeroKilofy;			// wykomentowane
 var int HeroBrylkiZlota;	// wykomentowane
 
-func void _TickTock_1s()
+func void Renegaci_alert()
 {
-	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
-	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry趾i z這ta znikn窸y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
-	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
-	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) < HeroKilofy) { Print("UWAGA!!! Kilof znikn像."); HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
-	
-	if (C_BodyStateContains(hero,BS_DIVE)) {
-		DivingTime += 1;
-	};
-
-	//Print(IntToString(C_IsInMysliwiTerritory()));
-	//Print(IntToString(Npc_GetBodyState(hero)));
-	//Print(IntToString(WillUsedWheelTwierdza));
-	//Print(IntToString(bAllTwierdzaOrcsAreDead()));
-
-	
-	// ticktocki w innych plikach
-	
-	ARENA();
-	Check_OSIAGNIECIA();
-	
-	if (!SavingDisabled) { 
-		TryToTakeHelmetFromKnight();
-	};
-
-
-	if (PhillGraPlaying==FALSE && ((Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) && (Npc_IsInState(NASZ_104_Engor, ZS_Talk)==FALSE))) {
-		B_PhillGraStartMusic();
-	}
-	
-	if (PhillGraPlaying==TRUE && (!(Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) || (Npc_IsInState(NASZ_104_Engor, ZS_Talk)))) {
-		B_PhillGraStopMusic();
-	}
-	
-	
-	if (WillWantToKillRenegats == FALSE)
-	{
 		if (!C_BodyStateContains(NASZ_009_Marcos, BS_LIE)) && (MarcosBiegnieOneTime == FALSE) && (Npc_GetDistToNpc(NASZ_009_Marcos, hero) < 1100)
 		{
 			B_Say_Overlay (NASZ_009_Marcos, hero, "$ALARM");	//ALARM!
@@ -1342,7 +1332,48 @@ func void _TickTock_1s()
 			AI_RunToNPC(NASZ_006_Renegat, hero);
 			Renegat06BiegnieOneTime = TRUE;
 		};
-	};	
+};
+
+
+func void _TickTock_1s()
+{
+	
+	
+	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry趾i z這ta znikn窸y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
+	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) < HeroKilofy) { Print("UWAGA!!! Kilof znikn像."); HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };
+	
+	if (C_BodyStateContains(hero,BS_DIVE)) {
+		DivingTime += 1;
+	};
+
+	//Print(IntToString(C_IsInMysliwiTerritory()));
+	//Print(IntToString(Npc_GetBodyState(hero)));
+	//Print(IntToString(WillUsedWheelTwierdza));
+	//Print(IntToString(bAllTwierdzaOrcsAreDead()));
+
+	
+	// ticktocki w innych plikach
+	
+	ARENA();
+	Check_OSIAGNIECIA();
+	
+	if (!SavingDisabled) { 
+		TryToTakeHelmetFromKnight();
+	};
+	
+
+	if (PhillGraPlaying==FALSE && ((Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) && (Npc_IsInState(NASZ_104_Engor, ZS_Talk)==FALSE))) {
+		B_PhillGraStartMusic();
+	};
+	
+	if (PhillGraPlaying==TRUE && (!(Wld_IsTime(20,20,00,00) || Wld_IsTime(00,00,02,45)) || (Npc_IsInState(NASZ_104_Engor, ZS_Talk)))) {
+		B_PhillGraStopMusic();
+	};
+	
+	
+	Renegaci_alert();
 	
 	
 	if (BramaDoOrka == FALSE && BramaDoOrkaTickTockOneTime == FALSE && !npc_isdead (OrcScoutHerszt) && !npc_isdead (OrcShamanHerszt) && Npc_GetDistToWP	(hero, "OC_EBR_ENTRANCE") <=1000) 

@@ -466,7 +466,9 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	// PRZEWRACANIE
 	if(victimPtr && attackerPtr && Hlp_IsValidNpc(oth) &&  Npc_IsPlayer(oth) &&dmg)
 	{
-			if(slf.guild == gil_snapper && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
+			var int fallAniActive; fallAniActive = AniIsActive(oth, "T_FALLB_2_FALLENB");
+			
+			if(slf.guild == gil_snapper && !fallAniActive)
 			{
 				slf.aivar[AIV_RandomDmg] = hlp_random(250);
 
@@ -481,7 +483,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 				};
 			
 			}
-			else if (slf.guild == GIL_ZOMBIE && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
+			else if (slf.guild == GIL_ZOMBIE && !fallAniActive)
 			{
 				if (attackerPtr == _@(Ozywieniec))
 				{
@@ -515,7 +517,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					//StartFlyDamage (oth, 5, 10, 5, 10);
 				//};
 			//}
-			else if (slf.guild == GIL_GIANT_BUG && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
+			else if (slf.guild == GIL_GIANT_BUG && !fallAniActive)
 			{
 					slf.aivar[AIV_RandomDmg] = hlp_random(200);
 					if (slf.aivar[AIV_RandomDmg] <=34 || slf.aivar[AIV_RandomDmg] >=190) && (PierscienGrubegoMysliwegoUbrany == FALSE)
@@ -529,7 +531,7 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 					};
 			
 			}			
-			else if (slf.guild == GIL_MINECRAWLER && !AniIsActive(oth, "T_FALLB_2_FALLENB"))
+			else if (slf.guild == GIL_MINECRAWLER && !fallAniActive)
 			{
 					if(slf.aivar[AIV_MM_REAL_ID] == ID_MINECRAWLER)
 					{

@@ -834,9 +834,46 @@ func void CheckItemConditions_Init()
 };
 
 
+func void Npc_DoShootArrow_Hook()
+{
+	//var int isPlayer; isPlayer = ECX == MEM_ReadInt(_hero);
+	var int isPlayer; isPlayer = ESI == MEM_ReadInt(_hero);
+	if(isPlayer == false)
+	{
+		return;
+	};
+	
+	TabukStrzelanie_Wystrzelenie_Hook();
+	
+};
+
+const int oCNpc__EquipBestWeapon = 7663408;
+
+func void oCNpc__EquipBestWeapon_Hook()
+{
+	var c_npc slf; slf = _^(ECX);
+	
+	if(slf.aivar[AIV_ChapterInv])
+	{
+		MEM_WriteInt(ESP+4,-1);
+		
+		//if(!Npc_HasEquippedMeeleWeapon())
+		//{
+			//AI_Engine_EquipWeapon(slf,itmw_1h_bau_mace,1);
+		//};
+	};
+};
+
+
+
 
 const int INV_MAX_ITEMS_addr = 8635508;
 const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
+
+//const int oCNpc__DoShootArrow_PostReturnConditions = 7620740;
+const int oCNpc__DoShootArrow_PostReturnConditions = 7620745;
+//const int oCNpc__IsMunitionAvailable = 7587552;
+
 func void Hooks_Global()
 {
 	InitDamage();
@@ -846,6 +883,8 @@ func void Hooks_Global()
 	if(!hooks){
 		
 		
+		HookEngineF(oCNpc__EquipBestWeapon,7,oCNpc__EquipBestWeapon_Hook);
+		HookEngineF(oCNpc__DoShootArrow_PostReturnConditions,6,Npc_DoShootArrow_Hook);
 		HookEngineF(cdecl__Game_CreateInstance,cdecl__Game_CreateInstance_Len,DisableAssessTheft);
 		
 		HookEngineF(oCNpc__CopyTransformSpellInvariantValuesTo,5,Transform);

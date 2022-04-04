@@ -4,6 +4,8 @@
 
 FUNC VOID B_StartOtherRoutine (var C_npc slf,var string newRoutine)
 {
+	
+	
 	AI_StandUp (slf);
 	if	(Hlp_GetInstanceID(self)	!=	Hlp_GetInstanceID(slf)	)
 	{

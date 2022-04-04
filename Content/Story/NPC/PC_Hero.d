@@ -40,6 +40,8 @@ instance PC_Hero (NPC_DEFAULT)
 	B_SetFightSkills 	(self, 0); 
 	Mdl_ApplyOverlayMds	(self, "Humans_X.mds"); 
 	//Npc_PercEnable(self, PERC_ASSESSDAMAGE, B_Hero_AssessDamage);	
+	
+	
 };
 
 instance PC_Hero_Kap1 (NPC_DEFAULT)

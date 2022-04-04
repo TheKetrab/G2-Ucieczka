@@ -288,10 +288,12 @@ INSTANCE DIA_NASZ_318_Gobby_WantToDrinkWithYou   (C_INFO)
 FUNC INT DIA_NASZ_318_Gobby_WantToDrinkWithYou_Condition()
 {
 	if (WillMozePicZGobbym == TRUE) && (npc_hasitems (other, ItFo_Booze) >= 2)
-	
 	{
+		
 		return TRUE;
 	};
+	
+	return FALSE;
 };
 
 FUNC VOID DIA_NASZ_318_Gobby_WantToDrinkWithYou_Info()
@@ -302,8 +304,15 @@ FUNC VOID DIA_NASZ_318_Gobby_WantToDrinkWithYou_Info()
 	};
 
 	AI_Output (other,self ,"DIA_NASZ_318_Gobby_WantToDrinkWithYou_15_00"); //Napijmy siê!
-	B_GiveInvItems (other, self, ItFo_Booze, 1);
+	
+	var c_npc oth; oth = hlp_getnpc(other);
+	var c_npc slf; slf = hlp_getnpc(self);
+	
+	//B_GiveInvItems (other, self, ItFo_Booze, 1);
+	B_GiveInvItems (oth,slf, ItFo_Booze, 1);
+	
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_WantToDrinkWithYou_55_01"); //Twoje zdrowie!
+	
 	B_UseItem (self, ItFo_Booze);
 	B_UseItem (other, ItFo_Booze);
 	

@@ -40,10 +40,19 @@ func int Spell_Logic_GotoPortal(var int manaInvested)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Teleport;		
 		FF_ApplyOnceExt (GotoPortalDelay, 500, -1); //raz na 0,5s
+		
  		return SPL_SENDCAST;		
 	};
 	
 	return SPL_NEXTLEVEL;
+};
+
+func void SavePortalPosition()
+{
+	var ocnpc hiro; hiro = hlp_getnpc(self);
+	Portal_X     = hiro._zCVob_trafoObjToWorld[3];
+	Portal_Y     = hiro._zCVob_trafoObjToWorld[7];
+	Portal_Z     = hiro._zCVob_trafoObjToWorld[11];
 };
 
 func int Spell_Logic_CreatePortal(var int manaInvested)
@@ -53,16 +62,19 @@ func int Spell_Logic_CreatePortal(var int manaInvested)
 	if (self.attribute[ATR_MANA] >= SPL_Cost_Scroll)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Teleport;
-		
-		var int playerId;
-		playerID = Hlp_GetInstanceID(hero);
-		var ocnpc hiro; hiro = hlp_getnpc(playerID);
-		Portal_X     = hiro._zCVob_trafoObjToWorld[3];
-		Portal_Y     = hiro._zCVob_trafoObjToWorld[7];
-		Portal_Z     = hiro._zCVob_trafoObjToWorld[11];
+		SavePortalPosition();
+		//var int playerId;
+		//playerID = Hlp_GetInstanceID(hero);
+		//var ocnpc hiro; hiro = hlp_getnpc(playerID);
+		//Portal_X     = hiro._zCVob_trafoObjToWorld[3];
+		//Portal_Y     = hiro._zCVob_trafoObjToWorld[7];
+		//Portal_Z     = hiro._zCVob_trafoObjToWorld[11];
+		//Ai_WaitMS(self,1500);
+		//AI_Function(self,SavePortalPosition);
 						
 		return SPL_SENDCAST;
 	};
+	return SPL_SENDCAST;
 	
 	return SPL_NEXTLEVEL;
 };
@@ -93,8 +105,9 @@ func void GotoPortal2Delay() {
 		hiro._zCVob_trafoObjToWorld[3]     = Portal2_X; 
 		hiro._zCVob_trafoObjToWorld[7]     = Portal2_Y; 
 		hiro._zCVob_trafoObjToWorld[11]    = Portal2_Z;
-
+		
  		AI_PlayAni		(self, "T_HEASHOOT_2_STAND" );
+		
 		
 		FF_Remove(GotoPortal2Delay);
 	};
@@ -113,6 +126,7 @@ func int Spell_Logic_GotoPortal2(var int manaInvested)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Teleport;
 		FF_ApplyOnceExt (GotoPortal2Delay, 500, -1); //raz na 0,5s
+		
  		return SPL_SENDCAST;
 	};
 	
@@ -127,13 +141,11 @@ func int Spell_Logic_CreatePortal2(var int manaInvested)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Teleport;
 				
-		var int playerId;
-		playerID = Hlp_GetInstanceID(hero);
-		var ocnpc hiro; hiro = hlp_getnpc(playerID);
-		Portal2_X     = hiro._zCVob_trafoObjToWorld[3];
-		Portal2_Y     = hiro._zCVob_trafoObjToWorld[7];
-		Portal2_Z     = hiro._zCVob_trafoObjToWorld[11];
-						
+		SavePortalPosition();
+		
+		
+		Ai_WaitMS(self,1500);		
+		
 		return SPL_SENDCAST;
 	};
 	

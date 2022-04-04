@@ -188,3 +188,204 @@ func void Wld_VobEffect_Vob(var string effect, var int vob) // vob = vobId
 	var zCVob destVob; destVob = _^(vob);
 	Wld_PlayEffect(effect, destVob, destVob, 0, 0, 0, FALSE );
 };
+
+//EngineAdr_GX.d containts it
+//const int oCNpc__EquipItem = 7545792;
+func void Engine_Npc_EquipItem(var int npcPtr, var int itemPtr)
+{
+	Call_PtrParam(itemPtr);
+	CALL__thiscall(npcPtr,oCNpc__EquipItem);
+};
+
+func void Npc_EquipHelmet(var c_npc npc, var int helmetInst)
+{
+	if(!Hlp_IsValidNpc(npc)){return;};
+	
+	if(!Npc_GetInvItem(npc,helmetInst))
+	{
+		CreateInvItems(npc,helmetInst,1);
+	};	
+	
+	var int npcPtr; npcPtr = _@(npc);
+	var int itemPtr; itemPtr = _@(item);
+	
+	
+	if(!npcPtr || !ItemPtr){return;};
+	
+	Engine_Npc_EquipItem(npcPtr,itemPtr);
+};
+
+//funkcja powinna być wywołana za pomocą AI_Engine_EquipWeapon
+func void Engine_EquipWeapon(var c_npc slf, var int inst, var int createItemIfNotValid)
+{
+	var int npcPtr; npcPtr = ECX;//_@(self);
+	if(!npcPtr)
+	{
+		MEM_Info("NPC_InsepctWeapon: npc is null");
+		return;
+	};
+	
+	
+	if(!Npc_GetInvItem(self,inst) && createItemIfNotValid)
+	{	 
+		CreateInvItem(self,inst);
+	};
+	
+	var int itemPtr; itemPtr = _@(item);
+
+	var c_item weapon;
+	weapon = Npc_GetEquippedMeleeWeapon(self);
+		
+	if(!Hlp_IsValidItem(weapon))
+	{
+		weapon = Npc_GetReadiedWeapon(self);
+	};
+		
+	
+	if(Hlp_IsValidItem(weapon) && Hlp_GetInstanceId(weapon) != inst && inst != -1)
+	{
+		if(weapon.mainflag == item.mainflag)
+		{
+			//unequip current item
+			var int weaponPtr; weaponPtr = _@(weapon);
+			oCNpc_UnequipItem(self,weaponPtr);
+		};
+		
+		
+		Engine_Npc_EquipItem(npcPtr,itemPtr);
+	};
+	
+};
+
+func void AI_Engine_EquipWeapon(var c_npc slf, var int inst, var int createItemIfNotValid)
+{
+	AI_RemoveWeapon (slf);
+	AI_Function_II(slf,Engine_EquipWeapon,ItMw_Orkschlaechter,createItemIfNotValid);
+};
+
+func void Npc_InspectWeapon(var c_npc slf, var int inst, var int createItemIfNotvalid)
+{
+	AI_RemoveWeapon (slf);
+	AI_Function_II(slf,Engine_EquipWeapon,ItMw_Orkschlaechter,createItemIfNotValid);
+	AI_ReadyMeleeWeapon	(slf);
+	AI_PlayAni		(slf, "T_1HSINSPECT");
+	AI_RemoveWeapon (slf);
+};
+
+func int MunitionVarToInstanceID(var int mun, var int crossbow)
+{
+	if(crossbow)
+	{
+		if(mun == NormalBolt)
+		{
+			return ItRw_Bolt;
+		}
+		else
+		{
+			return ItRw_SharpBolt;
+		};
+	}
+	else
+	{
+		if(mun == NormalArrow)
+		{
+			return ItRw_Arrow;
+		}
+		else if(mun == FireArrow)
+		{
+			return ItNa_OgnistaStrzala;
+		}
+		else if(mun == SharpArrow)
+		{
+			return ItNa_OstraStrzala;
+		}
+		else
+		{
+			return ItNa_LodowaStrzala;
+		};
+	};
+};
+
+func void Npc_DoRemoveMunition(var c_npc slf)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	if(!pNpc){return;};
+	
+	const int oCNpc__DoRemoveMunition = 7619696;
+	
+	CALL__Thiscall(pNpc,oCNpc__DoRemoveMunition);
+};
+
+
+
+func int Npc_HasInHand(var c_npc slf, var int inst)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	if(!pNpc || inst == -1){return 0;};
+	
+	
+	const int oCNpc__HasInHand = 7566176;
+	
+	CALL_IntParam(inst);
+	CALL__Thiscall(pNpc,oCNpc__HasInHand);
+	
+	return CALL_RetValAsInt();
+
+};
+
+func void Npc_DoInsertMunition(var c_npc slf, var string node)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	CALL_zStringPtrParam(node);
+	CALL__Thiscall(pNpc,7618960);
+};
+
+func void CheckMunition()
+{
+	
+	var C_ITEM RangedWeapon;
+	
+	RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+	
+	if(!Hlp_IsValidItem(rangedWeapon))
+	{
+		RangedWeapon = Npc_GetReadiedWeapon(hero);
+		
+		if(!Hlp_IsValidItem(RangedWeapon) || rangedWeapon.mainflag != ITEM_KAT_FF)
+		{
+			return;
+		};
+	};
+	//MEM_InfoBox(IntToString(rangedWeapon.munition));
+	//if(Npc_HasInHand(hero,rangedWeapon.munition))
+	//{
+		//Npc_DoRemoveMunition(hero);
+		//MEM_InfoBox("hasin");
+	//};
+	Npc_DoRemoveMunition(hero);
+	
+	if(rangedWeapon.flags & ITEM_BOW)
+	{
+		rangedWeapon.munition = MunitionVarToInstanceID(BowMunition,0);
+	}
+	else
+	{
+		rangedWeapon.munition = MunitionVarToInstanceID(CBowMunition,1);
+	};
+	
+//	AI_StandupQuick(hero);
+	Npc_DoRemoveMunition(hero);
+	Npc_DoInsertMunition(hero,"ZS_RIGHTHAND");
+	
+	//if(Npc_HasInHand(hero,rangedWeapon.munition))
+	//{
+		//Npc_DoRemoveMunition(hero);
+		//MEM_InfoBox("hasin");
+		
+		//Npc_DoInsertMunition(hero,"ZS_RIGHTHAND");
+	//};
+
+};

@@ -45,13 +45,16 @@ func void TrollSpecialAttack_Loop() {
 	}
 	
 	// bum
-	else if (trollSpecialAttackSec == 3) {
+	else if (trollSpecialAttackSec == 3 && !PierscienGrubegoMysliwegoUbrany) {
 		
 		Wld_PlayEffect("FX_EarthQuake", trl, trl, 0, 0, 0, FALSE );
 		Snd_Play("PILLAR_MOVE");
 		// dist < 10m -> damage
 		if (Npc_GetDistToNpc(hero,trl) < 1000) {
 			Npc_ClearAIQueue(hero);
+			
+			
+			
 			StartFlyDamage (hero, 400, 80, 50, 10);
 			//var int hp; hp = hero.attribute[ATR_HITPOINTS];
 			hero.attribute[ATR_HITPOINTS] -= 100;

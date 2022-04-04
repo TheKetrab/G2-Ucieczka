@@ -354,7 +354,7 @@ INSTANCE DIA_NASZ_215_Kivo_OrkowaZguba   (C_INFO)
  	nr          = 32;
  	condition   = DIA_NASZ_215_Kivo_OrkowaZguba_Condition;
  	information = DIA_NASZ_215_Kivo_OrkowaZguba_Info;
- 	permanent   = FALSE;
+	permanent   = FALSE;
  	description = "O ten miecz ci chodzi?";
 };
 
@@ -367,15 +367,17 @@ FUNC INT DIA_NASZ_215_Kivo_OrkowaZguba_Condition()
 	};
 };
 
+
 FUNC VOID DIA_NASZ_215_Kivo_OrkowaZguba_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_215_Kivo_OrkowaZguba_15_00"); //O ten miecz ci chodzi?
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_OrkowaZguba_55_01"); //Poka¿.
 	B_giveinvitems (other, self, ItMw_Orkschlaechter, 1);
-	AI_EquipBestMeleeWeapon	(self);
-	AI_ReadyMeleeWeapon	(self);
-	AI_PlayAni		(self, "T_1HSINSPECT");
-	AI_RemoveWeapon (self);
+	
+	
+	var c_npc slf; slf = Hlp_GetNpc(self);
+	Npc_InspectWeapon(slf,ItMw_Orkschlaechter,true);
+	
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_OrkowaZguba_15_02"); //O tak... idealny!
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_OrkowaZguba_15_03"); //Dziêki, przyjacielu! WeŸ trochê z³ota w nagrodê.
 	Createinvitems (self, ItMi_Gold, 100);

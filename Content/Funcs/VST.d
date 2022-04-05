@@ -38,15 +38,54 @@ var int VST_Time; // ile razy current == previous
 
 var int VST_Kilometers;
 var int VST_Meters;
+/*
+class oCNpcTimedOverlay 
+{
+    var string m_sMdsName;
+    var float m_fTime;
+};
+
+const string Sprint_Mds = "HUMANS_SPRINT.MDS";
+
+func int SprintMdsActived()
+{
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	
+	
+	var int mds; mds = her.timedOverlays_data;
+	var int loop; loop = MEM_StackPos.position;
+	
+	if(mds)
+	{
+		var string mdsName; mdsName = MEM_ReadString(mds);
+		Print(mdsName);
+		if(Hlp_StrCmp(mdsName,Sprint_Mds))
+		{
+			Print("aaaa");
+			
+			return 1;
+		};
+		
+		mds = MEM_ReadInt(mds+4);
+		MEM_StackPos.position = loop;
+	}
+	else
+	{
+		return 0;
+	};
+	
+	
+};*/
 
 // frame function every 250 ms
 func void DistanceMeasurement() {
 
 	// archivize
 	VST_Previous = VST_Current;
-	
+
 	// set new VST mode
 	if      (WillMaUbranySpeedRing && C_BodyStateContains(hero,BS_RUN))	{ VST_Current = VST_SPRINT;	} // UWAGA, nie dziala na miksturze szybkosci i zebatym zielu, trzebaby zrobic ticktocka po wypiciu/zjedzeniu, nie dziala tez na apply overlay mds humans_sprint
+	//if      (C_BodyStateContains(hero,BS_RUN) && (WillMaUbranySpeedRing || SprintMdsActived()))	{ VST_Current = VST_SPRINT;	} 
 	else if (C_BodyStateContains(hero,BS_RUN))							{ VST_Current = VST_RUN;	}
 	else if (C_BodyStateContains(hero,BS_WALK))							{ VST_Current = VST_WALK;	}
 	else if (C_BodyStateContains(hero,BS_SNEAK)) 						{ VST_Current = VST_SNEAK;	}
@@ -80,5 +119,4 @@ func void DistanceMeasurement() {
 		VST_Kilometers += km;
 		VST_Meters = VST_Meters - km*1000;
 	};
-
 };

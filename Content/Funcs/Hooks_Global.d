@@ -523,6 +523,7 @@ func void SetNodeVisual(var c_npc pnpc, var string node, var string visual)
 	CALL_PtrParam(nde); 
 	CALL__thiscall(model, zCModel__SetNodeVisual);
 };
+/*
 const int oCNpc__EquipArmor = 7578768;
 func void hNpc_EquipArmor()
 {
@@ -542,7 +543,7 @@ func void hNpc_EquipArmor()
 
 	};
 	
-};
+};*/
 
 const int oCNpc__UpdateSlots = 7645648;
 func void UpdateStaffSlot()
@@ -743,7 +744,7 @@ func c_item AssignItem(var c_item itm)
 {
     MEM_PushInstParam(itm);
 };
-
+/*
 func void G_CheckItemConditions(var C_NPC slf, var C_Item itm,var int ptr)
 {	
 	var int bIsPlayer; bIsPlayer = Npc_IsPlayer(slf);
@@ -833,7 +834,7 @@ func void CheckItemConditions_Init()
 	};
 };
 
-
+*/
 func void Npc_DoShootArrow_Hook()
 {
 	//var int isPlayer; isPlayer = ECX == MEM_ReadInt(_hero);
@@ -874,6 +875,24 @@ const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
 const int oCNpc__DoShootArrow_PostReturnConditions = 7620745;
 //const int oCNpc__IsMunitionAvailable = 7587552;
 
+const int oCSpawnManager__CheckRemoveNpc_DeleteNpc = 7837169;
+
+func void DeleteNpc_Check()
+{
+	//var oCNpc slf; slf = _^(ESI);
+	var oCNpc slf; slf = _^(ECX);
+	
+	var int ref; ref = slf._zCObject_refCtr;
+	
+	Printi(ref);
+	MEM_InfoBox("aaa");
+	Print("delete");
+	
+	
+};
+
+const int oCAiHuman__BowMode = 6905600;
+
 func void Hooks_Global()
 {
 	InitDamage();
@@ -882,7 +901,9 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
-		
+		//HookEngineF(oCAiHuman__BowMode,6,MunitionChange);
+		//HookEngineF(oCSpawnManager__CheckRemoveNpc_DeleteNpc,5,DeleteNpc_Check);
+	//	HookEngineF(7837328,7,DeleteNpc_Check);
 		HookEngineF(oCNpc__EquipBestWeapon,7,oCNpc__EquipBestWeapon_Hook);
 		HookEngineF(oCNpc__DoShootArrow_PostReturnConditions,6,Npc_DoShootArrow_Hook);
 		HookEngineF(cdecl__Game_CreateInstance,cdecl__Game_CreateInstance_Len,DisableAssessTheft);
@@ -892,7 +913,7 @@ func void Hooks_Global()
 				
 		DisableFocusOfDeadNPCsWithEmptyInventory();
 		HookEngineF(oCNpc__UpdateSlots,6,UpdateStaffSlot);
-		CheckItemConditions_Init();
+	//	CheckItemConditions_Init();
 		HookEngineF(oCNpcInventory__HandleEvent,6,oCNpcInventory_HandleEvent_hook);
 		HookEngineF(oCNpc__EquipItem,        7, SHIELD_EQUIP);
 		HookEngineF(oCNpc__ProcessNpc,6,SneakHuntingBoost); 

@@ -1167,10 +1167,12 @@ const int NormalArrow = 0;
 const int FireArrow   = 1;
 const int SharpArrow  = 2;
 const int IceArrow    = 3;
+const int MaxArrow    = 4;
 
 var int CBowMunition;
 const int NormalBolt  = 0;
 const int SharpBolt   = 1;
+const int MaxBolt	  = 2;
 // ******************************
 
 

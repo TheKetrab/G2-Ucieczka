@@ -148,8 +148,8 @@ func void UratujFunc()
 	if (WillIdziePierwszyRazNaZamek  || WillGoToCastle) { ///WarWithOrc_Enabled == TRUE
 			if (slf.aivar[aiv_partymember] == true) {
 			   if (slf.attribute[0] <= 50) {
-					Npc_ClearAIQueue(self);
-					AI_StandUp(self);	       
+					Npc_ClearAIQueue(slf);
+					AI_StandUp(slf);	       
 					WarWithOrc_Start(slf);
 					// TODO : chyba nie trzeba zmieniac tej rutyny...?
 					B_StartOtherRoutine (slf,"Odpoczynek");

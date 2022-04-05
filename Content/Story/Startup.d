@@ -28,7 +28,9 @@ func void INIT_GLOBAL()
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
 	//GFA_Init(GFA_ALL); 
 	
-	FF_ApplyOnceExt (DistanceMeasurement, 250, -1); //raz na 250ms
+	//Ucieczka 1.2 zmiana
+	FF_ApplyOnceExt (TickTock_250ms, 250, -1); //raz na 250ms
+	//FF_ApplyOnceExt (DistanceMeasurement, 250, -1); //raz na 250ms
 	FF_ApplyOnceExt (TickTock_1s, 1000, -1); //raz na 1s
 	FF_ApplyOnceExt (TickTock_5s, 5000, -1); //raz na 5s
 	FF_ApplyOnceExt (Function30s, 30000, -1); //raz na 30s
@@ -44,6 +46,7 @@ func void INIT_GLOBAL()
 	B_AddFightSkill(hero,0,0);
 	
 	CheckMunition();
+	ff_applyoncegt(MunitionChange);
 
 	
 	//CheckMunition_LoadGame();

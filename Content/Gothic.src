@@ -366,6 +366,7 @@ AI\MONSTER\ZS_Monster\ZS_MM_*.d
 
 STORY\Events\*.d
 AI\Test_Skripts\*.d
+FUNCS\TickTock_250ms.d
 Funcs\Hooks_Global.d
 STORY\Startup.d
 

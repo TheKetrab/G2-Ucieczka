@@ -16,6 +16,15 @@ func string exitDialoge(var string i)
 	return "";
 };
 
+func int Pressed(var int key)
+{
+	if(MEM_KeyState(key)==KEY_PRESSED)
+	{
+		return 1;
+	};
+	return 0;
+};
+
 // KETRAB
 const int oCMobContainer__Remove = 7495808;
 func void ClearMobContainer(var string mobContainerName) {
@@ -106,6 +115,64 @@ func void ZmienStylWalki( /*var c_npc master*/ ) {
   };
 }; 
 
+func void AddMunitionText(var int isBow) 
+{
+  if (!Hlp_IsValidHandle(MunitionName)) 
+  {
+    MunitionName = View_Create(0, 0, 8000, 8000);
+    var string str;
+    str = G2U_you_use;
+    if (isBow) {
+      // wykomentowane, bo to tylko ewentualnie do magicznego luku,
+      // ale to psulo reszte i i tak nie ma magicznego luku w ucieczce
+      //if(BowMunition != RangedWeapon.Munition)
+      //{
+      //	BowMunition = RangedWeapon.Munition;
+      //};
+
+      if (BowMunition == FireArrow) 
+	  {
+        str = CS(str, G2U_fire_arrow);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      }
+	  else if (BowMunition == IceArrow) 
+	  {
+	  
+        str = CS(str, G2U_ice_arrow);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      }
+	  else if (BowMunition == SharpArrow) 
+	  {
+        str = CS(str, G2U_sharp_arrow);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      }
+	  else {
+        str = CS(str, G2U_normal_arrow);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      };
+    } 
+	else {
+      // wykomentowane, bo to tylko ewentualnie do magicznej kuszy
+      // ale to psulo reszte i i tak nie ma magicznej kuszy w ucieczce
+      //if(CBowMunition != RangedWeapon.Munition)
+      //{
+      //	CBowMunition = RangedWeapon.Munition;
+      //};
+
+      if (CBowMunition == SharpBolt) 
+	  {
+        str = CS(str, G2U_sharp_bolt);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      } 
+	  else 
+	  {
+        str = CS(str, G2U_normal_bolt);
+        View_AddText(MunitionName, 700, 7000, str, PF_FONT);
+      };
+    };
+    View_Open(MunitionName);
+  };
+};
 
 func void PrintMunitionType()
 {
@@ -118,64 +185,7 @@ func void PrintMunitionType()
 
 			if(RangedWeapon)
 			{
-				if(!Hlp_IsValidHandle(MunitionName))
-				{
-					MunitionName = View_Create(0, 0, 8000, 8000);
-					var string str; str = G2U_you_use;
-					if(RangedWeapon.flags & ITEM_BOW)
-					{
-						// wykomentowane, bo to tylko ewentualnie do magicznego luku,
-						// ale to psulo reszte i i tak nie ma magicznego luku w ucieczce
-						//if(BowMunition != RangedWeapon.Munition)
-						//{
-						//	BowMunition = RangedWeapon.Munition;
-						//};
-						
-						if (BowMunition == FireArrow)
-						{
-							str = CS(str, G2U_fire_arrow);
-							View_AddText(MunitionName, 700, 7000,str, PF_FONT);
-						}
-						else if (BowMunition == IceArrow)
-						{
-							str = CS(str, G2U_ice_arrow);
-							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
-						}
-						else if (BowMunition == SharpArrow)
-						{
-							str = CS(str, G2U_sharp_arrow);
-							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
-						}
-						else
-						{
-							str = CS(str, G2U_normal_arrow);
-							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
-						};
-					}
-					else
-					{
-						// wykomentowane, bo to tylko ewentualnie do magicznej kuszy
-						// ale to psulo reszte i i tak nie ma magicznej kuszy w ucieczce
-						//if(CBowMunition != RangedWeapon.Munition)
-						//{
-						//	CBowMunition = RangedWeapon.Munition;
-						//};
-						
-						
-						if (CBowMunition == SharpBolt)
-						{
-							str = CS(str, G2U_sharp_bolt);
-							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
-						}
-						else
-						{
-							str = CS(str, G2U_normal_bolt);
-							View_AddText(MunitionName, 700, 7000, str, PF_FONT);
-						};
-					};
-					View_Open(MunitionName);
-				};
-
+				AddMunitionText(RangedWeapon.flags & ITEM_BOW );
 			};
 
 		};
@@ -208,14 +218,359 @@ func void RemovePrintedMunitionType()
 	};
 };
 
-func int Pressed(var int key)
+
+func int MunitionVarToInstanceID(var int mun, var int isBow)
 {
-	if(MEM_KeyState(key)==KEY_PRESSED)
+	if(!isBow)
 	{
-		return 1;
+		if(mun == NormalBolt)
+		{
+			return ItRw_Bolt;
+		}
+		else
+		{
+			return ItRw_SharpBolt;
+		};
+	}
+	else
+	{
+		if(mun == NormalArrow)
+		{
+			return ItRw_Arrow;
+		}
+		else if(mun == FireArrow)
+		{
+			return ItNa_OgnistaStrzala;
+		}
+		else if(mun == SharpArrow)
+		{
+			return ItNa_OstraStrzala;
+		}
+		else
+		{
+			return ItNa_LodowaStrzala;
+		};
 	};
-	return 0;
 };
+
+func void Npc_DoRemoveMunition(var c_npc slf)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	if(!pNpc){return;};
+	
+	const int oCNpc__DoRemoveMunition = 7619696;
+	
+	CALL__Thiscall(pNpc,oCNpc__DoRemoveMunition);
+};
+
+
+
+func int Npc_HasInHand(var c_npc slf, var int inst)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	if(!pNpc || inst == -1){return 0;};
+	
+	
+	const int oCNpc__HasInHand = 7566176;
+	
+	CALL_IntParam(inst);
+	CALL__Thiscall(pNpc,oCNpc__HasInHand);
+	
+	return CALL_RetValAsInt();
+
+};
+
+func void Npc_DoInsertMunition(var c_npc slf, var string node)
+{
+	var int pNpc; pNpc = _@(slf);
+	
+	CALL_zStringPtrParam(node);
+	CALL__Thiscall(pNpc,7618960);
+};
+
+func void CheckMunition()
+{
+	
+	var C_ITEM RangedWeapon;
+	
+	RangedWeapon = NPC_GetEquippedRangedWeapon(hero);
+	
+	if(!Hlp_IsValidItem(rangedWeapon))
+	{
+		RangedWeapon = Npc_GetReadiedWeapon(hero);
+		
+		if(!Hlp_IsValidItem(RangedWeapon) || rangedWeapon.mainflag != ITEM_KAT_FF)
+		{
+			return;
+		};
+	};
+
+	Npc_DoRemoveMunition(hero);
+	
+	if(rangedWeapon.flags & ITEM_BOW)
+	{
+		rangedWeapon.munition = MunitionVarToInstanceID(BowMunition,1);
+	}
+	else
+	{
+		rangedWeapon.munition = MunitionVarToInstanceID(CBowMunition,0);
+	};
+	
+
+	Npc_DoRemoveMunition(hero);
+	//if(Npc_HasReadiedRangedWeapon(hero))
+	//{
+		Npc_DoInsertMunition(hero,"ZS_RIGHTHAND");
+	//};
+
+
+};
+/*
+const int oCMsgDamage__classdef = 11217392;
+const int zCEventManager__messagelist_offset = 48;
+const int zCEventMessage__subtype_offset = 36;
+const int RemoveWeapon_message = 3;
+func int IsRunningMessage(var c_npc slf, var int classdef, var int type)
+{
+	var int pSlf; pSlf = _@(slf);
+	
+	if(!pSlf){return 0;};
+
+	var int EM; EM 	= MEMINT_VobGetEM(pSlf);
+	
+	
+	
+	var zCArray arr; arr = _^(MEM_ReadInt(EM+zCEventManager__messagelist_offset));
+	
+	
+	//var int list; list = MEM_ReadInt(EM+zCEventManager__messagelist_offset);
+	var int num; num = MEM_ReadInt(EM+zCEventManager__messagelist_offset+8);
+	
+	
+	var int i;
+	repeat(i,arr.numinarray);
+	
+		var int message; message = MEM_ReadIntArray(arr.array,i);
+		if(message && MEM_GetClassDef(message) ==classdef )
+		{
+			return 1;
+		};
+	
+	end;
+	
+	
+	return 0;
+	
+	//MEM_InfoBox(IntToString(num));
+
+	
+	
+	repeat(i,num);
+	
+
+		//var int message; message = MEM_ReadIntArray(list,i);
+		
+		if(!message){break;};
+		
+		//continue;
+		if(MEM_GetClassDef(message) ==classdef )
+		{
+			var int mtype; mtype = MEM_ReadInt(message+zCEventMessage__subtype_offset);
+			return 1;
+			if(mtype == type)
+			{
+				//return is runing
+				
+				return 1;
+			};
+		};
+		
+		
+		
+	end;
+	
+	return 0;
+	
+	
+	
+};*/
+
+
+const int zCPar_Symbol_content_offset = 24;
+
+const int KEY_MOUSE_WHEELUP = 522;
+const int KEY_MOUSE_WHEELDOWN = 523;
+
+const string MunitionInstances[2] = {"BOWMUNITION","CBOWMUNITION"};
+//var int Munition_LastSymbolIdx;
+const int Munition_LastSymbolIdx = -1;
+
+
+func int GetNextMunition(var int currMun, var int isBow, var int forward)
+{
+	var int mun_max;
+	if(isBow)
+	{
+		mun_max = MaxArrow;
+	}
+	else
+	{
+		mun_max = MaxBolt;
+	};
+	
+
+	
+	
+	var int currMunBack; currMunBack = currMun;
+	
+	//Printi(forward);
+	var int i;
+	repeat(i, mun_max);
+	
+		if(forward)
+		{
+			currMun+=1;
+		}
+		else
+		{
+			currMun-=1;
+		};
+		
+	//	Printi(currMun);
+		
+		if(currMun >= mun_max) {currMun = 0;}
+		else if(currMun < 0){currMun = mun_max;};
+		
+		var int inst;
+		inst = MunitionVarToInstanceID(currMun,isBow);
+		
+		if(Npc_HasItems(hero,inst) && currMun != currMunBack)
+		{
+			return currMun;
+		};
+
+	end;
+	
+	return -1;
+};
+
+func void MunitionChange()
+{
+	if(!Npc_IsInFightMode(hero, FMODE_FAR)){return;};
+
+	var c_item itm; 
+	var int i;
+	
+	if(Npc_HasEquippedRangedWeapon(hero))
+	{
+		itm = Npc_GetEquippedRangedWeapon(hero);
+	}
+	else
+	{
+		if(Npc_HasReadiedRangedWeapon(hero))
+		{
+			itm =  Npc_GetReadiedWeapon(hero);
+		}
+		else
+		{
+			return;
+		};
+	};
+	
+	//if(!Hlp_IsValidItem(itm)){return;};
+	
+	i = itm.flags & ITEM_CROSSBOW;
+	
+	var int instanz;
+	const int symbol = 0; 
+	if(i != Munition_LastSymbolIdx)
+	{
+		symbol = MEM_GetSymbol(MEM_ReadStatStringArr(MunitionInstances,i));
+		
+		if(symbol == 0)
+		{
+			MEM_Info("WeaponStatus : wrong symbol");
+			return;
+		};
+		
+		Munition_LastSymbolIdx = i;
+	};
+	
+	//var zCPar_Symbol sym; sym = _^(symbol);
+	
+	var int mun; var int mun2;
+	mun = MEM_ReadInt(symbol+zCPar_Symbol_content_offset);
+	mun2 = mun;
+	
+	var int forward; forward = 1;
+	
+	
+	if(Pressed(KEY_MOUSE_WHEELUP))
+	{
+		mun2+=1;
+		//forward = true;
+	}
+	else if(Pressed(KEY_MOUSE_WHEELDOWN))
+	{
+		mun2-=1;
+		forward = 0;
+	};
+	
+	if(mun2 < 0)
+	{
+		mun2 = MaxArrow-1;
+	}
+	else if(mun2 >= MaxArrow)
+	{
+		mun2 = 0;
+		forward = true;
+	};
+	
+	if(mun2 != mun)
+	{
+		//if(IsRunningMessage(hero,oCMsgDamage__classdef,RemoveWeapon_message) ||  IsRunningMessage(hero,oCMsgDamage__classdef,0) )
+		//{
+			//Print("run");
+			//return;
+		//};
+		
+		var int isBow; isBow = i ==0;
+		var int inst; inst = MunitionVarToInstanceID(mun2,isBow);
+		
+		if(!Npc_HasItems(hero,inst))
+		{
+			mun2 = GetNextMunition(mun2,isBow,forward);
+			if(mun2 == -1)
+			{
+				return;
+			};
+		};
+		
+		
+		
+		MEM_WriteInt(symbol+zCPar_Symbol_content_offset,mun2);
+		AI_Function(hero,CheckMunition);
+		
+
+		if(Hlp_IsValidHandle(MunitionName))
+		{
+			View_DeleteText(MunitionName);
+			View_Close(MunitionName);
+			View_Delete(MunitionName);
+			MunitionName = 0; //NULL
+		};
+		AddMunitionText(isBow);
+	};
+};
+
+func void WeaponStatus()
+{
+
+};
+
+
 
 func int GetItemSlot (var C_NPC slf, var string slotName) 
 {

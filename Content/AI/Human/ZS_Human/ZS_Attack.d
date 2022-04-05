@@ -180,7 +180,7 @@ func int ZS_Attack_Loop ()
 			}
 			else
 			{
-				CzasZakonczycWalkeZPowoduX = 4;
+				CzasZakonczycWalkeZPowoduX = 0;
 			};
 		}
 		else

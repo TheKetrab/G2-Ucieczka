@@ -7,22 +7,8 @@
 // und aus B_TeachFightTalentPercent (um Player-Skill zu erhöhen)
 // ******************************************************************
 
-var int TALENT_SHIELD; //nasz
-
 func void B_AddFightSkill (var C_NPC slf, var int talent, var int percent)
 {
-
-// ********** NASZ **********
-	if (talent == TALENT_SHIELD)
-	{
-		slf.HitChance[NPC_TALENT_1H] = slf.HitChance[NPC_TALENT_1H] + percent;
-		
-		if (slf.HitChance[NPC_TALENT_1H] < 10)		{	Npc_SetTalentSkill (slf, NPC_TALENT_1H, 0);		Mdl_ApplyOverlayMds (slf, "HUMANS_X.MDS");	};
-		if (slf.HitChance[NPC_TALENT_1H] >=10)		{	Mdl_RemoveOverlayMds (slf, "HUMANS_X.MDS");		Npc_SetTalentSkill (slf, NPC_TALENT_1H, 0);		};
-		if (slf.HitChance[NPC_TALENT_1H] >=30)		{	Npc_SetTalentSkill (slf, NPC_TALENT_1H, 1);		};
-		if (slf.HitChance[NPC_TALENT_1H] >=60)		{	Npc_SetTalentSkill (slf, NPC_TALENT_1H, 1);		};
-	};
-// ---------- * ---------- * ----------
 	
 	if (talent == NPC_TALENT_1H)
 	{

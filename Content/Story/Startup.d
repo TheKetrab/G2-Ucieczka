@@ -43,7 +43,8 @@ func void INIT_GLOBAL()
 	
 	CheckDx11();
 	QuickSlot_Init();
-	B_AddFightSkill(hero,0,0);
+	
+	FF_ApplyOnceExt (OnLoadUpdateHeroFightSkill, 10, -1);
 	
 	CheckMunition();
 	ff_applyoncegt(MunitionChange);

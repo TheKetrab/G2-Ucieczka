@@ -9,7 +9,7 @@ func void Equip_Shield()
 	if (Npc_IsPlayer(self)) {
 	if (WalkaTarcza == TRUE)
 	{
-		B_AddFightSkill (self, TALENT_SHIELD, 0);
+		B_AddFightSkill (self, NPC_TALENT_1H, 0);
 		//WillTarczaUbrana = TRUE;
 		if (self.HitChance[NPC_TALENT_1H] >= 50)
 		{

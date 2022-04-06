@@ -271,3 +271,19 @@ func void Npc_InspectWeapon(var c_npc slf, var int inst, var int createItemIfNot
 	AI_PlayAni		(slf, "T_1HSINSPECT");
 	AI_RemoveWeapon (slf);
 };
+
+func void OnLoadUpdateHeroFightSkill() {
+
+	// Fix U12: RemoveOverlayMds uniemożliwiał strzelanie, trzeba było schować łuk i wyciągnąć
+	if (Npc_HasReadiedRangedWeapon(hero)) {
+		return;
+	};
+
+	if (hero.HitChance[NPC_TALENT_1H] < 10)		{	Npc_SetTalentSkill (hero, NPC_TALENT_1H, 0);		Mdl_ApplyOverlayMds (hero, "HUMANS_X.MDS");	};
+	if (hero.HitChance[NPC_TALENT_1H] >=10)		{	Mdl_RemoveOverlayMds (hero, "HUMANS_X.MDS");		Npc_SetTalentSkill (hero, NPC_TALENT_1H, 0);		};
+	if (hero.HitChance[NPC_TALENT_1H] >=30)		{	Npc_SetTalentSkill (hero, NPC_TALENT_1H, 1);		};
+	if (hero.HitChance[NPC_TALENT_1H] >=60)		{	Npc_SetTalentSkill (hero, NPC_TALENT_1H, 1);		};
+
+	ff_remove(OnLoadUpdateHeroFightSkill);
+
+};

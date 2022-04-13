@@ -88,6 +88,14 @@ var int Portal2_X;
 var int Portal2_Y;
 var int Portal2_Z;
 
+func void SavePortalPosition2()
+{
+	var ocnpc hiro; hiro = hlp_getnpc(self);
+	Portal2_X     = hiro._zCVob_trafoObjToWorld[3];
+	Portal2_Y     = hiro._zCVob_trafoObjToWorld[7];
+	Portal2_Z     = hiro._zCVob_trafoObjToWorld[11];
+};
+
 var int GotoPortal2Delay_VAR;
 func void GotoPortal2Delay() {
 
@@ -141,7 +149,7 @@ func int Spell_Logic_CreatePortal2(var int manaInvested)
 	{
 		self.attribute[ATR_MANA] = self.attribute[ATR_MANA] - SPL_Cost_Teleport;
 				
-		SavePortalPosition();
+		SavePortalPosition2();
 		
 		
 		Ai_WaitMS(self,1500);		

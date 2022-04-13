@@ -2415,7 +2415,7 @@ INSTANCE ItMw_1H_Blessed_03 (C_Item)
 	range    			=  	Range_Blessed_1H_3;	
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	90;
+	cond_value[2]  		= 	80;
 	visual 				=	"ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 
 	description			= name;
@@ -2440,7 +2440,7 @@ INSTANCE ItMw_2H_Blessed_01 (C_Item)
 	range    			=  	Range_Blessed_2H_1;	
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	50;
+	cond_value[2]  		= 	65;
 	visual 				=	"ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 
 	description			= name;
@@ -2465,7 +2465,7 @@ INSTANCE ItMw_2H_Blessed_02 (C_Item)
 	range    			=  	Range_Blessed_2H_2;	
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	50;
+	cond_value[2]  		= 	75;
 	visual 				=	"ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 
 	description			= name;
@@ -2490,7 +2490,7 @@ INSTANCE ItMw_2H_Blessed_03 (C_Item)
 	range    			=  	Range_Blessed_2H_3;	
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	50;
+	cond_value[2]  		= 	85;
 	visual 				=	"ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 
 	description			= name;

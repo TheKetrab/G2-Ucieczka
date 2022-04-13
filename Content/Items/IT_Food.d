@@ -488,8 +488,7 @@ INSTANCE ItFo_Beer (C_Item)
 	description			= 	name;
 	TEXT[1]				= 	NAME_Bonus_HP;		COUNT[1]	= HP_Beer;
 	TEXT[2]				= 	NAME_Bonus_Mana;	COUNT[2]	= Mana_Beer;
-	
-	TEXT[4]				= 	name;		
+
 	TEXT[5]				= 	NAME_Value;		COUNT[5]	= Value_Beer;
 
 };

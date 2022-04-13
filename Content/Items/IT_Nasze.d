@@ -990,7 +990,7 @@ INSTANCE ItNa_MalaMaczuga (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -1016,7 +1016,7 @@ INSTANCE ItNa_Maczuga (C_Item)
 
 	description			= 	name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[0]	= damageTotal;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -1161,7 +1161,7 @@ INSTANCE ItMw_1H_Sword_Long_03 (C_Item)
 
 	value 				=	800;//400;//196
 
-	damageTotal			= 	44;
+	damageTotal			= 	51;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	120;		
 
@@ -1169,7 +1169,7 @@ INSTANCE ItMw_1H_Sword_Long_03 (C_Item)
 	on_unequip			=	UnEquip_1H_09;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	51;
+	cond_value[2]  		= 	44;
 	visual 				=	"ItMw_1H_Sword_Long_03.3DS";
 
 	description			= name;
@@ -7447,7 +7447,7 @@ INSTANCE ItNa_KropleDuszy(C_Item)
 	effect			=	"SPELLFX_ITEMGLIMMER"; 
 
 	description		= 	"Krople duszy";
-	TEXT[1]			= 	"Czyni tego, kto j¹ wypije";
+	TEXT[0]			= 	"Czyni tego, kto je wypije";
 	TEXT[1]			= 	"nieœmiertelnym...";
 	
 	TEXT[3]			= 	NAME_Sec_Duration;				

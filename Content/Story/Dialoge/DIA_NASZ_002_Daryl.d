@@ -602,8 +602,7 @@ FUNC VOID DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson()
 	TRIA_Next (Marcos);
     AI_TurnToNpc(other, self);
 	
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_55_03"); //Nie mam s³ów na tego cz³owieka...
-	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_55_04"); //Wracajcie do roboty.
+	AI_Output (self, other,"DIA_NASZ_002_Daryl_BrysonAfterGoAway_Bryson_55_03"); //Nie mam s³ów na tego cz³owieka... Wracajcie do roboty!
 
 	TRIA_Finish();
 

@@ -7470,17 +7470,17 @@ INSTANCE ItNa_KropleDuszy(C_Item)
 // . . . . . . . . . . Strza³y . . . . . . . . . .
 // **********************************************
 
-const string ARROWS_NORMAL = "U¿ywasz zwyk³e strza³y";
-const string ARROWS_SHARP = "U¿ywasz ostre strza³y";
-const string ARROWS_FIRE = "U¿ywasz ogniste strza³y";
-const string ARROWS_ICE = "U¿ywasz lodowe strza³y";
+const string ARROWS_NORMAL = "U¿ywasz zwyk³ych strza³";
+const string ARROWS_SHARP = "U¿ywasz ostrych strza³";
+const string ARROWS_FIRE = "U¿ywasz ognistych strza³";
+const string ARROWS_ICE = "U¿ywasz lodowych strza³";
 
 const string ARROWS_YOU_USE_ALREADY = "Ju¿ u¿ywasz tych strza³!";
 const string ARROWS_ON_CBOW = "Strza³ nie mo¿na na³o¿yæ na kuszê!";
 const string ARROWS_NO_BOW = "Brak wyposa¿onego ³uku!";
 
-const string BOLTS_NORMAL = "U¿ywasz zwyk³e be³ty";
-const string BOLTS_SHARP = "U¿ywasz ostre be³ty";
+const string BOLTS_NORMAL = "U¿ywasz zwyk³ych be³tów";
+const string BOLTS_SHARP = "U¿ywasz ostrych be³tów";
 
 const string BOLTS_YOU_USE_ALREADY = "Ju¿ u¿ywasz tych be³tów!";
 const string BOLTS_ON_BOW = "Be³tów nie mo¿na na³o¿yæ na ³uk!";

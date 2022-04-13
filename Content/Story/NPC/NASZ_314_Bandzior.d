@@ -5,7 +5,7 @@ instance NASZ_314_Bandzior (Npc_Default)
 	name 		= "Bandzior";	
 	guild 		= GIL_SLD;
 	id 			= 314;
-	voice 		= 19;
+	voice 		= 9;
 	flags       = 0;																
 	npctype		= NPCTYPE_MAIN;
 

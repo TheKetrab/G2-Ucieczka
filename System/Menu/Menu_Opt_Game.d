@@ -75,7 +75,7 @@ instance MENUITEM_GAME_FIGHTFOCUS(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "Oznaczanie celów";
-	text[1] = "W³./wy³. wyró¿niania bierz¹cego celu w czasie walki";
+	text[1] = "W³./wy³. wyró¿niania bie¿¹cego celu w czasie walki";
 	posx = 700;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 1);
 	dimx = 4600;

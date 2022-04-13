@@ -148,7 +148,7 @@ FUNC INT DIA_NASZ_016_Netbek_WTF_Condition()
 FUNC VOID DIA_NASZ_016_Netbek_WTF_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_016_Netbek_WTF_15_00"); //Uwolni³em wszystkich cz³onków bractwa.
-	AI_Output (other, self,"DIA_NASZ_016_Netbek_WTF_15_01"); //Wszyscy oddali siê ukojeniu i opuœcili ten œwiat. Jesteœ chyba ostatnim cz³owiekiem w takiej szacie.
+	AI_Output (other, self,"DIA_NASZ_016_Netbek_WTF_15_01"); //Wszyscy oddali siê ukojeniu i opuœcili ten œwiat. Jesteœ chyba ostatnim cz³owiekiem w tej szacie.
 	AI_Output (self, other,"DIA_NASZ_016_Netbek_WTF_55_02"); //Œni¹cy przyjdzie i po mnie. Muszê do³¹czyæ do moich braci, ¿eby ten z³y demon mnie nie z³apa³!
 
 	AI_StopProcessInfos (self);

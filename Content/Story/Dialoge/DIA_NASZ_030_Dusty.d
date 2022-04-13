@@ -152,7 +152,7 @@ FUNC VOID DIA_NASZ_030_Dusty_YourArmor_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_YourArmor_55_00"); //Czemu nie nosisz szaty nowicjusza?
 	AI_Output (self, other,"DIA_NASZ_030_Dusty_YourArmor_15_01"); //Poniewa¿ nim nie jestem. Do Obozu na Bagnie przyby³em na jakiœ tydzieñ przed odkryciem prawdziwego oblicza Œni¹cego.
-	AI_Output (self, other,"DIA_NASZ_030_Dusty_YourArmor_55_02"); //Po tym wydarzeniu Bractwo bardzo siê podzieli³o. Nie chcia³em w to brn¹æ, dlatego zosta³em w obozie tylko jako wolny s³uchacz.
+	AI_Output (self, other,"DIA_NASZ_030_Dusty_YourArmor_55_02"); //Po tym wydarzeniu Bractwo bardzo siê podzieli³o. Nie chcia³em w to brn¹æ, dlatego zosta³em w obozie jako wolny s³uchacz.
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_YourArmor_55_03"); //Wczeœniej by³eœ w Starym Obozie, prawda?
 	AI_Output (self, other,"DIA_NASZ_030_Dusty_YourArmor_55_04"); //Tak. I pewnie zosta³bym tam d³u¿ej, gdyby nie pewien facet, który pomóg³ mi uciec. Przekupi³ stra¿nika. Dobry to by³ goœæ!
 	AI_Output (other, self,"DIA_NASZ_030_Dusty_YourArmor_55_05"); //W Obozie Bractwa by³o du¿o lepiej?

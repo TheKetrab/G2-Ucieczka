@@ -650,7 +650,7 @@ FUNC VOID DIA_NASZ_224_Dobar_PancerzeStart_Info()
 	AI_Output (self, other,"DIA_NASZ_224_Dobar_PancerzeStart_15_05"); //Futro, jak i skóra orkowych psów, jest bardzo wytrzyma³a i jednoczeœnie rozci¹gliwa. Co prawda œmierdzi, jednak jest najbardziej odpowiednim sk³adnikiem tego stroju.
 	AI_Output (self, other,"DIA_NASZ_224_Dobar_PancerzeStart_15_06"); //Wys³a³em ju¿ na poszukiwania Jehena, lecz do tej pory jeszcze nie wróci³. Móg³byœ go poszukaæ?
 	AI_Output (other, self,"DIA_NASZ_224_Dobar_PancerzeStart_15_07"); //W jakim kierunku ruszy³?
-	AI_Output (self, other,"DIA_NASZ_224_Dobar_PancerzeStart_15_08"); //Wydaje mi siê, ze mówi³ coœ o terenach starej górskiej twierdzy, ale móg³ tam nawet nie dotrzeæ. Kto go tam wie...
+	AI_Output (self, other,"DIA_NASZ_224_Dobar_PancerzeStart_15_08"); //Wydaje mi siê, ¿e mówi³ coœ o terenach starej górskiej fortecy, ale móg³ tam nawet nie dotrzeæ. Kto go tam wie...
 
 	B_StartOtherRoutine(NASZ_232_Jehen,"Namiot");
 	B_LogEntry (TOPIC_Dobar_pancerze, "Dobar opowiedzia³ mi o swoim pomyœle na wzmocnienie pancerza za pomoc¹ nowego stopu metali. Aby tego dokonaæ potrzebuje skór orkowych psów, po które zosta³ wys³any Jehen. Wed³ug Dobara wyruszy³ w stronê starej górskiej twierdzy, ale móg³ tam nie dotrzeæ. Lepiej udam siê tam pieszo, by przypadkiem siê z nim nie min¹æ.");

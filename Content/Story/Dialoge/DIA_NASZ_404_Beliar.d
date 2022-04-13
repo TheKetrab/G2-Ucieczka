@@ -187,7 +187,7 @@ FUNC VOID DIA_NASZ_404_Beliar_doneB_Info()
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_01"); //A wiêc da³eœ radê. Poka¿ê ci, co potrafiê. Czego dok³adnie oczekujesz?
 	AI_Output (other, self,"DIA_NASZ_404_Beliar_doneB_15_02"); //Chcê byœ wraz ze swymi braæmi otworzy³ portal do Myrtany. Rytua³ odbêdzie siê w orkowym mieœcie.
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_03"); //CO?! Mam wspó³pracowaæ z Innosem i Adanosem? Có¿... Wykaza³eœ siê niezwyk³ym oddaniem.
-	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_04"); //Niech bêdzie. Udam siê do miejsca przyzwania portalu. Jednak jeœli chcesz, bym zni¿y³ siê do poziomu moich braci, musisz z³o¿yæ mi ofiarê przy jednej z kapliczek.
+	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_04"); //Niech bêdzie. Udam siê do miejsca przyzwania portalu. Jednak jeœli chcesz, bym zni¿y³ siê do poziomu moich braci, musisz z³o¿yæ mi ofiarê przy jednej z moich kapliczek.
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_05"); //2 tysi¹ce sztuk z³ota. To bêdzie wystarczaj¹ca kwota. Jeœli tego nie zrobisz, nie wezmê udzia³u w rytuale.
 	AI_Output (self, other,"DIA_NASZ_404_Beliar_doneB_55_06"); //Zobaczymy siê w orkowym mieœcie. Ofiara ma byæ ju¿ z³o¿ona!
 

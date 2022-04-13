@@ -452,7 +452,7 @@ FUNC INT DIA_NASZ_232_Jehen_WhoDoISee_Condition()
 FUNC VOID DIA_NASZ_232_Jehen_WhoDoISee_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_00"); //No proszê, kogo ja widzê! Co tutaj robisz?
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_01"); //Witaj Jehenie, przybywam tu na proœbê Dobara. Nasz stary, poczciwy kowal nie mo¿e doczekaæ siê wyczekiwanej dostawy futer z orkowych psów.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_01"); //Witaj Jehenie. Nasz stary, poczciwy kowal nie mo¿e doczekaæ siê wyczekiwanej dostawy futer z orkowych psów.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_02"); //No to mamy powiem k³opot, gdy¿ nie mam tych skór. Ba, nawet nie zacz¹³em dobrze polowaæ!
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_WhoDoISee_55_03"); //Nie doœæ, ¿e coœ przep³oszy³o st¹d wszystkie orkowe psy, to jeszcze, jakby tego by³o ma³o, w nocy natkn¹³em siê na stworzenie wygl¹daj¹ce na przeroœniêtego cieniostwora.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_WhoDoISee_55_04"); //Dlaczego wiêc go nie zastrzeli³eœ? Podejrzewam, i¿ jego skóra jest o wiele bardziej wytrzyma³a ni¿ ta pochodz¹ca z orkowych psów.
@@ -493,7 +493,7 @@ FUNC INT DIA_NASZ_232_Jehen_LetsGo_Condition()
 FUNC VOID DIA_NASZ_232_Jehen_LetsGo_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_LetsGo_55_00"); //Jestem gotów, ruszajmy!
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_LetsGo_55_01"); //Trzymaj siê blisko mnie. Nie chcê, by coœ nas rozdzieli³o.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_LetsGo_55_01"); //Trzymaj siê blisko mnie. Nie chcê, by nas coœ rozdzieli³o.
 
 	self.flags = 2;
 	Npc_ExchangeRoutine(self,"LastTimeISee");
@@ -534,7 +534,7 @@ FUNC VOID DIA_NASZ_232_Jehen_LastTimeISee_Info()
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_00"); //To w tym miejscu widzia³em j¹ po raz ostatni, dlatego te¿ od tej chwili powinniœmy byæ bardzo ostro¿ni. 
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_01"); //Trzymaj siê mnie i staraj siê nie zgubiæ. Kto wie, co mo¿e nas spotkaæ po drodze?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_LastTimeISee_55_02"); //Uwa¿asz, ¿e to jest normalne? Mam na myœli tego cieniostwora, który pojawi³ siê tutaj znik¹d.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_03"); //Szczerze mówi¹c to nie wydaje mi siê, aby to by³o normalne. Chocia¿ z drugiej strony nie wiadomo, jakie okropieñstwa mog¹ do nas przybywaæ z wymiaru Beliara.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_03"); //Szczerze mówi¹c nie wydaje mi siê, aby to by³o normalne. Chocia¿ z drugiej strony nie wiadomo, jakie okropieñstwa mog¹ do nas przybywaæ z wymiaru Beliara.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_04"); //Równie dobrze mo¿e to byæ te¿ efekt rytua³u przywo³ania przeprowadzonego przez jakiegoœ maga.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_05"); //Tak samo prawdopodobne jest, i¿ ten cieniostwór zachorowa³ i jest ju¿ w stanie agonalnym, przez co wygl¹da, jak wygl¹da.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_LastTimeISee_55_06"); //Niezale¿nie od tego czym to jest i jak siê boimy, nale¿y siê tego stworzenia pozbyæ. Nie oci¹gajmy siê, musimy dopaœæ to stworzenie, nim bêdzie za póŸno. Trzymaj siê mnie.
@@ -725,7 +725,7 @@ FUNC VOID DIA_NASZ_232_Jehen_KorzenieDone_Info()
 	// uwaga! kwestia 9 rozdzielona, temu to ma numer 15
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_15"); //A dla mnie ka¿da podró¿ do Nordmaru by³a przyjemnoœci¹!
 
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_10"); //Nawet nie wiesz, jak têskniê za tamtejszymi górami. Niestety wojna zmusi³a mnie do ucieczki na Khorinis, gdy¿ liczy³em, ¿e bêdê tutaj bezpieczny.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_10"); //Nawet nie wiesz, jak têskniê za tamtejszymi górami. Niestety wojna zmusi³a mnie do ucieczki na Khorinis, gdy¿ liczy³em, ¿e tutaj bêdê bezpieczny.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_11"); //A jak widzisz los zdecydowa³ siê pójœæ mi na przekór i wrzuci³ mnie w wojnê, przed któr¹ przecie¿ ucieka³em.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_KorzenieDone_55_12"); //No, strza³y gotowe. Mo¿emy iœæ dalej, tylko dok¹...
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_KorzenieDone_55_13"); //S³ysza³eœ? Coœ jakby ryk lub wycie odbijaj¹ce siê echem od ska³!

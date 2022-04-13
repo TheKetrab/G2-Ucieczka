@@ -133,7 +133,7 @@ FUNC VOID DIA_NASZ_221_Benito_quest_Info()
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_quest_15_03"); //A gdyby mi siê uda³o?
 	if (hero.guild == GIL_OUT)
 	{
-		AI_Output (self, other,"DIA_NASZ_221_Benito_quest_55_04"); //Nie jesteœ pierwszym z brzegu myœliwym, który wybiera siê na zwyk³e polowanie. Wydaje mi siê, ¿e masz szanse przemkn¹æ niepostrze¿enie do wnêtrza ich obozu i mo¿e nawet coœ znaleŸæ.
+		AI_Output (self, other,"DIA_NASZ_221_Benito_quest_55_04"); //Nie jesteœ pierwszym z brzegu myœliwym, który wybiera siê na polowanie. Wydaje mi siê, ¿e masz szanse przemkn¹æ niepostrze¿enie do wnêtrza ich obozu i mo¿e nawet coœ znaleŸæ.
 	}
 	else
 	{

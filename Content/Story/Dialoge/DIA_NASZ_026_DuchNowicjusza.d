@@ -59,8 +59,8 @@ func int DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Condition ()
 func void DIA_NASZ_026_DuchNowicjusza_Lojalnosc_Info ()
 {
 	
-	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_026_00"); //W koñcu widzê œwiat³o na koñcu mojej drogi... Czujê... Czujê, jak wszelakie troski i zmartwienia odchodz¹ w niepamiêæ.
-	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_026_01"); //Jego blask sprawia, ¿e czujê siê lepiej. Dziêkujê ci nieznajomy za kilka minut jakie poœwiêci³eœ na modlitwê nad moim zapomnianym przez czas ciele.
+	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_026_00"); //W koñcu widzê œwiat³o na koñcu mojej drogi... Czujê... Czujê, jak wszelkie troski i zmartwienia odchodz¹ w niepamiêæ.
+	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_026_01"); //Jego blask sprawia, ¿e czujê siê lepiej. Dziêkujê ci nieznajomy za te kilka minut jakie poœwiêci³eœ na modlitwê nad moim zapomnianym przez czas ciele.
 	AI_Output			(self, other, "DIA_NASZ_026_DuchNowicjusza_Lojalnosc_026_02"); //Chcia³bym ci podziêkowaæ za twoj¹ pomoc. Proszê weŸ ten pas i za³ó¿ go.
 	
 	

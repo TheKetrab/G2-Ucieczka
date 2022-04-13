@@ -171,7 +171,7 @@ FUNC VOID DIA_NASZ_402_Innos_doneB_Info()
 	AI_Output (other, self,"DIA_NASZ_402_Innos_doneB_15_00"); //Oto i 10 jêzyków.
 	B_giveinvitems (other, self, ItAt_WaranFiretongue, 10);
 	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_01"); //Szczerze mówi¹c, myœla³em, ¿e zostanie z ciebie popió³. Zaskoczy³eœ mnie, œmiertelniku.
-	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_02"); //A wiêc ju¿ wiem, ¿e sprostasz mojej proœbie.
+	AI_Output (self, other,"DIA_NASZ_402_Innos_doneB_55_02"); //A wiêc ju¿ wiem, ¿e sprostasz mojej próbie.
 
 	B_GivePlayerXP(1000);
 	B_LogEntry (TOPIC_bogowie_work, "Odda³em Innosowi ogniste jêzyki.");
@@ -211,7 +211,7 @@ FUNC VOID DIA_NASZ_402_Innos_workA_Info()
 		AI_Output (self, other,"DIA_NASZ_402_Innos_workA_55_03"); //Teraz ja mogê pomóc tobie. Co mam zrobiæ?
 
 		B_GivePlayerXP(1000);
-		B_LogEntry (TOPIC_bogowie_work, "Innos chcia³, bym rozwi¹za³ sprawy na bagnach, ale ju¿ czeœniej siê tym zaj¹³em.");
+		B_LogEntry (TOPIC_bogowie_work, "Innos chcia³, bym rozwi¹za³ sprawy na bagnach, ale ju¿ wczeœniej siê tym zaj¹³em.");
 
 	}
 	

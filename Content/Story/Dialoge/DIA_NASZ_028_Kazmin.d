@@ -77,7 +77,7 @@ FUNC VOID DIA_NASZ_028_Kazmin_Spotkanie_Info()
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_00"); //Nareszcie siê spotykamy. Zastanawia³em siê, jak d³ugo jeszcze zajmie ci wykonywanie zadañ dla tych sekciarzy, aby siê do mnie dostaæ.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_01"); //Mam nadziejê, œmiertelna istoto, ¿e twoja ciekawoœæ zosta³a ostatecznie zaspokojona? W koñcu dotar³eœ do celu, który sobie wyznaczy³eœ.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_02"); //Stoisz tu przede mn¹ z zamiarem dokonania os¹du za tych, którzy jako duchy b³¹kaj¹ siê, po obozie czuj¹c wieczny ból i cierpienie.
-	AI_Output (other, self,"DIA_NASZ_028_Kazmin_Spotkanie_15_03"); //Dlaczego im to zrobi³eœ? Czy wy, demonie, istniejecie jedynie po to, aby siaæ zniszczenie i œmieræ?
+	AI_Output (other, self,"DIA_NASZ_028_Kazmin_Spotkanie_15_03"); //Dlaczego im to zrobi³eœ? Czy wy, demony, istniejecie jedynie po to, aby siaæ zniszczenie i œmieræ?
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_04"); //Je¿eli tak uwa¿asz, to jesteœ naprawdê ograniczon¹ istot¹, cz³owieku. Nie ka¿dy demon chce zniszczyæ œwiat. Nie ka¿dy demon jest bezmyœln¹ machin¹ do zabijania.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_05"); //Gdybym by³ taki jak reszta moich braci, ju¿ dawno le¿a³byœ na posadzce zbieraj¹c swoje flaki.
 	AI_Output (self, other,"DIA_NASZ_028_Kazmin_Spotkanie_028_06"); //Mój pan, w którego wierzyli tutejsi ludzie, nakaza³ mi, abym przez tysi¹ce lat skazywa³ ich dusze na cierpienie.

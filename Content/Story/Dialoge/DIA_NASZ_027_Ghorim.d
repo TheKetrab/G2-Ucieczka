@@ -94,9 +94,9 @@ func int DIA_NASZ_027_Ghorim_Lojalnosc_Condition ()
 func void DIA_NASZ_027_Ghorim_Lojalnosc_Info ()
 {
 	
-	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_00"); //Stój tam, gdzie stoisz! Inaczej podeptasz bagienne ziele, które muszê ugnieœæ i zanieœæ Cor Kalomowi!
+	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_00"); //Stój tam, gdzie stoisz! Inaczej podepczesz bagienne ziele, które muszê ugnieœæ i zanieœæ Cor Kalomowi!
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_01"); //Nie chcê podwa¿aæ twoich s³ów, duchu, lecz tutaj nigdzie nie ma bagiennego ziela. Jest jedynie b³oto, kamienie i ziemia, z której wyrastaj¹ nowe chwasty.
-	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_02"); //Niech to szlag! Harlok znów siê obija zamiast zabraæ siê do roboty! Tym razem sam siê z nim rozmówiê!
+	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_02"); //Niech to szlag! Harlok znowu siê obija zamiast zabraæ siê do roboty! Tym razem sam siê z nim rozmówiê!
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_03"); //Spokojnie, Ghorimie. Myœlê, ¿e móg³byœ wzi¹æ sobie trochê wolnego i odpocz¹æ od pracy. Ka¿dy ma prawo do chwili wytchnienia.
 	AI_Output			(other, self, "DIA_NASZ_027_Ghorim_Lojalnosc_15_04"); //Pamiêtam, ¿e swego czasu du¿o odpoczywa³eœ.
 	AI_Output			(self, other, "DIA_NASZ_027_Ghorim_Lojalnosc_027_05"); //Wtedy jeszcze ten sukinsyn Harlok jakkolwiek pomaga³ mi w mojej pracy. Teraz nie widzia³em go tu ju¿ kilka dobrych tygodni.

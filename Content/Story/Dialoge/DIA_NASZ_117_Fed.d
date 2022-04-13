@@ -254,8 +254,8 @@ FUNC VOID DIA_NASZ_117_Fed_HowAreYou_Info()
 	}
 	else
 	{
-		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_03"); //Strasznie siê stresujê. Wymarsz do twierdzy razem z innymi to chyba by³ kiepski pomys³.
-		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_04"); //Tylko bogowie mog¹ nas uratowaæ.
+		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_03"); //Strasznie siê stresujê. Wyruszaæ do twierdzy razem z innymi to chyba by³ kiepski pomys³.
+		AI_Output (self, other,"DIA_NASZ_117_Fed_HowAreYou_55_04"); //Tylko Innos mo¿e nas uratowaæ.
 	};
 };
 

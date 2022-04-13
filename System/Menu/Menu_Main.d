@@ -169,7 +169,7 @@ instance MENUITEM_MAIN_G2UVERSION(C_MENU_ITEM_DEF)
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "v1.2";
 	posx = 6500;
-	posy = 7200;
+	posy = 7000; // ciut wyzej od SystemPack version, zeby sie nie gryzlo w razie czego
 	dimx = 8100;
 	dimy = 750;
 	flags = flags & ~IT_SELECTABLE;

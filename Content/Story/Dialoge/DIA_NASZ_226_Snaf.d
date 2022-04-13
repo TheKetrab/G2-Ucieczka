@@ -1070,7 +1070,7 @@ FUNC VOID DIA_NASZ_226_Snaf_jedzenie_Info()
 			}
 			else if (LosowaniePotrawy >=0)
 			{
-				AI_Output (self ,other,"DIA_NASZ_226_Snaf_jedzenie_17_06"); //2 bohenki chleba, tylko tyle dzisiaj.
+				AI_Output (self ,other,"DIA_NASZ_226_Snaf_jedzenie_17_06"); //2 bochenki chleba, tylko tyle dzisiaj.
 				B_GiveInvItems (self, other, ItFo_Bread, 2);
 
 			};
@@ -1084,7 +1084,7 @@ FUNC VOID DIA_NASZ_226_Snaf_jedzenie_Info()
 	}
 	else
 	{
-		AI_Output (self ,other,"DIA_NASZ_226_Snaf_jedzenie_17_08"); //Ne ma z³ota, nie ma ¿arcia!
+		AI_Output (self ,other,"DIA_NASZ_226_Snaf_jedzenie_17_08"); //Nie ma z³ota, nie ma ¿arcia!
 	};
 };		
 

@@ -714,7 +714,7 @@ INSTANCE ItAt_DemonHeart (C_Item)
 //**************************************************************************
 INSTANCE ItAt_UndeadDragonSoulStone (C_Item)
 {
-	name 				=	"Kamie?duszy smoka-o¿ywieñca";
+	name 				=	"Kamieñ duszy smoka-o¿ywieñca";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI|ITEM_MISSION;

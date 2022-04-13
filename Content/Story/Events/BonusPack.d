@@ -51,7 +51,7 @@ FUNC VOID check_all_wiarolomca()
 		hero.attribute[ATR_DEXTERITY] -= 5;
 		hero.aivar[REAL_DEXTERITY] -= 5;
 
-		PrintS_Ext("Moc artefaktów ochorni³a ciê przed œmierci¹, jednak¿e zosta³eœ os³abiony!", RGBA(255,255,255,0));	
+		PrintS_Ext("Moc artefaktów ochroni³a ciê przed œmierci¹, jednak¿e zosta³eœ os³abiony!", RGBA(255,255,255,0));	
 		B_GivePlayerXP(500);
 	};
 };

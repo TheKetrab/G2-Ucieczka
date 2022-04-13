@@ -659,7 +659,7 @@ FUNC VOID DIA_NASZ_232_Jehen_Korzenie_Info()
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_00"); //Mogê zadaæ ci jedno, bardzo wa¿ne pytanie?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_01"); //Oczywiœcie, coœ siê sta³o?
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_02"); //Odk¹d zaczêliœmy iœæ tropem tego stworzenia, zaczê³a boleæ mnie g³owa, a im dalej idziemy, tym ból staje siê coraz bardziej nie do zniesienia. Czujê siê, jakbym zaraz mia³ eksplodowaæ!
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_03"); //Myœla³em, ¿e jedynie ja mam takie dolegliwoœci. Z ka¿dym krokiem czujê siê tak, jakby moje si³y mala³y, a moje cia³o stawa³o siê coraz s³absze i mnie wytrzyma³e.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_03"); //Myœla³em, ¿e jedynie ja mam takie dolegliwoœci. Z ka¿dym krokiem czujê siê tak, jakby moje si³y mala³y, a moje cia³o stawa³o siê coraz s³absze i mniej wytrzyma³e.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_04"); //Dziwne rzeczy maj¹ tutaj miejsce, miejmy nadziejê, ¿e to nic powa¿nego, gdy¿ inaczej mo¿emy mieæ powa¿ne tarapaty.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Korzenie_55_05"); //Jak ju¿ wczeœniej mówi³em, chcê siê przygotowaæ do walki z t¹ besti¹. Wróæ siê nad rzekê i powinieneœ znaleŸæ kilka rzecznych pn¹czy.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_Korzenie_55_06"); //A có¿ to s¹ te rzeczne pn¹cza?

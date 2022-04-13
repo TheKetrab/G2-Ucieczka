@@ -195,7 +195,7 @@ FUNC VOID Use_PrzemianaBook_S1()		//Tierbücher
 					Doc_PrintLine	( nDocID,  1, ""						);
 					Doc_PrintLines	( nDocID,  1, "Kluczem do sukcesu nie jest strza³a, a zwój. Czy ktoœ spodziewa siê zagro¿enia ze strony ostrych grotów strza³? Ka¿dy. A wiêc wzrasta czujnoœæ przeciwnika."		);
 					Doc_PrintLines	( nDocID,  1, ""						);
-					Doc_PrintLines	( nDocID,  1, "Wilki bardzo ceni¹ sobie swoj¹ watachê. Trzymaj¹ siê jej i rzadko mo¿na je spotkaæ w odosobnieniu. Jeœli zaatakujemy je od œrodka - jako jeden z cz³onków watachy - bêd¹ oszo³omione. Warto spróbowaæ skorzystaæ z przemiany w wilka, podkraœæ siê do stada wilków, wmieszaæ siê miêdzy nie i dopiero wtedy zaatakowaæ."						); 
+					Doc_PrintLines	( nDocID,  1, "Wilki bardzo ceni¹ sobie swoj¹ watahê. Trzymaj¹ siê jej i rzadko mo¿na je spotkaæ w odosobnieniu. Jeœli zaatakujemy je od œrodka - jako jeden z cz³onków watahy - bêd¹ oszo³omione. Warto spróbowaæ skorzystaæ z przemiany w wilka, podkraœæ siê do stada wilków, wmieszaæ siê miêdzy nie i dopiero wtedy zaatakowaæ."						); 
 					Doc_PrintLine	( nDocID,  1, ""						);
 					Doc_PrintLine	( nDocID,  1, ""						);
 							

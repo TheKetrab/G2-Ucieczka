@@ -53,7 +53,7 @@ func void DIA_NASZ_406_Straznik_Moc_Info ()
 	Wld_PlayEffect("SPELLFX_lightstar_white",  hero, hero, 0, 0, 0, FALSE );
 	AI_PlayAni (self,"T_PRACTICEMAGIC5");	
 	
-	AI_Output			(self ,other, "DIA_NASZ_406_Straznik_Moc_19_00"); //Kolejny, który próbuje wykraœc mój skarb?
+	AI_Output			(self ,other, "DIA_NASZ_406_Straznik_Moc_19_00"); //Kolejny, który próbuje wykraœæ mój skarb?
 	AI_Output			(self ,other, "DIA_NASZ_406_Straznik_Moc_19_01"); //Ludzie. Jesteœcie tacy niepowa¿ni! Zginiesz!
 
 	B_LogEntry (TOPIC_Niedostepny_Klif, "Stra¿nik krypty pod wulkanem chroni artefaktu. Muszê go zabiæ i zabraæ to, co potrzebujê.");

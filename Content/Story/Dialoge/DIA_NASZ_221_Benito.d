@@ -595,7 +595,7 @@ FUNC VOID DIA_NASZ_221_Benito_FajkaStart_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_00"); //Nie wiesz, gdzie mogê znaleŸæ fajkê?
-	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_01"); //Nie mam ¿adnej na stanie. Mo¿e le¿y tu gdzieœ jak¹œ pozosta³oœæ z czasów Bariery?
+	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_01"); //Nie mam ¿adnej na stanie. Mo¿e le¿y tu gdzieœ jakaœ pozosta³oœæ z czasów Bariery?
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_02"); //Bractwo Œni¹cego uprawia³o bagienne ziele, by tworzyæ rozmaite skrêty...
 	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_03"); //No tak, ale mówi³eœ, ¿e chodzi ci o fajkê. Czy wytwórcy ziela mieli jak¹œ konkurencjê?
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_04"); //W³aœnie sobie przypomnia³em, ¿e w pobli¿u Nowego Obozu kilku szkodników wytwarza³o skrêty na w³asn¹ rêkê.

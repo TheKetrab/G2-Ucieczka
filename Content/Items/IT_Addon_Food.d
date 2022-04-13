@@ -169,7 +169,7 @@ INSTANCE ItFo_Addon_LousHammer (C_Item)
 //--------------------------------------------------------
 INSTANCE ItFo_Addon_SchlafHammer (C_Item)
 {
-	name 			=	"Podwojny M³ot";
+	name 			=	"Podwójny M³ot";
 
 	mainflag 		=	ITEM_KAT_FOOD;
 	flags 			=	ITEM_MULTI;

@@ -556,7 +556,7 @@ FUNC VOID DIA_NASZ_010_Monastir_NearGate_Info()
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_NearGate_55_04"); //Ta roœlina to s³oneczny aloes. Roœnie na odchodach trolla.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_NearGate_55_05"); //Jednak¿e jeden troll nie wystarczy, ¿eby roœlina zakie³kowa³a. Potrzeba ca³ej rodzinki tych bestii.
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_NearGate_55_06"); //Gdzie w Górniczej Dolinie w jednym miejscu przebywa tyle trolli?
-	AI_Output (self, other,"DIA_NASZ_010_Monastir_NearGate_55_07"); //Nie wiem... mo¿e zapytaj Silasa? Spêdzi³em jedn¹ noc w karczmie i z romowy wyniknê³o, ¿e w Kolonii Górniczej przebywa ju¿ od wielu lat.
+	AI_Output (self, other,"DIA_NASZ_010_Monastir_NearGate_55_07"); //Nie wiem... mo¿e zapytaj Silasa? Spêdzi³em jedn¹ noc w karczmie i z rozmowy wyniknê³o, ¿e w Kolonii Górniczej przebywa ju¿ od wielu lat.
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_NearGate_55_08"); //Gdy ju¿ znajdziesz te roœliny, nazbieraj ich przynajmniej piêæ. Myœlê, ¿e z tak¹ iloœci¹ soku z ich liœci zdo³am prze³amaæ barierê.
 
 	B_LogEntry (TOPIC_Monastir_pomoc, "Monastir potrzebuje 5 s³onecznych aloesów, które rosn¹ w odchodach trolli. Nie wystarczy jednak jeden troll, by roœlina uros³a. Ktoœ, kto d³ugo przebywa³ za barier¹, mo¿e wiedzieæ, gdzie mogê znaleŸæ tyle tych bestii. Monastir poradzi³ mi, ¿ebym zajrza³ do Silasa.");

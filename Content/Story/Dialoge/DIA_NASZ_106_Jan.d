@@ -150,7 +150,7 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30()
 {
 	AI_Output (other,self ,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30_15_00"); //Chcê 30.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30_15_01"); //30 sztuk z³ota... Niech bêdzie, ale warunek jest jeden:
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30_15_02"); //Bêdziesz mi przynosiæ nie dziesiêæ, a dwanaœcie sztuk ¿elaztwa.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30_15_02"); //Bêdziesz mi przynosiæ nie dziesiêæ, a dwanaœcie sztuk ¿elastwa.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnie_targowanie30_15_03"); //Dobijemy w koñcu targu?
 	
 	Info_ClearChoices (DIA_NASZ_106_Jan_WykujeszDlaMnie);
@@ -251,7 +251,7 @@ FUNC VOID DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_Info()
 	AI_Output (other, self,"DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_15_00"); //Porozmawiajmy jeszcze raz o wykuwaniu mieczy.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_55_01"); //Naprawdê ci na tym zale¿y, co?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_55_02"); //W takim razie pozostaniemy przy moich warunkach.
-	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_55_03"); //15 sztuk ¿elaztwa, dowolnego. I to moje ostatnie s³owo.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_WykujeszDlaMnieAgain_55_03"); //15 sztuk ¿elastwa, dowolnego. I to moje ostatnie s³owo.
 	
 	JanZaplataZaKowalstwo = 4;
 };
@@ -1856,7 +1856,7 @@ func int DIA_NASZ_106_Jan_Kap3Quest_Condition ()
 
 func void DIA_NASZ_106_Jan_Kap3Quest_Info ()
 {
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_00"); //Ha, wreszczie ciê widzê.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_00"); //Ha, wreszcie ciê widzê.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3Quest_15_01"); //Dlaczego czeka³eœ w³aœnie na mnie? Czy ju¿ tylko ja jestem tu czegoœ wart?
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_02"); //Tylko ty zwiedzasz Górnicz¹ Dolinê. Reszty albo to nie obchodzi albo s¹ znurzeni t¹ krain¹ i nie rusz¹ siê st¹d bez rozkazu Kerolotha. A ten aktualnie jest nieobecny.
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_03"); //Moja proœba mo¿e siê wydawaæ obrzydliwa, ale chyba nie ma innego rozwi¹zania.

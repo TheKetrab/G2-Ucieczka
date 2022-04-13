@@ -1103,7 +1103,7 @@ FUNC INT DIA_NASZ_115_Kurgan_DuchPrzyzwany_Condition()
 FUNC VOID DIA_NASZ_115_Kurgan_DuchPrzyzwany_Info()
 {
 
-	AI_Output (other, self,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_15_01"); //Na Inosa! Có¿ to? Mówi³eœ, ¿e nie mo¿na u¿ywaæ magii.
+	AI_Output (other, self,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_15_01"); //Na Innosa! Có¿ to? Mówi³eœ, ¿e nie mo¿na u¿ywaæ magii.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_55_02"); //Ale ja u¿y³em jej przed rozpoczêciem walki. To mój duch. Walczysz wiêc ze mn¹, ale w dwóch postaciach.
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_DuchPrzyzwany_55_03"); //Powodzenia, mistrzu!
 	KURGAN_WALCZY = TRUE;
@@ -1485,7 +1485,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_ArenaKap4_Info()
 	if (Wld_IsTime(21,00,23,59)) || (Wld_IsTime(00,00,06,00))
 	{
 		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_01"); //Mój drogi wojowniku! O tej godzinie siê œpi albo biesiaduje, a nie walczy!
-		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_02"); //PrzyjdŸ za dnia, wtedy o tym porozmawiamy. A tym czasem napij siê ze mn¹ piwa i opowiedz jakiœ kawa³!
+		AI_Output (self, other,"DIA_NASZ_115_Kurgan_ArenaKap4_15_02"); //PrzyjdŸ za dnia, wtedy o tym porozmawiamy. A tymczasem napij siê ze mn¹ piwa i opowiedz jakiœ kawa³!
 		return;
 	};
 

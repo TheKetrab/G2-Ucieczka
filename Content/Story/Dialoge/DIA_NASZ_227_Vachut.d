@@ -695,7 +695,7 @@ FUNC VOID DIA_NASZ_227_Vachut_Regeneracja3_Info()
 		if (hero.lp >= 10){
 			B_GiveInvItems (other, self, ItMi_Gold, 2000);	
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_55_02"); //Teraz staniesz siê jednoœci¹ ze swoj¹ dusz¹.
-			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_03"); //Utrzymuj wyprostowan¹ pozycjê podczas biegu. Lepiej napêdzisz kwriobieg.
+			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_03"); //Utrzymuj wyprostowan¹ pozycjê podczas biegu. Lepiej napêdzisz krwiobieg.
 			AI_Output (self, other,"DIA_NASZ_227_Vachut_Regeneracja3_15_04"); //Wypij te¿ ten wywar. Wzmocni ciê.
 
 			Createinvitems(self,ItNa_WywarVachuta,1);

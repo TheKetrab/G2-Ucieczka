@@ -248,7 +248,7 @@ FUNC VOID DIA_NASZ_452_KurgKan_BRON_Info()
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Bron_55_11"); //Kurg-Kan chcieæ dobra broñ. Orki miecz elita. Topór stary, rozpaœæ.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Bron_15_12"); //Czemu nie poprosisz Jana, ¿eby zrobi³ ci nowy miecz?
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Bron_55_13"); //Pytaæ. Jan-kowal powiedzieæ, ¿e byæ artysta, nie zrobiæ orka broñ, bo nie byæ kunsztu w tym.
-	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Bron_15_14"); //Ca³y Jan. W porz¹dku, rozejrzê siê i przyniosê ci jakaœ porz¹dn¹ broñ.
+	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Bron_15_14"); //Ca³y Jan. W porz¹dku, rozejrzê siê i przyniosê ci jak¹œ porz¹dn¹ broñ.
 	
 	KurgKanGodarInfo = true;
 	Log_CreateTopic (TOPIC_OrcWeapon, LOG_MISSION);

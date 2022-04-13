@@ -107,7 +107,7 @@ FUNC VOID DIA_NASZ_020_Sattar_Metody1_Info()
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_12"); //Wystarczy wtedy znaæ w³aœciwoœci roœlin i to, jak reaguj¹ z danymi sk³adnikami, a nastêpnie zmieszaæ wszystko w odpowiednich proporcjach.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_13"); //To samo mo¿na wykorzystaæ w procesie tworzenia zwojów.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_14"); //W formu³ê jak¹ zapiszesz na pergaminie, mo¿esz tchn¹æ energiê przedmiotów, które do niej nie pasuj¹ licz¹c siê z tym, ¿e taki czar bêdzie o wiele s³abszy. 
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_15"); //To z³o¿ony proces, który w klasztorze, z jakiego pochodzê, nazywany by³ 'manipulacj¹ energi'. 
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_15"); //To z³o¿ony proces, który w klasztorze, z jakiego pochodzê, nazywany by³ 'manipulacj¹ energii'. 
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody1_55_16"); //Brzmi ryzykownie. Kiedy mo¿emy zacz¹æ?
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody1_55_17"); //W³aœciwie ju¿ teraz. Jednak po raz kolejny bêdê potrzebowa³ twojej pomocy.
 

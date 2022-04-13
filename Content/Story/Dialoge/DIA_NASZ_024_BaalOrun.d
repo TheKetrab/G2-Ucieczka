@@ -250,7 +250,7 @@ func void DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_08"); //Niewiele pamiêtam z tego, co dzia³o siê dalej. Ostatni widok jaki kr¹¿y mi po g³owie, to jak nowicjusz poszed³ w kierunku bagien.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_09"); //Myœlê, i¿ tam powinieneœ zacz¹æ swe poszukiwania.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_10"); //A kiedy odnajdê ju¿ ksi¹¿kê, co wtedy? Jaki bêdzie nasz nastêpny cel?
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_11"); //Wtedy pomo¿esz nam odprawiæ rytua³, który przywróci nam pamiêæ. Bêdzie to wymaga³o niesprzeciwienia siê obecnemu tutaj z³u i skontaktowania siê z silami, z jakimi lepiej nie mieæ stycznoœci.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_11"); //Wtedy pomo¿esz nam odprawiæ rytua³, który przywróci nam pamiêæ. Bêdzie to wymaga³o niesprzeciwienia siê obecnemu tutaj z³u i skontaktowania siê z si³ami, z jakimi lepiej nie mieæ stycznoœci.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_12"); //Twoja pomoc oka¿e siê nieoceniona, gdy¿ si³y ciemnoœci bêd¹ zapewne chcia³y nas powstrzymaæ i uniemo¿liwiæ nam odzyskanie œwiadomoœci.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_13"); //Bêdzie to pierwszy krok, który umo¿liwi nam odzyskanie wolnoœci i spokoju. Lecz nawet wtedy wci¹¿ bêdziemy niewolnikami, którzy jedynie dodadz¹ ci si³ byœ w ich imieniu wywalczy³ o wolnoœæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_14"); //Czy jesteœ gotów podj¹æ siê tego zadania?

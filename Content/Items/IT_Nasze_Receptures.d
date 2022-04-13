@@ -923,7 +923,7 @@ func void Use_Przepis_ZupaPiwna ()
 				Doc_PrintLines	( nDocID,  0, "Bonus: mana +1");
 
 				Doc_PrintLines	( nDocID,  0, ""						);
-				Doc_PrintLines	( nDocID,  0, "3 sztuki surowego miêsa podsma¿any na garnku o grubym dnie, a¿ stanie siê wystarczaj¹co chrupi¹ce. Wyjmujemy miêso pozostawiaj¹c w garnku wytopiony t³uszcz i sma¿ymy na nim posiekan¹ kie³basê. Wszystko wrzucamy do piwa i gotujemy na wolnym ogniu. Nale¿y u¿yæ przynajmniej 4 butelki piwa. Po godzinie ca³oœæ powinna byæ ju¿ gotowa.");
+				Doc_PrintLines	( nDocID,  0, "3 sztuki surowego miêsa podsma¿amy na garnku o grubym dnie, a¿ stanie siê wystarczaj¹co chrupi¹ce. Wyjmujemy miêso pozostawiaj¹c w garnku wytopiony t³uszcz i sma¿ymy na nim posiekan¹ kie³basê. Wszystko wrzucamy do piwa i gotujemy na wolnym ogniu. Nale¿y u¿yæ przynajmniej 4 butelki piwa. Po godzinie ca³oœæ powinna byæ ju¿ gotowa.");
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus

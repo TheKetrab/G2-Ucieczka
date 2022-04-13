@@ -55,7 +55,7 @@ func void B_Miecz_Sing (var int verse)
 	
 	else if (verse == 4)
 	{
-		AI_Output (self ,self,"DIA_Miecz_Sing4_00"); //Mo¿e ktoœ siê bêdzie z¿yma³, mówi¹c, ¿e to zdrozne wieœci, ale to jest w³aœnie klimat morskich opowieœci.
+		AI_Output (self ,self,"DIA_Miecz_Sing4_00"); //Mo¿e ktoœ siê bêdzie z¿yma³, mówi¹c, ¿e to zdro¿ne wieœci, ale to jest w³aœnie klimat morskich opowieœci.
 		AI_Output (self ,self,"DIA_Miecz_Sing4_01"); //Hej, ha, kolejkê nalej! Hej ha, kielichy wznieœmy! To zrobi doskonale morskim opowieœciom.
 	}
 	

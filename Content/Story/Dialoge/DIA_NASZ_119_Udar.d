@@ -822,7 +822,7 @@ FUNC INT DIA_NASZ_119_Udar_PatrolFinish_Condition()
 FUNC VOID DIA_NASZ_119_Udar_PatrolFinish_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_00"); //Przynoszê raport od zwiadowców.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zasnaczonymi si³ami orków.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_PatrolFinish_15_01"); //Trzymaj. Jest tam równie¿ mapa z zaznaczonymi si³ami orków.
 
 	B_GiveInvItems(other,self,ItNa_JenkinsRaport,1);
 	Npc_RemoveInvItems(self,ItNa_JenkinsRaport,1);
@@ -1080,11 +1080,11 @@ FUNC VOID DIA_NASZ_119_Udar_DoCrossBow_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_119_Udar_DoCrossBow_15_00"); //Potrafisz wytwarzaæ kusze?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_DoCrossBow_55_01"); //Potrafiê. A czemu pytasz?
-	AI_Output (other, self,"DIA_NASZ_119_Udar_DoCrossBow_55_02"); //Jan chce skompletowaæ nowe wyposarzenie wojowników.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_DoCrossBow_55_02"); //Jan chce skompletowaæ nowe wyposa¿enie wojowników.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_DoCrossBow_55_03"); //I szukasz kogoœ, kto zrobi kuszê?
 	AI_Output (self, other,"DIA_NASZ_119_Udar_DoCrossBow_55_04"); //W porz¹dku, wykonam prototyp. Ale pod jednym warunkiem!
 	AI_Output (self, other,"DIA_NASZ_119_Udar_DoCrossBow_55_05"); //Strzelisz z niej do mnie. Muszê wiedzieæ, ¿e nie jest badziewna.
-	AI_Output (other, self,"DIA_NASZ_119_Udar_DoCrossBow_55_06"); //Co?! To najg³upsza rzecz, jak¹ us³sza³em.
+	AI_Output (other, self,"DIA_NASZ_119_Udar_DoCrossBow_55_06"); //Co?! To najg³upsza rzecz, jak¹ us³ysza³em.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_DoCrossBow_55_07"); //Umowa stoi, czy nie?
 
 	Info_ClearChoices (DIA_NASZ_119_Udar_DoCrossBow);

@@ -110,7 +110,7 @@ FUNC VOID DIA_NASZ_228_Chris_guide_Info()
 		AI_Output (other, self,"DIA_NASZ_228_Chris_guide_55_02"); //Nie.
 		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_03"); //W takim razie nie obraŸ siê, ale to nie ma najmniejszego sensu...
 		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_04"); //By³byœ dla mnie tylko balastem do ochraniania.
-		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_05"); //Naucz siê chocia¿ podstaw myœliwstwa, a dopiero wtedy udamy siê na polowanie. 
+		AI_Output (self, other,"DIA_NASZ_228_Chris_guide_55_05"); //Naucz siê chocia¿ podstaw myœlistwa, a dopiero wtedy udamy siê na polowanie. 
 		}
 	else {
 		AI_Output (other, self,"DIA_NASZ_228_Chris_guide_55_06"); //Tak.

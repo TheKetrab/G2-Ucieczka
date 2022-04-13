@@ -896,7 +896,7 @@ FUNC VOID DIA_NASZ_223_Ratford_RatfordChestsFinish_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_01"); //Dobra robota, s¹ wszystkie.
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_02"); //Cholera jasna! Widzisz, co siê sta³o ze skrzyneczk¹? Drewniana obudowa zaczê³a gniæ przez dzia³anie wody.
-	AI_Output (other, self,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_03"); //Mam nadziejê, ¿e wnêtrze nie uciepra³o? Ale to sprawdzisz ju¿ sam, póŸniej.	
+	AI_Output (other, self,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_03"); //Mam nadziejê, ¿e wnêtrze nie ucierpia³o? Ale to sprawdzisz ju¿ sam, póŸniej.	
 	AI_Output (self, other,"DIA_NASZ_223_Ratford_RatfordChestsFinish_15_04"); //Nie powinno, wewn¹trz jest tylko z³oto. Dlatego w³aœnie jest taka ciê¿ka. A teraz, zgodnie z umow¹, mo¿esz kupowaæ wytrychy du¿o taniej.
 	
 	WytrychyZaPolowe = TRUE;

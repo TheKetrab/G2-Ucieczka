@@ -482,13 +482,13 @@ FUNC VOID DIA_NASZ_127_Jeremiasz_Zielarstwo1_Info()
 		if (hero.lp >= 10){
 			B_GiveInvItems (other, self, ItMi_Gold, 500);			
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_55_00"); //Tak jak mówi³em, na stole destylacyjnym mo¿esz uwarzyæ specjalne wywary. Musisz tylko nauczyæ siê go obs³ugiwaæ.
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ buelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_01"); //PodejdŸ do sto³u i weŸ pust¹ butelkê. WeŸ ma³y no¿yk i delikatnie nakrój korzeñ roœliny.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_02"); //Sok, który siê wyleje, wlej do pojemniczka na stole. Powinna byæ tam te¿ ska³a krystaliczna. Musisz zamoczyæ j¹ w tej cieczy.
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_03"); //W czasie, gdy ska³a bêdzie siê namaczaæ, ty posiekaj w drobny maczek liœcie roœliny i wsyp do buteleczki. Zalej to wod¹, jeœli chcesz, mo¿esz tam te¿ napluæ. Ha, ha!
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_04"); //Teraz dolej soku ³odygi, zakorkuj i mocno potrz¹œnij.
 			AI_Output (other, self,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_05"); //Co z reszt¹ ³odygi?
 			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_06"); //Jest bez soku, mo¿esz j¹ wyrzuciæ.
-			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_07"); //Gdybyœ by³ zainteresowany, mo¿esz rzuciæ okiem do którejœæ z ksi¹¿ek le¿¹cych na stole.
+			AI_Output (self, other,"DIA_NASZ_127_Jeremiasz_Zielarstwo1_15_07"); //Gdybyœ by³ zainteresowany, mo¿esz rzuciæ okiem do którejœ z ksi¹¿ek le¿¹cych na stole.
 			
 			level_zielarstwa = 1;
 			hero.lp = hero.lp - 10;

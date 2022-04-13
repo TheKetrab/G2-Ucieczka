@@ -284,7 +284,7 @@ FUNC INT DIA_NASZ_216_Aran_GoKillOrc_Condition()
 FUNC VOID DIA_NASZ_216_Aran_GoKillOrc_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_216_Aran_GoKillOrc_15_00"); //ChodŸ ze mn¹ przeszukaæ orkowe namioty.
-	AI_Output (self, other,"DIA_NASZ_216_Aran_GoKillOrc_55_01"); //Obawiam siê, ¿e to niemo¿liwe. Noga przesta³a boleæ, ale jetem strasznie s³aby. Niezdolny do walki.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_GoKillOrc_55_01"); //Obawiam siê, ¿e to niemo¿liwe. Noga przesta³a boleæ, ale jestem strasznie s³aby. Niezdolny do walki.
 };
 
 
@@ -365,7 +365,7 @@ FUNC VOID DIA_NASZ_216_Aran_GoToKeroloth_Info()
 	};
 
 	if ((ARAN_QUESTKAP3 == TRUE) && (ARAN_NOGA == TRUE)) {
-		AI_Output (self, other,"DIA_NASZ_216_Aran_GoToKeroloth_55_04"); //W porz¹dku. Docz³apiê siê tam jakoœ, a potem mo¿e odzykam si³y.
+		AI_Output (self, other,"DIA_NASZ_216_Aran_GoToKeroloth_55_04"); //W porz¹dku. Docz³apiê siê tam jakoœ, a potem mo¿e odzyskam si³y.
 		AI_Output (self, other,"DIA_NASZ_216_Aran_GoToKeroloth_55_05"); //Gdzie mam iœæ?
 		AI_Output (other, self,"DIA_NASZ_216_Aran_GoToKeroloth_55_06"); //Do Kanionu Trolli.
 		AI_Output (self, other,"DIA_NASZ_216_Aran_GoToKeroloth_55_07"); //Dawno mnie tam nie by³o. Wyruszam natychmiast.

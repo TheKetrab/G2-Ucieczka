@@ -168,7 +168,7 @@ FUNC VOID DIA_NASZ_214_Goth_sytuacja_Info()
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_01"); //Tak wiêc, tu znajduje siê obóz myœliwych. Nie zale¿y nam zbytnio na odzyskaniu zamku. Mo¿na œmia³o powiedzieæ, ¿e u¿ywamy sobie ¿ycia, ile tylko mo¿emy.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_02"); //Ka¿dego dnia jemy obrzydliwie obfite posi³ki, ¿remy miêso i popijamy piwem. Co lepszego nam zosta³o? Jesteœmy uwiêzieni w dawnej Kolonii Karnej.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_03"); //Jedyne, czego tu brakuje, to kobiet. I to nie jednej, a przynajmniej dziesiêciu!
-	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_04"); //Jesli jednak chcesz wiedzieæ wiêcej na temat tego, co siê sta³o z paladynami odsy³am ciê do ³owców orków.
+	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_04"); //Jeœli jednak chcesz wiedzieæ wiêcej na temat tego, co siê sta³o z paladynami odsy³am ciê do ³owców orków.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_sytuacja_55_05"); //Ci idioci chwal¹ siê tym na prawo i na lewo.
 };
 

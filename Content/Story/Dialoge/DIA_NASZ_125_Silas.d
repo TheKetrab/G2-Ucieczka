@@ -538,7 +538,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3_Info()
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3_55_06"); //Ale w mojej karczmie z pewnoœci¹ zosta³o jeszcze kilka beczu³ek. Niestety, tamte tereny okupuj¹ potê¿ne jaszczurki i nie sposób dostaæ siê do œrodka.
 
 	if (!npc_knowsinfo(other,DIA_NASZ_221_Benito_KillDone)) {
-		AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_07"); //Niewykluczam, ¿e niebawem siê tam wybiorê.
+		AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_07"); //Nie wykluczam, ¿e niebawem siê tam wybiorê.
 	}
 	else {
 		AI_Output (other,self ,"DIA_NASZ_125_Silas_QuestKap3_15_08"); //By³em tam ju¿ i mogê udaæ siê ponownie.

@@ -61,7 +61,7 @@ instance ItNa_Mapa_GraveMission (C_Item)
 
 	description	= name;
 	TEXT[0]		= "Na mapie zaznaczono miejsca,";
-	TEXT[1]		= "w któych znajduj¹ siê groby.";
+	TEXT[1]		= "w których znajduj¹ siê groby.";
 	TEXT[5]		= NAME_Value;
 	COUNT[5]	= value;
 };

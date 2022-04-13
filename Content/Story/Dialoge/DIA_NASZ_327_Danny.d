@@ -85,7 +85,7 @@ func void DIA_NASZ_327_Danny_what_Info ()
 	AI_Output			(other, self, "DIA_NASZ_327_Danny_what_55_00"); //Co tu robisz?
 	AI_Output			(self, other, "DIA_NASZ_327_Danny_what_03_01"); //£owiê ryby.
 	AI_Output			(other, self, "DIA_NASZ_327_Danny_what_03_02"); //Sam?
-	AI_Output			(self, other, "DIA_NASZ_327_Danny_what_03_03"); //Owszem. Ta czêœæ Gorniczej Doliny jest wzglêdnie bezpieczna. Nie mam siê czego obawiaæ.
+	AI_Output			(self, other, "DIA_NASZ_327_Danny_what_03_03"); //Owszem. Ta czêœæ Górniczej Doliny jest wzglêdnie bezpieczna. Nie mam siê czego obawiaæ.
 
 };
 

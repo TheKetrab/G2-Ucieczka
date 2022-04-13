@@ -778,7 +778,7 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 				Doc_PrintLines	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "W³aœnie wymyœli³em nowy rodzaj broni! Trzeba rozgrzaæ stalowy prêt i zedrzeæ go no¿em. Z pozosta³ej czêœci nale¿y uformowaæ g³owicê. Ze zdartych opi³ków trzeba sporz¹dziæ kolce i powbijaæ je do reszty.");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Tutaj tego nie sprzedam, ale mo¿e uda siê pohandlowaæ ze Szkodznikami z Nowego Obozu...");
+				Doc_PrintLines	( nDocID,  0, "Tutaj tego nie sprzedam, ale mo¿e uda siê pohandlowaæ ze Szkodnikami z Nowego Obozu...");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Darrion");
 				Doc_PrintLine	( nDocID,  0, "");

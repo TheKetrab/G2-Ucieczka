@@ -377,7 +377,7 @@ FUNC VOID DIA_NASZ_120_Phill_Gwozdzie_Info()
 	};
 
 	Info_AddChoice		(DIA_NASZ_120_Phill_Gwozdzie,"Zapomnij, dawaj mi gwoŸdzie!",DIA_NASZ_120_Phill_Gwozdzie_no);
-	Info_AddChoice		(DIA_NASZ_120_Phill_Gwozdzie,"Zastanowie siê, jeœli mi zap³acisz.",DIA_NASZ_120_Phill_Gwozdzie_ok);
+	Info_AddChoice		(DIA_NASZ_120_Phill_Gwozdzie,"Zastanowiê siê, jeœli mi zap³acisz.",DIA_NASZ_120_Phill_Gwozdzie_ok);
 
 };
 
@@ -419,7 +419,7 @@ func void DIA_NASZ_120_Phill_Gwozdzie_no ()
 
 func void DIA_NASZ_120_Phill_Gwozdzie_ok ()
 {
-	AI_Output(other,self,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_00"); //Zastanowie siê, jeœli mi zap³acisz.
+	AI_Output(other,self,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_00"); //Zastanowiê siê, jeœli mi zap³acisz.
 	AI_Output(self,other,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_01"); //Zap³acê ci sto trzydzieœci sztuk z³ota za tê paczkê. W to wlicza siê zap³ata kowalowi.
 	AI_Output(other,self,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_02"); //Niech bêdzie. Za³atwiê ci paczkê, ale daj mi te pieni¹dze.
 	AI_Output(self,other,"DIA_NASZ_120_Phill_Gwozdzie_ok_01_03"); //Proszê, to nale¿y do ciebie. Drugie tyle dostaniesz, gdy zobaczê gwoŸdzie.
@@ -568,7 +568,7 @@ FUNC VOID DIA_NASZ_120_Phill_Kap4Quest_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_120_Phill_Kap4Quest_15_00"); //Nad czym tak dumasz?
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Kap4Quest_55_01"); //Ahh, tak siê zastanawiam, czy da siê wspi¹æ na to drzewo?
-	AI_Output (self, other,"DIA_NASZ_120_Phill_Kap4Quest_55_02"); //Co o tym myslisz?
+	AI_Output (self, other,"DIA_NASZ_120_Phill_Kap4Quest_55_02"); //Co o tym myœlisz?
 	AI_Output (other,self ,"DIA_NASZ_120_Phill_Kap4Quest_15_03"); //Sam nie wiem... Mogê spróbowaæ.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_Kap4Quest_55_04"); //Œwietnie! Chcê to zobaczyæ. Spróbuj wdrapaæ siê na sam czubek.
 

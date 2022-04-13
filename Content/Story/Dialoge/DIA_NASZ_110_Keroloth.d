@@ -302,7 +302,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questno_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_02"); //Wykrad³ list od mojej ¿ony, który dosta³em przed wyruszeniem na wyspê Khorinis i przeczyta³ go przy wszystkich. Nie wiem, jak bardzo musia³ byæ pijany, ¿eby zagl¹daæ w prywatne wiadomoœci.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_03"); //Oczywiœcie od razu go spra³em. Ale nie da³o mi to ¿adnej satysfakcji, bo drañ ledwo trzyma³ siê na nogach.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questno_15_04"); //Wiêc jak chcesz siê zemœciæ? Te¿ chcesz go skompromitowaæ?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_05"); //W¹piê, ¿eby ten stary pierdziel mia³ poczucie wstydu. Chcê, ¿eby zginê³a mu jedna z jego pami¹tek po marynarskim ¿yciu.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_05"); //W¹tpiê, ¿eby ten stary pierdziel mia³ poczucie wstydu. Chcê, ¿eby zginê³a mu jedna z jego pami¹tek po marynarskim ¿yciu.
 
 	Log_CreateTopic (TOPIC_Keroloth_Louis, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Keroloth_Louis, LOG_RUNNING);
@@ -1797,7 +1797,7 @@ FUNC INT DIA_NASZ_110_Keroloth_CampWeAreRdy_Condition()
 	&& ((npc_knowsinfo (other, DIA_NASZ_119_Udar_AllIsReady))
 	 || (npc_knowsinfo (other, DIA_NASZ_213_Gestath_AllIsReady)))
 	 
-	&& (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_MlotyPily)) // skonczone zadanie z wyposarzeniem do twierdzy
+	&& (npc_knowsinfo (other, DIA_NASZ_110_Keroloth_MlotyPily)) // skonczone zadanie z wyposazeniem do twierdzy
 	{
 		return TRUE;
 	};
@@ -2453,7 +2453,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	};
 	
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_16"); //Uwa¿asz, ¿e mo¿e mieæ to zwi¹zek z Obozem na Bagnie? Nie by³oby to takie niedorzeczne, gdy¿ po przybyciu otrzymywa³em raporty o tajemniczych zjawiskach, jakie maj¹ tam miejsce.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_17"); //Nalega³em by to sprawdziæ, lecz Lord Garond, œwieæ panie nad jego dusz¹, uwa¿a³, ¿e to nie bêdzie mia³o wyp³ywu na nasz¹ misjê. Teraz jednak przyszed³ czas, by to wreszcie sprawdziæ i zakoñczyæ wszystko, co siê tam dzieje.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_17"); //Nalega³em by to sprawdziæ, lecz Lord Garond, œwieæ panie nad jego dusz¹, uwa¿a³, ¿e to nie bêdzie mia³o wp³ywu na nasz¹ misjê. Teraz jednak przyszed³ czas, by to wreszcie sprawdziæ i zakoñczyæ wszystko, co siê tam dzieje.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_18"); //Ten mag wspomina³ tak¿e coœ o Zaæmieniu, które ju¿ mia³o siê rozpocz¹æ.
 
 	// Monastir
@@ -2877,7 +2877,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyReady_Info()
 	else {
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_05"); //Przyznam siê, ¿e ju¿ go wypróbowa³em i stwierdzam, ¿e jest to bardzo niebezpieczna broñ. Byæ mo¿e jako myœliwy nie bêdziesz w stanie siê ni¹ pos³ugiwaæ.
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_06"); //A wiêc przynios³em miecz i runê, a ty chcesz ten miecz dla siebie?
-		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_07"); //Nie, nie, Ÿle mnie zrozumia³eœ! Chodzi mi o to, ¿e mo¿esz nie byæ w stanie go udŸwign¹æ. Szkoda, ¿eby takie cudo by³o niwykorzystywane i rdzewia³o.
+		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_07"); //Nie, nie, Ÿle mnie zrozumia³eœ! Chodzi mi o to, ¿e mo¿esz nie byæ w stanie go udŸwign¹æ. Szkoda, ¿eby takie cudo by³o niewykorzystywane i rdzewia³o.
 		AI_Output (self, other,"DIA_NASZ_110_Keroloth_MieczRunicznyReady_55_08"); //Miecz jest twój, ale wiedz, ¿e chêtnie go od ciebie odkupiê.
 		Log_SetTopicStatus (TOPIC_MieczRuniczny, LOG_SUCCESS);
 		B_LogEntry (TOPIC_MieczRuniczny, "Miecz jest gotowy, ale Keroloth zaproponowa³, ¿e go ode mnie odkupi. Ciekawe, czy mi siê to op³aci?");
@@ -3360,7 +3360,7 @@ func void KerolothSay_YouArePro1h() {
 };
 
 func void KerolothSay_YouArePro2h() {
-	AI_Output(self,other,"KerolothSay_YouArePro2h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki broni¹ drurêczn¹.
+	AI_Output(self,other,"KerolothSay_YouArePro2h_04_00"); //Teraz jesteœ prawdziwym mistrzem walki broni¹ dwurêczn¹.
 };
 
 func void KerolothSay_NoMoney() {

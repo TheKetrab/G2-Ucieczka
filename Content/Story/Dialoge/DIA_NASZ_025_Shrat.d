@@ -99,7 +99,7 @@ func void DIA_NASZ_025_Shrat_Lojalnosc_Info ()
 	AI_Output			(other, self, "DIA_NASZ_025_Shrat_Lojalnosc_15_03"); //Powiedz mi duchu, czy jest jakiœ sposób na ukojenie twojej duszy?
 	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_04"); //Chcesz nam pomóc... Nie czêsto spotyka siê œmiertelnika, który baczy na los innych. Nie, mi niczego nie potrzeba.
 	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_05"); //Jednak chcê poprosiæ ciê o wyœwiadczenie przys³ugi mojemu przyjacielowi.
-	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_06"); //Pewnego razu wyszed³ z obozu pozbieraæ zio³a przy okolicznej górze, gdzie napad³y i po¿ar³y go wilki. Jego nagie koœci lez¹ w jaskini, a duch b³¹ka siê po okolicy nie mog¹c zaznaæ spokoju.
+	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_06"); //Pewnego razu wyszed³ z obozu pozbieraæ zio³a przy okolicznej górze, gdzie napad³y i po¿ar³y go wilki. Jego nagie koœci le¿¹ w jaskini, a duch b³¹ka siê po okolicy nie mog¹c zaznaæ spokoju.
 	AI_Output			(self, other, "DIA_NASZ_025_Shrat_Lojalnosc_025_07"); //Móg³byœ mu pomóc?
 	
 	Wld_InsertItem (ItNa_DuchSkull,"FP_ROAM_ZAPALISADA_LAS_70");

@@ -497,7 +497,7 @@ FUNC VOID DIA_NASZ_307_Monk_win_Info()
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_03"); //Cholera jasna. Zgodnie z przykazaniem Fruta, najpierw ja mia³em pilnowaæ bramy, a póŸniej zaj¹æ siê administracj¹ w obozie.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_04"); //Po dziesiêciu dniach, mieliœmy siê zamieniæ. Problem w tym, ¿e ten skurczysyn siê nie zamienia! Mimo i¿ minê³a ustalona iloœæ czasu.
 	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_05"); //A jest na tyle silny, ¿e wszyscy siê go boj¹ i nikt nie stanie po mojej stronie.
-	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_06"); //Gdy siê k³ociliœmy, ostro oberwa³em. To dlatego siedzê teraz cicho. Mimo to, nie pasuje mi taka sytuacja.
+	AI_Output (self, other,"DIA_NASZ_307_Monk_win_55_06"); //Gdy siê k³óciliœmy, ostro oberwa³em. To dlatego siedzê teraz cicho. Mimo to, nie pasuje mi taka sytuacja.
 
 	B_LogEntry (TOPIC_Monk_Frut, "Frut postêpuje niezgodnie z poleceniami Noda. Zamiast po dziesiêciu dniach wymieniæ siê stanowiskiem z Monkiem, przygarn¹³ je sobie na sta³e. Problem w tym, ¿e Frut jest na tyle silny, ¿e nikt nie chce siê mu postawiæ.");
 

@@ -256,7 +256,7 @@ FUNC VOID DIA_NASZ_318_Gobby_TryToDrink_Info()
 		}
 		
 		else {
-			PrintScreen	("Wymagana si³a: 10, zrêsznoœæ: 35", -1, 45, FONT_ScreenSmall, 2);
+			PrintScreen	("Wymagana si³a: 10, zrêcznoœæ: 35", -1, 45, FONT_ScreenSmall, 2);
 		};
 		
 		AI_StartState	(other, ZS_MagicSleep, 0, "");

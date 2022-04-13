@@ -700,7 +700,7 @@ FUNC VOID DIA_NASZ_999_Test_OpenGate_Info()
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Kopalnia Silvestro", DIA_NASZ_999_Test_OpenGate_SilvestroMiner);
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "OrcCity - wiêzienie", DIA_NASZ_999_Test_OpenGate_OrcCityPrison);
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Twierdza", DIA_NASZ_999_Test_OpenGate_Twierdza);
-		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Mysliwi", DIA_NASZ_999_Test_OpenGate_Mysliwi);
+		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Myœliwi", DIA_NASZ_999_Test_OpenGate_Mysliwi);
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "XardasOld", DIA_NASZ_999_Test_OpenGate_XardasOld);
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Monastir - OrcTown", DIA_NASZ_999_Test_OpenGate_MonastirOrcTown);
 		Info_AddChoice	  (DIA_NASZ_999_Test_OpenGate, "Zamek", DIA_NASZ_999_Test_OpenGate_Castle);

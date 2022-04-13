@@ -108,7 +108,7 @@ FUNC INT DIA_NASZ_215_Kivo_place_Condition()
 FUNC VOID DIA_NASZ_215_Kivo_place_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_215_Kivo_place_15_00"); //Co to za miejsce?
-	AI_Output (self, other,"DIA_NASZ_215_Kivo_place_55_01"); //To cmentarz mysliwych.
+	AI_Output (self, other,"DIA_NASZ_215_Kivo_place_55_01"); //To cmentarz myœliwych.
 	AI_Output (self, other,"DIA_NASZ_215_Kivo_place_55_02"); //Tutaj grzebiemy swoich zmar³ych. Ludzie niestety nie s¹ nieœmiertelni.
 };
 

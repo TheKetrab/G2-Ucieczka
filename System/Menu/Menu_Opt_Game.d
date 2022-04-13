@@ -357,7 +357,7 @@ instance MENUITEM_OPT_DISABLEQUICKSLOT(C_MENU_ITEM_DEF)
 {
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "Wy³¹cz Quickslot";
-	text[1] = "Wy³¹czenie paseka szybkiego wyboru";
+	text[1] = "Wy³¹czenie paska szybkiego wyboru";
 	posx = 700;
 	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 10);
 	dimx = 4600;

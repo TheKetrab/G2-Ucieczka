@@ -63,7 +63,7 @@ FUNC VOID DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_Info()
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_09"); //Jego te¿ znasz, gdy¿ zamieszkiwa³ obok twojej chaty w starym obozie. Tak, to Cain.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_10"); //Jak widzisz, pozosta³em wierny swojemu mistrzowi, mimo i¿ ten ju¿ dawno nie ¿yje. Nadal wykonujê jego wolê i wype³niam rozkazy, chocia¿ ten w którego wierzymy ju¿ tutaj nie przebywa.
 	AI_Output (other, self,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_11"); //K³amiesz! Chcesz zm¹ciæ mi umys³, aby potem mnie zabiæ. Nie pozwolê ci na to!
-	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_12"); //Twoim przeznaczeniem nie jest umrzeæ ju¿ teraz. Mia³eœ na mnie trafiæ, aby dopiero je poznaæ. A jest ono bardzo mocno zwi¹zane z Zaæmieniem, i czy tego chcesz, czy nie, jesteœ jego istnym elementem.
+	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_12"); //Twoim przeznaczeniem nie jest umrzeæ ju¿ teraz. Mia³eœ na mnie trafiæ, aby dopiero je poznaæ. A jest ono bardzo mocno zwi¹zane z Zaæmieniem, i czy tego chcesz, czy nie, jesteœ jego istotnym elementem.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_13"); //Nasza walka nie mia³aby ¿adnego sensu. Nie w tej chwili i tym czasie. Przyjdzie jeszcze na to odpowiednia pora.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_14"); //Pamiêtaj, i¿ Zaæmienia nie zdo³a powstrzymaæ nikt, ani nic.
 	AI_Output (other, self,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_15"); //Czym jest to Zaæmienie i dlaczego chcecie do niego doprowadziæ?

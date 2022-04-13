@@ -167,7 +167,7 @@ INSTANCE YWolf	(Mst_Default_Wolf)
 
 INSTANCE PEPES_YWolf1	(Mst_Default_Wolf)
 {
-	name							=	"Mlody wilk";
+	name							=	"M這dy wilk";
 	level							=	3;
 	
 	//----- Attribute ----
@@ -192,7 +192,7 @@ INSTANCE PEPES_YWolf1	(Mst_Default_Wolf)
 INSTANCE PEPES_YWolf2	(Mst_Default_Wolf)
 {
 	level							=	3;
-	name							=	"Mlody wilk";
+	name							=	"M這dy wilk";
 	//----- Attribute ----
 	attribute	[ATR_STRENGTH]		=	15;
 	attribute	[ATR_DEXTERITY]		=	15;
@@ -215,7 +215,7 @@ INSTANCE PEPES_YWolf2	(Mst_Default_Wolf)
 INSTANCE PEPES_YWolf3	(Mst_Default_Wolf)
 {
 	level							=	3;
-	name							=	"Mlody wilk";
+	name							=	"M這dy wilk";
 	//----- Attribute ----
 	attribute	[ATR_STRENGTH]		=	15;
 	attribute	[ATR_DEXTERITY]		=	15;
@@ -238,7 +238,7 @@ INSTANCE PEPES_YWolf3	(Mst_Default_Wolf)
 INSTANCE PEPES_YWolf4	(Mst_Default_Wolf)
 {
 	level							=	3;
-	name							=	"Mlody wilk";
+	name							=	"M這dy wilk";
 	//----- Attribute ----
 	attribute	[ATR_STRENGTH]		=	15;
 	attribute	[ATR_DEXTERITY]		=	15;

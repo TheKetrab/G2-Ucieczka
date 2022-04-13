@@ -123,7 +123,7 @@ FUNC VOID DIA_NASZ_101_Korth_WillWantToKillRenegats_Info()
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_04"); //Miesi¹c temu pojawi³ siê na zamku i og³osi³, ¿e objawi³ siê mu demon. Garond chcia³ wtr¹ciæ go do wiêzienia, ale Marcos wyteleportowa³ siê z zamku.
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_05"); //Nic wiêcej nie wiem. Nie myœla³em jednak, ¿e wróci do sprawowania pieczy nad kopalni¹...
 	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_06"); //No có¿... Ten problem nas nie dotyczy. Na g³owie mamy teraz orków.
-	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jesli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bêdziesz trzymaæ.
+	AI_Output (self, other,"DIA_NASZ_101_Korth_WillWantToKillRenegats_55_07"); //A jeœli chodzi o ciebie, to bêdziesz musia³ zdecydowaæ, z kim bêdziesz trzymaæ.
 	
 	B_LogEntry (TOPIC_Korth_kopalnia, "Marcos nie tylko jest okrutnym tyranem, ale i upad³ym paladynem, który zaprzeda³ duszê Beliarowi. Skazañcy z jego kopalni s¹ w niebezpieczeñstwie... Trzeba ich uwolniæ, a w tym mog¹ mi pomóc ludzie z powsta³ych obozów.");
 	

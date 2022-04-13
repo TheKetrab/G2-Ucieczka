@@ -247,7 +247,7 @@ func void Use_Dudel()
 
 instance ItMi_IEDudelGelb(C_Item)
 {
-	name = "Zó³te dudy";
+	name = "¯ó³te dudy";
 	mainflag = ITEM_KAT_NONE;
 	flags = ITEM_MULTI;
 	value = 1;

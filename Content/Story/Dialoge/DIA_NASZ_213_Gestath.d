@@ -979,7 +979,7 @@ FUNC VOID DIA_NASZ_213_Gestath_ArtefaktInfo_Info()
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_04"); //Ale ich szef szuka chyba czegoœ innego...
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_05"); //Czekaj, czekaj. Powiedzia³eœ, ¿e przebili siê tu przez góry?
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_06"); //Tak, ale wszyscy twierdz¹, ¿e to droga bez powrotu. Raczej tamtêdy nie uciekniemy.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_07"); //Faktycznie, w tamtych górach mieszkaj¹ dzikie plemiona orków. Podró¿ przez po³udniowe góry to fatalny pomys³. Poza tym nie mielibyœmy w³aœnego statku, by odp³yn¹æ z wybrze¿a. A co z tym ich szefem?
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_07"); //Faktycznie, w tamtych górach mieszkaj¹ dzikie plemiona orków. Podró¿ przez po³udniowe góry to fatalny pomys³. Poza tym nie mielibyœmy w³asnego statku, by odp³yn¹æ z wybrze¿a. A co z tym ich szefem?
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_08"); //Chce siê przedostaæ na jeden z klifów. Wys³a³ mnie na poszukiwania czêœci pewnego artefaktu, który mu to umo¿liwi.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_09"); //Znalaz³em ju¿ je wszystkie i mam je teraz po³¹czyæ.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_ArtefaktInfo_55_10"); //Uwa¿aj na tego cz³owieka. Nasi stra¿nicy bêd¹ ciê mieli na oku, a ty zanim oddasz gotowy artefakt ich szefowi, nabroisz trochê w ich obozie.
@@ -1199,7 +1199,7 @@ FUNC VOID DIA_NASZ_213_Gestath_keroloth_Info()
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_04"); //I oczywiœcie to ja muszê ich znaleŸæ i grzecznie poprosiæ, aby pomogli ³owcom w wojnie. No dobra, kogo i gdzie szukaæ?
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_05"); //Erak razem z Kivo i Benito s¹ w Obozie Bandytów. Ka¿dy z nich ma tam coœ do roboty.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_06"); //Aran ci¹gle stoi w jaskini obok obozu i dogl¹da orków.
-	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_07"); //Ammann... Chyba go jeszcze nie znasz. On ma specjalne zadanie. Wysla³em go po pierœcienie wiernoœci. O cholera! Zapomnia³em, ¿e kilka dni temu powiedzia³em mu, ¿e ciê do niego przyœlê... Mo¿e byæ z³y.
+	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_07"); //Ammann... Chyba go jeszcze nie znasz. On ma specjalne zadanie. Wys³a³em go po pierœcienie wiernoœci. O cholera! Zapomnia³em, ¿e kilka dni temu powiedzia³em mu, ¿e ciê do niego przyœlê... Mo¿e byæ z³y.
 	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_08"); //No ja bym na jego miejscu uœmiechniêty nie by³.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_09"); //Jest nad obozowiskiem wypadowym Eraka. Pamiêtasz, gdzie to jest? IdŸ po prostu w stronê kamiennej twierdzy w górach. Lepiej udaj siê tam od razu.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_10"); //Vachut jest oczywiœcie u siebie, to znaczy obok ³owców orków. Szczerze mówi¹c, nie mam pojêcia, co teraz robi...

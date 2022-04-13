@@ -4360,7 +4360,7 @@ func void Use_StaryPergaminOrc1 ()
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_StaryPergaminOrc2 (C_Item)
 {
-	name 				=	"Stary pegramin";
+	name 				=	"Stary pergamin";
 
 	mainflag 			=	ITEM_KAT_DOCS;
 	flags 				=	ITEM_MISSION;

@@ -2739,7 +2739,7 @@ INSTANCE DIA_NASZ_110_Keroloth_MieczRunicznyOgien   (C_INFO)
 
 FUNC INT DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Condition()
 {
-	if (npc_hasitems (other, ItRu_Pyrokinesis)) && (MieczRunicznyRunaPls == TRUE) && (MieczRunicznyRunaDana == FALSE)
+	if (npc_hasitems (other, ItRu_Firestorm)) && (MieczRunicznyRunaPls == TRUE) && (MieczRunicznyRunaDana == FALSE)
 	{
 		return TRUE;
 	};
@@ -2753,7 +2753,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_MieczRunicznyOgien_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_MieczRunicznyOgien_15_00"); //Mam ma³¹ burzê ognist¹.
-	B_GiveInvItems (other, self, ItRu_Pyrokinesis, 1);
+	B_GiveInvItems (other, self, ItRu_Firestorm, 1);
 	KerolothSay_ComeBackTomorow();
 	MieczRunicznyRunaDana = 1;
 

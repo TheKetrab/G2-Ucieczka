@@ -662,22 +662,24 @@ func void ZS_Dead ()
 		};
 	};
 	
-	if (C_NpcIsHero (other))
-	&&	((Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Orc_Keroloth_A))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Orc_Keroloth_B)))
+	// albo hero albo przyzwaniec - nie cz³owiek
+	if (C_NpcIsHero(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE && other.guild > GIL_SEPERATOR_HUM))
+	&& (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Orc_Keroloth_A)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (Orc_Keroloth_B))
 	{
 		WillZabilWygnanca = WillZabilWygnanca + 1;
 	};
 	
-	if (C_NpcIsHero (other))
-	&&	((Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin6))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin7))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin8))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin9))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin10))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin11))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin12))
-	||	(Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin13)))
+	// albo hero albo przyzwaniec - nie cz³owiek
+	if (C_NpcIsHero(other) || (other.aivar[AIV_PARTYMEMBER] == TRUE && other.guild > GIL_SEPERATOR_HUM))
+	&& (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin6)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin7)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin8)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin9)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin10)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin11)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin12)
+	 || Hlp_GetInstanceID (self) == Hlp_GetInstanceID (goblin13))
 	{
 		WillZabilGoblinaKerolotha = WillZabilGoblinaKerolotha + 1;
 	};

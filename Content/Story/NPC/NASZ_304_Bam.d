@@ -19,6 +19,7 @@ instance NASZ_304_Bam (Npc_Default)
 	
 	// ------ Equippte Waffen ------																	//Munition wird automatisch generiert, darf aber angegeben werden
 	EquipItem			(self, ItNa_Ban_Weapon_M);
+	EquipItem			(self, ItNa_PasBandyty);
 	
 	// ------ Inventory ------
 	B_CreateAmbientInv 	(self);

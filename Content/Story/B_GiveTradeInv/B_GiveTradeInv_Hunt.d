@@ -71,6 +71,7 @@ FUNC VOID B_GiveTradeInv_Hunt (var C_NPC slf)
 		CreateInvItems (slf, ItRw_Bow_H_04, 1); 
 
 		CreateInvItems (slf, ItNa_PierscienAsasyna, 1); 
+		CreateInvItems (slf, ItNa_PasZawodowcow, 1); 
 
 		Hunt_ItemsGiven_Chapter_3 = TRUE;
 	};

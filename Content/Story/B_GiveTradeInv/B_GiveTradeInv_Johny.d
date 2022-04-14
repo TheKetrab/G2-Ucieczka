@@ -100,6 +100,7 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItMi_Gold, 100); 
 		CreateInvItems (slf, ItMiSwordraw, 5); 
 		CreateInvItems (slf, ItBe_Addon_Prot_Point, 1); 
+		CreateInvItems (slf, ItBe_Addon_Prot_EDGE, 1);
 
 		CreateInvItems (slf, ItRw_Arrow, 500); 
 		CreateInvItems (slf, ItRw_Bolt, 500); 
@@ -126,8 +127,8 @@ FUNC VOID B_GiveTradeInv_Johny (var C_NPC slf)
 		CreateInvItems (slf, ItMi_Gold, 150); 
 
 		CreateInvItems (slf, ItMiSwordraw, 5); 
-		CreateInvItems (slf, ItBe_Addon_Prot_EDGE, 1);
 		CreateInvItems (slf, ItBe_Addon_Prot_TOTAL, 1);
+		CreateInvItems (slf, ItNa_PasMistrzowski, 1); 
 	
 
 	

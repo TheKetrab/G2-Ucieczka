@@ -140,7 +140,7 @@ INSTANCE Skeleton_Lord_Garrel	(Mst_Skeleton_Lord)
 	level		= 40;
 	B_SetVisuals_Skeleton_Lord ();
 	
-	EquipItem (self, ItMW_Addon_Hacker_2h_02);
+	EquipItem (self, ItMw_2h_Axe_Old_01);
 	CreateInvItems	(self,ItMi_Gold,500);
 	CreateInvItems 	(self,ItPo_Perm_STR,1);
 	CreateInvItems 	(self,ItPo_Health_03,3);

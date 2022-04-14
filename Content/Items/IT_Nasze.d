@@ -1140,7 +1140,7 @@ INSTANCE ItMw_2H_Axe_Old_01 (C_Item)
 	flags 				=	ITEM_2HD_AXE;	
 	material 			=	MAT_WOOD;
 
-	value 				=	1800;//900;//454
+	value 				=	800;//900;//454
 	
 	damageTotal			= 	41;
 	damagetype			=	DAM_EDGE;
@@ -6691,10 +6691,12 @@ INSTANCE  ItNa_SzarfaSniacego (C_Item)
 FUNC VOID Equip_ItNa_SzarfaSniacego()
 {
 	Npc_ChangeAttribute(self, ATR_MANA_MAX, + 25 );
+	Npc_ChangeAttribute(self, ATR_MANA, + 25 );
 };
 FUNC VOID UnEquip_ItNa_SzarfaSniacego()
 {
 	Npc_ChangeAttribute(self, ATR_MANA_MAX, - 25 );
+	Npc_ChangeAttribute(self, ATR_MANA, - 25 );
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -6795,7 +6797,7 @@ INSTANCE  ItNa_PasZawodowcow (C_Item)
 	mainflag 		=	ITEM_KAT_MAGIC;
 	flags 			=	ITEM_BELT|ITEM_MULTI;
 
-	value 			=	Value_ItBE_Addon_Leather_01;
+	value 			=	1000;
 
 	visual 			=	"ItMi_Belt_11.3ds";
 
@@ -6824,13 +6826,15 @@ FUNC VOID Equip_ItNa_PasZawodowcow()
 {
 	B_AddFightSkill (self, NPC_TALENT_BOW, 10);
 	self.protection[PROT_POINT]  += 10;
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + 20;
+	self.attribute[ATR_HITPOINTS] += 20;
+	self.attribute[ATR_HITPOINTS_MAX] += 20;
 };
 FUNC VOID UnEquip_ItNa_PasZawodowcow()
 {
 	B_AddFightSkill (self, NPC_TALENT_BOW, -10);
 	self.protection[PROT_POINT]  -= 10;
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - 20;
+	self.attribute[ATR_HITPOINTS_MAX] -= 20;
+	self.attribute[ATR_HITPOINTS] -= 20;
 };
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
@@ -6842,7 +6846,7 @@ INSTANCE  ItNa_PasMistrzowski (C_Item)
 	mainflag 		=	ITEM_KAT_MAGIC;
 	flags 			=	ITEM_BELT|ITEM_MULTI;
 
-	value 			=	Value_ItBE_Addon_Leather_01;
+	value 			=	1500;
 
 	visual 			=	"ItMi_Belt_10.3ds";
 
@@ -6871,13 +6875,15 @@ FUNC VOID Equip_ItNa_PasMistrzowski()
 {
 	B_AddFightSkill (self, NPC_TALENT_2H, 10);
 	Npc_ChangeAttribute(self, ATR_STRENGTH, + 15 );
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] + 40;
+	self.attribute[ATR_HITPOINTS_MAX] += 40;
+	self.attribute[ATR_HITPOINTS] += 40;
 };
 FUNC VOID UnEquip_ItNa_PasMistrzowski()
 {
 	B_AddFightSkill (self, NPC_TALENT_2H, -10);
 	Npc_ChangeAttribute(self, ATR_STRENGTH, - 15 );
-	self.attribute[ATR_HITPOINTS_MAX] = self.attribute[ATR_HITPOINTS_MAX] - 40;
+	self.attribute[ATR_HITPOINTS_MAX] -= 40;
+	self.attribute[ATR_HITPOINTS_MAX] -= 40;
 };
 
 

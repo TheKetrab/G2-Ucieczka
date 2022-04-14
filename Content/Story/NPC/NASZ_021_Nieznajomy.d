@@ -23,6 +23,8 @@ instance NASZ_021_Nieznajomy (Npc_Default)
 	fight_tactic		= FAI_HUMAN_COWARD;	
 	
 	// ------ Equippte Waffen ------																
+	EquipItem			(self, ItNa_SzarfaSniacego);
+
 
 	// ------ Inventory ------
 

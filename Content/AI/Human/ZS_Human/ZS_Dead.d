@@ -413,6 +413,7 @@ func void ZS_Dead ()
 	if (Hlp_GetInstanceID (hero) == Hlp_GetInstanceID (StoneGolem))
 	&& (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (StoneGolem))
 	&& (Golem_MIS_Running == TRUE)
+	&& (C_NpcIsHero (other)) // bohater zabil, a nie zostal zabity
 	{
 		Golem_MIS_Killed = TRUE;
 		B_LogEntry (TOPIC_Keroloth_golem, "Pokona³em kamiennego golema niebêd¹c w ludzkiej skórze. Pora powiadomiæ Kerolotha.");

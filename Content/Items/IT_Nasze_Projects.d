@@ -87,6 +87,7 @@ func void Use_Projekt_ChlopskiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 7");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 14");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 55");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -138,6 +139,7 @@ func void Use_Projekt_DobryMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 30");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 70");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -191,6 +193,7 @@ func void Use_Projekt_DobryDlugiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 35");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 45");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 90");
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
 				Doc_PrintLine	( nDocID,  0, "");
 
@@ -249,6 +252,7 @@ func void Use_Projekt_RubinoweOstrze ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 50");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 70");				
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +7");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -303,6 +307,7 @@ func void Use_Projekt_ElBastardo ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 65");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 65");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");				
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +8");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -357,6 +362,7 @@ func void Use_Projekt_Oskard ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 25");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 50");				
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -412,6 +418,7 @@ func void Use_Projekt_Inkwizytor ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 60");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -466,6 +473,7 @@ func void Use_Projekt_RunaMocy ()
 				Doc_PrintLines	( nDocID,  0, "Miecz dwurêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 60");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 120");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -518,6 +526,7 @@ func void Use_Projekt_MieczBojowy ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 24");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 26");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -570,6 +579,7 @@ func void Use_Projekt_MieczWojenny ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 28");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 34");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -623,6 +633,7 @@ func void Use_Projekt_MieczSedziego ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 15");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 22");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -677,6 +688,7 @@ func void Use_Projekt_MieczSwiatla ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 72");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 66");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 80");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -731,6 +743,7 @@ func void Use_Projekt_Zmija ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 53");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 85");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -786,6 +799,7 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 11");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 25");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 85");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -841,6 +855,7 @@ func void Use_Projekt_MieczNienawisci ()
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 100");
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +9");
 				Doc_PrintLine	( nDocID,  0, "");
 

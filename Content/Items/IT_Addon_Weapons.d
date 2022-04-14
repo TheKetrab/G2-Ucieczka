@@ -61,8 +61,9 @@ INSTANCE ItMW_Addon_Knife01 (C_Item)
 
 	description			=   name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -91,8 +92,9 @@ INSTANCE ItMW_Addon_Stab01 (C_Item)
 
 	description			= 	"Kostur Maga Ognia";
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -121,10 +123,10 @@ INSTANCE ItMW_Addon_Stab02 (C_Item)
 
 	description			= 	name;
 
-	TEXT[1]				= NAME_Damage;					COUNT[0]	= damageTotal;
-	
-	TEXT[2]				= NAME_Bonus_Mana;				COUNT[2]	= 20;//FIXME_FILLER
-	TEXT[3] 			= NAME_Mana_needed;				COUNT[3]	= cond_value[2];
+	TEXT[0]				= NAME_Damage;					COUNT[0]	= damageTotal;	
+	TEXT[1]				= NAME_Bonus_Mana;				COUNT[1]	= 20;//FIXME_FILLER
+	TEXT[2] 			= NAME_Mana_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -179,8 +181,9 @@ INSTANCE ItMW_Addon_Stab03 (C_Item)
 
 	description			= 	"Kostur Maga Wody";
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_04;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -209,8 +212,9 @@ INSTANCE ItMW_Addon_Stab04 (C_Item)
 
 	description			= 	"Zaklêty kostur Ulthara";
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_04;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -238,8 +242,9 @@ INSTANCE ItMW_Addon_Stab05 (C_Item)
 
 	description			= 	name;
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_05;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -267,8 +272,9 @@ INSTANCE ItMW_Addon_Hacker_1h_01 (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -296,8 +302,9 @@ INSTANCE ItMW_Addon_Hacker_1h_02 (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_02;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -325,8 +332,9 @@ INSTANCE ItMW_Addon_Hacker_2h_01 (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -354,8 +362,9 @@ INSTANCE ItMW_Addon_Hacker_2h_02 (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_02;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -383,11 +392,10 @@ INSTANCE ItMW_Addon_Keule_1h_01 (C_Item)
 
 	description			= name;
 	
-	TEXT[1]				= NAME_Damage;					COUNT[0]	= damageTotal;
-	
-	TEXT[2]				= NAME_ADDON_MALUS_1H;			COUNT[2]	= Waffenbonus_10;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
+	TEXT[4]				= NAME_ADDON_MALUS_1H;			COUNT[4]	= Waffenbonus_10;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -415,8 +423,9 @@ INSTANCE ItMW_Addon_Keule_2h_01 (C_Item)//Sturmknecht 2h Holzkeule
 
 	description			= 	name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[0]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_MALUS_2H;			COUNT[4]	= Waffenbonus_10;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -445,8 +454,9 @@ INSTANCE ItMw_FrancisDagger_Mis (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_05;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 	
@@ -473,8 +483,9 @@ INSTANCE ItMw_RangerStaff_Addon (C_Item)
 
 	description			= 	name;
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -500,8 +511,9 @@ INSTANCE ItMw_Addon_PIR2hAxe (C_Item)
 	visual 				=	"ItMw_070_2h_axe_heavy_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -525,8 +537,9 @@ INSTANCE ItMw_Addon_PIR2hSword (C_Item)
 	visual 				=	"ItMw_070_2h_sword_09.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -550,8 +563,9 @@ INSTANCE ItMw_Addon_PIR1hAxe (C_Item)
 	visual 				=	"ItMw_030_1h_axe_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -575,8 +589,9 @@ INSTANCE ItMw_Addon_PIR1hSword (C_Item)
 	visual 				=	"ItMw_030_1h_sword_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -602,10 +617,11 @@ INSTANCE ItMw_Addon_BanditTrader (C_Item)
 
 	description			= name;
 
-	TEXT[1]				= 	"Na g³owicy wyciêto literê 'F'.";
+	TEXT[0]				= 	"Na g³owicy wyciêto literê 'F'.";
 
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -631,8 +647,9 @@ INSTANCE ItMw_Addon_Betty (C_Item)
 	visual 				=	"ItMw_065_1h_sword_bastard_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };

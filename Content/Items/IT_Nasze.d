@@ -922,8 +922,9 @@ INSTANCE ItNa_OstrzeLowcy (C_Item)
 	visual 		=	"ItMw_065_1h_sword_bastard_03.3DS";	//wygl¹d
 
 	description	= name;
-	TEXT[2]		= NAME_Damage;		COUNT[2]	= damageTotal;
-	TEXT[3] 	= NAME_Str_needed;	COUNT[3]	= cond_value[2];
+	TEXT[1]		= NAME_Damage;		COUNT[1]	= damageTotal;
+	TEXT[2] 	= NAME_Str_needed;	COUNT[2]	= cond_value[2];
+	TEXT[3]		= NAME_Range;		COUNT[3]	= range;
 	TEXT[4] 	= NAME_OneHanded;
 	TEXT[5]		= NAME_Value;		COUNT[5]	= value;
 };
@@ -963,8 +964,9 @@ INSTANCE ItNa_ShaBaNakk (C_Item)
 	visual 				=	"itmw_magestaff_normal_2h_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -990,8 +992,9 @@ INSTANCE ItNa_MalaMaczuga (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1016,13 +1019,12 @@ INSTANCE ItNa_Maczuga (C_Item)
 
 	description			= 	name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
-
-
 
 INSTANCE ItNa_MieczSwiatla (C_Item)
 {	
@@ -1036,7 +1038,7 @@ INSTANCE ItNa_MieczSwiatla (C_Item)
 
 	damageTotal = 	66;					//obra¿enia
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
-	range    	=  	100;					//zasiêg
+	range    	=  	80;					//zasiêg
 
 	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
 	cond_value[2]  	=	72;					//ile potrzeba
@@ -1044,8 +1046,9 @@ INSTANCE ItNa_MieczSwiatla (C_Item)
 
 	description	= name;
 	TEXT[0]		= "Niewiarygodnie cieñkie ostrze pokryte jest œwiec¹c¹ substancj¹.";
-	TEXT[2]		= NAME_Damage;			COUNT[2]	= damageTotal;
-	TEXT[3] 	= NAME_Str_needed;		COUNT[3]	= cond_value[2];
+	TEXT[1]		= NAME_Damage;			COUNT[1]	= damageTotal;
+	TEXT[2] 	= NAME_Str_needed;		COUNT[2]	= cond_value[2];
+	TEXT[3]		= NAME_Range;			COUNT[3]	= range;
 	TEXT[4] 	= NAME_OneHanded;
 	TEXT[5]		= NAME_Value;			COUNT[5]	= value;
 };
@@ -1062,16 +1065,17 @@ INSTANCE ItNa_Zmija (C_Item)
 
 	damageTotal = 	53;					//obra¿enia
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
-	range    	=  	100;					//zasiêg
+	range    	=  	85;					//zasiêg
 
 	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
 	cond_value[2]  	=	44;					//ile potrzeba
 	visual 		=	"ItNa_Zmija.3DS";	//wygl¹d
 
 	description	= name;
-	TEXT[0]		= "";
-	TEXT[2]		= NAME_Damage;			COUNT[2]	= damageTotal;
-	TEXT[3] 	= NAME_Str_needed;		COUNT[3]	= cond_value[2];
+
+	TEXT[1]		= NAME_Damage;			COUNT[1]	= damageTotal;
+	TEXT[2] 	= NAME_Str_needed;		COUNT[2]	= cond_value[2];
+	TEXT[3]		= NAME_Range;			COUNT[3]	= range;
 	TEXT[4] 	= NAME_OneHanded;
 	TEXT[5]		= NAME_Value;			COUNT[5]	= value;
 };
@@ -1088,15 +1092,16 @@ INSTANCE ItMw_1H_Mace_02 (C_Item)
 
 	damageTotal			=   25;
 	damagetype			=	DAM_BLUNT;
-	range    			=  	100;		
+	range    			=  	85;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	11;
 	visual 				=	"ItMw_1H_Mace_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1113,15 +1118,16 @@ INSTANCE ItMw_2H_Axe_Old_03 (C_Item)
 	
 	damageTotal			= 	44;
 	damagetype			=	DAM_EDGE;
-	range    			=  	150;		
+	range    			=  	90;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	40;
 	visual 				=	"ItMw_2H_Axe_Old_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1138,15 +1144,16 @@ INSTANCE ItMw_2H_Axe_Old_01 (C_Item)
 	
 	damageTotal			= 	41;
 	damagetype			=	DAM_EDGE;
-	range    			=  	150;		
+	range    			=  	90;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	36;
 	visual 				=	"ItMw_2H_Axe_Old_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1163,7 +1170,7 @@ INSTANCE ItMw_1H_Sword_Long_03 (C_Item)
 
 	damageTotal			= 	51;
 	damagetype 			= 	DAM_EDGE;
-	range    			=  	120;		
+	range    			=  	100;		
 
 	on_equip			=	Equip_1H_09;
 	on_unequip			=	UnEquip_1H_09;
@@ -1173,8 +1180,9 @@ INSTANCE ItMw_1H_Sword_Long_03 (C_Item)
 	visual 				=	"ItMw_1H_Sword_Long_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_09;	
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1198,8 +1206,9 @@ INSTANCE ItMw_1H_Sword_05 (C_Item)
 	visual 				=	"ItMw_1H_Sword_05.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1223,8 +1232,9 @@ INSTANCE ItMw_1H_Sword_04 (C_Item)
 	visual 				=	"ItMw_1H_Sword_04.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1250,8 +1260,9 @@ INSTANCE ItMw_1H_Sword_02 (C_Item)
 	visual 				=	"ItMw_1H_Sword_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1269,15 +1280,16 @@ INSTANCE ItMw_1H_Sword_Short_02 (C_Item)
 
 	damageTotal			= 	14;
 	damagetype 			=	DAM_EDGE;		
-	range    			=  	100;		
+	range    			=  	55;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	7;
 	visual 				=	"ItMw_1H_Sword_Short_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1308,9 +1320,10 @@ INSTANCE ItNa_Kostur_UrShaka (C_Item)
 
 	description			= 	"Kostur Ur-Shaka";
 
-	TEXT[2]				= NAME_Damage;				COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;			COUNT[3]	= cond_value[2];
-	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_03;
+	TEXT[1]				= NAME_Damage;				COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;			COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;				COUNT[3]	= range;
+	TEXT[4]				= NAME_ADDON_BONUS_2H;		COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;				COUNT[5]	= value;
 };
 
@@ -1346,16 +1359,17 @@ INSTANCE ItNa_RytualneOstrze (C_Item)
 
 	damageTotal = 	53;					//obra¿enia
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
-	range    	=  	100;					//zasiêg
+	range    	=  	85;					//zasiêg
 
 	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
 	cond_value[2]  	=	44;					//ile potrzeba
 	visual 		=	"ItNa_Zmija.3DS";	//wygl¹d
 
 	description	= name;
-	TEXT[0]		= "";
-	TEXT[2]		= NAME_Damage;			COUNT[2]	= damageTotal;
-	TEXT[3] 	= NAME_Str_needed;		COUNT[3]	= cond_value[2];
+	
+	TEXT[1]		= NAME_Damage;			COUNT[1]	= damageTotal;
+	TEXT[2] 	= NAME_Str_needed;		COUNT[2]	= cond_value[2];
+	TEXT[3]		= NAME_Range;			COUNT[3]	= range;
 	TEXT[4] 	= NAME_OneHanded;
 	TEXT[5]		= NAME_Value;			COUNT[5]	= value;
 };
@@ -1381,8 +1395,9 @@ INSTANCE ItNa_RekaTrolla (C_Item)
 
 	description			= name;
 	TEXT[0]				= "Ta broñ nie zosta³a wykuta dla cz³owieka.";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= 300;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= 300;
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1575,8 +1590,9 @@ INSTANCE ItNa_SmiercPradawnych  (C_Item)
 	visual 				=	"ItMw_110_2h_sword_smith_05.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_10;	
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1626,8 +1642,9 @@ INSTANCE ItNa_Djg_Weapon_L (C_Item)
 	visual 				=	"ItMw_025_1h_sld_sword_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1652,8 +1669,9 @@ INSTANCE ItNa_Djg_Weapon_M (C_Item)
 	visual 				=	"ItMw_030_1h_sword_long_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1677,8 +1695,9 @@ INSTANCE ItNa_Djg_Weapon_H (C_Item)
 	visual 				=	"ItMw_068_2h_sword_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1703,8 +1722,9 @@ INSTANCE ItNa_Out_Weapon_H (C_Item)
 	visual 				=	"ItMw_040_1h_axe_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1729,8 +1749,9 @@ INSTANCE ItNa_Out_Weapon_S (C_Item)
 	visual 				=	"ItMw_065_1h_sword_bastard_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1748,15 +1769,16 @@ INSTANCE ItNa_Ban_Weapon_H (C_Item)
 
 	damageTotal  		= 	38;
 	damagetype 			=	DAM_EDGE;
-	range    			=  	Range_PIR2hAxe;		
+	range    			=  	110;		
 
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	41;
 	visual 				=	"ItMw_070_2h_sword_09.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1782,8 +1804,9 @@ INSTANCE ItNa_Ban_Weapon_M (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1808,8 +1831,9 @@ INSTANCE ItNa_Jaszczur_WP (C_Item) //
 	visual 				=	"ItMw_2H_OrcSword_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1835,8 +1859,9 @@ INSTANCE ItNa_ZlotySztylet (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1878,9 +1903,10 @@ INSTANCE ItNa_MieczRunicznyKeroloth (C_Item)
 	visual 				=	"ItMw_055_1h_sword_long_05.3DS";
 
 	description			= name;
-	TEXT[1]				= "";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1908,9 +1934,10 @@ INSTANCE ItNa_MieczRunicznyA (C_Item)
 	visual 				=	"ItMw_055_1h_sword_long_05.3DS";
 
 	description			= name;
-	TEXT[1]				= "Zadaje obra¿enia od ognia.";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[0]				= "Zadaje obra¿enia od ognia.";
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1938,9 +1965,10 @@ INSTANCE ItNa_MieczRunicznyB (C_Item)
 	visual 				=	"ItMw_055_1h_sword_long_05.3DS";
 
 	description			= name;
-	TEXT[1]				= "Zadaje obra¿enia od zimna.";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[0]				= "Zadaje obra¿enia od zimna.";
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1968,9 +1996,10 @@ INSTANCE ItNa_MieczRunicznyC (C_Item)
 	visual 				=	"ItMw_055_1h_sword_long_05.3DS";
 
 	description			= name;
-	TEXT[1]				= "Zadaje obra¿enia od wiatru.";
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[0]				= "Zadaje obra¿enia od wiatru.";
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -1997,8 +2026,9 @@ INSTANCE ItNa_CatSan_Sword (C_Item)
 	visual 				=	"ItMw_040_2h_PAL_sword_heavy_RAW_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2023,8 +2053,9 @@ INSTANCE ItNa_Smyk (C_Item)
 	visual 				=	"ItMw_030_1h_PAL_sword_bastard_RAW_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2049,8 +2080,9 @@ INSTANCE ItNa_Kosmyk (C_Item)
 	visual 				=	"ItMw_050_1h_sword_05.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2078,9 +2110,10 @@ INSTANCE ItNa_MieczSusan (C_Item)
 	visual 				=	"ItMw_060_1h_Sword_smith_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
-
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
+	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -2110,8 +2143,9 @@ INSTANCE ItNa_GrzechSzakala (C_Item)
 	visual 				=	"ItMw_060_1h_Sword_smith_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 10;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2152,8 +2186,9 @@ INSTANCE ItNa_Szabla (C_Item)
 	visual 				=	"ItMw_030_1h_sword_03.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2181,8 +2216,9 @@ INSTANCE ItNa_StaryPykacz (C_Item)
 	visual 				=	"ItMw_030_1h_PAL_Sword_02.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 15;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2223,8 +2259,9 @@ INSTANCE ItNa_Rozpruwacz (C_Item)
 	visual 				=	"ItMw_045_1h_Sword_long_04.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2249,8 +2286,9 @@ INSTANCE ItNa_SolidnaKlinga (C_Item)
 	visual 				=	"ItMw_035_1h_Sword_04.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2276,8 +2314,9 @@ INSTANCE ItNa_Klujec (C_Item)
 
 	description			= name;
 	
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2302,8 +2341,9 @@ INSTANCE ItNa_OstryMiecz (C_Item)
 	visual 				=	"ItMw_030_1h_Common_Sword_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2328,8 +2368,9 @@ INSTANCE ItNa_NiewyostrzonyMiecz (C_Item)
 	visual 				=	"ItMw_020_1h_sword_old_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2354,8 +2395,9 @@ INSTANCE ItNa_JezykTopielcaSword (C_Item)
 	visual 				=	"Itmw_025_1h_Mil_Sword_broad_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_OneHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
@@ -2380,8 +2422,9 @@ INSTANCE ItNa_MlotOrkow (C_Item)
 	visual 				=	"itmw_2h_orcmace_01.3DS";
 
 	description			= name;
-	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
-	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
 	TEXT[4] 			= NAME_TwoHanded;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };

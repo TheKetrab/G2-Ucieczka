@@ -287,3 +287,41 @@ func void OnLoadUpdateHeroFightSkill() {
 	ff_remove(OnLoadUpdateHeroFightSkill);
 
 };
+
+
+func int GetItemSlot_(var int slfPtr, var string slotName) 
+{
+    const int oCNpc__getitemslot = 7544560;
+	slotName = Str_Upper(slotName);
+	CALL_zStringPtrParam(slotName);
+    CALL__thiscall (slfPtr, oCNpc__getitemslot);
+    return CALL_RetValAsPtr();
+};
+
+const string ShieldEquippedSlot = "ZS_SHIELD";
+const string ShieldReadiedSlot  = "ZS_LEFTARM";
+func int HasNpcShieldActive(var c_npc slf, var int inst)
+{
+	if(!Hlp_IsValidNpc(slf)){return 0;};
+	
+	var int pNpc; pNpc = _@(slf);
+	
+	var int slotItem; slotItem = GetItemSlot_(pNpc,ShieldEquippedSlot);
+	
+	if(!slotItem)
+	{
+		slotItem = GetItemSlot_(pNpc,ShieldReadiedSlot);
+	};
+		
+	if(Hlp_Is_oCItem(slotItem))
+	{
+		var c_item itm; itm = _^(slotItem);
+		
+		if(Hlp_GetInstanceID(itm) ==  inst)
+		{
+			return TRUE;
+		};	
+	};
+	
+	return FALSE;
+};

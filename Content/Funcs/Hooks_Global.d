@@ -479,14 +479,6 @@ func void oCNpc_DeleteInvSlot(var c_npc slf, var string slotName)
 	CALL__thiscall(_@(slf),oCNpc__DeleteInvSlot);
 };
 
-func int GetItemSlot_(var int slfPtr, var string slotName) 
-{
-    const int oCNpc__getitemslot = 7544560;
-	slotName = Str_Upper(slotName);
-	CALL_zStringPtrParam(slotName);
-    CALL__thiscall (slfPtr, oCNpc__getitemslot);
-    return CALL_RetValAsPtr();
-};
 
 /*
 func int oCNpc_GetModel(var c_npc npc)

@@ -1499,12 +1499,23 @@ INSTANCE DIA_NASZ_106_Jan_KompletReady   (C_INFO)
 
 FUNC INT DIA_NASZ_106_Jan_KompletReady_Condition()
 {
-	if (OstrzeLowcyUbrane == TRUE)
-	&& (TarczaLowcyUbrana == TRUE)
+	if ((OstrzeLowcyUbrane == TRUE)
 	&& (KuszaLowcyUbrana == TRUE)
+	//&& (TarczaLowcyUbrana == TRUE)
+	)
 	{
-		return TRUE;
+		if(TarczaLowcyUbrana == TRUE)
+		{
+			return TRUE;
+		};
+		
+		if(HasNpcShieldActive(other,ItNa_TarczaMistrzowska))
+		{
+			return TRUE;
+		};
 	};
+	
+	return FALSE;
 };
 
 FUNC VOID DIA_NASZ_106_Jan_KompletReady_Info()

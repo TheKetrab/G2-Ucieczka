@@ -659,17 +659,24 @@ func void oCNpcInventory_HandleEvent_hook()
 				
 				MEM_WriteInt(ESP+4,-1);  return;
 			};
+			
+			
 			if(itm.mainflag == ITEM_KAT_NF)
 			{
 			   QS_PutSlot(hero, 1, ptr);  MEM_WriteInt(ESP+4,-1);
-				QS_AI_EquipWeapon(ptr);
-
+				if(QS_CanEquipItem(hero,ptr))
+				{
+					QS_AI_EquipWeapon(ptr);
+				};
+	
 			}
 			else if(itm.mainflag == ITEM_KAT_FF)
 			{
 				QS_PutSlot(hero, 2, ptr); MEM_WriteInt(ESP+4,-1);
-				QS_AI_EquipWeapon(ptr);
-
+				if(QS_CanEquipItem(hero,ptr))
+				{
+					QS_AI_EquipWeapon(ptr);
+				};
 			}
 			
 				

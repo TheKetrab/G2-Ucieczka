@@ -547,6 +547,7 @@ func void QS_MobInteractionFix()
 	};
 };
 
+
 func void QS_UseItem(var int i)
 {
 	var oCNpc her; her 	= Hlp_GetNpc(hero);
@@ -565,7 +566,14 @@ func void QS_UseItem(var int i)
 		};
 		return;
 	};
+	
+	if(QS_CanEquipItem(hero,itemPtr) == false)
+	{
+		return;
+	};
+	
 	var oCItem it; it 	= _^(itemPtr);
+
 	
 
 	if(!Npc_HasItems(hero, it.instanz))

@@ -61,7 +61,7 @@ const string	TOPIC_Dobar_skrety			=	"Ziele dla kowala";				//+2M									| +300	
 const string	TOPIC_Gestath_wilki			=	"Wilki";						//+4M									| +500						| ---
 const string	TOPIC_Hunt_amulet			=	"Amulet Johny'ego";				//+2M									| +300						| ---
 const string	TOPIC_draal					=	"Sam w dziczy";					//+3M									| +300						| +2 zrêcznoœci
-const string	TOPIC_Ted_mieso				=	"30 sztuk pieczeni";			//+1M									| +300						| 10 ostrych strza³, 125 szt. z³ota taniej sprzeda pancerz
+const string	TOPIC_Ted_mieso				=	"Pieczeñ dla Teda";				//+1M									| +300						| 10 ostrych strza³, 125 szt. z³ota taniej sprzeda pancerz
 const string	TOPIC_Snaf_pieczen			=	"Pieczeñ i stara receptura";	// ---									| +100						| pieczeñ Snafa
 const string	TOPIC_Jehen_strzala			=	"Myœliwy i stara strza³a";		//+1+1=2M								| +100+100(+100)=(300)		| ---
 const string	TOPIC_Tabuk_tarcza			=	"Æwiczenia strzeleckie";		//+1M									| +300						| 10 strza³

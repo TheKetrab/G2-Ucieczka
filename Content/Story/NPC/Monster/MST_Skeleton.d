@@ -511,7 +511,7 @@ INSTANCE Skeleton_Ghost_Immortal (Mst_Default_Skeleton)
 	guild							=	GIL_SKELETON;
 	aivar[AIV_MM_REAL_ID]			= 	ID_SKELETON;
 	level							=	40; 
-	// UWAGA - szkiele-duch Susan MA BYÆ nieœmiertelny!
+	// UWAGA - szkielet-duch Susan MA BYÆ nieœmiertelny!
 	flags = NPC_FLAG_GHOST | NPC_FLAG_IMMORTAL;
 	
 	//----- Attribute ----	

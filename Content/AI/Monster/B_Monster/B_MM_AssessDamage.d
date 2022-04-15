@@ -2,10 +2,21 @@
 // B_MM_AssessDamage
 // *****************
 
+var int HeroHitSusanDialogCnt;
 func void B_MM_AssessDamage ()
 {
 	self.aivar[AIV_MM_PRIORITY] = PRIO_ATTACK;
 
+	if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Skeleton_Ghost_Immortal)) // jesli uderzysz Susan
+	&& (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(hero)) // i to ty uderzysz
+	&& (HeroHitSusanDialogCnt < 4)
+	{
+		HeroHitSusanDialogCnt += 1;
+
+		if (HeroHitSusanDialogCnt >= 4) {
+			HeroSay_SusanImmortal();
+		};
+	};
 	
 	if (Hlp_GetInstanceID(self) == Hlp_GetInstanceID(BestiaSwiatynna)) // jesli uderzysz bestie swiatynna
 	&& (Hlp_GetInstanceID(other) == Hlp_GetInstanceID(hero)) // i to ty uderzysz

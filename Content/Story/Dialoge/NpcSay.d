@@ -27,6 +27,11 @@ func void HeroSay_TakeThisPotion() {
 	AI_Output (other,self ,"HeroSay_TakeThisPotion_15_00"); //WeŸ tê miksturê uzdrawiaj¹c¹.
 };
 
+func void HeroSay_SusanImmortal() {
+	// G2U12: nie ai_output, bo hero przestawa³ wtedy walczyæ
+	Snd_Play("SVM_WILL_SUSAN"); // Ten duch emanuje potê¿n¹ energi¹ i wydaje siê byæ obojêtny na zadawane przeze mnie ciosy. Lepiej bêdzie, jeœli go zostawiê...	
+};
+
 func void HeroSay_TakeThisMeal() {
 	AI_Output (other,self ,"HeroSay_TakeThisMeal_15_00"); //Zjedz to, odzyskasz si³y.
 };

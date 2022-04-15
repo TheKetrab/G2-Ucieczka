@@ -163,6 +163,8 @@ func int QS_GetSelectedSpell(var int magBook)
 // Convert oCSpell* to oCItem*
 func int QS_GetSpellItem	(var int magBook)
 {
+	if(!magBook){return 0;};
+	
 	var int spellPtr; spellPtr = QS_GetSelectedSpell(magBook);
 	if(!spellPtr)	{
 		return 0;
@@ -206,6 +208,8 @@ const int oCMagBook__GetSpellByKey = 4693088;
 
 func int QS_GetMagBookSpell(var int magbook, var int i)
 {
+	if(!magbook){return 0;};
+	
 	CALL_IntParam(i);
 	
 	CALL__Thiscall(magbook,oCMagBook__GetSpellByKey);
@@ -216,6 +220,8 @@ func int QS_GetMagBookSpell(var int magbook, var int i)
 
 func int QS_IsItemInMagBook(var int magbook, var int ptr)
 {
+	if(!magbook){return 0;};
+	
 	var int i;
 	repeat(i,8);
 		var int spellItem; spellItem = QS_GetMagBookItem(magbook,i);
@@ -229,6 +235,8 @@ func void QS_DeregisterSpell(var int itemPtr)
 {
 	var oCNpc her; her = Hlp_GetNpc(hero);
 	var int magBook; magBook = her.mag_book;
+	
+	if(!magbook){return;};
 	
 	if(!magbook || !itemPtr || !QS_IsItemInMagBook(magbook,itemPtr)) {return;};
 				
@@ -280,8 +288,6 @@ func void QS_RegisterRune(var int magBook, var int itemPtr)
 	var C_ITEM it; it = _^(itemPtr);
 	it.flags = it.flags | ITEM_ACTIVE;
 	
-	//recalc next register
-	//MEM_WriteInt(magbook+116,0);
 	
 	CALL_IntParam	(true);
 	CALL_PtrParam	(itemPtr);

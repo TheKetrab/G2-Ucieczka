@@ -55,28 +55,28 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	{
 		if(it.mainflag == ITEM_KAT_RUNE)
 		{
-			
-			
-
-			
 			if(heroSwitch == false)
 			{
 				var oCNpc her; her = Hlp_GetNpc(hero);
 				var int magBook; magBook = her.mag_book;
 				
-				var oCMag_Book book; book = _^(magBook);
+				if(magBook)
+				{
 				
-				//spells must be > 0 && < 10
-				
-				book.nextregister = nr;
-				
-				if(book.nextregister == 0){ book.nextregister = 1;};
-				
-				
-				QS_RegisterRune(magbook,itemPTr);
-				
-				
-				//QS_RegisterRune(magbook,itemPTr);
+					var oCMag_Book book; book = _^(magBook);
+					
+					//spells must be > 0 && < 10
+					
+					book.nextregister = nr;
+					
+					if(book.nextregister == 0){ book.nextregister = 1;};
+					
+					
+					QS_RegisterRune(magbook,itemPTr);
+					
+					
+					//QS_RegisterRune(magbook,itemPTr);
+				};
 			};
 
 			//AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
@@ -325,6 +325,9 @@ func int QS_GetSpellKey(var oCNpc her,var int itemPtr)
 {
 	var int magBook; magBook = her.mag_Book;
 	
+	if(!magbook){return 0;};
+	
+	
 	var int nr;
 	
 	CALL_PtrParam(_@(nr));
@@ -338,6 +341,8 @@ func int QS_GetSpellKey(var oCNpc her,var int itemPtr)
 func void QS_SetFrontSpell(var oCNpc her, var int itemPtr)
 {
 	var int magbook; magbook = her.mag_Book;
+	
+	if(!magbook){return;};
 	
 	if(!QS_IsItemInMagBook(magbook,itemPTr))
 	{
@@ -1148,6 +1153,7 @@ func void QSEquipWeaponFirstTimeFix()
 
 func void QS_SpellCast_GetSpell()
 {
+	return;
 	var oCNpc her;			her = Hlp_GetNpc(hero);
 	if(ECX != her.mag_book) { return; };
 	QS_LastSpell_Item = QS_GetSpellItem(her.mag_book);

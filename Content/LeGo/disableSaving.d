@@ -24,12 +24,12 @@ func void DisableSave() {
   
         saveMenuItem.m_parItemFlags = saveMenuItem.m_parItemFlags | IT_ONLY_OUT_GAME;
         
+		 //Quicksave
+         MEM_WriteInt (s_bUseQuickSave_address, 0);
+		
         
         if (!SavingDisabled) {
             SavingDisabled = TRUE;
-            
-            //Quicksave
-            MEM_WriteInt (s_bUseQuickSave_address, 0);
 		};
 };
 		
@@ -49,13 +49,12 @@ func void AllowSaving()
 	   
 		 MEM_AssignInst (saveMenuItem, saveMenuItemPtr);
    
-	saveMenuItem.m_parItemFlags = saveMenuItem.m_parItemFlags &~ IT_ONLY_OUT_GAME;
+		saveMenuItem.m_parItemFlags = saveMenuItem.m_parItemFlags &~ IT_ONLY_OUT_GAME;
+	    //Quicksave
+        MEM_WriteInt (s_bUseQuickSave_address, 1);
 
         if (SavingDisabled) {
-            SavingDisabled = 0;
-            
-            //Quicksave
-            MEM_WriteInt (s_bUseQuickSave_address, 1);
-    };
+            SavingDisabled = 0;	
+		};
     
 }; 

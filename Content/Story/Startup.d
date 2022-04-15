@@ -38,7 +38,18 @@ func void INIT_GLOBAL()
 	// random combination
 	if (STR_ToInt(MEM_GetGothOpt("UCIECZKA", "useJustice"))) {
 		ForAllMobs_RandomCombination();
+		
+		if(HeroStatusFix() == false)
+		{
+			AllowSaving();
+		};
+	}
+	else
+	{
+		AllowSaving();
 	};
+	
+	
 	Hooks_Global();
 	
 	CheckDx11();

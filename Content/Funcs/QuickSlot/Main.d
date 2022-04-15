@@ -36,7 +36,6 @@ func void QS_AI_EquipWeapon	(var int itemPtr)
 	AI_Function_I(hero, QS_EquipWeapon, itemPtr);
 };
 
-
 func void QS_CreateSlot(var int nr, var int itemPtr)
 {
 	// MEM_Info(ConcatStrings("SlotID: ", inttostring(nr)));
@@ -56,12 +55,28 @@ func void QS_CreateSlot(var int nr, var int itemPtr)
 	{
 		if(it.mainflag == ITEM_KAT_RUNE)
 		{
-			var oCNpc her; her = Hlp_GetNpc(hero);
-			var int magBook; magBook = her.mag_book;
+			
+			
+
 			
 			if(heroSwitch == false)
 			{
+				var oCNpc her; her = Hlp_GetNpc(hero);
+				var int magBook; magBook = her.mag_book;
+				
+				var oCMag_Book book; book = _^(magBook);
+				
+				//spells must be > 0 && < 10
+				
+				book.nextregister = nr;
+				
+				if(book.nextregister == 0){ book.nextregister = 1;};
+				
+				
 				QS_RegisterRune(magbook,itemPTr);
+				
+				
+				//QS_RegisterRune(magbook,itemPTr);
 			};
 
 			//AI_Function_II	(hero, QS_RegisterRune, magBook, itemPtr);
@@ -105,8 +120,10 @@ func void QS_RemoveSlot(var int nr)
 	
 	var c_item itm; itm = _^(slot.itemPtr);
 	
-	if(heroSwitch == false)
+	if(heroSwitch == false )
 	{
+		//oCNpc_UnequipItem(hero,itm);
+		//Engine_Npc_EquipItem(hero,slot.itemPtr);
 		QS_DeregisterSpell(slot.itemPtr);
 	};
 
@@ -965,57 +982,87 @@ func void QS_Clear()
 };
 
 
-
 func void QS_RestoreMagBook(var int npcPtr)
 {
+
 	var int mag_book; mag_book = MEM_ReadInt(npcPtr+2324);
 
 	if(!mag_book){return;};
-
-	var int i;
-	var int currSpellSlot; currSpellSlot = 3;
-	repeat(i, 8); 
-		var int spellItem; spellItem = QS_GetMagBookItem(mag_book,i);
-
-		if(spellItem)
-		{
-			if(currSpellSlot == 10)
-			{ 
-				currSpellSlot = 0;
-			};
-			
-			QS_RemoveSlot(currSpellSlot);
-			QS_CreateSlot(currSpellSlot,spellItem);
-
-			
-			currSpellSlot+=1;	
+	
+	var oCMag_Book book; book = _^(mag_book);
+	
+	var int j;
+	
+	var int n; n = book.spellitems_numInArray;
+	var int n2; n2 = book.spells_numInArray;
+	
+	repeat(j,n);
+	
+		var int itm; itm = MEM_ReadIntArray(book.spellitems_array,j);
 		
-		}
-		else
+		//na wszelki wypadek
+		if(j > n2 || n2 < j)
 		{
-			break;
+			//deregister
+			Engine_Npc_EquipItem(npcPtr,itm);
+			continue;
+		};
+		
+		
+		var int spell; spell =  MEM_ReadIntArray(book.spells_array,j);
+		
+		var int nr; nr = MEM_ReadInt(spell+36);
+		
+		//spell keyNo > 0 && < 10
+		if(nr == 1)
+		{
+			nr = 0;
+		};
+		
+		
+		QS_RemoveSlot(nr);
+		QS_CreateSlot(nr,itm);
+
+	end;
+
+};
+
+func int GetItemBySpell(var int spell)
+{
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	var oCMag_Book book; book = _^(her.mag_book);
+	
+	var int n; n = book.spells_numInArray;
+	var int i;
+	repeat(i,n);
+		
+		var int ele; ele = MEM_ReadintArray(book.spells_array,i);
+		
+		if(ele == spell)
+		{
+			if(i > book.spellitems_numInArray || book.spellitems_numInArray < i) {return 0;};
+			
+			return MEM_ReadintArray(book.spellitems_array,i);
 		};
 	end;
+	
+	return 0;
 };
 
 func void QS_ValidMagBookNr()
 {
-	var oCNpc her; her = Hlp_GetNpc(hero);
+	var int itm; itm = GetItemBySpell(EDX);
 	
-	var oCMag_Book book; book = _^(her.mag_book);
-	
-	var int idx; idx = ESI - 4;
-	var int currItem; currItem = MEM_ReadIntArray(book.spellitems_array,idx);
-	var int snr; snr = QS_GetSlotByItem(currItem);
-	if(snr != -1)
+	if(itm)
 	{
-		ESI = snr;
+		esi = QS_GetSlotByItem(itm);
 	};
 
 };
 
 func void QS_SwitchHeroFix()
 {	
+	
 	
 	if(!Hlp_IsValidHandle(QS_BackgroundView))	{
 		return;

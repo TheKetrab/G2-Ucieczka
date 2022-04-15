@@ -85,6 +85,7 @@ func void QS_InitHooks()
 	
 
 	HookEngineF(4691849,7,QS_ValidMagBookNr);
+	//HookEngineF(4691830,7,QS_ValidMagBookNr);
 	
 	
 	// Fix keyWeapon in using oCItemContainer

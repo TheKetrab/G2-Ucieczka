@@ -202,6 +202,18 @@ func int QS_GetMagBookItem(var int magbook, var int i)
 	return CALL_RetValAsPtr();
 };
 
+const int oCMagBook__GetSpellByKey = 4693088;
+
+func int QS_GetMagBookSpell(var int magbook, var int i)
+{
+	CALL_IntParam(i);
+	
+	CALL__Thiscall(magbook,oCMagBook__GetSpellByKey);
+	
+	
+	return CALL_RetValAsPtr();
+}; 
+
 func int QS_IsItemInMagBook(var int magbook, var int ptr)
 {
 	var int i;
@@ -268,9 +280,14 @@ func void QS_RegisterRune(var int magBook, var int itemPtr)
 	var C_ITEM it; it = _^(itemPtr);
 	it.flags = it.flags | ITEM_ACTIVE;
 	
+	//recalc next register
+	//MEM_WriteInt(magbook+116,0);
+	
 	CALL_IntParam	(true);
 	CALL_PtrParam	(itemPtr);
 	CALL__thiscall	(magBook, oCMagBook__Register);
+	
+	
 };
 
 

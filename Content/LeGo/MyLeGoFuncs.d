@@ -481,7 +481,7 @@ func void MunitionChange()
 	
 	//if(!Hlp_IsValidItem(itm)){return;};
 	
-	i = itm.flags & ITEM_CROSSBOW;
+	i = (itm.flags & ITEM_CROSSBOW) > 0;
 	
 	var int instanz;
 	const int symbol = 0; 

@@ -6,14 +6,6 @@ var int Jeremiasz_AlmostDead_NextTo_OneTime;
 var int JeremiahIllnessSec;
 
 func void JeremiahAlmostDead_TickTock1s() {
-
-	// TODO jeremiasz ma miec taka rutyne ze spi i sie go nie da zbudzic, zagadac ani nic
-	// -> zrobiæ hooka na funckje zBOOL oCAIHuman::StandActions()
-	// ze jesli jeremiasz almost dead to sie go nie da zagadac
-	
-	// -> na razie jest zrobiony return w assess_talk, ale i tak klikajac ctrl
-	// sie go nie da zagadac, ale wstaje z lozka - a nie powinien reagowaæ!
-	
 	
 	if (Jeremiasz_AlmostDead == TRUE)
 	&& (Jeremiasz_AlmostDead_NextTo_OneTime == FALSE)
@@ -49,6 +41,7 @@ func void JeremiahAlmostDead_TickTock1s() {
 	
 	if (HeroKnowsAboutJeremiahsIllness == 4) {
 		Npc_ExchangeRoutine(NASZ_127_Jeremiasz,"Start");
+		NASZ_127_Jeremiasz.flags = 0;
 		ff_remove(JeremiahAlmostDead_TickTock1s);
 		Jeremiasz_AlmostDead = FALSE;
 	};

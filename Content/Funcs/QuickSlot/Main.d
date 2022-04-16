@@ -572,10 +572,6 @@ func void QS_UseItem(var int i)
 		return;
 	};
 	
-	if(QS_CanEquipItem(hero,itemPtr) == false)
-	{
-		return;
-	};
 	
 	var oCItem it; it 	= _^(itemPtr);
 
@@ -619,6 +615,12 @@ func void QS_UseItem(var int i)
         
     };
 	
+	itemPtr = slot.itemPtr;
+	
+	if(QS_CanEquipItem(hero,itemPtr) == false)
+	{
+		return;
+	};
 	
 	var int bCanDraw; bCanDraw = QS_CanDrawWeapon();
 	if(!bCanDraw) { return; }; 

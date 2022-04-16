@@ -1856,6 +1856,7 @@ func void Function30s()
 
 		Jeremiasz_AlmostDead_OneTime = TRUE;
 		Jeremiasz_AlmostDead = TRUE;
+		NASZ_127_Jeremiasz.flags = 2;
 	};
 };
 

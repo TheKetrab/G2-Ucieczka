@@ -891,6 +891,18 @@ func void DeleteNpc_Check()
 };
 
 const int oCAiHuman__BowMode = 6905600;
+const int zCAiCamera__CheckKeys__ScrollConditions = 4869646;
+
+func void zCAiCamera__CheckKeys_MunSwitchDisableScroll()
+{
+	if(Npc_IsInFightMode(hero, FMODE_FAR))
+	{
+		//if fabs(dword ptr [esp+20h]) > 0.f -> change cam dist
+		MEM_WriteInt(ESP+32,FLOATNULL);
+	};
+};
+
+
 
 func void Hooks_Global()
 {
@@ -900,6 +912,7 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
+		HookEngineF(zCAiCamera__CheckKeys__ScrollConditions,6,zCAiCamera__CheckKeys_MunSwitchDisableScroll);
 		//HookEngineF(oCAiHuman__BowMode,6,MunitionChange);
 		//HookEngineF(oCSpawnManager__CheckRemoveNpc_DeleteNpc,5,DeleteNpc_Check);
 	//	HookEngineF(7837328,7,DeleteNpc_Check);

@@ -105,8 +105,8 @@ const string	TOPIC_Carry_plyn			=	"P³yn na owady";				//+5B									| +400						
 	//*****KAPITEL 3*****
 
 //---------- Inne / G³ówne ----------
-const string	TOPIC_Keroloth_wojna		=	"Wojna";						//+1L(Kopacz)+1L(WalkaPodTwierdza)		| +100(Doprowadzenie)		| ---
-//																				//+2L(Finito)							| +200(Kopacz)+300(Walka)	| brak... TODO: dorobic nagrode???
+const string	TOPIC_Keroloth_wojna		=	"Wojna";						//+1L(Kopacz)+1L(WalkaPodTwierdza)		| +100(Doprowadzenie)		|
+//																				//+2L(Finito)							| +200(Kopacz)+300(Walka)	| projekt 'Wielki miecz'
 //																				//										| +1000 finito = 1600		|
 const string	TOPIC_Keroloth_pomoc		=	"Pomoc strzelców";				//+2L									| +700						| 250z³ota, teleport do twierdzy
 const string	TOPIC_CatSan_ostrze			=	"Ostrze ducha";					// ---									| +700						| ---

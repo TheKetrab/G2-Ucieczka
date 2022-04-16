@@ -949,6 +949,11 @@ FUNC VOID DIA_NASZ_119_Udar_Kap4Start_Info()
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_01"); //Uda³o siê nam odbiæ zamek, a orkowe si³y zosta³y starte z powierzchni ziemi. Teraz pozosta³o nam jedynie zaj¹æ siê umacnianiem naszej pozycji w tym rejonie.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_02"); //Niestety, kilku ludzi przyp³aci³o to ¿yciem. W tym Gestath...
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03"); //To smutna wiadomoœæ. Niech Beliar nie dobierze siê do jego duszy, a Innos wype³ni j¹ œwiat³em.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03b"); //Dziêkujê za twój raport. WeŸ ten projekt i poproœ Jana o taki miecz, jeœli chesz. Znalaz³em go w którejœ z ksi¹g w obozie i wydaje mi siê, ¿e ciê zainteresuje.
+
+	Createinvitems (self, ItNa_Projekt_WielkiMiecz, 1);
+	B_giveinvitems (self, other, ItNa_Projekt_WielkiMiecz, 1);
+
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_04"); //Z polecenia Kerolotha powinieneœ odes³aæ do zamku jeszcze kilku wojowników, bo obawia siê o ewentualny atak ze strony orków.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_05"); //To bardzo prawdopodobne. Znam siê trochê na tych stworzeniach i mogê ci powiedzieæ, ¿e nigdy siê nie poddaj¹.
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_06"); //Mo¿esz mu przekazaæ, ¿e mo¿liwie najszybciej wyœlê do niego kilku ludzi. Chcê, aby dobrze przygotowali siê na to, co mo¿e ich tam zastaæ.

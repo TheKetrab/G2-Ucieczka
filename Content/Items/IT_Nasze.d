@@ -1036,20 +1036,23 @@ INSTANCE ItNa_MieczSwiatla (C_Item)
 
 	value 		=	700;					//wartoœæ
 
-	damageTotal = 	66;					//obra¿enia
+	damageTotal = 	75;					//obra¿enia
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
 	range    	=  	80;					//zasiêg
 
-	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
-	cond_value[2]  	=	72;					//ile potrzeba
+	on_equip			=	Equip_1H_10;
+	on_unequip			=	UnEquip_1H_10;
+
+	cond_atr[2]   	=	ATR_DEXTERITY;				//si³a/zrêcznoœæ
+	cond_value[2]  	=	90;					//ile potrzeba
 	visual 		=	"ItNa_MieczSwiatla.3DS";	//wygl¹d
 
 	description	= name;
 	TEXT[0]		= "Niewiarygodnie cieñkie ostrze pokryte jest œwiec¹c¹ substancj¹.";
 	TEXT[1]		= NAME_Damage;			COUNT[1]	= damageTotal;
-	TEXT[2] 	= NAME_Str_needed;		COUNT[2]	= cond_value[2];
+	TEXT[2] 	= NAME_Dex_needed;		COUNT[2]	= cond_value[2];
 	TEXT[3]		= NAME_Range;			COUNT[3]	= range;
-	TEXT[4] 	= NAME_OneHanded;
+	TEXT[4]		= NAME_ADDON_BONUS_1H;	COUNT[4]	= Waffenbonus_10;
 	TEXT[5]		= NAME_Value;			COUNT[5]	= value;
 };
 
@@ -1067,16 +1070,19 @@ INSTANCE ItNa_Zmija (C_Item)
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
 	range    	=  	85;					//zasiêg
 
-	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
+	on_equip			=	Equip_1H_08;
+	on_unequip			=	UnEquip_1H_08;
+
+	cond_atr[2]   	=	ATR_DEXTERITY;				//si³a/zrêcznoœæ
 	cond_value[2]  	=	44;					//ile potrzeba
 	visual 		=	"ItNa_Zmija.3DS";	//wygl¹d
 
 	description	= name;
 
 	TEXT[1]		= NAME_Damage;			COUNT[1]	= damageTotal;
-	TEXT[2] 	= NAME_Str_needed;		COUNT[2]	= cond_value[2];
+	TEXT[2] 	= NAME_Dex_needed;		COUNT[2]	= cond_value[2];
 	TEXT[3]		= NAME_Range;			COUNT[3]	= range;
-	TEXT[4] 	= NAME_OneHanded;
+	TEXT[4]		= NAME_ADDON_BONUS_1H;	COUNT[4]	= Waffenbonus_08;
 	TEXT[5]		= NAME_Value;			COUNT[5]	= value;
 };
 
@@ -1094,6 +1100,9 @@ INSTANCE ItMw_1H_Mace_02 (C_Item)
 	damagetype			=	DAM_BLUNT;
 	range    			=  	85;		
 
+	on_equip			=	Equip_1H_03;
+	on_unequip			=	UnEquip_1H_03;
+
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	11;
 	visual 				=	"ItMw_1H_Mace_02.3DS";
@@ -1102,7 +1111,7 @@ INSTANCE ItMw_1H_Mace_02 (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -1197,19 +1206,22 @@ INSTANCE ItMw_1H_Sword_05 (C_Item)
 
 	value 				=	472;//236;//118
 
-	damageTotal			= 	34;
+	damageTotal			= 	52;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	100;		
 
-	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	28;
+	on_equip			=	Equip_1H_05;
+	on_unequip			=	UnEquip_1H_05;
+
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	48;
 	visual 				=	"ItMw_1H_Sword_05.3DS";
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_05;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -1223,9 +1235,12 @@ INSTANCE ItMw_1H_Sword_04 (C_Item)
 
 	value 				=	111;
 
-	damageTotal			= 	26;
+	damageTotal			= 	31;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	100;		
+
+	on_equip			=	Equip_1H_03;
+	on_unequip			=	UnEquip_1H_03;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	24;
@@ -1235,7 +1250,7 @@ INSTANCE ItMw_1H_Sword_04 (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -1255,6 +1270,9 @@ INSTANCE ItMw_1H_Sword_02 (C_Item)
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	100;		
 
+	on_equip			=	Equip_1H_06;
+	on_unequip			=	UnEquip_1H_06;
+
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	15;
 	visual 				=	"ItMw_1H_Sword_02.3DS";
@@ -1263,7 +1281,7 @@ INSTANCE ItMw_1H_Sword_02 (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_06;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -1294,6 +1312,35 @@ INSTANCE ItMw_1H_Sword_Short_02 (C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+
+INSTANCE ItNa_WielkiMiecz (C_Item)
+{	
+	name 				=	"Wielki miecz";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_2HD_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	Value_Schwert3;
+
+	damageTotal  		= 	79;
+	damagetype 			=	DAM_EDGE;
+	range    			=  	RANGE_Schwert3;		
+
+	on_equip			=	Equip_2H_04;
+	on_unequip			=	UnEquip_2H_04;
+
+	cond_atr[2]   		=	ATR_STRENGTH;
+	cond_value[2]  		=	72;
+	visual 				=	"ItMw_045_1h_Sword_Bastard_01.3DS";
+
+	description			= name;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
+	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_04;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Kostur_UrShaka (C_Item)
@@ -1357,12 +1404,12 @@ INSTANCE ItNa_RytualneOstrze (C_Item)
 
 	value 		=	700;					//wartoœæ
 
-	damageTotal = 	53;					//obra¿enia
+	damageTotal = 	63;					//obra¿enia
 	damagetype 	=	DAM_EDGE;				//rodzaj obra¿eñ
 	range    	=  	85;					//zasiêg
 
 	cond_atr[2]   	=	ATR_STRENGTH;				//si³a/zrêcznoœæ
-	cond_value[2]  	=	44;					//ile potrzeba
+	cond_value[2]  	=	66;					//ile potrzeba
 	visual 		=	"ItNa_Zmija.3DS";	//wygl¹d
 
 	description	= name;
@@ -1578,7 +1625,7 @@ INSTANCE ItNa_SmiercPradawnych  (C_Item)
 
 	value 				=	Value_Special_2H_4;
 
-	damageTotal			= 	105;
+	damageTotal			= 	85;
 	damagetype			=	DAM_EDGE;
 	range    			=  	Range_Special_2H_4;	
 	
@@ -1586,10 +1633,12 @@ INSTANCE ItNa_SmiercPradawnych  (C_Item)
 	on_unequip			=	UnEquip_2H_10;
 	
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	100;
-	visual 				=	"ItMw_110_2h_sword_smith_05.3DS";
+	cond_value[2]  		= 	90;
+	//visual 				=	"ItMw_110_2h_sword_smith_05.3DS";
+	visual 				=	"ItMw_090_2h_sword_smith_04.3DS"; // G2U12: nie jak Uriziel!
 
 	description			= name;
+	TEXT[0]	= "Widaæ, ¿e miecz nie jest ju¿ tak wspania³y jak kiedyœ."; 
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
@@ -2146,7 +2195,7 @@ INSTANCE ItNa_GrzechSzakala (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 10;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= 7;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
@@ -2154,7 +2203,7 @@ FUNC VOID Equip_ItNa_GrzechSzakala()
 {
  	if Npc_IsPlayer (self)
 	{ 
-		B_AddFightSkill (self, NPC_TALENT_1H, 10);
+		B_AddFightSkill (self, NPC_TALENT_1H, 7);
 	};
 };
 
@@ -2162,7 +2211,7 @@ FUNC VOID UnEquip_ItNa_GrzechSzakala()
 {
  	if Npc_IsPlayer (self)
 	{ 
-		B_AddFightSkill (self, NPC_TALENT_1H, -10);
+		B_AddFightSkill (self, NPC_TALENT_1H, -7);
 	};
 };
 

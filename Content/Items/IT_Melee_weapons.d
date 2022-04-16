@@ -1393,8 +1393,8 @@ INSTANCE ItMw_Schwert1 (C_Item)
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_Schwert1;		
 
-	on_equip			=	Equip_1H_05;
-	on_unequip			=	UnEquip_1H_05;
+	on_equip			=	Equip_1H_04;
+	on_unequip			=	UnEquip_1H_04;
 	
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	30;
@@ -1404,7 +1404,7 @@ INSTANCE ItMw_Schwert1 (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_05;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_04;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /********************************************************************************/
@@ -1569,7 +1569,7 @@ INSTANCE ItMw_Schwert4 (C_Item)
 
 	value 				=	Value_Schwert4;
 
-	damageTotal  		= 	45;
+	damageTotal  		= 	51;
 	damagetype 			=	DAM_EDGE;
 	range    			=  	RANGE_Schwert4;		
 
@@ -1577,7 +1577,7 @@ INSTANCE ItMw_Schwert4 (C_Item)
 	on_unequip			=	UnEquip_1H_06;
 
 	cond_atr[2]   		=	ATR_STRENGTH;
-	cond_value[2]  		=	35;
+	cond_value[2]  		=	43;
 	visual 				=	"ItMw_045_1h_Sword_long_04.3DS";
 
 	description			= name;
@@ -1696,8 +1696,8 @@ INSTANCE ItMw_Rubinklinge (C_Item)
 	damagetype			=	DAM_EDGE;		
 	range    			=  	Range_Rubinklinge;	
 
-	on_equip			=	Equip_1H_07;
-	on_unequip			=	UnEquip_1H_07;
+	on_equip			=	Equip_1H_03;
+	on_unequip			=	UnEquip_1H_03;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;  
 	cond_value[2]  		= 	50;
@@ -1707,7 +1707,7 @@ INSTANCE ItMw_Rubinklinge (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_07;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_03;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /********************************************************************************/
@@ -1859,6 +1859,9 @@ INSTANCE ItMw_Inquisitor (C_Item)
 	damagetype 			=	DAM_EDGE;	//!!!
 	range    			=  	Range_Inquisitor;		
 
+	on_equip			=	Equip_1H_06;
+	on_unequip			=	UnEquip_1H_06;
+
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	50;
 	visual 				=	"ItMw_060_1h_mace_war_04.3DS";
@@ -1867,7 +1870,7 @@ INSTANCE ItMw_Inquisitor (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_OneHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_1H;			COUNT[4]	= Waffenbonus_06;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /********************************************************************************/
@@ -1966,22 +1969,22 @@ INSTANCE ItMw_2H_Special_02 (C_Item)
 
 	value 				=	Value_Special_2H_2;
 
-	damageTotal			= 	76;
+	damageTotal			= 	100;
 	damagetype			=	DAM_EDGE;
 	range    			=  	Range_Special_2H_2;	
 	
-	on_equip			=	Equip_2H_10;
-	on_unequip			=	UnEquip_2H_10;
+	on_equip			=	Equip_2H_05;
+	on_unequip			=	UnEquip_2H_05;
 	
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	80;
+	cond_value[2]  		= 	105;
 	visual 				=	"ItMw_070_2h_Sword_smith_03.3DS";
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_10;	
+	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_05;	
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /********************************************************************************/
@@ -2267,7 +2270,7 @@ INSTANCE ItMw_1H_Special_03 (C_Item)
 
 	value 				=	Value_Special_1H_3;
 
-	damageTotal			= 	64;
+	damageTotal			= 	85;
 	damagetype			=	DAM_EDGE;
 	range    			=  	Range_Special_1H_3;	
 	
@@ -2275,7 +2278,7 @@ INSTANCE ItMw_1H_Special_03 (C_Item)
 	on_unequip			=	UnEquip_1H_10;
 	
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	65;
+	cond_value[2]  		= 	90;
 	visual 				=	"ItMw_075_1h_sword_smith_04.3DS";
 
 	description			= name;

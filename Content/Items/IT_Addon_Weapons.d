@@ -319,15 +319,15 @@ INSTANCE ItMW_Addon_Hacker_2h_01 (C_Item)
 
 	value 				=	Value_Hacker;
 
-	damageTotal			= 	64;
+	damageTotal			= 	52;
 	damagetype			=	DAM_EDGE;		
 	range    			=  	Range_Hacker;	
 	
-	on_equip			=	Equip_2H_03;
-	on_unequip			=	UnEquip_2H_03;
+	on_equip			=	Equip_2H_02;
+	on_unequip			=	UnEquip_2H_02;
 	
 	cond_atr[2]   		= 	ATR_STRENGTH;  
-	cond_value[2]  		= 	55;
+	cond_value[2]  		= 	48;
 	visual 				=	"ItMw_2H_Machete_02.3DS";
 
 	description			= name;
@@ -335,7 +335,7 @@ INSTANCE ItMW_Addon_Hacker_2h_01 (C_Item)
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_03;
+	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_02;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 /********************************************************************************/
@@ -502,19 +502,22 @@ INSTANCE ItMw_Addon_PIR2hAxe (C_Item)
 
 	value 				=	Value_PIR2hAxe;
 
-	damageTotal  		= 	65;
+	damageTotal  		= 	93;
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_PIR2hAxe;		
 
+	on_equip			=	Equip_1H_04;
+	on_unequip			=	UnEquip_1H_04;
+
 	cond_atr[2]   		=	ATR_STRENGTH;
-	cond_value[2]  		=	65;
+	cond_value[2]  		=	90;
 	visual 				=	"ItMw_070_2h_axe_heavy_03.3DS";
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
 	TEXT[2] 			= NAME_Str_needed;				COUNT[2]	= cond_value[2];
 	TEXT[3]				= NAME_Range;					COUNT[3]	= range;
-	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[4]				= NAME_ADDON_BONUS_2H;			COUNT[4]	= Waffenbonus_04;
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 //*********************************************************

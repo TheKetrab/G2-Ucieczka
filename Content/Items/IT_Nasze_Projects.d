@@ -23,25 +23,31 @@ INSTANCE Projects (C_Item)
 
 FUNC VOID Use_AllProjects ()
 {
-	// Sila / Obrazenia (Kapitel to find) / Gdzie
-	CreateInvItems (hero,ItNa_Projekt_Zmija, 1);				// 44/53 (Kap3 poczatek)   / skrzynia na pietrze u Ryzowego Ksiecia
-	CreateInvItems (hero,ItNa_Projekt_CwiekowanaMaczuga, 1);	// 11/25 (Kap1 srodek)     / skrzynia w jaskini do ktorej idziesz z Philem
-	CreateInvItems (hero,ItNa_Projekt_MieczNienawisci, 1);		// 51/44 (Kap2 koniec)     / skrzynia w domku w twierdzy
-	CreateInvItems (hero,ItNa_Projekt_MieczSwiatla, 1);			// 72/66 (Kap4 poczatek)   / w skrzyni w poziemiach zamku
-	CreateInvItems (hero,ItNa_Projekt_MieczWojenny, 1);			// 28/34 (Kap2 srodek)     / na beczkach w krypcie obok Cavalorna
-	CreateInvItems (hero,ItNa_Projekt_MieczBojowy, 1);			// 24/26 (Kap2 poczatek)   / daje Hokurn za przyniesienie mu map
-	CreateInvItems (hero,ItNa_Projekt_MieczSedziego, 1);		// 15/22 (Kap1 srodek)     / w jaskini z bossem Poln¹ Besti¹
-	CreateInvItems (hero,ItNa_Projekt_ChlopskiMiecz, 1);		// 7/14  (Kap1 poczatek)   / skrzynia w strzepku zawalonej wiezy (Gorn ma tam zloto)
-	CreateInvItems (hero,ItNa_Projekt_DobryMiecz, 1);			// 30/35 (Kap2 srodek)     / w jaskini Perrota na stole alchemicznym
-	CreateInvItems (hero,ItNa_Projekt_DobryDlugiMiecz, 1);		// 35/45 (Kap3 poczatek)   / w skrzyni w kopalni zajêtej przez pe³zacze
-	CreateInvItems (hero,ItNa_Projekt_RubinoweOstrze, 1);		// 50/50 (Kap3 srodek)     / w skrzyni w orkowym namiocie w obozie przed zamkiem
-	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 65/65 (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
-	CreateInvItems (hero,ItNa_Projekt_Oskard, 1);				// 25/35 (Kap2 srodek)     / w skrzyni w krypcie obok górskiej fortecy
-	CreateInvItems (hero,ItNa_Projekt_Inkwizytor, 1);			// 50/60 (Kap3 koniec)     / w skrzyni obok dziewiêciu prze³¹czników
-	CreateInvItems (hero,ItNa_Projekt_RunaMocy, 1);				// 60/60 (Kap3 srodek)     / w skrzyni obok przelacznika w gorskiej twierdzy, ktory odsuwa regal z ksiazkami
+	// Str(Dex) / Damage [str/dex] [1h/2h] [bonus] (Kapitel to find) / Where
+
+	CreateInvItems (hero,ItNa_Projekt_ChlopskiMiecz, 1);		// 7/14  str 1h     (Kap1 poczatek)   / skrzynia w strzepku zawalonej wiezy (Gorn ma tam zloto)
+	CreateInvItems (hero,ItNa_Projekt_CwiekowanaMaczuga, 1);	// 11/25 str 1h +3  (Kap1 srodek)     / skrzynia w jaskini do ktorej idziesz z Philem
+	CreateInvItems (hero,ItNa_Projekt_MieczSedziego, 1);		// 15/22 str 1h +6  (Kap1 srodek)     / w jaskini z bossem Poln¹ Besti¹
+	CreateInvItems (hero,ItNa_Projekt_MieczBojowy, 1);			// 24/31 str 1h +3  (Kap2 poczatek)   / daje Hokurn za przyniesienie mu map
+	CreateInvItems (hero,ItNa_Projekt_Oskard, 1);				// 25/35 str 1h     (Kap2 srodek)     / w skrzyni w krypcie obok górskiej fortecy
+	CreateInvItems (hero,ItNa_Projekt_MieczWojenny, 1);			// 48/52 dex 1h     (Kap2 srodek)     / na beczkach w krypcie obok Cavalorna
+	CreateInvItems (hero,ItNa_Projekt_DobryMiecz, 1);			// 30/35 str 1h +4  (Kap2 srodek)     / w jaskini Perrota na stole alchemicznym
+	CreateInvItems (hero,ItNa_Projekt_BulawaILancuch, 1);		// 45/45 str 1h		(Kap2 srodek)     / w jaskini z goblinami TODO
+	CreateInvItems (hero,ItNa_Projekt_WielkaMaczeta, 1);		// 48/52 str 2h +2  (Kap2 srodek)     / w skrzyni w obozie bandytów TODO
+	CreateInvItems (hero,ItNa_Projekt_MieczNienawisci, 1);		// 51/44 str 1h     (Kap2 koniec)     / skrzynia w domku w twierdzy
+	CreateInvItems (hero,ItNa_Projekt_DobryDlugiMiecz, 1);		// 43/51 str 1h +6  (Kap3 poczatek)   / w skrzyni w kopalni zajêtej przez pe³zacze
+	CreateInvItems (hero,ItNa_Projekt_RunaMocy, 1);				// 60/60 str 2h     (Kap3 srodek)     / w skrzyni obok przelacznika w gorskiej twierdzy, ktory odsuwa regal z ksiazkami
+	CreateInvItems (hero,ItNa_Projekt_RubinoweOstrze, 1);		// 50/50 str 1h +3  (Kap3 srodek)     / w skrzyni w orkowym namiocie w obozie przed zamkiem
+	CreateInvItems (hero,ItNa_Projekt_Inkwizytor, 1);			// 50/60 str 1h +6  (Kap3 koniec)     / w skrzyni obok dziewiêciu prze³¹czników
+	CreateInvItems (hero,ItNa_Projekt_Zmija, 1);				// 66/63 dex 1h +8  (Kap3 poczatek)   / skrzynia na pietrze u Ryzowego Ksiecia
+	CreateInvItems (hero,ItNa_Projekt_WielkiMiecz, 1);			// 72/79 str 2h +4  (Kap4 poczatek)   / daje Udar po wykonaniu zadania 'Wojna'
+	CreateInvItems (hero,ItNa_Projekt_MieczSwiatla, 1);			// 90/75 dex 1h +10 (Kap4 poczatek)   / w skrzyni w podziemiach zamku
+	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 65/65 str 1h +8  (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
+	CreateInvItems (hero,ItNa_Projekt_Miazdzydeska, 1);			// 90/93 str 2h +4  (Kap4 zapalisada) / w skrzyni w orkowym obozie na plazy TODO
+	CreateInvItems (hero,ItNa_Projekt_MagiczneOstrzeBojowe, 1);	// 90/85 str 1h +10 (Kap4 zapalisada) / w skrzyni na srodku magicznego lasu za palisada TODO
+	CreateInvItems (hero,ItNa_Projekt_CiezkiMagiczny2h, 1);		// 105/100str2h +5  (Kap4 zapalisada) / w skrzyni u YBeriona TODO
 
 };
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Projekt_ChlopskiMiecz (C_Item)
@@ -140,6 +146,7 @@ func void Use_Projekt_DobryMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 30");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 70");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +4");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -191,8 +198,8 @@ func void Use_Projekt_DobryDlugiMiecz ()
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 35");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 45");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 43");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 90");
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
 				Doc_PrintLine	( nDocID,  0, "");
@@ -253,7 +260,7 @@ func void Use_Projekt_RubinoweOstrze ()
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 50");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 70");				
-				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +7");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +3");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -419,6 +426,7 @@ func void Use_Projekt_Inkwizytor ()
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 60");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -525,8 +533,9 @@ func void Use_Projekt_MieczBojowy ()
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 24");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 26");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 31");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +3");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 			
@@ -576,10 +585,11 @@ func void Use_Projekt_MieczWojenny ()
 				Doc_PrintLines	( nDocID,  0, "K³y zwierz¹t nie tylko s¹ dobrym materia³em do wyrobu przedmiotów codziennego u¿ytku. Mog¹ sprawdziæ siê równie¿, gdy chcemy, by koñce rêkojeœci by³y zabójcze. Wystarczy umocowaæ je na kiju i œci¹æ nadmiar drewna.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 28");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 34");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana zrêcznoœæ: 48");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 52");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +5");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -634,6 +644,7 @@ func void Use_Projekt_MieczSedziego ()
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 15");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 22");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +6");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -685,10 +696,11 @@ func void Use_Projekt_MieczSwiatla ()
 				Doc_PrintLines	( nDocID,  0, "Stal rozgrzewamy w ogniu i stapiamy z kwarcem. Ska³ê krystaliczn¹ nale¿y uformowaæ w pó³kole i zbiæ z bry³k¹ magicznej rudy tak, by odbija³y œwiat³o, gdy patrzymy w kryszta³ na rêkojeœci.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 72");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 66");
-				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 80");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana zrêcznoœæ: 90");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 75");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 80");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +10");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -740,10 +752,12 @@ func void Use_Projekt_Zmija ()
 				Doc_PrintLines	( nDocID,  0, "Rozgrzewamy stal i jedn¹ bry³kê z³ota, stapiamy prêty na jednym koñcu. Pozosta³e koñce skrêcamy w spiralê i ca³oœæ montujemy w rêkojeœæ wykonan¹ z twardego drewna. Poz³acamy j¹ i montujemy per³ê. UWAGA - per³a nie ma tylko charakteru ozdobnego. Niesie za sob¹ duszê tej broni...");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 44");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 53");
-				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 85");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana zrêcznoœæ: 66");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 63");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 85");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +8");
+
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -800,6 +814,7 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 11");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 25");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 85");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +3");
 				Doc_PrintLine	( nDocID,  0, "");
 
 				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
@@ -864,3 +879,339 @@ func void Use_Projekt_MieczNienawisci ()
 				Doc_Show		( nDocID );
 };
 
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_WielkaMaczeta (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_WielkaMaczeta;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Wielka maczeta";
+};
+var int Projekt_WielkaMaczeta_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_WielkaMaczeta ()
+{   
+	if (Projekt_WielkaMaczeta_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_WielkaMaczeta_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Wielka maczeta"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 5x wêgiel");
+				Doc_PrintLines	( nDocID,  0, "- 1x k³y b³otnego wê¿a");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Wiatr, wiatr, wiatr ³apcie w ¿agle,");
+				Doc_PrintLines	( nDocID,  0, "Choæ sztorm i wróg na statek nasz czyha.");
+				Doc_PrintLines	( nDocID,  0, "Szczêœcie to mit - stworzyliœmy go sami,");
+				Doc_PrintLines	( nDocID,  0, "Czarna bandera nad nami.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ dwurêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 48");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 52");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 105");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ dwurêczn¹: +2");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_Miazdzydeska (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_Miazdzydeska;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Mia¿d¿ydeska";
+};
+var int Projekt_Miazdzydeska_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_Miazdzydeska ()
+{   
+	if (Projekt_Miazdzydeska_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_Miazdzydeska_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Mia¿d¿ydeska"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 2x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 1x srebrny naszyjnik");
+				Doc_PrintLines	( nDocID,  0, "- 10x laga");
+				Doc_PrintLines	( nDocID,  0, "- 5x rum (kowalowi siê przyda!)");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Wtem fali cios zdruzgota³ statek strasznie,");
+				Doc_PrintLines	( nDocID,  0, "Pamiêta dobrze, kto prze¿y³ ten dzieñ.");
+				Doc_PrintLines	( nDocID,  0, "Za burtê rzuæcie, co wam krwi¹ zapachnie");
+				Doc_PrintLines	( nDocID,  0, "I wierzcie, ¿e to nie najwy¿sza z cen.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Rozerwijcie, kowalu, srebrny naszyjnik, by wy³o¿yæ nim trzon topora!");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ dwurêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 90");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 93");
+				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 80");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ dwurêczn¹: +4");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_BulawaILancuch (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_BulawaILancuch;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Bu³awa i ³añcuch";
+};
+var int Projekt_BulawaILancuch_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_BulawaILancuch ()
+{   
+	if (Projekt_BulawaILancuch_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_BulawaILancuch_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Bu³awa i ³añcuch"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 4x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 3x k³y");
+				Doc_PrintLines	( nDocID,  0, "- 2x laga");
+				Doc_PrintLines	( nDocID,  0, "- jakikolwiek srebrny przedmiot");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "K³y powinny stanowiæ bazê g³owicy. Nastêpnie powinno siê j¹ pokryæ stal¹. Srebro roztopiæ na d³ugi prêt, który ma stanowiæ podstawê trzonu broni.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 45");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 45");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 60");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_MagiczneOstrzeBojowe (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_MagiczneOstrzeBojowe;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Magiczne ostrze bojowe";
+};
+var int Projekt_MagiczneOstrzeBojowe_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_MagiczneOstrzeBojowe ()
+{   
+	if (Projekt_MagiczneOstrzeBojowe_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_MagiczneOstrzeBojowe_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Magiczne ostrze bojowe"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 3x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 10x bry³ka rudy");
+				Doc_PrintLines	( nDocID,  0, "- 1x skóra b³otnego wê¿a");
+				Doc_PrintLines	( nDocID,  0, "- 1x akwamaryn");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ z magicznej rudy jest znacznie twardsza od tej ze zwyk³ej stali. Dlatego jesli kowal nie mia³ wczeœniej do czynienia z tym rodzajem mieczy, koniecznie bêdzie potrzebowa³ przynajmniej dziesiêciu bry³ek. Podczas wyk³uwania ostrza, nale¿y wyk³uæ po trzy charakterystyczne szpice z ka¿dej strony. Uchwyt mo¿na pokryæ skór¹ b³otnego wê¿a. Stwierdzono, ¿e ma idealne tarcie i broñ le¿y perfekcyjnie w d³oni.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 90");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 85");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 100");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +10");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_CiezkiMagiczny2h (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_CiezkiMagiczny2h;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Ciê¿ki magiczny miecz dwurêczny";
+};
+var int Projekt_CiezkiMagiczny2h_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_CiezkiMagiczny2h ()
+{   
+	if (Projekt_CiezkiMagiczny2h_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_CiezkiMagiczny2h_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Ciê¿ki magiczny miecz dwurêczny"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 5x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 12x bry³ka rudy");
+				Doc_PrintLines	( nDocID,  0, "- 1x skóra b³otnego wê¿a");
+				Doc_PrintLines	( nDocID,  0, "- 2x akwamaryn");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Taka broñ zarezerwowana jest wy³¹cznie dla rycerzy króla. Wykuwanie jej bez zgody Rhobara jest ³amaniem prawa.");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Konieczne jest u¿ycie sporej iloœci rudy, gdy¿ miecz jest doœæ d³ugi. Do pokrycia rêkojeœci koniecznie nale¿y u¿yæ skóry b³otnego wê¿a, aby miecz le¿a³ dobrze w d³oniach. Dziêki temu zmniejszymy prawdopodobieñstwo upuszczenia tej cholernie ciê¿kiej broni...");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ dwurêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 105");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 100");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 110");
+				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ dwurêczn¹: +5");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_Projekt_WielkiMiecz (C_Item)
+{
+	name 				=	"Projekt";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_02.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_Projekt_WielkiMiecz;
+	scemeName			=	"MAP";
+	description			= 	"Projekt broni: Wielki miecz";
+};
+var int Projekt_WielkiMiecz_OneTime; // musi byc globalnie - bo Jan
+func void Use_Projekt_WielkiMiecz ()
+{   
+	if (Projekt_WielkiMiecz_OneTime==FALSE) {
+		B_GivePlayerXP(25);
+		Projekt_WielkiMiecz_OneTime = TRUE;
+	};
+	
+	var int nDocID;
+
+	nDocID = 	Doc_Create		()			  ;								// DocManager 
+				Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+				Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+				Doc_SetFont 	( nDocID, -1, FONT_Book	   				); 	// -1 -> all pages 
+				Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+
+				Doc_PrintLine	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "Wielki miecz"	);
+				Doc_PrintLines	( nDocID,  0, ""						);
+				Doc_PrintLines	( nDocID,  0, "- 3x surowa stal");
+				Doc_PrintLines	( nDocID,  0, "- 15x bry³ka z³ota");
+				Doc_PrintLines	( nDocID,  0, "- 2x laga");
+				Doc_PrintLines	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Wielki miecz to dwurêczny kuzyn miecza pó³torarêcznego. Jest on trochê d³u¿szy i ciê¿szy. Tylko prawdziwy osi³ek móg³by dzier¿yæ tê broñ w jednej rêce, dlatego wiêkszoœæ wojów pos³uguje siê nim obiema rêkami. Rêkojeœæ nale¿y poz³ociæ.");
+				Doc_PrintLine	( nDocID,  0, "");
+				Doc_PrintLines	( nDocID,  0, "Broñ dwurêczna");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 72");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 79");
+				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 100");
+				Doc_PrintLine	( nDocID,  0, "Premia do walki broni¹ dwurêczn¹: +4");
+				Doc_PrintLine	( nDocID,  0, "");
+
+				Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+			
+				Doc_Show		( nDocID );
+};

@@ -277,6 +277,13 @@ var int JanOskardDay;
 var int JanInkwizytorDay;
 var int JanRunaMocyDay;
 
+// G2U12
+var int JanWielkaMaczetaDay;
+var int JanMiazdzydeskaDay;
+var int JanBulawaILancuchDay;
+var int JanWielkiMieczDay;
+var int JanMagiczneOstrzeBojoweDay;
+var int JanCiezkiMagiczny2hDay;
 
 
 func void Jan_Say_Back_Tomorrow()
@@ -378,6 +385,20 @@ FUNC VOID DIA_NASZ_106_Jan_Wykuj_Info()
 			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Inkwizytor.", DIA_NASZ_106_Jan_Wykuj_Inkwizytor); };
 		if(npc_hasitems (other, ItNa_Projekt_RunaMocy) >= 1) {
 			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Runa mocy.", DIA_NASZ_106_Jan_Wykuj_RunaMocy); };
+
+		// G2U12
+		if(npc_hasitems (other, ItNa_Projekt_WielkaMaczeta) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Wielka maczeta.", DIA_NASZ_106_Jan_Wykuj_WielkaMaczeta); };
+		if(npc_hasitems (other, ItNa_Projekt_Miazdzydeska) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Mia¿d¿ydeska", DIA_NASZ_106_Jan_Wykuj_Miazdzydeska); };
+		if(npc_hasitems (other, ItNa_Projekt_BulawaILancuch) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Bu³awa i ³añcuch", DIA_NASZ_106_Jan_Wykuj_BulawaILancuch); };
+		if(npc_hasitems (other, ItNa_Projekt_WielkiMiecz) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Wielki miecz", DIA_NASZ_106_Jan_Wykuj_WielkiMiecz); };
+		if(npc_hasitems (other, ItNa_Projekt_MagiczneOstrzeBojowe) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Magiczne ostrze bojowe", DIA_NASZ_106_Jan_Wykuj_MagiczneOstrzeBojowe); };
+		if(npc_hasitems (other, ItNa_Projekt_CiezkiMagiczny2h) >= 1) {
+			Info_AddChoice	(DIA_NASZ_106_Jan_Wykuj, "Ciê¿ki magiczny miecz dwurêczny", DIA_NASZ_106_Jan_Wykuj_CiezkiMagiczny2h); };
 
 };
 
@@ -1149,6 +1170,317 @@ FUNC VOID DIA_NASZ_106_Jan_Wykuj_MieczNienawisci ()
 };
 
 
+// ----- ----- ----- ----- -----
+var int WielkaMaczeta_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_WielkaMaczeta ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_WielkaMaczeta_15_00"); //Wielka maczeta.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanWielkaMaczetaDay != 0) && (JanWielkaMaczetaDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_WielkaMaczeta, 1);
+	B_UseFakeScroll();
+	
+	if(WielkaMaczeta_OneTime == FALSE) {
+		// DO NOTHING
+		WielkaMaczeta_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 2)
+	&&(npc_hasitems (other, ItMi_Coal) >= 5)
+	&&(npc_hasitems (other, ItAt_SharkTeeth) >= 1)
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,2);
+		B_GiveInvItems(other,self,ItMi_Coal,5);
+		B_GiveInvItems(other,self,ItAt_SharkTeeth,1);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanWielkaMaczetaDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_WielkaMaczeta, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
+
+// ----- ----- ----- ----- -----
+var int Miazdzydeska_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_Miazdzydeska ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_Miazdzydeska_15_00"); //Mia¿d¿ydeska.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanMiazdzydeskaDay != 0) && (JanMiazdzydeskaDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_Miazdzydeska, 1);
+	B_UseFakeScroll();
+	
+	if(Miazdzydeska_OneTime == FALSE) {
+		// DO NOTHING
+		Miazdzydeska_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 2)
+	&&(npc_hasitems (other, ItMi_SilverNecklace) >= 1)
+	&&(npc_hasitems (other, ItMw_1h_Bau_Mace) >= 10)
+	&&(npc_hasitems (other, ItFo_Addon_Rum) >= 5)
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,2);
+		B_GiveInvItems(other,self,ItMi_SilverNecklace,1);
+		B_GiveInvItems(other,self,ItMw_1h_Bau_Mace,10);
+		B_GiveInvItems(other,self,ItFo_Addon_Rum,5);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanMiazdzydeskaDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_Miazdzydeska, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
+
+// ----- ----- ----- ----- -----
+func int NpcAnySilverItem(var c_npc slf) {
+	if (npc_hasitems(slf,ItMi_SilverRing)) { return ItMi_SilverRing; };
+	if (npc_hasitems(slf,ItMi_SilverCup)) { return ItMi_SilverCup; };
+	if (npc_hasitems(slf,ItMi_SilverPlate)) { return ItMi_SilverPlate; };
+	if (npc_hasitems(slf,ItMi_SilverChalice)) { return ItMi_SilverChalice; };
+	if (npc_hasitems(slf,ItMi_SilverCandleHolder)) { return ItMi_SilverCandleHolder; };
+	if (npc_hasitems(slf,ItMi_SilverNecklace)) { return ItMi_SilverNecklace; };
+	return -1;
+};
+
+var int BulawaILancuch_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_BulawaILancuch ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_BulawaILancuch_15_00"); //Bu³awa i ³añcuch.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanBulawaILancuchDay != 0) && (JanBulawaILancuchDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_BulawaILancuch, 1);
+	B_UseFakeScroll();
+	
+	if(BulawaILancuch_OneTime == FALSE) {
+		// DO NOTHING
+		BulawaILancuch_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 4)
+	&&(npc_hasitems (other, ItAt_Teeth) >= 3)
+	&&(npc_hasitems (other, ItMw_1h_Bau_Mace) >= 2)
+	&&(NpcAnySilverItem(other) > 0)
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,4);
+		B_GiveInvItems(other,self,ItAt_Teeth,3);
+		B_GiveInvItems(other,self,ItMw_1h_Bau_Mace,2);
+		B_GiveInvItems(other,self,NpcAnySilverItem(other),1);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanBulawaILancuchDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_BulawaILancuch, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
+
+// ----- ----- ----- ----- -----
+var int WielkiMiecz_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_WielkiMiecz ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_WielkiMiecz_15_00"); //Wielki miecz.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanWielkiMieczDay != 0) && (JanWielkiMieczDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_WielkiMiecz, 1);
+	B_UseFakeScroll();
+	
+	if(WielkiMiecz_OneTime == FALSE) {
+		// DO NOTHING
+		WielkiMiecz_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 3)
+	&&(npc_hasitems (other, ItMi_GoldNugget_Addon) >= 15)
+	&&(npc_hasitems (other, ItMw_1h_Bau_Mace) >= 2)
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,3);
+		B_GiveInvItems(other,self,ItMi_GoldNugget_Addon,15);
+		B_GiveInvItems(other,self,ItMw_1h_Bau_Mace,2);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanWielkiMieczDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_WielkiMiecz, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
+
+// ----- ----- ----- ----- -----
+var int MagiczneOstrzeBojowe_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_MagiczneOstrzeBojowe ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_MagiczneOstrzeBojowe_15_00"); //Magiczne ostrze bojowe.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanMagiczneOstrzeBojoweDay != 0) && (JanMagiczneOstrzeBojoweDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_MagiczneOstrzeBojowe, 1);
+	B_UseFakeScroll();
+	
+	if(MagiczneOstrzeBojowe_OneTime == FALSE) {
+		// DO NOTHING
+		MagiczneOstrzeBojowe_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 3)
+	&&(npc_hasitems (other, ItMi_Nugget) >= 10)
+	&&(npc_hasitems (other, ItAt_SharkSkin) >= 1)
+	&&(npc_hasitems (other, ItMi_Aquamarine) >= 1)	
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,3);
+		B_GiveInvItems(other,self,ItMi_Nugget,10);
+		B_GiveInvItems(other,self,ItAt_SharkSkin,1);
+		B_GiveInvItems(other,self,ItMi_Aquamarine,1);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanMagiczneOstrzeBojoweDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_MagiczneOstrzeBojowe, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
+
+// ----- ----- ----- ----- -----
+var int CiezkiMagiczny2h_OneTime;
+FUNC VOID DIA_NASZ_106_Jan_Wykuj_CiezkiMagiczny2h ()
+{
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_CiezkiMagiczny2h_15_00"); //Ciê¿ki magiczny miecz dwurêczny.
+
+	// jesli chcesz dwa razy ten sam miecz, to zablokuj
+	if((JanCiezkiMagiczny2hDay != 0) && (JanCiezkiMagiczny2hDay == Wld_GetDay())) {
+		Jan_Say_Twice();
+		//konczy dialog
+		Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+	};
+
+	B_GiveInvItems (other, self, ItNa_Projekt_CiezkiMagiczny2h, 1);
+	B_UseFakeScroll();
+	
+	if(CiezkiMagiczny2h_OneTime == FALSE) {
+		// DO NOTHING
+		CiezkiMagiczny2h_OneTime = TRUE;
+	};
+	
+	Jan_Say_Have_You();
+	
+	// czy ma itemy?
+	if(npc_hasitems (other, ItMiSwordraw) >= 5)
+	&&(npc_hasitems (other, ItMi_Nugget) >= 12)
+	&&(npc_hasitems (other, ItAt_SharkSkin) >= 1)
+	&&(npc_hasitems (other, ItMi_Aquamarine) >= 2)
+	{
+		B_GiveInvItems(other,self,ItMiSwordraw,5);
+		B_GiveInvItems(other,self,ItMi_Nugget,12);
+		B_GiveInvItems(other,self,ItAt_SharkSkin,1);
+		B_GiveInvItems(other,self,ItMi_Aquamarine,2);
+		
+		Jan_Say_Back_Tomorrow();
+		
+		JanZaplacone = FALSE;
+		JanCiezkiMagiczny2hDay = Wld_GetDay();
+	}
+	
+	else
+	{
+		Jan_Say_Lack_Items();
+	};
+	
+
+	// oddaje projekt i konczy dialog
+	B_GiveInvItems (self, other, ItNa_Projekt_CiezkiMagiczny2h, 1);
+	Info_ClearChoices (DIA_NASZ_106_Jan_Wykuj);
+};
 
 
 //*********************************************************************
@@ -1181,7 +1513,14 @@ FUNC INT DIA_NASZ_106_Jan_Oddawanie_Condition()
 	||((JanOskardDay < Wld_GetDay()) && (JanOskardDay != 0))
 	||((JanInkwizytorDay < Wld_GetDay()) && (JanInkwizytorDay != 0))
 	||((JanRunaMocyDay < Wld_GetDay()) && (JanRunaMocyDay != 0))
-	
+
+	// G2U12
+	||((JanWielkaMaczetaDay < Wld_GetDay()) && (JanWielkaMaczetaDay != 0))
+	||((JanMiazdzydeskaDay < Wld_GetDay()) && (JanMiazdzydeskaDay != 0))
+	||((JanBulawaILancuchDay < Wld_GetDay()) && (JanBulawaILancuchDay != 0))
+	||((JanWielkiMieczDay < Wld_GetDay()) && (JanWielkiMieczDay != 0))
+	||((JanMagiczneOstrzeBojoweDay < Wld_GetDay()) && (JanMagiczneOstrzeBojoweDay != 0))
+	||((JanCiezkiMagiczny2hDay < Wld_GetDay()) && (JanCiezkiMagiczny2hDay != 0))
 	
 	{
 		return TRUE;
@@ -1240,47 +1579,85 @@ FUNC VOID DIA_NASZ_106_Jan_Oddawanie_Info()
 		B_giveinvitems (self, other, ItMw_1H_Sword_Long_03, 1);
 		JanMieczNienawisciDay = 0;
 	};
-	
-	
-	
 
 	if((JanDobryMieczDay < Wld_GetDay()) && (JanDobryMieczDay != 0)) {
 		Createinvitems (self, ItMw_Schwert1, 1);
 		B_giveinvitems (self, other, ItMw_Schwert1, 1);
 		JanDobryMieczDay = 0;
 	};
+
 	if((JanDobryDlugiMieczDay < Wld_GetDay()) && (JanDobryDlugiMieczDay != 0)) {
 		Createinvitems (self, ItMw_Schwert4, 1);
 		B_giveinvitems (self, other, ItMw_Schwert4, 1);
 		JanDobryDlugiMieczDay = 0;
 	};
+
 	if((JanRubinoweOstrzeDay < Wld_GetDay()) && (JanRubinoweOstrzeDay != 0)) {
 		Createinvitems (self, ItMw_Rubinklinge, 1);
 		B_giveinvitems (self, other, ItMw_Rubinklinge, 1);
 		JanRubinoweOstrzeDay = 0;
 	};
+
 	if((JanElBastardoDay < Wld_GetDay()) && (JanElBastardoDay != 0)) {
 		Createinvitems (self, ItMw_ElBastardo, 1);
 		B_giveinvitems (self, other, ItMw_ElBastardo, 1);
 		JanElBastardoDay = 0;
 	};
+
 	if((JanOskardDay < Wld_GetDay()) && (JanOskardDay != 0)) {
 		Createinvitems (self, ItMw_Steinbrecher, 1);
 		B_giveinvitems (self, other, ItMw_Steinbrecher, 1);
 		JanOskardDay = 0;
 	};
+
 	if((JanInkwizytorDay < Wld_GetDay()) && (JanInkwizytorDay != 0)) {
 		Createinvitems (self, ItMw_Inquisitor, 1);
 		B_giveinvitems (self, other, ItMw_Inquisitor, 1);
 		JanInkwizytorDay = 0;
 	};
+
 	if((JanRunaMocyDay < Wld_GetDay()) && (JanRunaMocyDay != 0)) {
 		Createinvitems (self, ItMw_Zweihaender3, 1);
 		B_giveinvitems (self, other, ItMw_Zweihaender3, 1);
 		JanRunaMocyDay = 0;
 	};
+
+	// G2U12
+	if((JanWielkaMaczetaDay < Wld_GetDay()) && (JanWielkaMaczetaDay != 0)) {
+		Createinvitems (self, ItMW_Addon_Hacker_2h_01, 1);
+		B_giveinvitems (self, other, ItMW_Addon_Hacker_2h_01, 1);
+		JanWielkaMaczetaDay = 0;
+	};
 	
+	if((JanMiazdzydeskaDay < Wld_GetDay()) && (JanMiazdzydeskaDay != 0)) {
+		Createinvitems (self, ItMw_Addon_PIR2hAxe, 1);
+		B_giveinvitems (self, other, ItMw_Addon_PIR2hAxe, 1);
+		JanMiazdzydeskaDay = 0;
+	};
+
+	if((JanBulawaILancuchDay < Wld_GetDay()) && (JanBulawaILancuchDay != 0)) {
+		Createinvitems (self, ItMw_Morgenstern, 1);
+		B_giveinvitems (self, other, ItMw_Morgenstern, 1);
+		JanBulawaILancuchDay = 0;
+	};
+
+	if((JanWielkiMieczDay < Wld_GetDay()) && (JanWielkiMieczDay != 0)) {
+		Createinvitems (self, ItNa_WielkiMiecz, 1);
+		B_giveinvitems (self, other, ItNa_WielkiMiecz, 1);
+		JanWielkiMieczDay = 0;
+	};
 	
+	if((JanMagiczneOstrzeBojoweDay < Wld_GetDay()) && (JanMagiczneOstrzeBojoweDay != 0)) {
+		Createinvitems (self, ItMw_1H_Special_03, 1);
+		B_giveinvitems (self, other, ItMw_1H_Special_03, 1);
+		JanMagiczneOstrzeBojoweDay = 0;
+	};
+	
+	if((JanCiezkiMagiczny2hDay < Wld_GetDay()) && (JanCiezkiMagiczny2hDay != 0)) {
+		Createinvitems (self, ItMw_2H_Special_02, 1);
+		B_giveinvitems (self, other, ItMw_2H_Special_02, 1);
+		JanCiezkiMagiczny2hDay = 0;
+	};
 	
 	AI_Output (self, other,"DIA_NASZ_106_Jan_Oddawanie_55_02"); //Jakbyœ jeszcze czegoœ potrzebowa³, to pamiêtaj o naszej umowie!
 	

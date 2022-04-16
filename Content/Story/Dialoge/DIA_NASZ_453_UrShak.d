@@ -42,6 +42,38 @@ func void B_SetVisuals_OrcShamanStone_URSHAK()
 // 50% --> 80% = 200hp --> 320hp
 // 20% --> 50% = 80hp --> 200hp
 
+func int ClampHeroDamageToUrshak(var c_npc urshak, var int dmg)
+{
+	var int minHp; 
+	if(UrShakBattlePart == 1)
+	{
+		minHp = 200;
+	}
+	else if(UrShakBattlePart == 2)
+	{
+		minHp = 80;
+	}
+	else
+	{
+		//nie bêdzie ju¿ regeneracji, wiêc zadaj pe³ne dmg
+		return dmg;
+	};
+	
+	if(urshak.attribute[ATR_HITPOINTS] - dmg <= minHp )
+	{
+		
+		if(urshak.attribute[ATR_HITPOINTS] > minHp)
+		{
+			return urshak.attribute[ATR_HITPOINTS] - minHp;
+		};
+		
+		//to nie powinno siê staæ, ale na wszelki wypadek nie zadawaj hp
+		return 0;
+	};
+	
+	return dmg;
+};
+
 func void ZabijOrkow(var c_npc slf)
 {
     if(slf.guild==GIL_ORC || slf.guild == GIL_UNDEADORC)

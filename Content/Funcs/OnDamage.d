@@ -279,8 +279,10 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 	
 	// DAMAGE CALCULATED
 	// --> apply modifiers
-	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
-	if(attackerPtr == _@(ur))
+	//var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
+	//if(attackerPtr == _@(ur))
+	//urshak
+	if(slf.id == 453)
 	{
 		dmg *= 2;
 		if (UrShakHitCnt >= 5) {
@@ -296,6 +298,22 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 
 		UrShakHitCnt += 1;
 		return dmg;
+	}
+	else if(oth.id == 453)
+	{	
+		dmg = DiffCalcDmgAll(dmg,slf);
+		
+		//dmg = ClampHeroDamageToUrshak(oth,dmg);
+		//return dmg;
+		
+		
+		MEM_PushInstParam(oth);
+		MEM_PushIntParam(dmg);
+		MEM_CallByString("ClampHeroDamageToUrshak");
+		dmg = MEM_PopIntResult();
+		return dmg;
+
+		
 	};
 		
 	// ofiara jest golem

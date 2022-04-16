@@ -349,7 +349,7 @@ INSTANCE ItMW_Addon_Hacker_2h_02 (C_Item)
 
 	value 				=	Value_PIR2hSword;
 
-	damageTotal			= 	75;
+	damageTotal			= 	45;
 	damagetype			=	DAM_EDGE;		
 	range    			=  	100;	
 	
@@ -357,7 +357,7 @@ INSTANCE ItMW_Addon_Hacker_2h_02 (C_Item)
 	on_unequip			=	UnEquip_2H_02;
 	
 	cond_atr[2]   		= 	ATR_STRENGTH;  
-	cond_value[2]  		= 	75;
+	cond_value[2]  		= 	45;
 	visual 				=	"ItMw_2H_Machete_01.3DS";
 
 	description			= name;

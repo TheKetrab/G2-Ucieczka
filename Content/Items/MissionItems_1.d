@@ -1652,11 +1652,11 @@ INSTANCE ItRw_DragomirsArmbrust_MIS (C_Item)
 
 	value 				=	Value_LeichteArmbrust;
 
-	damageTotal			= 	Damage_LeichteArmbrust;
+	damageTotal			= 	40;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	Condition_LeichteArmbrust;
+	cond_value[2]  		= 	40;
 	visual 				=	"ItRw_Crossbow_L_02.mms";
 
 	description			= name;

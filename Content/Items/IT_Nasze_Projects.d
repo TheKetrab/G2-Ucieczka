@@ -42,7 +42,7 @@ FUNC VOID Use_AllProjects ()
 	CreateInvItems (hero,ItNa_Projekt_Zmija, 1);				// 66/63 dex 1h +8  (Kap3 poczatek)   / skrzynia na pietrze u Ryzowego Ksiecia
 	CreateInvItems (hero,ItNa_Projekt_WielkiMiecz, 1);			// 72/79 str 2h +4  (Kap4 poczatek)   / daje Udar po wykonaniu zadania 'Wojna'
 	CreateInvItems (hero,ItNa_Projekt_MieczSwiatla, 1);			// 90/75 dex 1h +10 (Kap4 poczatek)   / w skrzyni w podziemiach zamku
-	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 65/65 str 1h +8  (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
+	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 70/74 str 1h +8  (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
 	CreateInvItems (hero,ItNa_Projekt_Miazdzydeska, 1);			// 90/93 str 2h +4  (Kap4 zapalisada) / w skrzyni w orkowym obozie na plazy TODO
 	CreateInvItems (hero,ItNa_Projekt_MagiczneOstrzeBojowe, 1);	// 90/85 str 1h +10 (Kap4 zapalisada) / w skrzyni na srodku magicznego lasu za palisada TODO
 	CreateInvItems (hero,ItNa_Projekt_CiezkiMagiczny2h, 1);		// 105/100str2h +5  (Kap4 zapalisada) / w skrzyni u YBeriona TODO
@@ -312,8 +312,8 @@ func void Use_Projekt_ElBastardo ()
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
-				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 65");
-				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 65");
+				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 70");
+				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 74");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");				
 				Doc_PrintLines	( nDocID,  0, "Premia do walki broni¹ jednorêczn¹: +8");
 				Doc_PrintLine	( nDocID,  0, "");

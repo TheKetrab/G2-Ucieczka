@@ -2001,7 +2001,7 @@ INSTANCE ItMw_ElBastardo (C_Item)
 
 	value 				=	Value_ElBastardo;
 
-	damageTotal  		= 	65;
+	damageTotal  		= 	74;
 	damagetype 			=	DAM_EDGE;	
 	range    			=  	Range_ElBastardo;		
 	
@@ -2009,7 +2009,7 @@ INSTANCE ItMw_ElBastardo (C_Item)
 	on_unequip			=	UnEquip_1H_08;
 
 	cond_atr[2]   		=	ATR_STRENGTH;
-	cond_value[2]  		=	65;
+	cond_value[2]  		=	70;
 	visual 				=	"ItMw_065_1h_sword_bastard_03.3DS";
 
 	description			= name;
@@ -2579,7 +2579,7 @@ INSTANCE ItMw_2H_Blessed_03 (C_Item)
 
 	value 				=	Value_Blessed_2H_3;
 
-	damageTotal			= 	100;
+	damageTotal			= 	90;
 	damagetype			=	DAM_EDGE;
 	range    			=  	Range_Blessed_2H_3;	
 

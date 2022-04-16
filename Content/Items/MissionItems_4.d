@@ -68,12 +68,12 @@ INSTANCE ItMW_1H_FerrosSword_Mis (C_Item)
 
 	value 				=	Value_Special_1H_2;
 
-	damageTotal			= 	Damage_Special_1H_2;
+	damageTotal			= 	60;
 	damagetype			=	DAM_EDGE;
 	range    			=  	Range_Special_1H_2;	
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	Condition_Special_1H_2;
+	cond_value[2]  		= 	60;
 	visual 				=	"ItMw_060_1h_Sword_smith_03.3DS";
 
 	description			= name;
@@ -135,11 +135,11 @@ INSTANCE ItRw_SengrathsArmbrust_MIS(C_Item)
 
 	value 				=	Value_MilArmbrust;
 
-	damageTotal			= 	Damage_MilArmbrust;
+	damageTotal			= 	40;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	Condition_MilArmbrust;
+	cond_value[2]  		= 	40;
 	visual 				=	"ItRw_Mil_Crossbow.mms";
 
 	description			= name;

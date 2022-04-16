@@ -1452,7 +1452,7 @@ INSTANCE ItNa_RekaTrolla (C_Item)
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_DJG_Crossbow(C_Item)
 {
-	name 				=	"Kusza ³owcy";
+	name 				=	"Lekka kusza ³owcy";
 
 	mainflag 			=	ITEM_KAT_FF;
 	flags 				=	ITEM_CROSSBOW;
@@ -1460,12 +1460,36 @@ INSTANCE ItNa_DJG_Crossbow(C_Item)
 
 	value 				=	Value_MilArmbrust;
 
-	damageTotal			= 	Damage_MilArmbrust;
+	damageTotal			= 	30;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	Condition_MilArmbrust;
+	cond_value[2]  		= 	30;
 	visual 				=	"ItRw_Mil_Crossbow.mms";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+// ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
+INSTANCE ItNa_DJG_CrossbowM (C_Item)
+{
+	name 				=	"Kusza ³owcy";
+
+	mainflag 			=	ITEM_KAT_FF;
+	flags 				=	ITEM_CROSSBOW;
+	material 			=	MAT_WOOD;
+
+	value 				=	500;
+
+	damageTotal			= 	45;
+	damagetype			=	DAM_POINT;
+	munition			=	ItRw_Bolt;
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	60;
+	visual 				=	"ItRw_Crossbow_M_01.mms";
 
 	description			= name;
 	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
@@ -1484,11 +1508,11 @@ INSTANCE ItNa_DJG_CrossbowH (C_Item)
 
 	value 				=	500;
 
-	damageTotal			= 	Damage_Armbrust;
+	damageTotal			= 	70;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	Condition_Armbrust;
+	cond_value[2]  		= 	85;
 	visual 				=	"ItRw_Crossbow_M_01.mms";
 
 	description			= name;
@@ -1511,11 +1535,11 @@ INSTANCE ItNa_KuszaLowcy (C_Item)
 	on_equip			=	Equip_ItNa_KuszaLowcy;
 	on_unequip			=	UnEquip_ItNa_KuszaLowcy;
 
-	damageTotal			= 	90;
+	damageTotal			= 	75;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	80;
+	cond_value[2]  		= 	90;
 	visual 				=	"ItRw_Crossbow_H_02.mms";
 
 	description			= name;
@@ -1553,7 +1577,7 @@ INSTANCE ItNa_BAN_Crossbow(C_Item)
 
 	value 				=	400;
 
-	damageTotal			= 	55;
+	damageTotal			= 	40;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Bolt;
 	cond_atr[2]   		= 	ATR_STRENGTH;
@@ -1657,12 +1681,12 @@ INSTANCE ItNa_ZabojcaPradawnych (C_Item)
 
 	value 				=	Value_Buchenbogen;
 
-	damageTotal			=	120;
+	damageTotal			=	70;
 	damagetype			=	DAM_POINT;
 	munition			=	ItRw_Arrow;
 
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	100;
+	cond_value[2]  		= 	90;
 	visual 				=	"ItRw_Bow_M_04.mms";
 
 	description			= name;

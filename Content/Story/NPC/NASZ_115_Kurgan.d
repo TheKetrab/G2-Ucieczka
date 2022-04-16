@@ -19,7 +19,7 @@ instance NASZ_115_Kurgan (Npc_Default)
 	
 	// ------ Equippte Waffen ------																	//Munition wird automatisch generiert, darf aber angegeben werden
 	EquipItem	(self, ItNa_Djg_Weapon_H);
-	EquipItem	(self, ItNa_DJG_CrossbowH);
+	EquipItem	(self, ItNa_DJG_CrossbowM);
 	Createinvitems (self, ItRw_Bolt, 22);
 
 	// ------ Inventory ------

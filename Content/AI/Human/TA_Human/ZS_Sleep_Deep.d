@@ -44,8 +44,12 @@ func void B_AssessSleepTalk()
 func void ZS_Sleep_Deep ()
 {
 	//Npc_PercEnable  	(self, 	PERC_ASSESSQUIETSOUND	,	B_AssessQuietSound			); //geht in ZS_ObservePlayer
-	Npc_PercEnable		(self, 	PERC_ASSESSDAMAGE 		, 	B_AssessDamage				);
-	Npc_PercEnable 		(self, 	PERC_ASSESSTALK 		, 	B_AssessSleepTalk			);
+	/*
+	U1.2
+	Jeremiasz ma nie wstawć ani nie reagować na dmg
+	*/
+	//Npc_PercEnable		(self, 	PERC_ASSESSDAMAGE 		, 	B_AssessDamage				);
+	//Npc_PercEnable 		(self, 	PERC_ASSESSTALK 		, 	B_AssessSleepTalk			);
 	
 	AI_SetWalkmode 		(self, NPC_WALK);
 	

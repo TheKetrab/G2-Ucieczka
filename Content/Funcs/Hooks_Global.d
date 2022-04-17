@@ -20,6 +20,43 @@ const int oCNpc__EV_AttackRun  = 7673808;
 const int oCNpc__EV_AttackForward  = 7664640;
 const int oCZoneMusic__GetHerostatus = 6562848;
 
+const func mm_attack_func = ZS_MM_ATTACK;
+const func attack_func = ZS_ATTACK;
+const int dword_AAD648_Adr = 11195976;
+const int oCNpc__Enemy_Offset = 1176;
+const int oCNpc__state_curState_valid_Offset = 1468;
+const int oCNpc__state_curState_Idx_Offset = 1444;
+const int oCNpc__state_nextState_Idx_Offset = 1504;
+//const int zCArray__numInArray_Offset = 8;
+
+// void __cdecl Game_CreateInstance(class zSTRING &,class zSTRING &) 0x006CB7C0 = 7124928
+const int cdecl__Game_CreateInstance = 7124928;
+const int cdecl__Game_CreateInstance_Len = 6;
+
+const int oCItemContainer__GetSelectedItem = 7377600;
+const int oCNpc__GetInvSlot = 7641824;
+const int oCNpc__SetToSlotPosition = 7640960;
+const int oCNpc__CreateInvSlot = 7641088;
+const int oCNpc__DeleteInvSlot = 7641568;
+const int zCModel__SearchNode = 5758960;   //0x0057DFF0
+const int zCModel__SetNodeVisual = 5739168;
+const int oCNpc__UpdateSlots = 7645648;
+const int oCNpc__PutInSlot_ucieczka = 7643760;
+const int oCNpcInventory__HandleEvent = 7397440;
+
+const int oCNpc__IsMunitionAvailable_Ret = 7587910;
+const int oCAiHuman__BowMode = 6905600;
+const int zCAiCamera__CheckKeys__ScrollConditions = 4869646;
+
+
+const int oCNpc__EquipBestWeapon = 7663408;
+const int INV_MAX_ITEMS_addr = 8635508;
+const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
+//const int oCNpc__DoShootArrow_PostReturnConditions = 7620740;
+const int oCNpc__DoShootArrow_PostReturnConditions = 7620745;
+//const int oCNpc__IsMunitionAvailable = 7587552;
+const int oCSpawnManager__CheckRemoveNpc_DeleteNpc = 7837169;
+
 
 func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 {
@@ -215,14 +252,7 @@ func int Game_GetHeroStatus()
 	return CALL_RetValAsInt();
 };
 
-const func mm_attack_func = ZS_MM_ATTACK;
-const func attack_func = ZS_ATTACK;
-const int dword_AAD648_Adr = 11195976;
-const int oCNpc__Enemy_Offset = 1176;
-const int oCNpc__state_curState_valid_Offset = 1468;
-const int oCNpc__state_curState_Idx_Offset = 1444;
-const int oCNpc__state_nextState_Idx_Offset = 1504;
-//const int zCArray__numInArray_Offset = 8;
+
 func int IsHeroInDanger()
 {
                         //zCArray<T>::numInArray;
@@ -322,9 +352,6 @@ func void DynamicSaveSystem()
 
 
 // WYLACZENIE REAGOWANIA NA KRADZIEZ PO KODZIE 'INSERT' PRZEZ 30s
-// void __cdecl Game_CreateInstance(class zSTRING &,class zSTRING &) 0x006CB7C0 = 7124928
-const int cdecl__Game_CreateInstance = 7124928;
-const int cdecl__Game_CreateInstance_Len = 6;
 
 var int AssessTheftDisabled;
 func void DisableAssessTheft() {
@@ -424,14 +451,13 @@ func void SHIELD_EQUIP()
 	};
 };
 
-const int oCItemContainer__GetSelectedItem = 7377600;
+
 func int Inv_GetSelectedItem(var int eqPtr)
 {
     CALL__thiscall(eqPtr,oCItemContainer__GetSelectedItem);
     return CALL_RetValAsPtr();
 };
 
-const int oCNpc__GetInvSlot = 7641824;
 func int oCNpc_GetInvSlot_(var int slfPtr, var string slotName)
 {
     slotName = Str_Upper(slotName);
@@ -440,7 +466,6 @@ func int oCNpc_GetInvSlot_(var int slfPtr, var string slotName)
     return CALL_RetValAsPtr();
 };
 
-const int oCNpc__SetToSlotPosition = 7640960;
 func void oCNpc_SetToSlotPosition(var c_npc slf, var int vobPtr, var string slotName)
 {
 	slotName = Str_Upper(slotName);
@@ -458,8 +483,6 @@ func void oCNpc_SetToSlotPosition_(var int slfPtr, var int vobPtr, var string sl
 
 };
 
-const int oCNpc__CreateInvSlot = 7641088;
-const int oCNpc__DeleteInvSlot = 7641568;
 func void oCNpc_CreateInvSlot(var c_npc slf, var string slotName)
 {
 	slotName = Str_Upper(slotName);
@@ -487,8 +510,7 @@ func int oCNpc_GetModel(var c_npc npc)
 	CALL__thiscall(MEM_InstToPtr(npc), oCNpc__GetModel);
     return CALL_RetValAsPtr();
 };*/
-const int zCModel__SearchNode = 5758960;   //0x0057DFF0
-const int zCModel__SetNodeVisual = 5739168;
+
 func int zCVisual_LoadVisual(var string vis) 
 {
 	const int zCVisual__LoadVisual = 6318800; //0x00606AD0
@@ -537,7 +559,7 @@ func void hNpc_EquipArmor()
 	
 };*/
 
-const int oCNpc__UpdateSlots = 7645648;
+
 func void UpdateStaffSlot()
 {
 	//var c_npc slf; slf = _^(ECX);
@@ -550,11 +572,11 @@ func void UpdateStaffSlot()
 	oCNpc_SetToSlotPosition_(ECX, slotvob, "ZS_CROSSBOW");
 };
 
-const int oCNpc__PutInSlot_ucieczka = 7643760;
+
 
 var int HelmetEquipped;
 const int RuneIterator = 3;
-const int oCNpcInventory__HandleEvent = 7397440;
+
 func void oCNpcInventory_HandleEvent_hook()
 {
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
@@ -844,10 +866,7 @@ func void Npc_DoShootArrow_Hook()
 	};
 	
 	TabukStrzelanie_Wystrzelenie_Hook();
-	
 };
-
-const int oCNpc__EquipBestWeapon = 7663408;
 
 func void oCNpc__EquipBestWeapon_Hook()
 {
@@ -865,17 +884,6 @@ func void oCNpc__EquipBestWeapon_Hook()
 };
 
 
-
-
-const int INV_MAX_ITEMS_addr = 8635508;
-const int oCNpc__CopyTransformSpellInvariantValuesTo = 7590864;
-
-//const int oCNpc__DoShootArrow_PostReturnConditions = 7620740;
-const int oCNpc__DoShootArrow_PostReturnConditions = 7620745;
-//const int oCNpc__IsMunitionAvailable = 7587552;
-
-const int oCSpawnManager__CheckRemoveNpc_DeleteNpc = 7837169;
-
 func void DeleteNpc_Check()
 {
 	//var oCNpc slf; slf = _^(ESI);
@@ -890,9 +898,6 @@ func void DeleteNpc_Check()
 	
 };
 
-const int oCAiHuman__BowMode = 6905600;
-const int zCAiCamera__CheckKeys__ScrollConditions = 4869646;
-
 func void zCAiCamera__CheckKeys_MunSwitchDisableScroll()
 {
 	if(Npc_IsInFightMode(hero, FMODE_FAR))
@@ -903,6 +908,31 @@ func void zCAiCamera__CheckKeys_MunSwitchDisableScroll()
 };
 
 
+func void oCNpc__IsMunitionAvailable_Ret_Hook()
+{
+	if(EBX != MEM_READINT(_hero)){ return; };
+	
+	if(EAX == 0)
+	{	
+		//if item is null
+		if(!EBP){ return; };
+		
+		var c_item itm; itm = _^(EBP);
+		
+		var int mun; mun = itm.munition;
+	
+		forceMunitionChange = true;
+		MunitionChange();
+		forceMunitionChange = false;
+
+		if(itm.munition != mun)
+		{
+			EAX = 1;
+		};
+	};
+	
+};
+
 
 func void Hooks_Global()
 {
@@ -912,10 +942,11 @@ func void Hooks_Global()
 	const int hooks = 0;
 	if(!hooks){
 		
+		HookEngineF(oCNpc__IsMunitionAvailable_Ret,5,oCNpc__IsMunitionAvailable_Ret_Hook);
 		HookEngineF(zCAiCamera__CheckKeys__ScrollConditions,6,zCAiCamera__CheckKeys_MunSwitchDisableScroll);
 		//HookEngineF(oCAiHuman__BowMode,6,MunitionChange);
 		//HookEngineF(oCSpawnManager__CheckRemoveNpc_DeleteNpc,5,DeleteNpc_Check);
-	//	HookEngineF(7837328,7,DeleteNpc_Check);
+		//	HookEngineF(7837328,7,DeleteNpc_Check);
 		HookEngineF(oCNpc__EquipBestWeapon,7,oCNpc__EquipBestWeapon_Hook);
 		HookEngineF(oCNpc__DoShootArrow_PostReturnConditions,6,Npc_DoShootArrow_Hook);
 		HookEngineF(cdecl__Game_CreateInstance,cdecl__Game_CreateInstance_Len,DisableAssessTheft);
@@ -925,7 +956,7 @@ func void Hooks_Global()
 				
 		DisableFocusOfDeadNPCsWithEmptyInventory();
 		HookEngineF(oCNpc__UpdateSlots,6,UpdateStaffSlot);
-	//	CheckItemConditions_Init();
+		//	CheckItemConditions_Init();
 		HookEngineF(oCNpcInventory__HandleEvent,6,oCNpcInventory_HandleEvent_hook);
 		HookEngineF(oCNpc__EquipItem,        7, SHIELD_EQUIP);
 		HookEngineF(oCNpc__ProcessNpc,6,SneakHuntingBoost); 

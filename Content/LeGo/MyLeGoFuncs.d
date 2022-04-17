@@ -456,8 +456,10 @@ func int GetNextMunition(var int currMun, var int isBow, var int forward)
 	return -1;
 };
 
+var int forceMunitionChange;
 func void MunitionChange()
 {
+
 	if(!Npc_IsInFightMode(hero, FMODE_FAR)){return;};
 
 	var c_item itm; 
@@ -507,7 +509,7 @@ func void MunitionChange()
 	var int forward; forward = 1;
 	
 	
-	if(Pressed(KEY_MOUSE_WHEELUP))
+	if(Pressed(KEY_MOUSE_WHEELUP) || forceMunitionChange)
 	{
 		mun2+=1;
 		//forward = true;
@@ -551,7 +553,14 @@ func void MunitionChange()
 		
 		
 		MEM_WriteInt(symbol+zCPar_Symbol_content_offset,mun2);
-		AI_Function(hero,CheckMunition);
+		if(forceMunitionChange == false)
+		{
+			AI_Function(hero,CheckMunition);
+		}
+		else
+		{
+			CheckMunition();
+		};
 		
 
 		if(Hlp_IsValidHandle(MunitionName))

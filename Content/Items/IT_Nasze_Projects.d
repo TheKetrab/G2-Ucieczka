@@ -70,6 +70,8 @@ func void Use_Projekt_ChlopskiMiecz ()
 	var int Projekt_ChlopskiMiecz_OneTime;
 	if (Projekt_ChlopskiMiecz_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Ch³opski miecz: Broñ jednorêczna, wymagana si³a: 7, obra¿enia: 14, zasiêg broni: 55.");
 		Projekt_ChlopskiMiecz_OneTime = TRUE;
 	};
 	
@@ -90,7 +92,7 @@ func void Use_Projekt_ChlopskiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Wykuæ gor¹cy prêt na oko³o 30 centymetrów. Z reszty prêta uformowaæ poprzeczkê i stopiæ razem w ogniu. Na koñcu ostrze uformowaæ w szpic.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 7");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 14");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 55");
@@ -122,6 +124,8 @@ func void Use_Projekt_DobryMiecz ()
 	var int Projekt_DobryMiecz_OneTime;
 	if (Projekt_DobryMiecz_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Dobry miecz: Broñ jednorêczna, wymagana si³a: 30, obra¿enia: 35, zasiêg broni: 70, premia do walki broni¹ jednorêczn¹: +4.");
 		Projekt_DobryMiecz_OneTime = TRUE;
 	};
 	
@@ -142,7 +146,7 @@ func void Use_Projekt_DobryMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Uformowaæ d³ugi szpiczasty koniec. Klingê ubiæ na p³asko i raczej szeroko. Rêkojeœæ drewniana.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 30");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 70");
@@ -175,6 +179,8 @@ func void Use_Projekt_DobryDlugiMiecz ()
 	var int Projekt_DobryDlugiMiecz_OneTime;
 	if (Projekt_DobryDlugiMiecz_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Dobry d³ugi miecz: Broñ jednorêczna, wymagana si³a: 43, obra¿enia: 51, zasiêg broni: 90, premia do walki broni¹ jednorêczn¹: +6.");
 		Projekt_DobryDlugiMiecz_OneTime = TRUE;
 	};
 	
@@ -197,7 +203,7 @@ func void Use_Projekt_DobryDlugiMiecz ()
 				Doc_PrintLines	( nDocID,  0, "Ogromn¹ ró¿nicê mo¿e wyczuæ posiadacz, jeœli rêkojeœæ owiniemy cieñkim skórzanym paskiem. Ostrze powinno mieæ przynajmniej pó³ metra, by dobrze s³u¿yæ ka¿demu stra¿nikowi.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 43");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 51");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 90");
@@ -232,6 +238,8 @@ func void Use_Projekt_RubinoweOstrze ()
 	var int Projekt_RubinoweOstrze_OneTime;
 	if (Projekt_RubinoweOstrze_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Rubinowe ostrze: Broñ jednorêczna, wymagana si³a: 50, obra¿enia: 50, zasiêg broni: 70, premia do walki broni¹ jednorêczn¹: +3.");
 		Projekt_RubinoweOstrze_OneTime = TRUE;
 	};
 	
@@ -256,7 +264,7 @@ func void Use_Projekt_RubinoweOstrze ()
 				Doc_PrintLines	( nDocID,  0, "Si³a klejnotu dodaje charyzmy posiadaczowi. Aby dobrze go wykonaæ, nale¿y rozdrobniæ wêgiel w drobny maczek, wetrzeæ proch w per³ê i rudê, a nastêpnie wrzuciæ to razem do ognia. Wêgiel siê wypali a klejnoty stopi¹. Klinga powinna byæ lekko pofa³dowana.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 50");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 70");				
@@ -289,6 +297,8 @@ func void Use_Projekt_ElBastardo ()
 	var int Projekt_ElBastardo_OneTime;
 	if (Projekt_ElBastardo_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"El Bastardo: Broñ jednorêczna, wymagana si³a: 70, obra¿enia: 74, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +8.");
 		Projekt_ElBastardo_OneTime = TRUE;
 	};
 	
@@ -311,7 +321,7 @@ func void Use_Projekt_ElBastardo ()
 				Doc_PrintLines	( nDocID,  0, "Stalowy prêt prze³amaæ na pó³ i uformowaæ w kolce, które stopiæ przy rêkojeœci razem z kling¹. Ca³oœæ pokryæ magiczn¹ rud¹, a we wnêtrzu rêkojeœci zamocowaæ akwamaryn.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 70");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 74");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");				
@@ -344,6 +354,8 @@ func void Use_Projekt_Oskard ()
 	var int Projekt_Oskard_OneTime;
 	if (Projekt_Oskard_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Oskard: Broñ jednorêczna, wymagana si³a: 25, obra¿enia: 35, zasiêg broni: 50.");
 		Projekt_Oskard_OneTime = TRUE;
 	};
 	
@@ -366,7 +378,7 @@ func void Use_Projekt_Oskard ()
 				Doc_PrintLines	( nDocID,  0, "Kij owin¹æ dobrze nat³uszczon¹ skór¹ dzika, by przyleg³a i sklei³a siê z drewnem. Stal rozgrzaæ i uformowaæ dwie p³aszczyzny, które nastêpnie nale¿y na³o¿yæ na siebie i uformowaæ w maczugê.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 25");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 35");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 50");				
@@ -375,8 +387,6 @@ func void Use_Projekt_Oskard ()
 			
 				Doc_Show		( nDocID );
 };
-
-
 
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 INSTANCE ItNa_Projekt_Inkwizytor (C_Item)
@@ -399,6 +409,8 @@ func void Use_Projekt_Inkwizytor ()
 	var int Projekt_Inkwizytor_OneTime;
 	if (Projekt_Inkwizytor_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Inkwizytor: Broñ jednorêczna, wymagana si³a: 50, obra¿enia: 60, zasiêg broni: 60, premia do walki broni¹ jednorêczn¹: +6.");
 		Projekt_Inkwizytor_OneTime = TRUE;
 	};
 	
@@ -422,7 +434,7 @@ func void Use_Projekt_Inkwizytor ()
 				Doc_PrintLines	( nDocID,  0, "Wyj¹tkowo przyjemna w dotyku skóra cieniostwora powinna znaleŸæ siê na kiju. Na jego koñcu przypominaj¹ca jajo g³owica z pofa³dowaniami. Ca³oœæ zakoñczona szpicem z pazura.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 50");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 60");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 60");
@@ -455,6 +467,8 @@ func void Use_Projekt_RunaMocy ()
 	var int Projekt_RunaMocy_OneTime;
 	if (Projekt_RunaMocy_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Runa mocy: Broñ dwurêczna, wymagana si³a: 60, obra¿enia: 60, zasiêg broni: 120.");
 		Projekt_RunaMocy_OneTime = TRUE;
 	};
 	
@@ -510,6 +524,8 @@ func void Use_Projekt_MieczBojowy ()
 	var int Projekt_MieczBojowy_OneTime;
 	if (Projekt_MieczBojowy_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Miecz bojowy: Broñ jednorêczna, wymagana si³a: 24, obra¿enia: 31, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +3.");
 		Projekt_MieczBojowy_OneTime = TRUE;
 	};
 	
@@ -531,7 +547,7 @@ func void Use_Projekt_MieczBojowy ()
 				Doc_PrintLines	( nDocID,  0, "Rêkojeœæ tej broni sk³ada siê z kilku kawa³ków drewna, które w przekroju przypominaj¹ piêciok¹t. Dziêki temu uchwyt jest bardzo wygodny dla posiadacza. Do œrodka w³o¿one jest ostrze, formowane na p³ask¹ i d³ug¹ liniê.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 24");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 31");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
@@ -563,6 +579,8 @@ func void Use_Projekt_MieczWojenny ()
 	var int Projekt_MieczWojenny_OneTime;
 	if (Projekt_MieczWojenny_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Miecz wojenny: Broñ jednorêczna, wymagana zrêcznoœæ: 48, obra¿enia: 52, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +5.");
 		Projekt_MieczWojenny_OneTime = TRUE;
 	};
 	
@@ -619,6 +637,8 @@ func void Use_Projekt_MieczSedziego ()
 	var int Projekt_MieczSedziego_OneTime;
 	if (Projekt_MieczSedziego_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Miecz sêdziego: Broñ jednorêczna, wymagana si³a: 15, obra¿enia: 22, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +6.");
 		Projekt_MieczSedziego_OneTime = TRUE;
 	};
 	
@@ -640,7 +660,7 @@ func void Use_Projekt_MieczSedziego ()
 				Doc_PrintLines	( nDocID,  0, "W¹ska klinga œciêta na górze. Z czym innym nie wypada pokazaæ siê arystokracie. Mo¿na wzmocniæ ostrze, przetapiaj¹c go kilkukrotnie.");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 15");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 22");
 				Doc_PrintLines	( nDocID,  0, "Zasiêg broni: 100");
@@ -673,6 +693,8 @@ func void Use_Projekt_MieczSwiatla ()
 	var int Projekt_MieczSwiatla_OneTime;
 	if (Projekt_MieczSwiatla_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Miecz œwiat³a: Broñ jednorêczna, wymagana zrêcznoœæ: 90, obra¿enia: 75, zasiêg broni: 80, premia do walki broni¹ jednorêczn¹: +10.");
 		Projekt_MieczSwiatla_OneTime = TRUE;
 	};
 	
@@ -729,6 +751,8 @@ func void Use_Projekt_Zmija ()
 	var int Projekt_Zmija_OneTime;
 	if (Projekt_Zmija_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"¯mija: Broñ jednorêczna, wymagana zrêcznoœæ: 66, obra¿enia: 63, zasiêg broni: 85, premia do walki broni¹ jednorêczn¹: +8.");
 		Projekt_Zmija_OneTime = TRUE;
 	};
 	
@@ -786,6 +810,8 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 	var int Projekt_CwiekowanaMaczuga_OneTime;
 	if (Projekt_CwiekowanaMaczuga_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Æwiekowana maczuga: Broñ jednorêczna, wymagana si³a: 11, obra¿enia: 25, zasiêg broni: 85, premia do walki broni¹ jednorêczn¹: +3.");
 		Projekt_CwiekowanaMaczuga_OneTime = TRUE;
 	};
 	
@@ -810,7 +836,7 @@ func void Use_Projekt_CwiekowanaMaczuga ()
 				Doc_PrintLines	( nDocID,  0, "Darrion");
 				Doc_PrintLine	( nDocID,  0, "");
 				Doc_PrintLine	( nDocID,  0, "");
-				Doc_PrintLines	( nDocID,  0, "Miecz jednorêczny");
+				Doc_PrintLines	( nDocID,  0, "Broñ jednorêczna");
 				Doc_PrintLines	( nDocID,  0, "Wymagana si³a: 11");
 				Doc_PrintLines	( nDocID,  0, "Obra¿enia: 25");
 				Doc_PrintLine	( nDocID,  0, "Zasiêg broni: 85");
@@ -843,6 +869,8 @@ func void Use_Projekt_MieczNienawisci ()
 {   
 	if (Projekt_MieczNienawisci_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Miecz nienawiœci: Broñ jednorêczna, wymagana si³a: 44, obra¿enia: 51, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +9.");
 		Projekt_MieczNienawisci_OneTime = TRUE;
 	};
 	
@@ -900,6 +928,8 @@ func void Use_Projekt_WielkaMaczeta ()
 {   
 	if (Projekt_WielkaMaczeta_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Wielka maczeta: Broñ dwurêczna, wymagana si³a: 48, obra¿enia: 52, zasiêg broni: 105, premia do walki broni¹ dwurêczn¹: +2.");
 		Projekt_WielkaMaczeta_OneTime = TRUE;
 	};
 	
@@ -957,6 +987,8 @@ func void Use_Projekt_Miazdzydeska ()
 {   
 	if (Projekt_Miazdzydeska_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Mia¿d¿ydeska: Broñ dwurêczna, wymagana si³a: 90, obra¿enia: 93, zasiêg broni: 80, premia do walki broni¹ dwurêczn¹: +4.");
 		Projekt_Miazdzydeska_OneTime = TRUE;
 	};
 	
@@ -1018,6 +1050,8 @@ func void Use_Projekt_BulawaILancuch ()
 {   
 	if (Projekt_BulawaILancuch_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Bu³awa i ³añcuch: Broñ jednorêczna, wymagana si³a: 45, obra¿enia: 45, zasiêg broni: 60.");
 		Projekt_BulawaILancuch_OneTime = TRUE;
 	};
 	
@@ -1072,6 +1106,8 @@ func void Use_Projekt_MagiczneOstrzeBojowe ()
 {   
 	if (Projekt_MagiczneOstrzeBojowe_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Magiczne ostrze bojowe: Broñ jednorêczna, wymagana si³a: 90, obra¿enia: 85, zasiêg broni: 100, premia do walki broni¹ jednorêczn¹: +10.");
 		Projekt_MagiczneOstrzeBojowe_OneTime = TRUE;
 	};
 	
@@ -1127,6 +1163,8 @@ func void Use_Projekt_CiezkiMagiczny2h ()
 {   
 	if (Projekt_CiezkiMagiczny2h_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Ciê¿ki magiczny miecz dwurêczny: Broñ dwurêczna, wymagana si³a: 105, obra¿enia: 100, zasiêg broni: 110, premia do walki broni¹ dwurêczn¹: +5.");
 		Projekt_CiezkiMagiczny2h_OneTime = TRUE;
 	};
 	
@@ -1184,6 +1222,8 @@ func void Use_Projekt_WielkiMiecz ()
 {   
 	if (Projekt_WielkiMiecz_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Projekty,LOG_NOTE);
+		B_LogEntry (TOPIC_Projekty,"Wielki miecz: Broñ dwurêczna, wymagana si³a: 72, obra¿enia: 79, zasiêg broni: 100, premia do walki broni¹ dwurêczn¹: +4.");
 		Projekt_WielkiMiecz_OneTime = TRUE;
 	};
 	

@@ -224,6 +224,8 @@ func void Use_Przepis_SerowyGulasz ()
 	var int Przepis_SerowyGulasz_OneTime;
 	if (Przepis_SerowyGulasz_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Serowy gulasz (mana +1): 4x ser, 2x polna jagoda, mleko, woda, jab³ko, wino.");
 		Przepis_SerowyGulasz_OneTime = TRUE;
 	};
 	
@@ -271,6 +273,8 @@ func void Use_Przepis_ZupaZGrzybowKopalnianych ()
 	var int Przepis_ZupaZGrzybowKopalnianych_OneTime;
 	if (Przepis_ZupaZGrzybowKopalnianych_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa z grzybów kopalnianych (zrêcznoœæ +1): 6x grzyb kopalniany, chleb, 4x korzeñ leczniczy, ¿¹d³o krwiopijcy.");
 		Przepis_ZupaZGrzybowKopalnianych_OneTime = TRUE;
 	};
 	
@@ -347,6 +351,8 @@ func void Use_Przepis_Orkowy2 ()
 	var int Przepis_Orkowy2_OneTime;
 	if (Przepis_Orkowy2_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Orkowa zupa (si³a +1): 3x surowe miêso, 5x miêso chrz¹szcza, 2x jab³ko, gin, ³osoœ, sma¿ony du¿y grzyb.");
 		Przepis_Orkowy2_OneTime = TRUE;
 	};
 	
@@ -400,6 +406,8 @@ func void Use_Przepis_UdziecZDzikaPoLowiecku ()
 	var int Przepis_UdziecZDzikaPoLowiecku_OneTime;
 	if (Przepis_UdziecZDzikaPoLowiecku_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Udziec z dzika po ³owiecku (zrêcznoœæ +1): 6x miêso dzika.");
 		Przepis_UdziecZDzikaPoLowiecku_OneTime = TRUE;
 	};
 	
@@ -445,6 +453,8 @@ func void Use_Przepis_ZupaMleczna ()
 	var int Przepis_ZupaMleczna_OneTime;
 	if (Przepis_ZupaMleczna_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa mleczna (mana +1): mleko, chleb, 2x leœna jagoda, 2x polna jagoda.");
 		Przepis_ZupaMleczna_OneTime = TRUE;
 	};
 	
@@ -490,6 +500,8 @@ func void Use_Przepis_ZupaGrzybowa ()
 	var int Przepis_ZupaGrzybowa_OneTime;
 	if (Przepis_ZupaGrzybowa_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa grzybowa (zrêcznoœæ +1): 5x piekielnik, 2x niebieski bez, chleb, pieczone miêso.");
 		Przepis_ZupaGrzybowa_OneTime = TRUE;
 	};
 	
@@ -536,6 +548,8 @@ func void Use_Przepis_ZupaZDuzychGrzybow ()
 	var int Przepis_ZupaZDuzychGrzybow_OneTime;
 	if (Przepis_ZupaZDuzychGrzybow_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa z du¿ych grzybów (si³a +1): 7x miêso chrz¹szcza, 2x woda, wino, 3x du¿y grzyb.");
 		Przepis_ZupaZDuzychGrzybow_OneTime = TRUE;
 	};
 	
@@ -582,6 +596,8 @@ func void Use_Przepis_ZupaJarzynowaZJagodami ()
 	var int Przepis_ZupaJarzynowaZJagodami_OneTime;
 	if (Przepis_ZupaJarzynowaZJagodami_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa jerzynowa z jagodami (si³a +1): 2x ziele lecznicze, 2x ognista pokrzywa, rzepa, 2x leœna jagoda, 2x polna jagoda.");
 		Przepis_ZupaJarzynowaZJagodami_OneTime = TRUE;
 	};
 	
@@ -627,6 +643,8 @@ func void Use_Przepis_ZupaSerowa ()
 	var int Przepis_ZupaSerowa_OneTime;
 	if (Przepis_ZupaSerowa_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa serowa (si³a +1): mleko, chleb, 3x ser, piwo.");
 		Przepis_ZupaSerowa_OneTime = TRUE;
 	};
 	
@@ -674,6 +692,8 @@ func void Use_Przepis_PrzysmakMysliwych ()
 	var int Przepis_PrzysmakMysliwych_OneTime;
 	if (Przepis_PrzysmakMysliwych_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Przysmak myœliwych (zrêcznoœæ +1): 5x surowe miêso, wino, 3x jab³ko, czerwony pieprz.");
 		Przepis_PrzysmakMysliwych_OneTime = TRUE;
 	};
 	
@@ -721,6 +741,8 @@ func void Use_Przepis_KompotOwocowy ()
 	var int Przepis_KompotOwocowy_OneTime;
 	if (Przepis_KompotOwocowy_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Kompot owocowy: (mana +1): 2x jab³ko, 2x woda, 3x leœna jagoda, 3x polna jagoda.");
 		Przepis_KompotOwocowy_OneTime = TRUE;
 	};
 	
@@ -769,6 +791,8 @@ func void Use_Przepis_ZupaRybna ()
 	var int Przepis_ZupaRybna_OneTime;
 	if (Przepis_ZupaRybna_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa rybna (mana +1): 2x ryba, 2x korzeñ leczniczy, chleb, wino.");
 		Przepis_ZupaRybna_OneTime = TRUE;
 	};
 	
@@ -815,6 +839,8 @@ func void Use_Przepis_GulaszMiesny ()
 	var int Przepis_GulaszMiesny_OneTime;
 	if (Przepis_GulaszMiesny_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Gulasz miêsny (si³a +1): 5x surowe miêso, 2x piekielnik, rzepa.");
 		Przepis_GulaszMiesny_OneTime = TRUE;
 	};
 	
@@ -861,6 +887,8 @@ func void Use_Przepis_PotrawkaZeScierwojada ()
 	var int Przepis_PotrawkaZeScierwojada_OneTime;
 	if (Przepis_PotrawkaZeScierwojada_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Potrawka ze œcierwojada (zrêcznoœæ +1): 4x surowe miêso, piwo.");
 		Przepis_PotrawkaZeScierwojada_OneTime = TRUE;
 	};
 	
@@ -907,6 +935,8 @@ func void Use_Przepis_ZupaPiwna ()
 	var int Przepis_ZupaPiwna_OneTime;
 	if (Przepis_ZupaPiwna_OneTime==FALSE) {
 		B_GivePlayerXP(25);
+		Log_CreateTopic (TOPIC_Przepisy,LOG_NOTE);
+		B_LogEntry (TOPIC_Przepisy,"Zupa piwna (mana +1): 3x surowe miêso, 4x piwo, kie³basa.");
 		Przepis_ZupaPiwna_OneTime = TRUE;
 	};
 	

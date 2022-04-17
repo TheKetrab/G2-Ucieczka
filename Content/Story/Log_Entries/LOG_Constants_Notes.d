@@ -49,3 +49,6 @@ const string	TOPIC_Modlitwa				=   "Modlitwa";
 const string	TOPIC_Fabula				=   "Moja historia"; // niegdyœ: Fabu³a
 const string	TOPIC_TalentThief			=	"Fach z³odziejski";
 const string	TOPIC_Artefakty				=	"£adowanie artefaktów";
+
+const string	TOPIC_Przepisy				=   "Poznane przepisy";
+const string	TOPIC_Projekty				=   "Znalezione projekty";

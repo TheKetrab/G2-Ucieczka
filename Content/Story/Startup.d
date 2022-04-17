@@ -58,7 +58,7 @@ func void INIT_GLOBAL()
 	FF_ApplyOnceExt (OnLoadUpdateHeroFightSkill, 10, -1);
 	
 	CheckMunition();
-	ff_applyoncegt(MunitionChange);
+	ff_applyonceextgt(MunitionChange,50,-1);
 
 	
 	//CheckMunition_LoadGame();

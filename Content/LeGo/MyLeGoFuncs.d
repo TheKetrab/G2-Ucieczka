@@ -306,23 +306,28 @@ func void CheckMunition()
 			return;
 		};
 	};
+	
+	var string slot; 
 
 	Npc_DoRemoveMunition(hero);
 	
 	if(rangedWeapon.flags & ITEM_BOW)
 	{
 		rangedWeapon.munition = MunitionVarToInstanceID(BowMunition,1);
+		slot = "ZS_RIGHTHAND";
 	}
 	else
 	{
 		rangedWeapon.munition = MunitionVarToInstanceID(CBowMunition,0);
+		slot = "ZS_LEFTHAND";
 	};
+	
 	
 
 	Npc_DoRemoveMunition(hero);
 	//if(Npc_HasReadiedRangedWeapon(hero))
 	//{
-		Npc_DoInsertMunition(hero,"ZS_RIGHTHAND");
+		Npc_DoInsertMunition(hero,slot);
 	//};
 
 
@@ -503,6 +508,9 @@ func void MunitionChange()
 	//var zCPar_Symbol sym; sym = _^(symbol);
 	
 	var int mun; var int mun2;
+
+	
+	
 	mun = MEM_ReadInt(symbol+zCPar_Symbol_content_offset);
 	mun2 = mun;
 	
@@ -520,25 +528,38 @@ func void MunitionChange()
 		forward = 0;
 	};
 	
-	if(mun2 < 0)
-	{
-		mun2 = MaxArrow-1;
-	}
-	else if(mun2 >= MaxArrow)
-	{
-		mun2 = 0;
-		forward = true;
-	};
 	
 	if(mun2 != mun)
 	{
+			var int maxMun;
+		var int isBow; isBow = i == 0;
+		
+		if(isBow)
+		{
+			maxMun = MaxArrow;
+		}
+		else
+		{
+			maxMun = MaxBolt;
+		};
+		
+		if(mun2 < 0)
+		{
+			mun2 = maxMun-1;
+		}
+		else if(mun2 >= maxMun)
+		{
+			mun2 = 0;
+			forward = true;
+		};
+		
 		//if(IsRunningMessage(hero,oCMsgDamage__classdef,RemoveWeapon_message) ||  IsRunningMessage(hero,oCMsgDamage__classdef,0) )
 		//{
 			//Print("run");
 			//return;
 		//};
 		
-		var int isBow; isBow = i ==0;
+		
 		var int inst; inst = MunitionVarToInstanceID(mun2,isBow);
 		
 		if(!Npc_HasItems(hero,inst))
@@ -548,9 +569,7 @@ func void MunitionChange()
 			{
 				return;
 			};
-		};
-		
-		
+		};			
 		
 		MEM_WriteInt(symbol+zCPar_Symbol_content_offset,mun2);
 		if(forceMunitionChange == false)
@@ -573,6 +592,7 @@ func void MunitionChange()
 		AddMunitionText(isBow);
 	};
 };
+
 
 func void WeaponStatus()
 {

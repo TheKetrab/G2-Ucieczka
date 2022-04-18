@@ -640,6 +640,10 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		};
 
 		
+	}
+	else
+	{
+		dmg = DiffCalcDmgAll(dmg,slf);
 	};
 	
 

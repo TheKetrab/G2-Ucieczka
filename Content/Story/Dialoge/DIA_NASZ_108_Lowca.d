@@ -264,7 +264,7 @@ FUNC VOID DIA_NASZ_108_Lowca_catch_gold()
 	LOWCA_SIKA_END = TRUE;
 	LOWCA_SIKA_STOP_GADANIE = FALSE;
 	Npc_ExchangeRoutine (self, "Start");
-	B_LogEntry (TOPIC_Silas_lanie, "£owca orków przestanie ju¿ sikaæ pod karczm¹.");
+	B_LogEntry (TOPIC_Silas_lanie, "Zdecydowa³em, ¿e sakiewka za³atwi sprawê. £owca orków powiedzia³, ¿e przestanie. Chyba mogê œmia³o wracaæ do Silasa.");
 	Info_ClearChoices (DIA_NASZ_108_Lowca_catch);
 };
 

@@ -281,6 +281,7 @@ func void UrShakFinal()
 		AI_Teleport		(NASZ_213_Gestath, "TOT");
 		B_KillNpc(NASZ_123_Lowca);
 		B_KillNpc(NASZ_108_Lowca);
+		NASZ_108_LOWCA_KilledByOrcs = TRUE;
 		AI_Teleport		(NASZ_123_Lowca, "TOT");
 		AI_Teleport		(NASZ_108_Lowca, "TOT");
 		
@@ -1337,8 +1338,8 @@ func void Renegaci_alert()
 
 func void _TickTock_1s()
 {
-	
-	
+
+
 	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) > HeroBrylkiZlota) { HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
 	//if (npc_hasitems(hero,ItMi_GoldNugget_Addon) < HeroBrylkiZlota) { Print("UWAGA!!! Bry³ki z³ota zniknê³y."); HeroBrylkiZlota = npc_hasitems(hero,ItMi_GoldNugget_Addon); };
 	//if (npc_hasitems(hero,ItMw_2H_Axe_L_01) > HeroKilofy) { HeroKilofy = npc_hasitems(hero,ItMw_2H_Axe_L_01); };

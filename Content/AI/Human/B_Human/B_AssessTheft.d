@@ -165,6 +165,7 @@ func void B_AssessTheft ()
 		return;
 	};
 	if(self.guild >16) {return;};
+	if (npc_isdead(self)) { return; }; // jesli nie zaatakowali cie, a zabiles, to tym bardziej mozesz rabowac
 	
 	if(item.flags & ITEM_DROPPED) {return;};
 	

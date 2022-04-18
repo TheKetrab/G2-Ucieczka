@@ -135,17 +135,21 @@ INSTANCE DIA_NASZ_125_Silas_End   (C_INFO)
 
 FUNC INT DIA_NASZ_125_Silas_End_Condition()
 {
-	if (LOWCA_SIKA_END == TRUE)
-	 || (npc_isdead(NASZ_108_Lowca) && NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) // po wygraniu walki
+	if (LOWCA_SIKA_END == TRUE                // pobity lub zaplacone
+	 || npc_isdead(NASZ_108_Lowca))           // lub zabity w quescie 'Szkolenie'
+	&& (NASZ_108_LOWCA_KilledByOrcs == FALSE) // ale nie zabity przez orków w kap3, bo wtedy 0exp
 	{
 		return TRUE;
 	};
 };
 
+func void HeroSay_YourProblemIsOver() {
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_End_15_00"); //Twój problem nale¿y do przesz³oœci.
+};
+
 FUNC VOID DIA_NASZ_125_Silas_End_Info()
 {
-
-	AI_Output (other,self ,"DIA_NASZ_125_Silas_End_15_00"); //Twój problem nale¿y do przesz³oœci.
+	HeroSay_YourProblemIsOver();
 	Mis_Lowca_Sika_Done = TRUE;
 	
 	if (NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
@@ -260,19 +264,27 @@ INSTANCE DIA_NASZ_125_Silas_NieBedzie   (C_INFO)
 
 FUNC INT DIA_NASZ_125_Silas_NieBedzie_Condition()
 {
-	if (NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST)
-	&& (npc_knowsinfo (other, DIA_NASZ_125_Silas_SikaDalej))
-	&& (npc_knowsinfo (other, DIA_NASZ_108_Lowca_walka))
+	if (npc_knowsinfo (other, DIA_NASZ_125_Silas_SikaDalej))
+	&& (
+		(npc_knowsinfo (other, DIA_NASZ_108_Lowca_walka)
+		&& NASZ_108_Lowca.aivar[AIV_LastFightAgainstPlayer] == FIGHT_LOST) // pobity przez hero
+		||
+		(npc_isdead(NASZ_108_Lowca) && NASZ_108_LOWCA_KilledByOrcs == FALSE) // zabity, ale nie przez orków
+	)
 	{
 		return TRUE;
 	};
+};
+
+func void SilasSay_OkOk() {
+	AI_Output (self, other,"DIA_NASZ_125_Silas_NieBedzie_55_01"); //No dobra, dobra. Zobaczymy.
 };
 
 FUNC VOID DIA_NASZ_125_Silas_NieBedzie_Info()
 {
 
 	AI_Output (other, self,"DIA_NASZ_125_Silas_NieBedzie_15_00"); //£owca w koñcu siê opamiêta³.
-	AI_Output (self, other,"DIA_NASZ_125_Silas_NieBedzie_55_01"); //No dobra, dobra. Zobaczymy.
+	SilasSay_OkOk();
 
 	DodajReputacje(1,REP_LOWCY);
 	B_GivePlayerXP (50);
@@ -756,6 +768,43 @@ FUNC VOID DIA_NASZ_125_Silas_HowAreYou_Info()
 
 };
 
+//*********************************************************************
+//	Info EndDead
+//*********************************************************************
+INSTANCE DIA_NASZ_125_Silas_EndDead   (C_INFO)
+{
+	npc         = NASZ_125_Silas;
+ 	nr          = 6;
+ 	condition   = DIA_NASZ_125_Silas_EndDead_Condition;
+ 	information = DIA_NASZ_125_Silas_EndDead_Info;
+ 	permanent   = FALSE;
+ 	description = "Twój problem nale¿y do przesz³oœci.";
+};
+
+FUNC INT DIA_NASZ_125_Silas_EndDead_Condition()
+{
+	if (NASZ_108_LOWCA_KilledByOrcs)
+	 && (
+	     (npc_knowsinfo(other, DIA_NASZ_125_Silas_Quest) && (LOWCA_SIKA_END == FALSE)) // rozpoczete ale nie skonczone pierwsze podejscie
+	     || 
+		 ((LowcaSika >= 2) && !npc_knowsinfo(other,DIA_NASZ_125_Silas_NieBedzie)) // rozpoczete ale nie skonczone drugie podejscie
+		)
+	{
+		return TRUE;
+	};
+	
+};
+
+FUNC VOID DIA_NASZ_125_Silas_EndDead_Info()
+{
+	HeroSay_YourProblemIsOver();
+	SilasSay_OkOk();
+
+	// bez nagrody i doœwiadczenia; tylko koñczy misjê
+	Mis_Lowca_Sika_Done = TRUE;
+	Log_SetTopicStatus (TOPIC_Silas_lanie, LOG_SUCCESS);
+	B_LogEntry (TOPIC_Silas_lanie, "Orkowie zabili tego ³owcê i problem sam siê rozwi¹za³. Powiadomi³em o tym Silasa.");	
+};
 
 // ************************************************************
 // 			  				PICK POCKET

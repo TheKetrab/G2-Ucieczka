@@ -1515,6 +1515,7 @@ var int TrzeciaNocStop;
 
 var int LowcaSikaZaplaconeDay;
 var int LowcaSika;
+var int NASZ_108_LOWCA_KilledByOrcs;
 var int WillKnowBanditReputation;
 var int wszyscy_orkowie_nie_zyja;
 

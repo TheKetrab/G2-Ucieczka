@@ -250,6 +250,7 @@ FUNC VOID DIA_NASZ_999_Test_Kapitel_TwierdzaAtak()
 	B_KillNpc(NASZ_213_Gestath);
 	B_KillNpc(NASZ_123_Lowca);
 	B_KillNpc(NASZ_108_Lowca);
+	NASZ_108_LOWCA_KilledByOrcs = TRUE;
 		
 	TwierdzaAtakSick = TRUE; // dziêki temu niektórzy maj¹ mniej HP
 	

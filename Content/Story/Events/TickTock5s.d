@@ -10,6 +10,11 @@ func void SikaDalej()
 {
 	if TimeIsUp(2,-1,LowcaSikaZaplaconeDay,-1) && (SikaDalejRdy == TRUE) && (SikaDalejRdyOneTime == FALSE)
 	{
+		if (npc_isdead(NASZ_108_Lowca)) {
+			ff_remove(SikaDalej);
+			return;
+		};
+	
 		SikaDalejRdyOneTime = TRUE;
 		Npc_ExchangeRoutine (NASZ_108_Lowca, "PreStart");
 		LowcaSika = TRUE;

@@ -27,7 +27,9 @@ instance MENU_OPT_GAME(C_MENU_DEF)
 	items[20] = "MENUITEM_OPT_LEVEL_CHOICE";
 	items[21] = "MENUITEM_OPT_DISABLEQUICKSLOT";
 	items[22] = "MENUITEM_OPT_DISABLEQUICKSLOT_CHOICE";
-	items[23] = "MENUITEM_GAME_BACK";
+	items[23] = "MENUITEM_OPT_CATINVENABLED";
+	items[24] = "MENUITEM_OPT_CATINVENABLED_CHOICE";
+	items[25] = "MENUITEM_GAME_BACK";
 	flags = flags | MENU_SHOW_INFO;
 };
 
@@ -382,6 +384,35 @@ instance MENUITEM_OPT_DISABLEQUICKSLOT_CHOICE(C_MENU_ITEM_DEF)
 	flags = flags | IT_TXT_CENTER;
 };
 
+instance MENUITEM_OPT_CATINVENABLED(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_ITEM_BACK_PIC;
+	text[0] = "Ekwipunek z Gothic I";
+	text[1] = "Podzia³ ekwipunku na kategorie w stylu Gothic I";
+	posx = 700;
+	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 11);
+	dimx = 4600;
+	dimy = 750;
+	onselaction[0] = SEL_ACTION_UNDEF;
+	flags = flags | IT_EFFECTS_NEXT;
+};
+
+instance MENUITEM_OPT_CATINVENABLED_CHOICE(C_MENU_ITEM_DEF)
+{
+	backpic = MENU_CHOICE_BACK_PIC;
+	type = MENU_ITEM_CHOICEBOX;
+	text[0] = "Nie|Tak";
+	fontname = MENU_FONT_SMALL;
+	posx = 5400;
+	posy = MENU_OPTGAME_START_Y + (MENU_OPTGAME_DY * 11) + MENU_CHOICE_YPLUS;
+	dimx = 2000;
+	dimy = MENU_CHOICE_DY;
+	onchgsetoption = "CatInvEnabled";
+	onchgsetoptionsection = "UCIECZKA";
+	flags = flags & ~IT_SELECTABLE;
+	flags = flags | IT_TXT_CENTER;
+};
+
 
 
 
@@ -393,7 +424,7 @@ instance MENUITEM_GAME_BACK(C_MENU_ITEM_DEF)
 	backpic = MENU_ITEM_BACK_PIC;
 	text[0] = "Wróæ";
 	posx = 1000;
-	posy = MENU_BACK_Y + 300;
+	posy = MENU_BACK_Y + 500;
 	dimx = 6192;
 	dimy = MENU_OPTGAME_DY;
 	onselaction[0] = SEL_ACTION_BACK;

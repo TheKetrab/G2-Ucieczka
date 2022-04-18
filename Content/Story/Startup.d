@@ -26,6 +26,7 @@ func void INIT_GLOBAL()
 	//Spine_Init(SPINE_MODULE_GETCURRENTUSERNAME | SPINE_MODULE_ACHIEVEMENTS);
 	rainThroughVobs(false);
 	GFA_Init(GFA_ALL & ~GFA_REUSE_PROJECTILES);
+	CatInv_Init();
 	//GFA_Init(GFA_ALL); 
 	
 	//Ucieczka 1.2 zmiana

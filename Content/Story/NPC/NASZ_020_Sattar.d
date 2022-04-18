@@ -46,8 +46,10 @@ FUNC VOID Rtn_Start_20 ()
 
 FUNC VOID Rtn_Metody_20 ()
 {	
-	TA_Sit_Campfire	 (08,00,23,00,"NASZ_KOPALNIA_NOWY_13");
-	TA_Sit_Campfire	 (23,00,08,00,"NASZ_KOPALNIA_NOWY_13");
+	//TA_Sit_Campfire	 (08,00,23,00,"NASZ_KOPALNIA_NOWY_13");
+	//TA_Sit_Campfire	 (23,00,08,00,"NASZ_KOPALNIA_NOWY_13");
+	TA_Stand_Guarding (08,00,23,00,"NASZ_KOPALNIA_NOWY_12");
+	TA_Stand_Guarding (23,00,08,00,"NASZ_KOPALNIA_NOWY_12");
  
 };
 

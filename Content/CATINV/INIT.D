@@ -106,7 +106,7 @@ func void CatInv_Init() {
 
     // Introducing the INI entries if not present
     if (!MEM_GothOptExists("GAME", "invCatChangeOnLast")) {
-        MEM_SetGothOpt("GAME", "invCatChangeOnLast", "0");
+        MEM_SetGothOpt("GAME", "invCatChangeOnLast", "1"); // G2U12: default set to 1: more intuitive
     };
     if (!MEM_GothOptExists("GAME", "invCatG1Mode")) {
         MEM_SetGothOpt("GAME", "invCatG1Mode", "1"); // G2U12: default set to 1

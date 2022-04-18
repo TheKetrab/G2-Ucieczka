@@ -32,8 +32,8 @@ FUNC VOID Use_AllProjects ()
 	CreateInvItems (hero,ItNa_Projekt_Oskard, 1);				// 25/35 str 1h     (Kap2 srodek)     / w skrzyni w krypcie obok górskiej fortecy
 	CreateInvItems (hero,ItNa_Projekt_MieczWojenny, 1);			// 48/52 dex 1h     (Kap2 srodek)     / na beczkach w krypcie obok Cavalorna
 	CreateInvItems (hero,ItNa_Projekt_DobryMiecz, 1);			// 30/35 str 1h +4  (Kap2 srodek)     / w jaskini Perrota na stole alchemicznym
-	CreateInvItems (hero,ItNa_Projekt_BulawaILancuch, 1);		// 45/45 str 1h		(Kap2 srodek)     / w jaskini z goblinami TODO
-	CreateInvItems (hero,ItNa_Projekt_WielkaMaczeta, 1);		// 48/52 str 2h +2  (Kap2 srodek)     / w skrzyni w obozie bandytów TODO
+	CreateInvItems (hero,ItNa_Projekt_BulawaILancuch, 1);		// 45/45 str 1h		(Kap2 srodek)     / w jaskini z goblinami
+	CreateInvItems (hero,ItNa_Projekt_WielkaMaczeta, 1);		// 48/52 str 2h +2  (Kap2 srodek)     / w skrzyni w obozie bandytów
 	CreateInvItems (hero,ItNa_Projekt_MieczNienawisci, 1);		// 51/44 str 1h     (Kap2 koniec)     / skrzynia w domku w twierdzy
 	CreateInvItems (hero,ItNa_Projekt_DobryDlugiMiecz, 1);		// 43/51 str 1h +6  (Kap3 poczatek)   / w skrzyni w kopalni zajêtej przez pe³zacze
 	CreateInvItems (hero,ItNa_Projekt_RunaMocy, 1);				// 60/60 str 2h     (Kap3 srodek)     / w skrzyni obok przelacznika w gorskiej twierdzy, ktory odsuwa regal z ksiazkami
@@ -43,9 +43,9 @@ FUNC VOID Use_AllProjects ()
 	CreateInvItems (hero,ItNa_Projekt_WielkiMiecz, 1);			// 72/79 str 2h +4  (Kap4 poczatek)   / daje Udar po wykonaniu zadania 'Wojna'
 	CreateInvItems (hero,ItNa_Projekt_MieczSwiatla, 1);			// 90/75 dex 1h +10 (Kap4 poczatek)   / w skrzyni w podziemiach zamku
 	CreateInvItems (hero,ItNa_Projekt_ElBastardo, 1);			// 70/74 str 1h +8  (Kap4 zapalisada) / w skrzyni na pierwszym pietrze wiezy mgiel
-	CreateInvItems (hero,ItNa_Projekt_Miazdzydeska, 1);			// 90/93 str 2h +4  (Kap4 zapalisada) / w skrzyni w orkowym obozie na plazy TODO
-	CreateInvItems (hero,ItNa_Projekt_MagiczneOstrzeBojowe, 1);	// 90/85 str 1h +10 (Kap4 zapalisada) / w skrzyni na srodku magicznego lasu za palisada TODO
-	CreateInvItems (hero,ItNa_Projekt_CiezkiMagiczny2h, 1);		// 105/100str2h +5  (Kap4 zapalisada) / w skrzyni u YBeriona TODO
+	CreateInvItems (hero,ItNa_Projekt_Miazdzydeska, 1);			// 90/93 str 2h +4  (Kap4 zapalisada) / w skrzyni w orkowym obozie na plazy
+	CreateInvItems (hero,ItNa_Projekt_MagiczneOstrzeBojowe, 1);	// 90/85 str 1h +10 (Kap4 zapalisada) / w skrzyni na srodku magicznego lasu za palisada
+	CreateInvItems (hero,ItNa_Projekt_CiezkiMagiczny2h, 1);		// 105/100str2h +5  (Kap4 zapalisada) / w skrzyni u YBeriona
 
 };
 

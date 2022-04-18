@@ -70,6 +70,29 @@ INSTANCE StoneGolem	(Mst_Default_StoneGolem)
 	Npc_SetToFistMode	(self);
 };
 
+INSTANCE StoneGolem_Weak	(Mst_Default_StoneGolem)
+{
+	name							=	"Ma³y kamienny golem";
+
+	attribute	[ATR_STRENGTH]		=	110;
+	attribute	[ATR_DEXTERITY]		=	110;
+	attribute	[ATR_HITPOINTS_MAX]	=	200;
+	attribute	[ATR_HITPOINTS]		=	200;
+	attribute	[ATR_MANA_MAX] 		=	100;
+	attribute	[ATR_MANA] 			=	100;
+	
+	protection	[PROT_BLUNT]		=	80;
+	protection	[PROT_EDGE]			=	80;
+	protection	[PROT_POINT]		=	80;
+	protection	[PROT_FIRE]			=	80;
+	protection	[PROT_FLY]			=	80;	
+	protection	[PROT_MAGIC]		=	80;
+
+	B_SetVisuals_StoneGolem();
+	Mdl_SetModelScale(self,	0.85,	0.85, 	0.85);
+	Npc_SetToFistMode	(self);
+};
+
 
 //******************
 //	Summoned Golem   	

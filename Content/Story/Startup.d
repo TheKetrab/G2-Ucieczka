@@ -732,6 +732,9 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertNpc	(Warg,"FP_ROAM_BLACKWOLF_05");
 	Wld_InsertNpc	(BlackWolf,"FP_ROAM_BLACKWOLF_06");
 
+	Wld_InsertNpc	(StoneGolem_Weak,"OW_PATH_127");
+	Wld_InsertNpc	(StoneGolem_Weak,"OW_PATH_115");
+	Wld_InsertNpc	(StoneGolem_Weak,"OW_PATH_121");
 	
 	
 	

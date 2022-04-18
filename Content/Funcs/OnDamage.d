@@ -682,9 +682,32 @@ func void _DMG_OnDmg() {
 	EDI = DMG_OnDmg(EBP, MEM_ReadInt(MEM_ReadInt(ESP+644)+8), EDI);
 
 };
+
+//nie są wywoływane: OnDamage_Anim, OnDamage_Effects_Start, 
+//OnDamage_Script, OnDamage_State, OnDamage_Events, OnDamage_Sound
+//dalej są wywoływane: OnDamage_Hit, OnDamage_Condition, OnDamage_Effects_End
+	
+func void OnDamage_OnlyDamageNoAnimSound()
+{
+	var c_npc slf; slf = _^(EDI);
+	
+	//jeżeli Jeremiasz jest chory, to nie reaguje na dmg
+	if(slf.id == 127 && Jeremiasz_AlmostDead == true)
+	{
+		//descriptor.bOnce = 0;
+		MEM_WriteByte(esi+144,0);
+		//descriptor.bFinished = 1;
+		MEM_WriteByte(esi+145,1);
+	};
+};
+
+const int oCNpc__OnDamage_OnceCheck = 6710560;
+
 func void InitDamage() {
 	const int dmg = 0;
 	if (dmg) { return; };
 	HookEngineF(6736583/*0x66CAC7*/, 5, _DMG_OnDmg);
+
+	HookEngineF(oCNpc__OnDamage_OnceCheck, 7,OnDamage_OnlyDamageNoAnimSound);
 	dmg = 1;
 };

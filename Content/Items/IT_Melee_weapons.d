@@ -1466,7 +1466,7 @@ INSTANCE ItMw_Doppelaxt (C_Item)
 
 FUNC VOID Equip_ItMw_Doppelaxt()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, 5);
 	};
@@ -1474,7 +1474,7 @@ FUNC VOID Equip_ItMw_Doppelaxt()
 
 FUNC VOID UnEquip_ItMw_Doppelaxt()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, -5);
 	};

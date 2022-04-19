@@ -132,7 +132,7 @@ INSTANCE ItMW_Addon_Stab02 (C_Item)
 };
 FUNC VOID Equip_Zauberstab()
 {
-	if Npc_IsPlayer (self)
+	if IsPlayerOrSavedPlayer (self)
 	{ 
 		Npc_ChangeAttribute (self, ATR_MANA_MAX,20);
 		Npc_ChangeAttribute (self, ATR_MANA,20);
@@ -140,7 +140,7 @@ FUNC VOID Equip_Zauberstab()
 };
 FUNC VOID UnEquip_Zauberstab()
 {
-	if Npc_IsPlayer (self)
+	if IsPlayerOrSavedPlayer (self)
 	{ 
 		Npc_ChangeAttribute (self, ATR_MANA_MAX, - 20);
 		
@@ -506,8 +506,8 @@ INSTANCE ItMw_Addon_PIR2hAxe (C_Item)
 	damagetype 			=	DAM_EDGE;
 	range    			=  	Range_PIR2hAxe;		
 
-	on_equip			=	Equip_1H_04;
-	on_unequip			=	UnEquip_1H_04;
+	on_equip			=	Equip_2H_04;
+	on_unequip			=	UnEquip_2H_04;
 
 	cond_atr[2]   		=	ATR_STRENGTH;
 	cond_value[2]  		=	90;

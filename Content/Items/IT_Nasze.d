@@ -931,7 +931,7 @@ INSTANCE ItNa_OstrzeLowcy (C_Item)
 
 FUNC VOID Equip_ItNa_OstrzeLowcy()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		OstrzeLowcyUbrane = TRUE;
 	};
@@ -939,7 +939,7 @@ FUNC VOID Equip_ItNa_OstrzeLowcy()
 
 FUNC VOID UnEquip_ItNa_OstrzeLowcy()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		OstrzeLowcyUbrane = FALSE;
 	};
@@ -1550,7 +1550,7 @@ INSTANCE ItNa_KuszaLowcy (C_Item)
 
 FUNC VOID Equip_ItNa_KuszaLowcy()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		KuszaLowcyUbrana = TRUE;
 	};
@@ -1558,7 +1558,7 @@ FUNC VOID Equip_ItNa_KuszaLowcy()
 
 FUNC VOID UnEquip_ItNa_KuszaLowcy()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		KuszaLowcyUbrana = FALSE;
 	};
@@ -2225,7 +2225,7 @@ INSTANCE ItNa_GrzechSzakala (C_Item)
 
 FUNC VOID Equip_ItNa_GrzechSzakala()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, 7);
 	};
@@ -2233,7 +2233,7 @@ FUNC VOID Equip_ItNa_GrzechSzakala()
 
 FUNC VOID UnEquip_ItNa_GrzechSzakala()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, -7);
 	};
@@ -2298,7 +2298,7 @@ INSTANCE ItNa_StaryPykacz (C_Item)
 
 FUNC VOID Equip_ItNa_StaryPykacz()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, 15);
 	};
@@ -2306,7 +2306,7 @@ FUNC VOID Equip_ItNa_StaryPykacz()
 
 FUNC VOID UnEquip_ItNa_StaryPykacz()
 {
- 	if Npc_IsPlayer (self)
+ 	if IsPlayerOrSavedPlayer (self)
 	{ 
 		B_AddFightSkill (self, NPC_TALENT_1H, -15);
 	};

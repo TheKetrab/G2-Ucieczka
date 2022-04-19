@@ -325,3 +325,47 @@ func int HasNpcShieldActive(var c_npc slf, var int inst)
 	
 	return FALSE;
 };
+
+func int IsSpellTransformation(var int spellId)
+{
+	return spellId >= SPL_TrfSheep && spellID <= SPL_TrfDragonSnapper;
+};
+
+
+func int IsPlayerOrSavedPlayer(var c_npc slf)
+{
+	if(Npc_IsPlayer(slf)){ return TRUE; };
+	
+	if(Hlp_IsValidNpc(hero))
+	{
+		var oCNpc her;	her = HLp_GetNpc(hero);
+		var int spellList; spellList = her.activeSpells_next;
+		var int slfPtr; slfPtr = _@(slf);
+
+		while(spellList);
+		
+			var int spell; spell = MEM_ReadInt(spellList);
+			
+			if(spell)
+			{
+				//var int spellId; spellId = MEM_ReadInt(spell+84);
+				//if(IsSpellTransformation(spellId))
+				//{
+					var int saveNpc; saveNpc = MEM_ReadInt(spell+64);
+					
+					if(saveNpc == slfPtr) 
+					{ 
+						return TRUE;
+					};
+				//};
+					
+			};	
+			
+			spellList = MEM_ReadInt(spellList+4);
+			
+		end;
+		
+	};
+	
+	return FALSE;
+};

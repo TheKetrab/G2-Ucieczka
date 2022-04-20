@@ -61,7 +61,14 @@ func void B_SelectWeapon(var C_NPC slf, var C_NPC oth)
 
 		
 	// FUNC
-
+	
+	//na arenie wojownicy u¿ywaj¹ tylko broni do walki wrêcz
+	if(WalkaTrwa && Npc_IsArenaFighter(slf) && Npc_IsInFightMode (slf,FMODE_MELEE) == false)
+	{
+		AI_RemoveWeapon (slf);
+		AI_ReadyMeleeWeapon	(slf);
+		return;
+	};
 	
 	// Monk ma nie uzywac kuszy
 	if (Npc_IsInFightMode (slf,FMODE_NONE))

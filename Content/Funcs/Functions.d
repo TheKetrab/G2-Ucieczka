@@ -369,3 +369,15 @@ func int IsPlayerOrSavedPlayer(var c_npc slf)
 	
 	return FALSE;
 };
+
+func int Npc_IsArenaFighter(var c_npc slf)
+{
+	var int id; id = Hlp_GetInstanceID(slf);
+	
+	//if(id == NASZ_113_Godar || id == NASZ_114_Hokurn || id == NASZ_115_Kurgan || id == NASZ_116_KJORN || id == NASZ_117_FED || id == NASZ_118_Ferros || id == NASZ_109_Rethon )
+	if(id == 109 || (id >= 113 && id <= 118))
+	{
+		return TRUE;
+	};
+	return FALSE;
+};

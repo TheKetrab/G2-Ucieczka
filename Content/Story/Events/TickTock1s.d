@@ -1674,6 +1674,27 @@ func void _TickTock_1s()
 		};
 	};
 	
+	//PallumBo ma wy³¹czone b_assessplayer, wiêc siê important nie wywo³uje
+	//to ma zast¹piæ tego perca
+	if(!PallumBo_end && Hlp_IsValidNpc(NASZ_410_PallumBo) && Npc_IsDead(NASZ_410_PallumBo) == false 
+	&& Npc_GetDistToPlayer(NASZ_410_PallumBo) < 400 && NASZ_410_PallumBo.aivar[AIV_INVINCIBLE] == false
+	&& InfoManager_HasFinished() && NASZ_410_PallumBo.aivar[AIV_TalkedToPlayer] == false)
+	{
+		//AI_ProcessInfo
+		var c_npc slfback; slfback = Hlp_GetNpc(self);
+		var c_npc othback; othback = Hlp_GetNpc(other);
+		
+		self = Hlp_GetNpc(NASZ_410_PallumBo);
+		other = Hlp_GetNpc(hero);
+		
+		B_AssessTalk();
+		
+		self = Hlp_GetNpc(slfback);
+		other = Hlp_GetNpc(othback);
+		
+		Npc_SetTarget(self,NASZ_405_VanGan);
+	};
+	
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****
 // LevelMiner
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****	

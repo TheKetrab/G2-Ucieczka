@@ -9,6 +9,11 @@
 func void B_AssessTalk ()
 {
 	
+	if(self.id == 410 && PallumBo_end)
+	{
+		Npc_SetTarget(self,NASZ_405_VanGan);
+		return;
+	};
 	// EXIT IF...
 	
 	if (Jeremiasz_AlmostDead == TRUE) && (self.id == 127) {

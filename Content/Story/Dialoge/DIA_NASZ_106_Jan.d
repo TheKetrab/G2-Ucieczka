@@ -2638,10 +2638,16 @@ FUNC INT DIA_NASZ_106_Jan_dobar_Condition()
 {
 	if  (!npc_knowsinfo (other, DIA_NASZ_224_Dobar_koniecpaczka))
 		&& (JAN_PACZKI == TRUE)
-		&& (npc_hasitems (NASZ_107_Brutus, ItNa_PaczkaJana) == 3)
+
+	// G2U12: sprawdzenie npc_hasitems dla Brutusa psulo liste dialogow (zmienia sie self...?)
+	// ale to sprawdzenie i tak jest juz niepotrzebne; bo teraz brutus jest w TOT, wiec niemozliwe jest,
+	// zeby najpierw zobaczyc martwego Brutusa, a potem rozmawiac o tym z Janem
+	// && (npc_hasitems (NASZ_107_Brutus, ItNa_PaczkaJana) == 3)
+
 	{
 		return TRUE;
 	};
+	
 };
 
 FUNC VOID DIA_NASZ_106_Jan_dobar_Info()

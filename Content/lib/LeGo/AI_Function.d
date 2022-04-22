@@ -35,6 +35,26 @@ func void AI_Function_II(var c_npc slf, var func function, var int param1, var i
     _AI_Function(slf, SB_ToString());
     SB_Destroy();
 };
+func void AI_Function_N(var c_npc slf, var func function, var int param) {
+    var int s; s = SB_New();
+    SB ("N ");
+    SBi(param);
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
+func void AI_Function_NN(var c_npc slf, var func function, var int param1, var int param2) {
+    var int s; s = SB_New();
+    SB ("NN ");
+    SBi(param1);
+    SB (" ");
+    SBi(param2);
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
 func void AI_Function_S(var c_npc slf, var func function, var string param) {
     var int s; s = SB_New();
     SB ("S ");
@@ -55,6 +75,28 @@ func void AI_Function_SS(var c_npc slf, var func function, var string param1, va
     _AI_Function(slf, SB_ToString());
     SB_Destroy();
 };
+func void AI_Function_IN(var c_npc slf, var func function, var int param1, var int param2) {
+    var int s; s = SB_New();
+    SB ("IN ");
+    SBi(param1);
+    SB (" ");
+    SBi(param2);
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
+func void AI_Function_NI(var c_npc slf, var func function, var int param1, var int param2) {
+    var int s; s = SB_New();
+    SB ("NI ");
+    SBi(param1);
+    SB (" ");
+    SBi(param2);
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
 func void AI_Function_SI(var c_npc slf, var func function, var string param1, var int param2) {
     var int s; s = SB_New();
     SB ("SI ");
@@ -69,6 +111,28 @@ func void AI_Function_SI(var c_npc slf, var func function, var string param1, va
 func void AI_Function_IS(var c_npc slf, var func function, var int param1, var string param2) {
     var int s; s = SB_New();
     SB ("IS ");
+    SBi(param1);
+    SB (" ");
+    SB (STR_Escape(param2));
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
+func void AI_Function_SN(var c_npc slf, var func function, var string param1, var int param2) {
+    var int s; s = SB_New();
+    SB ("SN ");
+    SB (STR_Escape(param1));
+    SB (" ");
+    SBi(param2);
+    SB (" ");
+    SBi(MEM_GetFuncID(function));
+    _AI_Function(slf, SB_ToString());
+    SB_Destroy();
+};
+func void AI_Function_NS(var c_npc slf, var func function, var int param1, var string param2) {
+    var int s; s = SB_New();
+    SB ("NS ");
     SBi(param1);
     SB (" ");
     SB (STR_Escape(param2));

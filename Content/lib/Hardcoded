@@ -1,18 +1,16 @@
 Własne zmiany w poszczególnych bibliotekach:
 
-===== CATINV =====
+===== LeGo =====
+_AI_FUNCTION_EVENT - własna implementacja w MyLegoFuncs.d
 
+===== CATINV =====
 CatInv_SetCategory - eq z G1: bez kategorii 0, eq z G2: tylko kategoria 0
 CatInv_Open - ustawianie kategorii przy otwarciu eq
 CatInv_Init - domyślne wartości opcji
 
-
 ===== GFA =====
-
 GFA_GetAccuracy - celność strzału zależy od umiejętności i czasu naciągu
 
-
 ===== Spine =====
-
 Spine_UserConstants.d - definicje osiągnięć
 

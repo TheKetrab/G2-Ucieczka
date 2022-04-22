@@ -5,7 +5,8 @@ AI\AI_INTERN\AI_CONSTANTS.D
 
 lib\Ikarus\Ikarus_G2.src
 lib\LeGo\Header_G2.src
-
+funcs\disableSaving.d
+funcs\Shields.d
 
 Funcs\MinMax.d
 Funcs\Functions.d

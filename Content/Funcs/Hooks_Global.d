@@ -57,6 +57,9 @@ const int oCNpc__DoShootArrow_PostReturnConditions = 7620745;
 //const int oCNpc__IsMunitionAvailable = 7587552;
 const int oCSpawnManager__CheckRemoveNpc_DeleteNpc = 7837169;
 
+const int oCNpc__EV_DrawWeapon2						= 7656832; //len 6 nasze
+const int oCNpc__EV_RemoveWeapon2					= 7661104; //len 6 nasze
+
 
 func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 {

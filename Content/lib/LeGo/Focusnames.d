@@ -3,8 +3,7 @@
 \***********************************/
 
 func int Focusnames_Color_Friendly() {
-    return RGBA(255, 255, 255, 255); // Weiß
-//    return RGBA(0,   255, 0,   255); // Grün
+    return RGBA(0,   255, 0,   255); // Grün
 };
 
 func int Focusnames_Color_Neutral() {
@@ -12,13 +11,11 @@ func int Focusnames_Color_Neutral() {
 };
 
 func int Focusnames_Color_Angry() {
-//    return RGBA(255, 180, 0,   255); // Orange
-    return RGBA(255, 255, 255, 255); // Weiß
+    return RGBA(255, 180, 0,   255); // Orange
 };
 
 func int Focusnames_Color_Hostile() {
-//    return RGBA(255, 0,   0,   255); // Rot
-    return RGBA(255, 255, 255, 255); // Weiß
+    return RGBA(255, 0,   0,   255); // Rot
 };
 
 

@@ -1,16 +1,4 @@
 
-func void AI_Function_NI(var c_npc slf, var func function, var int param1, var int param2) {
-    var int s; s = SB_New();
-    SB ("NI ");
-    SBi(param1);
-    SB (" ");
-    SBi(param2);
-    SB (" ");
-    SBi(MEM_GetFuncID(function));
-    _AI_Function(slf, SB_ToString());
-    SB_Destroy();
-};
-
 // U12 -> Uwaga! W AI_Function z LeGo dopisany przypadek obs³uguj¹cy NNII
 func void Druzyna(var C_NPC slf, var int add)
 {

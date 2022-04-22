@@ -5,7 +5,7 @@
 To repozytorium zawiera skrypty do modyfikacji G2 Ucieczka.<br>
 Skrypty korzystają z bibliotek:
 - Ikarus 1.2.2 @Sektenspinner
-- LeGo 2.7.1 @Lehona&szapp
+- LeGo 2.8.0 @Lehona&szapp
 - GFA 1.2.0 @szapp
 - CATINV @szapp
 - QuickSlot @bogu

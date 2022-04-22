@@ -16,10 +16,25 @@ func int Wld_GetTimeHour()
     return truncf(h);
 }; 
 
+func void ForceRemoveWeapon(var c_npc slf)
+{
+	const int oCNpc__EV_ForceRemoveWeapon = 7662656;
+	var int npcPtr; npcPtr = _@(slf);
+	
+	if(!npcPtr){return;};
+	
+	//oCMsgWeapon* = null
+	CALL_PtrParam(0);
+	
+	CALL__Thiscall(npcPtr,oCNpc__EV_ForceRemoveWeapon);
+};
+
 //by Avallach
 func void Npc_SwitchInventoryLoop (var c_npc npc, var int category)
 {
-        //print(ConcatStrings("Czyszczenie eq: ", npc.name));
+      ForceRemoveWeapon(npc);
+
+		//print(ConcatStrings("Czyszczenie eq: ", npc.name));
         var int amount;
         amount = Npc_GetInvItemBySlot (npc, category, 0);
         //print(ConcatStrings(item.name, IntToString(amount)));
@@ -34,6 +49,7 @@ func void Npc_SwitchInventoryLoop (var c_npc npc, var int category)
                 //print(ConcatStrings("Zmiana kategorii na: ", IntToString(category+1)));
                 Npc_SwitchInventoryLoop(npc, category+1);
         };
+		
 };
 
 func void Npc_SwitchInventoryLoop_Kopalnia (var c_npc npc, var int category)

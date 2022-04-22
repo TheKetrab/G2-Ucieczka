@@ -131,22 +131,86 @@ func int EQ_IsOpen()
 	return CALL_RetValAsInt();
 	
 };
+
+
+func void CheckWeaponSlot(var int i)
+{
+	if(EQ_IsOpen())
+	{
+		MEM_WriteInt(ESP + 4, -1);
+		return;
+	};
+	
+	var c_item itm;
+	if(i == 1)
+	{
+		itm = Npc_GetEquippedMeleeWeapon(hero);
+		
+		if(!Hlp_IsValidItem(itm))
+		{
+			itm = Npc_GetReadiedWeapon(hero);
+			if(itm.mainflag != ITEM_KAT_NF)
+			{
+				//return;
+				itm = MEM_NullToInst();
+			};
+		};
+	}
+	else
+	{
+		itm = Npc_GetEquippedRangedWeapon(hero);
+		
+		if(!Hlp_IsValidItem(itm))
+		{
+			itm = Npc_GetReadiedWeapon(hero);
+			if(itm.mainflag != ITEM_KAT_FF)
+			{
+				itm = MEM_NullToInst();
+			};
+		};
+	};
+					
+	
+	if(!Hlp_IsValidItem(itm))
+	{
+		var int slotItem; slotItem = QS_GetSlotItem(i);
+		if(slotItem && QS_CanEquipItem(hero,slotItem))
+		{
+			MEM_WriteInt(ESP + 4, -1);
+			QS_EquipWeapon(slotItem);
+		};
+	};	
+};
+
 func void HandleEvents_hook(/*int key*/)
 {
 	
 	var int key; key = MEM_ReadInt(ESP+4);
 	if(DisableQuickSlot == false)
 	{
-		if(key == KEY_1) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_2) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_3) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_4) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_5) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_6) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_7) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1);	};};
-		if(key == KEY_8) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};};
-		if(key == KEY_9) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1);	};};
-		if(key == KEY_0) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};};
+		if(key == KEY_1) 	
+		{ 
+			if(MEM_KeyPressed(key))
+			{ 		
+				CheckWeaponSlot(1);
+			};
+		}
+		else if(key == KEY_2) 	
+		{ 
+			if(MEM_KeyPressed(key))
+			{ 	
+				CheckWeaponSlot(2);
+			};
+		}
+		//else if(key == KEY_2) 	{  if(EQ_IsOpen() && MEM_KeyPressed(key)){ 	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_3) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(3);	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_4) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(4);	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_5) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(5);	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_6) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(6);	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_7) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(7);	MEM_WriteInt(ESP + 4, -1);	};}
+		else if(key == KEY_8) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(8);	MEM_WriteInt(ESP + 4, -1); 	};}
+		else if(key == KEY_9) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(9);	MEM_WriteInt(ESP + 4, -1);	};}
+		else if(key == KEY_0) 	{  if(MEM_KeyPressed(key)&& !QS_IsClickedKey(key)){ QS_UseItem(0);	MEM_WriteInt(ESP + 4, -1); 	};};
 	};
 
 	if(MEM_READINT(ESP+4/*key*/)== KEY_LSHIFT && !IsOpenedDeadNpc)

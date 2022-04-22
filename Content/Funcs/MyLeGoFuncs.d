@@ -630,15 +630,22 @@ func void TakeFocusVob_hook()
 	
 	var c_item itm; itm = _^(MEM_ReadInt(ESP+4));
 	
+	var int id; id = Hlp_GetInstanceID(itm);
+	
+	if(id == -1)
+	{
+		return;
+	};
+	
 	if (IsItemRusted(itm)) {
 		ZardzewialeMieczePodniesione += 1;
 	};
 	
-	if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_FragmentZwoju))
+	if(id == ItNa_FragmentZwoju)
 	{
 		Wld_InsertNpc(Skeleton_Lord,Npc_GetNearestWP(hero));
 	};		
-	if(Hlp_GetInstanceID(itm) == Hlp_GetInstanceID(ItNa_KoloZebate))
+	if(id == ItNa_KoloZebate)
 	{
 		B_LogEntry (TOPIC_Rethon_kurgan, "Znalaz³em ko³o zêbate. Mogê wracaæ do Kurgana.");
 	};	

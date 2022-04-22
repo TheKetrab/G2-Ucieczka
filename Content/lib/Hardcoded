@@ -2,6 +2,7 @@ Własne zmiany w poszczególnych bibliotekach:
 
 ===== LeGo =====
 _AI_FUNCTION_EVENT - własna implementacja w MyLegoFuncs.d
+_Focusnames - własna implementacja w MyLegoFuncs.d
 
 ===== CATINV =====
 CatInv_SetCategory - eq z G1: bez kategorii 0, eq z G2: tylko kategoria 0

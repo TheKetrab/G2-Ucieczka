@@ -77,6 +77,15 @@ func void INIT_GLOBAL()
 
 	// FIX UCIECZKA 1.2 - po kazdym wczytaniu zmien zbroje, bo wczytanie zmienia cia³o na defaultowe
 	KURG_KAN_REFRESH_ARMOR_IS_NECESSARY = TRUE;
+	
+	// domyslne opcje
+	if (!MEM_GothOptExists("UCIECZKA","focusnamesNpc")) {
+		MEM_SetGothOpt("UCIECZKA","focusnamesNpc","0");
+	};
+	if (!MEM_GothOptExists("UCIECZKA","focusnamesChest")) {
+		MEM_SetGothOpt("UCIECZKA","focusnamesChest","1");
+	};
+
 };
 
 // *********

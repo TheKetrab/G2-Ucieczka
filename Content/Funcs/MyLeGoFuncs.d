@@ -1411,3 +1411,56 @@ func void _AI_FUNCTION_EVENT() {
 	
     MEM_CallByID(fnc);
 };
+
+func void _Focusnames() {
+    var int col; col = -1; // Stupid pseudo-locals
+    var oCNpc her; her = Hlp_GetNpc(hero);
+
+	if(Hlp_Is_oCNpc(her.focus_vob)) {
+	
+		if (!STR_ToInt(MEM_GetGothOpt("UCIECZKA", "focusnamesNpc"))) {
+			return;
+		};
+	
+		var c_npc oth; oth = MEM_PtrToInst(her.focus_vob);
+		var int att; att = Npc_GetPermAttitude(hero, oth);
+		if     (att == ATT_FRIENDLY) { col = Focusnames_Color_Friendly(); }
+		else if(att == ATT_NEUTRAL)  { col = Focusnames_Color_Neutral();  }
+		else if(att == ATT_ANGRY)    { col = Focusnames_Color_Angry();    }
+		else if(att == ATT_HOSTILE)  { col = Focusnames_Color_Hostile();  };
+	}
+	else if(Hlp_Is_oCItem(her.focus_vob)) {
+		var c_item itm; itm = MEM_PtrToInst(her.focus_vob);
+	// Setze col = RGBA(.., .., .., ..); um die Farbe einzustellen
+	}
+	else if (Hlp_Is_oCMobContainer(her.focus_vob)) 
+	{
+		if (!STR_ToInt(MEM_GetGothOpt("UCIECZKA", "focusnamesChest"))) {
+			return;
+		};
+
+		var oCMobContainer m; m =_^(her.focus_vob);
+		if (Hlp_StrCmp(m._zCObject_objectName,"ARTEFAKT_MISTIC")) {
+			col = Focusnames_Color_Neutral();
+		}
+		else if(m._oCMobLockable_bitfield & oCMobLockable_bitfield_locked)
+		{
+			if(STR_LEN(m._oCMobLockable_keyInstance)) { col = RGBA(255, 255, 0, 1); }
+			else                                      { col = RGBA(255, 180, 0, 255); };
+		}
+		else
+		{
+			if(m.containList_next) { col = RGBA(0, 255, 0, 255); }
+			else                   { col = Focusnames_Color_Neutral(); };
+		};
+	}
+	else {
+		col = Focusnames_Color_Neutral();
+	};
+
+    var int ptr; ptr = MEM_Alloc(4);
+    MEM_WriteInt(ptr, col);
+    CALL_IntParam(ptr);
+    CALL__thiscall(MEM_ReadInt(screen_offset), zCView__SetFontColor);
+    MEM_Free(ptr);
+};

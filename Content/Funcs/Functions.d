@@ -381,3 +381,20 @@ func int Npc_IsArenaFighter(var c_npc slf)
 	};
 	return FALSE;
 };
+
+func int Log_GetTopicStatus(var string name) {
+	const int logMan = 11191608; //0xaac538
+    var zCList list; list = _^(logMan);
+    
+    while(list.next);
+        list = _^(list.next);
+        
+        if (list.data) {
+            if (Hlp_StrCmp(MEM_ReadString(list.data), name)) {
+                return MEM_ReadInt(list.data + 24);
+            };
+        };
+    end;
+    
+    return -1;
+};

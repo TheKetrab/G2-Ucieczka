@@ -529,6 +529,10 @@ func void ZS_Dead ()
 			if (KAPITEL == 2) { B_LogEntry (TOPIC_VanGan_zemsta, "Pallum-Bo pad³ trupem."); };
 		};
 
+	}
+	else if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_405_VanGan) && Log_GetTopicStatus(TOPIC_VanGan_zemsta) == LOG_RUNNING)
+	{
+		FailQuest(TOPIC_VanGan_zemsta,"");
 	};
 	
 	if (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (NASZ_102_Lens))

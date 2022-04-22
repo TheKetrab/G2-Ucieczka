@@ -581,14 +581,16 @@ INSTANCE Gil_Values(C_GILVALUES)
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ZOMBIE
 
-	SWIM_TIME		 		[GIL_ZOMBIE] = 0;
+	//nasz
+	SWIM_TIME		 		[GIL_ZOMBIE] = TIME_INFINITE;
 	DIVE_TIME		 		[GIL_ZOMBIE] = 0;
-	WATER_DEPTH_KNEE 		[GIL_ZOMBIE] = 90;
-	WATER_DEPTH_CHEST		[GIL_ZOMBIE] = 150;
+	//nasz
+	WATER_DEPTH_KNEE 		[GIL_ZOMBIE] = 160;
+	WATER_DEPTH_CHEST		[GIL_ZOMBIE] = 250;
 
 	STEP_HEIGHT		 		[GIL_ZOMBIE] = 60;
 	JUMPLOW_HEIGHT	 		[GIL_ZOMBIE] = 200;
-
+	
 	SLIDE_ANGLE		 		[GIL_ZOMBIE] = 50;
 	TURN_SPEED				[GIL_ZOMBIE] = 240;
 

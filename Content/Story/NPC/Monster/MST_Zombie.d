@@ -43,7 +43,7 @@ PROTOTYPE Mst_Default_Zombie(C_Npc)
 	senses_range	=	PERC_DIST_MONSTER_ACTIVE_MAX;
 	
 	aivar[AIV_MM_FollowTime]	= FOLLOWTIME_MEDIUM;
-	aivar[AIV_MM_FollowInWater] = FALSE;
+	aivar[AIV_MM_FollowInWater] = TRUE;
 	
 	//----- Daily Routine ----
 	start_aistate				= ZS_MM_AllScheduler;

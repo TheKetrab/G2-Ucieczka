@@ -495,14 +495,19 @@ func void Bryson_Die()
 	
 	B_StartOtherRoutine (NASZ_004_Bryson, "RunToOre");
 	Npc_ClearAIQueue(NASZ_004_Bryson);
-	AI_Teleport(NASZ_004_Bryson,"NASZ_KOPALNIA_BRYSON_DEAD");
+	
+	//kolejkowanie tego nie zawsze dzia³a poprawnie
+	//AI_Teleport(NASZ_004_Bryson,"NASZ_KOPALNIA_BRYSON_DEAD");
+	
 	
 	B_LogEntry (TOPIC_Ben_szkodnik, "Nasz¹ rozmowê przerwa³ krzyk, dobiegaj¹cy z zamkniêtego tunelu. Oby wszystko posz³o zgodnie z planem, bo na miejscu pojawi³ siê ju¿ Marcos. Najlepiej poczekam, a¿ sobie pójdzie i dopiero wrócê do Bena.");
 	
 	Snd_Play ("SVM_1_BERZERK");
 	Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
 	
+
 	B_KillNPC(NASZ_004_Bryson);
+	ForceTeleport(NASZ_004_Bryson,"NASZ_KOPALNIA_BRYSON_DEAD");
 	
 	//AI_Teleport(NASZ_009_Marcos,"OW_PATH_2_04");
 	//Npc_ExchangeRoutine (NASZ_009_Marcos, "GoToTria");

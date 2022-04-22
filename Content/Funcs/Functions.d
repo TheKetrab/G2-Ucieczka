@@ -398,3 +398,18 @@ func int Log_GetTopicStatus(var string name) {
     
     return -1;
 };
+
+func int ForceTeleport(var c_npc slf, var string wp)
+{
+	const int oCNpc__BeamTo = 7565024;
+	
+	var int npcPtr; npcPtr = _@(slf);
+	
+	if(!npcPtr){return 0;};
+	
+	CALL_zSTRINGPtrParam(wp);
+	CALL__Thiscall(npcPtr,oCNpc__BeamTo);
+	
+	return CALL_RetValAsInt();
+	
+};

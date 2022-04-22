@@ -1,9 +1,14 @@
-## **Gothic 2 Ucieczka 1.1**
+## **Gothic 2 Ucieczka 1.2**
 
-**www.g2ucieczka.pl**
+**<a href="https://www.g2ucieczka.pl">www.g2ucieczka.pl</a>**
 
-To repozytorium zawiera skrypty do modyfikacji G2 Ucieczka. Skrypty korzystają z pakietów: Ikarus 1.2.2, LeGo 2.7.1, GFA 1.2.0 (szapp), CATINV (szapp), QuickSlot (bogu).
+To repozytorium zawiera skrypty do modyfikacji G2 Ucieczka.<br>
+Skrypty korzystają z bibliotek:
+- Ikarus 1.2.2 @Sektenspinner
+- LeGo 2.7.1 @Lehona&szapp
+- GFA 1.2.0 @szapp
+- CATINV @szapp
+- QuickSlot @bogu
+- Spine @bonne
 
-Kod jest otwarty do eksplorowania i wczytywania się, jak co działa. Zabrania się przeklejania większych bloków kodu bez adnotacji o autorze - nie wypada.
-
-Copyright &copy; TheKetrab 2014-2020
+Copyright &copy; TheKetrab 2014-2022

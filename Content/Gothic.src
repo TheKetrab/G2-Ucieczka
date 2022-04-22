@@ -3,10 +3,9 @@ _INTERN\CLASSES.D
 
 AI\AI_INTERN\AI_CONSTANTS.D
 
-_INTERN\Ikarus_G2.src
-LeGo\Header_G2.src
+lib\Ikarus\Ikarus_G2.src
+lib\LeGo\Header_G2.src
 
-//Spine\Spine.src
 
 Funcs\MinMax.d
 Funcs\Functions.d
@@ -21,8 +20,8 @@ funcs\IsGhost.d
 AI\AI_INTERN\BODYSTATES.D
 AI\AI_INTERN\FOCUS.D
 STORY\Story_Globals.d
-GFA\GFA_G2.src
-CATINV\CATINV.SRC
+lib\GFA\GFA_G2.src
+lib\CATINV\CATINV.SRC
 AI\AI_INTERN\Npc_SetToMad.d
 AI\AI_INTERN\Species.d
 AI\AI_INTERN\PrintDebug.d
@@ -237,7 +236,7 @@ AI\MAGIC\B_AssessMagic.d
 AI\MAGIC\C_CanNpcCollideWithSpell.d
 
 AI\MAGIC\Spells\Spell_*.d
-LeGo\MyLeGoFuncs.d
+Funcs\MyLeGoFuncs.d
 funcs\QuickSlot\Quickslot.src
 Funcs\DiffLvl.d
 Funcs\TrollSpecialAttack.d

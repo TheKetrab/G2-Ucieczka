@@ -643,8 +643,24 @@ func void UpdateStaffSlot()
 var int HelmetEquipped;
 const int RuneIterator = 3;
 
+
+
 func void oCNpcInventory_HandleEvent_hook()
 {
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	
+	if(Hlp_Is_oCMobContainer(her.interactmob))
+	{
+		return;
+	};
+	
+	var int m_bManipulateItemsDisabled; m_bManipulateItemsDisabled = MEM_ReadInt(ECX+152);
+	if(m_bManipulateItemsDisabled)
+	{
+		return;
+	};
+
+	
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
 	
 	var int key; key = MEM_ReadInt(ESP + 4);

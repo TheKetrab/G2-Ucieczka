@@ -99,7 +99,7 @@ func void HeroMieczAlcohol() {
 	AI_Output (self, other,"HeroMieczAlcohol_15_01"); //Taa?
 
 	if (npc_hasitems (other, ItFo_Addon_Rum) >=1) {
-		AI_Output (other,self ,"HeroMieczAlcohol_15_02"); //Masz tu rum. Pij œmia³o.
+		AI_Output (other,self ,"HeroMieczAlcohol_15_02"); //Masz, to rum. Pij œmia³o.
 		MieczSay_Give();
 		B_GiveInvItems (other, self, ItFo_Addon_Rum, 1);
 		B_UseItem (self, ItFo_Addon_Rum);
@@ -107,7 +107,7 @@ func void HeroMieczAlcohol() {
 		B_GivePlayerXP (50);
 	}
 	else if (npc_hasitems (other, ItFo_Addon_Grog) >=1) {
-		AI_Output (other,self ,"HeroMieczAlcohol_15_03"); //Masz tu grog. Pij œmia³o.
+		AI_Output (other,self ,"HeroMieczAlcohol_15_03"); //Masz, to grog. Pij œmia³o.
 		MieczSay_Give();
 		B_GiveInvItems (other, self, ItFo_Addon_Rum, 1);
 		B_UseItem (self, ItFo_Addon_Rum);
@@ -115,7 +115,7 @@ func void HeroMieczAlcohol() {
 		B_GivePlayerXP (50);
 	}
 	else {
-		AI_Output (other,self ,"HeroMieczAlcohol_15_04"); //Masz tu piwo. Pij œmia³o.
+		AI_Output (other,self ,"HeroMieczAlcohol_15_04"); //Masz, to piwo. Pij œmia³o.
 		AI_Output (self, other,"HeroMieczAlcohol_55_05"); //A, niech bêdzie! W sumie dawno nie pi³em...
 		B_GiveInvItems (other, self, ItFo_Beer, 1);
 		B_UseItem (self, ItFo_Beer);

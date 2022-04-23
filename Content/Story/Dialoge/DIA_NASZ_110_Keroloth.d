@@ -298,7 +298,7 @@ FUNC INT DIA_NASZ_110_Keroloth_questno_Condition()
 FUNC VOID DIA_NASZ_110_Keroloth_questno_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questno_15_00"); //Co to za zadanie?
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_01"); //Jeden z myœliwych, Louis, to by³y kapitan okrêtu. Nie tak dawno, ta wstrêtna ryba poni¿y³a mnie przy innych.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_01"); //Jeden z myœliwych, Louis, to by³y kapitan okrêtowy. Nie tak dawno, ta wstrêtna ryba poni¿y³a mnie przy innych.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_02"); //Wykrad³ list od mojej ¿ony, który dosta³em przed wyruszeniem na wyspê Khorinis i przeczyta³ go przy wszystkich. Nie wiem, jak bardzo musia³ byæ pijany, ¿eby zagl¹daæ w prywatne wiadomoœci.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questno_55_03"); //Oczywiœcie od razu go spra³em. Ale nie da³o mi to ¿adnej satysfakcji, bo drañ ledwo trzyma³ siê na nogach.
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questno_15_04"); //Wiêc jak chcesz siê zemœciæ? Te¿ chcesz go skompromitowaæ?
@@ -736,7 +736,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_questnoend_Info()
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_01"); //Co my tu mamy?
 	B_UseFakeScroll();
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_questnoend_55_02"); //Myœlê, ¿e wœcieknie siê, gdy zobaczy, ¿e zniknê³a.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_03"); //Zgadzam siê. Z tej mapy korzysta³ zapewne ca³e ¿ycia. Dobrze siê spisa³eœ.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_03"); //Zgadzam siê. Z tej mapy korzysta³ zapewne ca³e ¿ycie. Dobrze siê spisa³eœ.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_questnoend_55_04"); //Masz tu trochê z³ota, mo¿esz to sobie wynagrodziæ w karczmie i wypiæ parê butelek dobrego wina.
 	Createinvitems (self, itmi_gold, 70);
 	B_giveinvitems (self, other, itmi_gold, 70);

@@ -72,7 +72,7 @@ FUNC INT DIA_NASZ_216_Aran_armor_Condition()
 FUNC VOID DIA_NASZ_216_Aran_armor_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_216_Aran_armor_15_00"); //Niez³a zbroja.
-	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_01"); //To prawda. Chroni przed k³ami wilków, a nawet odbija niektóre strza³y. Do tego jest bardzo lekka, wiêc w razie zagro¿enia mo¿na braæ nogi za pas.
+	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_01"); //To prawda. Chroni przed k³ami wilków, a nawet odbije niektóre strza³y. Do tego jest bardzo lekka, wiêc w razie zagro¿enia mo¿na braæ nogi za pas.
 	AI_Output (self, other,"DIA_NASZ_216_Aran_armor_55_02"); //Jej jedyny minus to brak twardych czêœci na kolanach i ³okciach. Hunt mówi, ¿e jest na to rada, ale myœliwi przynosz¹ mu zbyt ma³o skór trolli, ¿eby móg³ z³o¿yæ wystarczaj¹co gruby i rozci¹gliwy materia³.
 };
 

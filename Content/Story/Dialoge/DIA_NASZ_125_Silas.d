@@ -63,7 +63,7 @@ INSTANCE DIA_NASZ_125_Silas_work   (C_INFO)
  	condition   = DIA_NASZ_125_Silas_work_Condition;
  	information = DIA_NASZ_125_Silas_work_Info;
  	permanent   = FALSE;
- 	description = "Mogê na coœ siê przydaæ?";
+ 	description = "Mogê siê na coœ przydaæ?";
 };
 
 FUNC INT DIA_NASZ_125_Silas_work_Condition()
@@ -73,7 +73,7 @@ FUNC INT DIA_NASZ_125_Silas_work_Condition()
 
 FUNC VOID DIA_NASZ_125_Silas_work_Info()
 {
-	AI_Output (other,self ,"DIA_NASZ_125_Silas_work_15_00"); //Mogê na coœ siê przydaæ?
+	AI_Output (other,self ,"DIA_NASZ_125_Silas_work_15_00"); //Mogê siê na coœ przydaæ?
 	AI_Output (self, other,"DIA_NASZ_125_Silas_work_55_01"); //Takie chuchro najwy¿ej mo¿e zaj¹æ siê zmywaniem pustych kufli.
 	AI_Output (other,self ,"DIA_NASZ_125_Silas_work_15_02"); //Nie jesteœ zbyt uprzejmy jak na karczmarza.
 	AI_Output (self, other,"DIA_NASZ_125_Silas_work_55_03"); //A ty jesteœ bardzo wra¿liwy. Co, ju¿ miêkniesz?

@@ -160,8 +160,8 @@ FUNC VOID DIA_NASZ_232_Jehen_GothSaid_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_15_00"); //Tak naprawdê to Goth wspomnia³, gdzie mogê ciê znaleŸæ.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_01"); //S³ysza³em, ¿e nim zosta³eœ myœliwym, zajmowa³eœ siê wyrobem instrumentów.
-	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_02"); //Konkretnie mam tutaj na myœli lutniê. Czy by³byœ w stanie mi pomóc?
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_03"); //No to teraz mnie naprawdê zaskoczy³eœ, ch³opcze. Ju¿ od kilku dobrych lat nie zajmowa³em siê wytworem lutni i nie wiem, ile z tego jeszcze pamiêtam.
+	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_02"); //Konkretnie mam tu na myœli lutniê. Czy by³byœ w stanie mi pomóc?
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_03"); //No to teraz naprawdê mnie zaskoczy³eœ, ch³opcze. Ju¿ od kilku dobrych lat nie zajmowa³em siê wytworem lutni i nie wiem, ile z tego jeszcze pamiêtam.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_GothSaid_55_04"); //Jak rozumiem to bardzo pilna sprawa? Mogê wiedzieæ do czego jest wam ona potrzebna?
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_05"); //Potrzebuje jej Engor. Chcemy, aby zagra³ w naszym obozie dla reszty ³owców. Ca³a ta sytuacja w dolinie odciska na nich swoje piêtno.
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_GothSaid_55_06"); //Uwa¿amy, to znaczy ja i Silas, ¿e muzyka ukoi ich sko³atane nerwy.
@@ -226,7 +226,7 @@ var int JehenLuteCheckOneOption;
 //	Info TalkedToGestath
 //*********************************************************************
 func void Jehen_Say_AboutLute() {
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_00"); //Je¿eli chodzi o lutniê to uda³o mi siê znaleŸæ jedn¹ w swoich rzeczach. Jest trochê pozadzierana, ale bêdzie siê na niej da³o graæ. Mogê ci j¹ sprzedaæ za 50 sztuk z³ota lub...
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_00"); //Je¿eli chodzi o lutniê to uda³o mi siê znaleŸæ jedn¹ w swoich rzeczach. Jest trochê pozadzierana, ale bêdzie da³o siê na niej graæ. Mogê ci j¹ sprzedaæ za 50 sztuk z³ota lub...
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_01"); //Jeœli dostarczysz mi 150 z³otych monet to wykonam dla ciebie nowy instrument, z³oto oczywiœcie bêdzie mi potrzebne na pokrycie kosztów zwi¹zanych z materia³ami.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_Say_AboutLute_55_02"); //Co wybierasz?
 

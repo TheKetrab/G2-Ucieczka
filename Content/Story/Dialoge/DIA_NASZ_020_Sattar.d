@@ -139,7 +139,7 @@ FUNC VOID DIA_NASZ_020_Sattar_Metody2_Info()
 	AI_Output (other,self ,"DIA_NASZ_020_Sattar_Metody2_15_00"); //Jasne, powiedz tylko, co mam zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_01"); //Do stworzenia zaklêcia potrzebujê dwóch kryszta³ów, które znajduj¹ siê w kopalni.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_02"); //Wydoby³bym je sam, jednak kompletnie siê na tym nie znam. Wiesz, ¿e jestem kiepskim górnikiem. Móg³byœ je dla mnie zdobyæ?
-	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_03"); //Najlepiej wykop tyle, ile zdo³asz. Wybiorê wtedy dwa najwiêksze i przyst¹piê do dzia³ania. 
+	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_03"); //Najlepiej wykop tyle, ile zdo³asz. Wybiorê wtedy dwa najciekawsze i przyst¹piê do dzia³ania. 
 	AI_Output (other, self,"DIA_NASZ_020_Sattar_Metody2_55_04"); //Zabieram siê do roboty.
 	AI_Output (self, other,"DIA_NASZ_020_Sattar_Metody2_55_05"); //Œwietnie! Bêdê czeka³ w tunelu z ³ó¿kiem, rozpocznê ju¿ przygotowania. 
 

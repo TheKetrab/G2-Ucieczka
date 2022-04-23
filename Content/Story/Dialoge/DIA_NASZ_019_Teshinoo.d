@@ -94,7 +94,7 @@ FUNC VOID DIA_NASZ_019_Teshinoo_IDK_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_019_Teshinoo_IDK_15_00"); //Gdzie ja jestem?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_IDK_55_01"); //W du¿e miasto. Orki miasto. Tutaj wiêzienie.
-	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_IDK_55_02"); //Sk¹d znasz jêzyk ludzki?
+	AI_Output (other, self,"DIA_NASZ_019_Teshinoo_IDK_55_02"); //Sk¹d znasz jêzyk ludzi?
 	AI_Output (self, other,"DIA_NASZ_019_Teshinoo_IDK_55_03"); //Orki chcieæ byæ szaman. Musieæ uczyæ siê jêzyk cz³owiek.
 
 };

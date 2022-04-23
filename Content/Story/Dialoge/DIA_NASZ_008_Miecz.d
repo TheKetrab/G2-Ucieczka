@@ -122,7 +122,7 @@ func void HeroMieczAlcohol() {
 		MieczSay_Thx();
 	};
 		
-	AI_Output (other,self ,"HeroMieczAlcohol_15_06"); //No to co, teraz powiesz mi, co ciê trapi?
+	AI_Output (other,self ,"HeroMieczAlcohol_15_06"); //No to co, teraz mi powiesz, co ciê trapi?
 	AI_Output (self, other,"HeroMieczAlcohol_55_07"); //Ka¿dej nocy wydaje mi siê, ¿e ktoœ krêci siê w pobli¿u mojej kryjówki i usi³uje mnie zabiæ. 
 	AI_Output (self, other,"HeroMieczAlcohol_55_08"); //Lecz gdy siê budzê, nikogo w pobli¿u nie ma.
 

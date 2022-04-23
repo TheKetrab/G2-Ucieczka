@@ -273,7 +273,7 @@ FUNC VOID DIA_NASZ_118_Ferros_HowDoUFeel_Info()
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_15_01"); //Zdecydowanie lepiej, chocia¿ nadal ciê¿ko jest mi siê wyspaæ. Prawdopodobnie to wina dzia³ania eliksiru.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_02"); //Mogê mieæ do ciebie ostatni¹ proœbê?
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_03"); //Oczywiœcie, o co chodzi?
-	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w swoim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ? Oczywiœcie oddam ci koszta zakupów.
+	AI_Output (self, other,"DIA_NASZ_118_Ferros_HowDoUFeel_55_04"); //Jeremiasz ma w swoim asortymencie kilka nalewek, które pomagaj¹ w kwestii snu. Mo¿esz mi tak¹ za³atwiæ? Oczywiœcie oddam ci koszta zakupu.
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_HowDoUFeel_55_05"); //Zobaczê, co da siê zrobiæ.
 
 	B_LogEntry (TOPIC_Ferros_sny, "Feros czuje siê ju¿ lepiej, lecz nadal ma k³opoty z zaœniêciem. Rozwi¹zaniem ma byæ nalewka od Jeremiasza.");

@@ -625,15 +625,18 @@ func void KivoAddChoicesBOW() {
 };
 
 func void KivoSay_CantTeachYou() {
-	AI_Output(self,other,"KivoSay_CantTeachYou_01_00"); //Niczego wiêcej ciê ju¿ nie nauczê. Strzelaj, ¿eby twoja celnoœæ nie mala³a.
+	// Niczego wiêcej ciê ju¿ nie nauczê. Strzelaj, ¿eby twoja celnoœæ nie mala³a.
+	AI_Output(self,other,"KivoSay_CantTeachYou_01_00"); //To wszystko, co wiem.
 };
 
 func void KivoSay_NoMoney() {
-	AI_Output (self, other,"KivoSay_NoMoney_01_00"); //Nie masz doœæ z³ota.
+	// Nie masz doœæ z³ota.
+	AI_Output (self, other,"KivoSay_NoMoney_01_00"); //Nie ma mowy.
 };
 
 func void KivoSay_NoExp() {
-	AI_Output (self, other,"KivoSay_NoExp_01_00"); //Brak ci doœwiadczenia.
+	// Brak ci doœwiadczenia
+	AI_Output (self, other,"KivoSay_NoExp_01_00"); //Daj ju¿ sobie spokój.
 };
 
 INSTANCE DIA_Kivo_Teach   (C_INFO)

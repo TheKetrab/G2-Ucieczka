@@ -556,7 +556,7 @@ FUNC VOID DIA_NASZ_005_Ben_MetodyEnd_Info()
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_03"); //Doszliœmy wspólnie do wniosku, i¿ ucieczka nas wszystkich jest abstrakcyjn¹ wizj¹.
-	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_04"); //Stra¿nicy natychmiast siê obudz¹, a my nie bêdziemy mieli nawet cienia szans na wyrwania siê spod ich w³adzy. 
+	AI_Output (self, other,"DIA_NASZ_005_Ben_MetodyEnd_55_04"); //Stra¿nicy natychmiast siê obudz¹, a my nie bêdziemy mieli nawet cienia szans na wyrwanie siê spod ich w³adzy. 
 
 	TRIA_Next(Ben);
 	AI_TurnToNpc(other, self);

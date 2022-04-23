@@ -173,7 +173,7 @@ FUNC VOID DIA_NASZ_226_Snaf_PieczysteDone_Info()
 	B_GiveInvItems(self,other,ItNa_PieczenSnafa,1);
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_01"); //Dwa kawa³ki? Nie podejrzewa³bym, i¿ Goth jest tak wielkim ¿ar³okiem.
 	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_02"); //To prawda, potrafi zjeœæ najwiêcej ze wszystkich. Jednak tym razem druga porcja nie jest dla niego, a dla ciebie.
-	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_03"); //Nale¿y ci siê nagroda za fatygê. Ponadto strasznie zmarnia³eœ od naszego ostatniego spotkania, wiêc uzna³em, ¿e zechcia³byœ wrzuciæ coœ dobrego na z¹b.
+	AI_Output (self, other,"DIA_NASZ_226_Snaf_PieczysteDone_15_03"); //Nale¿y ci siê nagroda za fatygê. Ponadto strasznie zmarnia³eœ od naszego ostatniego spotkania, wiêc uzna³em, ¿e zechcia³byœ wrzuciæ coœ na z¹b.
 	AI_Output (other, self,"DIA_NASZ_226_Snaf_PieczysteDone_15_04"); //Dziêki Snaf, mi³o wspominam twoj¹ kuchniê. Wybacz, ale teraz muszê ju¿ iœæ, bo stra¿nik bramy zaraz padnie z g³odu. Do zobaczenia.
 		
 	Npc_ExchangeRoutine (self, "Start");

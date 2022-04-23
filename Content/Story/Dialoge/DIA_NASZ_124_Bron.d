@@ -171,7 +171,7 @@ FUNC VOID DIA_NASZ_124_Bron_NicNieMa_Info()
 	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_02"); //Oczywiœcie, ¿e jestem pewien! Widocznie ten z³odziej nie ma teraz potrzeby nic podkradaæ.
 	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_03"); //Musimy go tam zwabiæ. Co mo¿e skusiæ rabusia?
 	AI_Output (other, self,"DIA_NASZ_124_Bron_NicNieMa_55_04"); //Nie wiem... Mo¿e kawa³ dobrej kie³basy?
-	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_05"); //Kie³basy niekoniecznie, ale zupa grzybowa? To rarytas. A jej intensywny zapach zdradzi miejsce przechowania.
+	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_05"); //Kie³basy niekoniecznie, ale zupa grzybowa? To rarytas. A jej intensywny zapach zdradzi miejsce przechowywania.
 	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_06"); //Engor na pewno jak¹œ ma.
 	AI_Output (self, other,"DIA_NASZ_124_Bron_NicNieMa_55_07"); //W³ó¿ do mojej skrzyni talerz zupy i zaczaj siê w nocy. Masz tu klucz.
 

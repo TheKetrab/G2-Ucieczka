@@ -2700,7 +2700,8 @@ INSTANCE CONTROL_RETURN     	(C_SFX_DEF) {file= "Magic_6.wav" ;					};
 				INSTANCE SVM_WILL_WOLF9    					(C_SFX_DEF) {file= "SVM_WILL_WOLF9.wav";   vol=107;};
 				INSTANCE SVM_WILL_WOLF10    				(C_SFX_DEF) {file= "SVM_WILL_WOLF10.wav";   vol=107;};
 
-				INSTANCE SVM_WILL_PICKBROKE     				(C_SFX_DEF) {file= "SVM_WILL_PICKBROKE.wav";   vol=107;};
+				INSTANCE SVM_WILL_PICKBROKE     			(C_SFX_DEF) {file= "SVM_WILL_PICKBROKE.wav";   vol=107;};
+				INSTANCE SVM_WILL_SUSAN     				(C_SFX_DEF) {file= "SVM_WILL_SUSAN.wav";   vol=107;};
 
 
 

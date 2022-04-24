@@ -664,6 +664,7 @@ func void oCNpcInventory_HandleEvent_hook()
 	{
 		return;
 	};
+
 	
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
 	
@@ -995,7 +996,8 @@ func void DeleteNpc_Check()
 
 func void zCAiCamera__CheckKeys_MunSwitchDisableScroll()
 {
-	if(Npc_IsInFightMode(hero, FMODE_FAR))
+	var oCNpc her; her = Hlp_GetNpc(hero);
+	if(Npc_IsInFightMode(hero, FMODE_FAR) || her.interactMob)
 	{
 		//if fabs(dword ptr [esp+20h]) > 0.f -> change cam dist
 		MEM_WriteInt(ESP+32,FLOATNULL);

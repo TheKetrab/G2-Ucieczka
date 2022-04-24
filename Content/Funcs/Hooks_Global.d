@@ -647,9 +647,14 @@ const int RuneIterator = 3;
 
 func void oCNpcInventory_HandleEvent_hook()
 {
-	var oCNpc her; her = Hlp_GetNpc(hero);
+	/*var oCNpc her; her = Hlp_GetNpc(hero);
 	
 	if(Hlp_Is_oCMobContainer(her.interactmob))
+	{
+		return;
+	};*/
+	
+	if(!RenderOnScreen)
 	{
 		return;
 	};
@@ -659,7 +664,6 @@ func void oCNpcInventory_HandleEvent_hook()
 	{
 		return;
 	};
-
 	
 	var int nptr; nptr = MEM_ReadInt(ECX+160);
 	
@@ -786,16 +790,23 @@ func void oCNpcInventory_HandleEvent_hook()
 			}
 			
 				
-				//MEM_WriteInt(ESP+4,-1);
+			//Bogu: tutaj by³ problem, ¿e kod oryginalny móg³ siê wykonaæ, je¿eli slot by³ nieprawid³owy
+			//MEM_WriteInt musi byæ zawsze, doda³em te¿ printa dla gracza, aby wiedzia³ co siê dzieje.
 		
 			// KETRAB
 			else if (itm.mainflag == ITEM_KAT_RUNE)
 			{
+				MEM_WriteInt(ESP+4,-1);
 				// jesli ten item byl juz gdzies w qs, to zostanie zwrocony
 				// jego index zatem putslot zdejmie go z qs
 				var int freeslot; freeslot = QS_GetFreeSlotNr(itm);
 				if (freeslot != -1) {
-					QS_PutSlot(hero, freeslot, ptr);  MEM_WriteInt(ESP+4,-1);
+					QS_PutSlot(hero, freeslot, ptr);  //MEM_WriteInt(ESP+4,-1);
+				}
+				else
+				{
+					PrintS("Wszystkie sloty s¹ zajête.");
+					PrintS("Wybierz slot klawiszami lub usuñ dowolny item z paska.");
 				};
 			};
 

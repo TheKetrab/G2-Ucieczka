@@ -410,10 +410,11 @@ func void ZS_Dead ()
 	if (self.guild == GIL_LURKER){ PokonaneLurker_Liczba = PokonaneLurker_Liczba + 1; };	
 	
 	
-	if (Hlp_GetInstanceID (hero) == Hlp_GetInstanceID (StoneGolem))
+	if (Hlp_GetInstanceID (other) == Hlp_GetInstanceID (StoneGolem))
 	&& (Hlp_GetInstanceID (self) == Hlp_GetInstanceID (StoneGolem))
+	//&& (Golem_MIS_Running == TRUE)
 	&& (Golem_MIS_Running == TRUE)
-	&& (C_NpcIsHero (other)) // bohater zabil, a nie zostal zabity
+	&& (Npc_IsPlayer (other)) // bohater zabil, a nie zostal zabity
 	{
 		Golem_MIS_Killed = TRUE;
 		B_LogEntry (TOPIC_Keroloth_golem, "Pokona³em kamiennego golema niebêd¹c w ludzkiej skórze. Pora powiadomiæ Kerolotha.");

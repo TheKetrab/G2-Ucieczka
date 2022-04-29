@@ -267,7 +267,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestTRIA_Info()
     AI_TurnToNpc(Kjorn,Bam);
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_01"); //Zbyt d³ugo nie dawaliœcie znaku ¿ycia. O ile pamiêtam, umawialiœmy siê na dziesiêæ bry³ek dziennie.
 	AI_ReadyMeleeWeapon(Bam);
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_02"); //Za takie opóŸnienia, zaczniemy wam naliczaæ prowizjê. Myœlisz, ¿e komu bardziej zale¿y na naszym uk³adzie? Nam czy wam?
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_02"); //Za takie opóŸnienie, zaczniemy wam naliczaæ prowizjê. Myœlisz, ¿e komu bardziej zale¿y na naszym uk³adzie? Nam czy wam?
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_03"); //Mamy jeszcze inne mniejsze kopalnie, wiêc mo¿emy prowadziæ wydobycie nawet bez waszego udzia³u, a wy nie dostaniecie nic.
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_04"); //To ma siê wiêcej nie powtarzaæ, zrozumiano?
 	AI_RemoveWeapon(Bam);
@@ -277,7 +277,7 @@ FUNC VOID DIA_NASZ_304_Bam_QuestTRIA_Info()
 	AI_TurnToNpc(self,other);
     AI_TurnToNpc(other,self);
 	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_06"); //Nie myœlicie chyba, ¿e ta przerwa w dostawie jest bez przyczyny? Ostatnio jednemu z nas, zachcia³o siê trochê mocniej ni¿ zwykle przywaliæ pewnemu kopaczowi.
-	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_07"); //Reszta zaœ zaczê³a strajkowaæ i buntowaæ siê. A my nie mogliœmy ich przecie¿ torturowaæ i karaæ, bo ich wydajnoœæ by³aby zerowa.
+	AI_Output (self, other,"DIA_NASZ_304_Bam_QuestTRIA_55_07"); //Reszta zaczê³a zaœ strajkowaæ i buntowaæ siê. A my nie mogliœmy ich przecie¿ torturowaæ i karaæ, bo ich wydajnoœæ by³aby zerowa.
 
 	TRIA_Next(Bam);
 	AI_TurnToNpc(Bam,Kjorn);

@@ -1200,7 +1200,7 @@ FUNC VOID DIA_NASZ_213_Gestath_keroloth_Info()
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_05"); //Erak razem z Kivo i Benito s¹ w Obozie Bandytów. Ka¿dy z nich ma tam coœ do roboty.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_06"); //Aran ci¹gle stoi w jaskini obok obozu i dogl¹da orków.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_07"); //Ammann... Chyba go jeszcze nie znasz. On ma specjalne zadanie. Wys³a³em go po pierœcienie wiernoœci. O cholera! Zapomnia³em, ¿e kilka dni temu powiedzia³em mu, ¿e ciê do niego przyœlê... Mo¿e byæ z³y.
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_08"); //No ja bym na jego miejscu uœmiechniêty nie by³.
+	AI_Output (other, self,"DIA_NASZ_213_Gestath_keroloth_55_08"); //No ja na jego miejscu uœmiechniêty bym nie by³.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_09"); //Jest nad obozowiskiem wypadowym Eraka. Pamiêtasz, gdzie to jest? IdŸ po prostu w stronê kamiennej twierdzy w górach. Lepiej udaj siê tam od razu.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_10"); //Vachut jest oczywiœcie u siebie, to znaczy obok ³owców orków. Szczerze mówi¹c, nie mam pojêcia, co teraz robi...
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_keroloth_55_11"); //Ostatni raz widzia³em go, gdy wraca³em z obozu bandytów. Wspomina³ wtedy coœ o jakichœ dziwnych topielcach...

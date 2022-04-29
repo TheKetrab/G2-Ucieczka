@@ -193,7 +193,7 @@ FUNC VOID DIA_NASZ_308_Frut_zadanie_Info()
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_00"); //Mogê siê na coœ przydaæ?
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_01"); //Potrzebujê tu nowego niewolnika. Ci ju¿ s³abn¹, a przyda siê trochê œwie¿ych si³.
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_02"); //Udasz siê do naszej kopalni i powiesz Gobby'emu, ¿e ma ci wydaæ jakiegoœ cz³owieka.
-	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_03"); //Gdzie jest ta kopalnia?
+	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_03"); //Gdzie ta kopalnia?
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_04"); //P³yñ ca³y czas w górê rzeki od zamku. Nie wychodŸ z wody. I przestañ ju¿ w koñcu zadawaæ te cholerne pytania!
 	AI_Output (other,self ,"DIA_NASZ_308_Frut_zadanie_15_05"); //Ale przecie¿ tam jest wodospad. Jak mam p³yn¹æ w górê wodospadu?
 	AI_Output (self, other,"DIA_NASZ_308_Frut_zadanie_55_06"); //Wymyœlisz coœ... Co za baran...

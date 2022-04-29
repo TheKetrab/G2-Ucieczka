@@ -144,7 +144,7 @@ FUNC VOID DIA_NASZ_405_VanGan_what_so()
 
 	AI_Output (other,self ,"DIA_NASZ_405_VanGan_what_so_15_04"); //Wiêc co mam zrobiæ?
 	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_so_55_05"); //Van-Gan ju¿ d³ugo planowaæ tê podró¿, ale nigdy nie znaleŸæ dobrej morra.
-	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_so_55_06"); //Ty, Will, byæ dobry wojownik. Czy Will pójœæ za mn¹?
+	AI_Output (self, other,"DIA_NASZ_405_VanGan_what_so_55_06"); //Ty, Will, byæ dobry wojownik. Czy Will pójœæ ze mn¹?
 
 	Info_ClearChoices (DIA_NASZ_405_VanGan_what);
 };
@@ -177,7 +177,7 @@ FUNC VOID DIA_NASZ_405_VanGan_where_Info()
 	AI_Output (other,self ,"DIA_NASZ_405_VanGan_where_15_00"); //Gdzie mielibyœmy iœæ?
 	AI_Output (self, other,"DIA_NASZ_405_VanGan_where_55_01"); //Na wojnê, morra. Ja musieæ pomœciæ mój brat. Zabiæ zabójca.
 	AI_Output (self, other,"DIA_NASZ_405_VanGan_where_55_02"); //Will pomóc mi go zabiæ, jeœli bêdzie zbyt silny dla Van-Gan.
-	AI_Output (self, other,"DIA_NASZ_405_VanGan_where_15_03"); //Czy morra pójœæ za mn¹? Powiedzieæ, jak Will gotowy.
+	AI_Output (self, other,"DIA_NASZ_405_VanGan_where_15_03"); //Czy morra pójœæ ze mn¹? Powiedzieæ, jak Will gotowy.
 
 	Log_CreateTopic (TOPIC_VanGan_zemsta, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_VanGan_zemsta, LOG_RUNNING);
@@ -311,7 +311,7 @@ FUNC INT DIA_NASZ_405_VanGan_After_Condition()
 FUNC VOID DIA_NASZ_405_VanGan_After_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_405_VanGan_After_15_00"); //Pallum-Bo nie ¿yje.
-	AI_Output (self, other,"DIA_NASZ_405_VanGan_After_55_01"); //Tak, to koniec. Dobrze siê spisaæ, Willu. Dziêkowaæ, morra.
+	AI_Output (self, other,"DIA_NASZ_405_VanGan_After_55_01"); //Tak, to koniec. Dobrze siê spisa³eœ, Willu. Dziêkowaæ, morra.
 
 	Log_SetTopicStatus (TOPIC_VanGan_zemsta, LOG_SUCCESS);
 

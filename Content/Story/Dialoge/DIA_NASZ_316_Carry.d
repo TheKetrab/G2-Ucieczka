@@ -340,7 +340,7 @@ func void DIA_NASZ_316_Carry_Muchy_Info ()
 	AI_Output			(self, other, "DIA_NASZ_316_Carry_Muchy_03_03"); //Skoñczy³ mi siê mój p³yn do nacierania i teraz wszystkie paskudztwa mnie atakuj¹.
 	AI_Output			(other, self, "DIA_NASZ_316_Carry_Muchy_03_04"); //W koñcu wiem, sk¹d bierze siê ten zapach...
 	AI_ReadyMeleeWeapon(self);
-	AI_Output			(self, other, "DIA_NASZ_316_Carry_Muchy_03_05"); //Hej! Nie pozwalaj sobie. Zaraz za³atwisz mi potrzebne sk³adniki albo nagadam na ciebie Nodowi.
+	AI_Output			(self, other, "DIA_NASZ_316_Carry_Muchy_03_05"); //Hej! Nie pozwalaj sobie. Zaraz za³atwisz mi wszystkie potrzebne sk³adniki albo nagadam na ciebie Nodowi.
 	
 	Carry_Day = Wld_GetDay();
 	Carry_Stopowanie = FALSE;

@@ -1633,7 +1633,7 @@ FUNC INT DIA_NASZ_110_Keroloth_Before_Condition()
 
 FUNC VOID DIA_NASZ_110_Keroloth_Before_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Before_55_00"); //Faktycznie nie jest to zbyt du¿e miejsce, i nie wygl¹da tak¿e najlepiej. Trzeba bêdzie je nieco umocniæ nim wydamy otwart¹ wojnê orkom.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Before_55_00"); //Faktycznie, nie jest to zbyt du¿e miejsce i nie wygl¹da tak¿e najlepiej. Trzeba je bêdzie nieco umocniæ nim wydamy otwart¹ wojnê orkom.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Before_55_01"); //Ja zostanê tutaj i zapoznam siê lepiej z tym miejscem. Ty natomiast udaj siê do obozu i zabierz kilka narzêdzi. Myœlê, ¿e piêæ pi³, szeœæ m³otków i cztery kilofy wystarcz¹.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Before_15_02"); //Rozejrzyj siê za nimi w magazynie. To ta buda obok wejœcia do obozu. Oto klucz.
 

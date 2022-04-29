@@ -601,7 +601,7 @@ FUNC VOID DIA_NASZ_307_Monk_frutkoniec_Info()
 	AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_02"); //Robiê to, co do mnie nale¿y.
 	
 	if (Frut_Dal_Zezwolenie_Willowi == FALSE) {
-		AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_03"); //Czy teraz po zezwolenie na wejœcie do szefa mam siê zwracaæ do ciebie, czy do Fruta?
+		AI_Output (other, self,"DIA_NASZ_307_Monk_frutkoniec_55_03"); //Czy teraz po zezwolenie na wejœcie do szefa mam zwracaæ siê do ciebie, czy do Fruta?
 		AI_Output (self, other,"DIA_NASZ_307_Monk_frutkoniec_55_04"); //Do Fruta. Ja przej¹³em tylko stanowisko administracji i wydajê polecenia reszcie bandy.
 	};
 	

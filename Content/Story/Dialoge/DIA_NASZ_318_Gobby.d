@@ -190,7 +190,7 @@ FUNC VOID DIA_NASZ_318_Gobby_koniec_Info()
 	B_UseItem (self, ItFo_Booze);
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_01"); //Dziêki.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_02"); //Teraz to mo¿na pracowaæ!
-	AI_Output (other,self ,"DIA_NASZ_318_Gobby_koniec_15_03"); //Coœ mi siê zdaje, ¿e ten zapas na d³ugo nie starczy.
+	AI_Output (other,self ,"DIA_NASZ_318_Gobby_koniec_15_03"); //Coœ mi siê wydaje, ¿e ten zapas na d³ugo nie starczy.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_04"); //Hej! Czy¿byœ podœmiewa³ siê z mojej s³aboœci do tego cudownego napoju?
 	AI_Output (other,self ,"DIA_NASZ_318_Gobby_koniec_15_05"); //Ale¿ sk¹d.
 	AI_Output (self, other,"DIA_NASZ_318_Gobby_koniec_55_06"); //£¿esz. Ju¿ ja ci poka¿ê, co to znaczy byæ mocnym ch³opem.

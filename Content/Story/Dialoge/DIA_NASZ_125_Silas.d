@@ -642,7 +642,7 @@ FUNC VOID DIA_NASZ_125_Silas_QuestKap3Ryzowka_Info()
 {
 
 	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Ryzowka_15_00"); //Zgodnie z obietnic¹, butelka dla ciebie.
-	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Ryzowka_55_01"); //Spróbuj! Mo¿e twój ¿o³¹dek nie pamiêta ju¿, jak kiedyœ na ni¹ reagowa³. Ha, ha!
+	AI_Output (self, other,"DIA_NASZ_125_Silas_QuestKap3Ryzowka_55_01"); //Spróbuj! Mo¿e twój ¿o³¹dek nie pamiêta ju¿, jak na ni¹ reagowa³. Ha, ha!
 
 	Createinvitems(self,ItNa_Ryzowka,1);
 	B_giveinvitems(self,other,ItNa_Ryzowka,1);

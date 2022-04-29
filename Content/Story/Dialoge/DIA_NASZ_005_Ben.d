@@ -664,7 +664,7 @@ FUNC INT DIA_NASZ_005_Ben_Finish_Condition()
 
 FUNC VOID DIA_NASZ_005_Ben_Finish_Info()
 {
-	AI_Output (self, other,"DIA_NASZ_005_Ben_Finish_15_00"); //Marcos nie ¿yje... Willu, wróci³eœ! Powiedz, co siê to wyrabia w tej Kolonii Górniczej?
+	AI_Output (self, other,"DIA_NASZ_005_Ben_Finish_15_00"); //Marcos nie ¿yje... Willu, wróci³eœ! Powiedz, co siê tu wyrabia w tej Kolonii Górniczej?
 	AI_Output (other, self,"DIA_NASZ_005_Ben_Finish_55_01"); //O wszystkim powie wam Keroloth. Udajcie siê do obozu ³owców orków. Jest tam du¿o miejsca dla nowych przybyszy.
 
 	if (other.guild == GIL_DJG) {

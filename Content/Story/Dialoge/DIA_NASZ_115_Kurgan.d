@@ -296,7 +296,7 @@ FUNC VOID DIA_NASZ_115_Kurgan_fed_ok()
 	B_GiveInvItems (other, self, ItMI_gold, 100);
 	Npc_RemoveInvItems   (self, ItMi_Gold, 100);
 	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_01"); //IdŸ na arenê.
-	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_02"); //Fed te¿ siê tam uda.
+	AI_Output (self, other,"DIA_NASZ_115_Kurgan_fed_ok_55_02"); //Fed te¿ tam siê uda.
 
 	Npc_ClearAIQueue(NASZ_117_Fed);
 	Npc_ExchangeRoutine (NASZ_117_Fed, "Arena");

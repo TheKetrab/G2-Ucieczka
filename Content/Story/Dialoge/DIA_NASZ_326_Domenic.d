@@ -198,7 +198,7 @@ instance DIA_NASZ_326_Domenic_OdwracanieUwagi		(C_INFO)
 	condition	 = 	DIA_NASZ_326_Domenic_OdwracanieUwagi_Condition;
 	information	 = 	DIA_NASZ_326_Domenic_OdwracanieUwagi_Info;
 	permanent	 = 	FALSE;
-	description	 =	"Hej, patrz! Dziki tutaj lec¹!";
+	description	 =	"Hej, patrz! Dziki tu lec¹!";
 };
 
 func int DIA_NASZ_326_Domenic_OdwracanieUwagi_Condition ()
@@ -212,7 +212,7 @@ func int DIA_NASZ_326_Domenic_OdwracanieUwagi_Condition ()
 
 func void DIA_NASZ_326_Domenic_OdwracanieUwagi_Info ()
 {
-	AI_Output			(other, self, "DIA_NASZ_326_Domenic_OdwracanieUwagi_55_00"); //Hej, patrz! Dziki tutaj lec¹!
+	AI_Output			(other, self, "DIA_NASZ_326_Domenic_OdwracanieUwagi_55_00"); //Hej, patrz! Dziki tu lec¹!
 	AI_Output			(self, other, "DIA_NASZ_326_Domenic_OdwracanieUwagi_03_01"); //Co, gdzie?
 	AI_Output			(other, self, "DIA_NASZ_326_Domenic_OdwracanieUwagi_55_02"); //Tam, z lasu. Leæ tam i je ustrzel.
 	AI_Output			(self, other, "DIA_NASZ_326_Domenic_OdwracanieUwagi_03_03"); //Zaraz siê ich pozbêdê.

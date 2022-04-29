@@ -276,7 +276,7 @@ FUNC VOID DIA_NASZ_124_Bron_Udar_Info()
 
 	AI_Output (other,self ,"DIA_NASZ_124_Bron_Udar_15_00"); //Z rozkazu Udara masz mi daæ wodê œwiêcon¹.
 	AI_Output (self, other,"DIA_NASZ_124_Bron_Udar_55_01"); //Umówi³em siê z Udarem, ¿e j¹ kupisz.
-	AI_Output (other,self ,"DIA_NASZ_124_Bron_Udar_15_02"); //O, a wiêc mieliœcie ju¿ wszystko omówione za moimi plecami? Niech was szlag.
+	AI_Output (other,self ,"DIA_NASZ_124_Bron_Udar_15_02"); //O, wiêc mieliœcie ju¿ wszystko omówione za moimi plecami? Niech was szlag.
 	AI_Output (self, other,"DIA_NASZ_124_Bron_Udar_55_03"); //Kupuj i nie narzekaj, to nie s¹ jakieœ krocie.
 
 };

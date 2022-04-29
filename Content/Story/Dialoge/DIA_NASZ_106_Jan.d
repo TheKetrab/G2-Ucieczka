@@ -1134,10 +1134,10 @@ FUNC VOID DIA_NASZ_106_Jan_Wykuj_MieczNienawisci ()
 		AI_Output (self, other,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_01"); //Czyta³eœ ten projekt?
 		if(Projekt_MieczNienawisci_OneTime == TRUE) {
 			AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_02"); //Tak.
-			AI_Output (self, other,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_03"); //To pewnie siê domyœlasz, ¿e musisz daæ mi piwa, jeœli chcesz ten miecz. Haha!
+			AI_Output (self, other,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_03"); //To pewnie siê domyœlasz, ¿e musisz daæ mi piwa, jeœli chcesz ten miecz. Hehe!
 		} else {
 			AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_04"); //Nie.
-			AI_Output (self, other,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_05"); //W takim razie musisz wiedzieæ, ¿e autor projektu za¿yczy³ sobie tak¿e piwa. Haha!
+			AI_Output (self, other,"DIA_NASZ_106_Jan_Wykuj_MieczNienawisci_15_05"); //W takim razie musisz wiedzieæ, ¿e autor projektu za¿yczy³ sobie tak¿e piwa. He he he!
 		};
 		
 		MieczNienawisci_OneTime = TRUE;
@@ -1751,7 +1751,7 @@ FUNC VOID DIA_NASZ_106_Jan_surowce_Info()
 
 	Log_CreateTopic (TOPIC_Jan_lowca, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Jan_lowca, LOG_RUNNING);
-	B_LogEntry (TOPIC_Jan_lowca, "Kowal Jan wpad³ na pomys³ zrobienia kompletu ³owcy, czyli miecza, kuszy i zbroi. Miecz ju¿ zrobi³. Muszê znaleŸæ kogoœ, kto zrobi³by kuszê i zgromadziæ nastêpuj¹ce surowce: zêby b³otnego wê¿a, róg cieniostwora i dwa k³y trolla.");
+	B_LogEntry (TOPIC_Jan_lowca, "Kowal Jan wpad³ na pomys³ zrobienia kompletu ³owcy, czyli miecza, kuszy i tarczy. Miecz ju¿ zrobi³. Muszê znaleŸæ kogoœ, kto zrobi³by kuszê i zgromadziæ nastêpuj¹ce surowce: zêby b³otnego wê¿a, róg cieniostwora i dwa k³y trolla.");
 };
 
 var int JanKuszaDay1;
@@ -2756,7 +2756,7 @@ FUNC INT DIA_NASZ_106_Jan_KurgKan_Condition()
 FUNC VOID DIA_NASZ_106_Jan_KurgKan_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_00"); //Sk¹d ci przyszed³ do g³owy pomys³, by dawaæ Krug-Kanowi zbrojê z blach paladyna?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_01"); //Mieliœmy pozosta³oœci zbroi po renegatach i chcia³em zrobiæ z nich coœ ciekawego. Myœlê, ¿e mi siê to uda³o.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_01"); //Mieliœmy pozosta³oœci zbroi po renegatach i chcia³em zrobiæ z nich coœ ciekawego. Myœlê, ¿e mi siê uda³o.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_02"); //Z pewnoœci¹, wygl¹da bardzo interesuj¹co. Nie myœla³eœ nad tym, co powie Keroloth na to? Nie ba³eœ siê?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_03"); //Szczerze? Bardzo i w momencie, kiedy przerabia³em te blachy, co chwilê wraca³a do mnie wyobra¿enie Kerolotha, który mnie publicznie linczuje za pomys³.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_04"); //Ale pomyœl: Zbroja paladyna dopasowana do orka. Nikt na to wczeœniej nie wpad³, bo nie mia³ jak, a tu nadarzy³a siê taka okazja. Nie spróbowa³byœ na moim miejscu?

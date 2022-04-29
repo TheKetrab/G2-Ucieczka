@@ -354,7 +354,7 @@ FUNC VOID DIA_NASZ_452_KurgKan_Zbroja_Info()
 {	
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_00");  //Czy ty masz na sobie zbrojê zrobion¹ z blach paladyna?
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_01");  //Tak, Jan daæ. Powiedzieæ, ¿e potrzebna zbroja do walki, do ochrony. Atakowaæ zamek z ³owcy.
-	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_02");  //Rozumiem, ¿e trzeba ci by³o daæ zbrojê, ale wybór jest doœæ nietypowy. Muszê zapytaæ Jana, sk¹d ten pomys³.
+	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_02");  //Rozumiem, ¿e trzeba by³o ci daæ zbrojê, ale wybór jest doœæ nietypowy. Muszê zapytaæ Jana, sk¹d ten pomys³.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_03");  //Jesteœ pewien, ¿e chcesz atakowaæ swoich pobratymców? 
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_04");  //Tak. Krug-Kan walczyæ za orki i dostaæ w niewola. Uciec i chcieæ wróciæ do bracia, bracia odrzuciæ. Powiedzieæ niegodny. £owcy przyj¹æ do obozu. Teraz ³owcy bracia.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_05");  //Cieszy mnie, ¿e czujesz siê tu szczêœliwy.

@@ -40,7 +40,7 @@ const string	TOPIC_Rethon_kurgan			=	"Starcie mistrzów";				//+2L									| +300
 const string	TOPIC_Rethon_szkolenie		=	"Szkolenie";					//+1L									| +300						| ---
 const string	TOPIC_Silas_piosenka		=	"Karczma i stara piosenka";		//+1L									| +300						| 50 szt. z³ota
 const string	TOPIC_Engor_lutnia			=	"Lutnia i stare spory";			//+2L									| +300						| 150 szt. z³ota lub pas stalowej rêki lub 5 ekstraktów leczniczych
-const string	Topic_OrcInATrap			=	"Ork w potrzasku";				// --									| ---						| ---
+const string	Topic_OrcInATrap			=	"Ork w potrzasku";				// --									| +300						| ---
 
 
 //---------- Mysliwi ----------

@@ -207,6 +207,7 @@ func void DIA_NASZ_452_KurgKan_Success_Info ()
 	AI_Output (other, self,"DIA_NASZ_452_KurgKan_Success_55_00"); //Widzisz? Uda³o siê!
 	AI_Output (self, other,"DIA_NASZ_452_KurgKan_Success_15_01"); //Kurg-Kan wdziêczny, ale nie mieæ czasu. Musieæ pracowaæ. Dziêkowaæ, Will-przyjaciel.
 	
+	B_GivePlayerXP(300);
 	Log_SetTopicStatus(Topic_OrcInATrap, LOG_SUCCESS);
 
 };

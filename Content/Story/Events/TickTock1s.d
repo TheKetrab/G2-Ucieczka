@@ -47,37 +47,47 @@ var int secCameraEvent;
 var int lukorOneTime;
 var int IsOpenedDeadNpc;
 
+func void LukorEvent()
+{
+	if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
+	{
+		PrintS("Hmm... Ta ksi¹¿ka mo¿e mi siê przydaæ.");
+	}
+	else
+	{
+		B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
+	};
+	
+	ff_applyoncedata(BlackScreen2,1000);
+	
+	NASZ_029_Lukor.attribute[0] = NASZ_029_Lukor.attribute[1];
+	Npc_ClearAIQueue	(NASZ_029_Lukor);
+
+
+	AI_StandUp(NASZ_029_Lukor);
+	NASZ_029_Lukor.guild = GIL_BDT;
+	Npc_SetTrueGuild (NASZ_029_Lukor, GIL_BDT);
+	
+	
+	if(!Npc_GetInvItem(NASZ_029_Lukor,ItMw_Spicker))
+	{
+		CreateInvItem(NASZ_029_Lukor,ItMw_Spicker);
+	};
+	
+	AI_EquipBestMeleeWeapon(NASZ_029_Lukor);
+	
+
+	AI_DODGE(NASZ_029_Lukor);
+	B_Attack (NASZ_029_Lukor, hero, AR_KILL, 0);	
+	
+	Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
+	
+};
+
 func void CloseDeadNpc()
 {
 	if(ECX != MEM_ReadInt(_hero)) {return;};
 	
-	if(!lukorOneTime)
-	{
-		if(Npc_HasItems(hero, ItNa_KsiegaLukora))
-		{
-			if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
-			{
-				Print("Hmm.. Ta ksi¹¿ka mo¿e mi siê przydaæ.");
-			}
-			else
-			{
-				B_LogEntry (TOPIC_Ghorim_ksiega, "Mam ksiêgê z zapiskami Baala Lukora! Jest tak strasznie zabrudzona, ¿e nie wiem, czy duch coœ odczyta. Zobaczymy, to jego problem.");
-			};
-			ff_applyoncedata(BlackScreen2,1000);
-			lukorOneTime = 1;
-			NASZ_029_Lukor.attribute[0] = NASZ_029_Lukor.attribute[1];
-			Npc_ClearAIQueue	(NASZ_029_Lukor);
-			//Wld_InsertNpc				(NASZ_029_Lukor, hero.wp);
-			//Wld_SpawnNpcRange	(hero,	NASZ_029_Lukor,			1,	1);
-			AI_StandUp(NASZ_029_Lukor);
-			Npc_SetTrueGuild (NASZ_029_Lukor, GIL_BDT);
-			//Npc_SetTempAttitude(NASZ_029_Lukor, ATT_HOSTILE);
-			//AI_StandUpQuick(NASZ_029_Lukor);
-			AI_DODGE(NASZ_029_Lukor);
-			B_Attack (NASZ_029_Lukor, hero, AR_KILL, 0);	
-			Wld_PlayEffect("FX_EarthQuake",  hero, hero, 0, 0, 0, FALSE );
-		};
-	};
 	IsOpenedDeadNpc = 0;
 
 };
@@ -1693,6 +1703,17 @@ func void _TickTock_1s()
 		other = Hlp_GetNpc(othback);
 		
 		Npc_SetTarget(self,NASZ_405_VanGan);
+	};
+	
+	
+	if(!lukorOneTime)
+	{
+		if(Npc_HasItems(hero, ItNa_KsiegaLukora) && IsOpenedDeadNpc == false)
+		{
+			LukorEvent();
+			
+			lukorOneTime = 1;
+		};
 	};
 	
 // ***** ***** ***** ***** ***** ***** ***** ***** ***** *****

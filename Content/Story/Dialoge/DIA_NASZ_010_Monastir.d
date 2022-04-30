@@ -850,6 +850,11 @@ FUNC INT DIA_NASZ_010_Monastir_IHaveMlot_Condition()
 	};
 };
 
+func void MonastirEffect()
+{
+	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,2,0,0,TRUE); 
+};
+
 FUNC VOID DIA_NASZ_010_Monastir_IHaveMlot_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_010_Monastir_IHaveMlot_15_00"); //Mam m³ot i wodê œwiêcon¹.
@@ -858,13 +863,17 @@ FUNC VOID DIA_NASZ_010_Monastir_IHaveMlot_Info()
 	B_GiveInvItems(other,self,ItMi_HolyWater,1);
 	
 	AI_PlayAni (self,"T_PRACTICEMAGIC5");	
-	Wld_PlayEffect("spellFX_Teleport_RING",hero,hero,2,0,0,TRUE);   
+	AI_Function(other,MonastirEffect); 
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_IHaveMlot_55_02"); //Innosie, pob³ogos³aw tê broñ. Spraw, by sta³a siê mocna i zwyciê¿y³a potêgê ciemnoœci!
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_IHaveMlot_55_03"); //To wszystko. Teraz zniszcz pos¹g uderzaj¹c w ni¹ tym m³otem.
+
+	Monastir_ShowHammersInfo = true;
+
 
 	B_LogEntry (TOPIC_Erak_plagaciemnosci, "Ma³y rytua³ siê uda³. Pora zniszczyæ pos¹g!");
 	WillIsGoingToKillDemonPosag = 1;
 	FF_ApplyOnceExt(KillDemonPosag,2000,-1);
+	
 };
 
 func void InsertUndeadsInCastle() {

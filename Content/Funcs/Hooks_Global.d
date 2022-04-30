@@ -230,8 +230,8 @@ func void HandleEvents_hook(/*int key*/)
 	};
 };
 
+const string Monastir_Weapon_Text = "Broñ poœwiêcona przez Monastira.";
 
-//var int v;
 func void Inv_Draw_Hook()
 {
    var int iptr; iptr = MEM_ReadInt (ESP+324+4);
@@ -241,29 +241,22 @@ func void Inv_Draw_Hook()
     {
         if((InstID == Hlp_GetInstanceID(ItPo_Health_01)) || (InstID ==  Hlp_GetInstanceID(ItPo_Health_02)) || (InstID == Hlp_GetInstanceID(ItPo_Health_03)))
 		{
-			//var int txtPtr;  txtPtr = _@s(itm.text);
-			//if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_HP))
-			//{
-				itm.text[1] = "Premia % punktów trafieñ:";
-			//}
-			//else if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,1),  NAME_Bonus_Mana))
-			//{
-				//itm.text[1] = "Premia % punktów many:";
-			//};
-			/*if (Hlp_StrCmp(MEM_ReadStringArray(txtptr,2),  NAME_Bonus_Mana))
-			{
-				if(InstID == Hlp_GetInstanceID(ItFo_Beer) || InstID == Hlp_GetInstanceID(ItFo_Booze) || InstID == Hlp_GetInstanceID(ItFo_Wine) || InstID == Hlp_GetInstanceID(ItFo_Milk) || InstID == Hlp_GetInstanceID(ItNa_FriedMushroom_01) || InstID == Hlp_GetInstanceID(ItPl_BluePlant))
-				{
-					itm.text[2] = "Premia % punktów many:";
-				};
-			};*/
-			//MEM_Free(txtPtr);
+			itm.text[1] = "Premia % punktów trafieñ:";
+
 		}
 		else if ((InstID == Hlp_GetInstanceID(ItPo_Mana_01)) || (InstID ==  Hlp_GetInstanceID(ItPo_Mana_02)) || (InstID == Hlp_GetInstanceID(ItPo_Mana_03)))
 		{
 			itm.text[1] = "Premia % punktów many:";
 		};
     };
+	
+	if(Monastir_ShowHammersInfo && bIsHammer(itm))
+	{
+		if(Hlp_StrCmp(itm.text,Monastir_Weapon_Text) == false)
+		{
+			itm.text[0] = Monastir_Weapon_Text;
+		};
+	};
 };
 //raczej siê nie przyda
 func void RemoveChestKeyOnExit()

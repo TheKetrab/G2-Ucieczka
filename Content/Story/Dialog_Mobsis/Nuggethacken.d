@@ -135,7 +135,9 @@ FUNC VOID Nuggethacken_S1 ()
 	
 	if  (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))
 	{	
-		AI_UnequipWeapons(hero);
+		//bogu: to prawdopodobnie powodowa³o crashe
+		//dlatego trzeba to usun¹æ, pewnie przez split itemów
+		//AI_UnequipWeapons(hero);
 		self.aivar[AIV_INVINCIBLE]=TRUE;
 		PLAYER_MOBSI_PRODUCTION	=	MOBSI_NuggetHACKEN;
 		Ai_ProcessInfos (her);

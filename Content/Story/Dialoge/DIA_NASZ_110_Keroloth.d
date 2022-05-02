@@ -2438,7 +2438,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	if (hero.guild == GIL_OUT) {
 
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_09"); //Kiedy pomaga³em myœliwym, ci natknêli siê na dziwne stworzenie wygl¹daj¹ce jak nieumar³y cieniostwór. Oczywiœcie ruszyliœmy œladami tej bestii i ku mojemu zaskoczeniu okaza³o siê, ¿e przewodzi im tajemniczy mag.
-		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_10"); //Wspomnia³ on o cz³owieku imieniem Cain. Tak jak ja, i on kiedyœ by³ skazañcem. Jednak on nale¿a³ do sekty, która wierzy³a w demona imieniem Œni¹cy.
+		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_10"); //Wspomnia³ on o cz³owieku imieniem Caine. Tak jak ja, i on kiedyœ by³ skazañcem. Jednak on nale¿a³ do sekty, która wierzy³a w demona imieniem Œni¹cy.
 		AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_11"); //S³u¿y³ on pewnemu Guru, który czêsto okreœlany by³ mianem zawistnego i chciwego wê¿a. Nie liczy³ siê on ze zdaniem ¿adnego cz³onka bractwa, a w chwili kiedy porzuci³o ono wiarê w swojego boga ten w furii uciek³ z obozu i œlad po nim zagin¹³.
 		
 	}
@@ -2637,7 +2637,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp()
 
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_15_00"); //Sprawy na bagnach zosta³y wyjaœnione.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_01"); //¯aden demon nie pojawi siê ju¿ znik¹d?
-	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caina i demona Kazmina.
+	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_02"); //Myœlê, ¿e nie. Mo¿ecie spaæ spokojnie. Wszystkie dusze cz³onków Bractwa Œni¹cego zazna³y ukojenia, gdy zabi³em Caine'a i demona Kazmina.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_swamp_55_03"); //To dobre wieœci. Teraz jedyne, czego siê obawiam to kontratak orków.
 	B_GivePlayerXP(500);
 };

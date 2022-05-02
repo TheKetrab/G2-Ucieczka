@@ -60,7 +60,7 @@ FUNC VOID DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_Info()
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_06"); //Bardzo czêsto przebywa³eœ w gospodzie na jeziorze w Nowym Obozie, gdzie mieliœmy zawsze okazjê, by siê napiæ i poopowiadaæ sobie nowiny jakie obiega³y koloniê.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_07"); //Wszystko trwa³o w sielance do momentu, a¿ do kolonii zaczêli przybywaæ orkowie, a my zostaliœmy zmuszeni do ucieczki.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_08"); //Ja uda³em siê wtedy do mojego mistrza, guru, który nauczy³ mnie produkcji bagiennego ziela. Terminowa³ u niego jeszcze jeden nowicjusz.
-	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_09"); //Jego te¿ znasz, gdy¿ zamieszkiwa³ obok twojej chaty w starym obozie. Tak, to Cain.
+	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_09"); //Jego te¿ znasz, gdy¿ zamieszkiwa³ obok twojej chaty w starym obozie. Tak, to Caine.
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_10"); //Jak widzisz, pozosta³em wierny swojemu mistrzowi, mimo i¿ ten ju¿ dawno nie ¿yje. Nadal wykonujê jego wolê i wype³niam rozkazy, chocia¿ ten w którego wierzymy ju¿ dawno tutaj nie przebywa.
 	AI_Output (other, self,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_11"); //K³amiesz! Chcesz zm¹ciæ mi umys³, aby potem mnie zabiæ. Nie pozwolê ci na to!
 	AI_Output (self, other,"DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_55_12"); //Twoim przeznaczeniem nie jest umrzeæ ju¿ teraz. Mia³eœ na mnie trafiæ, aby dopiero je poznaæ. A jest ono bardzo mocno zwi¹zane z Zaæmieniem, i czy tego chcesz, czy nie, jesteœ jego istotnym elementem.

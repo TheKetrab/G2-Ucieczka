@@ -245,7 +245,7 @@ func void DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_03"); //Tak d³ugo, ¿e nie byliœmy w stanie siê uchroniæ przed losem, jaki na nas spad³. Gdybyœmy byli tylko miej aroganccy w swoich poczynaniach i nie ufali œlepo Œni¹cemu...
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_04"); //Wraz z ka¿dym wypowiedzianym s³owem czujê, jak moja dusza materializuje siê w duchowym œwiecie, przywracaj¹c mi coraz to nowsze wspomnienia.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_05"); //Widzisz coœ konkretnego? Coœ, co mog³oby mi pomóc w kolejnym zadaniu?
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_06"); //Widzê... Cain, niesie ze sob¹ jak¹œ ksi¹¿kê i wychodzi z laboratorium swojego mistrza. To na pewno nie by³a zwyk³a ksi¹¿ka, chocia¿ wtedy nie zwróci³em na to zbytnio uwagi.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_06"); //Widzê... Caine, niesie ze sob¹ jak¹œ ksi¹¿kê i wychodzi z laboratorium swojego mistrza. To na pewno nie by³a zwyk³a ksi¹¿ka, chocia¿ wtedy nie zwróci³em na to zbytnio uwagi.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_07"); //Teraz dostrzegam szczegó³y: Oprawiona w skórzany futera³ musia³a byæ dla niego bardzo cenna, bowiem przytula³ j¹ do swej piersi niczym matka dziecko.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_08"); //Niewiele pamiêtam z tego, co dzia³o siê dalej. Ostatni widok jaki kr¹¿y mi po g³owie, to jak nowicjusz poszed³ w kierunku bagien.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_09"); //Myœlê, i¿ tam powinieneœ zacz¹æ swe poszukiwania.

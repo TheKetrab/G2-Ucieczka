@@ -2,6 +2,7 @@ var int HeroPreviousHP;
 var int UrShakHitCnt;
 
 
+
 func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) { 
 
 	if(!victimPtr || !attackerPtr) { return dmg;}; 
@@ -276,6 +277,23 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 		};
 	};
 	
+	
+	//Tick'i magii np. podpalenie nie skalują się z poziomem trudności ani statystykami
+	//tylko trafienie się skaluje
+	
+	//ESI to oCNpc::oSDamageDescriptor*
+	var int fDamagePerInterval; fDamagePerInterval = MEM_ReadInt(ESI+136);
+	if(fDamagePerInterval)
+	{
+		var float f; f = castFromIntf(fDamagePerInterval);
+		dmg = FloatToInt(f); 
+		dmg -= oth.protection[PROT_FIRE];
+		
+		//tick'i nie muszą zadawać min 5hp
+		if(dmg < 0){dmg = 0;};
+			
+		return dmg;
+	};
 	
 	// DAMAGE CALCULATED
 	// --> apply modifiers
@@ -657,6 +675,8 @@ func int DMG_OnDmg(var int victimPtr, var int attackerPtr, var int dmg) {
 
 	return dmg;
 };
+
+
 
 var int Acv18DelayTimer;
 func void Acv18Delay() {

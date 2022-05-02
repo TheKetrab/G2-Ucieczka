@@ -810,6 +810,26 @@ func void SetLoadTexName (var string texName) {
 };
 
 
+// ketrab
+const int SAVINGTEXNAME_OFFSET = 9118896; //0x8b24b0;
+func void SetSaveTexName (var string texName) {
+	var int len; len = STR_Len (texName);
+	if (len < 5) {
+		MEM_Error ("SetSaveTexName: texName too short. Empty or forgotten '.tga' extension?");
+		return;
+	} else if (len > 10) {
+		MEM_Error ("SetLoadTexName: texName is too long. Truncate it to 10 chars (including '.tga' extension)!");
+		return;
+	};
+	
+	var int sPtr; sPtr = STRINT_ToChar (texName);
+	MEM_CopyBytes (sPtr, SAVINGTEXNAME_OFFSET, len);
+	MEM_WriteInt (SAVINGTEXNAME_OFFSET + len, MEM_ReadInt (SAVINGTEXNAME_OFFSET + len) & ~ 255);
+};
+
+
+
+
 func int Npc_UseFireSpell(var C_NPC attacker)
 {
 	if (Npc_IsInFightMode(attacker, FMODE_MAGIC))

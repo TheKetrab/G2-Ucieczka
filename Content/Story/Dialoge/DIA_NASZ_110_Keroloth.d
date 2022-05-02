@@ -2681,7 +2681,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie()
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_02"); //Jeden z nich to dawny wyznawca Œni¹cego. Drugi to twój znajomy, utkn¹³ za palisad¹ po tym, jak Garond go tam wys³a³. Mówiê o paladynie Rudolfie.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_03"); //RUDOLF! Niebywa³e...
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_04"); //Nie wydajesz siê zbyt zachwycony t¹ wiadomoœci¹.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_05"); //Ci¹gle rywalizowaliœmy o wzglêdy Garonda. Ale jak widaæ to jego Garond wys³a³ na pewn¹ œmieræ, podczas gdy ja szkoli³em wojowników na zamku.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_05"); //Ci¹gle rywalizowaliœmy o wzglêdy Garonda. No ale jak widaæ to jego Garond wys³a³ na pewn¹ œmieræ, podczas gdy ja szkoli³em wojowników na zamku.
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_IWasBehindTheWall_ludzie_55_06"); //Niewa¿ne. W ka¿dym razie Udar z pewnoœci¹ ucieszy siê, gdy go zobaczy.
 	B_GivePlayerXP(500);
 

@@ -656,7 +656,7 @@ func void DIA_NASZ_211_Hunt_SellFur_Info ()
 
 		if (Npc_HasItems(other, ItAt_ShadowFur) > 0)
 		{
-			AI_Output (self, other, "DIA_NASZ_211_Hunt_SellFur_11_09"); //Och, nawet skóra cieniostwora, takie s¹ sporo warte.
+			AI_Output (self, other, "DIA_NASZ_211_Hunt_SellFur_11_09"); //Och, nawet skóra cieniostwora, takie s¹ tu sporo warte.
 			B_GiveInvItems(self, other, itmi_gold, (Npc_HasItems(other, ItAt_ShadowFur) * Value_ShadowFur) );
 			B_GiveInvItems(other, self, ItAt_ShadowFur, Npc_HasItems(other, ItAt_ShadowFur));
 		};

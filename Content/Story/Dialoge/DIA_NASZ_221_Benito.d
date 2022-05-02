@@ -599,7 +599,7 @@ FUNC VOID DIA_NASZ_221_Benito_FajkaStart_Info()
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_02"); //Bractwo Œni¹cego uprawia³o bagienne ziele, by tworzyæ rozmaite skrêty...
 	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_03"); //No tak, ale mówi³eœ, ¿e chodzi ci o fajkê. Czy wytwórcy ziela mieli jak¹œ konkurencjê?
 	AI_Output (other, self,"DIA_NASZ_221_Benito_FajkaStart_15_04"); //W³aœnie sobie przypomnia³em, ¿e w pobli¿u Nowego Obozu kilku szkodników wytwarza³o skrêty na w³asn¹ rêkê.
-	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_05"); //W takim razie musisz siê udaæ do tego miejsca i spróbowaæ tam poszukaæ. A, tylko nie zapomnij, ¿e sama fajka nie wystarczy. ¯eby zapaliæ, potrzebujesz te¿ trochê tytoniu. Chêtnie z tob¹ pohandlujê.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_FajkaStart_15_05"); //W takim razie musisz siê udaæ do tego miejsca i spróbowaæ tam poszukaæ. A, i tylko nie zapomnij, ¿e sama fajka nie wystarczy. ¯eby zapaliæ, potrzebujesz te¿ trochê tytoniu. Chêtnie z tob¹ pohandlujê.
 
 	B_LogEntry (TOPIC_Rethon_fajka, "Podczas rozmowy z Benito wpad³em na pomys³, gdzie mo¿e znajdowaæ siê fajka! W pobli¿u Nowego Obozu by³a jaskinia, w której paru Szkodników prowadzi³o swoj¹ w³asn¹ produkcjê ziela. Powinienem siê tam udaæ i przekopaæ kilofem wnêtrze. Byæ mo¿e pod warstw¹ œniegu znajdê jak¹œ star¹ fajkê. Benito zwróci³ te¿ uwagê na wa¿n¹ rzecz: Nie mogê przyjœæ do Rethona bez tytoniu! Muszê kupiæ przynajmniej jedn¹ paczuszkê.");
 	Rethon_Fajka_Quest_Running = TRUE;

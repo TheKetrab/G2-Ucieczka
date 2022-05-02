@@ -278,7 +278,7 @@ func void DIA_NASZ_453_UrShak_Hello_Info ()
 	AI_Output (self, other,"DIA_NASZ_453_UrShak_Hello_15_15"); //Nie. Ur-Shak mieæ pretensje o to, ¿e przyjaciel rozmawiaæ z Ur-Shak, by poznaæ Hosh-Pak.
 	AI_Output (self, other,"DIA_NASZ_453_UrShak_Hello_15_16"); //Wiedzieæ, gdzie jest, przyjaciel pójœæ i zabiæ nauczyciel. Wykorzystaæ Ur-Shak. Ur-Shak zostaæ nowy wódz, ale przyjaciel puœciæ wolno. My wrogi wtedy.
 	AI_Output (other, self,"DIA_NASZ_453_UrShak_Hello_15_17"); //Rozumiem, przyjaciel ciê zdradzi³, wykorzystuj¹c twoj¹ przyjaŸñ i wiedzê. Ale wiesz co? Myœlê, ¿e chcia³ zabiæ Hosh-Paka, bo chcia³ os³abiæ morale orków, a nie chcia³ doprowadzaæ do bezmyœlnej masakry na twoich pobratymcach. To strategia, nie rzeŸ.
-	AI_Output (other, self,"DIA_NASZ_453_UrShak_Hello_15_18"); //I mówisz, ¿e go puœci³eœ wolno? Dla mnie to on nie chcia³ ciê z tob¹ walczyæ i temu odszed³. Wydaje mi siê, Ur-Shaku, ¿e k³amiesz. I celowo napuœci³eœ swojego przyjaciela na Hosh-Paka, by zdobyæ w³adzê.
+	AI_Output (other, self,"DIA_NASZ_453_UrShak_Hello_15_18"); //I mówisz, ¿e go puœci³eœ wolno? Jak dla mnie to on nie chcia³ z tob¹ walczyæ i temu odszed³. Wydaje mi siê, Ur-Shaku, ¿e k³amiesz. I celowo napuœci³eœ swojego przyjaciela na Hosh-Paka, by zdobyæ w³adzê.
 	AI_Output (self, other,"DIA_NASZ_453_UrShak_Hello_15_19"); //Nie! Will k³amaæ. Will jak ka¿dy cz³owiek, a cz³owiek albo zgin¹æ, albo niewolnik.
 	AI_Output (other, self,"DIA_NASZ_453_UrShak_Hello_15_20"); //Id¹c tutaj, zabi³em mnóstwo orków. Elitarnych wojowników i szamanów. Dlaczego myœlisz, ¿e masz ze mn¹ jakiekolwiek szanse?
 	AI_Output (self, other,"DIA_NASZ_453_UrShak_Hello_15_21"); //Ha, ha! Cz³owiek g³upi. Cz³owiek myœleæ, ¿e Ur-Shak w to miejsce bez powodu? 

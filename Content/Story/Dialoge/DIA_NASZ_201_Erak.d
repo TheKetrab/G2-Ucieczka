@@ -832,7 +832,7 @@ FUNC VOID DIA_NASZ_201_Erak_Kapitel4_Info()
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_02"); //Dobrze, ¿e do nas zajrza³eœ. W przeciwnym wypadku mielibyœmy jeszcze wiêcej rannych ni¿ ta grupka, która teraz u nas przebywa. Gdybym wiedzia³ co bêdzie siê dzia³o, nigdy bym ich tutaj nie zabra³.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_03"); //To ju¿ nie jest bezpieczne miejsce, zw³aszcza od chwili kiedy nêkaj¹ nas te truposze. Nie to jest jednak najgorsze. Ratford ostatniej nocy widzia³ w okolicy dwa cholerne demony!
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_04"); //Demony! Tak jakby orków nam by³o za ma³o. Od tamtej pory przed bram¹ stoi kilku ludzi, jak sam mog³eœ ju¿ zauwa¿yæ.
-	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_05"); //Czy mogê wam w czymœ pomóc? Widzê, ¿e naprawdê macie tutaj du¿o roboty.
+	AI_Output (other, self,"DIA_NASZ_201_Erak_Kapitel4_15_05"); //Czy mogê wam w czymœ pomóc? Widzê, ¿e naprawdê macie tutaj du¿o do roboty.
 	AI_Output (self, other,"DIA_NASZ_201_Erak_Kapitel4_15_06"); //Nie, lepiej bêdzie jak natychmiast wrócisz do Kerolotha i przeka¿esz mu raport ode mnie.
 	CreateInvItems(self,ItNa_RaportEraka,1);
 	B_GiveInvItems(self,other,ItNa_RaportEraka,1);

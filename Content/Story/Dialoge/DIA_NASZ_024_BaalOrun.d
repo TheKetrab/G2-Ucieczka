@@ -74,7 +74,7 @@ func void DIA_NASZ_024_BaalOrun_Lojalnosc_Info ()
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_01"); //Musi byæ sposób, aby uwolniæ was z jarzma kl¹twy.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_02"); //A dlaczego mielibyœmy wierzyæ w twoje szlachetne pobudki? Mo¿e jesteœ wys³annikiem naszego ciemiê¿cy, który ma sprawdziæ, czy nie spiskujemy przeciwko niemu?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_03"); //Nie, mój ch³opcze. Musisz najpierw udowodniæ nam, i¿ nie kieruj¹ tob¹ z³e pobudki.
-	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_04"); //Eh, znowu bêdê musia³ robiæ za ch³opca na posy³ki.
+	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_04"); //Eh, znowu bêdê robiæ za ch³opca na posy³ki.
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Lojalnosc_15_05"); //Jak mogê wam pomóc?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_06"); //Porozmawiaj z Shratem, Joru i Ghorimem. Ka¿dy z nich przydzieli ci jedno zadanie, które musisz rozwi¹zaæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Lojalnosc_024_07"); //ZnajdŸ równie¿ ducha o imieniu Dusty. Przebywa gdzieœ nad brzegiem morza.
@@ -137,7 +137,7 @@ instance DIA_NASZ_024_BaalOrun_Droga		(C_INFO)
 	condition	 = 	DIA_NASZ_024_BaalOrun_Droga_Condition;
 	information	 = 	DIA_NASZ_024_BaalOrun_Droga_Info;
 	permanent    =  FALSE;
-	description	 =	"Istnieje jakiœ sposób, by was uwolniæ?";
+	description	 =	"Istnieje sposób, by was uwolniæ?";
 };
 
 func int DIA_NASZ_024_BaalOrun_Droga_Condition ()
@@ -150,7 +150,7 @@ func int DIA_NASZ_024_BaalOrun_Droga_Condition ()
 func void DIA_NASZ_024_BaalOrun_Droga_Info ()
 {
 	
-	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Droga_15_00"); //Istnieje jakiœ sposób, by was uwolniæ?
+	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_Droga_15_00"); //Istnieje sposób, by was uwolniæ?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_01"); //Ci¹¿¹ce na nas z³o mo¿e pokonaæ jedynie œmiertelnik o mê¿nym sercu, który nie lêka siê spotkania z uosobieniem samej œmierci i cierpienia.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_02"); //Niestety, wojowniku, nie mo¿esz po prostu wejœæ do wnêtrza naszej œwi¹tyni, gdy¿ ta zosta³a zapieczêtowana i nikt nie ma do niej dostêpu.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_Droga_024_03"); //Jakakolwiek próba sforsowania kamiennych wrót skoñczy siê dla ciebie œmierci¹.
@@ -204,7 +204,7 @@ func void DIA_NASZ_024_BaalOrun_DrogaDone_Info ()
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_02"); //To byli Czempioni, stra¿nicy i wys³annicy naszego wspólnego wroga. Ich zadaniem jest pilnowaæ, aby nikt z nas nie zazna³ spokoju, ani nie zdo³a³ zbiec z terenów obozu.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_03"); //Wyczuwam jednak, i¿ wszystkie kartki pergaminu znalaz³y siê w jednym miejscu. Proszê po³ó¿ je na ziemi i pozwól, ¿e odprawiê rytua³, który po³¹czy je w ca³oœæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_04"); //(Wzdycha)
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_05"); //To... niewiarygodne. W najœmielszych pragnieniach nie s¹dzi³em, ¿e uda siê nam to uczyniæ bez uszkodzenia magicznej formu³y jaka zosta³a na nim spisana.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_05"); //To... niewiarygodne. W najœmielszych pragnieniach nie s¹dzi³em, ¿e uda nam siê to uczyniæ bez uszkodzenia magicznej formu³y jaka zosta³a na nim spisana.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_06"); //Zdaje siê, ¿e wraz z tym powracaj¹ moje wspomnienia odnoœnie ubieg³ych wydarzeñ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_07"); //Widzê ciemnoœæ jaka ogarnia moich braci, niepohamowany ob³êd wdzieraj¹cy siê do naszych g³ów. Niepohamowana nienawiœæ wchodzi do wnêtrza naszego sanktuarium, nasi bracia zdaj¹ siê walczyæ u boku stra¿ników, lecz...
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_DrogaDone_024_08"); //Teraz to widzê... Ich... Nasze wysi³ki okaza³y siê daremne bowiem przysz³o nam walczyæ z istot¹, która nie by³a przypisana do tego œwiata i nie ima³ siê jej ¿aden orê¿.
@@ -252,7 +252,7 @@ func void DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_Info ()
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_10"); //A kiedy odnajdê ju¿ ksi¹¿kê, co wtedy? Jaki bêdzie nasz nastêpny cel?
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_11"); //Wtedy pomo¿esz nam odprawiæ rytua³, który przywróci nam pamiêæ. Bêdzie to wymaga³o niesprzeciwienia siê obecnemu tutaj z³u i skontaktowania siê z si³ami, z jakimi lepiej nie mieæ stycznoœci.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_12"); //Twoja pomoc oka¿e siê nieoceniona, gdy¿ si³y ciemnoœci bêd¹ zapewne chcia³y nas powstrzymaæ i uniemo¿liwiæ nam odzyskanie œwiadomoœci.
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_13"); //Bêdzie to pierwszy krok, który umo¿liwi nam odzyskanie wolnoœci i spokoju. Lecz nawet wtedy wci¹¿ bêdziemy niewolnikami, którzy jedynie dodadz¹ ci si³ byœ w ich imieniu wywalczy³ o wolnoœæ.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_13"); //Bêdzie to pierwszy krok, który umo¿liwi nam odzyskanie wolnoœci i spokoju. Lecz nawet wtedy wci¹¿ bêdziemy niewolnikami, którzy jedynie dodadz¹ ci si³ byœ w ich imieniu walczy³ o wolnoœæ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_024_14"); //Czy jesteœ gotów podj¹æ siê tego zadania?
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_BadaniaCorCaloma_15_15"); //Oczywiœcie, ruszam w drogê za ksi¹¿k¹. ¯yczcie mi powodzenia.
 	
@@ -295,7 +295,7 @@ func void DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_Info ()
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_00"); //Znalaz³em ksi¹¿kê. 
 	AI_Output			(other, self, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_15_01"); //Musia³em siê trochê natrudziæ, by j¹ znaleŸæ wiêc liczê, ¿e oka¿e siê po¿yteczna w naszych dzia³aniach.
 	B_GiveInvItems (other,self,ItNa_CorKalom_Book,1);
-	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_02"); //Doskonale! Miejmy nadziejê, ¿e dziêki temu odkryjemy sposób na to, jak wygnaæ z³o. Niestety, bêdziemy potrzebowali trochê czasu, by zg³êbiæ wiedzê jaka drzemi¹ w zwoju i ksi¹¿ce, które nam dostarczy³eœ.
+	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_02"); //Doskonale! Miejmy nadziejê, ¿e dziêki temu odkryjemy sposób na to, jak wygnaæ z³o. Niestety, bêdziemy potrzebowali trochê czasu, by zg³êbiæ wiedzê jaka drzemi¹ w zwoju i w ksi¹¿ce, które nam dostarczy³eœ.
 	AI_Output			(self, other, "DIA_NASZ_024_BaalOrun_MamBadaniaCaloma_024_03"); //Wróæ do nas nastêpnego dnia, a na pewno bêdziemy mieli dla ciebie jakieœ informacje.
 	OrunBadaKsiazke = 1;
 	

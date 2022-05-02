@@ -533,7 +533,7 @@ FUNC VOID DIA_NASZ_214_Goth_plaskowyz_Info()
 	AI_Output (other, self,"DIA_NASZ_214_Goth_plaskowyz_55_00"); //Wspomnia³eœ coœ o zmutowanych bestiach. O co chodzi?
 	AI_Output (self, other,"DIA_NASZ_214_Goth_plaskowyz_55_01"); //Jehen w³aœnie wróci³ z polowania w okolicach prze³êczy i powiedzia³ mi coœ niewiarygodnego.
 	AI_Output (self, other,"DIA_NASZ_214_Goth_plaskowyz_55_02"); //Twierdzi, ¿e widzia³ stado gigantycznych bestii. Trolle s¹ wiêksze ni¿ te zwyk³e. Bestie szybsze i sprawniejsze.
-	AI_Output (self, other,"DIA_NASZ_214_Goth_plaskowyz_55_03"); //To prawdziwa wylêgarnia z³a. Prawdopodobnie, gdy magowie wywo³ywali to swoje trzêsienie ziemi, skumulowana energia trafi³a kilka bestii, które rozszala³y siê i teraz grasuj¹ w górach.
+	AI_Output (self, other,"DIA_NASZ_214_Goth_plaskowyz_55_03"); //To prawdziwa wylêgarnia z³a. Prawdopodobnie, gdy magowie wywo³ali to swoje trzêsienie ziemi, skumulowana energia trafi³a kilka bestii, które rozszala³y siê i teraz grasuj¹ w górach.
 	AI_Output (other, self,"DIA_NASZ_214_Goth_plaskowyz_55_04"); //Gdzie dok³adnie jest to miejsce? 
 	AI_Output (self, other,"DIA_NASZ_214_Goth_plaskowyz_55_05"); //Nad opuszczon¹ kopalni¹, gdzie kiedyœ da³o siê przedostaæ do Khorinis.
 	AI_Output (other, self,"DIA_NASZ_214_Goth_plaskowyz_55_06"); //By³em w tamtych okolicach i nie zauwa¿y³em ¿adnego giganta...

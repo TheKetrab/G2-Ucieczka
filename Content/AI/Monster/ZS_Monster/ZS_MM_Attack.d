@@ -104,27 +104,33 @@ func int ZS_MM_Attack_Loop ()
 			self.aivar[AIV_PursuitEnd] = TRUE;
 			return LOOP_END;
 		};
-	};		
-	// ------ Kampfabbruch, wenn zu weit weg ------
-	if (Npc_GetDistToNpc (self, other) > FIGHT_DIST_CANCEL)
+	};	
+
+	var int id; id = Hlp_GetInstanceID(self);
+
+	if(!(id== Hlp_GetInstanceID(NASZ_453_Urshak) || id == Hlp_GetInstanceID(OrcNewShaman) || id == OrcNewHeavy))
 	{
-		Npc_ClearAIQueue(self);
-		AI_StandUp		(self);
-		self.aivar[AIV_PursuitEnd] = TRUE;
-		return LOOP_END;
-	};
-	
-	// ------ Gegner wird schon zu lange verfolgt ------
-	if (Npc_GetStateTime (self) > self.aivar[AIV_MM_FollowTime]) 
-	&& (self.aivar[AIV_PursuitEnd] == FALSE)
-	{
-		Npc_ClearAIQueue(self);
-		AI_StandUp		(self);
-		self.aivar[AIV_PursuitEnd] = TRUE;
-		self.aivar[AIV_Dist] = Npc_GetDistToNpc(self, other);
-		self.aivar[AIV_StateTime] = Npc_GetStateTime (self);
-			
-		AI_PlayAni		(self, "T_WARN"); 	//nochmal zum Abschied Drohen
+		// ------ Kampfabbruch, wenn zu weit weg ------
+		if (Npc_GetDistToNpc (self, other) > FIGHT_DIST_CANCEL)
+		{
+			Npc_ClearAIQueue(self);
+			AI_StandUp		(self);
+			self.aivar[AIV_PursuitEnd] = TRUE;
+			return LOOP_END;
+		};
+		
+		// ------ Gegner wird schon zu lange verfolgt ------
+		if (Npc_GetStateTime (self) > self.aivar[AIV_MM_FollowTime]) 
+		&& (self.aivar[AIV_PursuitEnd] == FALSE)
+		{
+			Npc_ClearAIQueue(self);
+			AI_StandUp		(self);
+			self.aivar[AIV_PursuitEnd] = TRUE;
+			self.aivar[AIV_Dist] = Npc_GetDistToNpc(self, other);
+			self.aivar[AIV_StateTime] = Npc_GetStateTime (self);
+				
+			AI_PlayAni		(self, "T_WARN"); 	//nochmal zum Abschied Drohen
+		};
 	};
 	
 	// ------ Warten, ob Feind auch wirklich flieht ------

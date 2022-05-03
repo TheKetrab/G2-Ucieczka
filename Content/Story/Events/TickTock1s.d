@@ -47,6 +47,32 @@ var int secCameraEvent;
 var int lukorOneTime;
 var int IsOpenedDeadNpc;
 
+func void CheckOrcTalk(var c_npc orc, var c_npc vict)
+{
+	//!PallumBo_end && 
+	if(Hlp_IsValidNpc(orc) && !Npc_IsDead(orc)
+	&& Npc_GetDistToPlayer(orc) <= PERC_DIST_DIALOG && !orc.aivar[AIV_INVINCIBLE]
+	&& InfoManager_HasFinished() && !orc.aivar[AIV_NpcStartedTalk]
+	&& !Npc_IsDead(hero))
+	{
+		//AI_ProcessInfo
+		var c_npc slfback; slfback = Hlp_GetNpc(self);
+		var c_npc othback; othback = Hlp_GetNpc(other);
+		
+		self = Hlp_GetNpc(orc);
+		other = Hlp_GetNpc(hero);
+		
+		B_AssessTalk();
+		
+		self = Hlp_GetNpc(slfback);
+		other = Hlp_GetNpc(othback);
+		
+		Npc_SetTarget(self,vict);
+		//Npc_SetTarget(self,NASZ_405_VanGan);
+	};
+};
+
+
 func void LukorEvent()
 {
 	if (!Npc_KnowsInfo(hero,DIA_NASZ_027_Ghorim_Lojalnosc))
@@ -1680,7 +1706,7 @@ func void _TickTock_1s()
 	
 	//PallumBo ma wy³¹czone b_assessplayer, wiêc siê important nie wywo³uje
 	//to ma zast¹piæ tego perca
-	if(!PallumBo_end && Hlp_IsValidNpc(NASZ_410_PallumBo) && Npc_IsDead(NASZ_410_PallumBo) == false 
+	/*if(!PallumBo_end && Hlp_IsValidNpc(NASZ_410_PallumBo) && Npc_IsDead(NASZ_410_PallumBo) == false 
 	&& Npc_GetDistToPlayer(NASZ_410_PallumBo) < 400 && NASZ_410_PallumBo.aivar[AIV_INVINCIBLE] == false
 	&& InfoManager_HasFinished() && NASZ_410_PallumBo.aivar[AIV_TalkedToPlayer] == false)
 	{
@@ -1697,6 +1723,16 @@ func void _TickTock_1s()
 		other = Hlp_GetNpc(othback);
 		
 		Npc_SetTarget(self,NASZ_405_VanGan);
+	};*/
+	
+	if(!pallumbo_end)
+	{
+		CheckOrcTalk(NASZ_410_PallumBo,NASZ_405_VanGan);
+	};
+	
+	if(kapitel == 3 && !UrShakBattlePart)
+	{
+		CheckOrcTalk(NASZ_453_UrShak,hero);
 	};
 	
 	

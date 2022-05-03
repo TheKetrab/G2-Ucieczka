@@ -19,11 +19,14 @@ FUNC VOID DIA_NASZ_453_UrShak_EXIT_Info()
 {	
 	AI_StopProcessInfos (self);
 };
+
+
 var int UrShakRegeneracja;
 var int UrShakBattleIterator;
 var int UrShakBattleRandom;
 var int UrShakBattleRandomOrc;
 var int UrShakBattlePart;
+
 
 func void B_SetVisuals_OrcShaman_URSHAK()
 {
@@ -40,7 +43,7 @@ func void B_SetVisuals_OrcShamanStone_URSHAK()
 // UR SHAK --> 400hp
 // 50% --> 80% = 200hp --> 320hp
 // 20% --> 50% = 80hp --> 200hp
-
+//Ucieczka 1.2
 func int ClampHeroDamageToUrshak(var c_npc urshak, var int dmg)
 {
 	var int minHp; 
@@ -81,7 +84,7 @@ func void ZabijOrkow(var c_npc slf)
 	};
 };
 
-//const int ASCII_Zero = 48;
+//Ucieczka 1.2
 const int UrshakValidSpawnPoints_Max = 4;
 
 const string Urshak_WP_Prefix = "OW_ROCKDRAGON_";
@@ -185,15 +188,15 @@ func void UrShakRegenerationFunc1() {
 		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
 				
 		SpawnUrshakOrcs();
-		
-		
 		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
 		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		
+		return;
 
 
 
 	};
-
+	AI_Wait(NASZ_453_UrShak,2);
 	NASZ_453_UrShak.attribute[0] += 6; // 120hp / 6hp = 20 sekund
 };
 
@@ -216,9 +219,12 @@ func void UrShakRegenerationFunc2() {
 		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
 		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
 		SpawnUrshakOrcs();
+		
+		return;
 
 	};
-
+	
+	AI_Wait(NASZ_453_UrShak,2);
 	NASZ_453_UrShak.attribute[0] += 6; // 120hp / 6hp = 20 sekund
 };
 
@@ -228,6 +234,15 @@ func void UrShakRegenerationFunc2() {
 func void UrshakBattle()
 {
 	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
+	
+	if(!Npc_IsInState(ur,ZS_MM_ATTACK) && hero.attribute[0] > 0 && InfoManager_HasFinished())
+	{
+		var c_npc slfBack; slfBack = Hlp_GetNpc(self);
+		self = Hlp_GetNpc(ur);
+		SpawnedOrcForceAttack();
+		
+		self = Hlp_GetNpc(slfBack);
+	};
 
 	//Print(CS("Part: ",IntToString(UrShakBattlePart)));
 	if (D3D11_enabled) {Print("WY£¥CZ DX11 PODCZAS TEJ WALKI!!!!");};
@@ -288,52 +303,29 @@ func void UrshakBattle()
 		UrShakBattleIterator += 1;
 		
 	};
-/*
-	if(UrShakBattleIterator)
-	{
-		if(UrShakBattleIterator != 61)
-		{
-			UrShakBattleIterator += 1;
-			if(UrShakBattleIterator == 60 || UrShakBattleIterator == 1)
-			{
-				Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
-				Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
-			};	
-			if(UrShakBattleIterator && Hlp_Random(UrShakBattleIterator) >= ((UrShakBattleIterator*80)/100))
-			{
-				 UrShakBattleRandomOrc = hlp_random(2);
-				 if(UrShakBattleRandomOrc)
-				 {
-					Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
-				 }
-				 else
-				 {	
-					Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
-				 };
-					
-			};
-		}
-		else
-		{
-			if (Hlp_Random(UrShakBattleIterator) >= ((UrShakBattleIterator*95)/100))
-				{
-				
-					UrShakBattleRandomOrc = hlp_random(2);
-					 if(UrShakBattleRandomOrc)
-					 {
-						Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
-					 }
-					 else
-					 {	
-						Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
-					 };
-				};
-		
-		};
-	};
-*/
 };
 
+func void UrshakEndDialog()
+{
+	self.guild							=	GIL_ORC;
+	Npc_SetTrueGuild (self, GIL_ORC);
+	self.start_aistate				= ZS_MM_AllScheduler;
+	self.aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
+	B_StartOtherRoutine (self,"");
+	B_Attack (NASZ_453_UrShak, hero, AR_KILL, 0);
+	//AI_StartState 		(self, ZS_MM_AllScheduler, 0, "");
+	AI_Teleport(NASZ_453_UrShak,"OW_ROCKDRAGON_06");
+	//Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
+	//Wld_InsertNpc		(OrcNewHeavy, "OW_ROCKDRAGON_11");
+	
+	
+	NASZ_453_UrShak.flags = 0;
+	UrShakBattlePart = 1;
+	
+	SpawnUrshakOrcs();
+	
+	FF_ApplyOnceExt(UrshakBattle,1000,-1);
+};
 
 ///////////////////////////////////////////////////////////////////////
 //	Info Hello
@@ -388,21 +380,5 @@ func void DIA_NASZ_453_UrShak_Hello_Info ()
 func void DIA_NASZ_453_UrShak_Hello_End()
 {
 	AI_StopProcessInfos (self);
-	self.guild							=	GIL_ORC;
-	Npc_SetTrueGuild (self, GIL_ORC);
-	self.start_aistate				= ZS_MM_AllScheduler;
-	self.aivar[AIV_MM_OrcSitStart] 	= OnlyRoutine;
-	B_StartOtherRoutine (self,"");
-	//Rtn_Stop_1111 = temp;
-	B_Attack (NASZ_453_UrShak, hero, AR_KILL, 0);
-	//AI_StartState 		(self, ZS_MM_AllScheduler, 0, "");
-	AI_Teleport(NASZ_453_UrShak,"OW_ROCKDRAGON_06");
-	//Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
-	//Wld_InsertNpc		(OrcNewHeavy, "OW_ROCKDRAGON_11");
-	SpawnUrshakOrcs();
-	
-	NASZ_453_UrShak.flags = 0;
-	UrShakBattlePart = 1;
-	
-	FF_ApplyOnceExt(UrshakBattle,1000,-1);
+	UrshakEndDialog();
 };

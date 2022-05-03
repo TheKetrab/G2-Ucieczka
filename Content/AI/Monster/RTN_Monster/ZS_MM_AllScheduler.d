@@ -14,7 +14,7 @@ func void ZS_MM_AllScheduler()
 	};
 	
 	if(	(Hlp_GetInstanceID(self) == HLP_GetInstanceID(OrcNewShaman) 
-		|| 	Hlp_GetInstanceID(self) == HLP_GetInstanceID(OrcNewHeavy)))
+		|| 	Hlp_GetInstanceID(self) == HLP_GetInstanceID(OrcNewHeavy)) && !Npc_IsDead(hero))
 	{
 		SpawnedOrcForceAttack();
 	};

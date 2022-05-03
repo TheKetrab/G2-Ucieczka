@@ -1,7 +1,3 @@
-//TODO:
-//zmusiæ orków zespawnowanych do ataku
-
-
 // ***********************************************************************************************************************
 // 	  	DIA_NASZ_453_UrShak_EXIT
 // ***********************************************************************************************************************
@@ -154,28 +150,24 @@ func void SpawnUrshakOrcs()
 	};
 	
 	Wld_InsertNpc	(OrcNewShaman,wp);
-	//Print(self.name);
-	Npc_ClearAIQueue	(self);
-	AI_StandupQuick(self);
-	AI_TurnToNPC(self,hero);
-	B_ClearPerceptions	(self);
-	Npc_SetTarget		(self, hero);
-	AI_StartState		(self, ZS_MM_Attack, 0, "");
-//	AI_Attack(self);
-	//AI_Attack(self);
-	
-	
 	Wld_InsertNpc	(OrcNewHeavy,wp);
-	//Print(self.name);
-	Npc_ClearAIQueue	(self);
-	AI_StandupQuick(self);
-	AI_TurnToNPC(self,hero);
-	B_ClearPerceptions	(self);
-	Npc_SetTarget		(self, hero);
-	AI_StartState		(self, ZS_MM_Attack, 0, "");
-	//AI_Attack(self);
-	//AI_Attack(self);
+
 };
+
+//wywo³ane w ZS_MM_AllScheduler dla OrcNewShaman i OrcNewHeavy
+func void SpawnedOrcForceAttack()
+{
+	Npc_SetTarget		(self, hero);
+	if(!Npc_IsInState(self,ZS_MM_Attack))
+	{
+		AI_StandupQuick(self);
+		AI_ReadyMeleeWeapon(self);
+		AI_TurnToNPC(self,hero);
+		AI_GotoNpc(self,hero);
+		AI_StartState		(self, ZS_MM_Attack, 0, "");
+	};
+};
+
 
 func void UrShakRegenerationFunc1() {
 

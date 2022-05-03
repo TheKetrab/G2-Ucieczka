@@ -12,6 +12,12 @@ func void ZS_MM_AllScheduler()
 	{	
 		B_KillNpc (self);
 	};
+	
+	if(	(Hlp_GetInstanceID(self) == HLP_GetInstanceID(OrcNewShaman) 
+		|| 	Hlp_GetInstanceID(self) == HLP_GetInstanceID(OrcNewHeavy)))
+	{
+		SpawnedOrcForceAttack();
+	};
 	//ADDON<
 		
 	if (Wld_IsTime	(self.aivar[AIV_MM_SleepStart],00,self.aivar[AIV_MM_SleepEnd],00) || (self.aivar[AIV_MM_SleepStart] == OnlyRoutine))

@@ -1,3 +1,6 @@
+//TODO:
+//zmusiæ orków zespawnowanych do ataku
+
 
 // ***********************************************************************************************************************
 // 	  	DIA_NASZ_453_UrShak_EXIT
@@ -82,6 +85,98 @@ func void ZabijOrkow(var c_npc slf)
 	};
 };
 
+//const int ASCII_Zero = 48;
+const int UrshakValidSpawnPoints_Max = 4;
+
+const string Urshak_WP_Prefix = "OW_ROCKDRAGON_";
+
+const string UrshakValidSpawnPointsPostfixs[UrshakValidSpawnPoints_Max] = 
+{
+	"04","05","06","11"
+};
+
+func string GetNearestUrshakSpawnPoint()
+{
+	var string currWp; 
+	var string nearestWp;
+	
+	var int currDist; 
+	var int nearestDist; nearestDist = -1;
+	var int i;
+	
+	repeat(i,UrshakValidSpawnPoints_Max);
+		
+		currWp = CS(Urshak_WP_Prefix, MEM_ReadStatStringArr(UrshakValidSpawnPointsPostfixs,i));
+		currDist = Npc_GetDistToWp(hero,currWp);
+
+		if(nearestDist == -1 || nearestDist > currDist)
+		{
+			nearestDist = currDist;
+			nearestWp = currWp;
+		};
+		
+	end;
+	
+	return nearestWp;
+};
+
+func int CompareUrshakSpawnPoint(var string wp)
+{
+	var zString zStr; zStr = _^(_@s(wp));
+	
+	var int i;
+	
+	repeat(i,UrshakValidSpawnPoints_Max);
+		
+		var zString point; point = _^(_@s(MEM_ReadStatStringArr(UrshakValidSpawnPointsPostfixs,i)));
+		
+		var int pointLen; pointLen = point.len;
+		var int startPos; startPos = zStr.ptr + zSTR.len - pointLen;
+		
+		if(MEM_CompareBytes(startPos,point.ptr,pointLen))
+		{
+			return 1;
+		};		
+		
+	end;
+	
+	
+	return 0;
+};
+
+func void SpawnUrshakOrcs()
+{
+	var string wp; wp = Npc_GetNearestWp(hero);
+	
+	if(!CompareUrshakSpawnPoint(wp))
+	{
+		wp = GetNearestUrshakSpawnPoint();
+	};
+	
+	Wld_InsertNpc	(OrcNewShaman,wp);
+	//Print(self.name);
+	Npc_ClearAIQueue	(self);
+	AI_StandupQuick(self);
+	AI_TurnToNPC(self,hero);
+	B_ClearPerceptions	(self);
+	Npc_SetTarget		(self, hero);
+	AI_StartState		(self, ZS_MM_Attack, 0, "");
+//	AI_Attack(self);
+	//AI_Attack(self);
+	
+	
+	Wld_InsertNpc	(OrcNewHeavy,wp);
+	//Print(self.name);
+	Npc_ClearAIQueue	(self);
+	AI_StandupQuick(self);
+	AI_TurnToNPC(self,hero);
+	B_ClearPerceptions	(self);
+	Npc_SetTarget		(self, hero);
+	AI_StartState		(self, ZS_MM_Attack, 0, "");
+	//AI_Attack(self);
+	//AI_Attack(self);
+};
+
 func void UrShakRegenerationFunc1() {
 
 	if (NASZ_453_UrShak.attribute[0] >= 320) {
@@ -96,9 +191,14 @@ func void UrShakRegenerationFunc1() {
 		Npc_SetTarget		(NASZ_453_UrShak, hero);
 		B_ClearPerceptions	(NASZ_453_UrShak);
 		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
+				
+		SpawnUrshakOrcs();
 		
-		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
-		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		
+		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+
+
 
 	};
 
@@ -121,8 +221,9 @@ func void UrShakRegenerationFunc2() {
 		B_ClearPerceptions	(NASZ_453_UrShak);
 		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
 		
-		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
-		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		SpawnUrshakOrcs();
 
 	};
 
@@ -151,8 +252,9 @@ func void UrshakBattle()
 	 && !UrShakRegeneracja)
 	{
 		B_SetVisuals_OrcShamanStone_URSHAK();
-		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
-		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		SpawnUrshakOrcs();
 
 		UrShakRegeneracja = true;
 		B_ClearPerceptions(NASZ_453_UrShak);
@@ -172,8 +274,9 @@ func void UrshakBattle()
 	 && !UrShakRegeneracja)
 	{
 		B_SetVisuals_OrcShamanStone_URSHAK();
-		Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
-		Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
+		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		SpawnUrshakOrcs();
 
 		UrShakRegeneracja = true;
 		B_ClearPerceptions(NASZ_453_UrShak);
@@ -302,8 +405,9 @@ func void DIA_NASZ_453_UrShak_Hello_End()
 	B_Attack (NASZ_453_UrShak, hero, AR_KILL, 0);
 	//AI_StartState 		(self, ZS_MM_AllScheduler, 0, "");
 	AI_Teleport(NASZ_453_UrShak,"OW_ROCKDRAGON_06");
-	Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
-	Wld_InsertNpc		(OrcNewHeavy, "OW_ROCKDRAGON_11");
+	//Wld_InsertNpc		(OrcNewShaman,"OW_ROCKDRAGON_11");
+	//Wld_InsertNpc		(OrcNewHeavy, "OW_ROCKDRAGON_11");
+	SpawnUrshakOrcs();
 	
 	NASZ_453_UrShak.flags = 0;
 	UrShakBattlePart = 1;

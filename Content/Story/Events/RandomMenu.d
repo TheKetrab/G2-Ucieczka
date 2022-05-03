@@ -22,11 +22,12 @@ func void LoadTexRandom()
 
 func void SaveTexRandom()
 {	
-	var int kapitel; kapitel = _Uclamp(1, KAPITEL, 5);
+	var int kapi; kapi = _Uclamp(1, KAPITEL, 5);
 
     var string texName;
+	
 	texName = ConcatStrings("SAVE",
-		ConcatStrings(IntToString(kapitel),".TGA"));
+		ConcatStrings(IntToString(kapi),".TGA"));
 
 	SetSaveTexName(texName);
 };

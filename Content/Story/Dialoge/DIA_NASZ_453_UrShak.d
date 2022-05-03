@@ -235,7 +235,7 @@ func void UrshakBattle()
 {
 	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
 	
-	if(!Npc_IsInState(ur,ZS_MM_ATTACK) && hero.attribute[0] > 0 && InfoManager_HasFinished())
+	if(!Npc_IsInState(ur,ZS_MM_ATTACK) && hero.attribute[0] > 0 && InfoManager_HasFinished() && !Npc_IsDead(ur))
 	{
 		var c_npc slfBack; slfBack = Hlp_GetNpc(self);
 		self = Hlp_GetNpc(ur);

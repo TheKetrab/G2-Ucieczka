@@ -85,13 +85,13 @@ func void ZabijOrkow(var c_npc slf)
 };
 
 //Ucieczka 1.2
-const int UrshakValidSpawnPoints_Max = 4;
+const int UrshakValidSpawnPoints_Max = 11;
 
 const string Urshak_WP_Prefix = "OW_ROCKDRAGON_";
 
 const string UrshakValidSpawnPointsPostfixs[UrshakValidSpawnPoints_Max] = 
 {
-	"04","05","06","11"
+	"04","05","06","11","16","17","18","19","20","21","22"
 };
 
 func string GetNearestUrshakSpawnPoint()

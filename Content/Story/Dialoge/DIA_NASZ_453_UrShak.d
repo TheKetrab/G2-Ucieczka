@@ -181,7 +181,12 @@ func void CheckTooCloseDistToUrshak()
 	
 	if(!Hlp_IsValidNpc(ur)){return;};
 	
-	if(Npc_IsInFightRange(hero,NASZ_453_UrShak) || Npc_IsAiming(hero,ur))
+	
+	
+	if((Npc_IsInFightRange(hero,NASZ_453_UrShak) 
+		//tylko gdy focusujemy urshaka, to zadaj dam_fly
+		&& MEM_READINT(MEM_READINT(_hero)+2476/*player->focus_vob*/) == _@(ur)) 
+	|| (Npc_IsAiming(hero,ur)))
 	{
 		//ai_wait przeciwdzia³a walniêciu hita podczas otrzymywania fly dmg
 		AI_Wait(hero,1);

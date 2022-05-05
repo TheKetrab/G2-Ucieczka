@@ -4,17 +4,7 @@
 
 FUNC VOID InitPerceptions()
 {
-	MEM_InitAll();
-
-	//LeGo_Init(LeGo_All); causes crash in Spacer
-	//checking address of PLAYER_MOB_MISSING_LOCKPICK in unk_8C1EA8 constructor helps with it
-	if(MEM_ReadInt(4198848) == 2296151144)
-	{
-		//it helps with stack overflow error
-		LeGo_Init(LeGo_All);
-		MEM_CallByString("QS_DisableKeyInit");
-	};
-	
+	InitStatics();
 	// Die Reichweite der aktiven Wahrnehmungen
 	// PERC_ASSESSPLAYER	// Spieler wird wahrgenommen
 	// PERC_ASSESSENEMY		// der nächste NSC, zu dem ich Att_Hostile habe, wird wahrgenommen! (wenn Temp_Att != Gil_Att, wird Temp_att genommen)

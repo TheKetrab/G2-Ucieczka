@@ -413,3 +413,21 @@ func int ForceTeleport(var c_npc slf, var string wp)
 	return CALL_RetValAsInt();
 	
 };
+
+func int Npc_IsInFightRange(var c_npc slf, var c_npc oth)
+{
+	const int oCNpc__IsInFightRange = 6802272;
+	
+	var int dist;
+
+	var int npcPtr; npcPtr = _@(slf);
+	var int othPtr; othPtr = _@(oth);
+	
+	CALL_PtrParam(_@(dist));
+	CALL_PtrParam(othPtr);
+	
+	CALL__Thiscall(npcPtr,oCNpc__IsInFightRange);
+	
+	return CALL_RetValAsInt();
+	
+};

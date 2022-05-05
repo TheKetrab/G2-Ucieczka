@@ -712,12 +712,13 @@ func void OnDamage_OnlyDamageNoAnimSound()
 	var c_npc slf; slf = _^(EDI);
 	
 	//jeżeli Jeremiasz jest chory, to nie reaguje na dmg
-	if(slf.id == 127 && Jeremiasz_AlmostDead == true)
+	if((slf.id == 127 && Jeremiasz_AlmostDead == true ) || (slf.id == 453 && UrShakRegeneracja))
 	{
 		//descriptor.bOnce = 0;
 		MEM_WriteByte(esi+144,0);
 		//descriptor.bFinished = 1;
 		MEM_WriteByte(esi+145,1);
+		
 	};
 };
 

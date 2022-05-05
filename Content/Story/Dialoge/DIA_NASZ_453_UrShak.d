@@ -172,6 +172,26 @@ func void SpawnedOrcForceAttack()
 };
 
 
+
+//Funkcja wywo³uje siê, gdy podczas koñca regeneracji jesteœmy w fight range lub celujemy w niego
+//Dziêki temu ma nie dostawaæ dmg zanim wyci¹gnie broñ
+func void CheckTooCloseDistToUrshak()
+{	
+	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
+	
+	if(!Hlp_IsValidNpc(ur)){return;};
+	
+	if(Npc_IsInFightRange(hero,NASZ_453_UrShak) || Npc_IsAiming(hero,ur))
+	{
+		//ai_wait przeciwdzia³a walniêciu hita podczas otrzymywania fly dmg
+		AI_Wait(hero,1);
+		
+		StartFlyDamage (hero, 5, 10, 5, 10);
+	};
+
+};
+
+
 func void UrShakRegenerationFunc1() {
 
 	if (NASZ_453_UrShak.attribute[0] >= 320) {
@@ -188,8 +208,10 @@ func void UrShakRegenerationFunc1() {
 		AI_StartState		(NASZ_453_UrShak, ZS_MM_Attack, 0, "");
 				
 		SpawnUrshakOrcs();
+		
 		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
 		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
+		CheckTooCloseDistToUrshak();
 		
 		return;
 
@@ -219,6 +241,7 @@ func void UrShakRegenerationFunc2() {
 		//Wld_InsertNpc	(OrcNewShaman,"OW_ROCKDRAGON_11");
 		//Wld_InsertNpc	(OrcNewHeavy,"OW_ROCKDRAGON_11");
 		SpawnUrshakOrcs();
+		CheckTooCloseDistToUrshak();
 		
 		return;
 
@@ -235,7 +258,7 @@ func void UrshakBattle()
 {
 	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
 	
-	if(!Npc_IsInState(ur,ZS_MM_ATTACK) && hero.attribute[0] > 0 && InfoManager_HasFinished() && !Npc_IsDead(ur))
+	if(!Npc_IsInState(ur,ZS_MM_ATTACK) && hero.attribute[0] > 0 && InfoManager_HasFinished() && !Npc_IsDead(ur) && UrShakRegeneracja == false)
 	{
 		var c_npc slfBack; slfBack = Hlp_GetNpc(self);
 		self = Hlp_GetNpc(ur);
@@ -245,7 +268,17 @@ func void UrshakBattle()
 	};
 
 	//Print(CS("Part: ",IntToString(UrShakBattlePart)));
-	if (D3D11_enabled) {Print("Je¿eli masz problemy graficzne, to wy³¹cz dx11 podczas walki.");};
+	if (D3D11_enabled) 
+	{
+		//Print 5 razy co sekundê przez ca³e w³¹czenie gry
+		//nie ma co tego zapisywaæ
+		const int static_printCnt = 5;
+		if(static_printCnt > 0)
+		{
+			PrintS("Je¿eli masz problemy graficzne, to wy³¹cz dx11 podczas walki.");
+			static_printCnt-=1;
+		};
+	};
 	
 	// po zabiciu urshaka: EXIT
 	if (Npc_IsDead(NASZ_453_UrShak)) { 

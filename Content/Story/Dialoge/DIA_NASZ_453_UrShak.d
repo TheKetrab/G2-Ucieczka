@@ -245,7 +245,7 @@ func void UrshakBattle()
 	};
 
 	//Print(CS("Part: ",IntToString(UrShakBattlePart)));
-	if (D3D11_enabled) {Print("WY£¥CZ DX11 PODCZAS TEJ WALKI!!!!");};
+	if (D3D11_enabled) {Print("Je¿eli masz problemy graficzne, to wy³¹cz dx11 podczas walki.");};
 	
 	// po zabiciu urshaka: EXIT
 	if (Npc_IsDead(NASZ_453_UrShak)) { 

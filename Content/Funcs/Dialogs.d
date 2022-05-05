@@ -1,4 +1,20 @@
 var int D3D11_enabled;
+
+
+// frees a library
+func void FreeLibrary (var int ptr) {
+	var int freelib;
+	freelib = FindKernelDllFunction("FreeLibrary");
+
+	if (!freelib) {
+		return;
+	};
+
+	CALL_PtrParam(ptr);
+	CALL__stdcall(freelib);
+};
+
+
 func void CheckDx11()
 {
 	var int lib; lib = LoadLibrary("ddraw.dll");
@@ -15,7 +31,11 @@ func void CheckDx11()
 	   {
 		 D3D11_enabled = false;
 	   };
+	   
+	   FreeLibrary(lib);
 	};
+	
+	
 
 };
 

@@ -168,6 +168,13 @@ func void SpawnedOrcForceAttack()
 		AI_TurnToNPC(self,hero);
 		AI_GotoNpc(self,hero);
 		AI_StartState		(self, ZS_MM_Attack, 0, "");
+	}
+	else if(Npc_GetTarget(self))
+	{
+		if(!Npc_IsPlayer(other))
+		{
+			Npc_SetTarget(self,hero);
+		};
 	};
 };
 
@@ -179,7 +186,7 @@ func void CheckTooCloseDistToUrshak()
 {	
 	var c_npc ur; ur = Hlp_GetNpc(NASZ_453_UrShak);
 	
-	if(!Hlp_IsValidNpc(ur)){return;};
+	if(!Hlp_IsValidNpc(ur) || !Hlp_IsValidNpc(hero)){return;};
 	
 	
 	

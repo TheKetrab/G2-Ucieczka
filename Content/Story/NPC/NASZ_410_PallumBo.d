@@ -46,6 +46,8 @@ instance NASZ_410_PallumBo (Npc_Default)
 	CreateInvItems (self, ItMi_Nugget,1);
 	
 	daily_routine 		= Rtn_Start_410;  
+	
+	PallumBoInserted = true;
 
 };
 

@@ -1725,7 +1725,7 @@ func void _TickTock_1s()
 		Npc_SetTarget(self,NASZ_405_VanGan);
 	};*/
 	
-	if(!pallumbo_end)
+	if(PallumBoInserted && !pallumbo_end)
 	{
 		CheckOrcTalk(NASZ_410_PallumBo,NASZ_405_VanGan);
 	};

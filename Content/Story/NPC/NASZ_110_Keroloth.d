@@ -12,8 +12,8 @@ instance NASZ_110_Keroloth  (Npc_Default)
 	aivar[AIV_IgnoresArmor] 	= TRUE;
 
 	// ------ Attribute ------
-	B_SetAttributesToChapter (self, 4);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
-		
+	B_SetAttributesToChapter (self, 5);
+
 	// ------ Kampf-Taktik ------
 	fight_tactic		= FAI_HUMAN_MASTER;	// MASTER / STRONG / COWARD
 	

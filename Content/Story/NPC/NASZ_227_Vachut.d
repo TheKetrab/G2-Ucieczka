@@ -12,7 +12,7 @@ instance NASZ_227_Vachut (Npc_Default)
 	aivar[AIV_IgnoresArmor] 	= TRUE;
 
 	// ------ Attribute ------
-	B_SetAttributesToChapter (self, 4);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
+	B_SetAttributesToChapter (self, 5);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
 	
 	// ------ Kampf-Taktik ------
 	fight_tactic		= FAI_HUMAN_MASTER2;	// MASTER / STRONG / COWARD

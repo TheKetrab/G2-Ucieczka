@@ -12,8 +12,8 @@ instance NASZ_119_Udar  (Npc_Default)
 	aivar[AIV_IgnoresArmor] 	= TRUE;
 
 	// ------ Attribute ------
-	B_SetAttributesToChapter (self, 4);																
-		
+	B_SetAttributesToChapter (self, 5);
+
 	// ------ Kampf-Taktik ------
 	fight_tactic = FAI_HUMAN_MASTER;	//damit er nicht runterspringt
 	

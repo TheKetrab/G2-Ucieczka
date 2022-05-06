@@ -226,6 +226,7 @@ const int 	ID_WSCIEKLYLURKER			= 67;
 const int 	ID_ORCDOG					= 68;
 const int 	ID_BLACKWOLF				= 69;
 const int 	ID_DEMON_0EXP				= 70;
+const int 	ID_RangedTarget				= 71;
 
 
 // ----------------------------------------------
@@ -359,6 +360,7 @@ const int AIV_UBRANATROJKA				= 93; //Do combo
 const int AIV_RandomDmg					= 94; //Do walki
 const int AIV_HELMET					= 95; // zalozony helm lub zbroja z helmem
 const int AIV_WAR_WITH_ORC				= 96; 
+const int AIV_RangedTA_Target			= 97;
 
 // ***************************************************
 // Globalvariablen für Petzen/Absolution/News - System

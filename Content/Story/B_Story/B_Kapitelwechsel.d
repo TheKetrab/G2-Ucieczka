@@ -56,6 +56,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel, VAR INT aktuelles_Level_Zen)
 		};
 		
 		
+		B_StartOtherRoutine (NASZ_011_Renegat, "Kap2");
 		B_StartOtherRoutine (NASZ_231_Ted, "Kap2");
 		B_StartOtherRoutine (NASZ_101_Korth, "Start");
 		TedIsSick = TRUE;

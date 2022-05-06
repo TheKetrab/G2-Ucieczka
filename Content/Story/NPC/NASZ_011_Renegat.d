@@ -53,6 +53,12 @@ FUNC VOID Rtn_GoToStart_11 ()
 	TA_Stand_ArmsCrossed	(13,00,11,00,"NASZ_KOPALNIA_NOWY_01"); 
 };
 
+FUNC VOID Rtn_Kap2_11 ()
+{	
+	TA_Stand_ArmsCrossed	(11,00,13,00,"OW_MINE2_STAND_JERGAN"); 
+	TA_Stand_ArmsCrossed	(13,00,11,00,"OW_MINE2_STAND_JERGAN"); 
+};
+
 FUNC VOID Rtn_Rabon_11 ()
 {	
 	TA_Sit_CampFire	(11,00,13,00,"OW_PATH_189"); 

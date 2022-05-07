@@ -42,6 +42,6 @@ instance NASZ_128_Straznik (Npc_Default)
 
 FUNC VOID Rtn_Start_128 ()
 {
-	TA_Stand_Torch	(20,20,05,30,"NASZ_LOWCY_DOL_21");
-	TA_Stand_WP	(05,30,20,20,"NASZ_LOWCY_DOL_21");
+	TA_Stand_Torch  (21,00,05,00,"NASZ_LOWCY_DOL_21");
+	TA_Stand_WP     (05,00,21,00,"NASZ_LOWCY_DOL_21");
 };

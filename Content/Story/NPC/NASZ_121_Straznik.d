@@ -42,6 +42,6 @@ instance NASZ_121_Straznik (Npc_Default)
 
 FUNC VOID Rtn_Start_121 ()
 {
-	TA_Stand_Torch	(20,00,08,00,"PATH_OC_NC_18");
-	TA_Stand_WP	(08,00,20,00,"PATH_OC_NC_18");
+	TA_Stand_Torch  (21,00,05,00,"PATH_OC_NC_18");
+	TA_Stand_WP     (05,00,21,00,"PATH_OC_NC_18");
 };

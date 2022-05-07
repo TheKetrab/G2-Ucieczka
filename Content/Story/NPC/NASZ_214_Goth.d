@@ -42,8 +42,8 @@ instance NASZ_214_Goth (Npc_Default)
 
 FUNC VOID Rtn_PreStart_214 ()
 {	
-   	TA_Stand_Guarding		(08,00,20,00,"LOCATION_02_03");
-   	TA_Stand_Guarding		(20,00,08,00,"LOCATION_02_03");
+   	TA_Stand_Guarding		(05,00,21,00,"LOCATION_02_03");
+   	TA_Stand_Torch			(21,00,05,00,"LOCATION_02_03");
 };
 
 FUNC VOID Rtn_Start_214 ()

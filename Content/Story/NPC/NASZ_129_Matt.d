@@ -42,8 +42,8 @@ instance NASZ_129_Matt (Npc_Default)
 
 FUNC VOID Rtn_Start_129 ()
 {
-	TA_Stand_Torch	(20,00,08,00,"OW_HOSHPAK_03");
-	TA_Stand_WP	(08,00,20,00,"OW_HOSHPAK_03");
+	TA_Stand_Torch  (21,00,05,00,"OW_HOSHPAK_03");
+	TA_Stand_WP     (05,00,21,00,"OW_HOSHPAK_03");
 };
 
 FUNC VOID Rtn_ToCamp_129 ()

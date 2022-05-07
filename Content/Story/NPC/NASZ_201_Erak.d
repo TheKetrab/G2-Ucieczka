@@ -82,8 +82,8 @@ FUNC VOID Rtn_Follow_201()
 
 FUNC VOID Rtn_Twierdza_201()
 {	
-	TA_Stand_Guarding 			(08,00,23,00,"OW_PATH_186");
-	TA_Stand_Guarding			(23,00,08,00,"OW_PATH_186");
+	TA_Stand_Guarding  (05,00,21,00,"OW_PATH_186");
+	TA_Stand_Torch     (21,00,05,00,"OW_PATH_186");
 };
 
 FUNC VOID Rtn_TwierdzaAtak_201()

@@ -99,8 +99,8 @@ FUNC VOID Rtn_TwierdzaAtak_101 ()
 
 FUNC VOID Rtn_InCastle_101 ()
 {	
-	TA_Stand_Guarding		(08,00,22,00,"NASZ_ZAMEK_PASSAGE");
-	TA_Stand_Guarding 		(22,00,08,00,"NASZ_ZAMEK_PASSAGE");
+	TA_Stand_Guarding		(05,00,21,00,"NASZ_ZAMEK_PASSAGE");
+	TA_Stand_Torch	 		(21,00,05,00,"NASZ_ZAMEK_PASSAGE");
 };
 
 

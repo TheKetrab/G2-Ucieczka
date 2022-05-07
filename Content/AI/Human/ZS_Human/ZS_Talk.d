@@ -147,12 +147,7 @@ FUNC void ZS_Talk ()
 func INT ZS_Talk_Loop ()
 {
    	ResizeDialogBox();
-	/*if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_121_Straznik) 
-	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_128_Straznik) 
-	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_129_Matt)) 
-	{
-		oCNpc_UseItem(self, ItLsTorch);
-	};*/
+
 	if (InfoManager_HasFinished())
    	&& (zsTalkBugfix == TRUE)			//verhindert, daß InfoManager_HasFinished im ERSTEN FRAME der Loop abgefragt wird --> führt sonst bei MOB-SITZENDEN NSCs (kein Scheiss) zu Abbruch der Loop im ERSTEN FRAME! 
    										//(Problem besteht wegen falscher Reihenfolge der Befehle AI_ProcessInfos und InfoManager_HasFinished)
@@ -199,11 +194,13 @@ FUNC VOID ZS_Talk_End ()
 	{
 
 	};
-	if(Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_121_Straznik) 
-	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_128_Straznik) 
-	|| Hlp_GetInstanceID(self) == Hlp_GetInstanceID(Nasz_129_Matt)) 
+	
+	// ----- Hide torch -----
+	if (Npc_IsInRoutine(self,ZS_STAND_TORCH))
 	{
-		oCNpc_UseItem(self, ItLsTorch);
+		// Npc musi odlozyc pochodnie, bo wyjmie ja powracajac do rutyny ZS_STAND_TORCH
+		oCNpc_UseItem(self, ItLsTorch); // odlozenie pochodni
 	};
+
 };
 

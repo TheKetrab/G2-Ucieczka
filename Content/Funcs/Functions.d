@@ -434,7 +434,9 @@ func int Npc_IsInFightRange(var c_npc slf, var c_npc oth)
 
 func int Npc_IsInWorld(var c_npc npc)
 {
-	var int npcPtr; npcPtr = _@(npc);
+	if(!Hlp_IsValidNpc(npc)){return 0;};
 	
-	return MEM_ReadInt(npcPtr+184) != 0;
+	var oCNpc oNpc; oNpc = Hlp_GetNpc(npc);
+	
+	return oNpc._zCVob_homeWorld != 0;
 };

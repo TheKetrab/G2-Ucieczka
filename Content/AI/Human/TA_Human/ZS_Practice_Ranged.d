@@ -1,7 +1,6 @@
 
 func void ZS_Practice_Ranged ()
 {	
-	Print("started"); // TODO! zrobic tak, zeby inni w poblizu nie reagowali na to, ze ktos kto ma aivar[AIV_MM_REAL_ID] == ID_RangedTarget, to zeby percepcje to ignorowaly
 	Perception_Set_Minimal(); // ma nie reagowac na to, ze strzela do przeciwnika
 	Npc_PercEnable(self, PERC_ASSESSTALK, B_AssessTalk); // ale mozna go zagadac
 	

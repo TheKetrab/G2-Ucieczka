@@ -11,6 +11,11 @@ func void B_AssessFightSound ()
 {
 	//EXIT IF...
 	
+	// jesli ktos strzela w tarcze, to inni nie reaguja
+	if (victim.aivar[AIV_MM_REAL_ID] == ID_RangedTarget) {
+		return;
+	};
+	
 	// Duchy na bagnie nie reaguj¹
 	if (C_IsGhost(self)) {
 		return;

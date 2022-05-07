@@ -39,23 +39,38 @@ FUNC VOID DIA_NASZ_410_PallumBo_EXIT_Info()
 {
 	AI_StopProcessInfos (self);
 
-	NASZ_405_VanGan.aivar[AIV_LASTTARGET] = NASZ_410_PallumBo;
-	self.aivar[AIV_LASTTARGET] = NASZ_405_VanGan;
+	PallumBo_end = true;
+
+
+	var c_npc enemy;
+	
+	if(Npc_IsInWorld(NASZ_405_VanGan))
+	{
+		enemy = Hlp_GetNpc(NASZ_405_VanGan);
+	}
+	else
+	{
+		enemy = Hlp_GetNpc(other);
+	};
+
+	enemy.aivar[AIV_LASTTARGET] = Hlp_GetInstanceID(self);
+	self.aivar[AIV_LASTTARGET] = Hlp_GetInstanceID(enemy);
 
 	self.guild = GIL_UNDEADORC;
 	NPC_SetTrueGuild(self,GIL_UNDEADORC);
 	B_SetAttitude (self, ATT_HOSTILE); 
 	Npc_SetTempAttitude(self, ATT_HOSTILE);
 
-
-	Orc_attack(NASZ_405_VanGan,NASZ_410_PallumBo);
+	if(!Npc_IsPlayer(enemy))
+	{
+		Orc_attack(enemy,self);
+	};
 
 	//B_Attack (NASZ_405_VanGan, NASZ_410_PallumBo, AR_KILL, 0);
 	
 
-	Npc_SetTarget(self,NASZ_405_VanGan);
+	Npc_SetTarget(self,enemy);
 	
-	PallumBo_end = true;
 
 
 };

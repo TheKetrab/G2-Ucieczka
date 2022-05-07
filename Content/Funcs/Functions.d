@@ -431,3 +431,10 @@ func int Npc_IsInFightRange(var c_npc slf, var c_npc oth)
 	return CALL_RetValAsInt();
 	
 };
+
+func int Npc_IsInWorld(var c_npc npc)
+{
+	var int npcPtr; npcPtr = _@(npc);
+	
+	return MEM_ReadInt(npcPtr+184) != 0;
+};

@@ -50,7 +50,7 @@ var int IsOpenedDeadNpc;
 func void CheckOrcTalk(var c_npc orc, var c_npc vict)
 {
 	//!PallumBo_end && 
-	if(Hlp_IsValidNpc(orc) && !Npc_IsDead(orc)
+	if(Npc_IsInWorld(orc) && !Npc_IsDead(orc)
 	&& Npc_GetDistToPlayer(orc) <= PERC_DIST_DIALOG && !orc.aivar[AIV_INVINCIBLE]
 	&& InfoManager_HasFinished() && !orc.aivar[AIV_NpcStartedTalk]
 	&& !Npc_IsDead(hero))
@@ -66,8 +66,10 @@ func void CheckOrcTalk(var c_npc orc, var c_npc vict)
 		
 		self = Hlp_GetNpc(slfback);
 		other = Hlp_GetNpc(othback);
-		
-		Npc_SetTarget(self,vict);
+		if(Npc_IsInWorld(vict))
+		{
+			Npc_SetTarget(self,vict);
+		};
 		//Npc_SetTarget(self,NASZ_405_VanGan);
 	};
 };

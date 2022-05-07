@@ -11,7 +11,10 @@ func void B_AssessTalk ()
 	
 	if(self.id == 410 && PallumBo_end)
 	{
-		Npc_SetTarget(self,NASZ_405_VanGan);
+		if(Npc_IsInWorld(NASZ_405_VanGan))
+		{
+			Npc_SetTarget(self,NASZ_405_VanGan);
+		};
 		return;
 	};
 	// EXIT IF...

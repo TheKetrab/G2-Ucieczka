@@ -141,6 +141,8 @@ func void STARTUP_OLDCAMP ()
 	Wld_InsertItem (ItNa_KoscBrata,"NASZ_ITEM_BRACIA_2");
 	Wld_InsertItem (ItNa_KoscBrata,"NASZ_ITEM_BRACIA_3");
 
+	Wld_InsertNpc (RangedTarget_Mysliwi1,"NASZ_MYSLIWI_GORA_21");
+	Wld_InsertNpc (RangedTarget_Mysliwi2,"NASZ_MYSLIWI_GRUPA_TARCZA_WP");
 
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_1");
 	Wld_InsertItem (ItMi_Flask,"NASZ_FP_KIRGO_2");

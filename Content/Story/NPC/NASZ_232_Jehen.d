@@ -10,6 +10,7 @@ instance NASZ_232_Jehen (Npc_Default)
 	npctype	= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
+	aivar[AIV_RangedTA_Target] = RangedTarget_Mysliwi1;
 
 	// ------ Atrybuty ------
 	B_SetAttributesToChapter (self, 3);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
@@ -69,10 +70,18 @@ FUNC VOID Rtn_Prowadzenie_232 ()
 	TA_Guide_Player		(20,00,08,00,"LOCATION_02_03");
 };
 
+FUNC VOID Rtn_PreMysliwi_232 ()
+{
+	TA_Stand_ArmsCrossed		(08,00,20,00,"LOCATION_02_11");
+	TA_Stand_ArmsCrossed		(20,00,08,00,"LOCATION_02_11");
+};
+
 FUNC VOID Rtn_Mysliwi_232 ()
 {
-	TA_Sleep		(08,00,20,00,"NASZ_MYSLIWI_DOL_24");
-	TA_Sleep		(20,00,08,00,"NASZ_MYSLIWI_DOL_24");
+	TA_Sleep				(21,30,08,25,"NASZ_MYSLIWI_DOL_24");
+	TA_Stand_Eating			(08,25,12,15,"LOCATION_02_11");
+	TA_Practice_Ranged		(12,15,16,45,"NASZ_MYSLIWI_GORA_22");
+	TA_Stand_ArmsCrossed	(16,45,21,30,"LOCATION_02_11");
 };
 
 FUNC VOID Rtn_Ukryty_232 ()

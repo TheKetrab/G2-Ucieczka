@@ -117,6 +117,8 @@ FUNC VOID DIA_NASZ_203_Tabuk_OfCourse_Info()
 	B_GiveInvItems(self,other,ItRw_Arrow,3);
 	
 	Npc_ExchangeRoutine (self, "Tarcza1");
+	Npc_ClearAIQueue (NASZ_206_Mysliwy);
+	Npc_ExchangeRoutine (NASZ_206_Mysliwy, "DontInterruptInShooting");
 
 	Tabuk_Tarcza1 = TRUE;
 	//Tabuk_HeroMunition = GetMunitionAmmount(hero);
@@ -221,6 +223,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_Nieudane1_Info()
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_Nieudane1_55_01"); //Przed tob¹ wiele godzin treningu. Postrzelaj do tej tarczy, skup siê i traf.
 
 	Npc_ExchangeRoutine (self, "Start");
+	B_StartOtherRoutine (NASZ_206_Mysliwy, "Start");
 
 	Tabuk_Tarcza1 = FALSE;
 	ff_remove(TabukStrzelanie);
@@ -272,6 +275,8 @@ FUNC VOID DIA_NASZ_203_Tabuk_Zaliczone2_Info()
 
 	Tabuk_Tarcza2 = FALSE;
 	Npc_ExchangeRoutine (self, "Start");
+	Npc_ExchangeRoutine (NASZ_206_Mysliwy, "Start");
+
 	ff_remove(TabukStrzelanie);
 	
 	B_GivePlayerXP(300);
@@ -318,6 +323,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_Nieudane2_Info()
 	Tabuk_Tarcza2 = FALSE;
 	ff_remove(TabukStrzelanie);
 	Npc_ExchangeRoutine (self, "Start");
+	Npc_ExchangeRoutine (NASZ_206_Mysliwy, "Start");
 	
 	B_GivePlayerXP(300);
 	DodajReputacje(1,REP_MYSLIWI);

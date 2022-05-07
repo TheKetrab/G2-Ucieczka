@@ -9,6 +9,7 @@ instance NASZ_203_Tabuk (Npc_Default)
 	npctype	= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
+	aivar[AIV_RangedTA_Target] = RangedTarget_Mysliwi2;
 
 	// ------ Atrybuty ------
 	B_SetAttributesToChapter (self, 5);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
@@ -41,8 +42,8 @@ instance NASZ_203_Tabuk (Npc_Default)
 
 FUNC VOID Rtn_Start_203 ()
 {
-	TA_Sit_Bench		(07,00,21,00,"NASZ_MYSLIWI_GRUPA_04");
-	TA_Sit_Bench	 	(21,00,07,00,"NASZ_MYSLIWI_GRUPA_04");
+	TA_Sit_Bench			(16,00,13,00,"NASZ_MYSLIWI_GRUPA_04");
+	TA_Practice_Ranged		(13,00,16,00,"NASZ_MYSLIWI_GRUPA_TARCZA1");
 };
 
 FUNC VOID Rtn_Kap4_203 ()

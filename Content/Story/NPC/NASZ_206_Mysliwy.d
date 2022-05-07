@@ -10,6 +10,7 @@ instance NASZ_206_Mysliwy (Npc_Default)
 	npctype	= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
+	aivar[AIV_RangedTA_Target] = RangedTarget_Mysliwi2;
 
 	// ------ Atrybuty ------
 	B_SetAttributesToChapter (self, 5);																	//setzt Attribute und LEVEL entsprechend dem angegebenen Kapitel (1-6)
@@ -43,10 +44,27 @@ instance NASZ_206_Mysliwy (Npc_Default)
 FUNC VOID Rtn_Start_206 ()
 {
 	TA_Pee					(06,20,08,30,"NASZ_MYSLIWI_GRUPA_06");
-	TA_Stand_Eating			(08,30,12,20,"NASZ_MYSLIWI_GRUPA_02");
-	TA_Pee					(12,20,13,50,"NASZ_MYSLIWI_GRUPA_06");
-	TA_Stand_Eating			(13,50,18,20,"NASZ_MYSLIWI_GRUPA_02");
+	TA_Practice_Ranged		(08,30,11,30,"NASZ_MYSLIWI_GRUPA_TARCZA1");
+	TA_Stand_Eating			(11,30,16,20,"NASZ_MYSLIWI_GRUPA_02");
+	TA_Practice_Ranged		(16,20,18,20,"NASZ_MYSLIWI_GRUPA_TARCZA1");
 	TA_Pee					(18,20,20,50,"NASZ_MYSLIWI_GRUPA_06");
+	TA_Stand_ArmsCrossed	(20,50,06,20,"OW_DJG_ROCKCAMP_01");
+};
+
+FUNC VOID Rtn_DontInterruptInShooting_206 ()
+{
+	// to samo co Start, oprocz Pee i PracticeRanged, bo wtedy przeszkadza
+	
+	TA_Stand_ArmsCrossed	(06,20,11,30,"OW_DJG_ROCKCAMP_01");
+	//TA_Pee					(06,20,08,30,"NASZ_MYSLIWI_GRUPA_06");
+	//TA_Practice_Ranged		(08,30,11,30,"NASZ_MYSLIWI_GRUPA_TARCZA1");
+	
+	TA_Stand_Eating			(11,30,16,20,"NASZ_MYSLIWI_GRUPA_02");
+	
+	TA_Stand_ArmsCrossed	(16,20,20,50,"OW_DJG_ROCKCAMP_01");
+	//TA_Practice_Ranged		(16,20,18,20,"NASZ_MYSLIWI_GRUPA_TARCZA1");
+	//TA_Pee					(18,20,20,50,"NASZ_MYSLIWI_GRUPA_06");
+	
 	TA_Stand_ArmsCrossed	(20,50,06,20,"OW_DJG_ROCKCAMP_01");
 };
 

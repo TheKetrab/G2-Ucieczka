@@ -10,6 +10,8 @@ instance NASZ_228_Chris (Npc_Default)
 	npctype		= NPCTYPE_MAIN;
 	
 	aivar[AIV_IgnoresArmor] 	= TRUE;
+	
+	aivar[AIV_RangedTA_Target] = RangedTarget_Mysliwi1;
 
 	// ------ Attribute ------
 	B_SetAttributesToChapter (self, 4);																	
@@ -45,11 +47,13 @@ instance NASZ_228_Chris (Npc_Default)
 
 FUNC VOID Rtn_Start_228 ()
 {
-	TA_Stand_Guarding		(04,30,10,40,"NASZ_MYSLIWI_BALKON_04");
-	TA_SmallTalk		(10,40,13,45,"NASZ_MYSLIWI_BALKON_04");
-	TA_Sit_CampFire		(13,45,19,35,"NASZ_MYSLIWI_BALKON_02");
+	
+	TA_Practice_Ranged		(07,30,10,40,"NASZ_MYSLIWI_GORA_22");
+	TA_SmallTalk			(10,40,13,45,"NASZ_MYSLIWI_BALKON_04");
+	TA_Sit_CampFire			(13,45,19,35,"NASZ_MYSLIWI_BALKON_02");
 	TA_Roast_Scavenger		(19,35,23,20,"NASZ_MYSLIWI_BALKON_01");	 
-	TA_Sit_CampFire		(23,20,04,30,"NASZ_MYSLIWI_BALKON_02");
+	TA_Sit_CampFire			(23,20,02,30,"NASZ_MYSLIWI_BALKON_02");
+	TA_Stand_Guarding		(02,30,07,30,"NASZ_MYSLIWI_BALKON_04");	
 };
 
 FUNC VOID Rtn_Guide_228 ()

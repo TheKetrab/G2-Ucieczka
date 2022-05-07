@@ -208,12 +208,12 @@ FUNC INT DIA_NASZ_232_Jehen_ProwadzenieKoniec_Condition()
 FUNC VOID DIA_NASZ_232_Jehen_ProwadzenieKoniec_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_ProwadzenieKoniec_55_00"); //Dziêkujê za pomoc. Oddaj proszê trofea Gestathowi, a ja pójdê przygotowaæ sobie niezbêdne narzêdzia.
-	AI_Output (self, other,"DIA_NASZ_232_Jehen_ProwadzenieKoniec_55_01"); //Znajdziesz mnie w budynku nad wejœciem do obozu.
+	AI_Output (self, other,"DIA_NASZ_232_Jehen_ProwadzenieKoniec_55_01"); //Znajdziesz mnie nad wejœciem do obozu.
 
 	B_LogEntry (TOPIC_Jehen_strzala, "Przyniesione towary powinienem oddaæ Gestathowi.");
 
 	AI_StopProcessInfos (self);
-	Npc_ExchangeRoutine (self, "Mysliwi");
+	Npc_ExchangeRoutine (self, "PreMysliwi");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Druzyna(NASZ_232_Jehen,0);
 };
@@ -275,7 +275,8 @@ FUNC VOID DIA_NASZ_232_Jehen_TalkedToGestath_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_232_Jehen_TalkedToGestath_55_00"); //Odda³em towar Gestathowi.
 	AI_Output (self, other,"DIA_NASZ_232_Jehen_TalkedToGestath_55_01"); //Ucieszy³ siê, ¿e wróci³em?
-	
+	Npc_ExchangeRoutine (self, "Mysliwi");
+
 	B_GivePlayerXP(100);
 	DodajReputacje(1,REP_MYSLIWI);
 

@@ -64,3 +64,10 @@ INSTANCE RangedTarget_Mysliwi1 (Mst_Default_RangedTarget)
 	aivar[AIV_MM_RoamStart]		= OnlyRoutine;
 };
 
+INSTANCE RangedTarget_Mysliwi2 (Mst_Default_RangedTarget)
+{
+	B_SetVisuals_RangedTarget();
+	start_aistate				= ZS_MM_AllScheduler;
+	aivar[AIV_MM_RoamStart]		= OnlyRoutine;
+};
+

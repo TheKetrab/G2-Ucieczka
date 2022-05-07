@@ -55,7 +55,7 @@ func int ZS_Practice_Ranged_Loop ()
 
 	ForceTeleport(rangedTarget,rangedTarget.wp); // npc-tarcza sie przesuwa przy okazji strzalu, wiec teleportujemy go z powrotem
 
-	if (Npc_GetStateTime(self) > 20) {
+	if (Npc_GetStateTime(self) > 30) { // uwaga - jesli tarcza jest bardzo daleko od npc, to moze nie zdazyc wrocic rangedTarget.wp, minie juz 30s i od razu znowu pojdzie
 
 		AI_UseItemToState 	(self, 	ItRw_Arrow, -1);
 		AI_StopLookAt(self);

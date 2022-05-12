@@ -304,7 +304,7 @@ FUNC VOID DIA_NASZ_452_KurgKan_BRON_MAM_Info()
 		AI_Output (self,other,"DIA_NASZ_452_KurgKan_MamBron_15_08");  //Will-przyjaciel mieæ racja. Dziêkowaæ. Daæ nagroda.
 		DodajReputacje(2,REP_LOWCY);
 		Log_SetTopicStatus(TOPIC_OrcWeapon, LOG_SUCCESS);
-		Log_AddEntry (TOPIC_OrcWeapon,"Broñ, któr¹ sprezentowa³ orkowi, zrobi³a na nim ogromne wra¿enie. Na pocz¹tku nie chcia³ jej przyj¹æ, ale po mojej namowie zgodzi³ siê i mnie za to wynagrodzi³."); 
+		Log_AddEntry (TOPIC_OrcWeapon,"Broñ, któr¹ sprezentowa³em orkowi, zrobi³a na nim ogromne wra¿enie. Na pocz¹tku nie chcia³ jej przyj¹æ, ale po mojej namowie zgodzi³ siê i mnie za to wynagrodzi³."); 
 	
 
 	}
@@ -356,9 +356,9 @@ FUNC VOID DIA_NASZ_452_KurgKan_Zbroja_Info()
 	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_01");  //Tak, Jan daæ. Powiedzieæ, ¿e potrzebna zbroja do walki, do ochrony. Atakowaæ zamek z ³owcy.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_02");  //Rozumiem, ¿e trzeba by³o ci daæ zbrojê, ale wybór jest doœæ nietypowy. Muszê zapytaæ Jana, sk¹d ten pomys³.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_03");  //Jesteœ pewien, ¿e chcesz atakowaæ swoich pobratymców? 
-	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_04");  //Tak. Krug-Kan walczyæ za orki i dostaæ w niewola. Uciec i chcieæ wróciæ do bracia, bracia odrzuciæ. Powiedzieæ niegodny. £owcy przyj¹æ do obozu. Teraz ³owcy bracia.
+	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_04");  //Tak. Kurg-Kan walczyæ za orki i dostaæ w niewola. Uciec i chcieæ wróciæ do bracia, bracia odrzuciæ. Powiedzieæ niegodny. £owcy przyj¹æ do obozu. Teraz ³owcy bracia.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_05");  //Cieszy mnie, ¿e czujesz siê tu szczêœliwy.
-	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_06");  //Tak. Krug-Kan móc walczyæ o cz³owieki i ich chroniæ. Pokonaæ bracia kochaj¹cy Beliar. Beliar z³y, œmieræ.
+	AI_Output (self,other,"DIA_NASZ_452_KurgKan_Zbroja_55_06");  //Tak. Kurg-Kan móc walczyæ o cz³owieki i ich chroniæ. Pokonaæ bracia kochaj¹cy Beliar. Beliar z³y, œmieræ.
 	AI_Output (other,self,"DIA_NASZ_452_KurgKan_Zbroja_15_07");  //Tak, nie jest najprzyjemniejszym z bogów.
 	
 	AI_StopProcessInfos (self);

@@ -357,7 +357,7 @@ FUNC VOID DIA_NASZ_111_Gerold_go_Info()
 	Druzyna (NASZ_111_Gerold,1);
 	AI_StopProcessInfos (self);
 
-	B_LogEntry (TOPIC_Keroloth_duchy, "Gerold chêtnie zgodzi³ siê mi pomóc w odsy³aniu trupów do grobów.");
+	B_LogEntry (TOPIC_Keroloth_duchy, "Gerold chêtnie zgodzi³ siê mi pomóc w odes³aniu trupów do grobów.");
 
 };
 
@@ -483,7 +483,7 @@ FUNC VOID DIA_NASZ_111_Gerold_GlodQuest_Info()
 	
 	Log_CreateTopic (TOPIC_Gerold_glod, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Gerold_glod, LOG_RUNNING);
-	B_LogEntry (TOPIC_Gerold_glod, "Gerold to straszny ¿ar³ok, nie mam ku temu ¿adnych w¹tpliwoœci. Pierwszy raz widzê cz³owieka, który z takim pytaniem spogl¹da³ na korê drzew. Powinienem siê pospieszyæ, nie chcê zastaæ przed obozem poobgryzanych drzew. Tylko sk¹d ja wezmê tyle jedzenia? Mogê mu, co prawda, daæ coœ z moich zapasów albo pójœæ do znanego mi kucharza.");
+	B_LogEntry (TOPIC_Gerold_glod, "Gerold to straszny ¿ar³ok, nie mam ku temu ¿adnych w¹tpliwoœci. Pierwszy raz widzê cz³owieka, który z takim apetytem spogl¹da³ na korê drzew. Powinienem siê pospieszyæ, nie chcê zastaæ przed obozem poobgryzanych drzew. Tylko sk¹d ja wezmê tyle jedzenia? Mogê mu, co prawda, daæ coœ z moich zapasów albo pójœæ do znanego mi kucharza.");
 	Mis_GeroldGlod_Running = TRUE;
 };
 

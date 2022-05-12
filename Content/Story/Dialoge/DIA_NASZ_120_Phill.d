@@ -286,7 +286,7 @@ FUNC VOID DIA_NASZ_120_Phill_koniec_Info()
 	AI_Output (self, other,"DIA_NASZ_120_Phill_koniec_55_02"); //Równie¿ mam takie wra¿enie. Nie by³o to takie ciê¿kie, jak siê spodziewa³em.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_koniec_55_03"); //Wracam do obozu. Pozbieraj lagi i mi je przynieœ. Pó³ tuzina powinno wystarczyæ.
 
-	B_LogEntry (TOPIC_Phill_lagi, "Gobiny nie ¿yj¹. Mam pozbieraæ wszystkie lagi i oddaæ Phillowi dwa tuziny.");
+	B_LogEntry (TOPIC_Phill_lagi, "Gobliny nie ¿yj¹. Mam pozbieraæ wszystkie lagi i oddaæ Phillowi dwa tuziny.");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Druzyna (NASZ_120_Phill,0);
 	Npc_ExchangeRoutine (NASZ_120_Phill, "Start");

@@ -74,7 +74,7 @@ FUNC VOID DIA_NASZ_021_Nieznajomy_StartZacmienieOUT_Info()
 	
 	Log_CreateTopic (TOPIC_zacmienie, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_zacmienie, LOG_RUNNING);
-	B_LogEntry (TOPIC_zacmienie, "W jaskini spotka³em tajemniczego maga, który powiedzia³ mi, i¿ jestem czêœci¹ jakiegoœ zaæmienia. Nie wiem czym to jest lecz powinienem czym prêdzej powiadomiæ o tym Gestatha i Keroloha. Byæ mo¿e oni mi coœ o tym powiedz¹.");
+	B_LogEntry (TOPIC_zacmienie, "W jaskini spotka³em tajemniczego maga, który powiedzia³ mi, i¿ jestem czêœci¹ jakiegoœ zaæmienia. Nie wiem czym to jest lecz powinienem czym prêdzej powiadomiæ o tym Gestatha i Kerolotha. Byæ mo¿e oni mi coœ o tym powiedz¹.");
 	ff_ApplyOnceExt(ZadanieJehen,2000,-1);
 	
 	B_StartOtherRoutine(NASZ_232_Jehen,"Part2");

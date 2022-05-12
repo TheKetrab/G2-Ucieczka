@@ -352,7 +352,7 @@ FUNC VOID DIA_NASZ_228_Chris_AskTeacher_Info()
 	AI_Output(self,other,"DIA_NASZ_228_Chris_AskTeacher_03_02"); //Za futra i inne trofea mo¿na dostaæ naprawdê sporo pieniêdzy.
 
 	Log_CreateTopic (TOPIC_MysliwiTeacher,LOG_NOTE);
-	B_LogEntry (TOPIC_MysliwiTeacher,"Chris poka¿e mi, jak obrabiaæ zwierzynê.");	
+	B_LogEntry (TOPIC_MysliwiTeacher,"Chris poka¿e mi, jak oprawiaæ zwierzynê.");	
 };
 
 

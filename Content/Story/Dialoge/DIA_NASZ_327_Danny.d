@@ -181,7 +181,7 @@ func void DIA_NASZ_327_Danny_armor_Info ()
 	AI_Output			(self, other, "DIA_NASZ_327_Danny_armor_03_07"); //I tu kolejne rozczarowanie! W Górniczej Dolinie rudy nie zosta³o zbyt wiele, a pieczê nad zamkiem sprawuj¹ orkowie!
 	AI_Output			(self, other, "DIA_NASZ_327_Danny_armor_03_08"); //Utknêliœmy tu, a Nod kombinuje, jak przepêdziæ z zamku orków.
 
-	B_LogEntry (TOPIC_Gestath_renegaci, "No to ju¿ trochê wiem. Bandyci przybyli tu, ¿eby kopaæ magiczn¹ rudê i sprzedawaæ j¹ królowi. Jednak plany na papierze mia³y siê lepiej ni¿ w rzeczywistoœci. Bandyci zostawili swoje okrêty na pla¿y gdzieœ za górami po po³udniowo-zachodniej stronie wyspy Khorinis. Niektóre z nich mocno ucierpia³y, podczas gdy orkowie powitali armatnimi kulami zbli¿aj¹cych siê bandytów. Samuel nadzoruje naprawê statków, a Nod wyruszy³ strom¹ œcie¿k¹ przez góry. Powrót wydaje siê niemo¿liwy, wiêc szef kombinuje, jak wygoniæ orków z zamku. Z tak¹ wiedz¹ chyba bêdê móg³ wejœæ do Obozu Bandytów nie sprawiaj¹c podejrzeñ.");
+	B_LogEntry (TOPIC_Gestath_renegaci, "No to ju¿ trochê wiem. Bandyci przybyli tu, ¿eby kopaæ magiczn¹ rudê i sprzedawaæ j¹ królowi. Jednak plany na papierze mia³y siê lepiej ni¿ w rzeczywistoœci. Bandyci zostawili swoje okrêty na pla¿y gdzieœ za górami po po³udniowo-zachodniej stronie wyspy Khorinis. Niektóre z nich mocno ucierpia³y, podczas gdy orkowie powitali armatnimi kulami zbli¿aj¹cych siê bandytów. Samuel nadzoruje naprawê statków, a Nod wyruszy³ strom¹ œcie¿k¹ przez góry. Powrót wydaje siê niemo¿liwy, wiêc szef kombinuje, jak wygoniæ orków z zamku. Z tak¹ wiedz¹ chyba bêdê móg³ wejœæ do Obozu Bandytów nie wzbudzaj¹c podejrzeñ.");
 
 };
 

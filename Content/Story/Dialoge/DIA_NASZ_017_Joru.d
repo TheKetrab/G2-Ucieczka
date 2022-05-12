@@ -176,7 +176,7 @@ func void DIA_NASZ_017_Joru_Lutnia_Wait() {
 	WillWieOSkarbieJoru = TRUE;
 	JoruRediToTelepport = TRUE;
 	
-	B_LogEntry (TOPIC_Lojalnosc, "Joru poinstruowa³ mnie, gdzie mogê znaleŸæ jego skarb. Jeœli chcê dostac nagrodê za pomoc duchowi, to muszê j¹ znaleŸæ.");
+	B_LogEntry (TOPIC_Lojalnosc, "Joru poinstruowa³ mnie, gdzie mogê znaleŸæ jego skarb. Jeœli chcê dostaæ nagrodê za pomoc duchowi, to muszê j¹ znaleŸæ.");
 
 	B_LogEntry (TOPIC_Joru_lutnia, "W ramach nagrody za mój okropny koncert, Joru powiedzia³ mi, gdzie mogê znaleŸæ jego skarb. Powiedzia³ dok³adnie takie s³owa: 'KuŸnia. Obróæ siê na po³udniowy zachód. PrzejdŸ 12 kroków, po czym obróæ siê w prawo. Za 40 kroków ponownie skrêæ w prawo miêdzy domy i przejdŸ 13 kroków. Potem obróæ siê lekko w lewo i przejdŸ jeszcze 16 kroków. Po prawej stronie w krzakach ukry³em skarb.'");
 };

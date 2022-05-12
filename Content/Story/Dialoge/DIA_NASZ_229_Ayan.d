@@ -118,7 +118,7 @@ func void DIA_NASZ_229_Ayan_chodzmy_Info ()
 
 	Log_CreateTopic (TOPIC_Ayan_nieznane, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_Ayan_nieznane, LOG_RUNNING);
-	B_LogEntry (TOPIC_Ayan_nieznane, "Ayan znalaz³ sposób na predostanie siê za rzekê na tajemniczy p³askowy¿. Rzuci runê do rzeki.");
+	B_LogEntry (TOPIC_Ayan_nieznane, "Ayan znalaz³ sposób na przedostanie siê za rzekê na tajemniczy p³askowy¿. Rzuci runê do rzeki.");
 
 	Createinvitems (self, ItNa_TeleportOzywieniec, 1);
 	//B_giveinvitems (self, other, ItNa_TeleportOzywieniec, 1);

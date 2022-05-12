@@ -917,7 +917,7 @@ FUNC VOID DIA_NASZ_213_Gestath_BamInfo_Info()
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_BamInfo_55_03"); //Mo¿esz mu po prostu daæ trochê rudy i powiedzieæ, ¿e to od nich. Myœlê, ¿e jakieœ dwadzieœcia bry³ek wystarczy.
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_BamInfo_55_04"); //A jeœli nie zdo³asz tyle uzbieraæ, to zapytaj Kerolotha, czy nie da siê tego rozwi¹zaæ bardziej subtelnie.
 
-	B_LogEntry (TOPIC_Bam_kopalnia, "Gestath zasugerowa³ mi, ¿eby daæ bandycie 20 bry³ek rudy i sk³amaæ, ¿e to dostawa od paladynów. Mogê te¿ zapytaæ Kerolotha, co on o tym s¹dzi");
+	B_LogEntry (TOPIC_Bam_kopalnia, "Gestath zasugerowa³ mi, ¿eby daæ bandycie 20 bry³ek rudy i sk³amaæ, ¿e to dostawa od paladynów. Mogê te¿ zapytaæ Kerolotha, co on o tym s¹dzi.");
 };
 
 

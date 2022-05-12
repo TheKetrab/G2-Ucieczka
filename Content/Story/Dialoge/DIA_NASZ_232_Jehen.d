@@ -333,7 +333,7 @@ FUNC VOID DIA_NASZ_232_Jehen_TalkedToGestath_TakeThis()
 	
 	B_LogEntry (TOPIC_Engor_lutnia, "Mam instrument. W koñcu mogê zanieœæ go Engorowi.");
 
-	B_LogEntry (TOPIC_Jehen_strzala, "Zdecydowa³em, ¿e wezmê stary instument Jehena. Nie ma czasu do stracenia! Engor i tak bêdzie zadowolony - nie wspominaj¹c o Silasie.");
+	B_LogEntry (TOPIC_Jehen_strzala, "Zdecydowa³em, ¿e wezmê stary instrument Jehena. Nie ma czasu do stracenia! Engor i tak bêdzie zadowolony - nie wspominaj¹c o Silasie.");
 	Log_SetTopicStatus(TOPIC_Jehen_strzala, LOG_SUCCESS);
 	
 	Info_ClearChoices (DIA_NASZ_232_Jehen_TalkedToGestath);
@@ -738,7 +738,7 @@ FUNC VOID DIA_NASZ_232_Jehen_KorzenieDone_Info()
 	Wld_InsertNpc(NASZ_022_Trup,"NASZ_JEHEN_QUEST_05");
 	B_KillNPC(NASZ_022_Trup);
 	
-	B_LogEntry (TOPIC_Jehen_poscig, "Podczas produkcji strza³ Jehen opowiedzia³ mi co nieco o swojej przesz³oœci. Cz³owiek, który ucieka³ przed wojn¹, aby ratowaæ swe, ¿ycie znalaz³ siê w jej centrum. Mimo tego nie podda³ siê i walczy dalej. Mam tylko nadziejê, ¿e w koñcu odnajdzie swój spokój. Nied³ugo po rozmowie us³yszeliœmy dziwny ryk i natychmiast pobiegliœmy w tamto miejsce...");
+	B_LogEntry (TOPIC_Jehen_poscig, "Podczas produkcji strza³ Jehen opowiedzia³ mi co nieco o swojej przesz³oœci. Cz³owiek, który ucieka³ przed wojn¹, aby ratowaæ swe ¿ycie, znalaz³ siê w jej centrum. Mimo tego nie podda³ siê i walczy dalej. Mam tylko nadziejê, ¿e w koñcu odnajdzie swój spokój. Nied³ugo po rozmowie us³yszeliœmy dziwny ryk i natychmiast pobiegliœmy w tamto miejsce...");
 };
 
 //*********************************************************************

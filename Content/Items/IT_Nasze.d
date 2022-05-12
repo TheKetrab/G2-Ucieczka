@@ -7585,7 +7585,7 @@ INSTANCE ItNa_KropleDuszy(C_Item)
 	effect			=	"SPELLFX_ITEMGLIMMER"; 
 
 	description		= 	"Krople duszy";
-	TEXT[0]			= 	"Czyni tego, kto je wypije";
+	TEXT[0]			= 	"Czyni¹ tego, kto je wypije";
 	TEXT[1]			= 	"nieœmiertelnym...";
 	
 	TEXT[3]			= 	NAME_Sec_Duration;				

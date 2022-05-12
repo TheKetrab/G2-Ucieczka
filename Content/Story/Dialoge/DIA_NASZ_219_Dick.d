@@ -415,7 +415,7 @@ FUNC VOID DIA_NASZ_219_Dick_PresjaCzasu_Info()
 	
 	Npc_ExchangeRoutine(self,"Start");
 	Log_SetTopicStatus (TOPIC_Udar_presja, LOG_SUCCESS);
-	B_LogEntry (TOPIC_Udar_presja, "Nie wiem, czy wielkim sensem by³o uratowanie Dicka, ale przynajmniej zabi³em orków zagra¿aj¹cym myœliwym.");
+	B_LogEntry (TOPIC_Udar_presja, "Nie wiem, czy wielkim sensem by³o uratowanie Dicka, ale przynajmniej zabi³em orków zagra¿aj¹cych myœliwym.");
 	B_GivePlayerXP(700);
 	
 	DodajReputacje(2,REP_LOWCY);

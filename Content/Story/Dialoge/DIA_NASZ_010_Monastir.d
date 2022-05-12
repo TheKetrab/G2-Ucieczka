@@ -160,7 +160,7 @@ FUNC VOID DIA_NASZ_010_Monastir_idea_seek()
 	AI_Output (other,self ,"DIA_NASZ_010_Monastir_idea_seek_15_00"); //Mo¿e jakieœ wskazówki, gdzie go szukaæ?
 	AI_Output (self, other,"DIA_NASZ_010_Monastir_idea_seek_55_01"); //Wydaje mi siê, ¿e powinieneœ poszukaæ gdzieœ na skrajach Górniczej Doliny. Gdyby by³ w jej centrum, ju¿ dawno ktoœ by go odnalaz³.
 
-	B_LogEntry (TOPIC_Monastir_bogowie, "Monastir uwa¿a, ¿e o¿ywieniec mo¿e chowaæ siê gdzieœ na skrajach Górniczej Doliny. Przede mn¹ wielkie poszukiwania... Szukaæ ig³y w stogu siana... Myœlê, ¿e na razie od³o¿ê to na póŸniej. Mamy wa¿niejsze sprawy na g³owie, jak chocia¿ ekspedycja za orkow¹ palisadê. Znaj¹c ¿ycie problem sam siê rozwi¹¿e.");
+	B_LogEntry (TOPIC_Monastir_bogowie, "Monastir uwa¿a, ¿e o¿ywieniec mo¿e chowaæ siê gdzieœ na skrajach Górniczej Doliny. Przede mn¹ wielkie poszukiwania... Szukaæ ig³y w stogu siana... Myœlê, ¿e na razie od³o¿ê to na póŸniej. Mamy wa¿niejsze sprawy na g³owie, jak chocia¿by ekspedycja za orkow¹ palisadê. Znaj¹c ¿ycie problem sam siê rozwi¹¿e.");
 };
 
 FUNC VOID DIA_NASZ_010_Monastir_idea_and()

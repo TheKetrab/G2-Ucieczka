@@ -42,7 +42,7 @@ func int ZS_Practice_Ranged_Loop ()
 	var c_npc rangedTarget; rangedTarget = Hlp_GetNPC(self.aivar[AIV_RangedTA_Target]);
 	var c_item rangedWeapon; rangedWeapon = Npc_GetEquippedRangedWeapon(self);
 
-	CreateInvItem (self, rangedWeapon.munition);
+	B_CreateAmmo(self);
 		
 	Npc_SetTarget(self, rangedTarget); // to wymusza, zeby strzala leciala dokladnie na tarcze
 

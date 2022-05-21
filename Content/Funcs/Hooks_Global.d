@@ -66,7 +66,12 @@ func void OnTouch(/*oCNpc* this, zCVob* touchvob*/)
 	var int ptr; ptr  = MEM_READINT(ESP+4);
 	if(!ptr) {return;};
 	var c_npc sleeper; sleeper =  _^(ptr);
-	if(Hlp_GetInstanceID(sleeper) == Hlp_GetInstanceID(MeatBug) && ptr != ECX)
+
+	if(Hlp_GetInstanceID(sleeper) == Hlp_GetInstanceID(MeatBug) && ptr != ECX
+	//bogu:
+	//chwilê przed koñcem przemiany wykrywa kolizjê
+	//miêdzy kopi¹ gracza, a przemienionym graczem
+	&& !Npc_IsPlayer(sleeper))
 	{
 		sleeper.attribute[0]  = 0;
 		if(ECX == MEM_READINT(_hero)/*pointer to player*/)

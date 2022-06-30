@@ -43,7 +43,7 @@ FUNC INT DIA_NASZ_130_Jenkins_PreHello_Condition()
 FUNC VOID DIA_NASZ_130_Jenkins_PreHello_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_prehello_15_00"); //To ty jesteœ Jenkins?
-	AI_Output (self, other,"DIA_NASZ_130_Jenkins_prehello_15_01"); //Tak i przewodzê tej grupie, chocia¿ patrz¹c na to co sta³o siê zesz³ej nocy, nigdy nie zgodzi³bym siê na to, by wybraæ siê z nimi na zwiad. Nie po tym wszystkim.
+	AI_Output (self, other,"DIA_NASZ_130_Jenkins_prehello_15_01"); //Tak i przewodzê tej grupie, chocia¿ patrz¹c na to co siê sta³o zesz³ej nocy, nigdy nie zgodzi³bym siê na to, by wybraæ siê z nimi na zwiad. Nie po tym wszystkim.
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_prehello_15_02"); //Dotar³em tutaj z jednym z waszych ludzi. Znalaz³em go w waszym starym obozie na p³askowy¿u, opowiedzia³ mi, co siê sta³o.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_prehello_15_03"); //Przyby³eœ tutaj z Mattem? Chwa³a Innosowi! Ju¿ myœla³em, ¿e go straciliœmy. Przybywasz do nas z konkretnymi rozkazami?
 };
@@ -76,7 +76,7 @@ INSTANCE DIA_NASZ_130_Jenkins_hello   (C_INFO)
  	condition   = DIA_NASZ_130_Jenkins_hello_Condition;
  	information = DIA_NASZ_130_Jenkins_hello_Info;
  	permanent   = FALSE;
-	description = "Przysy³a mnie Udar. Mam sprawdziæ, co z wami siê sta³o.";
+	description = "Przysy³a mnie Udar. Mam sprawdziæ, co siê z wami sta³o.";
 };
 
 FUNC INT DIA_NASZ_130_Jenkins_hello_Condition()
@@ -89,7 +89,7 @@ FUNC INT DIA_NASZ_130_Jenkins_hello_Condition()
 
 FUNC VOID DIA_NASZ_130_Jenkins_hello_Info()
 {
-	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_00"); //Przysy³a mnie Udar. Mam sprawdziæ, co z wami siê sta³o.
+	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_00"); //Przysy³a mnie Udar. Mam sprawdziæ, co siê z wami sta³o.
 	AI_Output (other, self,"DIA_NASZ_130_Jenkins_hello_15_01"); //Jednak ju¿ sam widok tego wszystkiego nie napawa mnie optymizmem.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_02"); //Aktualnie nie mo¿emy wróciæ do obozu, gdy¿ jak widzisz kilku z nas jest ciê¿ko rannych, a zostawienie ich na pastwê losu nie wchodzi w grê.
 	AI_Output (self, other,"DIA_NASZ_130_Jenkins_hello_15_03"); //Co gorsza, nie s¹ to takie zwyk³e rany, jakich mo¿na siê nabawiæ po ciosie od miecza czy topora... To coœ bardziej powa¿nego.

@@ -385,13 +385,16 @@ FUNC INT DIA_NASZ_118_Ferros_RenegaciOnPlace_Condition()
 
 FUNC VOID DIA_NASZ_118_Ferros_RenegaciOnPlace_Info()
 {
+	// FIX U12: dubbing nagrany caly glosem Ferrosa,
+	// Udalo sie uzyskac tylko glos Kjorna, wiec Fed wypada z trialogu
+
 	var C_NPC Ferros; Ferros = Hlp_GetNpc (NASZ_118_Ferros);
 	var C_NPC Kjorn; Kjorn = Hlp_GetNpc (NASZ_116_Kjorn);
-	var C_NPC Fed; Fed = Hlp_GetNpc (NASZ_117_Fed);
+	//var C_NPC Fed; Fed = Hlp_GetNpc (NASZ_117_Fed);
 	
 	TRIA_Invite(Ferros);
 	TRIA_Invite(Kjorn);
-	TRIA_Invite(Fed);
+	//TRIA_Invite(Fed);
 	
     TRIA_Start();
  
@@ -412,7 +415,8 @@ FUNC VOID DIA_NASZ_118_Ferros_RenegaciOnPlace_Info()
 	
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_04"); //Czyli ta misja to atak na kopalniê renegatów? Dobrze, ¿e wczoraj ostrzy³em swój miecz.
 
-	TRIA_Next(Fed);
+	//TRIA_Next(Fed);
+	TRIA_Next(Ferros);
 	AI_TurnToNpc(other, self);
     AI_TurnToNpc(self, other);
 	
@@ -424,9 +428,9 @@ FUNC VOID DIA_NASZ_118_Ferros_RenegaciOnPlace_Info()
 	
 	AI_Output (other, self,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_07"); //Dziêki.
 
-	TRIA_Next(Ferros);
-	AI_TurnToNpc(other, self);
-    AI_TurnToNpc(self, other);
+	//TRIA_Next(Ferros);
+	//AI_TurnToNpc(other, self);
+    //AI_TurnToNpc(self, other);
 		
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_08"); //Zaatakujemy pod os³on¹ nocy. Do tego czasu odpocznijmy trochê.
 	AI_Output (self, other,"DIA_NASZ_118_Ferros_RenegaciOnPlace_55_09"); //Ty, Willu, idŸ poszukaj szpary miêdzy deskami. A, i najwa¿niejsze: Nie daj siê zdeptaæ, gdy bêdziesz przemieniony w ma³ego owada.

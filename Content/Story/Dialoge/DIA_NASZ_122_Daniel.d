@@ -103,7 +103,7 @@ FUNC VOID DIA_NASZ_122_Daniel_why_Info()
 {
 	AI_Output (other,self ,"DIA_NASZ_122_Daniel_why_15_00"); //Dlaczego?
 	AI_Output (self, other,"DIA_NASZ_122_Daniel_why_55_01"); //Potrzebujê kilofa. Masz mo¿e jakiœ?
-	AI_Output (self, other,"DIA_NASZ_122_Daniel_why_55_02"); //Mój z³ama³ siê kilka dni temu i zamiast wydobywaæ surowce, czekam a¿ Jan ³askawie wykuje dla mnie nowy.
+	AI_Output (self, other,"DIA_NASZ_122_Daniel_why_55_02"); //Mój z³ama³ siê kilka dni temu i zamiast wydobywaæ surowce, czekam, a¿ Jan ³askawie wykuje dla mnie nowy.
 
 };
 

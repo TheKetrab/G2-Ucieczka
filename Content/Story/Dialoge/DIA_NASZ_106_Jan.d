@@ -615,7 +615,7 @@ FUNC VOID DIA_NASZ_106_Jan_Wykuj_Zmija ()
 var int RunaMocy_OneTime;
 FUNC VOID DIA_NASZ_106_Jan_Wykuj_RunaMocy ()
 {
-	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_RunaMocy_15_00"); //RunaMocy.
+	AI_Output (other, self,"DIA_NASZ_106_Jan_Wykuj_RunaMocy_15_00"); //Runa mocy.
 
 	// jesli chcesz dwa razy ten sam miecz, to zablokuj
 	if((JanRunaMocyDay != 0) && (JanRunaMocyDay == Wld_GetDay())) {
@@ -2246,7 +2246,7 @@ func void DIA_NASZ_106_Jan_Kap3Quest_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_00"); //Ha, wreszcie ciê widzê.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3Quest_15_01"); //Dlaczego czeka³eœ w³aœnie na mnie? Czy ju¿ tylko ja jestem tu czegoœ wart?
-	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_02"); //Tylko ty zwiedzasz Górnicz¹ Dolinê. Reszty albo to nie obchodzi albo s¹ znurzeni t¹ krain¹ i nie rusz¹ siê st¹d bez rozkazu Kerolotha. A ten aktualnie jest nieobecny.
+	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_02"); //Tylko ty zwiedzasz Górnicz¹ Dolinê. Reszty albo to nie obchodzi, albo s¹ znurzeni t¹ krain¹ i nie rusz¹ siê st¹d bez rozkazu Kerolotha. A ten aktualnie jest nieobecny.
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_03"); //Moja proœba mo¿e siê wydawaæ obrzydliwa, ale chyba nie ma innego rozwi¹zania.
 	AI_Output			(self, other, "DIA_NASZ_106_Jan_Kap3Quest_15_04"); //Nasi ¿o³nierze potrzebuj¹ ochrony g³owy. He³my to bardzo istotna czêœæ zbroi. Problem w tym, ¿e wykonanie ich zajmuje szmat czasu.
 	AI_Output			(other, self, "DIA_NASZ_106_Jan_Kap3Quest_15_05"); //Co wiêc wymyœli³eœ?
@@ -2758,7 +2758,7 @@ FUNC VOID DIA_NASZ_106_Jan_KurgKan_Info()
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_00"); //Sk¹d ci przyszed³ do g³owy pomys³, by dawaæ Kurg-Kanowi zbrojê z blach paladyna?
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_01"); //Mieliœmy pozosta³oœci zbroi po renegatach i chcia³em zrobiæ z nich coœ ciekawego. Myœlê, ¿e mi siê uda³o.
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_02"); //Z pewnoœci¹, wygl¹da bardzo interesuj¹co. Nie myœla³eœ nad tym, co powie Keroloth na to? Nie ba³eœ siê?
-	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_03"); //Szczerze? Bardzo i w momencie, kiedy przerabia³em te blachy, co chwilê wraca³a do mnie wyobra¿enie Kerolotha, który mnie publicznie linczuje za pomys³.
+	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_03"); //Szczerze? Bardzo i w momencie, kiedy przerabia³em te blachy, co chwilê wraca³o do mnie wyobra¿enie Kerolotha, który mnie publicznie linczuje za pomys³.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_04"); //Ale pomyœl: Zbroja paladyna dopasowana do orka. Nikt na to wczeœniej nie wpad³, bo nie mia³ jak, a tu nadarzy³a siê taka okazja. Nie spróbowa³byœ na moim miejscu?
 	AI_Output (other, self,"DIA_NASZ_106_Jan_KurgKan_15_05"); //Rozumiem. Obudzi³a siê w tobie dusza artysty. Ale broni to mu nie chcia³eœ zrobiæ.
 	AI_Output (self, other,"DIA_NASZ_106_Jan_KurgKan_55_06"); //Bo nie mia³em pomys³u, ale z t¹ zbroj¹... Jedna myœl i ju¿ mia³em ca³y projekt gotowy.

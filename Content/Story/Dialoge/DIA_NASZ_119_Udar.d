@@ -949,7 +949,7 @@ FUNC VOID DIA_NASZ_119_Udar_Kap4Start_Info()
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_01"); //Uda³o siê nam odbiæ zamek, a orkowe si³y zosta³y starte z powierzchni ziemi. Teraz pozosta³o nam jedynie zaj¹æ siê umacnianiem naszej pozycji w tym rejonie.
 	AI_Output (other, self,"DIA_NASZ_119_Udar_Kap4Start_55_02"); //Niestety, kilku ludzi przyp³aci³o to ¿yciem. W tym Gestath...
 	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03"); //To smutna wiadomoœæ. Niech Beliar nie dobierze siê do jego duszy, a Innos wype³ni j¹ œwiat³em.
-	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03b"); //Dziêkujê za twój raport. WeŸ ten projekt i poproœ Jana o taki miecz, jeœli chesz. Znalaz³em go w którejœ z ksi¹g w obozie i wydaje mi siê, ¿e ciê zainteresuje.
+	AI_Output (self, other,"DIA_NASZ_119_Udar_Kap4Start_55_03b"); //Dziêkujê za twój raport. WeŸ ten projekt i poproœ Jana o taki miecz, jeœli chcesz. Znalaz³em go w którejœ z ksi¹g w obozie i wydaje mi siê, ¿e ciê zainteresuje.
 
 	Createinvitems (self, ItNa_Projekt_WielkiMiecz, 1);
 	B_giveinvitems (self, other, ItNa_Projekt_WielkiMiecz, 1);

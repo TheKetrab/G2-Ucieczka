@@ -178,7 +178,7 @@ FUNC VOID DIA_NASZ_221_Benito_help_Info()
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_01"); //Mo¿e znajdziesz gdzieœ jakiœ dokument, który potwierdzi ich przyjacielskie albo wrogie relacje.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_02"); //Chocia¿ to bardzo w¹tpliwe. To dzikusy, wiêc raczej szukaj czegoœ, co mo¿na uznaæ za zawarcie paktu.
 	AI_Output (other,self ,"DIA_NASZ_221_Benito_help_15_03"); //Czyli szukaj ig³y w stogu siana, gdy nawet nie masz pewnoœci, ¿e tam jest...
-	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêtrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ, to tylko i wy³¹cznie albo w jaskini albo na zboczach gór.
+	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_04"); //Przeszuka³em zewnêtrzny pierœcieñ a¿ do bólu. Jeœli masz coœ znaleŸæ, to tylko i wy³¹cznie albo w jaskini, albo na zboczach gór.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_05"); //Chocia¿ na twoim miejscu spróbowa³bym od strony gór. Mo¿e jest gdzieœ jaskinia albo wnêka miêdzy ska³ami.
 	AI_Output (self, other,"DIA_NASZ_221_Benito_help_55_06"); //Jaszczuroludzie raczej ukryliby taki symbol, jeœli w ogóle istnieje, a nie trzymali w miejscu ³atwo dostêpnym dla wszystkich.
 
@@ -405,7 +405,7 @@ FUNC VOID DIA_NASZ_221_Benito_TooFar_Info()
 
 	if ((NASZ_201_Erak.aivar[AIV_PARTYMEMBER] == TRUE) || (NASZ_215_Kivo.aivar[AIV_PARTYMEMBER] == TRUE))
 	{
-		AI_Output (self, other,"DIA_NASZ_221_Benito_TooFar_55_02"); //Wracamy do obozu. Jeœli bêdziesz potrzebowa³ pomocy to tam nas znajdziesz.
+		AI_Output (self, other,"DIA_NASZ_221_Benito_TooFar_55_02"); //Wracamy do obozu. Jeœli bêdziesz potrzebowa³ pomocy, to tam nas znajdziesz.
 		}
 	else {
 		AI_Output (self, other,"DIA_NASZ_221_Benito_TooFar_55_03"); //Wracam do obozu. Tam mnie znajdziesz.

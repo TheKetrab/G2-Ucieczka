@@ -87,7 +87,7 @@ FUNC VOID DIA_NASZ_120_Phill_work_Info()
 
 func void PhillSay_Goblins() {
 	AI_Output (self, other,"PhillSay_Goblins_55_00"); //S³uchaj, chodzi o to, ¿e muszê zaopatrzyæ siê w drewno, a konkretniej w kije.
-	AI_Output (self, other,"PhillSay_Goblins_55_01"); //Rzecz w tym, ¿e gobliny maj¹ potrzebny mi surowiec, a ty móg³byœ wybraæ siê ze mn¹.
+	AI_Output (self, other,"PhillSay_Goblins_55_01"); //Rzecz w tym, ¿e gobliny maj¹ potrzebny mi surowiec, a ty móg³byœ wybraæ siê tam ze mn¹.
 };
 
 FUNC VOID DIA_NASZ_120_Phill_work_yes()
@@ -286,7 +286,7 @@ FUNC VOID DIA_NASZ_120_Phill_koniec_Info()
 	AI_Output (self, other,"DIA_NASZ_120_Phill_koniec_55_02"); //Równie¿ mam takie wra¿enie. Nie by³o to takie ciê¿kie, jak siê spodziewa³em.
 	AI_Output (self, other,"DIA_NASZ_120_Phill_koniec_55_03"); //Wracam do obozu. Pozbieraj lagi i mi je przynieœ. Pó³ tuzina powinno wystarczyæ.
 
-	B_LogEntry (TOPIC_Phill_lagi, "Gobliny nie ¿yj¹. Mam pozbieraæ wszystkie lagi i oddaæ Phillowi dwa tuziny.");
+	B_LogEntry (TOPIC_Phill_lagi, "Gobliny nie ¿yj¹. Mam pozbieraæ wszystkie lagi i oddaæ Phillowi pó³ tuzina.");
 	//self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Druzyna (NASZ_120_Phill,0);
 	Npc_ExchangeRoutine (NASZ_120_Phill, "Start");

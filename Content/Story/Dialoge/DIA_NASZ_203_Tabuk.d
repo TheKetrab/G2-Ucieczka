@@ -358,7 +358,7 @@ FUNC VOID DIA_NASZ_203_Tabuk_teach_Info()
 	AI_Output (self, other,"DIA_NASZ_203_Tabuk_teach_55_01"); //Pewnie, za 400 sztuk z³ota nauczê ciê wszystkiego, co potrafiê.
 
 	Log_CreateTopic (TOPIC_MysliwiTeacher,LOG_NOTE);
-	B_LogEntry (TOPIC_MysliwiTeacher,"Tabuk nauczy mnie rabowania trofeów golemów, harpii, jaszczurów i rogów smoczego zêbacza oraz cieniostwora za 400 sztuk z³ota.");	
+	B_LogEntry (TOPIC_MysliwiTeacher,"Tabuk nauczy mnie zbierania trofeów z golemów, harpii, jaszczurów i rogów smoczego zêbacza oraz cieniostwora za 400 sztuk z³ota.");	
 
 };
 

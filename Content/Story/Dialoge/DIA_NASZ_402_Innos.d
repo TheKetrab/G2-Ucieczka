@@ -120,7 +120,7 @@ FUNC VOID DIA_NASZ_402_Innos_workB_Info()
 	
 	Log_CreateTopic (TOPIC_bogowie_work, LOG_MISSION);
 	Log_SetTopicStatus (TOPIC_bogowie_work, LOG_RUNNING);
-	B_LogEntry (TOPIC_bogowie_work, "10 jêzyków ognistych jaszczurów bêdzie dowodem dla Innosa, ¿e potrafiê radziæ sobie z ogniem. Te czerwone gady lubi¹ piasek i wybrze¿e morskie.");
+	B_LogEntry (TOPIC_bogowie_work, "10 jêzyków ognistych jaszczurów bêdzie dowodem dla Innosa, ¿e potrafiê radziæ sobie z ogniem. Te czerwone gady lubi¹ piasek i wybrze¿a morskie.");
 	
 	
 	Wld_InsertNpc	(FireWaran,"FP_INNOS_SPAWN_JASZCZUR_01");

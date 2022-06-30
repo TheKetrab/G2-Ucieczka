@@ -264,7 +264,7 @@ func void DIA_NASZ_229_Ayan_hey_Info ()
 {
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_hey_03_00"); //Hej, s³yszysz?
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_hey_15_01"); //Te dziwne odg³osy dochodz¹ jakby z tego kana³u œciekowego... Zapewne te zawalone boczne korytarze nie s¹ œlepe.
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_hey_03_02"); //Nie widzia³em dot¹d ¿adnego ko³owrotu ani prze³¹cznika, który móg³by otworzyæ wrota w poprzedniej komnacie..
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_hey_03_02"); //Nie widzia³em dot¹d ¿adnego ko³owrotu ani prze³¹cznika, który móg³by otworzyæ wrota w poprzedniej komnacie.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_hey_03_03"); //Myœlê, ¿e trzeba przedostaæ siê jakoœ przez ten kana³.
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_hey_03_04"); //Wymyœlê coœ, bez obaw.
 
@@ -610,7 +610,7 @@ func int DIA_NASZ_229_Ayan_done_Condition ()
 
 func void DIA_NASZ_229_Ayan_done_Info ()
 {
-	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_00"); //O jasna cholera! Co.. co to by³o?
+	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_00"); //O jasna cholera! Co... co to by³o?
 	AI_Output			(other, self, "DIA_NASZ_229_Ayan_done_15_01"); //Chyba zaczynam siê domyœlaæ... tylko... gdzie jest zwój? Musi gdzieœ tu byæ.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_02"); //Jaki zwój? Przeszukam dok³adnie tego umarlaka. Ty idŸ na górê. Mo¿e tam znajdziesz coœ ciekawego.
 	AI_Output			(self, other, "DIA_NASZ_229_Ayan_done_03_03"); //B¹dŸ ostro¿ny. To miejsce jest przesi¹kniête z³em.

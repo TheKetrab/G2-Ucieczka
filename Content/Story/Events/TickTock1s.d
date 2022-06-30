@@ -1435,7 +1435,7 @@ func void _TickTock_1s()
 	
 	if ((UdarQuestPatrolNaDoleOneTime == FALSE) && (UdarQuestPatrolStart == TRUE) && Npc_GetDistToWP (hero,"LOCATION_15_IN_2") < 1000) {
 		UdarQuestPatrolNaDoleOneTime = TRUE;
-		B_LogEntry(TOPIC_Udar_patrol,"Jaskinia jest pusta, brakuje te¿ œladów walki tak wiêc na pewno nie zostali zaatakowani. Mo¿e kryj¹ siê na p³askowy¿u nad t¹ jaskini¹?");
+		B_LogEntry(TOPIC_Udar_patrol,"Jaskinia jest pusta, brakuje te¿ œladów walki, tak wiêc na pewno nie zostali zaatakowani. Mo¿e kryj¹ siê na p³askowy¿u nad t¹ jaskini¹?");
 		Wld_InsertNpc(NASZ_129_Matt,"OW_HOSHPAK_03");
 	};
 	

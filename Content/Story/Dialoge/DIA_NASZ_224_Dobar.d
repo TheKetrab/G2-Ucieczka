@@ -46,7 +46,7 @@ FUNC INT DIA_NASZ_224_Dobar_siema_Condition()
 FUNC VOID DIA_NASZ_224_Dobar_siema_Info()
 {
 	AI_Output (other, self,"DIA_NASZ_224_Dobar_siema_15_00"); //Jesteœ kowalem?
-	AI_Output (self, other,"DIA_NASZ_224_Dobar_siema_55_01"); //Tak, do cholery. Po co zadajesz tak idiotyczne pytanie?
+	AI_Output (self, other,"DIA_NASZ_224_Dobar_siema_55_01"); //Taaa, do cholery. Po co zadajesz tak idiotyczne pytanie?
 	AI_Output (self, other,"DIA_NASZ_224_Dobar_siema_55_02"); //Skoro ju¿ zawracasz mi g³owê, to pytaj o coœ normalnego. 
 
 		

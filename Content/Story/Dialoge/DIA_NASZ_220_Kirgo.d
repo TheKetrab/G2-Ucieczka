@@ -976,7 +976,7 @@ FUNC VOID DIA_NASZ_220_Kirgo_MakePotion_RykSmoka()
 	AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_00"); //Ryk smoka.
 
 	if (RykSmokaFirstTime == FALSE) {
-		AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_01"); //Coœ ty to znowu wymyœli³? W czym ci pomo¿e taka dziwna mikstura?
+		AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_01"); //Coœ ty znowu wymyœli³? W czym ci pomo¿e taka dziwna mikstura?
 		AI_Output (other,self ,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_02"); //W ksiêdze by³o napisane, ¿e wzroœnie moja si³a.
 		AI_Output (self, other,"DIA_NASZ_220_Kirgo_MakePotion_RykSmoka_15_03"); //Taa... O ile wczeœniej nie przepali ci gard³a.
 		RykSmokaFirstTime = TRUE;

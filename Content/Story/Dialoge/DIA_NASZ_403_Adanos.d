@@ -211,7 +211,7 @@ FUNC VOID DIA_NASZ_403_Adanos_doneB_Info()
 	AI_Output (other, self,"DIA_NASZ_403_Adanos_doneB_15_00"); //Znalaz³em kryszta³.
 	B_giveinvitems (other, self, ItNa_KrysztalAdanosa, 1);
 	AI_Output (self, other,"DIA_NASZ_403_Adanos_doneB_55_01"); //A wiêc da³eœ radê. Pomogê ci, dok¹d mam siê udaæ?
-	AI_Output (other, self,"DIA_NASZ_403_Adanos_doneB_15_02"); //Do ruin orkowego miasta..
+	AI_Output (other, self,"DIA_NASZ_403_Adanos_doneB_15_02"); //Do ruin orkowego miasta.
 	AI_Output (self, other,"DIA_NASZ_403_Adanos_doneB_55_03"); //Zatem do zobaczenia.
 
 	AdanosSieTeleportuje = TRUE;

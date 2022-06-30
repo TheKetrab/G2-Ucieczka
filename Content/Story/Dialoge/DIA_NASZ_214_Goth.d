@@ -449,7 +449,7 @@ FUNC VOID DIA_NASZ_214_Goth_PresjaCzasu_Info()
 	
 	Npc_ExchangeRoutine (self, "Start"); // bo do tej pory ma Wait4Draal
 	
-	B_LogEntry (TOPIC_Udar_presja, "Troszkê siê spóŸni³em. Myœliwi zostali chwilê temu zaatakowani i zabrali ze sob¹ Dicka. Muszê znaleŸæ grupkê orków i odbiæ na³ogowego palacza ziela. Niepowinni byæ daleko, skoro minê³o tak niewiele czasu.");
+	B_LogEntry (TOPIC_Udar_presja, "Troszkê siê spóŸni³em. Myœliwi zostali chwilê temu zaatakowani i orkowie zabrali ze sob¹ Dicka. Muszê znaleŸæ grupkê orków i odbiæ na³ogowego palacza ziela. Niepowinni byæ daleko, skoro minê³o tak niewiele czasu.");
 
 	Wld_InsertNpc(OrcWarrior_Roam,"FP_DICK_ORC_1");
 	Wld_InsertNpc(OrcWarrior_Roam,"FP_DICK_ORC_2");

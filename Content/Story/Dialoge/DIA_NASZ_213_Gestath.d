@@ -131,7 +131,7 @@ FUNC INT DIA_NASZ_213_Gestath_hello_Condition()
 FUNC VOID DIA_NASZ_213_Gestath_hello_Info()
 {
 	AI_Output (self, other,"DIA_NASZ_213_Gestath_hello_55_00"); //Kim jesteœ i czego tutaj szukasz?
-	AI_Output (other, self,"DIA_NASZ_213_Gestath_hello_15_01"); //Nazywam siê Will. Uciek³em z kopalni, bo warunki, w których nas trzymano, by³y nieludzkie. Moim celem jest te¿ uwolnienie wspó³wiêŸniów, którzy nadal tam pracuj¹.
+	AI_Output (other, self,"DIA_NASZ_213_Gestath_hello_15_01"); //Nazywam siê Will. Uciek³em z kopalni, bo warunki, w których nas trzymano, by³y nieludzkie. Moim celem jest uwolnienie wspó³wiêŸniów, którzy nadal tam pracuj¹.
 		
 };
 

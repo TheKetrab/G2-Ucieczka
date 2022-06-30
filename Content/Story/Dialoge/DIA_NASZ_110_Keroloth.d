@@ -1140,7 +1140,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_Work1DoneEnd_your()
 	AI_Output (other,self ,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_00"); //Proszê, zwój znów jest twój.
 	B_GiveInvItems(other,self,ItNa_TrfGolem,1);
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_01"); //Zastanawiam siê, czy mogê go jeszcze jakoœ wykorzystaæ. No nic, pomyœlê nad tym póŸniej.
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_02"); //Mimo, ¿e nic z tego nie wysz³o, nale¿y ci siê ma³¹ nagroda za fatygê. Proszê.
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_Work1DoneEnd_your_15_02"); //Mimo, ¿e nic z tego nie wysz³o, nale¿y ci siê ma³a nagroda za fatygê. Proszê.
 
 	CreateInvItems (self, ItMi_Gold, 120);									
 	B_GiveInvItems (self, other, ItMi_Gold, 120);
@@ -2418,7 +2418,7 @@ FUNC VOID DIA_NASZ_110_Keroloth_InfoKonsekwencje_Info()
 	// Keroloth
 	TRIA_Next(Keroloth);
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_00"); //Co siê tutaj sta³o?!
-	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_01"); //To... To wszystko sta³o siê tak nagle... Trenowaliœmy, kiedy na placu pojawi³ siê grupka nieumar³ych. Szybko powalili kilku naszych ludzi...
+	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_01"); //To... To wszystko sta³o siê tak nagle... Trenowaliœmy, kiedy na placu pojawi³a siê grupka nieumar³ych. Szybko powalili kilku naszych ludzi...
 	AI_Output (self, other,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_02"); //Powstrzymaliœmy ich, ale na Innosa, co siê dzieje w tym przeklêtym miejscu?
 	AI_Output (other, self,"DIA_NASZ_110_Keroloth_InfoKonsekwencje_15_03"); //Kapliczka zosta³a zniszczona, nieumarli nie powinni ju¿ d³u¿ej nêkaæ tych ziem.
 
